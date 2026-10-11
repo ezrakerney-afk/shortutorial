@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HTML in 10 Minutes · Shortutorial</title>
+<meta name="description" content="Build your first web page: what HTML tags are, headings and paragraphs, links and images, lists, and how a page is structured, with a live editor that shows your page as you type.">
+<link rel="canonical" href="https://shortutorial.com/html-basics/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="HTML in 10 Minutes · Shortutorial">
+<meta property="og:description" content="Build your first web page: what HTML tags are, headings and paragraphs, links and images, lists, and how a page is structured, with a live editor that shows your page as you type.">
+<meta property="og:url" content="https://shortutorial.com/html-basics/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body data-slug="html-basics">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=programming">Programming</a> / HTML basics</div>
+    <span class="eyebrow">Programming · Web</span>
+    <h1>HTML in 10 Minutes</h1>
+    <p class="lede">Every website is built on HTML. In four short lessons you'll write a real web page, and see it update live as you type.</p>
+    <div class="facts"><span>~10 min</span><span>4 lessons</span><span>Live editor</span><span>5-question quiz</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#h1">1 · Tags</a><a href="#h2">2 · Text</a><a href="#h3">3 · Links & images</a><a href="#h4">4 · A whole page</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="h1">
+    <div class="lesson-head"><span class="step">01</span><h2>Tags: labels around content</h2></div>
+
+    <p>HTML marks up text with <b>tags</b> so the browser knows what each part is. Most tags come in pairs: an opening tag and a closing tag with a slash.</p>
+    <div class="code"><pre><code><span class="k">&lt;p&gt;</span>This is a paragraph.<span class="k">&lt;/p&gt;</span></code></pre></div>
+    <p>Some tags have <b>attributes</b>: extra settings inside the opening tag, written as <code>name="value"</code>.</p>
+    <div class="code"><pre><code><span class="k">&lt;a</span> href=<span class="s">"https://example.com"</span><span class="k">&gt;</span>A link<span class="k">&lt;/a&gt;</span></code></pre></div>
+    <p class="callout"><span><b>Close what you open.</b> Tags nest like boxes inside boxes: <code>&lt;p&gt;&lt;b&gt;bold&lt;/b&gt;&lt;/p&gt;</code> is right; <code>&lt;p&gt;&lt;b&gt;bold&lt;/p&gt;&lt;/b&gt;</code> is not.</span></p>
+  </section>
+
+  <section class="lesson" id="h2">
+    <div class="lesson-head"><span class="step">02</span><h2>Headings, paragraphs and emphasis</h2></div>
+
+    <div class="tw"><table class="t"><tr><th>Tag</th><th>What it's for</th></tr><tr><td><code>&lt;h1&gt;</code> … <code>&lt;h6&gt;</code></td><td>Headings, from most to least important. Use one h1 per page.</td></tr><tr><td><code>&lt;p&gt;</code></td><td>A paragraph</td></tr><tr><td><code>&lt;strong&gt;</code></td><td>Important text (shown bold)</td></tr><tr><td><code>&lt;em&gt;</code></td><td>Emphasis (shown in italics)</td></tr><tr><td><code>&lt;br&gt;</code></td><td>A line break. It has no closing tag.</td></tr></table></div>
+    <p class="callout"><span><b>Headings are for structure, not size.</b> Search engines and screen readers use them to understand your page. Change sizes with CSS instead.</span></p>
+  </section>
+
+  <section class="lesson" id="h3">
+    <div class="lesson-head"><span class="step">03</span><h2>Links, images and lists</h2></div>
+
+    <div class="code"><pre><code><span class="k">&lt;a</span> href=<span class="s">"https://shortutorial.com"</span><span class="k">&gt;</span>Visit Shortutorial<span class="k">&lt;/a&gt;</span>
+
+<span class="k">&lt;img</span> src=<span class="s">"cat.jpg"</span> alt=<span class="s">"A grey cat asleep on a sofa"</span><span class="k">&gt;</span>
+
+<span class="k">&lt;ul&gt;</span>
+  <span class="k">&lt;li&gt;</span>Bullet point<span class="k">&lt;/li&gt;</span>
+  <span class="k">&lt;li&gt;</span>Another one<span class="k">&lt;/li&gt;</span>
+<span class="k">&lt;/ul&gt;</span></code></pre></div>
+    <ul class="points">
+      <li><b>href</b> is where the link goes; <b>src</b> is the image file.</li>
+      <li><b>alt</b> describes the image for people who can't see it. Always include it.</li>
+      <li>Use <code>&lt;ol&gt;</code> instead of <code>&lt;ul&gt;</code> for a numbered list.</li>
+    </ul>
+  </section>
+
+  <section class="lesson" id="h4">
+    <div class="lesson-head"><span class="step">04</span><h2>A complete page</h2></div>
+
+    <div class="code"><pre><code><span class="k">&lt;!doctype html&gt;</span>
+<span class="k">&lt;html</span> lang=<span class="s">"en"</span><span class="k">&gt;</span>
+  <span class="k">&lt;head&gt;</span>
+    <span class="k">&lt;meta</span> charset=<span class="s">"utf-8"</span><span class="k">&gt;</span>
+    <span class="k">&lt;title&gt;</span>My first page<span class="k">&lt;/title&gt;</span>   <span class="c">&lt;!-- shown on the browser tab --&gt;</span>
+  <span class="k">&lt;/head&gt;</span>
+  <span class="k">&lt;body&gt;</span>
+    <span class="k">&lt;h1&gt;</span>Hello!<span class="k">&lt;/h1&gt;</span>                  <span class="c">&lt;!-- everything visible goes here --&gt;</span>
+  <span class="k">&lt;/body&gt;</span>
+<span class="k">&lt;/html&gt;</span></code></pre></div>
+    <p>Save this as <code>index.html</code>, double-click it, and it opens in your browser. That's a real web page.</p>
+    <div class="try"><span class="try-h">Try it · live editor</span><label>Edit the HTML<textarea id="hx" spellcheck="false" style="font-family:var(--mono);font-size:.85rem;min-height:170px;width:100%;padding:10px;border-radius:9px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink)">&lt;h1&gt;My favourite things&lt;/h1&gt;
+&lt;p&gt;Here are a few things I &lt;strong&gt;love&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Coffee&lt;/li&gt;
+  &lt;li&gt;Long walks&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Good&lt;/em&gt; books&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Learn more on &lt;a href="https://shortutorial.com"&gt;Shortutorial&lt;/a&gt;.&lt;/p&gt;</textarea></label>
+      <div class="tryhead" style="font-family:var(--mono);font-size:.74rem;color:var(--muted)">Your page</div>
+      <iframe id="hview" sandbox="" title="Preview of your HTML" style="width:100%;height:240px;border:1.5px solid var(--line);border-radius:9px;background:#fff"></iframe></div>
+  </section>
+
+  <section id="cert" style="scroll-margin-top:80px"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Tip: in the quiz, press 1–4 to answer.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+
+(function(){
+  const t = $('#hx'), f = $('#hview');
+  const base = '<style>body{font:16px/1.5 system-ui,sans-serif;margin:14px;color:#1d2421}a{color:#0f7a6c}</style>';
+  const go = () => { f.srcdoc = base + t.value; };
+  t.addEventListener('input', go); go();
+})();
+</script>
+</body>
+</html>

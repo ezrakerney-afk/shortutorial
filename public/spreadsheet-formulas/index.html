@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Spreadsheet Formulas Every Beginner Needs · Shortutorial</title>
+<meta name="description" content="Learn the spreadsheet formulas you&#x27;ll use most in Excel and Google Sheets: cell references, SUM, AVERAGE, MIN/MAX, COUNT, IF and absolute references, with a mini spreadsheet to try them.">
+<link rel="canonical" href="https://shortutorial.com/spreadsheet-formulas/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Spreadsheet Formulas Every Beginner Needs · Shortutorial">
+<meta property="og:description" content="Learn the spreadsheet formulas you&#x27;ll use most in Excel and Google Sheets: cell references, SUM, AVERAGE, MIN/MAX, COUNT, IF and absolute references, with a mini spreadsheet to try them.">
+<meta property="og:url" content="https://shortutorial.com/spreadsheet-formulas/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body data-slug="spreadsheet-formulas">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=spreadsheet">Programming</a> / Spreadsheet formulas</div>
+    <span class="eyebrow">Skills · Excel and Google Sheets</span>
+    <h1>Spreadsheet Formulas Every Beginner Needs</h1>
+    <p class="lede">Budgets, grades, sign-up lists: a few formulas turn a spreadsheet from a table into a calculator. These work the same in Excel and Google Sheets.</p>
+    <div class="facts"><span>~10 min</span><span>4 lessons</span><span>Mini spreadsheet</span><span>5-question quiz</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#x1">1 · Cells</a><a href="#x2">2 · The big five</a><a href="#x3">3 · IF</a><a href="#x4">4 · Copying</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="x1">
+    <div class="lesson-head"><span class="step">01</span><h2>Cells and references</h2></div>
+
+    <p>Every cell has an address: its <b>column letter</b> plus its <b>row number</b>. B3 is column B, row 3.</p>
+    <p>Every formula starts with <code>=</code>. Refer to cells by address and the result updates automatically when they change.</p>
+    <div class="code"><pre><code>=B2 * C2          <span class="c">multiply two cells</span>
+=B2 + B3 + B4     <span class="c">add three cells</span>
+=(B2 - B3) / B3   <span class="c">brackets work like in normal math</span></code></pre></div>
+    <p>A <b>range</b> is a block of cells written with a colon: <code>B2:B10</code> means everything from B2 down to B10.</p>
+  </section>
+
+  <section class="lesson" id="x2">
+    <div class="lesson-head"><span class="step">02</span><h2>The five functions you'll use most</h2></div>
+
+    <div class="tw"><table class="t"><tr><th>Formula</th><th>What it does</th></tr><tr><td><code>=SUM(B2:B10)</code></td><td>Adds them up</td></tr><tr><td><code>=AVERAGE(B2:B10)</code></td><td>The mean</td></tr><tr><td><code>=MIN(B2:B10)</code> / <code>=MAX(…)</code></td><td>Smallest / largest</td></tr><tr><td><code>=COUNT(B2:B10)</code></td><td>How many cells contain numbers</td></tr><tr><td><code>=COUNTA(B2:B10)</code></td><td>How many cells aren't empty (text too)</td></tr></table></div>
+    <p class="callout"><span><b>Shortcut:</b> select a column of numbers and look at the bottom-right of the window. Both Excel and Google Sheets show the sum, average and count without any formula.</span></p>
+  </section>
+
+  <section class="lesson" id="x3">
+    <div class="lesson-head"><span class="step">03</span><h2>Making decisions with IF</h2></div>
+
+    <div class="formula">=IF(<span class="v">test</span>, <span class="v">value if true</span>, <span class="v">value if false</span>)</div>
+    <div class="code"><pre><code>=IF(B2 &gt;= 50, <span class="s">"Pass"</span>, <span class="s">"Fail"</span>)
+=IF(C2 &gt; D2, <span class="s">"Over budget"</span>, <span class="s">"OK"</span>)</code></pre></div>
+    <p>Text answers go in quotes. Related favourites: <code>SUMIF</code> (add only rows that match, like all “Food” spending) and <code>COUNTIF</code> (count matches).</p>
+  </section>
+
+  <section class="lesson" id="x4">
+    <div class="lesson-head"><span class="step">04</span><h2>Copying formulas and the $ sign</h2></div>
+
+    <p>Drag a formula down (using the small square at the bottom-right of the cell) and its references shift automatically: <code>=B2*C2</code> becomes <code>=B3*C3</code>, and so on. That's a <b>relative</b> reference.</p>
+    <p>To keep a reference fixed, like a tax rate in one cell, add <code>$</code>: <code>=B2*$F$1</code>. That's an <b>absolute</b> reference. Press <kbd>F4</kbd> in Excel (<kbd>⌘</kbd> <kbd>T</kbd> on Mac Excel) to add the $ signs for you.</p>
+    <div class="try"><span class="try-h">Try it · mini spreadsheet</span><p style="margin:0">Edit the numbers in column B, then pick a formula.</p>
+      <div class="tw"><table class="t" id="ss" style="max-width:340px"><tr><th></th><th>A</th><th>B</th></tr></table></div>
+      <div class="row"><label>Formula<select id="sf"><option>=SUM(B1:B5)</option><option>=AVERAGE(B1:B5)</option><option>=MAX(B1:B5)</option><option>=MIN(B1:B5)</option><option>=COUNT(B1:B5)</option><option>=COUNTIF(B1:B5,"&gt;50")</option><option>=IF(SUM(B1:B5)&gt;300,"Over budget","OK")</option></select></label></div>
+      <div class="out" id="sOut"></div></div>
+  </section>
+
+  <section id="cert" style="scroll-margin-top:80px"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Tip: in the quiz, press 1–4 to answer.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+
+(function(){
+  const items = [['Rent', 120], ['Food', 65], ['Transport', 40], ['Fun', 55], ['Phone', 30]];
+  const t = $('#ss');
+  items.forEach(([a, b], i) => t.insertAdjacentHTML('beforeend', `<tr><th>${i+1}</th><td>${a}</td><td><input type="number" value="${b}" data-i="${i}" style="width:90px"></td></tr>`));
+  function go(){
+    const v = [...t.querySelectorAll('input')].map(x => x.value === '' ? null : +x.value), nums = v.filter(x => x !== null && !isNaN(x));
+    const sum = nums.reduce((a, b) => a + b, 0), f = $('#sf').value;
+    let r;
+    if (f.startsWith('=SUM')) r = sum;
+    else if (f.startsWith('=AVERAGE')) r = nums.length ? sum / nums.length : '#DIV/0!';
+    else if (f.startsWith('=MAX')) r = nums.length ? Math.max(...nums) : 0;
+    else if (f.startsWith('=MIN')) r = nums.length ? Math.min(...nums) : 0;
+    else if (f.startsWith('=COUNTIF')) r = nums.filter(x => x > 50).length;
+    else if (f.startsWith('=COUNT')) r = nums.length;
+    else r = sum > 300 ? 'Over budget' : 'OK';
+    $('#sOut').innerHTML = `<code>${f.replace(/</g,'&lt;')}</code> → <b>${typeof r === 'number' ? fmt(r) : r}</b>`;
+  }
+  live($('.try'), go);
+})();
+</script>
+</body>
+</html>

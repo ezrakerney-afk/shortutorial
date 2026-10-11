@@ -349,6 +349,38 @@ window.TUTORIALS = [
     minutes: 10
   },
   {
+    slug: "html-basics",
+    title: "HTML in 10 Minutes",
+    summary: "Write your first web page, with a live editor.",
+    category: "Programming",
+    tags: ["programming", "html", "web", "website", "coding", "beginner", "tags"],
+    minutes: 10
+  },
+  {
+    slug: "python-first-steps",
+    title: "Python: Your First Program",
+    summary: "Print, variables, if statements and loops.",
+    category: "Programming",
+    tags: ["programming", "python", "coding", "beginner", "variables", "loops", "if statement"],
+    minutes: 12
+  },
+  {
+    slug: "spreadsheet-formulas",
+    title: "Spreadsheet Formulas Every Beginner Needs",
+    summary: "SUM, AVERAGE, IF and the $ sign, in Excel or Google Sheets.",
+    category: "Programming",
+    tags: ["excel", "google sheets", "spreadsheet", "formulas", "sum", "if", "average", "office"],
+    minutes: 10
+  },
+  {
+    slug: "git-basics",
+    title: "Git Basics in 15 Minutes",
+    summary: "Commits, staging, branches and GitHub, minus the jargon.",
+    category: "Programming",
+    tags: ["programming", "git", "github", "version control", "commit", "branch", "coding"],
+    minutes: 15
+  },
+  {
     slug: "jcurses",
     title: "JCurses Crash Course",
     summary: "Build colorful, keyboard-driven Java programs that run in a terminal.",

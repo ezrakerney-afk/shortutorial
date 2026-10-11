@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Git Basics in 15 Minutes · Shortutorial</title>
+<meta name="description" content="Learn Git step by step: what version control is, the add-commit cycle, branches, and pushing to GitHub, with terminal examples and an interactive staging-area simulator.">
+<link rel="canonical" href="https://shortutorial.com/git-basics/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Git Basics in 15 Minutes · Shortutorial">
+<meta property="og:description" content="Learn Git step by step: what version control is, the add-commit cycle, branches, and pushing to GitHub, with terminal examples and an interactive staging-area simulator.">
+<meta property="og:url" content="https://shortutorial.com/git-basics/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body data-slug="git-basics">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=programming">Programming</a> / Git basics</div>
+    <span class="eyebrow">Programming · Tools</span>
+    <h1>Git Basics in 15 Minutes</h1>
+    <p class="lede">Git saves snapshots of your project so you can undo mistakes, try ideas safely and work with other people. Here's the core workflow, minus the jargon.</p>
+    <div class="facts"><span>~15 min</span><span>4 lessons</span><span>Staging simulator</span><span>5-question quiz</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#v1">1 · What Git is</a><a href="#v2">2 · Add & commit</a><a href="#v3">3 · Branches</a><a href="#v4">4 · GitHub</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="v1">
+    <div class="lesson-head"><span class="step">01</span><h2>Snapshots of your project</h2></div>
+
+    <p>Git is <b>version control</b>: it keeps a history of your project as a series of snapshots called <b>commits</b>. You can look back at any snapshot, compare them, or return to one.</p>
+    <p>Git runs on your computer. <b>GitHub</b> (and similar sites like GitLab) store a copy online so you can back it up and share it.</p>
+    <div class="code"><pre><code>git config --global user.name <span class="s">"Your Name"</span>
+git config --global user.email <span class="s">"you@example.com"</span>
+
+<span class="c"># start tracking a folder</span>
+cd my-project
+git init</code></pre></div>
+  </section>
+
+  <section class="lesson" id="v2">
+    <div class="lesson-head"><span class="step">02</span><h2>The everyday cycle: change, add, commit</h2></div>
+
+    <p>Files move through three places:</p>
+    <div class="tw"><table class="t"><tr><th>Place</th><th>What it means</th><th>Command to move on</th></tr><tr><td>Working folder</td><td>Files as you're editing them</td><td><code>git add</code></td></tr><tr><td>Staging area</td><td>Changes picked for the next snapshot</td><td><code>git commit</code></td></tr><tr><td>History</td><td>Saved snapshots</td><td>(done)</td></tr></table></div>
+    <div class="code"><pre><code>git status                       <span class="c"># what has changed?</span>
+git add index.html               <span class="c"># stage one file (or: git add .  for everything)</span>
+git commit -m <span class="s">"Add contact page"</span>  <span class="c"># save the snapshot</span>
+git log --oneline                <span class="c"># see the history</span></code></pre></div>
+    <figure><div class="term" role="img" aria-label="Terminal output">
+      <div class="term-bar"><span class="lights"><i></i><i></i><i></i></span><span class="t">git log --oneline</span><span></span></div>
+      <div class="term-body"><span class="g">a1f9c2e</span> Add contact page
+<span class="g">7b3d001</span> Fix typo in header
+<span class="g">4e8a5b0</span> First version</div></div></figure>
+    <p class="callout"><span><b>Good commit messages</b> say what the change does, in a few words: “Add contact page”, not “stuff” or “update”.</span></p>
+  </section>
+
+  <section class="lesson" id="v3">
+    <div class="lesson-head"><span class="step">03</span><h2>Branches: try ideas safely</h2></div>
+
+    <p>A <b>branch</b> is a separate line of work. Make one to try a new feature without touching the working version on <code>main</code>.</p>
+    <div class="code"><pre><code>git switch -c new-header     <span class="c"># create a branch and move to it</span>
+<span class="c"># ...edit, add, commit as usual...</span>
+git switch main              <span class="c"># go back to main</span>
+git merge new-header         <span class="c"># bring the changes across</span></code></pre></div>
+    <p class="callout"><span><b>Merge conflicts</b> happen when two branches changed the same lines. Git marks the clash in the file with &lt;&lt;&lt;&lt;&lt;&lt;&lt; and &gt;&gt;&gt;&gt;&gt;&gt;&gt;; keep the version you want, delete the markers, then add and commit.</span></p>
+  </section>
+
+  <section class="lesson" id="v4">
+    <div class="lesson-head"><span class="step">04</span><h2>Sharing on GitHub</h2></div>
+
+    <div class="code"><pre><code>git remote add origin https://github.com/you/my-project.git
+git push -u origin main      <span class="c"># first time</span>
+git push                     <span class="c"># after that</span>
+git pull                     <span class="c"># get other people's changes</span>
+git clone https://github.com/someone/project.git   <span class="c"># copy a project</span></code></pre></div>
+    <p class="callout warn"><span><b>Never commit passwords or API keys.</b> Once pushed, assume they're public. Add files like .env to a <code>.gitignore</code> file so Git ignores them.</span></p>
+    <div class="try"><span class="try-h">Try it · staging simulator</span><p style="margin:0">Click files to edit them, then stage and commit.</p>
+      <div class="grid2" style="grid-template-columns:repeat(3,1fr);gap:10px" id="gsim"></div>
+      <div class="row"><button class="btn ghost" id="gadd" type="button">git add .</button><button class="btn" id="gcom" type="button">git commit</button><button class="btn ghost" id="grst" type="button">Reset</button></div>
+      <div class="out" id="gOut"></div><div class="work" id="gLog"></div></div>
+  </section>
+
+  <section id="cert" style="scroll-margin-top:80px"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Tip: in the quiz, press 1–4 to answer.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+
+(function(){
+  const files = ['index.html', 'style.css', 'app.js'];
+  let st = {}, log = [];
+  const reset = () => { st = {}; files.forEach(f => st[f] = 'clean'); log = ['4e8a5b0 First version']; draw('Click a file to edit it.'); };
+  const col = (title, k) => `<div><span class="tagline">${title}</span>${files.filter(f => st[f] === k || (k==='mod' && st[f]==='mod')).map(f => `<button class="btn ghost small" data-f="${f}" style="margin-top:6px">${f}</button>`).join('') || '<p style="font-size:.85rem">—</p>'}</div>`;
+  function draw(msg){
+    $('#gsim').innerHTML = col('Working (edited)', 'mod') + col('Staged', 'staged') + `<div><span class="tagline">Unchanged</span>${files.filter(f => st[f]==='clean').map(f => `<button class="btn ghost small" data-f="${f}" style="margin-top:6px">${f}</button>`).join('') || '<p style="font-size:.85rem">—</p>'}</div>`;
+    $('#gsim').querySelectorAll('[data-f]').forEach(b => b.addEventListener('click', () => { st[b.dataset.f] = 'mod'; draw(`You edited ${b.dataset.f}. It's changed but not staged.`); }));
+    $('#gOut').textContent = msg; $('#gLog').textContent = 'git log --oneline\n' + log.join('\n');
+  }
+  $('#gadd').addEventListener('click', () => { const m = files.filter(f => st[f]==='mod'); m.forEach(f => st[f] = 'staged'); draw(m.length ? `Staged ${m.join(', ')}.` : 'Nothing to stage. Edit a file first.'); });
+  $('#gcom').addEventListener('click', () => { const s = files.filter(f => st[f]==='staged'); if (!s.length) return draw('Nothing staged: “nothing to commit”. Run git add first.'); s.forEach(f => st[f] = 'clean'); const id = Math.random().toString(16).slice(2, 9); log.unshift(`${id} Update ${s.join(', ')}`); draw(`Committed ${s.length} file${s.length>1?'s':''} as ${id}.`); });
+  $('#grst').addEventListener('click', reset); reset();
+})();
+</script>
+</body>
+</html>

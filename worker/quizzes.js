@@ -948,6 +948,94 @@ export default {
     ]
   },
 
+  "html-basics": {
+    title: "HTML in 10 Minutes",
+    pass: 4,
+    questions: [
+      { q: "Which is a correct closing tag for a paragraph?",
+        o: ["<p/>", "</p>", "<\\p>", "<end p>"], a: 1,
+        e: "Closing tags start with a forward slash: </p>." },
+      { q: "Which attribute sets where a link goes?",
+        o: ["src", "alt", "href", "link"], a: 2,
+        e: "href holds the link's destination." },
+      { q: "What is the alt attribute on an image for?",
+        o: ["Making it bigger", "Describing it for people who can't see it", "Linking it", "Changing its colour"], a: 1,
+        e: "Screen readers read alt text aloud; it also shows if the image fails to load." },
+      { q: "Which tag makes a numbered list?",
+        o: ["<ul>", "<ol>", "<li>", "<nl>"], a: 1,
+        e: "<ol> is an ordered (numbered) list; <ul> is bulleted." },
+      { q: "Where does the visible content of a page go?",
+        o: ["<head>", "<title>", "<body>", "<meta>"], a: 2,
+        e: "Everything visible goes inside <body>." }
+    ]
+  },
+
+  "python-first-steps": {
+    title: "Python: Your First Program",
+    pass: 4,
+    questions: [
+      { q: "What does print(\"Hi\") do?",
+        o: ["Prints on paper", "Shows Hi on the screen", "Saves a file", "Nothing"], a: 1,
+        e: "print() displays its contents." },
+      { q: "In Python, what does = do?",
+        o: ["Checks if two things are equal", "Stores a value in a variable", "Adds numbers", "Ends a line"], a: 1,
+        e: "= assigns. To compare, use ==." },
+      { q: "Which numbers does range(2, 5) give?",
+        o: ["2, 3, 4, 5", "2, 3, 4", "3, 4, 5", "5, 4, 3, 2"], a: 1,
+        e: "It starts at 2 and stops before 5." },
+      { q: "Why does indentation matter in Python?",
+        o: ["It doesn't", "It shows which lines belong inside if statements and loops", "It makes code run faster", "It's only for comments"], a: 1,
+        e: "Python uses indentation to group code into blocks." },
+      { q: "What does print(f\"{2 + 3} apples\") show?",
+        o: ["{2 + 3} apples", "5 apples", "2 + 3 apples", "An error"], a: 1,
+        e: "Inside an f-string, the expression in braces is calculated: 5." }
+    ]
+  },
+
+  "spreadsheet-formulas": {
+    title: "Spreadsheet Formulas Every Beginner Needs",
+    pass: 4,
+    questions: [
+      { q: "What must every spreadsheet formula start with?",
+        o: ["#", "=", "+", "$"], a: 1,
+        e: "The equals sign tells the spreadsheet it's a formula." },
+      { q: "What does B2:B6 mean?",
+        o: ["B2 and B6 only", "The cells from B2 down to B6", "B2 divided by B6", "Columns B to 6"], a: 1,
+        e: "A colon makes a range." },
+      { q: "Which formula counts cells that contain numbers?",
+        o: ["=SUM()", "=COUNT()", "=MAX()", "=TOTAL()"], a: 1,
+        e: "COUNT counts numeric cells; COUNTA counts any non-empty cells." },
+      { q: "What does =IF(A1>10, \"Big\", \"Small\") show when A1 is 4?",
+        o: ["Big", "Small", "4", "FALSE"], a: 1,
+        e: "The test is false, so it shows the third value." },
+      { q: "What does the $ in $F$1 do?",
+        o: ["Formats it as money", "Keeps the reference fixed when you copy the formula", "Hides the cell", "Adds tax"], a: 1,
+        e: "It's an absolute reference; it won't shift when dragged." }
+    ]
+  },
+
+  "git-basics": {
+    title: "Git Basics in 15 Minutes",
+    pass: 4,
+    questions: [
+      { q: "What is a commit?",
+        o: ["A saved snapshot of your project", "A file", "A website", "A password"], a: 0,
+        e: "Each commit is a snapshot you can return to." },
+      { q: "What does git add do?",
+        o: ["Saves the snapshot", "Stages changes for the next commit", "Uploads to GitHub", "Creates a branch"], a: 1,
+        e: "add picks changes to include; commit saves them." },
+      { q: "Which command uploads your commits to GitHub?",
+        o: ["git pull", "git push", "git log", "git init"], a: 1,
+        e: "push sends commits to the remote; pull fetches them." },
+      { q: "Why use a branch?",
+        o: ["To delete files", "To try changes without affecting main", "To speed up Git", "To share passwords"], a: 1,
+        e: "Branches keep experimental work separate until you merge it." },
+      { q: "What should you never commit?",
+        o: ["HTML files", "Passwords and API keys", "README files", "Images"], a: 1,
+        e: "Pushed secrets should be treated as public. Use .gitignore." }
+    ]
+  },
+
   "jcurses": {
     title: "JCurses Crash Course",
     pass: 8,

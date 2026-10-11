@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Python: Your First Program · Shortutorial</title>
+<meta name="description" content="Start programming in Python with four short lessons: printing, variables, if statements and loops, with example output for every snippet and a quiz at the end.">
+<link rel="canonical" href="https://shortutorial.com/python-first-steps/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Python: Your First Program · Shortutorial">
+<meta property="og:description" content="Start programming in Python with four short lessons: printing, variables, if statements and loops, with example output for every snippet and a quiz at the end.">
+<meta property="og:url" content="https://shortutorial.com/python-first-steps/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body data-slug="python-first-steps">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=programming">Programming</a> / Python first steps</div>
+    <span class="eyebrow">Programming · Python</span>
+    <h1>Python: Your First Program</h1>
+    <p class="lede">Python is one of the friendliest programming languages, and one of the most used. Four short lessons take you from nothing to a working program.</p>
+    <div class="facts"><span>~12 min</span><span>4 lessons</span><span>Example output for every snippet</span><span>5-question quiz</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#y1">1 · Run Python</a><a href="#y2">2 · Variables</a><a href="#y3">3 · Decisions</a><a href="#y4">4 · Loops</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="y1">
+    <div class="lesson-head"><span class="step">01</span><h2>Running your first line</h2></div>
+
+    <p>The quickest way to start: open <a href="https://www.python.org/shell/" target="_blank" rel="noopener">python.org/shell</a> in your browser. To install it, download Python from <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">python.org/downloads</a>, then open the <b>IDLE</b> app that comes with it.</p>
+    <div class="code"><pre><code><span class="k">print</span>(<span class="s">"Hello, world!"</span>)</code></pre></div>
+    <figure><div class="term" role="img" aria-label="Terminal output">
+      <div class="term-bar"><span class="lights"><i></i><i></i><i></i></span><span class="t">python hello.py</span><span></span></div>
+      <div class="term-body"><span class="g">Hello, world!</span></div></div></figure>
+    <p><code>print()</code> shows whatever you put inside the brackets. Text goes in quotes; numbers don't.</p>
+  </section>
+
+  <section class="lesson" id="y2">
+    <div class="lesson-head"><span class="step">02</span><h2>Variables store values</h2></div>
+
+    <div class="code"><pre><code>name = <span class="s">"Sam"</span>
+age = 29
+<span class="k">print</span>(<span class="s">f"Hi {name}, next year you'll be {age + 1}"</span>)</code></pre></div>
+    <figure><div class="term" role="img" aria-label="Terminal output">
+      <div class="term-bar"><span class="lights"><i></i><i></i><i></i></span><span class="t">python</span><span></span></div>
+      <div class="term-body"><span class="g">Hi Sam, next year you'll be 30</span></div></div></figure>
+    <ul class="points">
+      <li><code>=</code> means “store this in”, not “equals”.</li>
+      <li>An <b>f-string</b> (with an <code>f</code> before the quote) drops variables into text using <code>{ }</code>.</li>
+      <li>Common types: text (<b>str</b>), whole numbers (<b>int</b>), decimals (<b>float</b>), and <code>True</code>/<code>False</code> (<b>bool</b>).</li>
+    </ul>
+    <div class="code"><pre><code>answer = <span class="k">input</span>(<span class="s">"What's your name? "</span>)   <span class="c"># waits for the user to type</span>
+<span class="k">print</span>(<span class="s">"Nice to meet you, "</span> + answer)</code></pre></div>
+  </section>
+
+  <section class="lesson" id="y3">
+    <div class="lesson-head"><span class="step">03</span><h2>Making decisions with if</h2></div>
+
+    <div class="code"><pre><code>temp = 31
+
+<span class="k">if</span> temp &gt; 30:
+    <span class="k">print</span>(<span class="s">"It's hot!"</span>)
+<span class="k">elif</span> temp &gt; 15:
+    <span class="k">print</span>(<span class="s">"Nice weather."</span>)
+<span class="k">else</span>:
+    <span class="k">print</span>(<span class="s">"Bring a coat."</span>)</code></pre></div>
+    <figure><div class="term" role="img" aria-label="Terminal output">
+      <div class="term-bar"><span class="lights"><i></i><i></i><i></i></span><span class="t">python</span><span></span></div>
+      <div class="term-body"><span class="g">It's hot!</span></div></div></figure>
+    <p class="callout warn"><span><b>Indentation matters.</b> Python uses the spaces at the start of a line to know what belongs inside the if. Use 4 spaces, and end the if line with a colon.</span></p>
+    <p>Comparisons: <code>==</code> equal, <code>!=</code> not equal, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>.</p>
+  </section>
+
+  <section class="lesson" id="y4">
+    <div class="lesson-head"><span class="step">04</span><h2>Repeating with loops</h2></div>
+
+    <div class="code"><pre><code>fruits = [<span class="s">"apple"</span>, <span class="s">"banana"</span>, <span class="s">"cherry"</span>]
+<span class="k">for</span> fruit <span class="k">in</span> fruits:
+    <span class="k">print</span>(<span class="s">"I like"</span>, fruit)
+
+<span class="k">for</span> i <span class="k">in</span> <span class="k">range</span>(1, 4):
+    <span class="k">print</span>(i, <span class="s">"squared is"</span>, i * i)</code></pre></div>
+    <figure><div class="term" role="img" aria-label="Terminal output">
+      <div class="term-bar"><span class="lights"><i></i><i></i><i></i></span><span class="t">python</span><span></span></div>
+      <div class="term-body"><span class="g">I like apple
+I like banana
+I like cherry
+1 squared is 1
+2 squared is 4
+3 squared is 9</span></div></div></figure>
+    <p><code>range(1, 4)</code> counts 1, 2, 3: it stops <b>before</b> the second number.</p>
+    <div class="try"><span class="try-h">Try it · predict the output</span><p style="margin:0" id="pyq"></p><div class="code"><pre><code id="pyc"></code></pre></div>
+      <div class="chipset" id="pyo"></div><div class="out" id="pyr"></div><div><button class="btn ghost" id="pyn" type="button">Next puzzle</button></div></div>
+  </section>
+
+  <section id="cert" style="scroll-margin-top:80px"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Tip: in the quiz, press 1–4 to answer.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+
+(function(){
+  const P = [
+    {c:'x = 5\nx = x + 2\nprint(x)', o:['5','7','x + 2','52'], a:1, e:'x starts at 5, then becomes 5 + 2.'},
+    {c:'for i in range(3):\n    print(i)', o:['1 2 3','0 1 2','0 1 2 3','3'], a:1, e:'range(3) counts 0, 1, 2. It starts at 0 and stops before 3.'},
+    {c:'name = "Ada"\nprint(f"Hi {name}!")', o:['Hi {name}!','Hi Ada!','Hi name!','An error'], a:1, e:'The f-string drops the value of name into the text.'},
+    {c:'n = 12\nif n % 2 == 0:\n    print("even")\nelse:\n    print("odd")', o:['even','odd','12','0'], a:0, e:'% gives the remainder. 12 ÷ 2 has remainder 0, so it\'s even.'},
+    {c:'print("3" + "4")', o:['7','34','"7"','An error'], a:1, e:'Quotes make them text, and + joins text together.'},
+    {c:'total = 0\nfor n in [1, 2, 3]:\n    total = total + n\nprint(total)', o:['3','6','123','0'], a:1, e:'0 + 1 + 2 + 3 = 6.'},
+  ];
+  let i = 0;
+  function show(){
+    const p = P[i % P.length];
+    $('#pyq').innerHTML = `<b>Puzzle ${i % P.length + 1} of ${P.length}.</b> What does this print?`;
+    $('#pyc').textContent = p.c;
+    $('#pyo').innerHTML = p.o.map((o, k) => `<button data-k="${k}">${o.replace(/</g,'&lt;')}</button>`).join('');
+    $('#pyr').innerHTML = '';
+    $('#pyo').querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+      const ok = +b.dataset.k === p.a;
+      $('#pyo').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', +x.dataset.k === p.a));
+      $('#pyr').innerHTML = `<span class="${ok ? 'ok' : 'no'}">${ok ? 'Correct!' : 'Not quite.'}</span> <span style="font-size:1rem;font-weight:400">${p.e}</span>`;
+    }));
+  }
+  $('#pyn').addEventListener('click', () => { i++; show(); }); show();
+})();
+</script>
+</body>
+</html>
