@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exponents and Scientific Notation · Shortutorial</title>
+<meta name="description" content="Learn exponents in three short lessons: what powers mean, the rules for multiplying and dividing them, and writing huge and tiny numbers in scientific notation, with an interactive converter.">
+<link rel="canonical" href="https://shortutorial.com/exponents-scientific-notation/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Exponents and Scientific Notation · Shortutorial">
+<meta property="og:description" content="Learn exponents in three short lessons: what powers mean, the rules for multiplying and dividing them, and writing huge and tiny numbers in scientific notation, with an interactive converter.">
+<meta property="og:url" content="https://shortutorial.com/exponents-scientific-notation/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body data-slug="exponents-scientific-notation">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=math">Math</a> / Exponents</div>
+    <span class="eyebrow">Math · Foundations</span>
+    <h1>Exponents and Scientific Notation</h1>
+    <p class="lede">Exponents are a shorthand for repeated multiplication, and they're how scientists write numbers like the distance to the Sun without a page of zeros.</p>
+    <div class="facts"><span>~8 min</span><span>3 lessons</span><span>Interactive converter</span><span>5-question quiz</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#ex1">1 · Powers</a><a href="#ex2">2 · Rules</a><a href="#ex3">3 · Scientific notation</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="ex1">
+    <div class="lesson-head"><span class="step">01</span><h2>What a power means</h2></div>
+
+    <div class="formula">2<sup>5</sup> = 2 × 2 × 2 × 2 × 2 = <span class="v">32</span><small>the small number (exponent) says how many times to multiply the big number (base) by itself</small></div>
+    <ul class="points">
+      <li>Anything to the power 1 is itself: 7¹ = 7.</li>
+      <li>Anything (except 0) to the power 0 is <b>1</b>: 7⁰ = 1.</li>
+      <li>Negative powers mean “one over”: 2⁻³ = 1/2³ = 1/8.</li>
+      <li>Powers of 10 just add zeros: 10⁴ = 10,000.</li>
+    </ul>
+  </section>
+
+  <section class="lesson" id="ex2">
+    <div class="lesson-head"><span class="step">02</span><h2>The rules that save time</h2></div>
+
+    <div class="tw"><table class="t"><tr><th>Rule</th><th>Example</th></tr><tr><td>Multiply same base: <b>add</b> exponents</td><td>2³ × 2⁴ = 2⁷</td></tr><tr><td>Divide same base: <b>subtract</b> exponents</td><td>5⁶ ÷ 5² = 5⁴</td></tr><tr><td>Power of a power: <b>multiply</b> exponents</td><td>(3²)³ = 3⁶</td></tr></table></div>
+    <p class="callout warn"><span><b>Careful:</b> 2³ × 3⁴ can't be combined that way. The bases are different.</span></p>
+  </section>
+
+  <section class="lesson" id="ex3">
+    <div class="lesson-head"><span class="step">03</span><h2>Scientific notation</h2></div>
+
+    <p>Write a number as <b>a number between 1 and 10</b> times <b>a power of 10</b>.</p>
+    <div class="tw"><table class="t"><tr><th>Normal</th><th>Scientific notation</th></tr><tr><td>150,000,000 km (Earth to Sun)</td><td>1.5 × 10⁸ km</td></tr><tr><td>8,200,000,000 (people on Earth, roughly)</td><td>8.2 × 10⁹</td></tr><tr><td>0.000001 m (a micrometre)</td><td>1 × 10⁻⁶ m</td></tr></table></div>
+    <p>The exponent counts how many places the decimal point moved: left for big numbers (positive), right for small ones (negative). Calculators show it as <code>1.5E8</code>.</p>
+    <div class="try"><span class="try-h">Try it · converter</span><div class="row"><label>Any number<input type="text" id="snv" value="150000000" style="width:200px"></label></div>
+      <div class="out" id="snOut"></div><div class="work" id="snWork"></div></div>
+  </section>
+
+  <section id="cert" style="scroll-margin-top:80px"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Tip: in the quiz, press 1–4 to answer.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+
+(function(){
+  const sup = n => String(n).replace(/-/g,'⁻').replace(/\d/g, d => '⁰¹²³⁴⁵⁶⁷⁸⁹'[d]);
+  function go(){
+    const raw = $('#snv').value.replace(/,/g,'').trim(), v = Number(raw);
+    if (!raw || !isFinite(v)){ $('#snOut').textContent = 'Type a number, like 0.00042 or 6.02e23.'; $('#snWork').textContent=''; return; }
+    if (v === 0){ $('#snOut').innerHTML = '<b>0</b>'; $('#snWork').textContent=''; return; }
+    const e = Math.floor(Math.log10(Math.abs(v))), m = v / Math.pow(10, e);
+    const mm = Number(m.toPrecision(6));
+    $('#snOut').innerHTML = `<b>${mm} × 10${sup(e)}</b>`;
+    $('#snWork').textContent = `The decimal point moves ${Math.abs(e)} place${Math.abs(e)===1?'':'s'} ${e >= 0 ? 'left' : 'right'}, so the exponent is ${e}.\nCalculator style: ${mm}E${e}\nWritten out: ${Math.abs(e) < 21 ? v.toLocaleString(undefined,{maximumFractionDigits:20}) : '(too long to show)'}`;
+  }
+  live($('.try'), go);
+})();
+</script>
+</body>
+</html>

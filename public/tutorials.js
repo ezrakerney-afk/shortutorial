@@ -445,6 +445,38 @@ window.TUTORIALS = [
     minutes: 10
   },
   {
+    slug: "ratios-and-proportions",
+    title: "Ratios and Proportions",
+    summary: "Simplify, share in a ratio, and scale recipes and maps.",
+    category: "Math",
+    tags: ["math", "ratio", "proportion", "recipe", "scale", "map scale"],
+    minutes: 8
+  },
+  {
+    slug: "exponents-scientific-notation",
+    title: "Exponents and Scientific Notation",
+    summary: "Powers, exponent rules, and writing huge and tiny numbers.",
+    category: "Math",
+    tags: ["math", "exponents", "powers", "scientific notation", "standard form", "science"],
+    minutes: 8
+  },
+  {
+    slug: "area-and-volume",
+    title: "Area, Perimeter and Volume",
+    summary: "Work out paint, flooring, fencing and soil.",
+    category: "Math",
+    tags: ["math", "area", "perimeter", "volume", "geometry", "circle", "diy", "square metres"],
+    minutes: 10
+  },
+  {
+    slug: "watts-and-energy-bills",
+    title: "Watts, kWh and Your Electricity Bill",
+    summary: "What appliances really cost to run, and how to read your bill.",
+    category: "Life skills",
+    tags: ["electricity", "watts", "kwh", "energy bill", "save money", "appliances", "home"],
+    minutes: 10
+  },
+  {
     slug: "jcurses",
     title: "JCurses Crash Course",
     summary: "Build colorful, keyboard-driven Java programs that run in a terminal.",

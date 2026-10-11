@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Area, Perimeter and Volume · Shortutorial</title>
+<meta name="description" content="Learn area, perimeter and volume with practical examples: rectangles, triangles and circles, square units, and boxes and cylinders, plus a calculator for paint, flooring and soil.">
+<link rel="canonical" href="https://shortutorial.com/area-and-volume/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Area, Perimeter and Volume · Shortutorial">
+<meta property="og:description" content="Learn area, perimeter and volume with practical examples: rectangles, triangles and circles, square units, and boxes and cylinders, plus a calculator for paint, flooring and soil.">
+<meta property="og:url" content="https://shortutorial.com/area-and-volume/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body data-slug="area-and-volume">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=math">Math</a> / Area and volume</div>
+    <span class="eyebrow">Math · Geometry</span>
+    <h1>Area, Perimeter and Volume</h1>
+    <p class="lede">How much paint, how many floor tiles, how much soil for the planter? These three ideas answer all of them.</p>
+    <div class="facts"><span>~10 min</span><span>3 lessons</span><span>Project calculator</span><span>5-question quiz</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#av1">1 · Perimeter</a><a href="#av2">2 · Area</a><a href="#av3">3 · Volume</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="av1">
+    <div class="lesson-head"><span class="step">01</span><h2>Perimeter: the distance around</h2></div>
+
+    <p>Perimeter is the total length of the edges, like the fence around a garden. Just add up the sides.</p>
+    <div class="example"><div class="ex-h">Example · a 5 m × 3 m garden</div><ol><li>5 + 3 + 5 + 3</li><li class="ans">16 m of fencing</li></ol></div>
+    <p>For a circle, the distance around is the <b>circumference</b>: π × diameter, about 3.14 × the distance across.</p>
+  </section>
+
+  <section class="lesson" id="av2">
+    <div class="lesson-head"><span class="step">02</span><h2>Area: the space inside</h2></div>
+
+    <p>Area is measured in <b>square units</b> (m², ft²): how many 1 × 1 squares would cover the shape.</p>
+    <div class="tw"><table class="t"><tr><th>Shape</th><th>Area</th></tr><tr><td>Rectangle</td><td>length × width</td></tr><tr><td>Triangle</td><td>½ × base × height</td></tr><tr><td>Circle</td><td>π × radius²  (radius = half the width)</td></tr></table></div>
+    <div class="example"><div class="ex-h">Example · paint for a 4 m × 2.5 m wall, one door</div><ol><li>Wall: 4 × 2.5 = 10 m²</li><li>Door (about 2 m × 0.8 m): 1.6 m²</li><li>Paint: 10 − 1.6 = 8.4 m², × 2 coats = 16.8 m²</li><li class="ans">Check the tin: if 1 litre covers 12 m², you need about 1.4 litres</li></ol></div>
+    <p class="callout warn"><span><b>Units trap:</b> 1 m² is <b>not</b> 100 cm². It's 100 cm × 100 cm = 10,000 cm².</span></p>
+  </section>
+
+  <section class="lesson" id="av3">
+    <div class="lesson-head"><span class="step">03</span><h2>Volume: how much fits inside</h2></div>
+
+    <p>Volume is measured in <b>cubic units</b> (m³, cm³) or litres. 1 litre = 1,000 cm³, and 1 m³ = 1,000 litres.</p>
+    <div class="tw"><table class="t"><tr><th>Shape</th><th>Volume</th></tr><tr><td>Box (cuboid)</td><td>length × width × height</td></tr><tr><td>Cylinder</td><td>π × radius² × height</td></tr></table></div>
+    <div class="example"><div class="ex-h">Example · soil for a 1.2 m × 0.4 m planter, 0.3 m deep</div><ol><li>1.2 × 0.4 × 0.3 = 0.144 m³</li><li>× 1,000</li><li class="ans">144 litres of soil</li></ol></div>
+    <div class="try"><span class="try-h">Try it · project calculator</span><div class="row"><label>Shape<select id="avs"><option value="rect">Rectangle / box</option><option value="circ">Circle / cylinder</option><option value="tri">Triangle</option></select></label>
+        <label id="avL1">Length (m)<input type="number" id="ava" value="4" step="0.1"></label><label id="avL2">Width (m)<input type="number" id="avb" value="2.5" step="0.1"></label><label>Depth (m, optional)<input type="number" id="avc" value="" step="0.05" placeholder="for volume"></label></div>
+      <div class="out" id="avOut"></div><div class="work" id="avWork"></div></div>
+  </section>
+
+  <section id="cert" style="scroll-margin-top:80px"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Tip: in the quiz, press 1–4 to answer.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+
+(function(){
+  function go(){
+    const s = $('#avs').value, a = +$('#ava').value, b = +$('#avb').value, c = +$('#avc').value;
+    $('#avL1').firstChild.textContent = s === 'circ' ? 'Diameter (m)' : s === 'tri' ? 'Base (m)' : 'Length (m)';
+    $('#avL2').style.display = s === 'circ' ? 'none' : ''; $('#avL2').firstChild.textContent = s === 'tri' ? 'Height (m)' : 'Width (m)';
+    if (!(a > 0) || (s !== 'circ' && !(b > 0))){ $('#avOut').textContent = 'Enter the measurements.'; $('#avWork').textContent=''; return; }
+    let area, per, how;
+    if (s === 'rect'){ area = a*b; per = 2*(a+b); how = `Area: ${a} × ${b}\nPerimeter: 2 × (${a} + ${b})`; }
+    if (s === 'circ'){ const r = a/2; area = Math.PI*r*r; per = Math.PI*a; how = `Radius = ${fmt(r,3)}\nArea: π × ${fmt(r,3)}²\nCircumference: π × ${a}`; }
+    if (s === 'tri'){ area = 0.5*a*b; per = null; how = `Area: ½ × ${a} × ${b}`; }
+    let out = `Area <b>${fmt(area,2)} m²</b>` + (per ? ` · ${s==='circ'?'Circumference':'Perimeter'} <b>${fmt(per,2)} m</b>` : '');
+    if (c > 0){ const vol = area*c; out += `<br>Volume <b>${fmt(vol,3)} m³</b> = <b>${fmt(vol*1000,0)} litres</b>`; how += `\nVolume: ${fmt(area,3)} × ${c}`; }
+    $('#avOut').innerHTML = out; $('#avWork').textContent = how;
+  }
+  live($('.try'), go);
+})();
+</script>
+</body>
+</html>

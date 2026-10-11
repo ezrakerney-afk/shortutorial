@@ -1212,6 +1212,94 @@ export default {
     ]
   },
 
+  "ratios-and-proportions": {
+    title: "Ratios and Proportions",
+    pass: 4,
+    questions: [
+      { q: "What is 12 : 18 simplified?",
+        o: ["2 : 3", "3 : 2", "6 : 9", "4 : 5"], a: 0,
+        e: "Divide both by 6." },
+      { q: "Share $60 in the ratio 1 : 2. How much is the bigger share?",
+        o: ["$20", "$30", "$40", "$45"], a: 2,
+        e: "3 parts, so one part is $20; two parts are $40." },
+      { q: "A recipe for 2 needs 150 g rice. How much for 5?",
+        o: ["300 g", "375 g", "450 g", "750 g"], a: 1,
+        e: "Scale factor 2.5: 150 × 2.5 = 375 g." },
+      { q: "On a 1 : 50,000 map, 2 cm is how far in real life?",
+        o: ["100 m", "1 km", "10 km", "500 m"], a: 1,
+        e: "2 × 50,000 = 100,000 cm = 1 km." },
+      { q: "A paint mix is 1 : 4 colour to white. What fraction is colour?",
+        o: ["1/4", "1/5", "4/5", "1/3"], a: 1,
+        e: "1 part out of 5 parts in total." }
+    ]
+  },
+
+  "exponents-scientific-notation": {
+    title: "Exponents and Scientific Notation",
+    pass: 4,
+    questions: [
+      { q: "What is 3⁴?",
+        o: ["12", "81", "64", "7"], a: 1,
+        e: "3 × 3 × 3 × 3 = 81." },
+      { q: "What is 9⁰?",
+        o: ["0", "1", "9", "90"], a: 1,
+        e: "Any non-zero number to the power 0 is 1." },
+      { q: "2³ × 2⁵ equals…",
+        o: ["2⁸", "2¹⁵", "4⁸", "2²"], a: 0,
+        e: "Same base: add the exponents." },
+      { q: "What is 4,200,000 in scientific notation?",
+        o: ["42 × 10⁵", "4.2 × 10⁶", "4.2 × 10⁵", "0.42 × 10⁷"], a: 1,
+        e: "The decimal point moves 6 places left." },
+      { q: "What is 3 × 10⁻² as a normal number?",
+        o: ["300", "0.03", "0.3", "−300"], a: 1,
+        e: "Move the decimal point 2 places left: 0.03." }
+    ]
+  },
+
+  "area-and-volume": {
+    title: "Area, Perimeter and Volume",
+    pass: 4,
+    questions: [
+      { q: "What is the perimeter of a 6 m × 4 m rectangle?",
+        o: ["24 m", "20 m", "10 m", "24 m²"], a: 1,
+        e: "6 + 4 + 6 + 4 = 20 m." },
+      { q: "What is the area of a triangle with base 10 and height 6?",
+        o: ["60", "30", "16", "36"], a: 1,
+        e: "½ × 10 × 6 = 30." },
+      { q: "What units is area measured in?",
+        o: ["Metres", "Square units, like m²", "Cubic units, like m³", "Litres"], a: 1,
+        e: "Area counts squares; volume counts cubes." },
+      { q: "How many litres are in 1 m³?",
+        o: ["10", "100", "1,000", "1,000,000"], a: 2,
+        e: "1 m³ = 1,000 litres." },
+      { q: "What is the area of a circle with radius 2 (to 1 decimal place)?",
+        o: ["6.3", "12.6", "4.0", "25.1"], a: 1,
+        e: "π × 2² = 4π ≈ 12.6." }
+    ]
+  },
+
+  "watts-and-energy-bills": {
+    title: "Watts, kWh and Your Electricity Bill",
+    pass: 4,
+    questions: [
+      { q: "What does a kilowatt-hour measure?",
+        o: ["Voltage", "Energy used: 1,000 W for one hour", "Current", "Your fixed charge"], a: 1,
+        e: "Power × time, the unit on your bill." },
+      { q: "A 2,000 W heater runs for 3 hours. How many kWh?",
+        o: ["6", "0.6", "600", "2"], a: 0,
+        e: "2,000 × 3 ÷ 1,000 = 6 kWh." },
+      { q: "Which usually costs the most to run?",
+        o: ["LED bulb", "Laptop", "Space heater", "Phone charger"], a: 2,
+        e: "Heating and cooling use the most power." },
+      { q: "Watts equals…",
+        o: ["Volts + amps", "Volts × amps", "Amps ÷ volts", "kWh × hours"], a: 1,
+        e: "Power = voltage × current." },
+      { q: "Why can a kettle use lots of watts but cost little?",
+        o: ["It doesn't use electricity", "It only runs for a few minutes", "Kettles are free", "It runs at night"], a: 1,
+        e: "Energy is power × time, and the time is short." }
+    ]
+  },
+
   "jcurses": {
     title: "JCurses Crash Course",
     pass: 8,
