@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Learn Morse Code · Shortutorial</title>
+<meta name="description" content="Learn Morse code in three short lessons: dots, dashes and timing, the easiest letters to learn first, and SOS, with a translator that plays your message as sound.">
+<link rel="canonical" href="https://shortutorial.com/morse-code/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Learn Morse Code · Shortutorial">
+<meta property="og:description" content="Learn Morse code in three short lessons: dots, dashes and timing, the easiest letters to learn first, and SOS, with a translator that plays your message as sound.">
+<meta property="og:url" content="https://shortutorial.com/morse-code/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body data-slug="morse-code">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=morse">Life skills</a> / Morse code</div>
+    <span class="eyebrow">Skills · Fun to learn</span>
+    <h1>Learn Morse Code</h1>
+    <p class="lede">A 180-year-old code that still works with nothing but a flashlight, a whistle or a tapping finger. Learn how it works, then hear your own messages.</p>
+    <div class="facts"><span>~8 min</span><span>3 lessons</span><span>Translator with sound</span><span>5-question quiz</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#mo1">1 · Dots & dashes</a><a href="#mo2">2 · Letters</a><a href="#mo3">3 · SOS</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="mo1">
+    <div class="lesson-head"><span class="step">01</span><h2>Dots, dashes and timing</h2></div>
+
+    <p>Every letter is a short pattern of <b>dots</b> (short signals, “dit”) and <b>dashes</b> (long signals, “dah”). Timing is what makes it readable:</p>
+    <div class="tw"><table class="t"><tr><th>Element</th><th>Length</th></tr><tr><td>Dot</td><td>1 unit</td></tr><tr><td>Dash</td><td>3 units</td></tr><tr><td>Gap inside a letter</td><td>1 unit</td></tr><tr><td>Gap between letters</td><td>3 units</td></tr><tr><td>Gap between words</td><td>7 units</td></tr></table></div>
+    <p class="callout"><span><b>Learn by sound, not sight.</b> Experienced operators hear “di-dah” as the letter A, rather than counting dots and dashes. Say the patterns out loud.</span></p>
+  </section>
+
+  <section class="lesson" id="mo2">
+    <div class="lesson-head"><span class="step">02</span><h2>The alphabet</h2></div>
+
+    <div class="tw"><table class="t"><tr><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><td>A ·−</td><td>B −···</td><td>C −·−·</td><td>D −··</td><td>E ·</td><td>F ··−·</td></tr><tr><td>G −−·</td><td>H ····</td><td>I ··</td><td>J ·−−−</td><td>K −·−</td><td>L ·−··</td></tr><tr><td>M −−</td><td>N −·</td><td>O −−−</td><td>P ·−−·</td><td>Q −−·−</td><td>R ·−·</td></tr><tr><td>S ···</td><td>T −</td><td>U ··−</td><td>V ···−</td><td>W ·−−</td><td>X −··−</td></tr><tr><td>Y −·−−</td><td>Z −−··</td><td>1 ·−−−−</td><td>5 ·····</td><td>0 −−−−−</td><td>? ··−−··</td></tr></table></div>
+    <p><b>Start with the shortest:</b> E (·), T (−), then I, A, N, M, S, O. The most common English letters have the shortest codes.</p>
+  </section>
+
+  <section class="lesson" id="mo3">
+    <div class="lesson-head"><span class="step">03</span><h2>SOS and using it</h2></div>
+
+    <p><b>SOS</b> is · · · − − − · · · sent as one run without letter gaps. It was chosen because it's simple and unmistakable, not because it stands for anything.</p>
+    <ul class="points">
+      <li>You can send it with a flashlight, a car horn, a whistle, a mirror flash or by tapping.</li>
+      <li>Three of anything (three whistles, three flashes) is a widely recognised distress signal too.</li>
+    </ul>
+    <div class="try"><span class="try-h">Try it · translator</span><label>Type a message<input type="text" id="mIn" value="SOS" style="width:100%"></label>
+      <div class="out" id="mOut" style="font-family:var(--mono);letter-spacing:.06em;overflow-wrap:anywhere"></div>
+      <div class="row"><button class="btn" id="mPlay" type="button">▶ Play sound</button><label>Speed<select id="mSp"><option value="120">Slow</option><option value="80" selected>Medium</option><option value="55">Fast</option></select></label><span id="mLamp" style="width:22px;height:22px;border-radius:50%;background:var(--line);display:inline-block" aria-hidden="true"></span></div></div>
+  </section>
+
+  <section id="cert" style="scroll-margin-top:80px"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Tip: in the quiz, press 1–4 to answer.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+
+(function(){
+  const M = {A:'.-',B:'-...',C:'-.-.',D:'-..',E:'.',F:'..-.',G:'--.',H:'....',I:'..',J:'.---',K:'-.-',L:'.-..',M:'--',N:'-.',O:'---',P:'.--.',Q:'--.-',R:'.-.',S:'...',T:'-',U:'..-',V:'...-',W:'.--',X:'-..-',Y:'-.--',Z:'--..',
+    '1':'.----','2':'..---','3':'...--','4':'....-','5':'.....','6':'-....','7':'--...','8':'---..','9':'----.','0':'-----','?':'..--..','.':'.-.-.-',',':'--..--','!':'-.-.--'};
+  const enc = s => s.toUpperCase().split(/\s+/).filter(Boolean).map(w => [...w].map(c => M[c]).filter(Boolean).join(' ')).join('   /   ');
+  const show = () => { $('#mOut').textContent = enc($('#mIn').value).replace(/\./g,'·').replace(/-/g,'−') || '—'; };
+  $('#mIn').addEventListener('input', show); show();
+  let ctx = null, playing = false;
+  $('#mPlay').addEventListener('click', async () => {
+    if (playing) return; playing = true; $('#mPlay').textContent = 'Playing…';
+    try {
+      ctx = ctx || new (window.AudioContext || window.webkitAudioContext)(); await ctx.resume();
+      const u = +$('#mSp').value / 1000; let t = ctx.currentTime + 0.05; const events = [];
+      $('#mIn').value.toUpperCase().split(/\s+/).filter(Boolean).forEach((w, wi) => {
+        if (wi) t += 4*u;
+        [...w].forEach((c, ci) => { const code = M[c]; if (!code) return; if (ci) t += 2*u;
+          [...code].forEach((s, si) => { if (si) t += u; const d = s === '.' ? u : 3*u;
+            const o = ctx.createOscillator(), g = ctx.createGain(); o.frequency.value = 650; o.connect(g); g.connect(ctx.destination);
+            g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(0.25, t + 0.005); g.gain.setValueAtTime(0.25, t + d - 0.005); g.gain.linearRampToValueAtTime(0, t + d);
+            o.start(t); o.stop(t + d + 0.01); events.push([t, d]); t += d; }); });
+      });
+      const t0 = ctx.currentTime, start = performance.now();
+      events.forEach(([s, d]) => { setTimeout(() => $('#mLamp').style.background = 'var(--amber)', (s - t0)*1000); setTimeout(() => $('#mLamp').style.background = 'var(--line)', (s - t0 + d)*1000); });
+      setTimeout(() => { playing = false; $('#mPlay').textContent = '▶ Play sound'; }, (t - t0)*1000 + 100);
+    } catch(e){ playing = false; $('#mPlay').textContent = '▶ Play sound'; }
+  });
+})();
+</script>
+</body>
+</html>

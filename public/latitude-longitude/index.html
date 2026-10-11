@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Latitude and Longitude · Shortutorial</title>
+<meta name="description" content="Understand map coordinates: what latitude and longitude are, reading degrees, minutes and seconds versus decimal, and finding the distance between two places, with an interactive coordinate tool.">
+<link rel="canonical" href="https://shortutorial.com/latitude-longitude/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Latitude and Longitude · Shortutorial">
+<meta property="og:description" content="Understand map coordinates: what latitude and longitude are, reading degrees, minutes and seconds versus decimal, and finding the distance between two places, with an interactive coordinate tool.">
+<meta property="og:url" content="https://shortutorial.com/latitude-longitude/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body data-slug="latitude-longitude">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=maps">Life skills</a> / Latitude and longitude</div>
+    <span class="eyebrow">Skills · Maps</span>
+    <h1>Latitude and Longitude</h1>
+    <p class="lede">Every place on Earth has an address made of two numbers. Learn to read them, convert between the two formats, and find the distance between any two points.</p>
+    <div class="facts"><span>~8 min</span><span>3 lessons</span><span>Coordinate and distance tool</span><span>5-question quiz</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#ll1">1 · The grid</a><a href="#ll2">2 · Formats</a><a href="#ll3">3 · Distance</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="ll1">
+    <div class="lesson-head"><span class="step">01</span><h2>An invisible grid around the Earth</h2></div>
+
+    <ul class="points">
+      <li><b>Latitude</b> measures how far north or south of the equator you are: 0° at the equator, up to 90° at the poles. Lines of latitude run east–west, like rungs on a ladder (“<b>lat</b>-ter”).</li>
+      <li><b>Longitude</b> measures how far east or west of the Prime Meridian (through Greenwich, London) you are: 0° to 180° each way. Its lines run pole to pole.</li>
+    </ul>
+    <p>Coordinates are always written <b>latitude first</b>: the Statue of Liberty is about <b>40.689° N, 74.045° W</b>.</p>
+    <p class="callout"><span><b>Signs instead of letters:</b> in decimal form, north and east are positive; south and west are negative. So 74.045° W is −74.045.</span></p>
+  </section>
+
+  <section class="lesson" id="ll2">
+    <div class="lesson-head"><span class="step">02</span><h2>Degrees, minutes, seconds vs decimal</h2></div>
+
+    <p>Older maps and GPS units use <b>degrees, minutes and seconds</b> (DMS). 1 degree = 60 minutes; 1 minute = 60 seconds.</p>
+    <div class="formula">decimal = degrees + <span class="v">minutes</span>/60 + <span class="v">seconds</span>/3600</div>
+    <div class="example"><div class="ex-h">Example · 40° 41′ 21″ N</div><ol><li>41 ÷ 60 = 0.6833</li><li>21 ÷ 3600 = 0.0058</li><li>40 + 0.6833 + 0.0058</li><li class="ans">40.6892° N</li></ol></div>
+    <p>To get coordinates for any spot: in Google Maps, right-click (or long-press on a phone) the place; the numbers appear at the top of the menu.</p>
+  </section>
+
+  <section class="lesson" id="ll3">
+    <div class="lesson-head"><span class="step">03</span><h2>How far apart are two places?</h2></div>
+
+    <p>One degree of latitude is always about <b>111 km (69 miles)</b>. Degrees of longitude shrink as you head towards the poles, so for real distances you use the <b>great-circle</b> formula, which follows the curve of the Earth. Flights follow these curved routes, which is why they look bent on flat maps.</p>
+    <div class="try"><span class="try-h">Try it · coordinate tool</span><div class="row"><label>Place A (lat, long)<input type="text" id="llA" value="40.6892, -74.0445" style="width:200px"></label><label>Place B (lat, long)<input type="text" id="llB" value="51.5007, -0.1246" style="width:200px"></label></div>
+      <div class="chipset" id="llP"><button data-v="48.8584, 2.2945">Eiffel Tower</button><button data-v="-33.8568, 151.2153">Sydney Opera House</button><button data-v="35.6586, 139.7454">Tokyo Tower</button><button data-v="-22.9519, -43.2105">Christ the Redeemer</button></div>
+      <div class="out" id="llOut"></div><div class="work" id="llWork"></div></div>
+  </section>
+
+  <section id="cert" style="scroll-margin-top:80px"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Tip: in the quiz, press 1–4 to answer.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+
+(function(){
+  const parse = s => { const m = s.split(',').map(x => parseFloat(x)); return m.length === 2 && m.every(isFinite) && Math.abs(m[0]) <= 90 && Math.abs(m[1]) <= 180 ? m : null; };
+  const dms = (v, pos, neg) => { const a = Math.abs(v), d = Math.floor(a), mf = (a - d)*60, m = Math.floor(mf), s = Math.round((mf - m)*60); return `${d}° ${m}′ ${s}″ ${v >= 0 ? pos : neg}`; };
+  function go(){
+    const A = parse($('#llA').value), B = parse($('#llB').value);
+    if (!A || !B){ $('#llOut').textContent = 'Use the format: 40.6892, -74.0445'; $('#llWork').textContent=''; return; }
+    const R = 6371, r = x => x*Math.PI/180, dLat = r(B[0]-A[0]), dLon = r(B[1]-A[1]);
+    const h = Math.sin(dLat/2)**2 + Math.cos(r(A[0]))*Math.cos(r(B[0]))*Math.sin(dLon/2)**2, d = 2*R*Math.asin(Math.sqrt(h));
+    $('#llOut').innerHTML = `Distance: <b>${Math.round(d).toLocaleString()} km</b> (${Math.round(d*0.621371).toLocaleString()} miles)`;
+    $('#llWork').textContent = `A: ${dms(A[0],'N','S')}, ${dms(A[1],'E','W')}\nB: ${dms(B[0],'N','S')}, ${dms(B[1],'E','W')}\nGreat-circle distance on a sphere (Earth radius 6,371 km)`;
+  }
+  document.querySelectorAll('#llP button').forEach(b => b.addEventListener('click', () => { $('#llB').value = b.dataset.v; go(); }));
+  live($('.try'), go);
+})();
+</script>
+</body>
+</html>

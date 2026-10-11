@@ -1300,6 +1300,94 @@ export default {
     ]
   },
 
+  "morse-code": {
+    title: "Learn Morse Code",
+    pass: 4,
+    questions: [
+      { q: "How long is a dash compared with a dot?",
+        o: ["The same", "Twice as long", "Three times as long", "Half as long"], a: 2,
+        e: "A dash is 3 units; a dot is 1." },
+      { q: "What is E in Morse code?",
+        o: ["−", "·", "· −", "· · ·"], a: 1,
+        e: "E is a single dot, the most common letter." },
+      { q: "What is SOS?",
+        o: ["· · · − − − · · ·", "− − − · · · − − −", "· − · − · −", "− · − ·"], a: 0,
+        e: "Three dots, three dashes, three dots." },
+      { q: "Why are E and T so short?",
+        o: ["They're vowels", "They're among the most common letters", "Alphabetical order", "Random choice"], a: 1,
+        e: "Common letters got short codes to save time." },
+      { q: "What's the gap between words?",
+        o: ["1 unit", "3 units", "7 units", "10 units"], a: 2,
+        e: "Words are separated by 7 units of silence." }
+    ]
+  },
+
+  "latitude-longitude": {
+    title: "Latitude and Longitude",
+    pass: 4,
+    questions: [
+      { q: "Which is written first in coordinates?",
+        o: ["Longitude", "Latitude", "Whichever is bigger", "Altitude"], a: 1,
+        e: "Latitude first, then longitude." },
+      { q: "What is the latitude of the equator?",
+        o: ["0°", "90°", "180°", "45°"], a: 0,
+        e: "The equator is 0° latitude." },
+      { q: "In decimal coordinates, what does a negative longitude mean?",
+        o: ["South", "West", "North", "East"], a: 1,
+        e: "West of the Prime Meridian is negative." },
+      { q: "Convert 30° 30′ 0″ to decimal.",
+        o: ["30.3", "30.5", "30.30", "33"], a: 1,
+        e: "30 minutes is half a degree." },
+      { q: "About how long is one degree of latitude?",
+        o: ["11 km", "111 km", "1,111 km", "60 km"], a: 1,
+        e: "Roughly 111 km or 69 miles." }
+    ]
+  },
+
+  "time-zones": {
+    title: "Time Zones Made Simple",
+    pass: 4,
+    questions: [
+      { q: "What is UTC?",
+        o: ["A time zone in the US", "The reference time the world's offsets are based on", "Daylight saving time", "Tokyo time"], a: 1,
+        e: "Every zone is written as an offset from UTC." },
+      { q: "If it's 12:00 UTC, what time is it in a UTC+9 zone?",
+        o: ["03:00", "21:00", "09:00", "12:09"], a: 1,
+        e: "Add 9 hours: 21:00." },
+      { q: "In summer, New York usually switches from UTC−5 to…",
+        o: ["UTC−6", "UTC−4", "UTC+5", "UTC+0"], a: 1,
+        e: "Clocks go forward an hour." },
+      { q: "Which of these has a half-hour offset?",
+        o: ["London", "India", "Tokyo", "Paris"], a: 1,
+        e: "India is UTC+5:30." },
+      { q: "What's the safest way to schedule a call across zones?",
+        o: ["Assume they're in your zone", "Send a calendar invite and state the zone", "Use 12 pm always", "Ask them to guess"], a: 1,
+        e: "Calendars convert automatically; writing the zone avoids mix-ups." }
+    ]
+  },
+
+  "write-professional-email": {
+    title: "Write a Professional Email",
+    pass: 4,
+    questions: [
+      { q: "Which is the best subject line?",
+        o: ["Hi", "Question", "Question about the March invoice", "URGENT!!!"], a: 2,
+        e: "Specific subjects get opened and answered." },
+      { q: "Where should the purpose of your email go?",
+        o: ["The last line", "The first line", "The subject only", "An attachment"], a: 1,
+        e: "Put your purpose up front so it isn't missed." },
+      { q: "What does writing in ALL CAPS usually come across as?",
+        o: ["Professional", "Shouting", "Friendly", "Clear"], a: 1,
+        e: "Capitals read as shouting." },
+      { q: "No reply after a few working days. What should you do?",
+        o: ["Send the same email again as new", "Reply to your original with a short, polite nudge", "Call their manager", "Give up"], a: 1,
+        e: "Replying keeps the context together." },
+      { q: "A good target length for most emails is…",
+        o: ["Five sentences or fewer", "At least a page", "One word", "Ten paragraphs"], a: 0,
+        e: "Short emails get read and answered." }
+    ]
+  },
+
   "jcurses": {
     title: "JCurses Crash Course",
     pass: 8,

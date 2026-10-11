@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Time Zones Made Simple · Shortutorial</title>
+<meta name="description" content="Understand time zones: UTC and offsets, daylight saving time, the International Date Line, and scheduling across zones, with a live time zone converter.">
+<link rel="canonical" href="https://shortutorial.com/time-zones/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Time Zones Made Simple · Shortutorial">
+<meta property="og:description" content="Understand time zones: UTC and offsets, daylight saving time, the International Date Line, and scheduling across zones, with a live time zone converter.">
+<meta property="og:url" content="https://shortutorial.com/time-zones/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body data-slug="time-zones">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=time">Life skills</a> / Time zones</div>
+    <span class="eyebrow">Skills · Everyday</span>
+    <h1>Time Zones Made Simple</h1>
+    <p class="lede">Booking a call with someone abroad, catching a flight, watching a live event: here's how time zones actually work, and how to never miss a meeting again.</p>
+    <div class="facts"><span>~8 min</span><span>3 lessons</span><span>Live converter</span><span>5-question quiz</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#tz1">1 · UTC</a><a href="#tz2">2 · DST</a><a href="#tz3">3 · Scheduling</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="tz1">
+    <div class="lesson-head"><span class="step">01</span><h2>UTC and offsets</h2></div>
+
+    <p>The world sets its clocks relative to <b>UTC</b> (Coordinated Universal Time), essentially the time at 0° longitude, near London. Each place has an <b>offset</b>: how many hours ahead (+) or behind (−) UTC it is.</p>
+    <div class="tw"><table class="t"><tr><th>Place</th><th>Standard offset</th></tr><tr><td>Los Angeles</td><td>UTC−8</td></tr><tr><td>New York</td><td>UTC−5</td></tr><tr><td>London</td><td>UTC+0</td></tr><tr><td>Paris, Berlin</td><td>UTC+1</td></tr><tr><td>India</td><td>UTC+5:30</td></tr><tr><td>Tokyo</td><td>UTC+9</td></tr><tr><td>Sydney</td><td>UTC+10</td></tr></table></div>
+    <p>Not every offset is a whole hour: India is +5:30 and Nepal +5:45.</p>
+  </section>
+
+  <section class="lesson" id="tz2">
+    <div class="lesson-head"><span class="step">02</span><h2>Daylight saving time</h2></div>
+
+    <p>Many countries move their clocks forward an hour in summer (“spring forward, fall back”). So New York is UTC−5 in winter but UTC−4 in summer.</p>
+    <p class="callout warn"><span><b>The tricky weeks:</b> the US and Europe change on different dates, so for a few weeks each spring and autumn the gap between New York and London is 4 hours instead of 5.</span></p>
+    <p>The southern hemisphere does it the other way round: Sydney's clocks go forward in October.</p>
+  </section>
+
+  <section class="lesson" id="tz3">
+    <div class="lesson-head"><span class="step">03</span><h2>Scheduling across time zones</h2></div>
+
+    <ul class="points">
+      <li>When you write a time for others, always include the zone: “3 pm ET / 8 pm UK”.</li>
+      <li>Calendar invites adjust automatically to each person's zone. Let the calendar do the maths.</li>
+      <li>Crossing the <b>International Date Line</b> (in the Pacific) changes the date: flying west you skip a day; flying east you live one twice.</li>
+    </ul>
+    <div class="try"><span class="try-h">Try it · converter</span><div class="row"><label>Date and time<input type="datetime-local" id="tzT" style="width:auto;font-family:var(--mono);font-size:.95rem;padding:7px 9px;border-radius:9px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink)"></label><label>In<select id="tzF"></select></label></div>
+      <div id="tzOut" class="tw"></div></div>
+    <p style="font-size:.9rem;color:var(--muted)">Uses your browser's up-to-date time zone rules, including daylight saving.</p>
+  </section>
+
+  <section id="cert" style="scroll-margin-top:80px"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Tip: in the quiz, press 1–4 to answer.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+
+(function(){
+  const Z = [['America/Los_Angeles','Los Angeles'],['America/Chicago','Chicago'],['America/New_York','New York'],['America/Sao_Paulo','São Paulo'],['Europe/London','London'],['Europe/Paris','Paris'],['Africa/Lagos','Lagos'],['Asia/Dubai','Dubai'],['Asia/Kolkata','India'],['Asia/Shanghai','Beijing'],['Asia/Tokyo','Tokyo'],['Australia/Sydney','Sydney'],['Pacific/Auckland','Auckland']];
+  const here = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const opts = [[here, 'My time (' + here.replace(/_/g,' ') + ')'], ...Z.filter(z => z[0] !== here)];
+  $('#tzF').innerHTML = opts.map(([v, l]) => `<option value="${v}">${l}</option>`).join('');
+  const now = new Date(); now.setMinutes(0, 0, 0); now.setHours(now.getHours() + 1);
+  const pad = n => String(n).padStart(2, '0');
+  $('#tzT').value = `${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())}T${pad(now.getHours())}:00`;
+  function partsIn(date, tz){ const f = new Intl.DateTimeFormat('en-US', {timeZone: tz, hourCycle:'h23', year:'numeric', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit'}).formatToParts(date); const o = {}; f.forEach(p => o[p.type] = p.value); return o; }
+  function toUTC(local, tz){ // local "YYYY-MM-DDTHH:MM" interpreted in tz
+    const [d, t] = local.split('T'), [Y, M, D] = d.split('-').map(Number), [h, m] = t.split(':').map(Number);
+    let guess = Date.UTC(Y, M-1, D, h, m);
+    for (let i = 0; i < 3; i++){ const p = partsIn(new Date(guess), tz); const asUTC = Date.UTC(+p.year, p.month-1, +p.day, +p.hour, +p.minute); guess += Date.UTC(Y, M-1, D, h, m) - asUTC; }
+    return new Date(guess);
+  }
+  function go(){
+    if (!$('#tzT').value){ $('#tzOut').textContent = ''; return; }
+    const when = toUTC($('#tzT').value, $('#tzF').value);
+    const rows = Z.map(([tz, name]) => {
+      const t = new Intl.DateTimeFormat(undefined, {timeZone: tz, weekday:'short', hour:'numeric', minute:'2-digit'}).format(when);
+      const off = new Intl.DateTimeFormat('en-US', {timeZone: tz, timeZoneName:'shortOffset'}).formatToParts(when).find(p => p.type === 'timeZoneName').value.replace('GMT','UTC');
+      const h = +partsIn(when, tz).hour, night = h < 7 || h >= 22;
+      return `<tr><td>${name}</td><td class="num"><b>${t}</b>${night ? ' 🌙' : ''}</td><td class="num" style="color:var(--muted)">${off === 'UTC' ? 'UTC+0' : off}</td></tr>`;
+    }).join('');
+    $('#tzOut').innerHTML = `<table class="t"><tr><th>City</th><th class="num">Time</th><th class="num">Offset</th></tr>${rows}</table>`;
+  }
+  $('#tzT').addEventListener('input', go); $('#tzF').addEventListener('change', go); go();
+})();
+</script>
+</body>
+</html>

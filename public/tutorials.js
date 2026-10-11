@@ -477,6 +477,38 @@ window.TUTORIALS = [
     minutes: 10
   },
   {
+    slug: "morse-code",
+    title: "Learn Morse Code",
+    summary: "Dots, dashes, timing and SOS, with a translator that beeps.",
+    category: "Life skills",
+    tags: ["morse code", "sos", "code", "signals", "survival", "fun"],
+    minutes: 8
+  },
+  {
+    slug: "latitude-longitude",
+    title: "Latitude and Longitude",
+    summary: "Read map coordinates and measure distances between places.",
+    category: "Life skills",
+    tags: ["maps", "latitude", "longitude", "gps", "coordinates", "geography", "navigation"],
+    minutes: 8
+  },
+  {
+    slug: "time-zones",
+    title: "Time Zones Made Simple",
+    summary: "UTC, daylight saving, and a live converter for scheduling.",
+    category: "Life skills",
+    tags: ["time zones", "utc", "gmt", "daylight saving", "scheduling", "travel", "meetings"],
+    minutes: 8
+  },
+  {
+    slug: "write-professional-email",
+    title: "Write a Professional Email",
+    summary: "Subject lines, structure, tone and follow-ups that get replies.",
+    category: "Life skills",
+    tags: ["email", "writing", "work", "professional", "communication", "career", "follow up"],
+    minutes: 8
+  },
+  {
     slug: "jcurses",
     title: "JCurses Crash Course",
     summary: "Build colorful, keyboard-driven Java programs that run in a terminal.",
