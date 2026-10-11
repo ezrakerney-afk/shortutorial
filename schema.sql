@@ -36,3 +36,19 @@ CREATE TABLE IF NOT EXISTS signups (
 CREATE INDEX IF NOT EXISTS idx_sessions_user ON sessions(user_id);
 CREATE INDEX IF NOT EXISTS idx_certs_user ON certs(user_id);
 CREATE INDEX IF NOT EXISTS idx_signups_ip ON signups(ip_hash, ts);
+
+-- Star ratings: one per tutorial per voter (a signed-in user, or an anonymous device id).
+CREATE TABLE IF NOT EXISTS ratings (
+  slug   TEXT NOT NULL,
+  voter  TEXT NOT NULL,
+  stars  INTEGER NOT NULL CHECK (stars BETWEEN 1 AND 5),
+  ts     INTEGER NOT NULL,
+  PRIMARY KEY (slug, voter)
+);
+CREATE INDEX IF NOT EXISTS idx_ratings_slug ON ratings(slug);
+
+CREATE TABLE IF NOT EXISTS rate_log (
+  ip_hash TEXT NOT NULL,
+  ts      INTEGER NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_rate_log ON rate_log(ip_hash, ts);

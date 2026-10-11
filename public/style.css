@@ -125,3 +125,23 @@ dialog.auth::backdrop{background:rgba(10,16,14,.55);backdrop-filter:blur(3px)}
 .cq-confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden}
 .cq-confetti i{position:absolute;top:-10px;width:8px;height:12px;border-radius:2px;animation:fall 1.6s ease-in forwards}
 @keyframes fall{to{transform:translateY(420px) rotate(540deg);opacity:0}}
+
+/* ---------- Star ratings ---------- */
+.rating-sum{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.8rem;color:var(--muted);text-decoration:none;width:fit-content}
+.rating-sum b{color:var(--ink);font-family:var(--display);font-size:.95rem}
+.rating-sum:hover span:last-child{color:var(--accent);text-decoration:underline}
+.rs-stars{display:inline-flex;gap:1px}
+.rate-card{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;padding:22px;border-radius:16px;background:var(--surface);border:1px solid var(--line)}
+.rate-card h3{font-size:1.25rem;margin-top:2px}
+.rate-sub{color:var(--muted);font-size:.95rem}
+.rate-right{display:flex;flex-direction:column;align-items:center;gap:6px}
+.rate-stars{display:flex;gap:4px}
+.rate-stars button{all:unset;cursor:pointer;width:40px;height:40px;display:grid;place-items:center;border-radius:10px;transition:transform .12s}
+.rate-stars button:hover{transform:scale(1.12)}
+.rate-stars button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.rate-stars svg{width:32px;height:32px;fill:var(--line);transition:fill .12s}
+.rate-stars button.on svg,.rate-stars button.hover svg{fill:var(--amber)}
+.rate-stars:hover button.on:not(.hover) svg{fill:var(--line)}
+.rate-label{font-family:var(--mono);font-size:.75rem;color:var(--muted);min-height:1em}
+@media (max-width:560px){.rate-card{flex-direction:column;align-items:flex-start}.rate-right{align-items:flex-start}}
+.card .stars-mini{color:var(--amber);font-weight:600}

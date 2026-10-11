@@ -37,6 +37,11 @@ async function route(request, env, url) {
   if (path === "/api/logout" && method === "POST") return logout(request, env);
   if (path === "/api/leaderboard" && method === "GET") return leaderboard(request, env);
 
+  if (path === "/api/ratings" && method === "GET") return allRatings(env);
+  const rm = path.match(/^\/api\/rating\/([a-z0-9-]+)$/);
+  if (rm && method === "GET") return getRating(request, env, url, rm[1]);
+  if (rm && method === "POST") return rate(request, env, rm[1]);
+
   const m = path.match(/^\/api\/quiz\/([a-z0-9-]+)$/);
   if (m && method === "GET") return getQuiz(m[1]);
   if (m && method === "POST") return gradeQuiz(request, env, m[1]);
@@ -161,6 +166,56 @@ async function gradeQuiz(request, env, slug) {
   if (user) points = (await profile(env, user.id, user.username)).points;
 
   return json({ score, total: quiz.questions.length, pass: quiz.pass, passed, results, loggedIn: !!user, awarded, already, points });
+}
+
+/* ---------------- ratings ---------------- */
+
+// Signed-in users vote as themselves; everyone else uses a random id kept in their browser.
+async function voterKey(request, env, deviceId) {
+  const user = await currentUser(request, env);
+  if (user) return "u:" + user.id;
+  if (typeof deviceId !== "string" || !/^[a-f0-9]{32}$/.test(deviceId)) return null;
+  return "d:" + (await sha256hex("device:" + deviceId)).slice(0, 40);
+}
+
+async function summary(env, slug) {
+  const r = await env.DB.prepare("SELECT AVG(stars) avg, COUNT(*) n FROM ratings WHERE slug = ?").bind(slug).first();
+  return { avg: r.n ? Math.round(r.avg * 10) / 10 : null, count: r.n };
+}
+
+async function allRatings(env) {
+  const { results } = await env.DB.prepare("SELECT slug, AVG(stars) avg, COUNT(*) n FROM ratings GROUP BY slug").all();
+  const out = {};
+  for (const r of results) out[r.slug] = { avg: Math.round(r.avg * 10) / 10, count: r.n };
+  return json(out, 200, { "Cache-Control": "public, max-age=60" });
+}
+
+async function getRating(request, env, url, slug) {
+  if (!QUIZZES[slug]) return json({ error: "Unknown tutorial." }, 404);
+  const key = await voterKey(request, env, url.searchParams.get("v"));
+  const mine = key ? await env.DB.prepare("SELECT stars FROM ratings WHERE slug = ? AND voter = ?").bind(slug, key).first() : null;
+  return json({ ...(await summary(env, slug)), mine: mine ? mine.stars : null });
+}
+
+async function rate(request, env, slug) {
+  if (!QUIZZES[slug]) return json({ error: "Unknown tutorial." }, 404);
+  const { stars, voter } = await body(request);
+  if (!Number.isInteger(stars) || stars < 1 || stars > 5) return json({ error: "Pick 1 to 5 stars." }, 400);
+  const key = await voterKey(request, env, voter);
+  if (!key) return json({ error: "Couldn't save your rating. Try refreshing the page." }, 400);
+
+  // Light rate limit per network to stop ballot stuffing.
+  const ipKey = await sha256hex("rate:" + (request.headers.get("CF-Connecting-IP") || "local"));
+  const recent = await env.DB.prepare("SELECT COUNT(*) n FROM rate_log WHERE ip_hash = ? AND ts > ?").bind(ipKey, now() - 3600).first();
+  if (recent.n >= 60) return json({ error: "Too many ratings from this network. Try again later." }, 429);
+
+  await env.DB.batch([
+    env.DB.prepare("INSERT INTO ratings (slug, voter, stars, ts) VALUES (?, ?, ?, ?) ON CONFLICT(slug, voter) DO UPDATE SET stars = excluded.stars, ts = excluded.ts")
+      .bind(slug, key, stars, now()),
+    env.DB.prepare("INSERT INTO rate_log (ip_hash, ts) VALUES (?, ?)").bind(ipKey, now()),
+    env.DB.prepare("DELETE FROM rate_log WHERE ts < ?").bind(now() - 86400)
+  ]);
+  return json({ ...(await summary(env, slug)), mine: stars });
 }
 
 /* ---------------- leaderboard ---------------- */
