@@ -381,6 +381,38 @@ window.TUTORIALS = [
     minutes: 15
   },
   {
+    slug: "mental-math-tricks",
+    title: "Mental Math Tricks",
+    summary: "Fast tricks for adding and multiplying in your head.",
+    category: "Math",
+    tags: ["math", "mental math", "tricks", "multiplication", "arithmetic", "quick math"],
+    minutes: 10
+  },
+  {
+    slug: "touch-typing",
+    title: "Learn Touch Typing",
+    summary: "Home row, finger positions, and a typing speed test.",
+    category: "Life skills",
+    tags: ["typing", "touch typing", "keyboard", "wpm", "speed", "skills", "computer"],
+    minutes: 10
+  },
+  {
+    slug: "unit-conversions",
+    title: "Metric and Imperial Conversions",
+    summary: "Length, weight, volume and temperature, plus quick estimates.",
+    category: "Math",
+    tags: ["math", "metric", "imperial", "conversion", "celsius", "fahrenheit", "km", "miles", "kg", "pounds", "cooking"],
+    minutes: 8
+  },
+  {
+    slug: "budget-50-30-20",
+    title: "Make a Budget with the 50/30/20 Rule",
+    summary: "Needs, wants and savings, with a budget calculator.",
+    category: "Money",
+    tags: ["money", "budget", "50/30/20", "saving", "spending", "personal finance"],
+    minutes: 8
+  },
+  {
     slug: "jcurses",
     title: "JCurses Crash Course",
     summary: "Build colorful, keyboard-driven Java programs that run in a terminal.",

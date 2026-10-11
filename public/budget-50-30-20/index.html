@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Make a Budget with the 50/30/20 Rule · Shortutorial</title>
+<meta name="description" content="Learn to make a simple budget with the 50/30/20 rule: needs, wants and savings, how to track spending, and how to adjust for your situation, with an interactive budget calculator.">
+<link rel="canonical" href="https://shortutorial.com/budget-50-30-20/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Make a Budget with the 50/30/20 Rule · Shortutorial">
+<meta property="og:description" content="Learn to make a simple budget with the 50/30/20 rule: needs, wants and savings, how to track spending, and how to adjust for your situation, with an interactive budget calculator.">
+<meta property="og:url" content="https://shortutorial.com/budget-50-30-20/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body data-slug="budget-50-30-20">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=money">Money</a> / 50/30/20 budget</div>
+    <span class="eyebrow">Money · Budgeting</span>
+    <h1>Make a Budget with the 50/30/20 Rule</h1>
+    <p class="lede">Budgeting doesn't need spreadsheets with 40 categories. The 50/30/20 rule splits your money three ways and takes ten minutes to set up.</p>
+    <div class="facts"><span>~8 min</span><span>4 lessons</span><span>Budget calculator</span><span>5-question quiz</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#b1">1 · The rule</a><a href="#b2">2 · Need vs want</a><a href="#b3">3 · Track it</a><a href="#b4">4 · Adjust it</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="b1">
+    <div class="lesson-head"><span class="step">01</span><h2>The three buckets</h2></div>
+
+    <p>Start with your <b>take-home pay</b>: what lands in your account after tax. Then split it:</p>
+    <div class="tw"><table class="t"><tr><th>Bucket</th><th>Share</th><th>What goes in it</th></tr><tr><td><b>Needs</b></td><td>50%</td><td>Rent or mortgage, utilities, groceries, insurance, transport to work, minimum debt payments</td></tr><tr><td><b>Wants</b></td><td>30%</td><td>Eating out, streaming, hobbies, holidays, clothes beyond the basics</td></tr><tr><td><b>Savings and debt</b></td><td>20%</td><td>Emergency fund, retirement, investing, paying off debt faster than the minimum</td></tr></table></div>
+  </section>
+
+  <section class="lesson" id="b2">
+    <div class="lesson-head"><span class="step">02</span><h2>Needs vs wants</h2></div>
+
+    <p>A <b>need</b> is something you'd be in trouble without. A <b>want</b> makes life nicer. The basic version of something can be a need while the upgrade is a want:</p>
+    <ul class="points">
+      <li>Groceries are a need; takeaway is a want.</li>
+      <li>A phone plan is a need; the newest phone is a want.</li>
+      <li>Getting to work is a need; a fancier car than you require is partly a want.</li>
+    </ul>
+    <p class="callout"><span><b>Be honest, not harsh.</b> The point isn't to cut every want. It's to choose them on purpose.</span></p>
+  </section>
+
+  <section class="lesson" id="b3">
+    <div class="lesson-head"><span class="step">03</span><h2>Find out where your money goes</h2></div>
+
+    <ol class="steps">
+      <li>Download the last two or three months of bank and card statements.</li>
+      <li>Mark each payment as Need, Want or Savings. Your banking app may already group spending by category.</li>
+      <li>Add up each bucket and compare it with 50/30/20.</li>
+    </ol>
+    <p class="callout"><span><b>Pay yourself first.</b> Set up an automatic transfer to savings on payday. What you never see, you don't miss.</span></p>
+    <p>Start an <b>emergency fund</b> before anything else in the savings bucket: aim for one month of expenses, building up to three to six.</p>
+  </section>
+
+  <section class="lesson" id="b4">
+    <div class="lesson-head"><span class="step">04</span><h2>Make it fit your life</h2></div>
+
+    <p>50/30/20 is a starting point, not a law. In an expensive city, needs may take 60% or more; then trim wants to keep saving something. If you have high-interest debt, push extra into the 20%.</p>
+    <div class="try"><span class="try-h">Try it · budget calculator</span><div class="row"><label>Monthly take-home pay<input type="number" id="bi" value="3200" min="0"></label><label>Needs %<input type="number" id="bn" value="50"></label><label>Wants %<input type="number" id="bw" value="30"></label><label>Savings %<input type="number" id="bs" value="20"></label></div>
+      <svg id="bsvg" viewBox="0 0 320 34" aria-label="Bar showing how your pay splits"></svg>
+      <div class="out" id="bOut"></div></div>
+    <p style="font-size:.9rem;color:var(--muted)">General guidance, not financial advice.</p>
+  </section>
+
+  <section id="cert" style="scroll-margin-top:80px"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Tip: in the quiz, press 1–4 to answer.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+
+(function(){
+  function go(){
+    const I = +$('#bi').value || 0, n = +$('#bn').value || 0, w = +$('#bw').value || 0, s = +$('#bs').value || 0, t = n + w + s;
+    const money = v => '$' + Math.round(v).toLocaleString();
+    let x = 0, svg = '';
+    [[n,'var(--accent)','Needs'],[w,'var(--amber)','Wants'],[s,'var(--good)','Savings']].forEach(([p, c, l]) => { const W = t ? p/Math.max(t,100)*320 : 0;
+      svg += `<rect x="${x}" y="4" width="${Math.max(0,W)}" height="26" fill="${c}"/>`; if (W > 46) svg += `<text x="${x+W/2}" y="22" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#fff">${l}</text>`; x += W; });
+    $('#bsvg').innerHTML = svg;
+    $('#bOut').innerHTML = (t !== 100 ? `<span class="no">Your percentages add up to ${t}%, not 100%.</span><br>` : '') +
+      `Needs <b>${money(I*n/100)}</b> · Wants <b>${money(I*w/100)}</b> · Savings <b>${money(I*s/100)}</b>` +
+      (t === 100 && s > 0 ? `<br><span style="font-size:1rem;font-weight:400">That's ${money(I*s/100*12)} saved a year.</span>` : '');
+  }
+  live($('.try'), go);
+})();
+</script>
+</body>
+</html>

@@ -1036,6 +1036,94 @@ export default {
     ]
   },
 
+  "mental-math-tricks": {
+    title: "Mental Math Tricks",
+    pass: 4,
+    questions: [
+      { q: "What's the quickest way to do 5 × 64?",
+        o: ["64 + 64 + 64 + 64 + 64", "640 ÷ 2", "64 × 10 + 5", "64 ÷ 5"], a: 1,
+        e: "× 10 then halve: 640 ÷ 2 = 320." },
+      { q: "Using “round and fix”, 58 + 29 is…",
+        o: ["58 + 30 − 1 = 87", "58 + 30 + 1 = 89", "60 + 29 = 89", "58 − 1 = 57"], a: 0,
+        e: "Add 30, then take back the extra 1: 87." },
+      { q: "What is 11 × 43?",
+        o: ["443", "473", "433", "4,343"], a: 1,
+        e: "4 _(4+3)_ 3 = 473." },
+      { q: "What is 65²?",
+        o: ["4,225", "3,625", "4,265", "3,925"], a: 0,
+        e: "6 × 7 = 42, then add 25: 4,225." },
+      { q: "9 × 34 is the same as…",
+        o: ["340 − 34", "340 + 34", "34 × 10 + 9", "340 − 9"], a: 0,
+        e: "× 10 then subtract the number: 340 − 34 = 306." }
+    ]
+  },
+
+  "touch-typing": {
+    title: "Learn Touch Typing",
+    pass: 4,
+    questions: [
+      { q: "Which keys are on the home row for your left hand?",
+        o: ["Q W E R", "A S D F", "Z X C V", "1 2 3 4"], a: 1,
+        e: "Left fingers rest on A, S, D and F." },
+      { q: "What are the bumps on F and J for?",
+        o: ["Decoration", "Finding home row without looking", "Marking broken keys", "Turning on caps lock"], a: 1,
+        e: "Your index fingers can feel them and reset position." },
+      { q: "To type a capital A, which Shift should you press?",
+        o: ["Left Shift", "Right Shift", "Either, it doesn't matter", "Caps Lock"], a: 1,
+        e: "A is a left-hand key, so use the opposite (right) Shift." },
+      { q: "When learning, what should you focus on first?",
+        o: ["Speed", "Accuracy", "Typing loudly", "Looking at the keys"], a: 1,
+        e: "Accuracy first; speed follows once the movements are learned." },
+      { q: "Roughly how fast does an average adult type?",
+        o: ["10 wpm", "40 wpm", "120 wpm", "200 wpm"], a: 1,
+        e: "Around 40 words per minute is typical." }
+    ]
+  },
+
+  "unit-conversions": {
+    title: "Metric and Imperial Conversions",
+    pass: 4,
+    questions: [
+      { q: "How many metres are in 3.2 kilometres?",
+        o: ["32", "320", "3,200", "32,000"], a: 2,
+        e: "Kilo means × 1,000." },
+      { q: "Roughly how many km is 5 miles?",
+        o: ["3", "8", "10", "50"], a: 1,
+        e: "× 1.6: about 8 km." },
+      { q: "Approximately what is 20 °C in Fahrenheit?",
+        o: ["40 °F", "68 °F", "52 °F", "100 °F"], a: 1,
+        e: "20 × 9/5 + 32 = 68." },
+      { q: "A rough way to turn kilograms into pounds is…",
+        o: ["× 2.2", "÷ 2.2", "× 0.45", "+ 10"], a: 0,
+        e: "1 kg ≈ 2.2 lb." },
+      { q: "Why can US and UK recipes differ?",
+        o: ["Different oven sizes", "Pints, cups and gallons are different sizes", "Different salt", "They don't differ"], a: 1,
+        e: "A UK pint is 568 ml; a US pint is 473 ml." }
+    ]
+  },
+
+  "budget-50-30-20": {
+    title: "Make a Budget with the 50/30/20 Rule",
+    pass: 4,
+    questions: [
+      { q: "In 50/30/20, what does the 20% go to?",
+        o: ["Wants", "Needs", "Savings and extra debt payments", "Tax"], a: 2,
+        e: "20% is for savings and paying debt faster." },
+      { q: "Which is a “need”?",
+        o: ["Streaming subscription", "Groceries", "Concert tickets", "A new games console"], a: 1,
+        e: "Groceries are essential; the rest are wants." },
+      { q: "What income should you budget from?",
+        o: ["Your salary before tax", "Take-home pay after tax", "Your partner's pay", "Last year's bonus"], a: 1,
+        e: "Budget from what actually reaches your account." },
+      { q: "What does “pay yourself first” mean?",
+        o: ["Buy something nice on payday", "Automatically move savings out on payday", "Pay off rent last", "Take cash out"], a: 1,
+        e: "Saving automatically before spending makes it stick." },
+      { q: "On $2,500 take-home a month, how much goes to wants under 50/30/20?",
+        o: ["$500", "$750", "$1,250", "$300"], a: 1,
+        e: "30% of $2,500 is $750." }
+    ]
+  },
+
   "jcurses": {
     title: "JCurses Crash Course",
     pass: 8,
