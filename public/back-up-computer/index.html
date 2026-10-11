@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Back Up Your Computer (Windows & Mac) · Shortutorial</title>
+<meta name="description" content="Set up automatic backups on Windows or Mac: cloud backup with OneDrive or iCloud, and external drive backups with File History or Time Machine. Plus how to test a restore.">
+<link rel="canonical" href="https://shortutorial.com/back-up-computer/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How to Back Up Your Computer (Windows & Mac) · Shortutorial">
+<meta property="og:description" content="Set up automatic backups on Windows or Mac: cloud backup with OneDrive or iCloud, and external drive backups with File History or Time Machine. Plus how to test a restore.">
+<meta property="og:url" content="https://shortutorial.com/back-up-computer/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../guide.css">
+</head>
+<body data-slug="back-up-computer">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=computer">Computer help</a> / Back up your computer</div>
+    <span class="eyebrow">Computer help · Backups</span>
+    <h1>How to Back Up Your Computer</h1>
+    <p class="lede">If your computer died today, would you lose your photos and documents? Set up backups that run by themselves in about 20 minutes.</p>
+    <div class="badges"><span class="badge level">Learn</span><span class="badge">~20 min</span><span class="badge">Easy</span></div>
+    <div class="os-row"><span class="lbl">Show steps for</span>
+      <div class="os-switch" role="group" aria-label="Device type"><button data-set="win">Windows</button><button data-set="mac">Mac</button></div>
+    </div>
+  </header>
+
+  <section class="block">
+    <div class="first">
+      <span class="eyebrow">Why it matters · 30 seconds</span>
+      <h3>Drives fail, laptops get stolen, ransomware happens</h3>
+      <p>A good backup means losing your computer is an inconvenience instead of a disaster. The simple rule: keep your important files in <b>two places</b> besides the computer, ideally one at home (an external drive) and one online (cloud storage).</p>
+    </div>
+  </section>
+
+  <section class="block" id="fixes">
+    <h2 class="sec"><span class="n">SET UP</span>Set up automatic backups</h2>
+    <div class="steps-head"><p>Set it up once and it runs by itself.</p><button class="linkbtn" id="expandAll">Show all steps</button></div>
+    <div class="steps" data-q="Backups running?" data-yes="Yes, all set" data-no="Next step →">
+      <div class="fix" data-os="win">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Back up to the cloud with Windows Backup</span><span class="fix-time">10 min</span></button>
+        <div class="fix-body">
+          <p>Open the <b>Windows Backup</b> app from the Start menu. Turn on backup for your <b>Desktop</b>, <b>Documents</b> and <b>Pictures</b> folders (stored in OneDrive), and your apps and settings. The free OneDrive plan is small, so you may need more storage for lots of photos.</p>
+        </div>
+      </div>
+      <div class="fix" data-os="win">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Back up to an external drive with File History</span><span class="fix-time">10 min</span></button>
+        <div class="fix-body">
+          <ol class="list">
+            <li>Plug in an external drive with at least as much space as your files.</li>
+            <li>Search for <b>Control Panel</b>, open <span class="path">System and Security <i>›</i> File History</span>, choose the drive and click <b>Turn on</b>.</li>
+            <li>It saves copies of your files every hour while the drive is connected, and keeps older versions.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="fix" data-os="mac">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Back up to an external drive with Time Machine</span><span class="fix-time">10 min</span></button>
+        <div class="fix-body">
+          <ol class="list">
+            <li>Plug in an external drive at least twice the size of your Mac's storage.</li>
+            <li>Go to <span class="path">System Settings <i>›</i> General <i>›</i> Time Machine</span> and click <b>Add Backup Disk</b>, then choose the drive.</li>
+            <li>Time Machine backs up everything hourly while connected, and keeps daily and weekly versions.</li>
+          </ol>
+          <div class="note"><span>The drive will be erased when set up for Time Machine. Use an empty one.</span></div>
+        </div>
+      </div>
+      <div class="fix" data-os="mac">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Back up to the cloud with iCloud Drive</span><span class="fix-time">5 min</span></button>
+        <div class="fix-body">
+          <p>Go to <span class="path">System Settings <i>›</i> your name <i>›</i> iCloud <i>›</i> iCloud Drive</span> and turn on <b>Desktop &amp; Documents Folders</b>. Turn on <b>iCloud Photos</b> in the Photos app settings. You'll likely need an iCloud+ plan for more than 5 GB.</p>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Test that you can restore a file</span><span class="fix-time">5 min</span></button>
+        <div class="fix-body">
+          <p>A backup you've never tested isn't really a backup. Pick an unimportant file and restore it:</p>
+          <p data-os="win">Right-click a file, choose <b>Show more options</b> › <b>Restore previous versions</b>, or open File History and click <b>Restore personal files</b>.</p>
+          <p data-os="mac">Open a folder in Finder, click the Time Machine icon in the menu bar, choose <b>Browse Time Machine Backups</b>, and restore a file.</p>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Make a habit of it</span><span class="fix-time">Monthly</span></button>
+        <div class="fix-body">
+          <ul class="list">
+            <li>Plug the external drive in at least weekly, or leave it connected to a desktop.</li>
+            <li>Check the cloud backup is still running once a month.</li>
+            <li>Keep the external drive somewhere safe, away from the computer, so one theft or fire doesn't take both.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <div class="solved-banner" role="status"><span style="font-size:1.6rem">💾</span><div><b>You're protected.</b><p>Your future self will thank you.</p></div></div>
+    <div class="stuck" role="status"><b>Need help choosing?</b><p>For most people: cloud backup for documents and photos, plus an external drive with File History or Time Machine for everything.</p><div><button class="btn ghost small" data-restart>Start over</button></div></div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Is OneDrive or iCloud enough on its own?</summary><div class="a"><p>It protects against a broken or stolen computer, but files deleted or damaged on the computer can sync to the cloud too. An external drive with older versions covers that gap.</p></div></details>
+      <details><summary>How big should my backup drive be?</summary><div class="a"><p>At least as big as the files you're backing up. For Time Machine, Apple recommends about twice your Mac's storage, so it can keep older versions.</p></div></details>
+      <details><summary>Do I need backup software?</summary><div class="a"><p>No. Windows Backup, File History and Time Machine are built in and free.</p></div></details>
+      <details><summary>What about my phone?</summary><div class="a"><p>Turn on iCloud Backup (iPhone) or Google One backup (Android), and Google Photos or iCloud Photos for your pictures.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Official help</h2>
+    <div class="links">
+      <a href="https://support.microsoft.com/en-us/windows/experience/backup-recovery/back-up-and-restore-with-windows-backup" target="_blank" rel="noopener"><span class="src">Microsoft Support</span><b>Back up and restore with Windows Backup</b></a>
+      <a href="https://support.microsoft.com/en-us/windows/experience/backup-recovery/backup-restore-and-recovery-in-windows" target="_blank" rel="noopener"><span class="src">Microsoft Support</span><b>Backup, restore and recovery in Windows</b></a>
+      <a href="https://support.apple.com/en-us/104984" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>Back up your Mac with Time Machine</b></a>
+      <a href="https://support.apple.com/en-us/102307" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>How to back up your Mac</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Related fixes</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Steps written for Windows 11 and recent macOS. Menu names may differ slightly on older versions.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../guide.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+</body>
+</html>

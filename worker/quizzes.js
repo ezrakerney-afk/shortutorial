@@ -420,6 +420,94 @@ export default {
     ]
   },
 
+  "spot-scam-messages": {
+    title: "How to Spot a Scam Email or Text",
+    pass: 4,
+    questions: [
+      { q: "A text says your bank account is locked and gives a link. What should you do?",
+        o: ["Tap the link quickly", "Open your bank's app or call the number on your card", "Reply with your details", "Forward it to friends"], a: 1,
+        e: "Always contact the company through a route you know is genuine." },
+      { q: "Someone calls asking you to read out a code you just received by text. What is it?",
+        o: ["A normal security check", "A scam to take over your account", "Your bank being helpful", "A delivery confirmation"], a: 1,
+        e: "No legitimate company asks for a code sent to you." },
+      { q: "Which payment method is a red flag?",
+        o: ["Gift cards", "Paying a known bill in your bank's app", "Card payment on a site you typed in", "Direct debit you set up"], a: 0,
+        e: "Gift cards, crypto and wire transfers can't be recovered, so scammers love them." },
+      { q: "How can you check where a link really goes on a computer?",
+        o: ["Hover over it without clicking", "Click it", "Copy it into an email", "Read the sender's name"], a: 0,
+        e: "The real address appears when you hover." },
+      { q: "You gave your password to a fake site. What first?",
+        o: ["Change it on the real site and anywhere you reused it", "Wait and see", "Delete the email", "Restart your computer"], a: 0,
+        e: "Change it immediately and turn on two-step verification." }
+    ]
+  },
+
+  "two-factor-authentication": {
+    title: "Turn On Two-Step Verification",
+    pass: 4,
+    questions: [
+      { q: "Which account should you protect with 2FA first?",
+        o: ["Your email account", "A game account", "A newsletter", "A shopping list app"], a: 0,
+        e: "Email can reset all your other passwords, so it matters most." },
+      { q: "What are backup codes for?",
+        o: ["Signing in if you lose your phone", "Speeding up your internet", "Sharing with friends", "Paying bills"], a: 0,
+        e: "Keep them somewhere other than your phone." },
+      { q: "Which 2FA method is most secure?",
+        o: ["An authenticator app or security key", "Text messages", "No 2FA", "Email codes only"], a: 0,
+        e: "Texts can be intercepted through SIM-swap scams." },
+      { q: "Someone asks you for a 2FA code. What should you do?",
+        o: ["Never share it", "Read it to them", "Email it", "Post it"], a: 0,
+        e: "Real companies never ask for these codes." },
+      { q: "Will you have to type a code every single time you sign in?",
+        o: ["No, trusted devices are remembered", "Yes, always", "Only on Sundays", "Only on phones"], a: 0,
+        e: "You're usually only asked on new devices." }
+    ]
+  },
+
+  "stop-browser-popups": {
+    title: "Stop Pop-Up Ads and Fake Virus Warnings",
+    pass: 4,
+    questions: [
+      { q: "What usually causes ads popping up near the clock?",
+        o: ["Website notifications you allowed", "A broken screen", "Low battery", "Windows updates"], a: 0,
+        e: "They're notification permissions, usually tricked out of you with a fake Allow button." },
+      { q: "Where do you remove notification permissions in Chrome?",
+        o: ["Settings › Privacy and security › Site settings › Notifications", "Bookmarks", "History", "Downloads"], a: 0,
+        e: "Remove or block any site you don't recognise." },
+      { q: "A pop-up says your PC is infected and to call a number. What is it?",
+        o: ["A tech-support scam", "A real Microsoft warning", "Your antivirus", "A Windows update"], a: 0,
+        e: "Close it; real companies never show a phone number like this." },
+      { q: "What does resetting your browser keep?",
+        o: ["Bookmarks and saved passwords", "Bad extensions", "Changed search engine", "Notification spam"], a: 0,
+        e: "It resets settings and disables extensions but keeps your bookmarks and passwords." },
+      { q: "What should you click when a site asks to send notifications?",
+        o: ["Block, unless you really want them", "Allow always", "Allow then restart", "Ignore forever"], a: 0,
+        e: "Blocking prevents this problem in the first place." }
+    ]
+  },
+
+  "back-up-computer": {
+    title: "How to Back Up Your Computer",
+    pass: 4,
+    questions: [
+      { q: "How many places besides the computer should important files be kept?",
+        o: ["Two", "None", "Only one, on the same drive", "Ten"], a: 0,
+        e: "Ideally one at home and one online." },
+      { q: "Which built-in tool backs up a Mac to an external drive?",
+        o: ["Time Machine", "Spotlight", "Preview", "Siri"], a: 0,
+        e: "Time Machine backs up hourly and keeps older versions." },
+      { q: "Which Windows tool keeps hourly copies of files on an external drive?",
+        o: ["File History", "Paint", "Notepad", "Task Manager"], a: 0,
+        e: "Find it in Control Panel › System and Security › File History." },
+      { q: "Why test restoring a file?",
+        o: ["To make sure the backup actually works", "To delete old files", "It speeds up the PC", "It's required by law"], a: 0,
+        e: "An untested backup might not be working." },
+      { q: "Why isn't cloud sync alone a complete backup?",
+        o: ["Deleted or damaged files can sync too", "The cloud is always slower", "It costs too much", "It only works at night"], a: 0,
+        e: "Versioned backups on an external drive cover this gap." }
+    ]
+  },
+
   "jcurses": {
     title: "JCurses Crash Course",
     pass: 8,

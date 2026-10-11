@@ -157,6 +157,38 @@ window.TUTORIALS = [
     minutes: 10
   },
   {
+    slug: "spot-scam-messages",
+    title: "How to Spot a Scam Email or Text",
+    summary: "Six signs of a phishing message, and what to do if you clicked.",
+    category: "Online safety",
+    tags: ["scam", "phishing", "fraud", "email", "text", "sms", "security", "safety"],
+    minutes: 5
+  },
+  {
+    slug: "two-factor-authentication",
+    title: "Turn On Two-Step Verification",
+    summary: "Protect Google, Apple, Microsoft and other accounts with 2FA.",
+    category: "Online safety",
+    tags: ["2fa", "two-factor", "two-step", "verification", "security", "account", "password", "hacked"],
+    minutes: 15
+  },
+  {
+    slug: "stop-browser-popups",
+    title: "Stop Pop-Up Ads and Fake Virus Warnings",
+    summary: "Block spammy website notifications in Chrome, Edge and Safari.",
+    category: "Online safety",
+    tags: ["pop-ups", "popups", "ads", "notifications", "virus warning", "chrome", "edge", "safari", "adware"],
+    minutes: 8
+  },
+  {
+    slug: "back-up-computer",
+    title: "How to Back Up Your Computer",
+    summary: "Automatic backups to the cloud and an external drive.",
+    category: "Computer help",
+    tags: ["backup", "back up", "time machine", "file history", "onedrive", "icloud", "external drive", "windows", "mac"],
+    minutes: 20
+  },
+  {
     slug: "jcurses",
     title: "JCurses Crash Course",
     summary: "Build colorful, keyboard-driven Java programs that run in a terminal.",
