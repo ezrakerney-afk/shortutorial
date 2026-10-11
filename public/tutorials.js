@@ -125,6 +125,38 @@ window.TUTORIALS = [
     minutes: 10
   },
   {
+    slug: "phone-storage-full",
+    title: "Phone Storage Full? Free Up Space",
+    summary: "Clear space on iPhone or Android without losing your photos.",
+    category: "Phone help",
+    tags: ["storage", "full", "space", "iphone", "android", "photos", "whatsapp", "icloud", "google photos"],
+    minutes: 15
+  },
+  {
+    slug: "phone-wont-charge",
+    title: "Phone Won't Charge? Fix It",
+    summary: "Cable, port, heat or battery? Find the cause on iPhone or Android.",
+    category: "Phone help",
+    tags: ["charge", "charging", "battery", "port", "cable", "iphone", "android", "not charging"],
+    minutes: 10
+  },
+  {
+    slug: "block-spam-calls",
+    title: "How to Stop Spam Calls",
+    summary: "Silence, screen and block robocalls on iPhone or Android.",
+    category: "Phone help",
+    tags: ["spam", "calls", "robocall", "scam", "block", "unknown callers", "iphone", "android"],
+    minutes: 10
+  },
+  {
+    slug: "find-lost-phone",
+    title: "Find a Lost or Stolen Phone",
+    summary: "Locate, ring, lock and protect a missing iPhone or Android.",
+    category: "Phone help",
+    tags: ["lost", "stolen", "find my", "find hub", "locate", "phone", "iphone", "android", "security"],
+    minutes: 10
+  },
+  {
     slug: "jcurses",
     title: "JCurses Crash Course",
     summary: "Build colorful, keyboard-driven Java programs that run in a terminal.",

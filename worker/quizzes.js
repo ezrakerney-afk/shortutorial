@@ -332,6 +332,94 @@ export default {
     ]
   },
 
+  "phone-storage-full": {
+    title: "Phone Storage Full? Free Up Space",
+    pass: 4,
+    questions: [
+      { q: "What usually uses the most space on a phone?",
+        o: ["Contacts", "Photos, videos and chat apps", "Wallpapers", "Alarms"], a: 1,
+        e: "Media and messaging apps are almost always the biggest." },
+      { q: "What does “Offload App” on iPhone do?",
+        o: ["Deletes the app and its data", "Removes the app but keeps its data", "Moves the app to iCloud Drive", "Hides the app"], a: 1,
+        e: "Reinstalling an offloaded app brings it back with your data." },
+      { q: "Why empty “Recently Deleted” in Photos?",
+        o: ["Deleted photos still use space until it's emptied", "It speeds up Wi-Fi", "It's required by Apple", "It backs up your photos"], a: 0,
+        e: "Deleted photos are kept for 30 days and still count against storage." },
+      { q: "On Android, which is safe to clear without losing app data?",
+        o: ["Cache", "Storage/data", "The app itself", "Your Google account"], a: 0,
+        e: "Clearing storage or data resets the app; cache is just temporary files." },
+      { q: "Which Google Photos option removes only phone copies of backed-up photos?",
+        o: ["Free up space", "Delete all", "Archive", "Share"], a: 0,
+        e: "Free up space deletes local copies that are already safely backed up." }
+    ]
+  },
+
+  "phone-wont-charge": {
+    title: "Phone Won't Charge? Fix It",
+    pass: 4,
+    questions: [
+      { q: "What's the first thing to test when a phone won't charge?",
+        o: ["A different cable, charger and socket", "A factory reset", "A new phone", "A software update"], a: 0,
+        e: "Cables fail far more often than phones do." },
+      { q: "What should you use to clean lint out of a charging port?",
+        o: ["A wooden toothpick, with the phone off", "A metal paperclip", "Water", "Blowing into it"], a: 0,
+        e: "Metal can short the contacts and breath adds moisture." },
+      { q: "Your phone stops charging at 80%. What's most likely?",
+        o: ["A battery-protection setting", "A broken port", "A virus", "A full storage"], a: 0,
+        e: "Optimised or adaptive charging holds at 80% to protect the battery." },
+      { q: "A moisture warning appears when you plug in. What should you do?",
+        o: ["Unplug and let the phone dry for several hours", "Override it", "Use a hair dryer on high heat", "Charge it faster"], a: 0,
+        e: "Charging a wet port can cause damage. Let it dry fully." },
+      { q: "Below what iPhone Maximum Capacity is a battery usually considered worn?",
+        o: ["About 80%", "99%", "50%", "10%"], a: 0,
+        e: "Around 80% capacity, Apple considers a battery worn and it can be replaced." }
+    ]
+  },
+
+  "block-spam-calls": {
+    title: "How to Stop Spam Calls",
+    pass: 4,
+    questions: [
+      { q: "Why doesn't blocking one spam number help for long?",
+        o: ["Scammers use fake numbers that keep changing", "Blocking expires after a day", "Phones can only block one number", "It does help forever"], a: 0,
+        e: "Spoofed numbers change constantly, so automatic filtering works better." },
+      { q: "What does “Silence Unknown Callers” do on iPhone?",
+        o: ["Sends numbers not in your contacts to voicemail", "Blocks everyone", "Deletes voicemails", "Turns off the ringer completely"], a: 0,
+        e: "Callers not in your contacts go to voicemail without ringing." },
+      { q: "What should you do if you answer a robocall?",
+        o: ["Hang up without pressing anything or saying yes", "Press 1 to be removed", "Ask them to stop", "Give your name"], a: 0,
+        e: "Any response tells them your number is active." },
+      { q: "Which US site stops legitimate telemarketers calling?",
+        o: ["donotcall.gov", "facebook.com", "weather.gov", "youtube.com"], a: 0,
+        e: "Registered numbers should stop getting sales calls within 31 days." },
+      { q: "How do you make sure important callers still ring?",
+        o: ["Save their numbers to your contacts", "Turn off your phone", "Block all numbers", "Change your number"], a: 0,
+        e: "Contacts always ring, even with unknown-caller filtering on." }
+    ]
+  },
+
+  "find-lost-phone": {
+    title: "Find a Lost or Stolen Phone",
+    pass: 4,
+    questions: [
+      { q: "Where can you find a lost iPhone from any computer?",
+        o: ["icloud.com/find", "google.com", "apple.com/store", "youtube.com"], a: 0,
+        e: "Sign in with your Apple Account to see its location." },
+      { q: "Where can you find a lost Android phone from any computer?",
+        o: ["google.com/android/find", "android.com/store", "gmail.com/phone", "play.google.com"], a: 0,
+        e: "Sign in with the Google account that's on the phone." },
+      { q: "What does marking a phone as lost do?",
+        o: ["Locks it and shows your message and number", "Erases it immediately", "Turns it off", "Cancels your contract"], a: 0,
+        e: "An honest finder can see how to reach you." },
+      { q: "Your phone was stolen and you can see it on the map. What should you do?",
+        o: ["Give the location to the police, don't go yourself", "Go and get it", "Post the address online", "Erase it immediately"], a: 0,
+        e: "Confronting a thief is risky; let the police handle it." },
+      { q: "Why lock the phone before erasing it?",
+        o: ["Erasing stops you tracking it", "Locking is required to erase", "Erasing makes it ring", "Locking changes your number"], a: 0,
+        e: "Once erased, you can no longer see where it is." }
+    ]
+  },
+
   "jcurses": {
     title: "JCurses Crash Course",
     pass: 8,
