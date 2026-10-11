@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Recover an Unsaved Word Document · Shortutorial</title>
+<meta name="description" content="Closed Word without saving or it crashed? Recover your unsaved Word document on Windows or Mac using Recover Unsaved Documents, AutoRecover files and version history.">
+<link rel="canonical" href="https://shortutorial.com/recover-unsaved-word-document/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How to Recover an Unsaved Word Document · Shortutorial">
+<meta property="og:description" content="Closed Word without saving or it crashed? Recover your unsaved Word document on Windows or Mac using Recover Unsaved Documents, AutoRecover files and version history.">
+<meta property="og:url" content="https://shortutorial.com/recover-unsaved-word-document/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../guide.css">
+</head>
+<body data-slug="recover-unsaved-word-document">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=computer">Computer help</a> / Recover unsaved Word document</div>
+    <span class="eyebrow">Computer help · Microsoft Word</span>
+    <h1>Recover an Unsaved Word Document</h1>
+    <p class="lede">Word crashed, or you clicked “Don't Save” by mistake. There's a good chance your work still exists. Here's where Word hides its backups, and how to make sure it never happens again.</p>
+    <div class="badges"><span class="badge level">Fix + prevent</span><span class="badge">~5–10 min</span><span class="badge">Easy</span></div>
+    <div class="os-row"><span class="lbl">Show steps for</span>
+      <div class="os-switch" role="group" aria-label="Device type"><button data-set="win">Windows</button><button data-set="mac">Mac</button></div>
+    </div>
+  </header>
+
+  <section class="block">
+    <div class="first">
+      <span class="eyebrow">Before anything else · 10 seconds</span>
+      <h3>Don't panic, and don't keep working in Word</h3>
+      <p>Word saves hidden backup copies every few minutes. Your best chance of getting work back is right now, before those copies are cleaned up. Reopen Word first: it often shows a <b>Document Recovery</b> panel on the left with your file. Click it and save it straight away.</p>
+    </div>
+  </section>
+
+  <section class="block" id="fixes">
+    <h2 class="sec"><span class="n">RECOVER</span>Get your document back</h2>
+    <div class="steps-head"><p>Work down the list until you find it.</p><button class="linkbtn" id="expandAll">Show all steps</button></div>
+    <div class="steps" data-q="Found your document?" data-yes="Yes, it's back" data-no="Not yet →">
+      <div class="fix" data-os="win">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Use Recover Unsaved Documents</span><span class="fix-time">2 min</span></button>
+        <div class="fix-body">
+          <ol class="list">
+            <li>Open Word and go to <span class="path">File <i>›</i> Info</span>.</li>
+            <li>Click <b>Manage Document</b> and choose <b>Recover Unsaved Documents</b>. (Or <span class="path">File <i>›</i> Open</span> and click <b>Recover Unsaved Documents</b> at the bottom of the recent list.)</li>
+            <li>Open the file and immediately click <b>Save As</b> to save it somewhere you'll remember.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="fix" data-os="win">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Look in the AutoRecover folder</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <p>Press <kbd>Win</kbd> <kbd>R</kbd>, paste this and press <kbd>Enter</kbd>:</p>
+          <div class="cmd"><pre>%LocalAppData%\Microsoft\Office\UnsavedFiles</pre></div>
+          <p>Also check <code>%AppData%\Microsoft\Word</code>. Files ending in <code>.asd</code> or <code>.wbk</code> are backups. Open Word, choose <span class="path">File <i>›</i> Open <i>›</i> Browse</span>, set the file type to <b>All Files</b>, and open them.</p>
+        </div>
+      </div>
+      <div class="fix" data-os="mac">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Open the AutoRecovery folder</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <ol class="list">
+            <li>In Finder, choose <b>Go</b> › <b>Go to Folder</b> (<kbd>⌘</kbd> <kbd>Shift</kbd> <kbd>G</kbd>).</li>
+            <li>Paste this and press Return:</li>
+          </ol>
+          <div class="cmd"><pre>~/Library/Containers/com.microsoft.Word/Data/Library/Preferences/AutoRecovery</pre></div>
+          <p>Files named “AutoRecovery save of…” are your backups. Drag one to the desktop, open it in Word, and save it with a new name.</p>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Check version history (OneDrive or SharePoint files)</span><span class="fix-time">2 min</span></button>
+        <div class="fix-body">
+          <p>If the document was saved to OneDrive or SharePoint, every version is kept automatically. Open it in Word and go to <span class="path">File <i>›</i> Info <i>›</i> Version History</span>, or select the file title at the top of the window and choose <b>Version History</b>. Open an earlier version and click <b>Restore</b>.</p>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Search the whole computer for backups</span><span class="fix-time">5 min</span></button>
+        <div class="fix-body">
+          <p data-os="win">In File Explorer, search <b>This PC</b> for <code>*.asd</code> and then <code>*.wbk</code>. Also search for part of the document's name, and for files starting with <code>~</code> modified around the time you lost it.</p>
+          <p data-os="mac">Open Finder, press <kbd>⌘</kbd> <kbd>F</kbd>, and search for “AutoRecovery” or part of the document name, with <b>Kind</b> set to <b>Document</b>. Also check the Trash.</p>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Restore a previous version of the file</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <p>If you saved over a good version, rather than never saving at all:</p>
+          <p data-os="win">Right-click the file in File Explorer and choose <span class="path">Properties <i>›</i> Previous Versions</span>. If File History or a restore point was on, earlier copies are listed.</p>
+          <p data-os="mac">If Time Machine is set up, open the folder in Finder, click the Time Machine icon in the menu bar, and choose <b>Browse Time Machine Backups</b>.</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="solved-banner" role="status"><span style="font-size:1.6rem">📄</span><div><b>Document recovered.</b><p>Save it now, then turn on AutoSave (see below) so this can't happen again.</p></div></div>
+    <div class="stuck" role="status"><b>Couldn't find it?</b><p>If Word was closed with “Don't Save” and AutoRecover was off, there may be no copy left. Data recovery tools can sometimes find fragments, but results are hit-and-miss. Set up the protections below to avoid it next time.</p><div><button class="btn ghost small" data-restart>Start over</button></div></div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">PREVENT</span>Never lose a document again</h2>
+    <div class="habits">
+      <div><h3>Turn on AutoSave</h3><p>Save documents to OneDrive and flip the <b>AutoSave</b> switch at the top-left of Word. Every change is saved as you type.</p></div>
+      <div><h3>Save AutoRecover more often</h3><p>In <span class="path">File <i>›</i> Options <i>›</i> Save</span> (Mac: <span class="path">Word <i>›</i> Settings <i>›</i> Save</span>), set AutoRecover to every 1–5 minutes and keep “Keep the last AutoRecovered version” ticked.</p></div>
+      <div><h3>Press save out of habit</h3><p><kbd>Ctrl</kbd> <kbd>S</kbd> on Windows, <kbd>⌘</kbd> <kbd>S</kbd> on Mac. It takes a second.</p></div>
+      <div><h3>Back up your computer</h3><p>File History on Windows or Time Machine on Mac lets you go back to older versions of any file.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>I clicked “Don't Save”. Is it gone?</summary><div class="a"><p>Not always. Check Recover Unsaved Documents and the AutoRecover folder first. Word often keeps a copy for several days.</p></div></details>
+      <details><summary>Does this work for Excel and PowerPoint?</summary><div class="a"><p>Yes. Both have the same <b>Recover Unsaved Workbooks</b> or <b>Presentations</b> option under File › Info › Manage, and the same AutoRecover folders.</p></div></details>
+      <details><summary>How long does Word keep unsaved files?</summary><div class="a"><p>Unsaved drafts are usually kept for about four days, then deleted automatically, so act quickly.</p></div></details>
+      <details><summary>What's the difference between AutoSave and AutoRecover?</summary><div class="a"><p>AutoSave saves your actual file continuously, but only for files in OneDrive or SharePoint. AutoRecover saves emergency backup copies every few minutes, which are only used after a crash or if you don't save.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Official help</h2>
+    <div class="links">
+      <a href="https://support.microsoft.com/en-us/office/recover-an-earlier-version-of-a-word-file-439d91d7-fe33-4edf-aa94-4b631c7ac380" target="_blank" rel="noopener"><span class="src">Microsoft Support</span><b>Recover an earlier version of a Word file</b></a>
+      <a href="https://support.microsoft.com/en-us/office/view-previous-versions-of-office-files-5c1e076f-a9c9-41b8-8ace-f77b9642e2c2" target="_blank" rel="noopener"><span class="src">Microsoft Support</span><b>View previous versions of Office files</b></a>
+      <a href="https://support.microsoft.com/en-us/office/restore-a-previous-version-of-a-file-stored-in-onedrive-159cad6d-d76e-4981-88ef-de6e96c93893" target="_blank" rel="noopener"><span class="src">Microsoft Support</span><b>Restore a previous version of a file in OneDrive</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Related fixes</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Steps written for Microsoft 365 and Word 2021 or later. Older versions are similar.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../guide.js"></script>
+<script src="../quiz.js"></script>
+</body>
+</html>

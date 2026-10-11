@@ -5,11 +5,18 @@
 
   /* ---------- Windows / Mac switch ---------- */
   function store(k, v){ try { v === undefined ? (v = localStorage.getItem(k)) : localStorage.setItem(k, v); } catch(e){ v = null; } return v; }
-  const guess = /Mac|iPhone|iPad/.test(navigator.platform + navigator.userAgent) ? 'mac' : 'win';
+  // Works for any pair of choices: Windows/Mac (win, mac) or iPhone/Android (ios, android).
+  const choices = [...document.querySelectorAll('.os-switch button')].map(b => b.dataset.set);
+  const phone = choices.includes('ios');
+  const key = phone ? 'st-phone' : 'st-os';
+  const ua = navigator.platform + ' ' + navigator.userAgent;
+  const guess = phone ? (/Android/i.test(ua) ? 'android' : 'ios') : (/Mac|iPhone|iPad/.test(ua) ? 'mac' : 'win');
   function setOS(os){
+    if (choices.length && !choices.includes(os)) os = choices[0];
     root.dataset.os = os;
     document.querySelectorAll('.os-switch button').forEach(b => b.setAttribute('aria-pressed', b.dataset.set === os));
-    store('st-os', os);
+    document.querySelectorAll('[data-os]').forEach(el => { if (el !== root) el.classList.toggle('os-off', choices.length > 0 && el.dataset.os !== os); });
+    store(key, os);
     resetSteps();
   }
   document.querySelectorAll('.os-switch button').forEach(b => b.addEventListener('click', () => setOS(b.dataset.set)));
@@ -102,5 +109,5 @@
   });
   const yr = document.getElementById('yr'); if (yr) yr.textContent = new Date().getFullYear();
 
-  setOS(store('st-os') || guess);
+  setOS(store(key) || guess);
 })();

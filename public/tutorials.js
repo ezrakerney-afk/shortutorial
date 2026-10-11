@@ -93,6 +93,38 @@ window.TUTORIALS = [
     minutes: 10
   },
   {
+    slug: "take-screenshot",
+    title: "How to Take a Screenshot",
+    summary: "The whole screen, part of it or one window, on Windows or Mac.",
+    category: "Computer help",
+    tags: ["screenshot", "screen capture", "print screen", "snipping tool", "screen record", "windows", "mac"],
+    minutes: 2
+  },
+  {
+    slug: "find-wifi-password",
+    title: "How to Find Your Wi-Fi Password",
+    summary: "Find it on your router, PC, Mac, iPhone or Android.",
+    category: "Computer help",
+    tags: ["wifi", "wi-fi", "password", "network key", "router", "forgot", "windows", "mac", "iphone", "android"],
+    minutes: 2
+  },
+  {
+    slug: "recover-unsaved-word-document",
+    title: "Recover an Unsaved Word Document",
+    summary: "Word crashed or you didn't save? Get your document back.",
+    category: "Computer help",
+    tags: ["word", "office", "unsaved", "recover", "autorecover", "lost document", "crash", "excel", "windows", "mac"],
+    minutes: 8
+  },
+  {
+    slug: "no-sound",
+    title: "Fix No Sound on Your Computer",
+    summary: "Speakers or headphones silent? Get your sound back on Windows or Mac.",
+    category: "Computer help",
+    tags: ["sound", "audio", "no sound", "speakers", "headphones", "volume", "mute", "windows", "mac"],
+    minutes: 10
+  },
+  {
     slug: "jcurses",
     title: "JCurses Crash Course",
     summary: "Build colorful, keyboard-driven Java programs that run in a terminal.",

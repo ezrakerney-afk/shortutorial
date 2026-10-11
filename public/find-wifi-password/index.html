@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Find Your Wi-Fi Password · Shortutorial</title>
+<meta name="description" content="Forgot your Wi-Fi password? Find it on the router sticker, on a Windows PC, Mac, iPhone or Android phone that&#x27;s already connected, or in the router settings.">
+<link rel="canonical" href="https://shortutorial.com/find-wifi-password/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How to Find Your Wi-Fi Password · Shortutorial">
+<meta property="og:description" content="Forgot your Wi-Fi password? Find it on the router sticker, on a Windows PC, Mac, iPhone or Android phone that&#x27;s already connected, or in the router settings.">
+<meta property="og:url" content="https://shortutorial.com/find-wifi-password/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../guide.css">
+</head>
+<body data-slug="find-wifi-password">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=computer">Computer help</a> / Find Wi-Fi password</div>
+    <span class="eyebrow">Computer help · Wi-Fi</span>
+    <h1>How to Find Your Wi-Fi Password</h1>
+    <p class="lede">Forgot the Wi-Fi password and need to connect something new? Any device that's already connected can show it. Here's how on every common device.</p>
+    <div class="badges"><span class="badge level">Quick guide</span><span class="badge">~2 min</span><span class="badge">Easy</span></div>
+    <div class="os-row"><span class="lbl">Show steps for</span>
+      <div class="os-switch" role="group" aria-label="Device type"><button data-set="win">Windows</button><button data-set="mac">Mac</button></div>
+    </div>
+  </header>
+
+  <section class="block">
+    <div class="first">
+      <span class="eyebrow">Easiest option · 30 seconds</span>
+      <h3>Check the router first</h3>
+      <p>Most home routers have the original Wi-Fi name and password printed on a sticker on the back or bottom, labelled <b>Wi-Fi key</b>, <b>WPA key</b>, <b>Network key</b> or <b>Password</b>. If nobody has changed it, that's your password.</p>
+      <p>Changed it and forgot? A device that's already connected can show it. Pick yours below.</p>
+    </div>
+  </section>
+
+  <section class="block" id="fixes">
+    <h2 class="sec"><span class="n">FIND</span>Find it on a device that's already connected</h2>
+    <div class="steps-head"><p>Use whichever device is already on the Wi-Fi.</p><button class="linkbtn" id="expandAll">Show all steps</button></div>
+    <div class="steps" data-q="Found it?" data-yes="Yes, got it" data-no="Try another way →">
+      <div class="fix" data-os="win">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Windows: view it in Settings</span><span class="fix-time">1 min</span></button>
+        <div class="fix-body">
+          <ol class="list">
+            <li>Go to <span class="path">Settings <i>›</i> Network &amp; internet <i>›</i> Wi-Fi</span>.</li>
+            <li>Click your network's name (or <b>Manage known networks</b>, then the network) to open its properties.</li>
+            <li>Click <b>View</b> next to <b>View Wi-Fi security key</b>.</li>
+          </ol>
+          <p>Older versions of Windows don't have this button. Use the next step instead.</p>
+        </div>
+      </div>
+      <div class="fix" data-os="win">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Windows: use a command</span><span class="fix-time">2 min</span></button>
+        <div class="fix-body">
+          <p>This works for any network the computer has ever connected to. Right-click Start, choose <b>Terminal</b>, and run the first command to list saved networks:</p>
+          <div class="cmd"><pre>netsh wlan show profiles</pre></div>
+          <p>Then run this, replacing <b>NetworkName</b> with the exact name from the list (keep the quotes):</p>
+          <div class="cmd"><pre>netsh wlan show profile name="NetworkName" key=clear</pre></div>
+          <p>The password is next to <b>Key Content</b>.</p>
+        </div>
+      </div>
+      <div class="fix" data-os="mac">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Mac: use the Passwords app</span><span class="fix-time">1 min</span></button>
+        <div class="fix-body">
+          <ol class="list">
+            <li>Open the <b>Passwords</b> app (macOS Sequoia or later) and click <b>Wi-Fi</b> in the sidebar.</li>
+            <li>Select your network, then hover over the hidden password to show it.</li>
+          </ol>
+          <p>On older macOS, open <b>Keychain Access</b>, search for the network name, double-click it and tick <b>Show password</b>. You'll be asked for your Mac password.</p>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">iPhone or Android phone</span><span class="fix-time">1 min</span></button>
+        <div class="fix-body">
+          <ul class="list">
+            <li><b>iPhone (iOS 16 or later):</b> go to <span class="path">Settings <i>›</i> Wi-Fi</span>, tap <b>ⓘ</b> next to the network, then tap <b>Password</b> and unlock with Face ID or your passcode.</li>
+            <li><b>Android:</b> go to <span class="path">Settings <i>›</i> Network &amp; internet <i>›</i> Internet</span>, tap the gear next to the network, then <b>Share</b>. A QR code appears, and on most phones the password is written underneath.</li>
+          </ul>
+          <p>Sharing with a nearby iPhone or Mac is even easier: bring it close while it tries to join, and tap <b>Share Password</b> when asked.</p>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Log in to the router</span><span class="fix-time">5 min</span></button>
+        <div class="fix-body">
+          <p>If no device remembers it, the router itself always knows.</p>
+          <ol class="list">
+            <li>On a connected device (a cable works too), open a browser and go to the router's address. It's on the sticker, often <code>192.168.1.1</code> or <code>192.168.0.1</code>. Many internet providers also have an app.</li>
+            <li>Sign in with the admin password on the sticker (this is different from the Wi-Fi password).</li>
+            <li>Look under <b>Wireless</b> or <b>Wi-Fi settings</b> for the password, and change it if you like.</li>
+          </ol>
+          <div class="note warn"><span><b>Last resort:</b> holding the router's reset button for 10–30 seconds restores the password on the sticker, but also wipes all other settings. Some providers' routers need reconfiguring afterwards.</span></div>
+        </div>
+      </div>
+
+    </div>
+    <div class="solved-banner" role="status"><span style="font-size:1.6rem">🔑</span><div><b>Password found.</b><p>Save it in a password manager or your phone's notes so you don't have to hunt for it again.</p></div></div>
+    <div class="stuck" role="status"><b>Still can't find it?</b><p>Call your internet provider. They can tell you the password or reset it remotely after checking your identity.</p><div><button class="btn ghost small" data-restart>Start over</button></div></div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Is the Wi-Fi password the same as the router password?</summary><div class="a"><p>No. The Wi-Fi password connects devices to the network. The router (admin) password logs in to the router's settings. Both are often printed on the sticker.</p></div></details>
+      <details><summary>Can I see the password for Wi-Fi I'm not connected to?</summary><div class="a"><p>Only for networks your device has joined before. Otherwise you need to ask the owner.</p></div></details>
+      <details><summary>Should I change the password on the sticker?</summary><div class="a"><p>It's a good idea, especially if the sticker is visible to visitors. Choose something long that you can share easily, and update it on all your devices.</p></div></details>
+      <details><summary>Why does my phone show a QR code instead of the password?</summary><div class="a"><p>Other phones can scan the code to join without typing. Most Android phones also show the password text under the code.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Official help</h2>
+    <div class="links">
+      <a href="https://support.apple.com/guide/passwords/wi-fi-mchl9f8f63cd/mac" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>Find and share your Wi-Fi password on Mac</b></a>
+      <a href="https://support.apple.com/en-us/102511" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>If you need help with your Wi-Fi password</b></a>
+      <a href="https://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c" target="_blank" rel="noopener"><span class="src">Microsoft Support</span><b>Fix Wi-Fi connection issues in Windows</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Related fixes</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Steps written for Windows 11 and recent macOS. Menu names may differ slightly on older versions.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../guide.js"></script>
+<script src="../quiz.js"></script>
+</body>
+</html>

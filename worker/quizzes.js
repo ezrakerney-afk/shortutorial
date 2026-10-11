@@ -244,6 +244,94 @@ export default {
     ]
   },
 
+  "take-screenshot": {
+    title: "How to Take a Screenshot",
+    pass: 4,
+    questions: [
+      { q: "Which Windows shortcut lets you drag to capture part of the screen?",
+        o: ["Win + Shift + S", "Ctrl + C", "Alt + F4", "Win + L"], a: 0,
+        e: "Win + Shift + S opens the snipping toolbar; the capture is copied to your clipboard." },
+      { q: "Which Mac shortcut captures the whole screen?",
+        o: ["⌘ + Shift + 3", "⌘ + Q", "⌘ + Tab", "⌘ + Space"], a: 0,
+        e: "⌘ Shift 3 saves a picture of the whole screen to your desktop." },
+      { q: "On a Mac, how do you capture one window after pressing ⌘ + Shift + 4?",
+        o: ["Press Space, then click the window", "Press Esc", "Press Enter twice", "Double-click the desktop"], a: 0,
+        e: "Space turns the pointer into a camera that captures whichever window you click." },
+      { q: "Where does Windows save screenshots taken with Win + PrtScn?",
+        o: ["Pictures › Screenshots", "The desktop", "Documents", "The Recycle Bin"], a: 0,
+        e: "Full-screen shots with Win + PrtScn are saved automatically in Pictures › Screenshots." },
+      { q: "Why might a screenshot of a streaming video come out black?",
+        o: ["Your screen is broken", "The app blocks captures on purpose", "The battery is low", "The file is too big"], a: 1,
+        e: "Streaming and some secure apps block screenshots to protect content." }
+    ]
+  },
+
+  "find-wifi-password": {
+    title: "How to Find Your Wi-Fi Password",
+    pass: 4,
+    questions: [
+      { q: "Where is the original Wi-Fi password usually printed?",
+        o: ["On the router's sticker", "On the power cable", "On your bill only", "Inside the router"], a: 0,
+        e: "Most routers have the default network name and password on a sticker on the back or bottom." },
+      { q: "Which Windows command shows a saved Wi-Fi password?",
+        o: ["netsh wlan show profile name=\"NetworkName\" key=clear", "ipconfig /all", "ping router", "dir /wifi"], a: 0,
+        e: "The password appears next to Key Content." },
+      { q: "On a recent Mac, which app stores Wi-Fi passwords?",
+        o: ["Passwords", "Photos", "Notes", "Finder"], a: 0,
+        e: "The Passwords app has a Wi-Fi section. Older Macs use Keychain Access." },
+      { q: "Is the router admin password the same as the Wi-Fi password?",
+        o: ["Yes, always", "No — one logs in to settings, the other connects devices", "Only on Apple routers", "Only if you changed it"], a: 1,
+        e: "They're different, though both are often on the sticker." },
+      { q: "What happens if you hold the router's reset button?",
+        o: ["Only the Wi-Fi password changes", "All settings are wiped back to factory defaults", "Nothing", "The internet gets faster"], a: 1,
+        e: "A reset restores the sticker password but also erases every other setting." }
+    ]
+  },
+
+  "recover-unsaved-word-document": {
+    title: "Recover an Unsaved Word Document",
+    pass: 4,
+    questions: [
+      { q: "Where is “Recover Unsaved Documents” in Word for Windows?",
+        o: ["File › Info › Manage Document", "Insert › Pictures", "View › Zoom", "Home › Styles"], a: 0,
+        e: "It's also at the bottom of File › Open's recent list." },
+      { q: "Which file extension do Word's AutoRecover backups use on Windows?",
+        o: [".asd", ".jpg", ".exe", ".zip"], a: 0,
+        e: "Search your PC for *.asd files to find AutoRecover copies." },
+      { q: "What does AutoSave need to work?",
+        o: ["The file saved in OneDrive or SharePoint", "A printer", "Two monitors", "An internet browser open"], a: 0,
+        e: "AutoSave only works for files stored in OneDrive or SharePoint." },
+      { q: "Why should you act quickly after losing a document?",
+        o: ["Unsaved drafts are deleted after a few days", "Word charges a fee later", "Your computer locks", "The file gets bigger"], a: 0,
+        e: "Word cleans up unsaved drafts automatically after about four days." },
+      { q: "What's a good AutoRecover interval?",
+        o: ["Every 1–5 minutes", "Once a day", "Never", "Every 2 hours"], a: 0,
+        e: "Shorter intervals mean less lost work after a crash." }
+    ]
+  },
+
+  "no-sound": {
+    title: "Fix No Sound on Your Computer",
+    pass: 4,
+    questions: [
+      { q: "Which of these has its own separate volume?",
+        o: ["The computer, the app and the speakers", "Only the computer", "Only the app", "Only the mouse"], a: 0,
+        e: "Any of the three can be muted or turned down independently." },
+      { q: "You plugged in a monitor by HDMI and lost sound. Why?",
+        o: ["The monitor took over as the output device", "HDMI blocks sound", "The speakers broke", "The internet disconnected"], a: 0,
+        e: "Choose your speakers again in the output device menu." },
+      { q: "Where can you mute individual apps on Windows?",
+        o: ["Volume mixer", "Task Manager", "File Explorer", "Control Panel › Fonts"], a: 0,
+        e: "Right-click the speaker icon and open Volume mixer." },
+      { q: "Which Windows setting can stop sound working entirely on some devices?",
+        o: ["Audio enhancements", "Dark mode", "Night light", "Screen saver"], a: 0,
+        e: "Turning off audio enhancements fixes some driver problems." },
+      { q: "Headphones work but the built-in speakers don't. What does that suggest?",
+        o: ["The speakers may be faulty", "Windows needs reinstalling", "The internet is down", "The volume is too high"], a: 0,
+        e: "If one output works, the computer's sound system is fine; the speakers are the issue." }
+    ]
+  },
+
   "jcurses": {
     title: "JCurses Crash Course",
     pass: 8,

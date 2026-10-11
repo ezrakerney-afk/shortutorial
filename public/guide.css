@@ -20,7 +20,7 @@ header.intro h1{font-size:clamp(2rem,6.2vw,2.9rem);font-weight:700;letter-spacin
 .os-switch button{all:unset;cursor:pointer;font-family:var(--display);font-weight:600;font-size:.92rem;padding:6px 16px;border-radius:999px;color:var(--muted);transition:background .15s,color .15s}
 .os-switch button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
 .os-switch button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-html[data-os="win"] [data-os="mac"],html[data-os="mac"] [data-os="win"]{display:none!important}
+/* OS visibility handled by .os-off in guide.js */
 
 h2.sec{font-size:1.5rem;font-weight:700;letter-spacing:-.01em;display:flex;align-items:baseline;gap:12px;padding-bottom:10px;border-bottom:1px solid var(--line)}
 h2.sec .n{font-family:var(--mono);font-size:.8rem;color:var(--amber);font-weight:600}
@@ -148,3 +148,4 @@ ol.list li::marker{font-family:var(--mono);color:var(--amber);font-weight:600}
 .facts-grid dt{font-family:var(--mono);font-size:.75rem;color:var(--muted);padding-top:3px}
 .facts-grid dd{margin:0}
 .issue h4{font-family:var(--display);font-size:1rem;margin:4px 0 0}
+.os-off{display:none!important}
