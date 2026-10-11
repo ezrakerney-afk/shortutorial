@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Speed Up a Slow Computer (Windows &amp; Mac) · Shortutorial</title>
+<meta name="description" content="Computer running slow? Find what's hogging it and fix it on Windows or Mac: restart properly, startup apps, browser tabs, storage, updates, malware and upgrades.">
+<link rel="canonical" href="https://shortutorial.com/slow-computer/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Speed Up a Slow Computer (Windows &amp; Mac) · Shortutorial">
+<meta property="og:description" content="Computer running slow? Find what's hogging it and fix it on Windows or Mac: restart properly, startup apps, browser tabs, storage, updates, malware and upgrades.">
+<meta property="og:url" content="https://shortutorial.com/slow-computer/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../guide.css">
+</head>
+<body data-slug="slow-computer">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=computer">Computer help</a> / Slow computer</div>
+    <span class="eyebrow">Computer help · Performance</span>
+    <h1>Speed Up a Slow Computer</h1>
+    <p class="lede">A slow computer almost always has a specific cause: one app hogging everything, too much starting up, a full drive, or aging hardware. This guide helps you find which one, then fix it.</p>
+    <div class="badges"><span class="badge level">Fix + learn</span><span class="badge">~15–30 min</span><span class="badge">Easy to medium</span></div>
+    <div class="os-row"><span class="lbl">Show steps for</span>
+      <div class="os-switch" role="group" aria-label="Operating system"><button data-set="win">Windows</button><button data-set="mac">Mac</button></div>
+    </div>
+  </header>
+
+  <section class="block">
+    <div class="first">
+      <span class="eyebrow">Know the signs · 1 minute</span>
+      <h3>What kind of slow is it?</h3>
+      <ul class="list">
+        <li><b>Suddenly slow today:</b> usually a background update, virus scan, sync or a stuck app. Steps 1–2 fix most of these.</li>
+        <li><b>Slow to start up:</b> too many apps launching at login. Step 3.</li>
+        <li><b>Slow in the browser only:</b> tabs and extensions. Step 4.</li>
+        <li><b>Gradually slower for months or years:</b> storage, updates or hardware. Steps 5–8.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="fixes">
+    <h2 class="sec"><span class="n">FIX</span>Try these in order</h2>
+    <div class="steps-head"><p>Open a step, try it, then tell us if it helped.</p><button class="linkbtn" id="expandAll">Show all steps</button></div>
+
+    <div class="steps" data-q="Faster now?" data-yes="Yes, much better" data-no="Still slow →">
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Restart properly</span><span class="fix-time">2 min</span></button>
+        <div class="fix-body">
+          <p>Computers that go weeks without a restart pile up stuck processes and memory leaks. A restart clears them all.</p>
+          <p data-os="win">Use <span class="path">Start <i>›</i> Power <i>›</i> Restart</span>, not Shut down. With Windows' Fast Startup feature, “Shut down” saves part of the system to disk and reloads it, so problems can survive it. Restart starts completely fresh.</p>
+          <p data-os="mac">Choose <span class="path">Apple menu <i>›</i> Restart</span>, and untick <b>Reopen windows when logging back in</b> so you don't bring the clutter back with you.</p>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Find out what's hogging your computer</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <div data-os="win" style="display:flex;flex-direction:column;gap:10px">
+            <p>Press <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Esc</kbd> to open <b>Task Manager</b>. On the <b>Processes</b> page, click the <b>CPU</b>, <b>Memory</b> and <b>Disk</b> column headers to sort by each.</p>
+            <p>If one app is near the top using a lot, and you don't need it right now, select it and click <b>End task</b>.</p>
+          </div>
+          <div data-os="mac" style="display:flex;flex-direction:column;gap:10px">
+            <p>Press <kbd>⌘</kbd> <kbd>Space</kbd>, type <b>Activity Monitor</b> and open it. Click the <b>% CPU</b> column on the CPU tab, then check the <b>Memory</b> tab, where a yellow or red <b>Memory Pressure</b> graph means you're short on memory.</p>
+            <p>To close a runaway app, select it and click the <b>×</b> button in the toolbar, then <b>Quit</b>.</p>
+          </div>
+          <div class="note"><span><b>Common culprits:</b> web browsers with many tabs, cloud sync (OneDrive, iCloud, Dropbox) catching up, antivirus scans, and updates installing in the background. Those last ones finish on their own; give them 20 minutes.</span></div>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Stop apps launching at startup</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <p data-os="win">In Task Manager, open <b>Startup apps</b>. Look at the <b>Startup impact</b> column and <b>Disable</b> anything you don't need the moment you sign in, like game launchers, chat apps and updaters. Disabling doesn't uninstall them; you can still open them yourself.</p>
+          <p data-os="mac">Go to <span class="path">System Settings <i>›</i> General <i>›</i> Login Items</span>. Select apps under <b>Open at Login</b> you don't need right away and click <b>–</b>. Also review the <b>Allow in the Background</b> list.</p>
+          <p>Keep your antivirus, cloud backup and anything from your computer's maker for audio, touchpad or graphics.</p>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Tame your web browser</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <p>Every open tab uses memory, and some sites (video, email, social media) use a lot even in the background.</p>
+          <ul class="list">
+            <li>Close tabs you aren't using. Bookmark them if you want them later.</li>
+            <li>Remove browser extensions you don't recognise or use. In Chrome or Edge, type <code>chrome://extensions</code> or <code>edge://extensions</code> in the address bar.</li>
+            <li>Turn on tab sleeping: <b>Memory Saver</b> in Chrome's <span class="path">Settings <i>›</i> Performance</span>, or <b>Sleeping tabs</b> in Edge's <span class="path">Settings <i>›</i> System and performance</span>.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Free up storage space</span><span class="fix-time">10 min</span></button>
+        <div class="fix-body">
+          <p>When the main drive is nearly full, the system has no room for the temporary files it needs while working, and everything slows down. Aim to keep at least 15% free.</p>
+          <p>Our <a href="../free-up-disk-space/">Free Up Disk Space guide</a> walks through it step by step.</p>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Install updates and check power settings</span><span class="fix-time">10 min</span></button>
+        <div class="fix-body">
+          <div data-os="win" style="display:flex;flex-direction:column;gap:10px">
+            <p>Install everything in <span class="path">Settings <i>›</i> Windows Update</span>, including optional driver updates, then restart.</p>
+            <p>Laptops: check <span class="path">Settings <i>›</i> System <i>›</i> Power &amp; battery <i>›</i> Power mode</span>. <b>Best power efficiency</b> deliberately slows things down to save battery; choose <b>Balanced</b> or <b>Best performance</b> when plugged in.</p>
+          </div>
+          <div data-os="mac" style="display:flex;flex-direction:column;gap:10px">
+            <p>Install updates in <span class="path">System Settings <i>›</i> General <i>›</i> Software Update</span>, and update your apps from the App Store.</p>
+            <p>MacBooks: check <span class="path">System Settings <i>›</i> Battery</span>. If <b>Low Power Mode</b> is on, your Mac runs slower to save battery. Set it to <b>Never</b> or <b>Only on Battery</b>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Scan for malware</span><span class="fix-time">10–30 min</span></button>
+        <div class="fix-body">
+          <p>Adware and hidden crypto-miners can eat your processor quietly. Signs include pop-up ads, a new browser homepage or search engine, and the fan running hard when you're not doing anything.</p>
+          <p data-os="win">Open <b>Windows Security</b> from the Start menu, go to <b>Virus &amp; threat protection</b> and run a <b>Quick scan</b>. For a deeper check, choose <b>Scan options</b> › <b>Full scan</b>.</p>
+          <p data-os="mac">macOS has built-in malware protection, but adware still gets in through downloads. Remove apps and browser extensions you don't remember installing, and for a second opinion run the free version of <a href="https://www.malwarebytes.com/" target="_blank" rel="noopener">Malwarebytes for Mac</a>.</p>
+          <div class="note warn"><span>Ignore pop-ups saying your computer is “infected” and asking you to call a number or download a cleaner. Those are scams.</span></div>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Check whether your hardware is the limit</span><span class="fix-time">5 min</span></button>
+        <div class="fix-body">
+          <p>If everything above is done and it's still slow, the computer may simply be short on power for what you ask of it. Two things matter most:</p>
+          <ul class="list">
+            <li><b>Drive type.</b> An old spinning hard drive (HDD) is the single biggest cause of slowness in older computers. Switching to a solid-state drive (SSD) can make it feel new.</li>
+            <li><b>Memory (RAM).</b> 8&nbsp;GB is the practical minimum today; 16&nbsp;GB is comfortable for heavy browsing and multitasking.</li>
+          </ul>
+          <p data-os="win"><b>Check yours:</b> in Task Manager, open <b>Performance</b>. Click <b>Disk 0</b> to see whether it's an SSD or HDD, and <b>Memory</b> to see how much you have and how much is in use.</p>
+          <p data-os="mac"><b>Check yours:</b> choose <span class="path">Apple menu <i>›</i> About This Mac</span> to see the memory. All Macs from roughly the last decade use SSDs. On Apple silicon Macs, memory can't be upgraded.</p>
+          <p data-os="win">As a final step before upgrading, <span class="path">Settings <i>›</i> System <i>›</i> Recovery <i>›</i> Reset this PC</span> with <b>Keep my files</b> reinstalls Windows while keeping your documents. You'll need to reinstall apps.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="solved-banner" role="status"><span style="font-size:1.6rem">⚡</span><div><b>Back up to speed.</b><p>The habits below help keep it that way.</p></div></div>
+    <div class="stuck" role="status">
+      <b>Still slow?</b>
+      <ul class="list">
+        <li>Back up your files, then consider an SSD or memory upgrade at a local repair shop, which is often far cheaper than a new computer.</li>
+        <li>If the fan is loud and the computer feels hot, dust buildup may be making it overheat and slow itself down. A repair shop can clean it.</li>
+      </ul>
+      <div><button class="btn ghost small" data-restart>Start over</button></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">HABITS</span>Keep it running fast</h2>
+    <div class="habits">
+      <div><h3>Restart once a week</h3><p>Clears stuck processes and lets updates finish installing.</p></div>
+      <div><h3>Watch what starts with your computer</h3><p>New apps often add themselves to startup. Check the list every few months.</p></div>
+      <div><h3>Keep 15% of your drive free</h3><p>Turn on automatic cleanup so you don't have to think about it.</p></div>
+      <div><h3>One antivirus is enough</h3><p>Two security apps fight each other and slow everything down. Windows Security is fine for most people.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Why is my computer suddenly so slow?</summary><div class="a"><p>Something is usually running in the background: an update, a virus scan, cloud sync catching up, or one app gone haywire. Task Manager or Activity Monitor (step 2) shows you which.</p></div></details>
+      <details><summary>Will adding more RAM make my computer faster?</summary><div class="a"><p>Only if you're running out of it. If memory use regularly sits above about 85%, or the Mac's Memory Pressure graph is yellow or red, more RAM will help. If not, it won't make a noticeable difference.</p></div></details>
+      <details><summary>Is restarting better than shutting down?</summary><div class="a"><p>On Windows, yes. Fast Startup makes “Shut down” save part of the system state, so problems can carry over. Restart always starts fresh. On a Mac, both are fully fresh starts.</p></div></details>
+      <details><summary>Do I need a “PC optimizer” or “Mac cleaner” app?</summary><div class="a"><p>No. Everything they do can be done with the built-in tools in this guide, and many of these apps push paid upgrades or slow your computer down themselves.</p></div></details>
+      <details><summary>Why is my laptop slower on battery?</summary><div class="a"><p>Battery-saving modes deliberately reduce performance to make the charge last longer. Plug in, or change the power mode in step 6.</p></div></details>
+      <details><summary>Is my computer just too old?</summary><div class="a"><p>If it still has a spinning hard drive and 4&nbsp;GB of RAM or less, it will struggle with modern websites and apps. An SSD upgrade often helps a lot; beyond that, it may be time to replace it.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Official help and tools</h2>
+    <div class="links">
+      <a href="https://support.microsoft.com/en-us/windows/experience/performance-optimization/tips-to-improve-pc-performance-in-windows" target="_blank" rel="noopener"><span class="src">Microsoft Support</span><b>Tips to improve PC performance in Windows</b></a>
+      <a href="https://support.apple.com/guide/mac-help/if-your-mac-runs-slowly-mchlp1731/mac" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>If your Mac runs slowly</b></a>
+      <a href="https://www.malwarebytes.com/" target="_blank" rel="noopener"><span class="src">Malwarebytes</span><b>Free malware scanner for Mac</b></a>
+      <a href="../free-up-disk-space/"><span class="src">Shortutorial</span><b>Free up disk space</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Related fixes</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Steps written for Windows 11 and recent macOS. Menu names may differ slightly on older versions.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../guide.js"></script>
+<script src="../quiz.js"></script>
+</body>
+</html>

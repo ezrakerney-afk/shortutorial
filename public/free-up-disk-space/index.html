@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Up Disk Space on Windows or Mac · Shortutorial</title>
+<meta name="description" content="Drive full? Find what's taking up space and safely clear it on Windows or Mac: temporary files, old updates, big files, apps and System Data.">
+<link rel="canonical" href="https://shortutorial.com/free-up-disk-space/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Free Up Disk Space on Windows or Mac · Shortutorial">
+<meta property="og:description" content="Drive full? Find what's taking up space and safely clear it on Windows or Mac: temporary files, old updates, big files, apps and System Data.">
+<meta property="og:url" content="https://shortutorial.com/free-up-disk-space/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../guide.css">
+</head>
+<body data-slug="free-up-disk-space">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=computer">Computer help</a> / Free up disk space</div>
+    <span class="eyebrow">Computer help · Storage</span>
+    <h1>Free Up Disk Space</h1>
+    <p class="lede">Running out of space slows your computer down and blocks updates. Here's how to see what's filling your drive and clear it safely, starting with the easy wins.</p>
+    <div class="badges"><span class="badge level">Fix + prevent</span><span class="badge">~10–20 min</span><span class="badge">Easy</span></div>
+    <div class="os-row"><span class="lbl">Show steps for</span>
+      <div class="os-switch" role="group" aria-label="Operating system"><button data-set="win">Windows</button><button data-set="mac">Mac</button></div>
+    </div>
+  </header>
+
+  <section class="block">
+    <div class="first">
+      <span class="eyebrow">Start here · 1 minute</span>
+      <h3>See what's using your space</h3>
+      <p data-os="win">Open <span class="path">Settings <i>›</i> System <i>›</i> Storage</span>. Windows shows a bar for each category: apps, temporary files, documents, and so on. Click any category to see more.</p>
+      <p data-os="mac">Open <span class="path">Apple menu <i>›</i> System Settings <i>›</i> General <i>›</i> Storage</span>. The bar at the top shows each category. Click the <b>ⓘ</b> next to a category to see and delete what's in it. (On macOS Monterey or older: <span class="path">Apple menu <i>›</i> About This Mac <i>›</i> Storage</span>.)</p>
+      <p><b>How much free space is enough?</b> A good rule of thumb is to keep at least 15% of your drive free, and 20&nbsp;GB or more so system updates have room to install.</p>
+    </div>
+  </section>
+
+  <section class="block" id="fixes">
+    <h2 class="sec"><span class="n">FIX</span>Clear space, easiest first</h2>
+    <div class="steps-head"><p>Do these in order and stop once you have enough room.</p><button class="linkbtn" id="expandAll">Show all steps</button></div>
+
+    <div class="steps" data-q="Enough free space now?" data-yes="Yes, that's enough" data-no="Need more →">
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Empty the trash and clear your Downloads folder</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <p>Deleted files still use space until the trash is emptied, and the Downloads folder quietly collects installers and copies of everything you've ever opened.</p>
+          <ul class="list">
+            <li data-os="win">Right-click the <b>Recycle Bin</b> on the desktop and choose <b>Empty Recycle Bin</b>.</li>
+            <li data-os="mac">Control-click the <b>Trash</b> in the Dock and choose <b>Empty Trash</b>.</li>
+            <li>Open your <b>Downloads</b> folder, sort by size, and delete what you don't need. Old installers (<code>.exe</code>, <code>.msi</code>, <code>.dmg</code>, <code>.pkg</code>) are safe to remove once the app is installed.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Delete temporary and leftover files</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <div data-os="win" style="display:flex;flex-direction:column;gap:10px">
+            <ol class="list">
+              <li>Go to <span class="path">Settings <i>›</i> System <i>›</i> Storage <i>›</i> Temporary files</span>.</li>
+              <li>Tick what you want to remove. <b>Windows Update Cleanup</b>, <b>Delivery Optimization Files</b> and <b>Temporary files</b> are safe and often large.</li>
+              <li>Click <b>Remove files</b>.</li>
+            </ol>
+            <div class="note warn"><span><b>Watch the Downloads box.</b> It's in this list too, and ticking it deletes everything in your Downloads folder.</span></div>
+            <p>Also check <span class="path">Storage <i>›</i> Cleanup recommendations</span> for big unused files and apps Windows has spotted.</p>
+          </div>
+          <div data-os="mac" style="display:flex;flex-direction:column;gap:10px">
+            <p>In <span class="path">System Settings <i>›</i> General <i>›</i> Storage</span>, look at the <b>Recommendations</b> section and turn on what suits you:</p>
+            <ul class="list">
+              <li><b>Store in iCloud:</b> keeps files in iCloud and downloads them only when you open them.</li>
+              <li><b>Optimize Storage:</b> removes movies and TV shows you've already watched.</li>
+              <li><b>Empty Trash Automatically:</b> deletes items that have been in the Trash for 30 days.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Uninstall apps and games you don't use</span><span class="fix-time">5 min</span></button>
+        <div class="fix-body">
+          <p data-os="win">Go to <span class="path">Settings <i>›</i> Apps <i>›</i> Installed apps</span>, set <b>Sort by</b> to <b>Size (large to small)</b>, then click <b>···</b> › <b>Uninstall</b> on anything you don't need. Games are usually the biggest.</p>
+          <p data-os="mac">In <span class="path">Storage</span>, click the <b>ⓘ</b> next to <b>Applications</b>. Sort by size, select what you don't use and click <b>Delete</b>. Apps from outside the App Store may come with their own uninstaller; use it if they do.</p>
+          <p>Not sure what something is? Search its name online before removing it. Anything from your computer's maker that says “driver”, “audio” or “touchpad” should stay.</p>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Find your biggest files</span><span class="fix-time">5 min</span></button>
+        <div class="fix-body">
+          <p>Often a few huge files (old videos, phone backups, disk images) take more space than everything else combined.</p>
+          <p data-os="win">Free tools like <a href="https://diskanalyzer.com/" target="_blank" rel="noopener">WizTree</a> scan your drive in seconds and show a map of what's biggest. In File Explorer you can also search your user folder for <code>size:gigantic</code> to list files over 4&nbsp;GB.</p>
+          <p data-os="mac">In <span class="path">Storage</span>, click the <b>ⓘ</b> next to <b>Documents</b> and open the <b>Large Files</b> tab. Also check <b>iOS Files</b> for old iPhone and iPad backups you no longer need.</p>
+          <div class="note"><span>Only delete files you recognise. If a big file lives inside a system folder (like <code>Windows</code> or <code>System</code>), leave it alone.</span></div>
+        </div>
+      </div>
+
+      <div class="fix" data-os="win">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Remove the old copy of Windows</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <p>After a major Windows upgrade, a full copy of your previous version is kept in a <code>Windows.old</code> folder, often 10&nbsp;GB or more. Windows deletes it automatically after about 10 days, but you can remove it now.</p>
+          <p>In <span class="path">Settings <i>›</i> System <i>›</i> Storage <i>›</i> Temporary files</span>, tick <b>Previous Windows installation(s)</b> and click <b>Remove files</b>.</p>
+          <div class="note warn"><span><b>No going back.</b> Once removed, you can't roll back to the previous version of Windows. Only do this if the current version is working well.</span></div>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Move photos and videos off the computer</span><span class="fix-time">10+ min</span></button>
+        <div class="fix-body">
+          <p>Photos and videos are the usual long-term space hogs. Move them somewhere else but keep them safe:</p>
+          <ul class="list">
+            <li><b>External drive:</b> copy the folders over, check they open from the drive, then delete the originals.</li>
+            <li data-os="win"><b>OneDrive:</b> right-click a synced folder and choose <b>Free up space</b>. Files stay visible but download only when opened.</li>
+            <li data-os="mac"><b>iCloud Photos:</b> in the Photos app settings, choose <b>Optimize Mac Storage</b> to keep smaller versions on the Mac.</li>
+          </ul>
+          <div class="note"><span>Keep at least two copies of anything you can't replace. Moving to a single drive with no backup isn't safer than leaving it where it is.</span></div>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Turn on automatic cleanup</span><span class="fix-time">2 min</span></button>
+        <div class="fix-body">
+          <p data-os="win">Turn on <b>Storage Sense</b> in <span class="path">Settings <i>›</i> System <i>›</i> Storage</span>. It regularly deletes temporary files and empties the Recycle Bin. Click it to choose how often it runs.</p>
+          <p data-os="mac">Turn on <b>Empty Trash Automatically</b> in the Storage recommendations so the Trash never grows forever.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="solved-banner" role="status"><span style="font-size:1.6rem">💾</span><div><b>Plenty of room again.</b><p>The habits below will help it stay that way.</p></div></div>
+    <div class="stuck" role="status">
+      <b>Still almost full?</b>
+      <ul class="list">
+        <li>Your drive may simply be too small for how you use it. An external drive or more cloud storage is the easy fix; a bigger internal drive is the permanent one.</li>
+        <li data-os="mac">If <b>System Data</b> is huge, restart the Mac and check again; much of it is temporary and clears itself.</li>
+      </ul>
+      <div><button class="btn ghost small" data-restart>Start over</button></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">HABITS</span>Keep it from filling up again</h2>
+    <div class="habits">
+      <div><h3>Clear Downloads monthly</h3><p>Set a reminder. It's the folder that grows fastest without you noticing.</p></div>
+      <div><h3>Leave automatic cleanup on</h3><p>Storage Sense or Empty Trash Automatically do the boring part for you.</p></div>
+      <div><h3>Store big media elsewhere</h3><p>Keep video projects and photo libraries on an external drive or in the cloud.</p></div>
+      <div><h3>Check once in a while</h3><p>A quick look at the Storage page every few months catches problems before they slow you down.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Why is my C: drive full when I haven't added anything?</summary><div class="a"><p>Windows updates, temporary files, app caches, system restore points and the hibernation file all grow over time on their own. Steps 2 and 5 clear most of it.</p></div></details>
+      <details><summary>What is “System Data” on a Mac, and can I delete it?</summary><div class="a"><p>It's a catch-all for files that don't fit the other categories: caches, logs, temporary files and local Time Machine snapshots. Don't delete system folders by hand. Restarting, updating macOS and freeing space elsewhere lets macOS clean much of it up automatically.</p></div></details>
+      <details><summary>Is it safe to delete Windows.old?</summary><div class="a"><p>Yes, as long as your current Windows works fine. You just lose the option to roll back to the previous version. Use Settings (step 5) rather than deleting the folder by hand.</p></div></details>
+      <details><summary>Should I use a cleaner app like CCleaner?</summary><div class="a"><p>You don't need one. The built-in tools in Windows and macOS remove the same junk safely. Avoid “registry cleaners” in particular; they rarely help and can break things.</p></div></details>
+      <details><summary>Can I delete the WinSxS, System32 or Library folders?</summary><div class="a"><p>No. These are core parts of the operating system. Deleting from them can stop your computer from starting.</p></div></details>
+      <details><summary>Does a full drive make my computer slower?</summary><div class="a"><p>Yes. When a drive is nearly full, the system has less room for temporary working files and updates, which can make everything sluggish. See the <a href="../slow-computer/">slow computer guide</a> for more.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Official help and tools</h2>
+    <div class="links">
+      <a href="https://support.microsoft.com/en-us/windows/free-up-drive-space-in-windows-85529ccb-c365-490d-b548-831022bc9b32" target="_blank" rel="noopener"><span class="src">Microsoft Support</span><b>Free up drive space in Windows</b></a>
+      <a href="https://support.microsoft.com/en-us/windows/experience/storage-filemanagement/manage-drive-space-with-storage-sense" target="_blank" rel="noopener"><span class="src">Microsoft Support</span><b>Manage drive space with Storage Sense</b></a>
+      <a href="https://support.apple.com/en-us/102624" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>Free up storage space on Mac</b></a>
+      <a href="https://support.apple.com/guide/mac-help/optimize-storage-space-sysp4ee93ca4/mac" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>Optimize storage space on your Mac</b></a>
+      <a href="https://diskanalyzer.com/" target="_blank" rel="noopener"><span class="src">WizTree</span><b>Free tool to see what's filling your drive</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Related fixes</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Steps written for Windows 11 and recent macOS. Menu names may differ slightly on older versions.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../guide.js"></script>
+<script src="../quiz.js"></script>
+</body>
+</html>

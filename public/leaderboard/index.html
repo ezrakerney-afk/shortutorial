@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>World Leaderboard · Shortutorial</title>
+<meta name="description" content="The Shortutorial world leaderboard: who has earned the most certification points by passing tutorial quizzes.">
+<link rel="canonical" href="https://shortutorial.com/leaderboard/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="World Leaderboard · Shortutorial">
+<meta property="og:description" content="The Shortutorial world leaderboard: who has earned the most certification points by passing tutorial quizzes.">
+<meta property="og:url" content="https://shortutorial.com/leaderboard/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<style>
+.wrap{max-width:760px;margin:0 auto;padding:48px 16px 0;display:flex;flex-direction:column;gap:32px}
+.hero{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.hero h1{font-size:clamp(2.2rem,6.5vw,3.3rem);font-weight:700;letter-spacing:-.03em}
+.hero p{color:var(--muted);font-size:1.1rem;max-width:56ch}
+
+.mine{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:18px 20px;border-radius:16px;background:var(--accent-soft)}
+.mine .who{display:flex;flex-direction:column;gap:2px}
+.mine b{font-family:var(--display);font-size:1.15rem}
+.mine .stat{display:flex;gap:22px}
+.mine .stat div{display:flex;flex-direction:column;align-items:flex-end}
+.mine .stat span{font-family:var(--mono);font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.mine .stat strong{font-family:var(--display);font-size:1.7rem;line-height:1.1}
+
+.podium{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:12px;align-items:end}
+.pod{display:flex;flex-direction:column;align-items:center;gap:6px;padding:18px 10px 16px;border-radius:16px 16px 10px 10px;background:var(--surface);border:1px solid var(--line);text-align:center;min-width:0}
+.pod .medal{font-size:2rem;line-height:1}
+.pod .nm{font-family:var(--display);font-weight:700;font-size:1.05rem;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pod .pt{font-family:var(--mono);font-size:.85rem;color:var(--amber);font-weight:600}
+.pod.p1{padding-top:28px;border-color:var(--accent);box-shadow:0 12px 30px -18px var(--accent)}
+.pod.empty{opacity:.45}
+@media (max-width:480px){.pod .nm{font-size:.92rem}}
+
+table{width:100%;border-collapse:separate;border-spacing:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+th,td{padding:12px 16px;text-align:left}
+th{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600;background:var(--bg);border-bottom:1px solid var(--line)}
+td{border-top:1px solid var(--line);font-family:var(--display);font-weight:500}
+tr:first-child td{border-top:0}
+td.r{font-family:var(--mono);color:var(--muted);width:64px;font-variant-numeric:tabular-nums}
+td.p,th.p{text-align:right;font-variant-numeric:tabular-nums}
+td.p{font-family:var(--mono);font-weight:600;color:var(--amber)}
+tr.me td{background:var(--accent-soft)}
+.state{padding:40px 16px;text-align:center;color:var(--muted);background:var(--surface);border:1px dashed var(--line);border-radius:14px;display:flex;flex-direction:column;gap:12px;align-items:center}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.how div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.how .n{font-family:var(--mono);color:var(--amber);font-weight:600;font-size:.8rem}
+.how h3{font-size:1rem}
+.how p{font-size:.92rem;color:var(--muted)}
+@media (max-width:600px){.how{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <span class="eyebrow">World leaderboard</span>
+    <h1>Most certified learners</h1>
+    <p>Pass the quiz at the end of any tutorial to earn a certification point. Each tutorial counts once.</p>
+  </section>
+
+  <div id="mine"></div>
+  <div id="board"><div class="state">Loading the leaderboard…</div></div>
+
+  <section class="how">
+    <div><span class="n">01</span><h3>Pick a tutorial</h3><p>Anything you want to learn or fix.</p></div>
+    <div><span class="n">02</span><h3>Pass the quiz</h3><p>It's at the end of every tutorial and takes about a minute.</p></div>
+    <div><span class="n">03</span><h3>Earn your point</h3><p>Log in to save it and climb the board.</p></div>
+  </section>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Ties are ranked by who got there first.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script>
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const total = (window.TUTORIALS || []).length;
+
+async function load(){
+  const board = document.getElementById('board'), mine = document.getElementById('mine');
+  let d;
+  try { d = await ST.api('leaderboard'); }
+  catch(e){ board.innerHTML = '<div class="state">The leaderboard couldn’t load right now. Try refreshing in a moment.</div>'; return; }
+
+  if (d.me) mine.innerHTML = `<div class="mine"><div class="who"><span class="eyebrow">You</span><b>${esc(d.me.username)}</b></div>
+      <div class="stat"><div><span>Rank</span><strong>${d.me.rank ? '#' + d.me.rank : '–'}</strong></div><div><span>Points</span><strong>${d.me.points}<small style="font-size:.5em;color:var(--muted)"> / ${total}</small></strong></div></div></div>`;
+  else mine.innerHTML = `<div class="mine"><div class="who"><b>Want your name up here?</b><span style="color:var(--muted);font-size:.95rem">Create a free account, then pass a tutorial quiz.</span></div><button class="btn" id="joinBtn">Create an account</button></div>`;
+  const jb = document.getElementById('joinBtn'); if (jb) jb.addEventListener('click', () => ST.openAuth(load, 'signup'));
+
+  if (!d.top.length){
+    board.innerHTML = '<div class="state"><b style="font-family:var(--display);color:var(--ink);font-size:1.2rem">No one is on the board yet.</b><span>Be the first: pass any tutorial quiz.</span><a class="btn small" href="../">Find a tutorial</a></div>';
+    return;
+  }
+  const medals = ['🥇','🥈','🥉'];
+  const p = [d.top[1], d.top[0], d.top[2]];
+  const podium = `<div class="podium">${p.map((r, k) => {
+      const cls = ['p2','p1','p3'][k];
+      return r ? `<div class="pod ${cls}"><span class="medal">${medals[r.rank - 1] || '🏅'}</span><span class="nm">${esc(r.username)}</span><span class="pt">★ ${r.points}</span></div>`
+               : `<div class="pod ${cls} empty"><span class="medal">${medals[[1,0,2][k]]}</span><span class="nm">—</span></div>`;
+    }).join('')}</div>`;
+  const me = d.me && d.me.username.toLowerCase();
+  const rows = d.top.map(r => `<tr class="${r.username.toLowerCase() === me ? 'me' : ''}"><td class="r">#${r.rank}</td><td>${esc(r.username)}</td><td class="p">★ ${r.points}</td></tr>`).join('');
+  board.innerHTML = podium + `<div style="height:20px"></div><table><thead><tr><th>Rank</th><th>Learner</th><th class="p">Points</th></tr></thead><tbody>${rows}</tbody></table>
+    <p style="color:var(--muted);font-size:.9rem;margin-top:10px;font-family:var(--mono)">${d.players} certified learner${d.players === 1 ? '' : 's'} worldwide</p>`;
+}
+document.getElementById('yr').textContent = new Date().getFullYear();
+document.addEventListener('st:auth', load);
+load();
+</script>
+</body>
+</html>

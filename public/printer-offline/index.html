@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fix a Printer That Says “Offline” (Windows &amp; Mac) · Shortutorial</title>
+<meta name="description" content="Printer showing offline even though it's on? Step-by-step fixes for Windows and Mac: clear the queue, restart the spooler, re-add the printer and stop it going offline again.">
+<link rel="canonical" href="https://shortutorial.com/printer-offline/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Fix a Printer That Says “Offline” (Windows &amp; Mac) · Shortutorial">
+<meta property="og:description" content="Printer showing offline even though it's on? Step-by-step fixes for Windows and Mac: clear the queue, restart the spooler, re-add the printer and stop it going offline again.">
+<meta property="og:url" content="https://shortutorial.com/printer-offline/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../guide.css">
+</head>
+<body data-slug="printer-offline">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=computer">Computer help</a> / Printer offline</div>
+    <span class="eyebrow">Computer help · Printers</span>
+    <h1>Fix a Printer That Says “Offline”</h1>
+    <p class="lede">The printer is on, but your computer insists it's offline. These fixes go from quickest to most thorough and work for HP, Canon, Epson, Brother and most other brands.</p>
+    <div class="badges"><span class="badge level">Quick fix</span><span class="badge">~5–15 min</span><span class="badge">Easy</span></div>
+    <div class="os-row"><span class="lbl">Show steps for</span>
+      <div class="os-switch" role="group" aria-label="Operating system"><button data-set="win">Windows</button><button data-set="mac">Mac</button></div>
+    </div>
+  </header>
+
+  <section class="block">
+    <div class="first">
+      <span class="eyebrow">Start here · 30 seconds</span>
+      <h3>Check the printer itself</h3>
+      <ul class="list">
+        <li>Is it switched on and <b>awake</b>? Press a button on it; many printers fall into deep sleep.</li>
+        <li>Any blinking lights or messages about paper, ink or a jam? Clear those first; some printers report “offline” when they're really stuck.</li>
+        <li>For Wi-Fi printers: is the printer's Wi-Fi light solid? If it's blinking or off, it's not on your network.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="fixes">
+    <h2 class="sec"><span class="n">FIX</span>Try these in order</h2>
+    <div class="steps-head"><p>Open a step, try it, then tell us if it worked.</p><button class="linkbtn" id="expandAll">Show all steps</button></div>
+
+    <div class="steps">
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Power-cycle the printer and computer</span><span class="fix-time">2 min</span></button>
+        <div class="fix-body">
+          <ol class="list">
+            <li>Turn the printer off and <b>unplug it</b> from the wall.</li>
+            <li>Wait 30 seconds, plug it back in and turn it on.</li>
+            <li>Restart your computer while the printer starts up.</li>
+          </ol>
+          <p>This clears the most common cause: the printer or computer lost track of each other after sleeping.</p>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Clear stuck print jobs</span><span class="fix-time">2 min</span></button>
+        <div class="fix-body">
+          <p>One stuck document can block everything behind it and make the printer look offline.</p>
+          <div data-os="win" style="display:flex;flex-direction:column;gap:10px">
+            <p>Go to <span class="path">Settings <i>›</i> Bluetooth &amp; devices <i>›</i> Printers &amp; scanners</span>, choose your printer, then <b>Open print queue</b>. Click the <b>···</b> menu and choose <b>Cancel all</b>.</p>
+            <p>In the queue window, if you see a <b>Printer</b> menu, open it and make sure <b>Use Printer Offline</b> is <b>not</b> ticked.</p>
+          </div>
+          <div data-os="mac" style="display:flex;flex-direction:column;gap:10px">
+            <p>Click the printer icon in the Dock (or open <span class="path">System Settings <i>›</i> Printers &amp; Scanners</span>, choose the printer, then <b>Printer Queue</b>). Delete every job with the <b>×</b> button.</p>
+            <p>If the queue says <b>Paused</b>, click <b>Resume</b>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Make sure they're on the same network</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <p>Wi-Fi printers often drop off after a router restart, a new router, or a Wi-Fi password change.</p>
+          <ul class="list">
+            <li>Use the printer's screen or buttons to print a <b>Network Configuration</b> or <b>Wireless Test</b> page. It shows which Wi-Fi network it's on and its <b>IP address</b>.</li>
+            <li>That network name must match your computer's, including <b>not</b> being on a guest network.</li>
+            <li>If it's wrong, reconnect the printer with its Wi-Fi setup menu or the maker's app.</li>
+            <li>USB printer? Try a different cable and plug straight into the computer, not a hub.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fix" data-os="win">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Restart the Print Spooler</span><span class="fix-time">2 min</span></button>
+        <div class="fix-body">
+          <p>The Print Spooler is the Windows service that handles printing. When it gets stuck, every printer looks offline.</p>
+          <ol class="list">
+            <li>Search for <b>Services</b> in the Start menu and open it.</li>
+            <li>Scroll to <b>Print Spooler</b>, right-click it and choose <b>Restart</b>.</li>
+          </ol>
+          <p>Prefer a command? Open <b>Command Prompt as administrator</b> and run:</p>
+          <div class="cmd"><pre>net stop spooler
+net start spooler</pre></div>
+        </div>
+      </div>
+
+      <div class="fix" data-os="mac">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Reset the printing system</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <p>This clears every printer and its queue, so macOS can set them up fresh.</p>
+          <ol class="list">
+            <li>Open <span class="path">System Settings <i>›</i> Printers &amp; Scanners</span>.</li>
+            <li><b>Control-click</b> (or right-click) in the list of printers and choose <b>Reset printing system</b>.</li>
+            <li>Confirm, then add your printer again with <b>Add Printer, Scanner or Fax</b>.</li>
+          </ol>
+          <div class="note"><span>This removes <b>all</b> printers from the Mac, not just the broken one. You'll add back the ones you use.</span></div>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Remove the printer and add it again</span><span class="fix-time">5 min</span></button>
+        <div class="fix-body">
+          <div data-os="win" style="display:flex;flex-direction:column;gap:10px">
+            <ol class="list">
+              <li>In <span class="path">Settings <i>›</i> Bluetooth &amp; devices <i>›</i> Printers &amp; scanners</span>, select the printer and choose <b>Remove</b>.</li>
+              <li>Also remove any duplicates like “Printer (Copy 1)”. Duplicates are a classic cause of the offline problem.</li>
+              <li>Click <b>Add device</b> next to “Add a printer or scanner” and pick your printer when it appears.</li>
+            </ol>
+            <p>Then set it as your default: select it and choose <b>Set as default</b>. If that button is missing, first turn off <b>Let Windows manage my default printer</b>.</p>
+          </div>
+          <div data-os="mac" style="display:flex;flex-direction:column;gap:10px">
+            <ol class="list">
+              <li>In <span class="path">System Settings <i>›</i> Printers &amp; Scanners</span>, select the printer and click <b>Remove Printer</b> (or the <b>–</b> button).</li>
+              <li>Click <b>Add Printer, Scanner or Fax</b> and choose it from the list.</li>
+              <li>If it doesn't appear, click the <b>IP</b> tab and type the IP address from the printer's network page (step 3).</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Use the troubleshooter or the maker's app</span><span class="fix-time">5 min</span></button>
+        <div class="fix-body">
+          <p data-os="win">Windows has a built-in printer troubleshooter in the <b>Get Help</b> app. Search for <b>Get Help</b> in the Start menu, type “printer offline” and run the printer troubleshooter.</p>
+          <p>Printer makers also have free apps that diagnose connection problems and update drivers:</p>
+          <ul class="list">
+            <li><b>HP:</b> the HP app (formerly HP Smart) has a <b>Diagnose &amp; Fix</b> tool.</li>
+            <li><b>Epson, Canon, Brother:</b> download the setup or utility software for your model from their support sites (links below).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Stop it going offline again: give it a fixed address</span><span class="fix-time">10 min</span></button>
+        <div class="fix-body">
+          <p>If the printer works, then goes offline again days later, its network address is probably changing. Your computer keeps looking at the old one.</p>
+          <ul class="list">
+            <li><b>Best fix:</b> in your router's app or settings page, find the printer in the connected devices list and choose <b>Reserve IP</b> (sometimes called “DHCP reservation” or “Always use this IP”).</li>
+            <li data-os="win"><b>Also helps on Windows:</b> in the printer's <span class="path">Printer properties <i>›</i> Ports</span>, a <b>Standard TCP/IP Port</b> using the printer's IP is more reliable than a “WSD” port. Removing and re-adding the printer by IP address (step 5) sets this up.</li>
+            <li>Turn off any “deep sleep” or “Wi-Fi power save” setting in the printer's menu if it has one.</li>
+          </ul>
+          <div class="note"><span><b>A bit more technical.</b> If the router settings look confusing, it's fine to skip this. Re-adding the printer (step 5) works as a quick fix whenever it happens.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="solved-banner" role="status"><span style="font-size:1.6rem">🖨️</span><div><b>Printing again.</b><p>If it goes offline again in a few days, jump to the last step to stop it for good.</p></div></div>
+    <div class="stuck" role="status">
+      <b>Still offline?</b>
+      <ul class="list">
+        <li>Try printing from your phone. If that works, the problem is the computer's setup; repeat step 5 carefully and remove every copy of the printer first.</li>
+        <li>If nothing can print to it, contact the printer maker's support. The printer's network card or firmware may need attention.</li>
+      </ul>
+      <div><button class="btn ghost small" data-restart>Start over</button></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Why does my printer keep going offline?</summary><div class="a"><p>Usually because its network address changes after the router restarts, so your computer looks in the wrong place. Other causes are deep sleep mode, weak Wi-Fi where the printer sits, and duplicate printer entries. The last fix covers how to stop it.</p></div></details>
+      <details><summary>It prints from my phone but says offline on my computer. Why?</summary><div class="a"><p>The printer and network are fine; your computer has an outdated or duplicate entry for it. Remove every copy of the printer and add it again (step 5).</p></div></details>
+      <details><summary>How do I find my printer's IP address?</summary><div class="a"><p>Print a Network Configuration page from the printer's menu, or look in its Wi-Fi or Network settings on its screen. You can also find it in your router's list of connected devices.</p></div></details>
+      <details><summary>Do I need to install the manufacturer's software?</summary><div class="a"><p>Usually not. Windows and macOS include drivers for most printers. The maker's app is useful for setup on a new network, troubleshooting, scanning and ink levels.</p></div></details>
+      <details><summary>Will reinstalling the printer delete anything?</summary><div class="a"><p>No. It only removes the printer's entry and any waiting print jobs. Your documents are safe; just print them again afterward.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Official help</h2>
+    <div class="links">
+      <a href="https://support.microsoft.com/en-us/windows/hardware/printer/troubleshooting-offline-printer-problems-in-windows" target="_blank" rel="noopener"><span class="src">Microsoft Support</span><b>Troubleshooting offline printer problems in Windows</b></a>
+      <a href="https://support.microsoft.com/en-US/Windows/Hardware/printer/fix-print-spooler-service-not-running-errors-in-windows" target="_blank" rel="noopener"><span class="src">Microsoft Support</span><b>Fix print spooler service errors</b></a>
+      <a href="https://support.apple.com/guide/mac-help/solve-printing-problems-on-mac-mh14002/mac" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>Solve printing problems on Mac</b></a>
+      <a href="https://support.hp.com/us-en/help/printer/printer-offline" target="_blank" rel="noopener"><span class="src">HP Support</span><b>HP printer offline issues</b></a>
+      <a href="https://epson.com/Support/sl/s" target="_blank" rel="noopener"><span class="src">Epson</span><b>Epson support and drivers</b></a>
+      <a href="https://support.brother.com" target="_blank" rel="noopener"><span class="src">Brother</span><b>Brother support and downloads</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Related fixes</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Steps written for Windows 11 and recent macOS. Menu names may differ slightly on older versions.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../guide.js"></script>
+<script src="../quiz.js"></script>
+</body>
+</html>

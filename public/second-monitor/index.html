@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fix a Second Monitor Not Detected (Windows &amp; Mac) · Shortutorial</title>
+<meta name="description" content="Second monitor says no signal or isn't detected? Step-by-step fixes for Windows and Mac: input source, cables, Detect, graphics drivers, USB-C, docks and Mac display limits.">
+<link rel="canonical" href="https://shortutorial.com/second-monitor/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Fix a Second Monitor Not Detected (Windows &amp; Mac) · Shortutorial">
+<meta property="og:description" content="Second monitor says no signal or isn't detected? Step-by-step fixes for Windows and Mac: input source, cables, Detect, graphics drivers, USB-C, docks and Mac display limits.">
+<meta property="og:url" content="https://shortutorial.com/second-monitor/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../guide.css">
+</head>
+<body data-slug="second-monitor">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=computer">Computer help</a> / Second monitor</div>
+    <span class="eyebrow">Computer help · Displays</span>
+    <h1>Fix a Second Monitor That Isn't Detected</h1>
+    <p class="lede">The monitor says “No signal”, or your computer acts like it isn't there. Work through these fixes in order. Most of the time it's the input setting or the cable.</p>
+    <div class="badges"><span class="badge level">Quick fix</span><span class="badge">~5–15 min</span><span class="badge">Easy</span></div>
+    <div class="os-row"><span class="lbl">Show steps for</span>
+      <div class="os-switch" role="group" aria-label="Operating system"><button data-set="win">Windows</button><button data-set="mac">Mac</button></div>
+    </div>
+  </header>
+
+  <section class="block">
+    <div class="first">
+      <span class="eyebrow">Start here · 30 seconds</span>
+      <h3>Check the monitor's input setting</h3>
+      <p>Monitors with more than one port (HDMI 1, HDMI 2, DisplayPort, USB-C) only show one at a time. Use the buttons on the monitor, usually on the bottom edge or back, to open its menu and pick <b>Input</b> or <b>Source</b>, then choose the port your cable is plugged into.</p>
+      <p>While you're there, make sure the monitor's power light is on and it's plugged in at the wall.</p>
+    </div>
+  </section>
+
+  <section class="block" id="fixes">
+    <h2 class="sec"><span class="n">FIX</span>Try these in order</h2>
+    <div class="steps-head"><p>Open a step, try it, then tell us if it worked.</p><button class="linkbtn" id="expandAll">Show all steps</button></div>
+
+    <div class="steps">
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Reseat or swap the cable, and try another port</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <ul class="list">
+            <li>Unplug the cable at <b>both ends</b> and push it back in firmly. HDMI and DisplayPort cables often look connected but aren't.</li>
+            <li>Try a different cable if you have one. Cheap or very long cables fail more than you'd expect.</li>
+            <li>Try a different port on the computer.</li>
+            <li><b>Desktop PC:</b> plug the monitor into the <b>graphics card</b> (the ports lower down on the back, usually in a horizontal row), not the ports near the USB sockets. If you have a graphics card, the upper ones often don't work.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Tell your computer to use the second screen</span><span class="fix-time">1 min</span></button>
+        <div class="fix-body">
+          <div data-os="win" style="display:flex;flex-direction:column;gap:10px">
+            <p>Press <kbd>Win</kbd> <kbd>P</kbd> and choose <b>Extend</b>. If “PC screen only” was selected, Windows was ignoring the monitor.</p>
+            <p>Still nothing? Go to <span class="path">Settings <i>›</i> System <i>›</i> Display <i>›</i> Multiple displays</span> and click <b>Detect</b>.</p>
+          </div>
+          <div data-os="mac" style="display:flex;flex-direction:column;gap:10px">
+            <p>Open <span class="path">System Settings <i>›</i> Displays</span>. If the monitor isn't shown, hold down the <kbd>Option</kbd> key; on recent macOS versions a <b>Detect Displays</b> button appears. Click it.</p>
+            <p>Also try putting the Mac to sleep for a few seconds (<span class="path">Apple menu <i>›</i> Sleep</span>) and waking it, which makes it check connections again.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Reset the graphics driver or restart</span><span class="fix-time">2 min</span></button>
+        <div class="fix-body">
+          <p data-os="win">Press <kbd>Win</kbd> <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>B</kbd>. The screen flickers and you hear a beep as Windows restarts the graphics driver. If that doesn't help, restart the computer with the monitor plugged in and switched on.</p>
+          <p data-os="mac">Restart the Mac with the monitor plugged in and switched on. The Mac detects displays as it starts up.</p>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Check adapters, docks and USB-C</span><span class="fix-time">5 min</span></button>
+        <div class="fix-body">
+          <ul class="list">
+            <li>Plug the monitor <b>directly</b> into the computer to rule out the adapter or dock.</li>
+            <li><b>USB-C:</b> not every USB-C port can send video. Look for a small <b>DisplayPort</b> (D-shaped) or <b>Thunderbolt</b> (lightning bolt) symbol next to the port, or check your laptop's specs.</li>
+            <li><b>Docking stations:</b> many need the dock maker's driver installed first, especially docks that use “DisplayLink”. Check the dock's support page.</li>
+            <li data-os="mac"><b>Check your Mac's display limit.</b> MacBooks with a base M1 or M2 chip support only <b>one</b> external display. See the FAQ below.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fix" data-os="win">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Update or reinstall the graphics driver</span><span class="fix-time">10 min</span></button>
+        <div class="fix-body">
+          <p>First install everything in <span class="path">Settings <i>›</i> Windows Update</span>, including <b>Optional updates</b>, where driver updates often appear.</p>
+          <p>For the newest driver, get it from your graphics maker. To see which you have, search <b>Device Manager</b> and expand <b>Display adapters</b>:</p>
+          <ul class="list">
+            <li><b>Intel</b> → <a href="https://www.intel.com/content/www/us/en/support/detect.html" target="_blank" rel="noopener">Intel Driver &amp; Support Assistant</a></li>
+            <li><b>NVIDIA</b> → <a href="https://www.nvidia.com/en-us/drivers/" target="_blank" rel="noopener">NVIDIA drivers</a></li>
+            <li><b>AMD</b> → <a href="https://www.amd.com/en/support/download/drivers.html" target="_blank" rel="noopener">AMD drivers</a></li>
+          </ul>
+          <p>Did it stop working right after an update? In Device Manager, right-click the adapter › <span class="path">Properties <i>›</i> Driver <i>›</i> Roll Back Driver</span>.</p>
+        </div>
+      </div>
+
+      <div class="fix" data-os="mac">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Update macOS</span><span class="fix-time">10+ min</span></button>
+        <div class="fix-body">
+          <p>Display support is built into macOS, so updates often fix monitor problems. Install anything in <span class="path">System Settings <i>›</i> General <i>›</i> Software Update</span>, then restart.</p>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Test the monitor on another device</span><span class="fix-time">5 min</span></button>
+        <div class="fix-body">
+          <p>Connect the monitor, with the same cable, to another computer, laptop or games console.</p>
+          <ul class="list">
+            <li><b>Works elsewhere:</b> the monitor and cable are fine; the problem is your computer's port, adapter or settings.</li>
+            <li><b>Doesn't work anywhere:</b> try another cable once more. If it still fails, the monitor likely needs repair or replacement; check its warranty.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="solved-banner" role="status"><span style="font-size:1.6rem">🖥️</span><div><b>Two screens, working.</b><p>Arrange them so your mouse moves naturally: drag the screen boxes in Display settings to match where the monitors sit on your desk.</p></div></div>
+    <div class="stuck" role="status">
+      <b>Still not detected?</b>
+      <ul class="list">
+        <li>The computer's video port may be faulty. A USB-C video adapter or a dock can be a cheap workaround.</li>
+        <li>Contact your computer maker's support with the model number; some laptops need a firmware (BIOS) update for external displays.</li>
+      </ul>
+      <div><button class="btn ghost small" data-restart>Start over</button></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Why does my monitor say “No signal”?</summary><div class="a"><p>The monitor is on, but it isn't receiving a picture on the input it's set to. Check the input source first, then the cable and port. If the computer is asleep, move the mouse to wake it.</p></div></details>
+      <details><summary>Why can't my MacBook use two external monitors?</summary><div class="a"><p>It depends on the chip. MacBooks with a base <b>M1</b> or <b>M2</b> chip support one external display. A <b>MacBook Air with M3</b> supports two, but only with the lid closed. <b>M4</b> and newer MacBook Air models support two with the lid open. Pro and Max chips support more. Apple's pages below list every model.</p></div></details>
+      <details><summary>Can I use an HDMI splitter to add a second monitor?</summary><div class="a"><p>No. A splitter sends the same picture to both screens; it can't extend your desktop. To get two separate screens from one port, use a docking station or a USB-C adapter that supports multiple displays.</p></div></details>
+      <details><summary>The monitor is detected but the picture is blurry or the wrong size.</summary><div class="a"><p>Open Display settings, select the monitor and choose the <b>recommended</b> resolution. If text looks too small or large, change the <b>Scale</b> (Windows) or choose a different resolution option (Mac).</p></div></details>
+      <details><summary>My mouse moves to the wrong side of the screen. How do I fix that?</summary><div class="a"><p>In Display settings, drag the screen boxes so they match how the monitors sit on your desk. On a Mac you can also drag the white menu bar to choose the main display.</p></div></details>
+      <details><summary>My laptop has one HDMI port. Can I still connect two monitors?</summary><div class="a"><p>Usually, if the laptop also has a USB-C or Thunderbolt port that supports video. Connect one monitor to HDMI and the other through a USB-C video adapter, or use a dock.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Official help</h2>
+    <div class="links">
+      <a href="https://support.microsoft.com/en-us/windows/hardware/display-graphics/troubleshoot-external-monitor-connections-in-windows" target="_blank" rel="noopener"><span class="src">Microsoft Support</span><b>Troubleshoot external monitor connections in Windows</b></a>
+      <a href="https://support.apple.com/en-us/102555" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>Connect displays to your Mac</b></a>
+      <a href="https://support.apple.com/en-us/102501" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>If your external display is dark or low resolution</b></a>
+      <a href="https://support.apple.com/en-us/122212" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>How many displays can connect to MacBook Air</b></a>
+      <a href="https://support.apple.com/en-us/101571" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>How many displays can connect to MacBook Pro</b></a>
+      <a href="https://www.nvidia.com/en-us/drivers/" target="_blank" rel="noopener"><span class="src">NVIDIA</span><b>Download graphics drivers</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Related fixes</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Steps written for Windows 11 and recent macOS. Menu names may differ slightly on older versions.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../guide.js"></script>
+<script src="../quiz.js"></script>
+</body>
+</html>

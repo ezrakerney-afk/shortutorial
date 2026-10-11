@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>JCurses Crash Course · Shortutorial</title>
 <meta name="description" content="Four short lessons on building colorful, keyboard-driven Java programs that run in a terminal, plus a quiz.">
+<link rel="canonical" href="https://shortutorial.com/jcurses/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="JCurses Crash Course · Shortutorial">
+<meta property="og:description" content="Four short lessons on building colorful, keyboard-driven Java programs that run in a terminal, plus a quiz.">
+<meta property="og:url" content="https://shortutorial.com/jcurses/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -109,7 +115,7 @@ figcaption{font-family:var(--mono);font-size:.75rem;color:var(--muted);text-alig
 .next p{color:var(--muted);font-size:.95rem}
 </style>
 </head>
-<body>
+<body data-slug="jcurses">
 <div class="progress" id="progress"></div>
 
 <header class="sitebar">
@@ -127,7 +133,7 @@ figcaption{font-family:var(--mono);font-size:.75rem;color:var(--muted);text-alig
     <p class="lede">Build colorful, keyboard-driven Java programs that run right in the terminal. Four short lessons, then a quiz to check what stuck.</p>
     <div class="facts"><span>~10 min</span><span>4 lessons</span><span>10-question quiz</span><span>Beginner friendly</span></div>
     <nav class="toc" aria-label="Lessons">
-      <a href="#l1">1 · Setup</a><a href="#l2">2 · Drawing</a><a href="#l3">3 · Running</a><a href="#l4">4 · Widgets</a><a href="#quiz">Quiz</a>
+      <a href="#l1">1 · Setup</a><a href="#l2">2 · Drawing</a><a href="#l3">3 · Running</a><a href="#l4">4 · Widgets</a><a href="#cert">Quiz</a>
     </nav>
   </header>
 
@@ -239,7 +245,7 @@ w.show();</code></pre></div>
     <div class="chips"><code>TextField</code><code>CheckBox</code><code>List</code><code>PopUpMenu</code><code>MessageBox</code></div>
   </section>
 
-  <section id="quiz" aria-live="polite"></section>
+  <section id="cert" style="scroll-margin-top:80px"></section>
 
   <aside class="next">
     <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
@@ -248,114 +254,13 @@ w.show();</code></pre></div>
 </main>
 
 <footer class="sitefoot">
-  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Tip: in the quiz, press 1–4 to answer and Enter to continue.</span></div>
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Tip: in the quiz, press 1–4 to answer.</span></div>
 </footer>
 
 <script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../quiz.js"></script>
 <script>
-/* Quiz data */
-const Q = [
-  {q:"Which two files from the download go into your project's lib folder?",
-   o:["jcurses.jar and the native library (.dll or .so)","Only jcurses.jar","The whole zip file, unextracted","Only the .dll or .so file"],a:0,
-   e:"The jar holds the Java classes and the native library does the terminal work. Both must sit in the same folder."},
-  {q:"Which file do you add to Eclipse's Build Path?",
-   o:["The .dll or .so file","jcurses.jar","Both files","Neither, Eclipse finds them on its own"],a:1,
-   e:"Right-click jcurses.jar → Build Path → Add to Build Path. The native library just needs to sit next to it."},
-  {q:"Why doesn't the green Run button in Eclipse work for JCurses programs?",
-   o:["Eclipse doesn't support Java 17","JCurses only works on Linux","Eclipse's Console isn't a real terminal","You forgot to save"],a:2,
-   e:"JCurses needs a real terminal to draw on. Run it from Command Prompt, a Linux terminal, or Eclipse's Terminal view."},
-  {q:"Where does Toolkit.printString(\"Hi\", 10, 3, color) put the text?",
-   o:["10 rows down, 3 columns in","10 columns in, 3 rows down","At pixel position (10, 3)","On line 10 of your code"],a:1,
-   e:"Positions are (column, row) on the character grid, counted from the top-left corner (0, 0)."},
-  {q:"In new CharColor(CharColor.BLACK, CharColor.GREEN), what is green?",
-   o:["The background","The border","The text color","The cursor"],a:2,
-   e:"The first color is the background and the second is the text (foreground)."},
-  {q:"What should be the last JCurses call in a drawing-mode program?",
-   o:["Toolkit.clearScreen()","Toolkit.shutdown()","System.out.println()","Toolkit.readCharacter()"],a:1,
-   e:"shutdown() puts the terminal back to normal. Skip it and your terminal may act strangely afterward."},
-  {q:"On Windows, which command runs a class called Hello?",
-   o:["java -cp bin;lib\\jcurses.jar Hello","java -cp bin:lib/jcurses.jar Hello","javac Hello.java jcurses.jar","java Hello.jcurses"],a:0,
-   e:"Windows separates classpath entries with a semicolon. Linux uses a colon."},
-  {q:"You run your program and get UnsatisfiedLinkError. What's the most likely cause?",
-   o:["A typo in printString","The native library is missing from lib or doesn't match your Java (32 vs 64-bit)","Your window is too small","You used a Button without a Label"],a:1,
-   e:"That error means Java couldn't load the .dll or .so. Check it's next to jcurses.jar and matches your Java's bitness."},
-  {q:"In widget mode, how does the user move between buttons and fields?",
-   o:["The mouse","Arrow keys only","The Tab key","Typing the widget's name"],a:2,
-   e:"Tab moves focus between widgets and Enter activates the focused one, like a button."},
-  {q:"What does Toolkit.readCharacter() do?",
-   o:["Reads a whole line after Enter","Waits for a single key press and returns it","Reads a character from a file","Prints a character"],a:1,
-   e:"It returns an InputChar as soon as one key is pressed. That's what makes games and menus feel responsive."}
-];
-
-const root = document.getElementById('quiz');
-let i = 0, picks = [], answered = false;
-const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
-
-function dots(){
-  return '<div class="dots" aria-hidden="true">' + Q.map((_,k)=>{
-    let c = 'dot';
-    if (k < picks.length) c += picks[k]===Q[k].a ? ' ok' : ' no';
-    else if (k===i) c += ' now';
-    return `<span class="${c}"></span>`;
-  }).join('') + '</div>';
-}
-
-function render(){
-  answered = false;
-  const q = Q[i];
-  root.innerHTML = `
-    <div class="qtop"><span class="eyebrow">Check yourself</span>${dots()}<span class="qnum">${i+1} / ${Q.length}</span></div>
-    <p class="qprompt">${esc(q.q)}</p>
-    <div class="opts">${q.o.map((t,k)=>`<button class="opt" data-k="${k}"><span class="key">${k+1}</span><span>${esc(t)}</span></button>`).join('')}</div>
-    <div id="fb"></div>
-    <div class="qfoot"><span class="hint">Pick an answer</span><span id="nextWrap"></span></div>`;
-  root.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>choose(+b.dataset.k)));
-}
-
-function choose(k){
-  if (answered) return;
-  answered = true;
-  const q = Q[i]; picks.push(k);
-  const ok = k===q.a;
-  root.querySelectorAll('.opt').forEach(b=>{
-    const n = +b.dataset.k; b.disabled = true;
-    if (n===q.a) b.classList.add('right');
-    else if (n===k) b.classList.add('wrong');
-  });
-  root.querySelector('.dots').outerHTML = dots();
-  document.getElementById('fb').innerHTML =
-    `<div class="feedback ${ok?'ok':'no'}"><b>${ok?'Correct.':'Not quite.'}</b> ${esc(q.e)}</div>`;
-  root.querySelector('.hint').textContent = ok ? 'Nice work' : 'The right answer is highlighted';
-  const last = i===Q.length-1;
-  document.getElementById('nextWrap').innerHTML = `<button class="btn" id="next">${last?'See my score':'Next question →'}</button>`;
-  const nb = document.getElementById('next');
-  nb.addEventListener('click', next); nb.focus({preventScroll:true});
-}
-
-function next(){ i++; i < Q.length ? render() : finish(); }
-
-function finish(){
-  const score = picks.filter((p,k)=>p===Q[k].a).length;
-  const msg = score===Q.length ? "Perfect. You're ready to build something."
-    : score >= 7 ? "Solid. Skim the lessons for the ones you missed."
-    : "Worth another read. Re-check the lessons above, then try again.";
-  root.innerHTML = `
-    <div class="qtop"><span class="eyebrow">Your score</span>${dots()}</div>
-    <div class="result">
-      <span class="big">${score}<span style="color:var(--muted);font-size:.5em"> / ${Q.length}</span></span>
-      <p>${msg}</p>
-      <ul class="review">${Q.map((q,k)=>{const ok=picks[k]===q.a;return `<li><span class="m ${ok?'ok':'no'}">${ok?'✓':'✗'}</span><span>${esc(q.q)}</span></li>`}).join('')}</ul>
-      <div class="actions"><button class="btn ghost" id="retry">Try again</button><a class="btn" href="#l1">Back to lesson 1</a></div>
-    </div>`;
-  document.getElementById('retry').addEventListener('click',()=>{i=0;picks=[];render();root.scrollIntoView({behavior:'smooth'})});
-}
-
-document.addEventListener('keydown',e=>{
-  if (/INPUT|TEXTAREA/.test(e.target.tagName)) return;
-  if (!answered && /^[1-4]$/.test(e.key) && root.querySelector('.opt')) choose(+e.key-1);
-});
-render();
-
 /* Copy buttons on code blocks */
 document.querySelectorAll('.code').forEach(box=>{
   const btn = document.createElement('button');
