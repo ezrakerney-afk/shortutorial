@@ -662,6 +662,116 @@ export default {
     ]
   },
 
+  "fix-running-toilet": {
+    title: "How to Fix a Running Toilet",
+    pass: 4,
+    questions: [
+      { q: "What are the two most common causes of a running toilet?",
+        o: ["A leaky flapper or the water level set too high", "A broken seat or lid", "Low water pressure or old pipes", "A full septic tank"], a: 0,
+        e: "Both are inside the tank and easy to fix." },
+      { q: "How do you test the flapper for leaks?",
+        o: ["Add food colouring to the tank and wait 15 minutes", "Flush ten times", "Listen with a phone", "Pour salt in the bowl"], a: 0,
+        e: "Colour in the bowl means the flapper is leaking." },
+      { q: "Where should the water level stop?",
+        o: ["About an inch below the top of the overflow tube", "Above the overflow tube", "At the very bottom", "At the rim of the bowl"], a: 0,
+        e: "Or at the fill line marked inside the tank." },
+      { q: "What must you do before replacing the flapper?",
+        o: ["Turn off the water valve and flush to empty the tank", "Remove the whole toilet", "Call the water company", "Nothing"], a: 0,
+        e: "Turning the valve clockwise shuts off the supply." },
+      { q: "How much slack should the flapper chain have?",
+        o: ["About a finger's width", "None, it should be tight", "Several inches", "It doesn't matter"], a: 0,
+        e: "Too tight or too loose both stop the flapper sealing." }
+    ]
+  },
+
+  "unclog-drain": {
+    title: "Unclog a Drain Without Harsh Chemicals",
+    pass: 4,
+    questions: [
+      { q: "What usually blocks bathroom sinks and showers?",
+        o: ["Hair", "Sand", "Paper", "Coins"], a: 0,
+        e: "A plastic drain snake pulls it out." },
+      { q: "Which plunger is for toilets?",
+        o: ["A flange plunger", "A cup plunger", "Any spoon", "A kitchen whisk"], a: 0,
+        e: "The flange seals into the toilet's outlet." },
+      { q: "Why block the overflow hole when plunging?",
+        o: ["So the pressure goes down to the clog", "To stop smells", "To keep water hot", "It isn't needed"], a: 0,
+        e: "Otherwise the pressure escapes through the overflow." },
+      { q: "Why not pour boiling water down every drain?",
+        o: ["It can damage plastic pipes and crack porcelain", "It's too slow", "It freezes", "It's always fine"], a: 0,
+        e: "Use hot, not boiling, water." },
+      { q: "Several drains are slow at once. What does that suggest?",
+        o: ["A blockage in the main line; call a plumber", "One sink is dirty", "Low water pressure", "Nothing serious"], a: 0,
+        e: "Multiple slow drains point further down the system." }
+    ]
+  },
+
+  "outlet-not-working": {
+    title: "Fix an Outlet That Stopped Working",
+    pass: 4,
+    questions: [
+      { q: "When should you stop and call an electrician?",
+        o: ["Burning smell, scorch marks or a hot outlet", "The outlet is behind a sofa", "You want a new lamp", "The plug is white"], a: 0,
+        e: "These are signs of a dangerous fault." },
+      { q: "Which outlets usually have Test and Reset buttons?",
+        o: ["GFCI outlets in bathrooms, kitchens and outdoors", "All bedroom outlets", "Light switches", "USB chargers"], a: 0,
+        e: "A tripped GFCI can cut power to other outlets too." },
+      { q: "How do you reset a tripped breaker?",
+        o: ["Push it fully to OFF, then back to ON", "Tap it gently", "Leave it in the middle", "Unscrew it"], a: 0,
+        e: "Tripped breakers often rest in the middle position." },
+      { q: "A breaker trips every time you use one appliance. What's likely?",
+        o: ["That appliance is faulty", "The breaker is fine", "The house needs rewiring", "The outlet is too clean"], a: 0,
+        e: "Test the appliance elsewhere or replace it." },
+      { q: "How often should you test GFCI outlets?",
+        o: ["About once a month", "Never", "Every ten years", "Only during storms"], a: 0,
+        e: "Press Test, it should click off, then press Reset." }
+    ]
+  },
+
+  "jump-start-car": {
+    title: "How to Jump-Start a Car Safely",
+    pass: 4,
+    questions: [
+      { q: "Which clamp do you connect first?",
+        o: ["Red to + on the dead battery", "Black to the good battery", "Black to bare metal", "Red to the good battery"], a: 0,
+        e: "Red to dead, red to good, black to good, black to metal." },
+      { q: "Where does the last black clamp go?",
+        o: ["Bare, unpainted metal on the dead car, away from the battery", "The dead battery's negative", "The good battery's positive", "The tyre"], a: 0,
+        e: "This keeps any spark away from battery gas." },
+      { q: "What should you never do once clamps are connected?",
+        o: ["Let the clamps touch each other", "Start the working car", "Wait a few minutes", "Close the windows"], a: 0,
+        e: "Touching clamps can cause sparks and damage." },
+      { q: "In what order do you remove the cables?",
+        o: ["The reverse of how you connected them", "Any order", "Red ones first", "Leave them on"], a: 0,
+        e: "Start with the black clamp on bare metal." },
+      { q: "After a jump, how long should you drive?",
+        o: ["At least 20–30 minutes", "One minute", "Don't drive at all", "Until the fuel runs out"], a: 0,
+        e: "This lets the alternator recharge the battery." }
+    ]
+  },
+
+  "recycle-right": {
+    title: "How to Sort Your Recycling Properly",
+    pass: 4,
+    questions: [
+      { q: "Who decides what your recycling bin accepts?",
+        o: ["Your local town or waste collector", "The product maker", "The national government only", "The supermarket"], a: 0,
+        e: "Rules depend on the local sorting facility." },
+      { q: "Should you put recycling inside a plastic bag?",
+        o: ["No, bags jam sorting machines", "Yes, always", "Only on Mondays", "Only for glass"], a: 0,
+        e: "Put items in loose." },
+      { q: "Why should batteries never go in the household bin?",
+        o: ["They can start fires in trucks and sorting centres", "They're too heavy", "They're worth money", "They're biodegradable"], a: 0,
+        e: "Use a battery drop-off point." },
+      { q: "What does the number inside the recycling triangle tell you?",
+        o: ["The type of plastic", "That it's definitely recyclable", "The price", "How old it is"], a: 0,
+        e: "Check locally which types are accepted." },
+      { q: "Not sure if something is recyclable?",
+        o: ["Look it up, or put it in the rubbish", "Put it in recycling and hope", "Burn it", "Bury it"], a: 0,
+        e: "Wish-cycling contaminates whole loads." }
+    ]
+  },
+
   "jcurses": {
     title: "JCurses Crash Course",
     pass: 8,

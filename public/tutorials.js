@@ -245,6 +245,46 @@ window.TUTORIALS = [
     minutes: 15
   },
   {
+    slug: "fix-running-toilet",
+    title: "How to Fix a Running Toilet",
+    summary: "Stop the constant trickle: chain, water level or flapper.",
+    category: "Home & tech",
+    tags: ["toilet", "running", "plumbing", "flapper", "fill valve", "leak", "water", "home repair"],
+    minutes: 15
+  },
+  {
+    slug: "unclog-drain",
+    title: "Unclog a Drain Without Harsh Chemicals",
+    summary: "Clear blocked sinks, showers and toilets with simple tools.",
+    category: "Home & tech",
+    tags: ["drain", "clog", "blocked", "sink", "shower", "toilet", "plunger", "plumbing", "home repair"],
+    minutes: 15
+  },
+  {
+    slug: "outlet-not-working",
+    title: "Fix an Outlet That Stopped Working",
+    summary: "Reset the GFCI or tripped breaker, safely.",
+    category: "Home & tech",
+    tags: ["outlet", "socket", "gfci", "breaker", "electrical", "no power", "tripped", "home repair"],
+    minutes: 5
+  },
+  {
+    slug: "jump-start-car",
+    title: "How to Jump-Start a Car Safely",
+    summary: "The right clamp order, and what to do after it starts.",
+    category: "Home & tech",
+    tags: ["car", "battery", "jump start", "jumper cables", "dead battery", "won't start", "auto"],
+    minutes: 10
+  },
+  {
+    slug: "recycle-right",
+    title: "How to Sort Your Recycling Properly",
+    summary: "What goes in the bin, what doesn't, and how to check local rules.",
+    category: "Home & tech",
+    tags: ["recycling", "recycle", "waste", "trash", "garbage", "compost", "plastic", "sorting", "environment"],
+    minutes: 5
+  },
+  {
     slug: "jcurses",
     title: "JCurses Crash Course",
     summary: "Build colorful, keyboard-driven Java programs that run in a terminal.",
