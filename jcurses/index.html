@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JCurses Crash Course · Shortutorial</title>
+<meta name="description" content="Four short lessons on building colorful, keyboard-driven Java programs that run in a terminal, plus a quiz.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<style>
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--accent);transform-origin:0 50%;transform:scaleX(0);z-index:20}
+
+.wrap{max-width:720px;margin:0 auto;padding:40px 16px 0;display:flex;flex-direction:column;gap:56px}
+.crumbs{font-family:var(--mono);font-size:.8rem;color:var(--muted)}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--accent)}
+
+header.intro{display:flex;flex-direction:column;gap:14px}
+header.intro h1{font-size:clamp(2.1rem,6.5vw,3.1rem);font-weight:700;letter-spacing:-.025em}
+.lede{color:var(--muted);font-size:1.12rem;max-width:58ch}
+.facts{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--mono);font-size:.8rem;color:var(--muted)}
+.facts span::before{content:"▸ ";color:var(--amber)}
+
+nav.toc{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-top:6px;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{flex:none;font-family:var(--mono);font-size:.8rem;color:var(--ink);text-decoration:none;border:1px solid var(--line);padding:6px 12px;border-radius:999px;background:var(--surface);transition:border-color .15s,color .15s,background .15s}
+nav.toc a:hover{border-color:var(--accent);color:var(--accent)}
+nav.toc a.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+
+section.lesson{display:flex;flex-direction:column;gap:18px;scroll-margin-top:80px}
+.lesson-head{display:flex;align-items:baseline;gap:14px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.step{font-family:var(--mono);font-size:.85rem;color:var(--amber);font-weight:600}
+.lesson-head h2{font-size:1.65rem;font-weight:700;letter-spacing:-.01em}
+h3{font-size:1.08rem;font-weight:600}
+
+code{font-family:var(--mono);font-size:.86em;background:var(--accent-soft);padding:1px 5px;border-radius:4px}
+.code{position:relative}
+pre{margin:0;font-family:var(--mono);font-size:.82rem;line-height:1.6;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;overflow-x:auto}
+pre code{background:none;padding:0;font-size:inherit}
+pre .c{color:var(--muted);font-style:italic} pre .k{color:var(--accent);font-weight:600} pre .s{color:var(--amber)}
+.copy{position:absolute;top:8px;right:8px;font-family:var(--mono);font-size:.7rem;color:var(--muted);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:3px 9px;cursor:pointer;opacity:0;transition:opacity .15s}
+.code:hover .copy,.copy:focus-visible{opacity:1}
+@media (hover:none){.copy{opacity:1}}
+.copy.done{color:var(--good);border-color:var(--good)}
+
+ul.points,ol.steps{margin:0;padding-left:1.25em;display:flex;flex-direction:column;gap:8px}
+ol.steps li::marker{font-family:var(--mono);color:var(--amber);font-weight:600}
+
+.callout{display:flex;gap:12px;padding:14px 16px;border-radius:10px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--amber);font-size:.98rem}
+.callout b{font-family:var(--display)}
+.callout.warn{border-left-color:var(--bad)}
+
+.term{background:var(--term-bg);border-radius:12px;overflow:hidden;box-shadow:0 12px 32px -20px rgba(0,0,0,.5)}
+.term-bar{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;color:var(--term-dim);padding:9px 14px;border-bottom:1px solid #ffffff14}
+.lights{display:flex;gap:6px}.lights i{width:10px;height:10px;border-radius:50%;background:#ffffff26}
+.term-bar .t{flex:1;text-align:center}
+.term-body{font-family:var(--mono);font-size:.82rem;line-height:1.5;color:var(--term-fg);padding:16px 18px;white-space:pre;overflow-x:auto;min-height:150px}
+.g{color:var(--term-green)} .r{color:var(--term-red)} .d{color:var(--term-dim)}
+.cursor{display:inline-block;width:.6em;background:var(--term-fg);animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+figure{margin:0;display:flex;flex-direction:column;gap:8px}
+figcaption{font-family:var(--mono);font-size:.75rem;color:var(--muted);text-align:center}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid2>div{min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.grid2 p{font-size:.95rem;color:var(--muted)}
+.tagline{font-family:var(--mono);font-size:.72rem;color:var(--accent);text-transform:uppercase;letter-spacing:.08em}
+@media (max-width:560px){.grid2{grid-template-columns:1fr}}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips code{padding:4px 9px;border:1px solid var(--line);background:var(--surface)}
+
+/* Quiz */
+#quiz{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:18px;scroll-margin-top:80px}
+.qtop{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.dots{display:flex;gap:6px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--line);transition:background .2s}
+.dot.now{background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)} .dot.ok{background:var(--good)} .dot.no{background:var(--bad)}
+.qnum{font-family:var(--mono);font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.qprompt{font-family:var(--display);font-size:1.3rem;font-weight:600;line-height:1.3}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{all:unset;box-sizing:border-box;display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;font-family:var(--body);font-size:1rem;line-height:1.45;color:var(--ink);background:var(--bg);transition:border-color .15s,background .15s}
+.opt:hover:not([disabled]){border-color:var(--accent)}
+.opt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.opt .key{font-family:var(--mono);font-size:.8rem;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:0 6px;flex:none;margin-top:2px}
+.opt[disabled]{cursor:default}
+.opt[disabled]:not(.right):not(.wrong){opacity:.55}
+.opt.right{border-color:var(--good);background:var(--good-bg)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.feedback{border-radius:10px;padding:12px 14px;font-size:.98rem;animation:rise .2s ease}
+.feedback.ok{background:var(--good-bg)} .feedback.no{background:var(--bad-bg)}
+.feedback b{font-family:var(--display)}
+@keyframes rise{from{opacity:0;transform:translateY(4px)}}
+.qfoot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;min-height:44px}
+.hint{font-size:.85rem;color:var(--muted);font-family:var(--mono)}
+.result{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.big{font-family:var(--display);font-size:3.4rem;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.review{display:flex;flex-direction:column;gap:6px;margin:0;padding:0;list-style:none;width:100%}
+.review li{font-size:.95rem;display:flex;gap:10px}
+.review .m{font-family:var(--mono);font-weight:600;flex:none}
+.review .m.ok{color:var(--good)} .review .m.no{color:var(--bad)}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+
+.next{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:22px;border-radius:16px;background:var(--accent-soft)}
+.next h3{font-size:1.2rem}
+.next p{color:var(--muted);font-size:.95rem}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=programming">Programming</a> / JCurses</div>
+    <span class="eyebrow">Java · terminal UIs</span>
+    <h1>JCurses Crash Course</h1>
+    <p class="lede">Build colorful, keyboard-driven Java programs that run right in the terminal. Four short lessons, then a quiz to check what stuck.</p>
+    <div class="facts"><span>~10 min</span><span>4 lessons</span><span>10-question quiz</span><span>Beginner friendly</span></div>
+    <nav class="toc" aria-label="Lessons">
+      <a href="#l1">1 · Setup</a><a href="#l2">2 · Drawing</a><a href="#l3">3 · Running</a><a href="#l4">4 · Widgets</a><a href="#quiz">Quiz</a>
+    </nav>
+  </header>
+
+  <section class="lesson" id="l1">
+    <div class="lesson-head"><span class="step">01</span><h2>What JCurses is, and setting it up</h2></div>
+    <p>JCurses lets a Java program take over a terminal window and draw on it like a canvas. Instead of printing lines that scroll away, you put text at exact spots, in color, and react to single key presses without waiting for Enter.</p>
+    <p>A terminal is a grid of character cells, usually 80 columns wide and 24 rows tall. Every position you give JCurses is a <b>(column, row)</b> pair on that grid, starting at (0, 0) in the top-left corner.</p>
+    <div class="grid2">
+      <div><span class="tagline">For games &amp; custom screens</span><h3>Drawing mode</h3><p>Use <code>Toolkit</code> to paint text and read keys yourself.</p></div>
+      <div><span class="tagline">For menus &amp; forms</span><h3>Widget mode</h3><p>Use windows, labels, buttons and text fields. Tab moves between them.</p></div>
+    </div>
+    <h3>Add it to your Eclipse project</h3>
+    <ol class="steps">
+      <li>Download JCurses and unzip it.</li>
+      <li>Make a <code>lib</code> folder in your project and copy in <b>two files</b>: <code>jcurses.jar</code> and the native library (<code>.dll</code> on Windows, <code>.so</code> on Linux).</li>
+      <li>Right-click <code>jcurses.jar</code> → <b>Build Path → Add to Build Path</b>. Only the jar, not the native file.</li>
+    </ol>
+    <div class="callout"><span><b>Why two files?</b> The jar holds the Java classes you call. The native library does the actual terminal work behind the scenes, so it just needs to sit next to the jar.</span></div>
+  </section>
+
+  <section class="lesson" id="l2">
+    <div class="lesson-head"><span class="step">02</span><h2>Drawing with Toolkit</h2></div>
+    <p>Every drawing-mode program follows the same rhythm: clear the screen, print text somewhere, wait for a key, and shut down cleanly. A <code>CharColor</code> is a pair of colors: <b>background first, then text</b>.</p>
+<div class="code"><pre><code><span class="k">import</span> jcurses.system.*;
+
+<span class="k">public class</span> Hello {
+  <span class="k">public static void</span> main(String[] args) {
+    <span class="k">CharColor</span> plain = <span class="k">new</span> CharColor(CharColor.BLACK, CharColor.WHITE);
+    <span class="k">CharColor</span> green = <span class="k">new</span> CharColor(CharColor.BLACK, CharColor.GREEN);
+    <span class="k">CharColor</span> red   = <span class="k">new</span> CharColor(CharColor.BLACK, CharColor.RED);
+
+    Toolkit.clearScreen(plain);
+    <span class="c">// printString(text, column, row, color)</span>
+    Toolkit.printString(<span class="s">"Hello from JCurses!"</span>, 5, 2, green);
+    Toolkit.printString(<span class="s">"Press any key (q to quit)"</span>, 5, 4, plain);
+
+    <span class="k">InputChar</span> key = Toolkit.readCharacter(); <span class="c">// waits for ONE key</span>
+    Toolkit.printString(<span class="s">"You pressed: "</span> + key.getCharacter(), 5, 6, red);
+    Toolkit.readCharacter();
+
+    Toolkit.shutdown(); <span class="c">// always last: restores the terminal</span>
+  }
+}</code></pre></div>
+    <figure>
+      <div class="term" role="img" aria-label="Terminal showing Hello from JCurses in green, a prompt, and You pressed: k in red">
+        <div class="term-bar"><span class="lights"><i></i><i></i><i></i></span><span class="t">java Hello</span><span>80×24</span></div>
+        <div class="term-body">
+
+     <span class="g">Hello from JCurses!</span>
+
+     Press any key (q to quit)
+
+     <span class="r">You pressed: k</span>   <span class="cursor">&nbsp;</span></div>
+      </div>
+      <figcaption>What it looks like after pressing “k”</figcaption>
+    </figure>
+    <ul class="points">
+      <li><code>printString("Hi", 5, 2, …)</code> starts <b>5 columns in</b> and <b>2 rows down</b>.</li>
+      <li>Skip <code>Toolkit.shutdown()</code> and your terminal can be left in a weird state after the program ends.</li>
+    </ul>
+  </section>
+
+  <section class="lesson" id="l3">
+    <div class="lesson-head"><span class="step">03</span><h2>Running your program</h2></div>
+    <p>Eclipse's Console panel is not a real terminal, so the green Run button won't work for JCurses. Instead, save in Eclipse (it compiles into the <code>bin</code> folder), open Command Prompt or a terminal in your project folder, and run:</p>
+<div class="code"><pre><code><span class="c"># Windows: entries separated by a semicolon</span>
+java -cp bin;lib\jcurses.jar Hello
+
+<span class="c"># Linux / macOS: entries separated by a colon</span>
+java -cp bin:lib/jcurses.jar Hello</code></pre></div>
+    <ul class="points">
+      <li><code>-cp</code> is the <b>classpath</b>: where Java looks for your classes and the jar.</li>
+      <li>Eclipse's own <b>Terminal</b> view (Window → Show View → Other → Terminal) is a real terminal, so it works too.</li>
+    </ul>
+    <div class="callout warn"><span><b>Seeing <code>UnsatisfiedLinkError</code>?</b> Java couldn't load the native library. Either it's missing from <code>lib</code>, or it's 32-bit while your Java is 64-bit (or the other way around).</span></div>
+  </section>
+
+  <section class="lesson" id="l4">
+    <div class="lesson-head"><span class="step">04</span><h2>Windows and buttons</h2></div>
+    <p>Widget mode works like a tiny version of Swing. Make a <code>Window</code>, attach a layout manager to its root panel, add widgets, then call <code>show()</code>.</p>
+<div class="code"><pre><code><span class="k">Window</span> w = <span class="k">new</span> Window(40, 10, <span class="k">true</span>, <span class="s">"My First Window"</span>);
+<span class="k">DefaultLayoutManager</span> layout = <span class="k">new</span> DefaultLayoutManager();
+layout.bindToContainer(w.getRootPanel());
+
+<span class="k">Label</span> msg = <span class="k">new</span> Label(<span class="s">"Hello! Press Enter on the button."</span>);
+<span class="k">Button</span> b = <span class="k">new</span> Button(<span class="s">"Close"</span>);
+b.addListener(e -&gt; w.close());   <span class="c">// runs when Enter is pressed on it</span>
+
+<span class="c">// addWidget(widget, x, y, width, height, hAlign, vAlign)</span>
+layout.addWidget(msg, 0, 1, 38, 1, WidgetsConstants.ALIGNMENT_CENTER,
+                                   WidgetsConstants.ALIGNMENT_CENTER);
+layout.addWidget(b,   0, 4, 38, 3, WidgetsConstants.ALIGNMENT_CENTER,
+                                   WidgetsConstants.ALIGNMENT_CENTER);
+w.show();</code></pre></div>
+    <figure>
+      <div class="term" role="img" aria-label="Terminal showing a bordered window titled My First Window with a Close button">
+        <div class="term-bar"><span class="lights"><i></i><i></i><i></i></span><span class="t">java MyWindow</span><span>Tab · Enter</span></div>
+        <div class="term-body"><span class="d">  ┌──────────── My First Window ───────────┐</span>
+<span class="d">  │</span>                                        <span class="d">│</span>
+<span class="d">  │</span>   Hello! Press Enter on the button.    <span class="d">│</span>
+<span class="d">  │</span>                                        <span class="d">│</span>
+<span class="d">  │</span>               <span class="g">[ Close ]</span>                <span class="d">│</span>
+<span class="d">  │</span>                                        <span class="d">│</span>
+<span class="d">  └────────────────────────────────────────┘</span></div>
+      </div>
+      <figcaption>Tab moves focus between widgets; Enter presses the focused one</figcaption>
+    </figure>
+    <h3>Other widgets to try</h3>
+    <div class="chips"><code>TextField</code><code>CheckBox</code><code>List</code><code>PopUpMenu</code><code>MessageBox</code></div>
+  </section>
+
+  <section id="quiz" aria-live="polite"></section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Tip: in the quiz, press 1–4 to answer and Enter to continue.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script>
+/* Quiz data */
+const Q = [
+  {q:"Which two files from the download go into your project's lib folder?",
+   o:["jcurses.jar and the native library (.dll or .so)","Only jcurses.jar","The whole zip file, unextracted","Only the .dll or .so file"],a:0,
+   e:"The jar holds the Java classes and the native library does the terminal work. Both must sit in the same folder."},
+  {q:"Which file do you add to Eclipse's Build Path?",
+   o:["The .dll or .so file","jcurses.jar","Both files","Neither, Eclipse finds them on its own"],a:1,
+   e:"Right-click jcurses.jar → Build Path → Add to Build Path. The native library just needs to sit next to it."},
+  {q:"Why doesn't the green Run button in Eclipse work for JCurses programs?",
+   o:["Eclipse doesn't support Java 17","JCurses only works on Linux","Eclipse's Console isn't a real terminal","You forgot to save"],a:2,
+   e:"JCurses needs a real terminal to draw on. Run it from Command Prompt, a Linux terminal, or Eclipse's Terminal view."},
+  {q:"Where does Toolkit.printString(\"Hi\", 10, 3, color) put the text?",
+   o:["10 rows down, 3 columns in","10 columns in, 3 rows down","At pixel position (10, 3)","On line 10 of your code"],a:1,
+   e:"Positions are (column, row) on the character grid, counted from the top-left corner (0, 0)."},
+  {q:"In new CharColor(CharColor.BLACK, CharColor.GREEN), what is green?",
+   o:["The background","The border","The text color","The cursor"],a:2,
+   e:"The first color is the background and the second is the text (foreground)."},
+  {q:"What should be the last JCurses call in a drawing-mode program?",
+   o:["Toolkit.clearScreen()","Toolkit.shutdown()","System.out.println()","Toolkit.readCharacter()"],a:1,
+   e:"shutdown() puts the terminal back to normal. Skip it and your terminal may act strangely afterward."},
+  {q:"On Windows, which command runs a class called Hello?",
+   o:["java -cp bin;lib\\jcurses.jar Hello","java -cp bin:lib/jcurses.jar Hello","javac Hello.java jcurses.jar","java Hello.jcurses"],a:0,
+   e:"Windows separates classpath entries with a semicolon. Linux uses a colon."},
+  {q:"You run your program and get UnsatisfiedLinkError. What's the most likely cause?",
+   o:["A typo in printString","The native library is missing from lib or doesn't match your Java (32 vs 64-bit)","Your window is too small","You used a Button without a Label"],a:1,
+   e:"That error means Java couldn't load the .dll or .so. Check it's next to jcurses.jar and matches your Java's bitness."},
+  {q:"In widget mode, how does the user move between buttons and fields?",
+   o:["The mouse","Arrow keys only","The Tab key","Typing the widget's name"],a:2,
+   e:"Tab moves focus between widgets and Enter activates the focused one, like a button."},
+  {q:"What does Toolkit.readCharacter() do?",
+   o:["Reads a whole line after Enter","Waits for a single key press and returns it","Reads a character from a file","Prints a character"],a:1,
+   e:"It returns an InputChar as soon as one key is pressed. That's what makes games and menus feel responsive."}
+];
+
+const root = document.getElementById('quiz');
+let i = 0, picks = [], answered = false;
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+
+function dots(){
+  return '<div class="dots" aria-hidden="true">' + Q.map((_,k)=>{
+    let c = 'dot';
+    if (k < picks.length) c += picks[k]===Q[k].a ? ' ok' : ' no';
+    else if (k===i) c += ' now';
+    return `<span class="${c}"></span>`;
+  }).join('') + '</div>';
+}
+
+function render(){
+  answered = false;
+  const q = Q[i];
+  root.innerHTML = `
+    <div class="qtop"><span class="eyebrow">Check yourself</span>${dots()}<span class="qnum">${i+1} / ${Q.length}</span></div>
+    <p class="qprompt">${esc(q.q)}</p>
+    <div class="opts">${q.o.map((t,k)=>`<button class="opt" data-k="${k}"><span class="key">${k+1}</span><span>${esc(t)}</span></button>`).join('')}</div>
+    <div id="fb"></div>
+    <div class="qfoot"><span class="hint">Pick an answer</span><span id="nextWrap"></span></div>`;
+  root.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>choose(+b.dataset.k)));
+}
+
+function choose(k){
+  if (answered) return;
+  answered = true;
+  const q = Q[i]; picks.push(k);
+  const ok = k===q.a;
+  root.querySelectorAll('.opt').forEach(b=>{
+    const n = +b.dataset.k; b.disabled = true;
+    if (n===q.a) b.classList.add('right');
+    else if (n===k) b.classList.add('wrong');
+  });
+  root.querySelector('.dots').outerHTML = dots();
+  document.getElementById('fb').innerHTML =
+    `<div class="feedback ${ok?'ok':'no'}"><b>${ok?'Correct.':'Not quite.'}</b> ${esc(q.e)}</div>`;
+  root.querySelector('.hint').textContent = ok ? 'Nice work' : 'The right answer is highlighted';
+  const last = i===Q.length-1;
+  document.getElementById('nextWrap').innerHTML = `<button class="btn" id="next">${last?'See my score':'Next question →'}</button>`;
+  const nb = document.getElementById('next');
+  nb.addEventListener('click', next); nb.focus({preventScroll:true});
+}
+
+function next(){ i++; i < Q.length ? render() : finish(); }
+
+function finish(){
+  const score = picks.filter((p,k)=>p===Q[k].a).length;
+  const msg = score===Q.length ? "Perfect. You're ready to build something."
+    : score >= 7 ? "Solid. Skim the lessons for the ones you missed."
+    : "Worth another read. Re-check the lessons above, then try again.";
+  root.innerHTML = `
+    <div class="qtop"><span class="eyebrow">Your score</span>${dots()}</div>
+    <div class="result">
+      <span class="big">${score}<span style="color:var(--muted);font-size:.5em"> / ${Q.length}</span></span>
+      <p>${msg}</p>
+      <ul class="review">${Q.map((q,k)=>{const ok=picks[k]===q.a;return `<li><span class="m ${ok?'ok':'no'}">${ok?'✓':'✗'}</span><span>${esc(q.q)}</span></li>`}).join('')}</ul>
+      <div class="actions"><button class="btn ghost" id="retry">Try again</button><a class="btn" href="#l1">Back to lesson 1</a></div>
+    </div>`;
+  document.getElementById('retry').addEventListener('click',()=>{i=0;picks=[];render();root.scrollIntoView({behavior:'smooth'})});
+}
+
+document.addEventListener('keydown',e=>{
+  if (/INPUT|TEXTAREA/.test(e.target.tagName)) return;
+  if (!answered && /^[1-4]$/.test(e.key) && root.querySelector('.opt')) choose(+e.key-1);
+});
+render();
+
+/* Copy buttons on code blocks */
+document.querySelectorAll('.code').forEach(box=>{
+  const btn = document.createElement('button');
+  btn.className = 'copy'; btn.type = 'button'; btn.textContent = 'Copy';
+  btn.addEventListener('click', async ()=>{
+    const text = box.querySelector('pre').innerText;
+    try { await navigator.clipboard.writeText(text); btn.textContent = 'Copied'; btn.classList.add('done'); }
+    catch { btn.textContent = 'Select & copy'; }
+    setTimeout(()=>{btn.textContent='Copy';btn.classList.remove('done')},1600);
+  });
+  box.appendChild(btn);
+});
+
+/* Reading progress + active lesson in the menu */
+const bar = document.getElementById('progress');
+const links = [...document.querySelectorAll('nav.toc a')];
+const targets = links.map(a=>document.querySelector(a.getAttribute('href')));
+function onScroll(){
+  const h = document.documentElement;
+  bar.style.transform = `scaleX(${Math.min(1, h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight))})`;
+  let cur = -1;
+  targets.forEach((t,k)=>{ if (t && t.getBoundingClientRect().top < 140) cur = k; });
+  links.forEach((a,k)=>a.classList.toggle('on', k===cur));
+}
+addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+/* Random tutorial (skips this one when others exist) */
+document.getElementById('randomBtn').addEventListener('click',()=>{
+  const all = window.TUTORIALS || [];
+  const others = all.filter(t=>t.slug!=='jcurses');
+  const pool = others.length ? others : all;
+  const t = pool[Math.floor(Math.random()*pool.length)];
+  if (t) location.href = '../' + t.slug + '/';
+});
+document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

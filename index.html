@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shortutorial: short tutorials for anything</title>
+<meta name="description" content="Short, clear tutorials on anything. Search for what you want to learn or try a random one.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+.hero{max-width:760px;margin:0 auto;padding:72px 16px 40px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px}
+.hero h1{font-size:clamp(2.3rem,7vw,3.9rem);font-weight:700;letter-spacing:-.03em}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lede{color:var(--muted);font-size:1.15rem;max-width:44ch}
+
+.search{width:100%;max-width:620px;margin-top:10px;display:flex;gap:10px}
+.field{flex:1;position:relative;min-width:0}
+.field svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--muted);pointer-events:none}
+.field input{width:100%;font:inherit;font-family:var(--display);font-size:1.1rem;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:14px 52px 14px 48px;outline:none;transition:border-color .15s,box-shadow .15s}
+.field input::placeholder{color:var(--muted)}
+.field input:focus{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.field kbd{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:.75rem;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:1px 7px;background:var(--bg)}
+.field input:focus ~ kbd{display:none}
+.search .btn{flex:none;padding:0 22px}
+@media (max-width:520px){.search{flex-direction:column}.search .btn{justify-content:center;padding:13px 22px}}
+
+.list{max-width:1040px;margin:0 auto;padding:16px 16px 0}
+.list-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.list-head h2{font-size:1.25rem}
+.count{font-family:var(--mono);font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
+.card{display:flex;flex-direction:column;gap:10px;padding:20px;background:var(--surface);border:1px solid var(--line);border-radius:14px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s,box-shadow .15s}
+.card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 24px -16px var(--accent)}
+.card h3{font-size:1.25rem}
+.card p{color:var(--muted);font-size:.98rem;flex:1}
+.meta{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+.meta .go{color:var(--accent);font-weight:600}
+mark{background:var(--accent-soft);color:inherit;border-radius:3px;padding:0 2px}
+
+.empty{text-align:center;padding:48px 16px;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:14px;background:var(--surface);border:1px dashed var(--line);border-radius:14px}
+.empty b{color:var(--ink);font-family:var(--display);font-size:1.2rem}
+</style>
+</head>
+<body>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="./"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><button class="btn ghost small" data-random>Random</button></div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <span class="eyebrow">Short tutorials for anything</span>
+    <h1>Learn it in <em>minutes</em>, not hours.</h1>
+    <p class="lede">Clear, step-by-step guides that get to the point. Search for what you want to learn, or let us pick one.</p>
+    <form class="search" role="search" onsubmit="event.preventDefault();openFirst()">
+      <label class="field">
+        <span class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search tutorials</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="What do you want to learn?" autocomplete="off" spellcheck="false">
+        <kbd>/</kbd>
+      </label>
+      <button type="button" class="btn" data-random>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
+        Random tutorial
+      </button>
+    </form>
+  </section>
+
+  <section class="list" aria-live="polite">
+    <div class="list-head"><h2 id="listTitle">All tutorials</h2><span class="count" id="count"></span></div>
+    <div id="results"></div>
+  </section>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>New tutorials added regularly.</span></div>
+</footer>
+
+<script src="tutorials.js"></script>
+<script>
+const ALL = window.TUTORIALS || [];
+const input = document.getElementById('q');
+const results = document.getElementById('results');
+let shown = ALL;
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const words = q => q.toLowerCase().split(/\s+/).filter(Boolean);
+function highlight(text, q){
+  let out = esc(text);
+  words(q).forEach(w => {
+    const re = new RegExp('(' + w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')', 'ig');
+    out = out.replace(/(<[^>]*>)|([^<]+)/g, (m, tag, txt) => tag || txt.replace(re, '<mark>$1</mark>'));
+  });
+  return out;
+}
+
+function search(q){
+  const ws = words(q);
+  if (!ws.length) return ALL;
+  return ALL.map(t => {
+    const title = t.title.toLowerCase(), hay = [t.title, t.summary, t.category, ...(t.tags||[])].join(' ').toLowerCase();
+    if (!ws.every(w => hay.includes(w))) return null;
+    return { t, score: ws.filter(w => title.includes(w)).length };
+  }).filter(Boolean).sort((a,b) => b.score - a.score).map(r => r.t);
+}
+
+function render(){
+  const q = input.value.trim();
+  shown = search(q);
+  document.getElementById('listTitle').textContent = q ? 'Results' : 'All tutorials';
+  document.getElementById('count').textContent = `${shown.length} ${shown.length === 1 ? 'tutorial' : 'tutorials'}`;
+  if (!shown.length){
+    results.innerHTML = `<div class="empty"><b>No tutorial for “${esc(q)}” yet.</b><span>Try a different word, or explore something new.</span><button class="btn ghost small" data-random>Show me a random one</button></div>`;
+    return;
+  }
+  results.innerHTML = '<div class="grid">' + shown.map(t => `
+    <a class="card" href="${esc(t.slug)}/">
+      <span class="eyebrow">${esc(t.category || 'Tutorial')}</span>
+      <h3>${highlight(t.title, q)}</h3>
+      <p>${highlight(t.summary, q)}</p>
+      <div class="meta"><span>${t.minutes ? '~' + t.minutes + ' min' : ''}</span><span class="go">Start →</span></div>
+    </a>`).join('') + '</div>';
+}
+
+function goRandom(){
+  if (!ALL.length) return;
+  const t = ALL[Math.floor(Math.random() * ALL.length)];
+  location.href = t.slug + '/';
+}
+function openFirst(){ if (shown.length) location.href = shown[0].slug + '/'; }
+
+document.addEventListener('click', e => { if (e.target.closest('[data-random]')) goRandom(); });
+input.addEventListener('input', () => {
+  render();
+  const u = new URL(location); input.value.trim() ? u.searchParams.set('q', input.value.trim()) : u.searchParams.delete('q');
+  history.replaceState(null, '', u);
+});
+document.addEventListener('keydown', e => {
+  if (e.key === '/' && document.activeElement !== input){ e.preventDefault(); input.focus(); }
+  if (e.key === 'Escape' && document.activeElement === input){ input.value = ''; input.dispatchEvent(new Event('input')); }
+});
+
+input.value = new URLSearchParams(location.search).get('q') || '';
+document.getElementById('yr').textContent = new Date().getFullYear();
+render();
+</script>
+</body>
+</html>
