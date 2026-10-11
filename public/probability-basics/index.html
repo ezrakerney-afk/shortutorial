@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Probability Basics · Shortutorial</title>
+<meta name="description" content="Understand probability in three short lessons: chances as fractions and percents, combining events with “and” and “or”, and the gambler&#x27;s fallacy, with an interactive coin and dice simulator.">
+<link rel="canonical" href="https://shortutorial.com/probability-basics/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Probability Basics · Shortutorial">
+<meta property="og:description" content="Understand probability in three short lessons: chances as fractions and percents, combining events with “and” and “or”, and the gambler&#x27;s fallacy, with an interactive coin and dice simulator.">
+<meta property="og:url" content="https://shortutorial.com/probability-basics/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body data-slug="probability-basics">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=math">Math</a> / Probability</div>
+    <span class="eyebrow">Math · Statistics</span>
+    <h1>Probability Basics</h1>
+    <p class="lede">What are the chances? Learn how to work out odds for coins, dice and cards, and why “it's due” is one of the most expensive mistakes in the world.</p>
+    <div class="facts"><span>~10 min</span><span>3 lessons</span><span>Dice simulator</span><span>5-question quiz</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#r1">1 · Chances</a><a href="#r2">2 · And / or</a><a href="#r3">3 · Myths</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="r1">
+    <div class="lesson-head"><span class="step">01</span><h2>Probability is a fraction</h2></div>
+
+    <div class="formula">P = <span class="v">ways it can happen</span> ÷ <span class="v">all possible outcomes</span><small>only works when every outcome is equally likely</small></div>
+    <div class="tw"><table class="t"><tr><th>Event</th><th class=num>Probability</th><th class=num>As a %</th></tr><tr><td>Coin lands heads</td><td class=num>1/2</td><td class=num>50%</td></tr><tr><td>Roll a 6 on a die</td><td class=num>1/6</td><td class=num>≈ 16.7%</td></tr><tr><td>Roll an even number</td><td class=num>3/6 = 1/2</td><td class=num>50%</td></tr><tr><td>Draw an ace from a deck</td><td class=num>4/52 = 1/13</td><td class=num>≈ 7.7%</td></tr></table></div>
+    <p>Probability always sits between <b>0</b> (impossible) and <b>1</b> (certain). The chance of something <b>not</b> happening is 1 minus the chance it does: not rolling a 6 is 1 − 1/6 = 5/6.</p>
+  </section>
+
+  <section class="lesson" id="r2">
+    <div class="lesson-head"><span class="step">02</span><h2>Combining events: “and” and “or”</h2></div>
+
+    <p><b>AND, multiply.</b> For independent events (one doesn't affect the other), multiply the chances.</p>
+    <div class="example"><div class="ex-h">Example · two heads in a row</div><ol><li>1/2 × 1/2</li><li class="ans">1/4, or 25%</li></ol></div>
+    <p><b>OR, add</b>, as long as both can't happen at once.</p>
+    <div class="example"><div class="ex-h">Example · roll a 1 or a 2</div><ol><li>1/6 + 1/6</li><li class="ans">2/6 = 1/3</li></ol></div>
+    <p class="callout"><span><b>“At least one” trick:</b> it's usually easier to work out the chance of <i>none</i> and subtract from 1. Chance of at least one 6 in four rolls = 1 − (5/6)⁴ ≈ 52%.</span></p>
+  </section>
+
+  <section class="lesson" id="r3">
+    <div class="lesson-head"><span class="step">03</span><h2>The gambler's fallacy</h2></div>
+
+    <p>A coin lands heads five times in a row. Is tails “due”? <b>No.</b> The coin has no memory. The next flip is still exactly 50/50.</p>
+    <p>Over thousands of flips, the share of heads drifts towards 50%. That's the <b>law of large numbers</b>. But it happens because the early streak gets swamped by later flips, not because the coin “corrects” itself.</p>
+    <p class="callout warn"><span><b>Why casinos win:</b> every game is built so the house has a small edge on each bet. Over millions of bets, that small edge is guaranteed profit.</span></p>
+    <div class="try"><span class="try-h">Try it · dice simulator</span><div class="row"><label>Roll a die this many times<select id="dn"><option>10</option><option selected>100</option><option>1000</option><option>100000</option></select></label><button class="btn" id="dgo" type="button">Roll</button></div>
+      <svg id="dsvg" viewBox="0 0 320 170" aria-label="Bar chart of how often each face came up"></svg>
+      <div class="out" id="dOut"></div></div>
+    <p style="font-size:.95rem;color:var(--muted)">Roll 10 times and the bars look lopsided. Roll 100,000 and each face lands close to 1/6 ≈ 16.7%.</p>
+  </section>
+
+  <section id="cert" style="scroll-margin-top:80px"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Tip: in the quiz, press 1–4 to answer.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+
+(function(){
+  function go(){
+    const n = +$('#dn').value, c = [0,0,0,0,0,0];
+    for (let i = 0; i < n; i++) c[Math.floor(Math.random()*6)]++;
+    const mx = Math.max(...c, 1), w = 40, gap = 10, x0 = 25;
+    let s = `<line x1="15" y1="140" x2="310" y2="140" stroke="var(--line)"/>`;
+    const ey = 140 - (n/6)/mx*120;
+    c.forEach((v, i) => { const h = v/mx*120, x = x0 + i*(w+gap);
+      s += `<rect x="${x}" y="${140-h}" width="${w}" height="${h}" rx="4" fill="var(--accent)"/>
+            <text x="${x+w/2}" y="158" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12" fill="var(--ink)">${i+1}</text>
+            <text x="${x+w/2}" y="${136-h}" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="var(--muted)">${(v/n*100).toFixed(1)}%</text>`; });
+    s += `<line x1="15" y1="${ey}" x2="310" y2="${ey}" stroke="var(--amber)" stroke-dasharray="4 4"/>`;
+    $('#dsvg').innerHTML = s;
+    const dev = Math.max(...c.map(v => Math.abs(v/n - 1/6))) * 100;
+    $('#dOut').innerHTML = `${n.toLocaleString()} rolls. Furthest from 16.7%: <b>${dev.toFixed(1)} points</b> <span style="font-size:.85rem;color:var(--muted)">(dashed line = 1/6)</span>`;
+  }
+  $('#dgo').addEventListener('click', go); $('#dn').addEventListener('change', go); go();
+})();
+</script>
+</body>
+</html>

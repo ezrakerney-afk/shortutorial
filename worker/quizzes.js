@@ -860,6 +860,94 @@ export default {
     ]
   },
 
+  "pythagorean-theorem": {
+    title: "The Pythagorean Theorem",
+    pass: 4,
+    questions: [
+      { q: "Which triangles does a² + b² = c² work for?",
+        o: ["Any triangle", "Right triangles only", "Equilateral triangles only", "Triangles with equal sides"], a: 1,
+        e: "It needs one 90° angle." },
+      { q: "What is the hypotenuse?",
+        o: ["The shortest side", "The side opposite the right angle", "Any side", "The base"], a: 1,
+        e: "It's the longest side, opposite the right angle." },
+      { q: "A right triangle has short sides 6 and 8. How long is the hypotenuse?",
+        o: ["14", "10", "48", "7"], a: 1,
+        e: "36 + 64 = 100, and √100 = 10." },
+      { q: "Hypotenuse 13, one side 5. What's the other side?",
+        o: ["8", "12", "18", "√194"], a: 1,
+        e: "169 − 25 = 144, and √144 = 12." },
+      { q: "Builders check a corner is square by measuring which pattern?",
+        o: ["1-2-3", "3-4-5", "2-2-2", "5-5-5"], a: 1,
+        e: "3² + 4² = 5², so a 3-4-5 triangle has a perfect right angle." }
+    ]
+  },
+
+  "mean-median-mode": {
+    title: "Mean, Median, Mode and Range",
+    pass: 4,
+    questions: [
+      { q: "What is the mean of 4, 6 and 11?",
+        o: ["6", "7", "21", "11"], a: 1,
+        e: "4 + 6 + 11 = 21, and 21 ÷ 3 = 7." },
+      { q: "What is the median of 9, 1, 5, 3, 7?",
+        o: ["5", "3", "9", "25"], a: 0,
+        e: "Sorted: 1, 3, 5, 7, 9. The middle value is 5." },
+      { q: "What is the median of 2, 4, 6, 10?",
+        o: ["4", "5", "6", "5.5"], a: 1,
+        e: "The middle two are 4 and 6; halfway is 5." },
+      { q: "Which average is best for house prices in an area with a few mansions?",
+        o: ["Mean", "Median", "Mode", "Range"], a: 1,
+        e: "The median isn't pulled up by a few extreme values." },
+      { q: "What is the range of 3, 8, 15, 6?",
+        o: ["12", "8", "15", "32"], a: 0,
+        e: "15 − 3 = 12." }
+    ]
+  },
+
+  "probability-basics": {
+    title: "Probability Basics",
+    pass: 4,
+    questions: [
+      { q: "What's the probability of rolling a 3 on a normal die?",
+        o: ["1/3", "1/6", "1/2", "3/6"], a: 1,
+        e: "One way out of six equally likely outcomes." },
+      { q: "What's the chance of flipping heads twice in a row?",
+        o: ["1/2", "1/4", "1/3", "2/4"], a: 1,
+        e: "Independent events: 1/2 × 1/2 = 1/4." },
+      { q: "What's the chance of rolling a 5 or a 6?",
+        o: ["1/36", "1/3", "1/6", "5/6"], a: 1,
+        e: "1/6 + 1/6 = 2/6 = 1/3." },
+      { q: "A coin lands heads 6 times in a row. The next flip is…",
+        o: ["More likely tails", "More likely heads", "Still 50/50", "Impossible to predict at all"], a: 2,
+        e: "Each flip is independent; the coin has no memory." },
+      { q: "If the chance of rain is 30%, what's the chance it stays dry?",
+        o: ["30%", "70%", "60%", "100%"], a: 1,
+        e: "1 − 0.3 = 0.7, or 70%." }
+    ]
+  },
+
+  "compound-interest": {
+    title: "Compound Interest Explained",
+    pass: 4,
+    questions: [
+      { q: "What makes compound interest different from simple interest?",
+        o: ["It's paid on your interest too", "It's always a higher rate", "It's only for loans", "It's paid once"], a: 0,
+        e: "Interest earns interest, so growth snowballs." },
+      { q: "Using the rule of 72, how long does money take to double at 8%?",
+        o: ["8 years", "9 years", "12 years", "72 years"], a: 1,
+        e: "72 ÷ 8 = 9 years." },
+      { q: "Which matters most for compound growth?",
+        o: ["How often it compounds", "Time and the interest rate", "The bank's name", "The day you start"], a: 1,
+        e: "Monthly vs yearly compounding makes a small difference; years and rate make a huge one." },
+      { q: "A $2,000 credit card balance at 24% a year, with nothing paid, roughly doubles in…",
+        o: ["1 year", "3 years", "10 years", "24 years"], a: 1,
+        e: "72 ÷ 24 = 3 years." },
+      { q: "In A = P(1 + r/n)^(nt), what is P?",
+        o: ["The interest rate", "The starting amount", "The number of years", "The final amount"], a: 1,
+        e: "P is the principal: the money you start with." }
+    ]
+  },
+
   "jcurses": {
     title: "JCurses Crash Course",
     pass: 8,

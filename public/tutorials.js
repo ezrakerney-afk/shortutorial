@@ -317,6 +317,38 @@ window.TUTORIALS = [
     minutes: 10
   },
   {
+    slug: "pythagorean-theorem",
+    title: "The Pythagorean Theorem",
+    summary: "a² + b² = c², finding missing sides, and real uses.",
+    category: "Math",
+    tags: ["math", "pythagoras", "pythagorean theorem", "triangle", "hypotenuse", "geometry"],
+    minutes: 8
+  },
+  {
+    slug: "mean-median-mode",
+    title: "Mean, Median, Mode and Range",
+    summary: "Three kinds of average, and which one to trust.",
+    category: "Math",
+    tags: ["math", "statistics", "mean", "median", "mode", "range", "average"],
+    minutes: 8
+  },
+  {
+    slug: "probability-basics",
+    title: "Probability Basics",
+    summary: "Odds as fractions, “and” vs “or”, and the gambler's fallacy.",
+    category: "Math",
+    tags: ["math", "probability", "odds", "chance", "dice", "coin", "statistics", "gambler's fallacy"],
+    minutes: 10
+  },
+  {
+    slug: "compound-interest",
+    title: "Compound Interest Explained",
+    summary: "How money snowballs, the rule of 72, and the debt trap.",
+    category: "Money",
+    tags: ["money", "compound interest", "saving", "investing", "rule of 72", "debt", "credit card", "math"],
+    minutes: 10
+  },
+  {
     slug: "jcurses",
     title: "JCurses Crash Course",
     summary: "Build colorful, keyboard-driven Java programs that run in a terminal.",

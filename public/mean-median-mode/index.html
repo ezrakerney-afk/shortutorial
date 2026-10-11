@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mean, Median, Mode and Range · Shortutorial</title>
+<meta name="description" content="Learn the difference between mean, median, mode and range in three short lessons, and when each “average” tells the truth, with an interactive calculator.">
+<link rel="canonical" href="https://shortutorial.com/mean-median-mode/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Mean, Median, Mode and Range · Shortutorial">
+<meta property="og:description" content="Learn the difference between mean, median, mode and range in three short lessons, and when each “average” tells the truth, with an interactive calculator.">
+<meta property="og:url" content="https://shortutorial.com/mean-median-mode/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body data-slug="mean-median-mode">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=math">Math</a> / Mean, median, mode</div>
+    <span class="eyebrow">Math · Statistics</span>
+    <h1>Mean, Median, Mode and Range</h1>
+    <p class="lede">“Average” can mean three different things, and choosing the wrong one can be badly misleading. Learn all three, plus range, and when to use each.</p>
+    <div class="facts"><span>~8 min</span><span>3 lessons</span><span>Interactive calculator</span><span>5-question quiz</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#s1">1 · The four</a><a href="#s2">2 · Even counts</a><a href="#s3">3 · Which one?</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="s1">
+    <div class="lesson-head"><span class="step">01</span><h2>The four numbers</h2></div>
+
+    <div class="tw"><table class="t"><tr><th>Measure</th><th>How to find it</th><th>For 2, 3, 3, 5, 12</th></tr><tr><td><b>Mean</b></td><td>Add them up, divide by how many</td><td>25 ÷ 5 = <b>5</b></td></tr><tr><td><b>Median</b></td><td>Sort them; take the middle one</td><td>2, 3, <b>3</b>, 5, 12</td></tr><tr><td><b>Mode</b></td><td>The value that appears most</td><td><b>3</b></td></tr><tr><td><b>Range</b></td><td>Biggest minus smallest</td><td>12 − 2 = <b>10</b></td></tr></table></div>
+    <p>Mean, median and mode are all kinds of “average”: a single number that sums up the middle of the data. Range tells you how spread out it is.</p>
+  </section>
+
+  <section class="lesson" id="s2">
+    <div class="lesson-head"><span class="step">02</span><h2>Medians with an even count</h2></div>
+
+    <p>With an even number of values there's no single middle one. Take the two middle values and find the number halfway between them.</p>
+    <div class="example"><div class="ex-h">Example · 4, 7, 9, 10</div><ol><li>Already sorted; the middle two are 7 and 9</li><li>(7 + 9) ÷ 2 = 8</li><li class="ans">Median = 8</li></ol></div>
+    <p class="callout"><span><b>Don't forget to sort.</b> The median of 9, 2, 7 is 7, not 2. Put the numbers in order first.</span></p>
+    <p>A list can have <b>no mode</b> (every value appears once) or <b>several modes</b> (a tie).</p>
+  </section>
+
+  <section class="lesson" id="s3">
+    <div class="lesson-head"><span class="step">03</span><h2>Which average should you trust?</h2></div>
+
+    <p>The mean gets pulled around by extreme values; the median doesn't.</p>
+    <div class="example"><div class="ex-h">Example · salaries at a small company</div><ol><li>Nine people earn $50,000 and the owner earns $1,050,000</li><li>Total pay is $1,500,000, so the mean is $1,500,000 ÷ 10 = $150,000</li><li>Median = $50,000</li><li class="ans">The median describes a typical employee far better</li></ol></div>
+    <ul class="points">
+      <li><b>Use the median</b> for things with big outliers: house prices, incomes, waiting times.</li>
+      <li><b>Use the mean</b> when values are fairly even: test scores, temperatures, heights.</li>
+      <li><b>Use the mode</b> for categories: the most popular shoe size or flavour.</li>
+    </ul>
+    <div class="try"><span class="try-h">Try it · average calculator</span><label>Numbers, separated by commas or spaces<input type="text" id="mv" value="2, 3, 3, 5, 12" style="width:100%"></label>
+      <div class="out" id="mOut"></div><div class="work" id="mWork"></div></div>
+  </section>
+
+  <section id="cert" style="scroll-margin-top:80px"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Tip: in the quiz, press 1–4 to answer.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+
+(function(){
+  function go(){
+    const v = ($('#mv').value.match(/-?\d*\.?\d+/g) || []).map(Number);
+    if (!v.length){ $('#mOut').textContent = 'Type some numbers.'; $('#mWork').textContent=''; return; }
+    const s = [...v].sort((a,b)=>a-b), n = s.length, sum = s.reduce((a,b)=>a+b,0), mean = sum/n;
+    const med = n % 2 ? s[(n-1)/2] : (s[n/2-1] + s[n/2]) / 2;
+    const c = {}; s.forEach(x => c[x] = (c[x]||0) + 1); const top = Math.max(...Object.values(c));
+    const modes = top === 1 ? [] : Object.keys(c).filter(k => c[k] === top).map(Number);
+    $('#mOut').innerHTML = `Mean <b>${fmt(mean,3)}</b> · Median <b>${fmt(med,3)}</b> · Mode <b>${modes.length ? modes.map(m=>fmt(m,3)).join(', ') : 'none'}</b> · Range <b>${fmt(s[n-1]-s[0],3)}</b>`;
+    $('#mWork').textContent = `Sorted: ${s.map(x=>fmt(x,3)).join(', ')}\nMean: ${fmt(sum,3)} ÷ ${n} = ${fmt(mean,3)}\nMedian: ${n % 2 ? 'middle value' : 'halfway between ' + fmt(s[n/2-1],3) + ' and ' + fmt(s[n/2],3)}\nRange: ${fmt(s[n-1],3)} − ${fmt(s[0],3)}`;
+  }
+  live($('.try'), go);
+})();
+</script>
+</body>
+</html>
