@@ -772,6 +772,94 @@ export default {
     ]
   },
 
+  "percentages": {
+    title: "Percentages Made Easy",
+    pass: 4,
+    questions: [
+      { q: "What is 25% as a decimal?",
+        o: ["0.25", "2.5", "25", "0.025"], a: 0,
+        e: "Divide by 100: 25 ÷ 100 = 0.25." },
+      { q: "What is 15% of 60?",
+        o: ["6", "9", "12", "15"], a: 1,
+        e: "10% is 6, 5% is 3, so 15% is 9." },
+      { q: "A price goes from $50 to $40. What's the percent change?",
+        o: ["10% decrease", "20% decrease", "25% decrease", "20% increase"], a: 1,
+        e: "(40 − 50) ÷ 50 = −0.2, a 20% decrease." },
+      { q: "What do you multiply a price by to take 30% off?",
+        o: ["0.3", "0.7", "1.3", "3"], a: 1,
+        e: "You pay the remaining 70%, so multiply by 0.70." },
+      { q: "“20% off, then an extra 10% off” is a total discount of…",
+        o: ["30%", "28%", "32%", "10%"], a: 1,
+        e: "0.8 × 0.9 = 0.72, so you pay 72%: a 28% discount." }
+    ]
+  },
+
+  "fractions": {
+    title: "Fractions in 10 Minutes",
+    pass: 4,
+    questions: [
+      { q: "In 3/8, what does the 8 tell you?",
+        o: ["How many parts you have", "How many equal parts make a whole", "The answer", "How many wholes there are"], a: 1,
+        e: "The bottom number (denominator) is how many equal parts make one whole." },
+      { q: "What is 12/16 simplified?",
+        o: ["6/8", "3/4", "2/3", "4/3"], a: 1,
+        e: "Divide top and bottom by 4: 12/16 = 3/4." },
+      { q: "What is 1/2 + 1/3?",
+        o: ["2/5", "5/6", "1/6", "2/6"], a: 1,
+        e: "Common bottom 6: 3/6 + 2/6 = 5/6." },
+      { q: "What is 2/3 × 3/4?",
+        o: ["6/12 = 1/2", "5/7", "8/9", "2/4"], a: 0,
+        e: "Top × top = 6, bottom × bottom = 12, and 6/12 = 1/2." },
+      { q: "What is 1/2 ÷ 1/4?",
+        o: ["1/8", "2", "1/2", "4"], a: 1,
+        e: "Flip and multiply: 1/2 × 4/1 = 4/2 = 2. Two quarters fit in a half." }
+    ]
+  },
+
+  "order-of-operations": {
+    title: "Order of Operations (PEMDAS)",
+    pass: 4,
+    questions: [
+      { q: "What is 2 + 3 × 4?",
+        o: ["20", "14", "24", "9"], a: 1,
+        e: "Multiply first: 3 × 4 = 12, then 2 + 12 = 14." },
+      { q: "What is 12 ÷ 3 × 2?",
+        o: ["2", "8", "6", "4"], a: 1,
+        e: "Same level, so left to right: 12 ÷ 3 = 4, then × 2 = 8." },
+      { q: "What is (5 − 2)² + 1?",
+        o: ["10", "26", "8", "12"], a: 0,
+        e: "Brackets: 3. Power: 9. Then + 1 = 10." },
+      { q: "What is 10 − 4 + 3?",
+        o: ["3", "9", "17", "13"], a: 1,
+        e: "Left to right: 10 − 4 = 6, then 6 + 3 = 9." },
+      { q: "What is −3²?",
+        o: ["9", "−9", "6", "−6"], a: 1,
+        e: "The power applies to 3 first (9), then the minus: −9." }
+    ]
+  },
+
+  "solve-for-x": {
+    title: "Solve for x: Algebra Basics",
+    pass: 4,
+    questions: [
+      { q: "Solve x − 4 = 9.",
+        o: ["5", "13", "36", "−5"], a: 1,
+        e: "Add 4 to both sides: x = 13." },
+      { q: "Solve 5x = 35.",
+        o: ["7", "30", "40", "175"], a: 0,
+        e: "Divide both sides by 5: x = 7." },
+      { q: "Solve 2x + 3 = 11.",
+        o: ["7", "4", "5.5", "8"], a: 1,
+        e: "Subtract 3: 2x = 8. Divide by 2: x = 4." },
+      { q: "What's the golden rule for equations?",
+        o: ["Do the same thing to both sides", "Always add first", "Move numbers to the left", "Multiply by x"], a: 0,
+        e: "Doing the same to both sides keeps the equation balanced." },
+      { q: "Solve x/3 + 1 = 5.",
+        o: ["12", "6", "4", "18"], a: 0,
+        e: "Subtract 1: x/3 = 4. Multiply by 3: x = 12." }
+    ]
+  },
+
   "jcurses": {
     title: "JCurses Crash Course",
     pass: 8,

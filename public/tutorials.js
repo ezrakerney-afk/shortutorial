@@ -285,6 +285,38 @@ window.TUTORIALS = [
     minutes: 5
   },
   {
+    slug: "percentages",
+    title: "Percentages Made Easy",
+    summary: "Percent of a number, percent change, discounts and tips.",
+    category: "Math",
+    tags: ["math", "percent", "percentage", "discount", "tip", "increase", "decrease", "mental math"],
+    minutes: 10
+  },
+  {
+    slug: "fractions",
+    title: "Fractions in 10 Minutes",
+    summary: "Simplify, add, subtract, multiply and divide fractions.",
+    category: "Math",
+    tags: ["math", "fractions", "denominator", "numerator", "simplify", "add fractions", "divide fractions"],
+    minutes: 10
+  },
+  {
+    slug: "order-of-operations",
+    title: "Order of Operations (PEMDAS)",
+    summary: "Brackets, powers, ×÷, +− and the left-to-right rule.",
+    category: "Math",
+    tags: ["math", "pemdas", "bodmas", "bidmas", "order of operations", "brackets", "viral math"],
+    minutes: 8
+  },
+  {
+    slug: "solve-for-x",
+    title: "Solve for x: Algebra Basics",
+    summary: "The balance rule and one- and two-step equations.",
+    category: "Math",
+    tags: ["math", "algebra", "equations", "solve for x", "variables", "balance"],
+    minutes: 10
+  },
+  {
     slug: "jcurses",
     title: "JCurses Crash Course",
     summary: "Build colorful, keyboard-driven Java programs that run in a terminal.",
