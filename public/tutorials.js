@@ -509,6 +509,38 @@ window.TUTORIALS = [
     minutes: 8
   },
   {
+    slug: "negative-numbers",
+    title: "Negative Numbers",
+    summary: "Number lines, minus a minus, and multiplying negatives.",
+    category: "Math",
+    tags: ["math", "negative numbers", "integers", "number line", "minus"],
+    minutes: 8
+  },
+  {
+    slug: "how-the-internet-works",
+    title: "How the Internet Works",
+    summary: "IP addresses, DNS, packets and HTTPS, step by step.",
+    category: "Programming",
+    tags: ["internet", "dns", "ip address", "https", "packets", "router", "how it works", "tech"],
+    minutes: 10
+  },
+  {
+    slug: "newtons-laws",
+    title: "Newton's Three Laws of Motion",
+    summary: "Inertia, F = ma, and action and reaction.",
+    category: "Science",
+    tags: ["science", "physics", "newton", "force", "motion", "inertia", "f=ma"],
+    minutes: 8
+  },
+  {
+    slug: "how-loans-work",
+    title: "How Loan Payments Work",
+    summary: "APR, amortisation, and how paying extra saves money.",
+    category: "Money",
+    tags: ["money", "loan", "mortgage", "car loan", "apr", "interest", "amortization", "debt"],
+    minutes: 10
+  },
+  {
     slug: "jcurses",
     title: "JCurses Crash Course",
     summary: "Build colorful, keyboard-driven Java programs that run in a terminal.",

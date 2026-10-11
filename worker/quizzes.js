@@ -1388,6 +1388,94 @@ export default {
     ]
   },
 
+  "negative-numbers": {
+    title: "Negative Numbers",
+    pass: 4,
+    questions: [
+      { q: "Which is smaller: −7 or −2?",
+        o: ["−7", "−2", "They're equal", "Can't tell"], a: 0,
+        e: "−7 is further left on the number line." },
+      { q: "What is −4 + 9?",
+        o: ["−13", "5", "−5", "13"], a: 1,
+        e: "Start at −4 and move 9 right." },
+      { q: "What is 6 − (−2)?",
+        o: ["4", "8", "−8", "−4"], a: 1,
+        e: "Subtracting a negative is adding: 6 + 2." },
+      { q: "What is −5 × −3?",
+        o: ["−15", "15", "−8", "8"], a: 1,
+        e: "Same signs give a positive." },
+      { q: "What is −24 ÷ 6?",
+        o: ["4", "−4", "−18", "30"], a: 1,
+        e: "Different signs give a negative." }
+    ]
+  },
+
+  "how-the-internet-works": {
+    title: "How the Internet Works",
+    pass: 4,
+    questions: [
+      { q: "What does DNS do?",
+        o: ["Encrypts your data", "Turns website names into IP addresses", "Speeds up Wi-Fi", "Blocks ads"], a: 1,
+        e: "It's the internet's phone book." },
+      { q: "What is an IP address?",
+        o: ["A website's name", "A device's numeric address on a network", "A password", "A type of cable"], a: 1,
+        e: "Every device on the internet has one." },
+      { q: "How does data travel across the internet?",
+        o: ["As one big file", "In small packets passed between routers", "By satellite only", "Through phone calls"], a: 1,
+        e: "Packets travel hop by hop and are reassembled." },
+      { q: "What does the padlock / HTTPS mean?",
+        o: ["The site is trustworthy", "The connection is encrypted", "The site is fast", "The site is free"], a: 1,
+        e: "It means private, not necessarily safe." },
+      { q: "Most international internet traffic travels through…",
+        o: ["Satellites", "Undersea cables", "Radio towers", "Phone lines only"], a: 1,
+        e: "Undersea fibre cables carry most of it." }
+    ]
+  },
+
+  "newtons-laws": {
+    title: "Newton's Three Laws of Motion",
+    pass: 4,
+    questions: [
+      { q: "Why do you lurch forward when a bus brakes?",
+        o: ["Gravity", "Inertia: your body keeps moving", "The bus pushes you", "Friction"], a: 1,
+        e: "First law: objects keep moving unless a force stops them." },
+      { q: "Using F = ma, what force accelerates a 50 kg mass at 2 m/s²?",
+        o: ["25 N", "52 N", "100 N", "48 N"], a: 2,
+        e: "50 × 2 = 100 N." },
+      { q: "Pushing an empty trolley and a full one equally hard, which speeds up faster?",
+        o: ["The full one", "The empty one", "Both the same", "Neither moves"], a: 1,
+        e: "Less mass means more acceleration for the same force." },
+      { q: "How does a rocket move upward?",
+        o: ["It pushes on the air above", "It pushes gas down; the gas pushes it up", "Gravity reverses", "It's pulled by the Moon"], a: 1,
+        e: "Third law: action and reaction." },
+      { q: "What is the unit of force?",
+        o: ["Kilogram", "Newton", "Joule", "Watt"], a: 1,
+        e: "Force is measured in newtons." }
+    ]
+  },
+
+  "how-loans-work": {
+    title: "How Loan Payments Work",
+    pass: 4,
+    questions: [
+      { q: "What is the principal?",
+        o: ["The interest rate", "The amount you borrow", "The monthly fee", "The bank manager"], a: 1,
+        e: "Principal is the borrowed amount." },
+      { q: "Which number should you compare between loans?",
+        o: ["Monthly payment only", "APR", "The bank's logo", "The loan term only"], a: 1,
+        e: "APR includes interest and most fees." },
+      { q: "Early in a loan, most of each payment goes to…",
+        o: ["Principal", "Interest", "Fees", "Insurance"], a: 1,
+        e: "The balance is highest, so interest is too." },
+      { q: "What happens when you pay extra each month?",
+        o: ["Nothing", "It reduces the principal and total interest", "It raises your rate", "It's added to the next month only"], a: 1,
+        e: "Extra payments cut the balance, so less interest builds." },
+      { q: "Stretching a loan over more years usually…",
+        o: ["Lowers the total cost", "Lowers the monthly payment but raises the total cost", "Has no effect", "Lowers both"], a: 1,
+        e: "More months of interest means more paid overall." }
+    ]
+  },
+
   "jcurses": {
     title: "JCurses Crash Course",
     pass: 8,

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How Loan Payments Work · Shortutorial</title>
+<meta name="description" content="Understand loans in four short lessons: principal and interest, APR, how monthly payments and amortisation work, and how paying extra saves money, with a loan payment calculator.">
+<link rel="canonical" href="https://shortutorial.com/how-loans-work/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How Loan Payments Work · Shortutorial">
+<meta property="og:description" content="Understand loans in four short lessons: principal and interest, APR, how monthly payments and amortisation work, and how paying extra saves money, with a loan payment calculator.">
+<meta property="og:url" content="https://shortutorial.com/how-loans-work/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body data-slug="how-loans-work">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=money">Money</a> / Loan payments</div>
+    <span class="eyebrow">Money · Borrowing</span>
+    <h1>How Loan Payments Work</h1>
+    <p class="lede">Car loans, mortgages, student loans: they all work the same way. Learn what you're really paying for, and how a little extra each month can save thousands.</p>
+    <div class="facts"><span>~10 min</span><span>4 lessons</span><span>Loan calculator</span><span>5-question quiz</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#ln1">1 · Basics</a><a href="#ln2">2 · APR</a><a href="#ln3">3 · Amortisation</a><a href="#ln4">4 · Pay extra</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="ln1">
+    <div class="lesson-head"><span class="step">01</span><h2>Principal and interest</h2></div>
+
+    <p>The <b>principal</b> is the amount you borrow. <b>Interest</b> is what the lender charges for it, as a yearly percentage of what you still owe.</p>
+    <p>The <b>term</b> is how long you have to repay: a car loan might be 5 years, a mortgage 30.</p>
+  </section>
+
+  <section class="lesson" id="ln2">
+    <div class="lesson-head"><span class="step">02</span><h2>APR: the number to compare</h2></div>
+
+    <p>The <b>APR</b> (annual percentage rate) includes the interest rate <b>plus</b> most fees, as a yearly rate. When comparing two loans, compare APRs, not just the monthly payment.</p>
+    <p class="callout warn"><span><b>Longer terms look cheaper.</b> Stretching a loan from 3 to 6 years lowers the monthly payment, but you pay interest for twice as long, so the total cost goes up.</span></p>
+  </section>
+
+  <section class="lesson" id="ln3">
+    <div class="lesson-head"><span class="step">03</span><h2>Where each payment goes</h2></div>
+
+    <p>Most loans have a fixed monthly payment. Each payment first covers that month's interest; the rest reduces the principal. This schedule is called <b>amortisation</b>.</p>
+    <p>Early on you owe more, so more of each payment is interest. As the balance shrinks, more of each payment goes to the principal.</p>
+    <div class="formula">payment = P × r ÷ (1 − (1 + r)<sup>−n</sup>)<small>P = amount borrowed · r = monthly rate (APR ÷ 12) · n = number of monthly payments</small></div>
+  </section>
+
+  <section class="lesson" id="ln4">
+    <div class="lesson-head"><span class="step">04</span><h2>Paying extra saves money</h2></div>
+
+    <p>Anything extra you pay goes straight to the principal, which cuts the interest on every future month. Check your loan has no early-repayment penalty first.</p>
+    <div class="try"><span class="try-h">Try it · loan calculator</span><div class="row"><label>Amount ($)<input type="number" id="lnP" value="20000" min="0"></label><label>APR (%)<input type="number" id="lnR" value="7" step="0.1" min="0"></label><label>Years<input type="number" id="lnY" value="5" min="1" max="40"></label><label>Extra per month ($)<input type="number" id="lnX" value="0" min="0"></label></div>
+      <svg id="lnS" viewBox="0 0 320 40" aria-label="Bar showing principal versus interest"></svg>
+      <div class="out" id="lnOut"></div><div class="work" id="lnW"></div></div>
+    <p style="font-size:.9rem;color:var(--muted)">Estimates for a standard fixed-rate loan. Your lender's figures may differ slightly. Not financial advice.</p>
+  </section>
+
+  <section id="cert" style="scroll-margin-top:80px"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Tip: in the quiz, press 1–4 to answer.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+
+(function(){
+  const money = v => '$' + Math.round(v).toLocaleString();
+  function sim(P, r, n, extra){ const pay = r ? P*r/(1 - Math.pow(1+r, -n)) : P/n; let bal = P, months = 0, interest = 0;
+    while (bal > 0.005 && months < 1200){ const i = bal*r; interest += i; bal = bal + i - pay - extra; months++; if (bal < 0) bal = 0; } return {pay, months, interest}; }
+  function go(){
+    const P = +$('#lnP').value || 0, r = (+$('#lnR').value || 0)/1200, n = Math.round((+$('#lnY').value || 1)*12), x = +$('#lnX').value || 0;
+    if (P <= 0){ $('#lnOut').textContent = 'Enter an amount.'; $('#lnW').textContent=''; $('#lnS').innerHTML=''; return; }
+    const base = sim(P, r, n, 0), ex = sim(P, r, n, x), tot = P + ex.interest, w = P/tot*320;
+    $('#lnS').innerHTML = `<rect x="0" y="6" width="${w}" height="26" fill="var(--accent)"/><rect x="${w}" y="6" width="${320-w}" height="26" fill="var(--amber)"/>` +
+      (w > 70 ? `<text x="${w/2}" y="24" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#fff">borrowed</text>` : '') + (320-w > 60 ? `<text x="${w+(320-w)/2}" y="24" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#fff">interest</text>` : '');
+    $('#lnOut').innerHTML = `Monthly payment <b>${money(base.pay + x)}</b>${x ? ` (${money(base.pay)} + ${money(x)} extra)` : ''} · Total interest <b>${money(ex.interest)}</b>`;
+    $('#lnW').textContent = x ? `Paid off in ${Math.floor(ex.months/12)} yr ${ex.months%12} mo instead of ${n/12} years.\nYou save ${money(base.interest - ex.interest)} in interest.` : `Over ${n} payments you repay ${money(P + base.interest)} in total.\nTry adding an extra monthly amount to see what you'd save.`;
+  }
+  live($('.try'), go);
+})();
+</script>
+</body>
+</html>
