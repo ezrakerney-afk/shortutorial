@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>External Hard Drive or USB Drive Not Showing Up? How to Fix It · Shortutorial</title>
+<meta name="description" content="External hard drive or USB stick not showing up on Windows or Mac? Fix it step by step: ports and cables, Disk Management or Disk Utility, drive letters, formats and drivers.">
+<link rel="canonical" href="https://shortutorial.com/external-drive-not-showing/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="External Hard Drive or USB Drive Not Showing Up? How to Fix It · Shortutorial">
+<meta property="og:description" content="External hard drive or USB stick not showing up on Windows or Mac? Fix it step by step: ports and cables, Disk Management or Disk Utility, drive letters, formats and drivers.">
+<meta property="og:url" content="https://shortutorial.com/external-drive-not-showing/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../guide.css">
+</head>
+<body data-slug="external-drive-not-showing">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=computer">Computer help</a> / External drive not showing</div>
+    <span class="eyebrow">Computer help · Storage</span>
+    <h1>Fix an External Drive That Won't Show Up</h1>
+    <p class="lede">You plug in a hard drive or USB stick and nothing happens. Here's how to find it and get it working, without losing your files.</p>
+    <div class="badges"><span class="badge level">Quick fix</span><span class="badge">~5–15 min</span><span class="badge">Easy to medium</span></div>
+    <div class="os-row"><span class="lbl">Show steps for</span>
+      <div class="os-switch" role="group" aria-label="Device type"><button data-set="win">Windows</button><button data-set="mac">Mac</button></div>
+    </div>
+  </header>
+
+  <section class="block">
+    <div class="first">
+      <span class="eyebrow">Check first · 30 seconds</span>
+      <h3>Is the drive getting power?</h3>
+      <p>Most drives have a light that comes on or flickers when connected. Larger desktop drives need their own power adapter plugged in. If there's no light at all, try another cable and port first.</p>
+    </div>
+  </section>
+
+  <section class="block" id="fixes">
+    <h2 class="sec"><span class="n">FIX</span>Try these in order</h2>
+    <div class="steps-head"><p>Open a step, try it, then tell us if it worked.</p><button class="linkbtn" id="expandAll">Show all steps</button></div>
+    <div class="steps" data-q="Drive showing up?" data-yes="Yes, I can see it" data-no="Still missing →">
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Try another port, cable and computer</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <ul class="list">
+            <li>Plug the drive directly into the computer, not a hub or keyboard port.</li>
+            <li>Try a different USB port and, if you have one, a different cable.</li>
+            <li>Try another computer. If it doesn't appear anywhere, the drive itself may be faulty.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="fix" data-os="win">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Check Disk Management</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <p>Right-click the Start button and choose <b>Disk Management</b>. Look for your drive by its size.</p>
+          <ul class="list">
+            <li><b>Shows but has no letter:</b> right-click its partition, choose <b>Change Drive Letter and Paths</b> › <b>Add</b>, and pick a letter.</li>
+            <li><b>Shows as “Offline”:</b> right-click the disk name on the left and choose <b>Online</b>.</li>
+            <li><b>Shows as “Unallocated” or “RAW”:</b> the drive isn't formatted or is damaged. Formatting would erase it; see step 4 first.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="fix" data-os="mac">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Check Disk Utility</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <p>Open <b>Disk Utility</b> (Applications › Utilities). Choose <span class="path">View <i>›</i> Show All Devices</span>.</p>
+          <ul class="list">
+            <li><b>Shows greyed out:</b> select it and click <b>Mount</b>.</li>
+            <li><b>Mounts but shows errors:</b> select it and click <b>First Aid</b>.</li>
+            <li>Also check Finder › <span class="path">Settings <i>›</i> Sidebar</span> and make sure <b>External disks</b> is ticked.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Check the drive's format</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <p>Drives formatted for Mac (APFS or Mac OS Extended) don't show up properly on Windows, and NTFS drives are read-only on a Mac.</p>
+          <p>To use a drive on both, it needs to be <b>exFAT</b>. Reformatting erases the drive, so copy the files off first using the computer that can read it.</p>
+        </div>
+      </div>
+      <div class="fix" data-os="win">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Update the USB driver</span><span class="fix-time">5 min</span></button>
+        <div class="fix-body">
+          <p>Open <b>Device Manager</b>, expand <b>Disk drives</b> and <b>Universal Serial Bus controllers</b>. If you see a yellow warning icon, right-click it and choose <b>Uninstall device</b>, then unplug the drive and restart.</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="solved-banner" role="status"><span style="font-size:1.6rem">🗂️</span><div><b>Drive found.</b><p>Always use Eject (or Safely Remove) before unplugging, to avoid damaging files.</p></div></div>
+    <div class="stuck" role="status"><b>Still not showing?</b><p>If the drive clicks, beeps or isn't detected on any computer, stop using it and contact a data recovery service if the files matter. Repeated attempts can make things worse.</p><div><button class="btn ghost small" data-restart>Start over</button></div></div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Will formatting the drive delete my files?</summary><div class="a"><p>Yes. Only format if the drive is empty or the files are backed up elsewhere.</p></div></details>
+      <details><summary>Which format works on both Windows and Mac?</summary><div class="a"><p>exFAT. It reads and writes on both systems without extra software.</p></div></details>
+      <details><summary>My drive makes clicking noises. What does that mean?</summary><div class="a"><p>Usually a mechanical failure. Unplug it and don't keep trying, as that can destroy the data. Contact a recovery specialist if the files matter.</p></div></details>
+      <details><summary>Do I really need to eject drives?</summary><div class="a"><p>It's safest. Unplugging while files are being written can corrupt them.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Official help</h2>
+    <div class="links">
+      <a href="https://support.apple.com/en-us/102611" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>Repair a storage device with Disk Utility</b></a>
+      <a href="https://support.apple.com/en-us/101830" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>If your Mac can't save files to an external drive</b></a>
+      <a href="https://support.microsoft.com/en-us/windows/free-up-drive-space-in-windows-85529ccb-c365-490d-b548-831022bc9b32" target="_blank" rel="noopener"><span class="src">Microsoft Support</span><b>Free up drive space in Windows</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Related fixes</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Steps written for Windows 11 and recent macOS. Menu names may differ slightly on older versions.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../guide.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+</body>
+</html>

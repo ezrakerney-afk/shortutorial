@@ -189,6 +189,38 @@ window.TUTORIALS = [
     minutes: 20
   },
   {
+    slug: "bluetooth-headphones",
+    title: "Fix Bluetooth Headphones That Won't Connect",
+    summary: "Headphones or AirPods won't pair or play sound? Fix it.",
+    category: "Computer help",
+    tags: ["bluetooth", "headphones", "airpods", "earbuds", "pair", "connect", "no sound", "windows", "mac"],
+    minutes: 10
+  },
+  {
+    slug: "transfer-photos-to-computer",
+    title: "Transfer Photos from Phone to Computer",
+    summary: "iPhone or Android to PC or Mac, by cable or wirelessly.",
+    category: "Phone help",
+    tags: ["photos", "transfer", "import", "iphone", "android", "pc", "mac", "heic", "usb", "airdrop"],
+    minutes: 15
+  },
+  {
+    slug: "external-drive-not-showing",
+    title: "Fix an External Drive That Won't Show Up",
+    summary: "Hard drive or USB stick not appearing? Find it and fix it.",
+    category: "Computer help",
+    tags: ["external drive", "hard drive", "usb", "flash drive", "not showing", "disk management", "disk utility", "windows", "mac"],
+    minutes: 10
+  },
+  {
+    slug: "speed-up-wifi",
+    title: "Speed Up Slow Home Wi-Fi",
+    summary: "Test, then speed up your home Wi-Fi without a new plan.",
+    category: "Home & tech",
+    tags: ["wifi", "wi-fi", "slow", "internet", "router", "speed", "mesh", "extender", "5ghz"],
+    minutes: 15
+  },
+  {
     slug: "jcurses",
     title: "JCurses Crash Course",
     summary: "Build colorful, keyboard-driven Java programs that run in a terminal.",

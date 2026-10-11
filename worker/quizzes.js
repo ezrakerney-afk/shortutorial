@@ -508,6 +508,94 @@ export default {
     ]
   },
 
+  "bluetooth-headphones": {
+    title: "Fix Bluetooth Headphones That Won't Connect",
+    pass: 4,
+    questions: [
+      { q: "Why might headphones refuse to connect to your computer?",
+        o: ["They're already connected to your phone", "The screen is too bright", "The keyboard is unplugged", "Wi-Fi is too fast"], a: 0,
+        e: "Most headphones reconnect to the last device used." },
+      { q: "What does pairing mode usually look like?",
+        o: ["A flashing blue or white light", "A solid red light", "No lights at all", "The headphones turning off"], a: 0,
+        e: "Hold the power or Bluetooth button until the light flashes." },
+      { q: "Your headphones appear twice in Windows. Which gives better music quality?",
+        o: ["Headphones", "Headset", "Both the same", "Neither"], a: 0,
+        e: "“Headset” uses a lower-quality mode for the microphone." },
+      { q: "Connected but no sound. What should you check?",
+        o: ["That they're selected as the output device", "The printer", "Your password", "Screen resolution"], a: 0,
+        e: "Pick them in the sound output menu." },
+      { q: "Why does call audio sound worse than music?",
+        o: ["Bluetooth switches to a lower-quality mode when the mic is used", "Calls are always muted", "The battery is low", "Music is louder"], a: 0,
+        e: "Using the computer's built-in mic avoids this." }
+    ]
+  },
+
+  "transfer-photos-to-computer": {
+    title: "Transfer Photos from Phone to Computer",
+    pass: 4,
+    questions: [
+      { q: "What do you need to tap on an iPhone when you connect it to a computer?",
+        o: ["Trust (or Allow)", "Delete", "Reset", "Airplane mode"], a: 0,
+        e: "The computer can't see photos until you trust it." },
+      { q: "What should you choose on Android after plugging in?",
+        o: ["File transfer", "Charging only", "MIDI", "Airplane mode"], a: 0,
+        e: "File transfer lets the computer see the phone's storage." },
+      { q: "Where are Android camera photos stored?",
+        o: ["DCIM › Camera", "Downloads", "Music", "Android › Data"], a: 0,
+        e: "DCIM stands for Digital Camera Images." },
+      { q: "Why might the computer not see the phone at all?",
+        o: ["The cable only charges", "The photos are too big", "The phone is too new", "Wi-Fi is off"], a: 0,
+        e: "Some cheap cables can't carry data." },
+      { q: "How do you avoid HEIC files on Windows?",
+        o: ["Set the iPhone's Transfer to Mac or PC to Automatic", "Turn off the camera", "Use airplane mode", "Delete the photos"], a: 0,
+        e: "The iPhone then converts photos to JPEG while copying." }
+    ]
+  },
+
+  "external-drive-not-showing": {
+    title: "Fix an External Drive That Won't Show Up",
+    pass: 4,
+    questions: [
+      { q: "Where can you see drives that don't appear in File Explorer?",
+        o: ["Disk Management", "Paint", "Calculator", "Photos"], a: 0,
+        e: "Right-click Start › Disk Management." },
+      { q: "A drive appears in Disk Management with no letter. What do you do?",
+        o: ["Assign a drive letter", "Format it", "Throw it away", "Restart the router"], a: 0,
+        e: "Change Drive Letter and Paths › Add." },
+      { q: "Which format works on both Windows and Mac?",
+        o: ["exFAT", "APFS", "NTFS", "HFS+"], a: 0,
+        e: "exFAT is readable and writable on both." },
+      { q: "What does formatting a drive do?",
+        o: ["Erases everything on it", "Speeds it up only", "Backs it up", "Nothing"], a: 0,
+        e: "Only format empty or backed-up drives." },
+      { q: "A drive clicks and isn't detected anywhere. What should you do?",
+        o: ["Stop using it and seek data recovery if needed", "Keep plugging it in", "Shake it", "Format it repeatedly"], a: 0,
+        e: "Repeated attempts can destroy failing drives." }
+    ]
+  },
+
+  "speed-up-wifi": {
+    title: "Speed Up Slow Home Wi-Fi",
+    pass: 4,
+    questions: [
+      { q: "Speed is slow even right next to the router. What's the likely cause?",
+        o: ["Your internet plan or connection", "Router placement", "Walls", "Distance"], a: 0,
+        e: "Contact your provider if it's slow at the router itself." },
+      { q: "Where is the best place for a router?",
+        o: ["Central, high and in the open", "In a cupboard", "Next to the microwave", "On the floor behind the TV"], a: 0,
+        e: "Obstacles and interference weaken the signal." },
+      { q: "What's the difference between 2.4 GHz and 5 GHz?",
+        o: ["2.4 reaches further; 5 is faster but shorter range", "They're identical", "5 GHz reaches further", "2.4 GHz is always faster"], a: 0,
+        e: "Use 5 GHz when you're close to the router." },
+      { q: "What's best for a big house with dead zones?",
+        o: ["A mesh Wi-Fi system", "Turning the router off at night", "More passwords", "A longer power cable"], a: 0,
+        e: "Mesh units work together to cover the whole home." },
+      { q: "What's always fastest for a desktop that never moves?",
+        o: ["An Ethernet cable", "2.4 GHz Wi-Fi", "Bluetooth", "Mobile hotspot"], a: 0,
+        e: "A cable avoids Wi-Fi's distance and interference." }
+    ]
+  },
+
   "jcurses": {
     title: "JCurses Crash Course",
     pass: 8,
