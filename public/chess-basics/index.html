@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Play Chess · Shortutorial</title>
+<meta name="description" content="Learn chess from scratch: setting up the board, how each piece moves, check and checkmate, and special moves like castling, with an interactive board that shows every piece&#x27;s moves.">
+<link rel="canonical" href="https://shortutorial.com/chess-basics/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How to Play Chess · Shortutorial">
+<meta property="og:description" content="Learn chess from scratch: setting up the board, how each piece moves, check and checkmate, and special moves like castling, with an interactive board that shows every piece&#x27;s moves.">
+<meta property="og:url" content="https://shortutorial.com/chess-basics/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body data-slug="chess-basics">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=chess">Life skills</a> / Chess basics</div>
+    <span class="eyebrow">Skills · Games</span>
+    <h1>How to Play Chess</h1>
+    <p class="lede">Chess takes minutes to learn and a lifetime to master. Here's everything you need to play your first full game.</p>
+    <div class="facts"><span>~12 min</span><span>4 lessons</span><span>Interactive board</span><span>5-question quiz</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#ch1">1 · Setup</a><a href="#ch2">2 · Pieces</a><a href="#ch3">3 · Check</a><a href="#ch4">4 · Special moves</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="ch1">
+    <div class="lesson-head"><span class="step">01</span><h2>Setting up the board</h2></div>
+
+    <ul class="points">
+      <li>The board has 64 squares. Turn it so each player has a <b>white square in the bottom-right corner</b> (“light on the right”).</li>
+      <li>Back row, from the corners in: rook, knight, bishop. The <b>queen goes on her own colour</b> (white queen on a light square), the king beside her.</li>
+      <li>Eight pawns fill the row in front.</li>
+      <li>White always moves first. Players take turns, one move each.</li>
+    </ul>
+  </section>
+
+  <section class="lesson" id="ch2">
+    <div class="lesson-head"><span class="step">02</span><h2>How each piece moves</h2></div>
+
+    <div class="tw"><table class="t"><tr><th>Piece</th><th>Moves</th><th class=num>Value</th></tr><tr><td>♙ Pawn</td><td>Forward one square (two on its first move). Captures one square diagonally forward.</td><td class=num>1</td></tr><tr><td>♘ Knight</td><td>In an L: two squares one way, one square sideways. The only piece that can jump over others.</td><td class=num>3</td></tr><tr><td>♗ Bishop</td><td>Any distance diagonally</td><td class=num>3</td></tr><tr><td>♖ Rook</td><td>Any distance in a straight line</td><td class=num>5</td></tr><tr><td>♕ Queen</td><td>Any distance in any straight or diagonal line</td><td class=num>9</td></tr><tr><td>♔ King</td><td>One square in any direction</td><td class=num>—</td></tr></table></div>
+    <p>You capture by moving onto an opponent's piece. The values help you judge trades: giving a knight (3) for a rook (5) is a good deal.</p>
+    <div class="try"><span class="try-h">Try it · see the moves</span><div class="chipset" id="cpk"></div>
+      <svg id="cbd" viewBox="0 0 320 320" aria-label="Chessboard showing where the chosen piece can move" style="max-width:320px"></svg>
+      <div class="out" id="cOut"></div></div>
+  </section>
+
+  <section class="lesson" id="ch3">
+    <div class="lesson-head"><span class="step">03</span><h2>Check and checkmate</h2></div>
+
+    <p>When a king is under attack, it's in <b>check</b>. You must get out of check on your next move by moving the king, blocking the attack, or capturing the attacker.</p>
+    <p>If there's no way out, it's <b>checkmate</b> and the game is over. You never actually capture the king.</p>
+    <p>If a player has no legal moves but <b>isn't</b> in check, it's <b>stalemate</b>: a draw.</p>
+  </section>
+
+  <section class="lesson" id="ch4">
+    <div class="lesson-head"><span class="step">04</span><h2>Special moves and first tips</h2></div>
+
+    <ul class="points">
+      <li><b>Castling:</b> once per game, move the king two squares towards a rook, and the rook jumps to the other side of it. Only allowed if neither has moved, nothing is between them, and the king isn't in, through or into check.</li>
+      <li><b>Promotion:</b> a pawn reaching the far side becomes any piece you choose, almost always a queen.</li>
+      <li><b>En passant:</b> if a pawn moves two squares and lands right beside your pawn, you can capture it as if it had moved one. Only on the very next move.</li>
+    </ul>
+    <p class="callout"><span><b>Beginner tips:</b> control the centre squares, bring out knights and bishops early, castle to keep your king safe, and before every move, check what your opponent is threatening.</span></p>
+    <p>Play free online at <a href="https://lichess.org" target="_blank" rel="noopener">lichess.org</a> or <a href="https://www.chess.com" target="_blank" rel="noopener">chess.com</a>.</p>
+  </section>
+
+  <section id="cert" style="scroll-margin-top:80px"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Tip: in the quiz, press 1–4 to answer.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+
+(function(){
+  const P = {N:['♘','Knight'], B:['♗','Bishop'], R:['♖','Rook'], Q:['♕','Queen'], K:['♔','King'], P:['♙','Pawn']};
+  let piece = 'N';
+  $('#cpk').innerHTML = Object.entries(P).map(([k, v]) => `<button data-k="${k}" aria-pressed="${k===piece}">${v[0]} ${v[1]}</button>`).join('');
+  $('#cpk').querySelectorAll('button').forEach(b => b.addEventListener('click', () => { piece = b.dataset.k; $('#cpk').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); draw(); }));
+  function moves(p, f, r){
+    const out = [], add = (df, dr, slide) => { let x = f+df, y = r+dr; while (x>=0 && x<8 && y>=0 && y<8){ out.push([x,y]); if (!slide) break; x+=df; y+=dr; } };
+    const D = [[1,1],[1,-1],[-1,1],[-1,-1]], S = [[1,0],[-1,0],[0,1],[0,-1]];
+    if (p==='N') [[1,2],[2,1],[2,-1],[1,-2],[-1,-2],[-2,-1],[-2,1],[-1,2]].forEach(([a,b]) => add(a,b,false));
+    if (p==='B') D.forEach(([a,b]) => add(a,b,true));
+    if (p==='R') S.forEach(([a,b]) => add(a,b,true));
+    if (p==='Q') [...D,...S].forEach(([a,b]) => add(a,b,true));
+    if (p==='K') [...D,...S].forEach(([a,b]) => add(a,b,false));
+    if (p==='P'){ out.push([f, r+1]); if (r === 1) out.push([f, r+2]); }
+    return out;
+  }
+  function draw(){
+    const f = 3, r = piece === 'P' ? 1 : 3; // d2 for pawn, d4 otherwise
+    const ms = moves(piece, f, r), set = new Set(ms.map(m => m.join()));
+    let s = '';
+    for (let y = 0; y < 8; y++) for (let x = 0; x < 8; x++){
+      const light = (x + y) % 2 === 1, X = x*40, Y = (7-y)*40;
+      s += `<rect x="${X}" y="${Y}" width="40" height="40" fill="${light ? '#eeeed2' : '#769656'}"/>`;
+      if (set.has(x+','+y)) s += `<circle cx="${X+20}" cy="${Y+20}" r="8" fill="#0f7a6c" opacity=".75"/>`;
+    }
+    s += `<text x="${f*40+20}" y="${(7-r)*40+31}" text-anchor="middle" font-size="32" fill="#1d2421">${P[piece][0]}</text>`;
+    'abcdefgh'.split('').forEach((c, i) => s += `<text x="${i*40+35}" y="316" font-size="9" font-family="JetBrains Mono, monospace" fill="#1d2421" opacity=".6">${c}</text>`);
+    $('#cbd').innerHTML = s;
+    $('#cOut').innerHTML = `A ${P[piece][1].toLowerCase()} on ${'abcdefgh'[f]}${r+1} can reach <b>${ms.length} squares</b>${piece==='P' ? ' (two on its first move)' : ''}.`;
+  }
+  draw();
+})();
+</script>
+</body>
+</html>

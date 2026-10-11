@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How Credit Scores Work · Shortutorial</title>
+<meta name="description" content="Understand credit scores in four short lessons: what a credit score is, the five factors that make it up, how to check it for free, and how to improve it, with an interactive score factor explorer.">
+<link rel="canonical" href="https://shortutorial.com/credit-scores/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How Credit Scores Work · Shortutorial">
+<meta property="og:description" content="Understand credit scores in four short lessons: what a credit score is, the five factors that make it up, how to check it for free, and how to improve it, with an interactive score factor explorer.">
+<meta property="og:url" content="https://shortutorial.com/credit-scores/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body data-slug="credit-scores">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=money">Money</a> / Credit scores</div>
+    <span class="eyebrow">Money · Credit</span>
+    <h1>How Credit Scores Work</h1>
+    <p class="lede">Your credit score affects loans, mortgages, renting and even some job applications. Learn what actually moves it, and what's just myth. (Based on the US FICO system.)</p>
+    <div class="facts"><span>~10 min</span><span>4 lessons</span><span>Factor explorer</span><span>5-question quiz</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#cs1">1 · What it is</a><a href="#cs2">2 · The factors</a><a href="#cs3">3 · Check it</a><a href="#cs4">4 · Improve it</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="cs1">
+    <div class="lesson-head"><span class="step">01</span><h2>What a credit score is</h2></div>
+
+    <p>A credit score is a number, usually from <b>300 to 850</b> in the US, that estimates how likely you are to repay borrowed money on time. Lenders use it to decide whether to lend to you and at what interest rate.</p>
+    <div class="tw"><table class="t"><tr><th>FICO score</th><th>Rating</th></tr><tr><td>800–850</td><td>Exceptional</td></tr><tr><td>740–799</td><td>Very good</td></tr><tr><td>670–739</td><td>Good</td></tr><tr><td>580–669</td><td>Fair</td></tr><tr><td>300–579</td><td>Poor</td></tr></table></div>
+    <p>It's calculated from your <b>credit report</b>: the history of your loans and credit cards held by the three bureaus, Equifax, Experian and TransUnion.</p>
+  </section>
+
+  <section class="lesson" id="cs2">
+    <div class="lesson-head"><span class="step">02</span><h2>The five things that make up your score</h2></div>
+
+    <div class="tw"><table class="t"><tr><th>Factor</th><th class=num>Weight</th><th>What it means</th></tr><tr><td><b>Payment history</b></td><td class=num>35%</td><td>Do you pay on time? Late payments hurt most.</td></tr><tr><td><b>Amounts owed</b></td><td class=num>30%</td><td>How much of your credit limits you're using (utilisation).</td></tr><tr><td><b>Length of history</b></td><td class=num>15%</td><td>How long your accounts have been open.</td></tr><tr><td><b>New credit</b></td><td class=num>10%</td><td>Recent applications and new accounts.</td></tr><tr><td><b>Credit mix</b></td><td class=num>10%</td><td>Having different types, like a card and a loan.</td></tr></table></div>
+    <div class="try"><span class="try-h">Try it · utilisation</span><div class="row"><label>Total card balances ($)<input type="number" id="cub" value="2000" min="0"></label><label>Total credit limits ($)<input type="number" id="cul" value="5000" min="0"></label></div>
+      <svg id="cusvg" viewBox="0 0 320 30" aria-label="Utilisation bar"></svg><div class="out" id="cuOut"></div></div>
+  </section>
+
+  <section class="lesson" id="cs3">
+    <div class="lesson-head"><span class="step">03</span><h2>Check your report for free</h2></div>
+
+    <ul class="points">
+      <li>Get your full reports free from all three bureaus at <a href="https://www.annualcreditreport.com" target="_blank" rel="noopener">AnnualCreditReport.com</a>, the official site. Free weekly reports are available.</li>
+      <li>Many banks and credit card apps show your score for free.</li>
+      <li>Checking your <b>own</b> score never lowers it (a “soft” check).</li>
+    </ul>
+    <p class="callout warn"><span><b>Spot an error?</b> Wrong late payments or accounts you don't recognise can be disputed with the bureau. Unknown accounts may also be a sign of identity theft.</span></p>
+  </section>
+
+  <section class="lesson" id="cs4">
+    <div class="lesson-head"><span class="step">04</span><h2>How to improve your score</h2></div>
+
+    <ol class="steps">
+      <li><b>Pay every bill on time.</b> Set up automatic minimum payments as a safety net.</li>
+      <li><b>Keep utilisation low</b>: under 30%, ideally under 10%. Paying the card before the statement date helps.</li>
+      <li><b>Keep old cards open</b>, even if you rarely use them, to keep your history long.</li>
+      <li><b>Apply for new credit sparingly.</b> Each application can cause a small, temporary dip.</li>
+    </ol>
+    <p class="callout"><span><b>Myth:</b> you don't need to carry a balance or pay interest to build credit. Paying in full every month is best.</span></p>
+    <p style="font-size:.9rem;color:var(--muted)">General information about the US system, not financial advice. Other countries score credit differently.</p>
+  </section>
+
+  <section id="cert" style="scroll-margin-top:80px"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Tip: in the quiz, press 1–4 to answer.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+
+(function(){
+  function go(){
+    const b = +$('#cub').value || 0, l = +$('#cul').value || 0;
+    if (l <= 0){ $('#cuOut').textContent = 'Enter your total credit limit.'; $('#cusvg').innerHTML=''; return; }
+    const u = b / l * 100, c = u < 10 ? 'var(--good)' : u < 30 ? 'var(--accent)' : u < 50 ? 'var(--amber)' : 'var(--bad)';
+    $('#cusvg').innerHTML = `<rect x="0" y="6" width="320" height="18" rx="9" fill="var(--line)"/><rect x="0" y="6" width="${Math.min(320, u/100*320)}" height="18" rx="9" fill="${c}"/><line x1="${0.3*320}" y1="2" x2="${0.3*320}" y2="28" stroke="var(--ink)" stroke-dasharray="3 3"/>`;
+    const msg = u < 10 ? 'Excellent' : u < 30 ? 'Good' : u < 50 ? 'Getting high, try to bring it under 30%' : 'High, this is likely pulling your score down';
+    $('#cuOut').innerHTML = `Utilisation <b>${fmt(u,0)}%</b>: ${msg}. ${u >= 30 ? `Paying down $${(Math.floor(b - l*0.3) + 1).toLocaleString()} would get you under 30%.` : ''}`;
+  }
+  live($('#cs2 .try'), go);
+})();
+</script>
+</body>
+</html>

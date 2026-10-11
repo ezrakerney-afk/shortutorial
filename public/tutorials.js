@@ -413,6 +413,38 @@ window.TUTORIALS = [
     minutes: 8
   },
   {
+    slug: "binary-numbers",
+    title: "Binary Numbers Explained",
+    summary: "Read and write binary, plus bits, bytes and hex.",
+    category: "Programming",
+    tags: ["binary", "bits", "bytes", "hexadecimal", "computers", "math", "programming"],
+    minutes: 8
+  },
+  {
+    slug: "read-sheet-music",
+    title: "How to Read Sheet Music",
+    summary: "Clefs, note names, rhythm and time signatures.",
+    category: "Life skills",
+    tags: ["music", "sheet music", "notes", "treble clef", "bass clef", "rhythm", "piano"],
+    minutes: 12
+  },
+  {
+    slug: "chess-basics",
+    title: "How to Play Chess",
+    summary: "Setup, how every piece moves, checkmate and castling.",
+    category: "Life skills",
+    tags: ["chess", "games", "board game", "checkmate", "castling", "strategy"],
+    minutes: 12
+  },
+  {
+    slug: "credit-scores",
+    title: "How Credit Scores Work",
+    summary: "The five factors, free reports, and how to improve your score.",
+    category: "Money",
+    tags: ["money", "credit score", "fico", "credit report", "utilization", "loans", "credit card"],
+    minutes: 10
+  },
+  {
     slug: "jcurses",
     title: "JCurses Crash Course",
     summary: "Build colorful, keyboard-driven Java programs that run in a terminal.",

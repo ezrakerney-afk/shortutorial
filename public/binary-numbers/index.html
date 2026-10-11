@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Binary Numbers Explained · Shortutorial</title>
+<meta name="description" content="Understand binary in three short lessons: place values, converting between binary and decimal, and why computers use bits and bytes, with an interactive bit-flipper.">
+<link rel="canonical" href="https://shortutorial.com/binary-numbers/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Binary Numbers Explained · Shortutorial">
+<meta property="og:description" content="Understand binary in three short lessons: place values, converting between binary and decimal, and why computers use bits and bytes, with an interactive bit-flipper.">
+<meta property="og:url" content="https://shortutorial.com/binary-numbers/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body data-slug="binary-numbers">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=programming">Programming</a> / Binary numbers</div>
+    <span class="eyebrow">Programming · How computers work</span>
+    <h1>Binary Numbers Explained</h1>
+    <p class="lede">Everything on your computer, from photos to this page, is stored as 1s and 0s. Learn to read and write binary in a few minutes.</p>
+    <div class="facts"><span>~8 min</span><span>3 lessons</span><span>Interactive bit-flipper</span><span>5-question quiz</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#n1">1 · Place values</a><a href="#n2">2 · Converting</a><a href="#n3">3 · Bits & bytes</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="n1">
+    <div class="lesson-head"><span class="step">01</span><h2>Place values: tens vs twos</h2></div>
+
+    <p>Our normal numbers are <b>base 10</b>: each place is worth 10 times the one to its right (ones, tens, hundreds…). Binary is <b>base 2</b>: each place is worth <b>twice</b> the one to its right, and the only digits are 0 and 1.</p>
+    <div class="tw"><table class="t"><tr><th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th></tr><tr><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr></table></div>
+    <div class="example"><div class="ex-h">Example · read 00101101</div><ol><li>Add the place values wherever there's a 1</li><li>32 + 8 + 4 + 1</li><li class="ans">= 45</li></ol></div>
+  </section>
+
+  <section class="lesson" id="n2">
+    <div class="lesson-head"><span class="step">02</span><h2>Decimal to binary</h2></div>
+
+    <p>Work from the biggest place value down. If it fits, write 1 and subtract; if not, write 0.</p>
+    <div class="example"><div class="ex-h">Example · 100 to binary</div><ol><li>128 doesn't fit → 0</li><li>64 fits → 1 (36 left)</li><li>32 fits → 1 (4 left)</li><li>16 → 0, 8 → 0</li><li>4 fits → 1 (0 left)</li><li>2 → 0, 1 → 0</li><li class="ans">100 = 01100100</li></ol></div>
+    <p class="callout"><span><b>Counting in binary:</b> 0, 1, 10, 11, 100, 101, 110, 111, 1000… Each time a column fills up, it rolls over, just like 9 rolling over to 10.</span></p>
+  </section>
+
+  <section class="lesson" id="n3">
+    <div class="lesson-head"><span class="step">03</span><h2>Bits, bytes and why computers use binary</h2></div>
+
+    <p>A computer is built from billions of tiny switches that are either on or off, so two digits are all it needs. One binary digit is a <b>bit</b>; eight bits make a <b>byte</b>, which can store 256 different values (0–255).</p>
+    <div class="tw"><table class="t"><tr><th>Unit</th><th>Size</th><th>Roughly holds</th></tr><tr><td>1 byte</td><td>8 bits</td><td>One letter of text</td></tr><tr><td>1 kilobyte (KB)</td><td>1,000 bytes</td><td>A short paragraph</td></tr><tr><td>1 megabyte (MB)</td><td>1 million bytes</td><td>A photo (compressed)</td></tr><tr><td>1 gigabyte (GB)</td><td>1 billion bytes</td><td>About an hour of HD video</td></tr></table></div>
+    <p>Programmers often write binary in <b>hexadecimal</b> (base 16, digits 0–9 then A–F) because one hex digit equals four bits: 1111 1111 = FF = 255. You'll see it in colour codes like <code>#0F7A6C</code>.</p>
+    <div class="try"><span class="try-h">Try it · bit-flipper</span><p style="margin:0">Click the bits to flip them, or type a number.</p>
+      <div class="chipset" id="bits" style="gap:6px"></div>
+      <div class="row"><label>Decimal (0–255)<input type="number" id="bdec" min="0" max="255" value="45"></label></div>
+      <div class="out" id="bOut"></div><div class="work" id="bWork"></div></div>
+  </section>
+
+  <section id="cert" style="scroll-margin-top:80px"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Tip: in the quiz, press 1–4 to answer.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+
+(function(){
+  let v = 45;
+  const vals = [128,64,32,16,8,4,2,1];
+  function draw(){
+    $('#bits').innerHTML = vals.map(p => `<button data-p="${p}" aria-pressed="${!!(v & p)}" style="width:52px;text-align:center;padding:8px 0;display:flex;flex-direction:column;align-items:center;gap:2px"><span style="font-size:1.2rem;font-weight:700">${v & p ? 1 : 0}</span><span style="font-size:.65rem;opacity:.8">${p}</span></button>`).join('');
+    $('#bits').querySelectorAll('button').forEach(b => b.addEventListener('click', () => { v ^= +b.dataset.p; $('#bdec').value = v; draw(); }));
+    const on = vals.filter(p => v & p);
+    $('#bOut').innerHTML = `Binary <b>${v.toString(2).padStart(8,'0')}</b> = decimal <b>${v}</b> = hex <b>${v.toString(16).toUpperCase().padStart(2,'0')}</b>`;
+    $('#bWork').textContent = on.length ? on.join(' + ') + ' = ' + v : 'All bits off = 0';
+  }
+  $('#bdec').addEventListener('input', () => { const n = Math.round(+$('#bdec').value); if (n >= 0 && n <= 255){ v = n; draw(); } });
+  draw();
+})();
+</script>
+</body>
+</html>

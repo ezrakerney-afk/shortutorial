@@ -124,3 +124,4 @@ ul.points,ol.steps{margin:0;padding-left:1.25em;display:flex;flex-direction:colu
 .example li.ans::before{content:"→ ";font-family:var(--mono)}
 .lesson figure svg{width:100%;max-width:440px;margin:0 auto;display:block}
 .try .row{align-items:flex-end}
+kbd{font-family:var(--mono);font-size:.8em;padding:1px 6px;border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;background:var(--surface);white-space:nowrap}

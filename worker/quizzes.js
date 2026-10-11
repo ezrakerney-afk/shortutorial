@@ -1124,6 +1124,94 @@ export default {
     ]
   },
 
+  "binary-numbers": {
+    title: "Binary Numbers Explained",
+    pass: 4,
+    questions: [
+      { q: "What is binary 101 in decimal?",
+        o: ["101", "5", "3", "7"], a: 1,
+        e: "4 + 0 + 1 = 5." },
+      { q: "What is decimal 12 in binary?",
+        o: ["1100", "1010", "1001", "0110"], a: 0,
+        e: "8 + 4 = 12, so 1100." },
+      { q: "How many bits are in a byte?",
+        o: ["2", "4", "8", "10"], a: 2,
+        e: "A byte is 8 bits." },
+      { q: "What is the largest number one byte can store?",
+        o: ["128", "255", "256", "1,000"], a: 1,
+        e: "11111111 = 255 (256 values counting 0)." },
+      { q: "Why do computers use binary?",
+        o: ["It's faster to type", "Their switches are either on or off", "It uses less electricity", "It was the only option in 2000"], a: 1,
+        e: "Two states map naturally onto 1 and 0." }
+    ]
+  },
+
+  "read-sheet-music": {
+    title: "How to Read Sheet Music",
+    pass: 4,
+    questions: [
+      { q: "What are the treble clef lines, bottom to top?",
+        o: ["F A C E", "E G B D F", "G B D F A", "A C E G"], a: 1,
+        e: "Every Good Boy Does Fine." },
+      { q: "What do the treble clef spaces spell?",
+        o: ["FACE", "CAGE", "BEAD", "ACEG"], a: 0,
+        e: "F, A, C, E from bottom to top." },
+      { q: "How many beats does a half note last in 4/4?",
+        o: ["1", "2", "3", "4"], a: 1,
+        e: "A half note is two beats; a whole note is four." },
+      { q: "In 3/4 time, how many beats are in each bar?",
+        o: ["3", "4", "7", "12"], a: 0,
+        e: "The top number is beats per bar." },
+      { q: "What does a sharp ♯ do?",
+        o: ["Makes a note louder", "Raises it one half step", "Lowers it one half step", "Makes it shorter"], a: 1,
+        e: "Sharp raises; flat lowers." }
+    ]
+  },
+
+  "chess-basics": {
+    title: "How to Play Chess",
+    pass: 4,
+    questions: [
+      { q: "Which square should be in each player's bottom-right corner?",
+        o: ["A dark square", "A light square", "It doesn't matter", "The king's square"], a: 1,
+        e: "Light on the right." },
+      { q: "Which piece can jump over other pieces?",
+        o: ["Bishop", "Knight", "Queen", "Rook"], a: 1,
+        e: "Only the knight jumps, moving in an L." },
+      { q: "What is checkmate?",
+        o: ["Capturing the king", "The king is attacked and can't escape", "Any check", "Running out of time"], a: 1,
+        e: "No legal way out of check ends the game." },
+      { q: "What usually happens when a pawn reaches the far side?",
+        o: ["It's removed", "It becomes a queen (or another piece)", "It moves backwards", "The game ends"], a: 1,
+        e: "It's promoted, almost always to a queen." },
+      { q: "A player has no legal moves but isn't in check. What is it?",
+        o: ["Checkmate", "Stalemate, a draw", "A win for them", "They skip a turn"], a: 1,
+        e: "Stalemate ends the game as a draw." }
+    ]
+  },
+
+  "credit-scores": {
+    title: "How Credit Scores Work",
+    pass: 4,
+    questions: [
+      { q: "What is the biggest factor in a FICO score?",
+        o: ["Credit mix", "Payment history", "Income", "Age"], a: 1,
+        e: "Payment history is about 35%." },
+      { q: "What is credit utilisation?",
+        o: ["How often you use your card", "The share of your credit limits you're using", "Your income", "The number of cards"], a: 1,
+        e: "Balances divided by limits." },
+      { q: "Does checking your own credit score lower it?",
+        o: ["Yes, a lot", "Yes, slightly", "No", "Only once a year"], a: 2,
+        e: "Checking your own score is a soft check." },
+      { q: "What's the official site for free US credit reports?",
+        o: ["creditkarma.com", "AnnualCreditReport.com", "freescore.com", "irs.gov"], a: 1,
+        e: "AnnualCreditReport.com is authorised by federal law." },
+      { q: "Should you carry a balance to build credit?",
+        o: ["Yes, always", "No, paying in full is best", "Only on store cards", "Only in December"], a: 1,
+        e: "Paying in full builds credit without paying interest." }
+    ]
+  },
+
   "jcurses": {
     title: "JCurses Crash Course",
     pass: 8,
