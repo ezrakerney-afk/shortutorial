@@ -596,6 +596,72 @@ export default {
     ]
   },
 
+  "smart-home-together": {
+    title: "Make Your Smart Home Devices Work Together",
+    pass: 4,
+    questions: [
+      { q: "What's the first step to a smart home that works together?",
+        o: ["Choose one main platform", "Buy more devices", "Use a different app for each brand", "Turn off Wi-Fi"], a: 0,
+        e: "One main app ties everything together." },
+      { q: "What does the Matter logo mean?",
+        o: ["The device works with all major smart home platforms", "It's waterproof", "It needs no power", "It only works with Alexa"], a: 0,
+        e: "Matter devices can join Apple Home, Google Home, Alexa and more." },
+      { q: "What keeps automations running when you're away?",
+        o: ["A hub, like a HomePod, Nest Hub or Echo", "Your phone's flashlight", "A USB stick", "Nothing is needed"], a: 0,
+        e: "The hub runs automations at home." },
+      { q: "Why give devices clear, unique names?",
+        o: ["So voice assistants don't get confused", "It speeds up Wi-Fi", "It's required for Matter", "It saves power"], a: 0,
+        e: "Names like “Kitchen light” work best." },
+      { q: "Can a Matter device work with two platforms at once?",
+        o: ["Yes, using the share or pairing option", "No, never", "Only on Sundays", "Only with a cable"], a: 0,
+        e: "Matter supports multiple platforms at the same time." }
+    ]
+  },
+
+  "track-expenses-automatically": {
+    title: "Track Your Spending Automatically",
+    pass: 4,
+    questions: [
+      { q: "What makes automatic expense tracking possible?",
+        o: ["Paying mostly by card or phone", "Paying only in cash", "Writing receipts by hand", "Closing your bank account"], a: 0,
+        e: "Card and phone payments are recorded by your bank automatically." },
+      { q: "What's the simplest place to start?",
+        o: ["Your bank's own app", "A paid financial advisor", "A notebook", "Social media"], a: 0,
+        e: "Most banking apps categorise spending for free." },
+      { q: "What file format do banks use for downloading transactions?",
+        o: ["CSV", "MP3", "JPEG", "ZIP"], a: 0,
+        e: "CSV files open in any spreadsheet." },
+      { q: "Can a reputable budgeting app move money out of your account?",
+        o: ["No, connections are usually read-only", "Yes, always", "Only on weekends", "Only cash"], a: 0,
+        e: "They can see transactions but not move money." },
+      { q: "How often should you review your spending?",
+        o: ["About 10 minutes once a week", "Once a year", "Every hour", "Never"], a: 0,
+        e: "A short weekly check-in is what changes habits." }
+    ]
+  },
+
+  "laptop-battery-drain": {
+    title: "Make Your Laptop Battery Last Longer",
+    pass: 4,
+    questions: [
+      { q: "What's usually the biggest battery user on a laptop?",
+        o: ["The screen", "The keyboard", "The speakers", "The USB ports"], a: 0,
+        e: "Lowering brightness helps most." },
+      { q: "Where does Windows show which apps used the most battery?",
+        o: ["Settings › System › Power & battery › Battery usage", "File Explorer", "Paint", "Device Manager"], a: 0,
+        e: "It covers the last 24 hours or 7 days." },
+      { q: "Which Windows command creates a battery health report?",
+        o: ["powercfg /batteryreport", "ipconfig", "chkdsk", "ping"], a: 0,
+        e: "Compare full charge capacity with design capacity." },
+      { q: "What does “Service recommended” on a Mac battery mean?",
+        o: ["The battery is worn and should be replaced", "It's fully charged", "It needs an update", "It's overheating right now"], a: 0,
+        e: "A replacement restores battery life." },
+      { q: "Does dark mode save battery on every laptop?",
+        o: ["Mainly on OLED screens", "Yes, always a lot", "Never", "Only when plugged in"], a: 0,
+        e: "On LCD screens the difference is small." }
+    ]
+  },
+
   "jcurses": {
     title: "JCurses Crash Course",
     pass: 8,

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Make Your Smart Home Devices Work Together · Shortutorial</title>
+<meta name="description" content="Too many smart home apps? Bring lights, plugs, cameras and sensors from different brands together in Apple Home, Google Home, Alexa or Home Assistant using Matter and hubs.">
+<link rel="canonical" href="https://shortutorial.com/smart-home-together/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How to Make Your Smart Home Devices Work Together · Shortutorial">
+<meta property="og:description" content="Too many smart home apps? Bring lights, plugs, cameras and sensors from different brands together in Apple Home, Google Home, Alexa or Home Assistant using Matter and hubs.">
+<meta property="og:url" content="https://shortutorial.com/smart-home-together/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../guide.css">
+</head>
+<body data-slug="smart-home-together">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=home">Home &amp; tech</a> / Smart home together</div>
+    <span class="eyebrow">Home &amp; tech · Smart home</span>
+    <h1>Make Your Smart Home Devices Work Together</h1>
+    <p class="lede">A different app for the lights, the plugs, the camera and the thermostat? Here's how to bring them all into one place, so they work together and with your voice.</p>
+    <div class="badges"><span class="badge level">Learn</span><span class="badge">~1 hour</span><span class="badge">Medium</span></div>
+  </header>
+
+  <section class="block">
+    <div class="first">
+      <span class="eyebrow">The key idea · 1 minute</span>
+      <h3>Pick one app to be the boss</h3>
+      <p>Smart home chaos usually comes from having a different app for every brand. The fix is to choose <b>one main platform</b>, then connect everything to it:</p>
+      <ul class="list">
+        <li><b>Apple Home</b>, if your household uses iPhones.</li>
+        <li><b>Google Home</b>, if you use Android or Nest speakers.</li>
+        <li><b>Amazon Alexa</b>, if you have Echo speakers.</li>
+        <li><b>Home Assistant</b>, if you like tinkering and want everything local and private.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="fixes">
+    <h2 class="sec"><span class="n">SET UP</span>Bring your devices together</h2>
+    <div class="steps-head"><p>Work through these once, in order.</p><button class="linkbtn" id="expandAll">Show all steps</button></div>
+    <div class="steps" data-q="Everything working together?" data-yes="Yes, it's sorted" data-no="Next step →">
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Take stock of what you have</span><span class="fix-time">15 min</span></button>
+        <div class="fix-body">
+          <p>List every smart device, its brand, and the app it uses. Check the box or the maker's website for these logos: <b>Matter</b>, <b>Works with Apple Home</b>, <b>Works with Google Home</b>, <b>Works with Alexa</b>. Devices with Matter can join any of the main platforms.</p>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Choose your main platform and hub</span><span class="fix-time">10 min</span></button>
+        <div class="fix-body">
+          <p>Pick the platform from above that suits your household, and make sure you have a <b>hub</b> for it, which keeps automations running when you're out:</p>
+          <ul class="list">
+            <li><b>Apple Home:</b> an Apple TV or HomePod.</li>
+            <li><b>Google Home:</b> a Nest Hub, Nest speaker or Google TV Streamer.</li>
+            <li><b>Alexa:</b> a recent Echo speaker.</li>
+          </ul>
+          <p>Many of these also act as <b>Thread border routers</b>, which battery-powered Matter devices like sensors need.</p>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Add Matter devices directly</span><span class="fix-time">5 min each</span></button>
+        <div class="fix-body">
+          <p>In your main app, choose <b>Add device</b> (or <b>Add Accessory</b>) and scan the Matter QR code on the device or its box. Matter devices can be shared with a second platform later, so a light can work with both Apple Home and Alexa.</p>
+          <div class="note"><span>Keep a photo of each Matter code. You'll need it if you ever reset the device.</span></div>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Link older devices through their brand's app</span><span class="fix-time">5 min each</span></button>
+        <div class="fix-body">
+          <p>Devices without Matter can usually still be added by linking accounts. In Google Home or Alexa, add a device, choose <b>Works with Google</b> or <b>Skills</b>, find the brand, and sign in. They then appear alongside everything else. Apple Home only shows HomeKit or Matter devices, so check those first.</p>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Name devices and assign rooms clearly</span><span class="fix-time">15 min</span></button>
+        <div class="fix-body">
+          <p>Use simple, unique names like “Kitchen light” and “Bedroom lamp”, and put each device in a room. Voice assistants get confused by duplicate or vague names, and clear rooms let you say “turn off the living room”.</p>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Build a few useful automations</span><span class="fix-time">15 min</span></button>
+        <div class="fix-body">
+          <p>Start small with automations that save real effort:</p>
+          <ul class="list">
+            <li>Lights on at sunset, off at bedtime.</li>
+            <li>Everything off when the last person leaves home.</li>
+            <li>A “Good night” scene: lock doors, turn off lights, lower the thermostat.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Consider Home Assistant for full control</span><span class="fix-time">1 hour+</span></button>
+        <div class="fix-body">
+          <p>If you have many brands, want automations that work without the internet, or care about privacy, <a href="https://www.home-assistant.io" target="_blank" rel="noopener">Home Assistant</a> is a free, open-source hub that connects thousands of device types and runs on a small computer at home. It takes more setup, but can still pass devices through to Apple, Google or Alexa for voice control.</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="solved-banner" role="status"><span style="font-size:1.6rem">🏠</span><div><b>One home, one app.</b><p>When buying new devices, look for the Matter logo; they'll work with whatever platform you choose.</p></div></div>
+    <div class="stuck" role="status"><b>Some devices won't join?</b><p>Check the device has the latest firmware in its own app, and that your phone and devices are on the same Wi-Fi (2.4 GHz for many smart devices). Older devices with no Matter or platform support may need replacing eventually.</p><div><button class="btn ghost small" data-restart>Start over</button></div></div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>What is Matter?</summary><div class="a"><p>An industry standard that lets smart home devices from different brands work with Apple Home, Google Home, Alexa and others. A Matter device works with all of them.</p></div></details>
+      <details><summary>What's Thread?</summary><div class="a"><p>A low-power wireless network many Matter sensors and plugs use. It needs a Thread border router, which is built into many recent smart speakers, displays and streaming boxes.</p></div></details>
+      <details><summary>Can I use Apple Home and Alexa at the same time?</summary><div class="a"><p>Yes, for Matter devices. Add the device to one platform, then use its <b>sharing</b> or <b>pairing mode</b> option to add it to the other.</p></div></details>
+      <details><summary>Do I need a hub?</summary><div class="a"><p>For remote control and automations, yes, usually. Many smart speakers and streaming devices already work as hubs.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Official help</h2>
+    <div class="links">
+      <a href="https://support.apple.com/en-us/102135" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>Pair and manage your Matter accessories</b></a>
+      <a href="https://support.apple.com/en-us/104998" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>Add a smart home accessory to the Home app</b></a>
+      <a href="https://support.google.com/googlehome/answer/13127223?hl=en" target="_blank" rel="noopener"><span class="src">Google Home Help</span><b>Set up and control Matter devices with Google Home</b></a>
+      <a href="https://support.google.com/googlehome/answer/9159862?hl=en" target="_blank" rel="noopener"><span class="src">Google Home Help</span><b>Connect third-party devices in Google Home</b></a>
+      <a href="https://csa-iot.org/all-solutions/matter/matter-faq/" target="_blank" rel="noopener"><span class="src">Connectivity Standards Alliance</span><b>Matter FAQs</b></a>
+      <a href="https://www.home-assistant.io" target="_blank" rel="noopener"><span class="src">Home Assistant</span><b>Open-source home automation</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Related fixes</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Smart home platforms change often. Check each app's help pages for the latest steps.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../guide.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+</body>
+</html>

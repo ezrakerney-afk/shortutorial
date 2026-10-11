@@ -221,6 +221,30 @@ window.TUTORIALS = [
     minutes: 15
   },
   {
+    slug: "smart-home-together",
+    title: "Make Your Smart Home Devices Work Together",
+    summary: "One app for every brand: Matter, hubs and automations.",
+    category: "Home & tech",
+    tags: ["smart home", "matter", "thread", "apple home", "google home", "alexa", "home assistant", "iot", "automation"],
+    minutes: 60
+  },
+  {
+    slug: "track-expenses-automatically",
+    title: "Track Your Spending Automatically",
+    summary: "Let your bank and apps categorise spending for you.",
+    category: "Money",
+    tags: ["budget", "budgeting", "expenses", "spending", "money", "tracking", "finance", "spreadsheet", "subscriptions"],
+    minutes: 30
+  },
+  {
+    slug: "laptop-battery-drain",
+    title: "Make Your Laptop Battery Last Longer",
+    summary: "Find the drain and get hours back on Windows or Mac.",
+    category: "Computer help",
+    tags: ["battery", "laptop", "drain", "battery life", "power", "battery health", "windows", "mac"],
+    minutes: 15
+  },
+  {
     slug: "jcurses",
     title: "JCurses Crash Course",
     summary: "Build colorful, keyboard-driven Java programs that run in a terminal.",
