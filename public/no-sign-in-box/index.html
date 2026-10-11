@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fix No Password or PIN Box on the Windows Lock Screen · Shortutorial</title>
+<meta name="description" content="Windows 11 lock screen shows no password or PIN box, so you can&#x27;t sign in? Step-by-step fixes, from waking the box to Safe Mode, uninstalling updates and System Restore.">
+<link rel="canonical" href="https://shortutorial.com/no-sign-in-box/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Fix No Password or PIN Box on the Windows Lock Screen · Shortutorial">
+<meta property="og:description" content="Windows 11 lock screen shows no password or PIN box, so you can&#x27;t sign in? Step-by-step fixes, from waking the box to Safe Mode, uninstalling updates and System Restore.">
+<meta property="og:url" content="https://shortutorial.com/no-sign-in-box/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../guide.css">
+</head>
+<body data-slug="no-sign-in-box">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=computer">Computer help</a> / No sign-in box</div>
+    <span class="eyebrow">Computer help · Windows</span>
+    <h1>Fix a Missing Sign-In Box on the Lock Screen</h1>
+    <p class="lede">Your lock screen works and the mouse moves, but there's no box to type your PIN or password, so you can't get in. Start with the quick checks; most people never need the later steps.</p>
+    <div class="badges"><span class="badge level">Quick fix</span><span class="badge">~2–30 min</span><span class="badge">Windows</span><span class="badge">Easy to medium</span></div>
+  </header>
+
+  <section class="block">
+    <div class="first">
+      <span class="eyebrow">Before you start · 1 minute</span>
+      <h3>Have your BitLocker recovery key ready</h3>
+      <p>Some fixes below restart into Windows' recovery menu, which may ask for a <b>BitLocker recovery key</b>, a long string of numbers. Most Windows 11 laptops have this turned on without you knowing.</p>
+      <p>If you signed in with a Microsoft account, you can find it on another device at <a href="https://account.microsoft.com/devices/recoverykey" target="_blank" rel="noopener">account.microsoft.com/devices/recoverykey</a>. Steps 1–3 don't need it.</p>
+    </div>
+  </section>
+
+  <section class="block" id="fixes">
+    <h2 class="sec"><span class="n">FIX</span>Try these in order</h2>
+    <div class="steps-head"><p>The first three take seconds. The rest use Windows' recovery menu.</p><button class="linkbtn" id="expandAll">Show all steps</button></div>
+
+    <div class="steps" data-q="Can you sign in now?" data-yes="Yes, I'm in" data-no="Still no box →">
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Wake the sign-in box</span><span class="fix-time">30 sec</span></button>
+        <div class="fix-body">
+          <ul class="list">
+            <li>Click once on the lock screen, or press <kbd>Space</kbd> or <kbd>Enter</kbd>. The picture should slide up and show the box.</li>
+            <li>Press <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>Delete</kbd>.</li>
+            <li>Just start typing your PIN or password; sometimes the box is there but invisible, and typing then pressing <kbd>Enter</kbd> signs you in.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Check it isn't on another screen</span><span class="fix-time">1 min</span></button>
+        <div class="fix-body">
+          <p>If a second monitor or TV is connected, even switched off, the sign-in box may be showing there.</p>
+          <ul class="list">
+            <li>Turn on any connected monitor or TV and look for the box.</li>
+            <li>Or unplug the extra screen, then press <kbd>Space</kbd>.</li>
+            <li>On a laptop with the lid closed, open the lid.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Reset the display driver, then restart</span><span class="fix-time">2 min</span></button>
+        <div class="fix-body">
+          <ol class="list">
+            <li>Press <kbd>Win</kbd> <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>B</kbd>. The screen flickers as the display driver restarts, which can make the box appear.</li>
+            <li>No luck? Click the <b>power icon</b> at the bottom right and choose <b>Restart</b>. If there's no power icon, hold the power button for 10 seconds to turn off, then turn back on.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Open Windows' recovery menu</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <p>The next steps all start here.</p>
+          <ul class="list">
+            <li><b>If you can see the power icon:</b> hold <kbd>Shift</kbd>, click the power icon, and choose <b>Restart</b>. Keep holding <kbd>Shift</kbd> until a blue screen appears.</li>
+            <li><b>If you can't:</b> turn the computer on, and as soon as the Windows logo appears, hold the power button to turn it off. Do this 3 times. On the next start, Windows opens <b>Automatic Repair</b>; choose <b>Advanced options</b>.</li>
+          </ul>
+          <p>You'll reach a blue screen titled <b>Choose an option</b>. Steps 5–8 start from it.</p>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Start in Safe Mode</span><span class="fix-time">5 min</span></button>
+        <div class="fix-body">
+          <ol class="list">
+            <li>From <b>Choose an option</b>, go to <span class="path">Troubleshoot <i>›</i> Advanced options <i>›</i> Startup Settings</span> and click <b>Restart</b>.</li>
+            <li>When the list appears, press <kbd>4</kbd> for Safe Mode, or <kbd>5</kbd> for Safe Mode with Networking.</li>
+          </ol>
+          <p>If the sign-in box appears in Safe Mode, sign in, then update or roll back your display driver in <b>Device Manager</b> › <b>Display adapters</b>, and restart normally. Safe Mode loads only basic drivers, so a display driver or startup app is the likely cause.</p>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Uninstall the latest update</span><span class="fix-time">10 min</span></button>
+        <div class="fix-body">
+          <p>If this started right after Windows installed updates, remove the newest one.</p>
+          <p>From <b>Choose an option</b>, go to <span class="path">Troubleshoot <i>›</i> Advanced options <i>›</i> Uninstall Updates</span> and choose <b>Uninstall latest quality update</b>. Follow the prompts and restart.</p>
+          <div class="note"><span>Your files and apps stay put. Windows will try to reinstall the update later; after signing in, you can pause updates in <span class="path">Settings <i>›</i> Windows Update</span> until a fixed version arrives.</span></div>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Use System Restore</span><span class="fix-time">15 min</span></button>
+        <div class="fix-body">
+          <p>From <b>Choose an option</b>, go to <span class="path">Troubleshoot <i>›</i> Advanced options <i>›</i> System Restore</span>, choose a restore point from before the problem started, and follow the prompts.</p>
+          <p>Your documents aren't affected, but apps and drivers installed after that date are removed. If you get an error, try an older restore point.</p>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Reset Windows and keep your files</span><span class="fix-time">1 hour</span></button>
+        <div class="fix-body">
+          <p>This is the last resort, and the fix that worked for people hit by the April 2026 update. From <b>Choose an option</b>, go to <span class="path">Troubleshoot <i>›</i> Reset this PC</span> and choose <b>Keep my files</b>.</p>
+          <div class="note warn"><span><b>What you'll lose:</b> installed apps and their settings (including things like Outlook templates). Your documents, photos and desktop files are kept. Make a note of the apps you'll need to reinstall.</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="solved-banner" role="status"><span style="font-size:1.6rem">🔓</span><div><b>You're back in.</b><p>To lower the chance of it happening again, turn off Fast Startup (see the FAQ below).</p></div></div>
+    <div class="stuck" role="status">
+      <b>Still locked out?</b>
+      <ul class="list">
+        <li>Contact your computer maker's support, or Microsoft Support. Mention that the sign-in box is missing (not that you forgot your password), and which steps you've tried.</li>
+        <li>A repair shop can copy your files off the drive before a full reinstall if you need them.</li>
+      </ul>
+      <div><button class="btn ghost small" data-restart>Start over</button></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">PREVENT</span>Make it less likely next time</h2>
+    <div class="habits">
+      <div><h3>Turn off Fast Startup</h3><p>Some people avoided the problem this way. In Control Panel, open <span class="path">Power Options <i>›</i> Choose what the power buttons do</span>, click <b>Change settings that are currently unavailable</b>, and untick <b>Turn on fast startup</b>.</p></div>
+      <div><h3>Save your recovery key</h3><p>Print or photograph your BitLocker recovery key now, so you can always reach the recovery menu.</p></div>
+      <div><h3>Back up regularly</h3><p>OneDrive or an external drive means a reset is an inconvenience, not a disaster.</p></div>
+      <div><h3>Wait a few days on big updates</h3><p>Pausing updates for a week lets others find problems first. Don't pause for long; updates fix security holes.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Why is there no password or PIN box on my lock screen?</summary><div class="a"><p>The part of Windows that draws the sign-in box has failed to load. It's usually caused by a display driver problem, a bad update or a damaged system file, not by anything you did.</p></div></details>
+      <details><summary>Will uninstalling an update delete my files?</summary><div class="a"><p>No. It only removes the update itself. Your documents, photos and apps are untouched.</p></div></details>
+      <details><summary>Does “Reset this PC” delete my files?</summary><div class="a"><p>Not if you choose <b>Keep my files</b>. That keeps your personal files but removes installed apps and their settings. <b>Remove everything</b> erases all of it.</p></div></details>
+      <details><summary>What is the BitLocker recovery key and where is it?</summary><div class="a"><p>BitLocker encrypts your drive, and the recovery key unlocks it when Windows can't confirm it's really your PC. If you use a Microsoft account, it's saved at account.microsoft.com/devices/recoverykey. Work PCs: ask your IT team.</p></div></details>
+      <details><summary>I can see the box but my PIN isn't accepted. Is this the same problem?</summary><div class="a"><p>No. That's a PIN or account problem. Click <b>Sign-in options</b> under the box to use your password instead, or <b>I forgot my PIN</b> to reset it.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Official help</h2>
+    <div class="links">
+      <a href="https://support.microsoft.com/en-us/windows/experience/backup-recovery/windows-recovery-environment" target="_blank" rel="noopener"><span class="src">Microsoft Support</span><b>Windows Recovery Environment</b></a>
+      <a href="https://support.microsoft.com/en-us/windows/deployment/updates-lifecycle/how-to-uninstall-a-windows-update" target="_blank" rel="noopener"><span class="src">Microsoft Support</span><b>How to uninstall a Windows update</b></a>
+      <a href="https://support.microsoft.com/en-us/windows/find-your-bitlocker-recovery-key-6b71ad27-0b89-ea08-f143-056f5ab347d6" target="_blank" rel="noopener"><span class="src">Microsoft Support</span><b>Find your BitLocker recovery key</b></a>
+      <a href="https://support.microsoft.com/en-us/windows/recovery-options-in-windows-31ce2444-7de3-818c-d626-e3b5a3024da5" target="_blank" rel="noopener"><span class="src">Microsoft Support</span><b>Recovery options in Windows</b></a>
+      <a href="https://learn.microsoft.com/en-us/answers/questions/5861561/april-2026-windows-quality-update-caused-complete" target="_blank" rel="noopener"><span class="src">Microsoft Q&amp;A</span><b>April 2026 update caused a login lockout</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Related fixes</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Steps written for Windows 11. Menu names may differ slightly on Windows 10.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../guide.js"></script>
+<script src="../quiz.js"></script>
+</body>
+</html>

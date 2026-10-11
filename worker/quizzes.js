@@ -112,6 +112,138 @@ export default {
     ]
   },
 
+  "disk-usage-100": {
+    title: "Fix 100% Disk Usage in Windows 11",
+    pass: 4,
+    questions: [
+      { q: "Where do you find out which app is using the disk?",
+        o: ["File Explorer", "Task Manager, sorted by the Disk column", "Control Panel", "The Recycle Bin"], a: 1,
+        e: "Ctrl + Shift + Esc opens Task Manager. Sorting by Disk puts the busiest app at the top." },
+      { q: "Your PC hits 100% disk right after starting up, then settles after 15 minutes. What does that mean?",
+        o: ["The drive is failing", "Normal startup and update work", "You have a virus", "You need more RAM"], a: 1,
+        e: "Windows catches up on background tasks after starting or updating. It's only a problem if it doesn't settle." },
+      { q: "Which type of drive is most likely to get stuck at 100%?",
+        o: ["A solid-state drive (SSD)", "An old spinning hard drive (HDD)", "A USB stick", "A cloud drive"], a: 1,
+        e: "Hard drives are slow enough that normal Windows background work can max them out." },
+      { q: "A drive health check says “Caution”. What should you do first?",
+        o: ["Disable SysMain", "Back up your files", "Rebuild the search index", "Ignore it"], a: 1,
+        e: "A failing drive can stop working without warning. Protect your files before anything else." },
+      { q: "What does turning off SysMain do?",
+        o: ["Stops Windows updates", "Stops Windows preloading apps into memory", "Deletes temporary files", "Turns off the antivirus"], a: 1,
+        e: "SysMain preloads apps to speed them up. On slow drives it can keep the disk busy, and it's safe to turn off." }
+    ]
+  },
+
+  "windows-setup-every-startup": {
+    title: "Stop Setup Screens Appearing Every Startup",
+    pass: 4,
+    questions: [
+      { q: "Why might Windows keep showing setup screens after you close them?",
+        o: ["Your PC has a virus", "It treats setup as unfinished if you don't click through to the end", "The screen is broken", "Your internet is slow"], a: 1,
+        e: "Closing or skipping out early leaves setup marked as incomplete, so Windows asks again." },
+      { q: "Where are the setup reminder options in Settings?",
+        o: ["System › Notifications › Additional settings", "Accounts › Sign-in options", "Apps › Startup", "Network & internet › Wi-Fi"], a: 0,
+        e: "The three reminder options live at the bottom of the Notifications page under Additional settings." },
+      { q: "What do the reg add commands in this guide change?",
+        o: ["Your privacy choices", "Whether these two reminder screens are shown", "Windows Update settings", "Your password"], a: 1,
+        e: "They only switch off the two reminder screens and can be undone at any time." },
+      { q: "The screens come back after every fix. What could be resetting your choices?",
+        o: ["A “debloat” or PC tune-up tool", "Your keyboard", "The wallpaper", "Bluetooth"], a: 0,
+        e: "Tweaking and cleaner tools often reset Windows settings at startup." },
+      { q: "A new user account doesn't show the screens, but yours does. What does that suggest?",
+        o: ["Your user profile is damaged", "Windows needs reinstalling", "The PC needs more memory", "Your monitor is faulty"], a: 0,
+        e: "If a fresh profile is fine, the problem is in your old profile. Move your files to the new one." }
+    ]
+  },
+
+  "no-sign-in-box": {
+    title: "Fix a Missing Sign-In Box on the Lock Screen",
+    pass: 4,
+    questions: [
+      { q: "What's the first thing to try when there's no sign-in box?",
+        o: ["Reset Windows", "Click the screen or press Space, Enter or Ctrl + Alt + Delete", "Unplug the power", "Uninstall updates"], a: 1,
+        e: "Often the box is just hidden. A click or key press brings it up." },
+      { q: "You have a second monitor plugged in but switched off. Why does that matter?",
+        o: ["It drains power", "The sign-in box may be showing on that screen", "It slows Windows down", "It doesn't matter"], a: 1,
+        e: "Windows can put the sign-in box on another connected display, even one that's off." },
+      { q: "How do you open Windows' recovery menu from the lock screen?",
+        o: ["Press F1", "Hold Shift and click Power › Restart", "Double-click the clock", "Press Win + R"], a: 1,
+        e: "Shift + Restart takes you to the blue “Choose an option” recovery screen." },
+      { q: "What might the recovery menu ask for on many Windows 11 laptops?",
+        o: ["Your Wi-Fi password", "A BitLocker recovery key", "Your email address", "A product key"], a: 1,
+        e: "BitLocker is often on by default. With a Microsoft account, the key is at account.microsoft.com/devices/recoverykey." },
+      { q: "What does “Reset this PC” with “Keep my files” remove?",
+        o: ["Your documents and photos", "Installed apps and their settings", "Nothing at all", "Your Microsoft account"], a: 1,
+        e: "Your personal files stay, but apps and their settings are removed and need reinstalling." }
+    ]
+  },
+
+  "windows-september-2026-update": {
+    title: "Windows 11 September 2026 Update Problems",
+    pass: 4,
+    questions: [
+      { q: "Your USB headset has no sound and shows “Code 10” after the September update. What helped some people?",
+        o: ["Switching the device to stereo (2-channel)", "Turning off Wi-Fi", "Resetting the BIOS", "Changing the wallpaper"], a: 0,
+        e: "Some users got sound back by switching from surround to stereo in Sound settings." },
+      { q: "Which kind of apps crash after KB5124010?",
+        o: ["All web browsers", "Mostly older apps using Windows' built-in Dolby Digital (AC-3) decoder", "Only Microsoft Office", "Only antivirus apps"], a: 1,
+        e: "Apps with their own decoder, like VLC, aren't affected." },
+      { q: "Where do you uninstall a Windows update?",
+        o: ["Control Panel › Fonts", "Settings › Windows Update › Update history › Uninstall updates", "Task Manager › Startup", "File Explorer › This PC"], a: 1,
+        e: "Update history lists installed updates, and Uninstall updates is under Related settings." },
+      { q: "Why pause updates after removing a problem update?",
+        o: ["To save battery", "So Windows doesn't reinstall it straight away", "To speed up the PC", "It's required to uninstall"], a: 1,
+        e: "Windows reinstalls missing updates automatically unless they're paused." },
+      { q: "Should you stop installing Windows updates altogether?",
+        o: ["Yes, forever", "No — pause briefly, then update once a fix is out", "Only on weekends", "Only if you have AMD graphics"], a: 1,
+        e: "Updates fix security holes. Pause for a week or two at most, then update again." }
+    ]
+  },
+
+  "iphone-update-requested": {
+    title: "Fix iPhone Stuck on “Update Requested”",
+    pass: 4,
+    questions: [
+      { q: "What does “Update Requested” mean?",
+        o: ["The update failed", "Your iPhone is waiting in Apple's queue to download", "Your iPhone isn't supported", "The update is installing"], a: 1,
+        e: "It's asked Apple's servers for the update and is waiting its turn, which takes longer on release days." },
+      { q: "Where can you delete a stuck update?",
+        o: ["Settings › General › iPhone Storage", "Settings › Wi-Fi", "The App Store", "Photos"], a: 0,
+        e: "The update appears in the iPhone Storage list, named after the iOS version. Tap it, then Delete Update." },
+      { q: "What does Reset Network Settings remove?",
+        o: ["Photos and apps", "Saved Wi-Fi networks, passwords and VPN settings", "Your Apple ID", "Everything on the phone"], a: 1,
+        e: "Your data isn't touched, but you'll need to reconnect to Wi-Fi." },
+      { q: "What's the most reliable way to update when it keeps getting stuck?",
+        o: ["Use mobile data", "Update with a computer using Finder or the Apple Devices app", "Turn on Low Power Mode", "Restart ten times"], a: 1,
+        e: "Updating through a computer skips the iPhone's own download completely." },
+      { q: "What does “Offload Unused Apps” do?",
+        o: ["Deletes apps and their data", "Removes apps you don't use but keeps their data", "Moves apps to iCloud Drive", "Updates your apps"], a: 1,
+        e: "Offloaded apps come back exactly as they were when you reinstall them." }
+    ]
+  },
+
+  "pixel-wifi-bluetooth": {
+    title: "Fix Pixel Wi-Fi and Bluetooth Not Working",
+    pass: 4,
+    questions: [
+      { q: "Where is the Pixel option that resets Wi-Fi and Bluetooth?",
+        o: ["Settings › System › Reset options", "Settings › Display", "Settings › Apps", "Settings › Battery"], a: 0,
+        e: "Reset options › Reset Bluetooth & Wi-Fi forgets saved networks and pairings without touching your data." },
+      { q: "Wi-Fi works in Safe Mode but not normally. What does that tell you?",
+        o: ["The hardware is broken", "A downloaded app is interfering", "You need a new router", "The update installed correctly"], a: 1,
+        e: "Safe Mode turns off downloaded apps, so one of them is the likely cause." },
+      { q: "The Wi-Fi switch is greyed out and won't stay on. What's most likely?",
+        o: ["A wrong Wi-Fi password", "A hardware fault in the wireless chip", "A full storage", "A dirty screen"], a: 1,
+        e: "A switch that won't turn on usually points to hardware. Contact Pixel support about a repair." },
+      { q: "Some posts suggest putting the phone on ice to fix Wi-Fi. Should you?",
+        o: ["Yes, it's a permanent fix", "No — condensation can cause water damage", "Only overnight", "Only in summer"], a: 1,
+        e: "Cooling may help briefly if the chip is failing, but moisture can permanently damage the phone." },
+      { q: "What must you do before a factory reset?",
+        o: ["Remove the SIM card", "Back up your phone and know your Google password", "Turn off Bluetooth", "Charge to 100%"], a: 1,
+        e: "A factory reset erases everything, so back up first and make sure you can sign back in." }
+    ]
+  },
+
   "jcurses": {
     title: "JCurses Crash Course",
     pass: 8,

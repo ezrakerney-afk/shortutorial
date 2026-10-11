@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fix 100% Disk Usage in Windows 11 · Shortutorial</title>
+<meta name="description" content="Windows 11 stuck at 100% disk usage and running slow? Find the cause in Task Manager and fix it: SysMain, Search indexing, updates, storage drivers and failing drives.">
+<link rel="canonical" href="https://shortutorial.com/disk-usage-100/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Fix 100% Disk Usage in Windows 11 · Shortutorial">
+<meta property="og:description" content="Windows 11 stuck at 100% disk usage and running slow? Find the cause in Task Manager and fix it: SysMain, Search indexing, updates, storage drivers and failing drives.">
+<meta property="og:url" content="https://shortutorial.com/disk-usage-100/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../guide.css">
+</head>
+<body data-slug="disk-usage-100">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=computer">Computer help</a> / 100% disk usage</div>
+    <span class="eyebrow">Computer help · Windows</span>
+    <h1>Fix 100% Disk Usage in Windows 11</h1>
+    <p class="lede">Task Manager shows your disk pinned at 100% and everything crawls. There's no single cause, so this guide helps you find yours, then works through the fixes that help most people.</p>
+    <div class="badges"><span class="badge level">Quick fix</span><span class="badge">~10–20 min</span><span class="badge">Windows</span><span class="badge">Easy to medium</span></div>
+  </header>
+
+  <section class="block">
+    <div class="first">
+      <span class="eyebrow">Start here · 2 minutes</span>
+      <h3>Find out what's using the disk</h3>
+      <p>Press <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Esc</kbd> to open <b>Task Manager</b>, then click the <b>Disk</b> column header to sort by it. The app at the top is your culprit. Write its name down; the steps below tell you what to do about the usual suspects.</p>
+      <p>For more detail, search for <b>Resource Monitor</b> in the Start menu and open the <b>Disk</b> tab. It lists the exact files being read and written.</p>
+      <div class="note"><span><b>Just started the computer or installed updates?</b> Windows often runs at 100% disk for 10–20 minutes after starting up or updating while it catches up. If it settles down on its own, nothing is wrong.</span></div>
+    </div>
+  </section>
+
+  <section class="block" id="fixes">
+    <h2 class="sec"><span class="n">FIX</span>Try these in order</h2>
+    <div class="steps-head"><p>Open a step, try it, then check Task Manager again.</p><button class="linkbtn" id="expandAll">Show all steps</button></div>
+
+    <div class="steps" data-q="Disk usage back to normal?" data-yes="Yes, it's fixed" data-no="Still 100% →">
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Check whether you have a hard drive or an SSD</span><span class="fix-time">1 min</span></button>
+        <div class="fix-body">
+          <p>In Task Manager, open the <b>Performance</b> page and click <b>Disk 0</b>. The type is shown at the top right: <b>HDD</b> or <b>SSD</b>.</p>
+          <p>This matters more than anything else. Old spinning hard drives (HDD) are slow enough that normal Windows background work can max them out. If you have an HDD, the steps below help, but the real fix is step 8.</p>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Turn off SysMain</span><span class="fix-time">2 min</span></button>
+        <div class="fix-body">
+          <p><b>SysMain</b> (formerly Superfetch) preloads apps into memory to make them start faster. On slower drives it can keep the disk busy constantly. Turning it off is safe.</p>
+          <ol class="list">
+            <li>Search for <b>Services</b> in the Start menu and open it.</li>
+            <li>Double-click <b>SysMain</b>.</li>
+            <li>Set <b>Startup type</b> to <b>Disabled</b>, click <b>Stop</b>, then <b>OK</b>.</li>
+          </ol>
+          <p>You can turn it back on the same way if apps feel slower to open afterwards.</p>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Rebuild or pause Windows Search indexing</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <p>Windows Search builds an index of your files so searches are instant. If the index is damaged, it can rebuild over and over and keep the disk busy.</p>
+          <ol class="list">
+            <li>Go to <span class="path">Settings <i>›</i> Privacy &amp; security <i>›</i> Searching Windows</span>.</li>
+            <li>Click <b>Advanced indexing options</b>, then <b>Advanced</b>, then <b>Rebuild</b>.</li>
+          </ol>
+          <p>The rebuild can take an hour and will use the disk while it runs, so start it before you step away. If disk usage is still maxed out afterwards, set the <b>Windows Search</b> service to <b>Manual</b> in Services the same way as SysMain. Search still works, just more slowly.</p>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Stop updates and cloud sync from hogging the disk</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <ul class="list">
+            <li><b>Delivery Optimization</b> shares Windows updates with other PCs. Turn it off in <span class="path">Settings <i>›</i> Windows Update <i>›</i> Advanced options <i>›</i> Delivery Optimization</span>.</li>
+            <li><b>OneDrive, Google Drive, Dropbox:</b> if one is near the top of the Disk column, it's syncing. Let it finish, or pause syncing from its icon near the clock.</li>
+            <li><b>Antivirus:</b> a full scan reads every file. Let it finish, or schedule scans for when you're not using the computer. Never run two antivirus apps at once.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Update the storage driver</span><span class="fix-time">5 min</span></button>
+        <div class="fix-body">
+          <p>An outdated storage controller driver is a known cause of 100% disk usage on some laptops, especially ones using Intel Rapid Storage Technology.</p>
+          <ol class="list">
+            <li>Install everything in <span class="path">Settings <i>›</i> Windows Update</span>, including <b>Advanced options</b> › <b>Optional updates</b>, where driver updates appear.</li>
+            <li>Then check your laptop maker's support site (Dell, HP, Lenovo, Acer and so on) for the latest <b>chipset</b> and <b>storage</b> or <b>Rapid Storage</b> drivers for your exact model.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Check the drive's health</span><span class="fix-time">5 min</span></button>
+        <div class="fix-body">
+          <p>A failing drive takes much longer to read data, so it sits at 100% while doing very little. Check it before you spend more time on software fixes.</p>
+          <p>Right-click the Start button, choose <b>Terminal</b> (or PowerShell), and run:</p>
+          <div class="cmd"><pre>Get-PhysicalDisk | Select FriendlyName, MediaType, HealthStatus</pre></div>
+          <p>Anything other than <b>Healthy</b> is a warning sign. For more detail, the free tool <a href="https://crystalmark.info/en/software/crystaldiskinfo/" target="_blank" rel="noopener">CrystalDiskInfo</a> shows a plain Good / Caution / Bad rating.</p>
+          <div class="note warn"><span><b>Caution or Bad?</b> Back up your files now, before trying anything else. A failing drive can stop working without further warning.</span></div>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Scan the drive for file system errors</span><span class="fix-time">10+ min</span></button>
+        <div class="fix-body">
+          <p>Right-click the Start button, choose <b>Terminal (Admin)</b>, and run:</p>
+          <div class="cmd"><pre>chkdsk C: /scan</pre></div>
+          <p>This checks the drive while you keep working. If it reports problems, it will tell you to run a repair, which needs a restart.</p>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Upgrade to an SSD</span><span class="fix-time">Shop visit</span></button>
+        <div class="fix-body">
+          <p>If your computer has an HDD and everything above helped only a little, this is the permanent fix. Swapping a hard drive for a solid-state drive is the single biggest speed upgrade for an older computer, and 100% disk usage almost always disappears.</p>
+          <p>Most repair shops can copy everything to the new drive so you keep all your files and apps. The parts are inexpensive compared with a new computer.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="solved-banner" role="status"><span style="font-size:1.6rem">📉</span><div><b>Disk usage back to normal.</b><p>If it creeps back, check Task Manager again; it's usually the same app each time.</p></div></div>
+    <div class="stuck" role="status">
+      <b>Still stuck at 100%?</b>
+      <ul class="list">
+        <li>Test in Safe Mode: if disk usage is normal there, a program that starts with Windows is the cause. Disable startup apps in Task Manager one at a time to find it.</li>
+        <li>As a last resort, <span class="path">Settings <i>›</i> System <i>›</i> Recovery <i>›</i> Reset this PC</span> with <b>Keep my files</b> reinstalls Windows while keeping your documents.</li>
+      </ul>
+      <div><button class="btn ghost small" data-restart>Start over</button></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Is 100% disk usage bad for my computer?</summary><div class="a"><p>It won't damage anything by itself, but it makes everything painfully slow because programs have to wait for the drive. Constant 100% on a hard drive that's also making clicking noises can be a sign it's failing; check its health (step 6).</p></div></details>
+      <details><summary>Is it safe to disable SysMain?</summary><div class="a"><p>Yes. It's a speed-up feature, not something Windows needs to work. On computers with an SSD you may not notice any difference either way.</p></div></details>
+      <details><summary>Why did it start right after upgrading to Windows 11?</summary><div class="a"><p>Upgrades trigger a lot of one-time background work: re-indexing files, installing follow-up updates and optimising apps. Give it a day. If it's still happening, outdated storage drivers from the old version of Windows are a common cause (step 5).</p></div></details>
+      <details><summary>Will turning off hibernation fix it?</summary><div class="a"><p>It helps some people, but mostly because it frees up several gigabytes of space. Run <code>powercfg /hibernate off</code> in Terminal (Admin) if your drive is also nearly full. Note this turns off hibernation and Fast Startup.</p></div></details>
+      <details><summary>Task Manager says 100% but nothing is listed using much. Why?</summary><div class="a"><p>The work may be coming from Windows itself (listed as “System”) or from a failing drive that's slow to respond. Check the drive's health (step 6) and look at Resource Monitor's Disk tab for the files involved.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Official help and tools</h2>
+    <div class="links">
+      <a href="https://support.microsoft.com/en-us/windows/experience/performance-optimization/tips-to-improve-pc-performance-in-windows" target="_blank" rel="noopener"><span class="src">Microsoft Support</span><b>Tips to improve PC performance in Windows</b></a>
+      <a href="https://learn.microsoft.com/en-us/answers/questions/3830040/windows-11-100-disk-usage" target="_blank" rel="noopener"><span class="src">Microsoft Q&amp;A</span><b>Windows 11 100% disk usage discussion</b></a>
+      <a href="https://crystalmark.info/en/software/crystaldiskinfo/" target="_blank" rel="noopener"><span class="src">CrystalDiskInfo</span><b>Free drive health checker</b></a>
+      <a href="../slow-computer/"><span class="src">Shortutorial</span><b>Speed up a slow computer</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Related fixes</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>Steps written for Windows 11. Menu names may differ slightly on Windows 10.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../guide.js"></script>
+<script src="../quiz.js"></script>
+</body>
+</html>

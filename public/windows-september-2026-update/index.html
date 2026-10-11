@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Windows 11 September 2026 Update Problems and Fixes · Shortutorial</title>
+<meta name="description" content="No sound, apps crashing, AMD black screens or domain sign-in failures after Windows 11&#x27;s September 2026 updates (KB5124008, KB5129195, KB5124010)? Status and fixes for each.">
+<link rel="canonical" href="https://shortutorial.com/windows-september-2026-update/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Windows 11 September 2026 Update Problems and Fixes · Shortutorial">
+<meta property="og:description" content="No sound, apps crashing, AMD black screens or domain sign-in failures after Windows 11&#x27;s September 2026 updates (KB5124008, KB5129195, KB5124010)? Status and fixes for each.">
+<meta property="og:url" content="https://shortutorial.com/windows-september-2026-update/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../guide.css">
+</head>
+<body data-slug="windows-september-2026-update">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=computer">Computer help</a> / September 2026 update</div>
+    <span class="eyebrow">Known issue · Windows 11</span>
+    <h1>Windows 11 September 2026 Update Problems</h1>
+    <p class="lede">Windows 11's September updates broke sound, some apps and games, and more. Here's what's affected, what Microsoft has fixed so far, and what you can do right now.</p>
+    <div class="badges"><span class="badge live">Known issue</span><span class="badge">Updated Oct 11, 2026</span><span class="badge">Windows 11</span></div>
+  </header>
+
+  <section class="block">
+    <div class="first">
+      <span class="eyebrow">Which problem do you have?</span>
+      <h3>Jump to your issue</h3>
+      <div class="jump">
+        <a href="#audio">No sound from USB speakers or headset (Code 10)</a>
+        <a href="#ac3">Games or apps crash when playing sound</a>
+        <a href="#amd">AMD graphics freezes, black screens or missing displays</a>
+        <a href="#domain">Work PC: can't sign in to the domain</a>
+        <a href="#black">Black screen after signing in</a>
+      </div>
+      <p class="updated">Last updated October 11, 2026. Microsoft's next regular update is due Tuesday, October 13.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">ISSUES</span>Known problems and fixes</h2>
+    <article class="issue" id="audio">
+      <div class="issue-top"><h3>No sound from USB audio devices</h3><span class="status partial">Partly fixed</span></div>
+      <dl class="facts-grid"><dt>Caused by</dt><dd>KB5124008 (September 8)</dd><dt>Symptoms</dt><dd>No sound; volume stuck at zero; Sound settings unresponsive; Device Manager shows “This device cannot start (Code 10)”.</dd><dt>Affects</dt><dd>USB speakers, headsets and audio interfaces (USB Audio Class 1.0).</dd><dt>Status</dt><dd>The emergency update KB5129195 (September 14) fixed only surround-sound and 3D audio. Microsoft is still working on the rest.</dd></dl>
+      <h4>What to do</h4>
+      <ol class="list">
+        <li>Install every update in <span class="path">Settings <i>›</i> Windows Update</span>. Microsoft may include the full fix in the October 13 update.</li>
+        <li><b>Switch the device to stereo.</b> Some people got sound back this way. Go to <span class="path">Settings <i>›</i> System <i>›</i> Sound <i>›</i> More sound settings</span>, select your USB device on the <b>Playback</b> tab, click <b>Configure</b>, choose <b>Stereo</b> and finish. Or open <b>Properties</b> › <b>Advanced</b> and pick a <b>2 channel</b> format.</li>
+        <li>Use your computer's built-in speakers, the headphone socket or Bluetooth in the meantime.</li>
+        <li>Still nothing, and you need it working now? Remove the latest update (see <a href="#remove">how below</a>).</li>
+      </ol>
+    </article>
+
+    <article class="issue" id="ac3">
+      <div class="issue-top"><h3>Games and apps crash when they play sound</h3><span class="status open">No fix yet</span></div>
+      <dl class="facts-grid"><dt>Caused by</dt><dd>KB5124010 (September 22)</dd><dt>Symptoms</dt><dd>Some apps fail to open, close without warning, or crash when you play music, change the volume or open audio settings.</dd><dt>Affects</dt><dd>Mostly older games, media players and apps that use Windows' built-in Dolby Digital (AC-3) decoder. Windows 11 24H2, 25H2 and 26H2.</dd><dt>Status</dt><dd>Confirmed by Microsoft. A fix is promised in a future update; no date given.</dd></dl>
+      <h4>What to do</h4>
+      <ol class="list">
+        <li>In the app's or game's audio settings, turn off <b>surround</b>, <b>5.1</b> or <b>Dolby</b> output and choose <b>stereo</b>.</li>
+        <li>For videos, use a player with its own decoder, such as <a href="https://www.videolan.org/vlc/" target="_blank" rel="noopener">VLC</a>, which isn't affected.</li>
+        <li>If an important app is unusable, remove KB5124010 (<a href="#remove">how below</a>) until the fix arrives.</li>
+      </ol>
+    </article>
+
+    <article class="issue" id="amd">
+      <div class="issue-top"><h3>AMD graphics freezes, black screens or missing displays</h3><span class="status open">Unconfirmed</span></div>
+      <dl class="facts-grid"><dt>Linked to</dt><dd>September 2026 updates, according to user reports</dd><dt>Symptoms</dt><dd>Driver timeouts, black screens, displays disappearing and freezes, even outside games.</dd><dt>Affects</dt><dd>Reports mention Radeon RX 6000, 7000 and 9000 series cards.</dd><dt>Status</dt><dd>Not on Microsoft's official known-issues list, and no fix announced. The cause isn't confirmed.</dd></dl>
+      <h4>What to do</h4>
+      <ol class="list">
+        <li>Install the latest driver from <a href="https://www.amd.com/en/support/download/drivers.html" target="_blank" rel="noopener">AMD's driver page</a>. Some users found older drivers didn't help.</li>
+        <li>Removing the September update fixed it for some people (<a href="#remove">how below</a>).</li>
+        <li>Report it through the <b>Feedback Hub</b> app; the more reports Microsoft gets, the faster it's investigated.</li>
+      </ol>
+    </article>
+
+    <article class="issue" id="domain">
+      <div class="issue-top"><h3>Work PCs can't sign in to the company domain</h3><span class="status fixed">Fixed</span></div>
+      <dl class="facts-grid"><dt>Caused by</dt><dd>KB5124008 and KB5129195 on PCs using Credential Guard</dd><dt>Symptoms</dt><dd>Can't sign in with work credentials; “trust relationship” errors. Signing in with cached details still works.</dd><dt>Fixed in</dt><dd>KB5124010 (September 22) and later.</dd></dl>
+      <h4>What to do</h4>
+      <p>Install the latest updates. If you still can't sign in, contact your IT team; Microsoft has published a rollback and repair procedure for administrators.</p>
+    </article>
+
+    <article class="issue" id="black">
+      <div class="issue-top"><h3>Black screen after signing in</h3><span class="status partial">Workaround available</span></div>
+      <dl class="facts-grid"><dt>Caused by</dt><dd>KB5120998</dd><dt>Symptoms</dt><dd>You sign in but see only a black screen, or the desktop doesn't load. Mostly affects virtual and work desktops.</dd></dl>
+      <h4>What to do</h4>
+      <ol class="list">
+        <li>Press <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Esc</kbd> to open Task Manager.</li>
+        <li>Click <b>Run new task</b>, type <code>explorer.exe</code> and press <kbd>Enter</kbd>. Your desktop should appear.</li>
+      </ol>
+    </article>
+
+  </section>
+
+  <section class="block" id="remove">
+    <h2 class="sec"><span class="n">HOW TO</span>Remove a problem update</h2>
+    <div class="steps" data-q="Problem gone?" data-yes="Yes, it's fixed" data-no="Next step →">
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Check which updates you have</span><span class="fix-time">1 min</span></button>
+        <div class="fix-body">
+          <p>Go to <span class="path">Settings <i>›</i> Windows Update <i>›</i> Update history</span>. Look under <b>Quality Updates</b> for the KB numbers mentioned above and the date they installed.</p>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Uninstall the newest one</span><span class="fix-time">5 min</span></button>
+        <div class="fix-body">
+          <ol class="list">
+            <li>In <span class="path">Settings <i>›</i> Windows Update <i>›</i> Update history</span>, scroll down to <b>Related settings</b> and click <b>Uninstall updates</b>.</li>
+            <li>Click <b>Uninstall</b> next to the most recent update and restart.</li>
+          </ol>
+          <p>Monthly updates include everything from earlier ones, so removing the newest one also removes the fixes before it.</p>
+          <div class="note warn"><span><b>Security trade-off.</b> These updates also fix security holes. Only remove one if the problem really gets in your way, and reinstall as soon as Microsoft releases a fix.</span></div>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Pause updates so it doesn't come straight back</span><span class="fix-time">1 min</span></button>
+        <div class="fix-body">
+          <p>In <span class="path">Settings <i>›</i> Windows Update</span>, choose a pause length next to <b>Pause updates</b>. One or two weeks is enough for Microsoft to release a fix; then resume and update.</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="solved-banner" role="status"><span style="font-size:1.6rem">✅</span><div><b>Working again.</b><p>Check back here before resuming updates; we'll mark issues as fixed when Microsoft releases a solution.</p></div></div>
+    <div class="stuck" role="status"><b>Still having problems?</b><p>Report it in the Feedback Hub app and check Microsoft's release health page (link below) for new information.</p><div><button class="btn ghost small" data-restart>Start over</button></div></div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Should I stop installing Windows updates?</summary><div class="a"><p>No. Updates fix security holes that attackers actively use. If an update breaks something you need, remove that one, pause for a week or two, then update again once a fix is out.</p></div></details>
+      <details><summary>How do I know which Windows 11 version I have?</summary><div class="a"><p>Go to Settings › System › About and look at <b>Version</b> under Windows specifications, for example 25H2.</p></div></details>
+      <details><summary>When will Microsoft fix these?</summary><div class="a"><p>Microsoft's regular updates come out on the second Tuesday of each month; the next is October 13, 2026. It hasn't promised dates for the remaining audio or app-crash fixes.</p></div></details>
+      <details><summary>I removed the update but Windows reinstalled it. What now?</summary><div class="a"><p>Pause updates right after removing it (step 3 above). Windows reinstalls missing security updates automatically when updates aren't paused.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Official sources</h2>
+    <div class="links">
+      <a href="https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-25h2" target="_blank" rel="noopener"><span class="src">Microsoft</span><b>Windows 11 known issues (release health)</b></a>
+      <a href="https://support.microsoft.com/en-us/servicing/os/windows-11/2026/09/kb5129195-windows-11-24h2-25h2-security-update" target="_blank" rel="noopener"><span class="src">Microsoft Support</span><b>KB5129195 emergency update notes</b></a>
+      <a href="https://support.microsoft.com/en-us/windows/deployment/updates-lifecycle/how-to-uninstall-a-windows-update" target="_blank" rel="noopener"><span class="src">Microsoft Support</span><b>How to uninstall a Windows update</b></a>
+      <a href="https://www.windowslatest.com/2026/09/21/microsoft-admits-windows-11s-emergency-update-still-breaks-audio-and-a-fix-may-not-arrive-until-october/" target="_blank" rel="noopener"><span class="src">Windows Latest</span><b>Emergency update still breaks audio</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Related fixes</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span>© <span id="yr"></span> Shortutorial</span><span>This page tracks a developing issue. Check Microsoft's release health page for the latest status.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../guide.js"></script>
+<script src="../quiz.js"></script>
+</body>
+</html>

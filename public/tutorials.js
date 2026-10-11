@@ -45,6 +45,54 @@ window.TUTORIALS = [
     minutes: 10
   },
   {
+    slug: "disk-usage-100",
+    title: "Fix 100% Disk Usage in Windows 11",
+    summary: "Disk pinned at 100% and everything crawls? Find the cause and fix it.",
+    category: "Computer help",
+    tags: ["disk", "100%", "slow", "task manager", "sysmain", "hdd", "ssd", "windows"],
+    minutes: 15
+  },
+  {
+    slug: "windows-setup-every-startup",
+    title: "Stop Setup Screens Appearing Every Startup",
+    summary: "Windows keeps asking the same setup and privacy questions? Make it stop.",
+    category: "Computer help",
+    tags: ["setup", "privacy", "startup", "boot", "lets finish setting up", "oobe", "windows"],
+    minutes: 10
+  },
+  {
+    slug: "no-sign-in-box",
+    title: "Fix a Missing Sign-In Box on the Lock Screen",
+    summary: "No PIN or password box on the Windows lock screen? Get back in.",
+    category: "Computer help",
+    tags: ["sign in", "login", "lock screen", "password", "pin", "locked out", "safe mode", "windows"],
+    minutes: 15
+  },
+  {
+    slug: "windows-september-2026-update",
+    title: "Windows 11 September 2026 Update Problems",
+    summary: "No sound, crashing apps, AMD black screens: status and fixes for each.",
+    category: "Computer help",
+    tags: ["windows update", "kb5124008", "kb5129195", "kb5124010", "no sound", "audio", "amd", "crash", "known issue"],
+    minutes: 10
+  },
+  {
+    slug: "iphone-update-requested",
+    title: "Fix iPhone Stuck on “Update Requested”",
+    summary: "iPhone or iPad won't start downloading its update? Get it moving.",
+    category: "Phone help",
+    tags: ["iphone", "ipad", "ios", "update", "update requested", "stuck", "apple"],
+    minutes: 10
+  },
+  {
+    slug: "pixel-wifi-bluetooth",
+    title: "Fix Pixel Wi-Fi and Bluetooth Not Working",
+    summary: "Pixel Wi-Fi or Bluetooth won't turn on since the 2026 updates? What to try.",
+    category: "Phone help",
+    tags: ["pixel", "android", "google", "wifi", "wi-fi", "bluetooth", "known issue"],
+    minutes: 10
+  },
+  {
     slug: "jcurses",
     title: "JCurses Crash Course",
     summary: "Build colorful, keyboard-driven Java programs that run in a terminal.",
