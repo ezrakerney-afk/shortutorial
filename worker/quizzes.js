@@ -1476,6 +1476,94 @@ export default {
     ]
   },
 
+  "tie-a-tie": {
+    title: "How to Tie a Tie",
+    pass: 4,
+    questions: [
+      { q: "Which end of the tie does most of the moving?",
+        o: ["The narrow end", "The wide end", "Both equally", "Neither"], a: 1,
+        e: "You tie the knot with the wide end; the narrow end stays mostly still." },
+      { q: "Where should the tip of your tie end up?",
+        o: ["Mid-chest", "At your belt buckle", "Below your belt", "At your collar"], a: 1,
+        e: "The tip should just touch the top of the belt buckle." },
+      { q: "Which is the simplest, smallest knot?",
+        o: ["Full Windsor", "Half Windsor", "Four-in-hand", "Bow tie"], a: 2,
+        e: "The four-in-hand is the easiest and most common." },
+      { q: "Which knot suits a wide spread collar best?",
+        o: ["Four-in-hand", "Full Windsor", "No knot", "Any knot"], a: 1,
+        e: "The large, symmetrical Windsor fills a spread collar." },
+      { q: "What's the small fold just below the knot called?",
+        o: ["The dimple", "The pleat", "The loop", "The tail"], a: 0,
+        e: "Press a finger under the knot as you tighten to form the dimple." }
+    ]
+  },
+
+  "clocks-go-back": {
+    title: "Clocks Go Back: Fall-Back Checklist",
+    pass: 4,
+    questions: [
+      { q: "When does daylight saving time end in 2026 in the US?",
+        o: ["October 25", "November 1", "November 8", "December 1"], a: 1,
+        e: "Sunday, November 1, 2026, at 2:00 a.m." },
+      { q: "When the clocks fall back, what time does 2:00 a.m. become?",
+        o: ["3:00 a.m.", "1:00 a.m.", "12:00 a.m.", "It stays 2:00 a.m."], a: 1,
+        e: "Clocks go back one hour, so you gain an hour." },
+      { q: "Which of these usually needs changing by hand?",
+        o: ["Your phone", "Your laptop", "Your microwave", "Your smartwatch"], a: 2,
+        e: "Connected devices update themselves; appliances usually don't." },
+      { q: "How often should a smoke alarm be replaced?",
+        o: ["Every year", "Every 10 years", "Never", "Every 30 years"], a: 1,
+        e: "Replace smoke alarms that are 10 years old, even if they still beep." },
+      { q: "Which state doesn't change its clocks?",
+        o: ["Texas", "Hawaii", "Ohio", "Florida"], a: 1,
+        e: "Hawaii and most of Arizona stay on standard time all year." }
+    ]
+  },
+
+  "register-to-vote": {
+    title: "How to Register to Vote",
+    pass: 4,
+    questions: [
+      { q: "What's the official site to start registering in any state?",
+        o: ["vote.gov", "votenow.com", "facebook.com", "register.org"], a: 0,
+        e: "vote.gov is the official US government site and links to each state." },
+      { q: "How much does it cost to register to vote?",
+        o: ["$5", "$25", "Nothing, it's free", "Depends on the state"], a: 2,
+        e: "Registration is always free. Never pay a site to register you." },
+      { q: "Who sets voter registration deadlines?",
+        o: ["The federal government", "Each state", "Your county clerk only", "There are no deadlines"], a: 1,
+        e: "Each state sets its own deadline; some allow same-day registration." },
+      { q: "You moved to a new state. What should you do?",
+        o: ["Nothing", "Register in your new state", "Vote in your old state", "Call the White House"], a: 1,
+        e: "Registration is tied to where you live." },
+      { q: "Do you need your voter registration card to vote?",
+        o: ["Yes, always", "No", "Only in November", "Only if you're over 65"], a: 1,
+        e: "The card isn't required; some states ask for photo ID instead." }
+    ]
+  },
+
+  "change-wifi-password": {
+    title: "How to Change Your Wi-Fi Password",
+    pass: 4,
+    questions: [
+      { q: "What's usually the easiest way to change Wi-Fi on a provider's router?",
+        o: ["Call the police", "The provider's app", "Buy a new router", "Restart your phone"], a: 1,
+        e: "Xfinity, Spectrum, AT&T and others have apps with Wi-Fi settings." },
+      { q: "What happens to devices after you change the password?",
+        o: ["Nothing", "They disconnect and need the new password", "They get faster", "They reset to factory settings"], a: 1,
+        e: "Every device must rejoin with the new password." },
+      { q: "Which security setting is best if available?",
+        o: ["WEP", "Open", "WPA3", "None"], a: 2,
+        e: "WPA3 is the newest; WPA2 if that's the only option." },
+      { q: "A good Wi-Fi password is…",
+        o: ["Your address", "password123", "Several random words, 12+ characters", "Your phone number"], a: 2,
+        e: "Long, random words are strong and easy to type." },
+      { q: "Is the router admin password the same as the Wi-Fi password?",
+        o: ["Yes", "No", "Only on Xfinity", "Only on weekends"], a: 1,
+        e: "The admin password changes settings; the Wi-Fi password joins the network." }
+    ]
+  },
+
   "jcurses": {
     title: "JCurses Crash Course",
     pass: 8,

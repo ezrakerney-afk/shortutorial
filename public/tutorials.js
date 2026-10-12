@@ -541,6 +541,38 @@ window.TUTORIALS = [
     minutes: 10
   },
   {
+    slug: "tie-a-tie",
+    title: "How to Tie a Tie",
+    summary: "Four-in-hand, half Windsor and full Windsor, step by step.",
+    category: "Life skills",
+    tags: ["tie", "tie a tie", "knot", "windsor", "four in hand", "suit", "dress", "interview"],
+    minutes: 10
+  },
+  {
+    slug: "clocks-go-back",
+    title: "Clocks Go Back: Fall-Back Checklist",
+    summary: "Nov 1, 2026: set the microwave, oven and car clocks, and test alarms.",
+    category: "Life skills",
+    tags: ["daylight saving time", "fall back", "time change", "clocks", "microwave clock", "smoke alarm", "november"],
+    minutes: 10
+  },
+  {
+    slug: "register-to-vote",
+    title: "How to Register to Vote",
+    summary: "Check, register online, by mail or in person, and meet the deadline.",
+    category: "Life skills",
+    tags: ["vote", "register to vote", "voter registration", "election", "vote.gov", "civic"],
+    minutes: 10
+  },
+  {
+    slug: "change-wifi-password",
+    title: "How to Change Your Wi-Fi Password",
+    summary: "Use your provider's app or router settings, then reconnect devices.",
+    category: "Computer help",
+    tags: ["wifi", "wi-fi", "password", "router", "xfinity", "spectrum", "at&t", "verizon", "network"],
+    minutes: 10
+  },
+  {
     slug: "jcurses",
     title: "JCurses Crash Course",
     summary: "Build colorful, keyboard-driven Java programs that run in a terminal.",
