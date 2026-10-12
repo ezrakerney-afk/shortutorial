@@ -175,12 +175,13 @@ const INDEX = ALL.map(t => {
   add(t.summary, 1); add(t.category, 1); add((t.tags || []).join(' '), 2); add(t.title, 3);
   return { t, m };
 });
-function wordScore(q, m){
+function wordScore(q, m, strict){
   const s = stem(q); let best = 0;
   for (const [k, w] of m){
     let v = 0;
     if (k === s) v = 1;
     else if (s.length >= 3 && k.startsWith(s)) v = 0.8;            // still typing
+    else if (strict) v = 0;
     else if (s.length >= 5 && lev(s, k, s.length >= 7 ? 2 : 1) <= (s.length >= 7 ? 2 : 1)) v = 0.7; // typo
     else if (SYNMAP.has(s) && SYNMAP.get(s).includes(k)) v = 0.5;   // synonym
     if (v * w > best) best = v * w;
@@ -197,7 +198,7 @@ function search(q){
   const sem = SEM.q === q.trim().toLowerCase() ? SEM.scores : null;
   const out = [];
   for (const { t, m } of pool){
-    const parts = useWs.map(w => wordScore(w, m));
+    const parts = useWs.map(w => wordScore(w, m, sem && sem.none));
     const hits = parts.filter(v => v > 0).length;
     let kw = hits ? parts.reduce((a, b) => a + b, 0) / (3 * useWs.length) + hits / useWs.length : 0;
     const sm = sem ? (sem.get(t.slug) || 0) : 0;
@@ -215,15 +216,21 @@ function aiScores(list){
   const map = new Map();
   const rTop = Math.max(0, ...list.map(r => r.score || 0));
   const sTop = Math.max(0, ...list.map(r => r.sim || 0));
-  if (rTop < 0.01 && list.some(r => r.score != null)) return map;
-  for (const r of list){
-    const rr = r.score != null ? (r.score || 0) / rTop : 0;
-    const ss = Math.min(1, Math.max(0, ((r.sim || 0) - (sTop - 0.08)) / 0.08));
-    const v = r.score != null ? 0.65 * rr + 0.35 * ss : ss;
-    if (v >= 0.3) map.set(r.slug, v);
-  }
+  if (rTop >= 0.01){                       // reranker found something: blend both signals
+    for (const r of list){
+      const ss = Math.min(1, Math.max(0, ((r.sim || 0) - (sTop - 0.08)) / 0.08));
+      const v = 0.65 * (r.score || 0) / rTop + 0.35 * ss;
+      if (v >= 0.3) map.set(r.slug, v);
+    }
+  } else if (sTop >= 0.58){                // reranker unsure, but meaning is close: keep the nearest few
+    for (const r of list){
+      const v = ((r.sim || 0) - (sTop - 0.04)) / 0.04;
+      if (v >= 0.3) map.set(r.slug, Math.min(1, v));
+    }
+  } else map.none = true;                  // nothing on the site is about this
   return map;
 }
+const SEARCH_V = 3;
 let semTimer = 0, semCtl = null;
 function askAI(q){
   clearTimeout(semTimer); if (semCtl) semCtl.abort();
@@ -232,7 +239,7 @@ function askAI(q){
   semTimer = setTimeout(() => {
     semCtl = new AbortController();
     document.getElementById('count').classList.add('thinking');
-    fetch('/api/search?q=' + encodeURIComponent(key), { signal: semCtl.signal })
+    fetch('/api/search?q=' + encodeURIComponent(key) + '&v=' + SEARCH_V, { signal: semCtl.signal })
       .then(r => r.ok ? r.json() : null)
       .then(d => {
         if (!d || !d.results) return;
