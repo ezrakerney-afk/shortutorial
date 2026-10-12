@@ -282,6 +282,7 @@ function safeEqual(a, b) {
    with Workers AI, stored in D1, and compared with the embedding of the search. */
 
 const EMBED_MODEL = "@cf/baai/bge-base-en-v1.5";
+const RERANK_MODEL = "@cf/baai/bge-reranker-base";
 const QUERY_PREFIX = "Represent this sentence for searching relevant passages: ";
 let VECS = null;            // Map slug -> Float32Array, cached per worker instance
 let VECS_VERSION = "";
@@ -326,7 +327,7 @@ async function smartSearch(request, env, url) {
   if (!env.AI) return json({ error: "Smart search is not available." }, 503);
 
   const cache = caches.default;
-  const key = new Request(`https://cache.shortutorial/search/v${CATALOG.length}/${encodeURIComponent(q)}`);
+  const key = new Request(`https://cache.shortutorial/search/v2-${CATALOG.length}/${encodeURIComponent(q)}`);
   const hit = await cache.match(key);
   if (hit) return hit;
 
@@ -339,8 +340,20 @@ async function smartSearch(request, env, url) {
 
   const vecs = await catalogVectors(env);
   const qv = (await env.AI.run(EMBED_MODEL, { text: [QUERY_PREFIX + q] })).data[0];
-  const results = [...vecs].map(([slug, v]) => ({ slug, score: Math.round(cosine(qv, v) * 1000) / 1000 }))
-    .sort((a, b) => b.score - a.score).slice(0, 12);
+  let results = [...vecs].map(([slug, v]) => ({ slug, sim: Math.round(cosine(qv, v) * 1000) / 1000 }))
+    .sort((a, b) => b.sim - a.sim).slice(0, 15);
+  // Second pass: a reranker reads the search next to each candidate and scores how well it answers it.
+  try {
+    const text = new Map(CATALOG.map(c => [c.slug, c.text]));
+    const rr = await env.AI.run(RERANK_MODEL, { query: q, contexts: results.map(r => ({ text: text.get(r.slug) })), top_k: results.length });
+    const scores = new Map((rr.response || []).map(x => [x.id, x.score]));
+    results = results.map((r, i) => ({ ...r, score: Math.round((scores.get(i) ?? 0) * 1000) / 1000 }))
+      .sort((a, b) => b.score - a.score);
+  } catch (e) {
+    console.error("rerank failed", e);
+    results = results.map(r => ({ ...r, score: null }));
+  }
+  results = results.slice(0, 12);
   const res = new Response(JSON.stringify({ results }), {
     headers: { "Content-Type": "application/json", "Cache-Control": "public, max-age=86400" }
   });
