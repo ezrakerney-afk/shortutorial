@@ -1564,6 +1564,94 @@ export default {
     ]
   },
 
+  "set-up-voicemail": {
+    title: "How to Set Up Voicemail",
+    pass: 4,
+    questions: [
+      { q: "Who actually runs your voicemail box?",
+        o: ["Apple or Google", "Your mobile carrier", "Your phone's maker", "Nobody"], a: 1,
+        e: "Voicemail is a carrier service, which is why it needs a password." },
+      { q: "On iPhone, where do you start setting up voicemail?",
+        o: ["Settings › Wi-Fi", "Phone app › Voicemail › Set Up Now", "Messages app", "App Store"], a: 1,
+        e: "The Voicemail tab in the Phone app has the Set Up Now button." },
+      { q: "On most Android phones, how do you call your voicemail?",
+        o: ["Press and hold 1", "Press 0", "Dial 911", "Shake the phone"], a: 0,
+        e: "Pressing and holding 1 on the keypad calls voicemail." },
+      { q: "What does visual voicemail do?",
+        o: ["Records video messages", "Shows voicemails as a list you can tap", "Blocks spam", "Translates calls"], a: 1,
+        e: "You can play messages in any order without calling in." },
+      { q: "Forgot your voicemail password. Who can reset it?",
+        o: ["Your carrier", "Apple only", "Nobody", "The caller"], a: 0,
+        e: "Carriers can reset it in their app or by phone; iPhone also has an option in Settings." }
+    ]
+  },
+
+  "back-up-android-phone": {
+    title: "Back Up Your Android Phone",
+    pass: 4,
+    questions: [
+      { q: "Where is Android's built-in backup setting on most phones?",
+        o: ["Settings › Google › All services › Backup", "Settings › Display", "Play Store", "Camera app"], a: 0,
+        e: "On some phones it's Settings › System › Backup." },
+      { q: "Which app backs up your photos?",
+        o: ["Gmail", "Google Photos", "Chrome", "Messages"], a: 1,
+        e: "Photos are backed up separately by Google Photos." },
+      { q: "How much Google storage is free?",
+        o: ["1 GB", "15 GB", "100 GB", "Unlimited"], a: 1,
+        e: "15 GB, shared with Gmail and Drive." },
+      { q: "When does automatic backup usually run?",
+        o: ["Every hour", "When idle, charging and on Wi-Fi", "Only when you open Settings", "Never"], a: 1,
+        e: "Backups run roughly daily when the phone is idle and charging." },
+      { q: "Which app needs its own separate backup?",
+        o: ["WhatsApp", "Settings", "Contacts", "Calculator"], a: 0,
+        e: "WhatsApp backs up chats itself, under Settings › Chats › Chat backup." }
+    ]
+  },
+
+  "keyboard-not-typing": {
+    title: "Keyboard Not Typing? Fix It",
+    pass: 4,
+    questions: [
+      { q: "Your keyboard types @ when you press the quote key. What's wrong?",
+        o: ["It's broken", "The keyboard layout is set to another language", "Caps Lock is on", "Low battery"], a: 1,
+        e: "A UK/US layout mix-up swaps symbols like @ and \"." },
+      { q: "What can holding Shift for 8 seconds turn on in Windows?",
+        o: ["Dark mode", "Filter Keys", "Airplane mode", "Night light"], a: 1,
+        e: "Filter Keys ignores quick key presses." },
+      { q: "Number keys on the right don't type numbers. What should you press?",
+        o: ["Caps Lock", "Num Lock", "Esc", "Delete"], a: 1,
+        e: "Num Lock switches the number pad on and off." },
+      { q: "What's the safest way to clean between keys?",
+        o: ["Pour water on it", "Compressed air with the computer off", "A wet sponge", "A hair dryer on hot"], a: 1,
+        e: "Turn it off, shake out crumbs, use compressed air." },
+      { q: "How can you test if the keyboard itself is broken?",
+        o: ["Restart the router", "Try another keyboard on the computer", "Change the wallpaper", "Uninstall your browser"], a: 1,
+        e: "If another keyboard works, yours is the problem." }
+    ]
+  },
+
+  "repair-drywall": {
+    title: "How to Repair Drywall",
+    pass: 4,
+    questions: [
+      { q: "What's best for nail holes?",
+        o: ["Joint compound and tape", "Lightweight spackle", "A new drywall sheet", "Caulk"], a: 1,
+        e: "Spackle dries fast and is ideal for small holes." },
+      { q: "What do you use for a hole about 3 inches across?",
+        o: ["Spackle only", "A self-adhesive mesh patch and joint compound", "Tape alone", "Nothing"], a: 1,
+        e: "A mesh patch bridges the hole; compound hides it." },
+      { q: "What should you check before cutting into a wall?",
+        o: ["The weather", "Wires and pipes behind it", "The paint brand", "Your Wi-Fi"], a: 1,
+        e: "Use a stud finder and turn off power to the area." },
+      { q: "Why prime a patch before painting?",
+        o: ["It's faster", "Fresh compound absorbs paint differently and shows", "Primer is cheaper", "To make it glossy"], a: 1,
+        e: "Primer evens out the finish so the patch doesn't show." },
+      { q: "What helps you spot bumps when sanding?",
+        o: ["Music", "A flashlight shone across the wall", "Sunglasses", "A fan"], a: 1,
+        e: "Low-angle light makes uneven spots cast shadows." }
+    ]
+  },
+
   "jcurses": {
     title: "JCurses Crash Course",
     pass: 8,

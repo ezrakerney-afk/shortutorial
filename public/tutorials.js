@@ -573,6 +573,38 @@ window.TUTORIALS = [
     minutes: 10
   },
   {
+    slug: "set-up-voicemail",
+    title: "How to Set Up Voicemail",
+    summary: "Password, greeting, visual voicemail and transcripts on iPhone or Android.",
+    category: "Phone help",
+    tags: ["voicemail", "greeting", "iphone", "android", "visual voicemail", "carrier", "phone"],
+    minutes: 5
+  },
+  {
+    slug: "back-up-android-phone",
+    title: "Back Up Your Android Phone",
+    summary: "Google One backup, Google Photos, and restoring to a new phone.",
+    category: "Phone help",
+    tags: ["android", "backup", "back up", "google one", "google photos", "samsung", "restore", "new phone"],
+    minutes: 10
+  },
+  {
+    slug: "keyboard-not-typing",
+    title: "Keyboard Not Typing? Fix It",
+    summary: "Connections, Filter Keys, wrong layout, drivers and cleaning.",
+    category: "Computer help",
+    tags: ["keyboard", "not typing", "keys", "wrong characters", "filter keys", "laptop", "windows", "mac"],
+    minutes: 10
+  },
+  {
+    slug: "repair-drywall",
+    title: "How to Repair Drywall",
+    summary: "Patch nail holes, doorknob holes and big holes invisibly.",
+    category: "Home & tech",
+    tags: ["drywall", "wall", "hole", "patch", "spackle", "joint compound", "diy", "home repair"],
+    minutes: 15
+  },
+  {
     slug: "jcurses",
     title: "JCurses Crash Course",
     summary: "Build colorful, keyboard-driven Java programs that run in a terminal.",
