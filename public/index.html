@@ -198,7 +198,7 @@ function search(q){
   const sem = SEM.q === q.trim().toLowerCase() ? SEM.scores : null;
   const out = [];
   for (const { t, m } of pool){
-    const parts = useWs.map(w => wordScore(w, m, sem && sem.none));
+    const parts = useWs.map(w => wordScore(w, m, sem && sem.none && useWs.length > 1));
     const hits = parts.filter(v => v > 0).length;
     let kw = hits ? parts.reduce((a, b) => a + b, 0) / (3 * useWs.length) + hits / useWs.length : 0;
     const sm = sem ? (sem.get(t.slug) || 0) : 0;
@@ -208,7 +208,7 @@ function search(q){
   }
   out.sort((a, b) => b.score - a.score);
   const best = out.length ? out[0].score : 0;
-  return out.filter(r => r.score >= best * 0.45).map(r => r.t);
+  return out.filter(r => r.score >= best * 0.35).map(r => r.t);
 }
 // Turn the server's AI scores into 0–1 relevance. "score" is the reranker (how well the tutorial
 // answers the search); "sim" is meaning similarity. If the reranker finds nothing relevant, trust the words alone.

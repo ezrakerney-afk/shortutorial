@@ -353,7 +353,7 @@ window.TUTORIALS = [
     title: "HTML in 10 Minutes",
     summary: "Write your first web page, with a live editor.",
     category: "Programming",
-    tags: ["programming", "html", "web", "website", "coding", "beginner", "tags"],
+    tags: ["programming", "html", "web", "website", "coding", "beginner", "tags", "learn to code", "make a website"],
     minutes: 10
   },
   {
@@ -361,7 +361,7 @@ window.TUTORIALS = [
     title: "Python: Your First Program",
     summary: "Print, variables, if statements and loops.",
     category: "Programming",
-    tags: ["programming", "python", "coding", "beginner", "variables", "loops", "if statement"],
+    tags: ["programming", "python", "coding", "beginner", "variables", "loops", "if statement", "learn to code", "first program"],
     minutes: 12
   },
   {
