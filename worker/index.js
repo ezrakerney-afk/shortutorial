@@ -329,7 +329,7 @@ async function smartSearch(request, env, url) {
   const cache = caches.default;
   const key = new Request(`https://cache.shortutorial/search/v2-${CATALOG.length}/${encodeURIComponent(q)}`);
   const hit = await cache.match(key);
-  if (hit) return hit;
+  if (hit) return new Response(hit.body, { headers: { "Content-Type": "application/json", "Cache-Control": "public, max-age=300" } });
 
   const ip = request.headers.get("CF-Connecting-IP") || "local", t = now();
   const rec = searchHits.get(ip) || { t, n: 0 };
@@ -354,9 +354,8 @@ async function smartSearch(request, env, url) {
     results = results.map(r => ({ ...r, score: null }));
   }
   results = results.slice(0, 12);
-  const res = new Response(JSON.stringify({ results }), {
-    headers: { "Content-Type": "application/json", "Cache-Control": "public, max-age=86400" }
-  });
-  await cache.put(key, res.clone());
-  return res;
+  const body = JSON.stringify({ results });
+  // Keep answers at the edge for a day, but only 5 minutes in browsers so new tutorials show up quickly.
+  await cache.put(key, new Response(body, { headers: { "Content-Type": "application/json", "Cache-Control": "public, max-age=86400" } }));
+  return new Response(body, { headers: { "Content-Type": "application/json", "Cache-Control": "public, max-age=300" } });
 }

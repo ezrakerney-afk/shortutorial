@@ -195,17 +195,12 @@ function search(q){
   if (!ws.length) return pool.map(x => x.t);
   const useWs = ws;
   const sem = SEM.q === q.trim().toLowerCase() ? SEM.scores : null;
-  let top = 0; if (sem) for (const v of sem.values()) top = Math.max(top, v);
   const out = [];
   for (const { t, m } of pool){
     const parts = useWs.map(w => wordScore(w, m));
     const hits = parts.filter(v => v > 0).length;
     let kw = hits ? parts.reduce((a, b) => a + b, 0) / (3 * useWs.length) + hits / useWs.length : 0;
-    let sm = 0;
-    if (sem && sem.has(t.slug)){
-      const v = sem.get(t.slug);
-      if (v >= SEM_MIN && v >= top - SEM_BAND) sm = (v - (top - SEM_BAND)) / SEM_BAND;
-    }
+    const sm = sem ? (sem.get(t.slug) || 0) : 0;
     if (kw > 0 && hits < Math.ceil(useWs.length / 2) && sm === 0 && sem) kw *= 0.5; // weak word match, AI disagrees
     const score = kw + 1.6 * sm;
     if (score > 0.25) out.push({ t, score });
@@ -214,7 +209,21 @@ function search(q){
   const best = out.length ? out[0].score : 0;
   return out.filter(r => r.score >= best * 0.45).map(r => r.t);
 }
-const SEM_MIN = 0.6, SEM_BAND = 0.09;
+// Turn the server's AI scores into 0–1 relevance. "score" is the reranker (how well the tutorial
+// answers the search); "sim" is meaning similarity. If the reranker finds nothing relevant, trust the words alone.
+function aiScores(list){
+  const map = new Map();
+  const rTop = Math.max(0, ...list.map(r => r.score || 0));
+  const sTop = Math.max(0, ...list.map(r => r.sim || 0));
+  if (rTop < 0.01 && list.some(r => r.score != null)) return map;
+  for (const r of list){
+    const rr = r.score != null ? (r.score || 0) / rTop : 0;
+    const ss = Math.min(1, Math.max(0, ((r.sim || 0) - (sTop - 0.08)) / 0.08));
+    const v = r.score != null ? 0.65 * rr + 0.35 * ss : ss;
+    if (v >= 0.3) map.set(r.slug, v);
+  }
+  return map;
+}
 let semTimer = 0, semCtl = null;
 function askAI(q){
   clearTimeout(semTimer); if (semCtl) semCtl.abort();
@@ -227,7 +236,7 @@ function askAI(q){
       .then(r => r.ok ? r.json() : null)
       .then(d => {
         if (!d || !d.results) return;
-        SEM = { q: key, scores: new Map(d.results.map(r => [r.slug, r.score])) };
+        SEM = { q: key, scores: aiScores(d.results) };
         if (input.value.trim().toLowerCase() === key) render();
       })
       .catch(() => {})
