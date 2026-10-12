@@ -17,6 +17,32 @@
   }
   const voter = deviceId();
 
+  /* Read counter: a visit counts as a read after 10 seconds on the page while it's visible,
+     or 4 seconds plus scrolling a third of the way down. The server counts each device once a day. */
+  const READS_MIN = 10;   // hide the count until a tutorial has at least this many reads
+  const fmtReads = n => n >= 1e6 ? (n / 1e6).toFixed(1).replace(/\.0$/, '') + 'M' : n >= 1e4 ? Math.round(n / 1e3) + 'k' : n >= 1e3 ? (n / 1e3).toFixed(1).replace(/\.0$/, '') + 'k' : String(n);
+  (function trackRead(){
+    let seen = 0, last = Date.now(), done = false, scrolled = false;
+    const tick = () => {
+      const t = Date.now();
+      if (document.visibilityState === 'visible') seen += t - last;
+      last = t;
+      if (!done && (seen >= 10000 || (scrolled && seen >= 4000))) send();
+    };
+    const send = () => {
+      done = true; clearInterval(timer);
+      fetch('/api/read/' + slug, { method: 'POST', credentials: 'same-origin', keepalive: true,
+        headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ voter }) })
+        .then(r => r.json()).then(j => { if (j.counted){ state.reads = (state.reads || 0) + 1; paintSummary(); } }).catch(() => {});
+    };
+    const timer = setInterval(tick, 1000);
+    document.addEventListener('visibilitychange', () => { last = Date.now(); });
+    addEventListener('scroll', () => {
+      const h = document.documentElement;
+      if (h.scrollTop + innerHeight >= h.scrollHeight / 3 + innerHeight * 0.5) scrolled = true;
+    }, { passive: true });
+  })();
+
   const starPath = 'M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.5L12 17.3l-5.9 3.2 1.3-6.5L2.5 9.4l6.6-.8z';
   function stars(value, size){
     let out = '';
@@ -37,9 +63,10 @@
   }
   function paintSummary(){
     if (!sum) return;
+    const reads = (state.reads || 0) >= READS_MIN ? `<span class="rs-reads"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>${fmtReads(state.reads)} read${state.reads === 1 ? '' : 's'}</span>` : '';
     sum.innerHTML = state.count
-      ? `<span class="rs-stars">${stars(state.avg, 16)}</span><b>${state.avg.toFixed(1)}</b><span>${state.count} rating${state.count === 1 ? '' : 's'}</span>`
-      : `<span class="rs-stars">${stars(0, 16)}</span><span>No ratings yet · be the first</span>`;
+      ? `<span class="rs-stars">${stars(state.avg, 16)}</span><b>${state.avg.toFixed(1)}</b><span>${state.count} rating${state.count === 1 ? '' : 's'}</span>${reads}`
+      : `<span class="rs-stars">${stars(0, 16)}</span><span>No ratings yet · be the first</span>${reads}`;
     sum.setAttribute('aria-label', state.count ? `Rated ${state.avg} out of 5 from ${state.count} ratings` : 'No ratings yet');
   }
 

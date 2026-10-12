@@ -52,3 +52,17 @@ CREATE TABLE IF NOT EXISTS rate_log (
   ts      INTEGER NOT NULL
 );
 CREATE INDEX IF NOT EXISTS idx_rate_log ON rate_log(ip_hash, ts);
+
+-- Read counter: total reads per tutorial, plus a short log so each device counts once a day.
+CREATE TABLE IF NOT EXISTS reads (
+  slug TEXT PRIMARY KEY,
+  n    INTEGER NOT NULL DEFAULT 0
+);
+CREATE TABLE IF NOT EXISTS read_log (
+  slug    TEXT NOT NULL,
+  who     TEXT NOT NULL,
+  day     INTEGER NOT NULL,
+  ip_hash TEXT NOT NULL,
+  PRIMARY KEY (slug, who, day)
+);
+CREATE INDEX IF NOT EXISTS idx_read_log_ip ON read_log(ip_hash, day);

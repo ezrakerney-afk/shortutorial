@@ -273,10 +273,17 @@ function render(){
       <span class="eyebrow">${esc(t.category || 'Tutorial')}</span>
       <h3>${highlight(t.title, q)}</h3>
       <p>${highlight(t.summary, q)}</p>
-      <div class="meta"><span>${t.minutes ? '~' + t.minutes + ' min' : ''}${RATINGS[t.slug] ? ` · <span class="stars-mini">★ ${RATINGS[t.slug].avg.toFixed(1)}</span> (${RATINGS[t.slug].count})` : ''}</span><span class="go">Start →</span></div>
+      <div class="meta"><span>${t.minutes ? '~' + t.minutes + ' min' : ''}${statsLine(RATINGS[t.slug])}</span><span class="go">Start →</span></div>
     </a>`).join('') + '</div>';
 }
 
+function statsLine(r){
+  if (!r) return '';
+  let out = '';
+  if (r.count && r.avg != null) out += ` · <span class="stars-mini">★ ${r.avg.toFixed(1)}</span> (${r.count})`;
+  if ((r.reads || 0) >= 10) out += ` · ${r.reads >= 1000 ? (r.reads / 1000).toFixed(1).replace(/\.0$/, '') + 'k' : r.reads} reads`;
+  return out;
+}
 function goRandom(){
   if (!ALL.length) return;
   const t = ALL[Math.floor(Math.random() * ALL.length)];

@@ -40,6 +40,8 @@ async function route(request, env, url) {
 
   if (path === "/api/search" && method === "GET") return smartSearch(request, env, url);
   if (path === "/api/ratings" && method === "GET") return allRatings(env);
+  const rd = path.match(/^\/api\/read\/([a-z0-9-]+)$/);
+  if (rd && method === "POST") return countRead(request, env, rd[1]);
   const rm = path.match(/^\/api\/rating\/([a-z0-9-]+)$/);
   if (rm && method === "GET") return getRating(request, env, url, rm[1]);
   if (rm && method === "POST") return rate(request, env, rm[1]);
@@ -181,15 +183,48 @@ async function voterKey(request, env, deviceId) {
 }
 
 async function summary(env, slug) {
-  const r = await env.DB.prepare("SELECT AVG(stars) avg, COUNT(*) n FROM ratings WHERE slug = ?").bind(slug).first();
-  return { avg: r.n ? Math.round(r.avg * 10) / 10 : null, count: r.n };
+  const [r, rd] = await env.DB.batch([
+    env.DB.prepare("SELECT AVG(stars) avg, COUNT(*) n FROM ratings WHERE slug = ?").bind(slug),
+    env.DB.prepare("SELECT n FROM reads WHERE slug = ?").bind(slug)
+  ]);
+  const a = r.results[0], reads = rd.results[0] ? rd.results[0].n : 0;
+  return { avg: a.n ? Math.round(a.avg * 10) / 10 : null, count: a.n, reads };
 }
 
 async function allRatings(env) {
-  const { results } = await env.DB.prepare("SELECT slug, AVG(stars) avg, COUNT(*) n FROM ratings GROUP BY slug").all();
+  const [rt, rd] = await env.DB.batch([
+    env.DB.prepare("SELECT slug, AVG(stars) avg, COUNT(*) n FROM ratings GROUP BY slug"),
+    env.DB.prepare("SELECT slug, n FROM reads")
+  ]);
   const out = {};
-  for (const r of results) out[r.slug] = { avg: Math.round(r.avg * 10) / 10, count: r.n };
+  for (const r of rt.results) out[r.slug] = { avg: Math.round(r.avg * 10) / 10, count: r.n, reads: 0 };
+  for (const r of rd.results) (out[r.slug] = out[r.slug] || { avg: null, count: 0, reads: 0 }).reads = r.n;
   return json(out, 200, { "Cache-Control": "public, max-age=60" });
+}
+
+/* ---------------- read counter ----------------
+   The page reports a read once someone has spent real time on it (see rating.js).
+   Each device or account counts once per tutorial per day; bots and floods are ignored. */
+async function countRead(request, env, slug) {
+  if (!QUIZZES[slug]) return json({ error: "Unknown tutorial." }, 404);
+  const ua = request.headers.get("User-Agent") || "";
+  if (!ua || /bot|crawl|spider|slurp|headless|preview|fetch|python|curl|wget/i.test(ua)) return json({ counted: false });
+  const { voter } = await body(request);
+  const who = await voterKey(request, env, voter);
+  if (!who) return json({ counted: false });
+  const day = Math.floor(now() / 86400);
+  const ipKey = (await sha256hex("read:" + (request.headers.get("CF-Connecting-IP") || "local"))).slice(0, 32);
+
+  const busy = await env.DB.prepare("SELECT COUNT(*) n FROM read_log WHERE ip_hash = ? AND day = ?").bind(ipKey, day).first();
+  if (busy.n >= 150) return json({ counted: false });
+
+  const ins = await env.DB.prepare("INSERT OR IGNORE INTO read_log (slug, who, day, ip_hash) VALUES (?, ?, ?, ?)")
+    .bind(slug, who, day, ipKey).run();
+  if (!ins.meta.changes) return json({ counted: false });
+  const stmts = [env.DB.prepare("INSERT INTO reads (slug, n) VALUES (?, 1) ON CONFLICT(slug) DO UPDATE SET n = n + 1").bind(slug)];
+  if (Math.random() < 0.02) stmts.push(env.DB.prepare("DELETE FROM read_log WHERE day < ?").bind(day - 1));
+  await env.DB.batch(stmts);
+  return json({ counted: true });
 }
 
 async function getRating(request, env, url, slug) {
