@@ -37,6 +37,7 @@
 .list-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--line)}
 .list-head h2{font-size:1.25rem}
 .count{font-family:var(--mono);font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.count.thinking::after{content:" · searching by meaning…";opacity:.8}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
 .card{display:flex;flex-direction:column;gap:10px;padding:20px;background:var(--surface);border:1px solid var(--line);border-radius:14px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s,box-shadow .15s}
 .card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 24px -16px var(--accent)}
@@ -73,7 +74,7 @@ mark{background:var(--accent-soft);color:inherit;border-radius:3px;padding:0 2px
       <label class="field">
         <span class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search tutorials</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        <input id="q" type="search" placeholder="What do you want to learn?" autocomplete="off" spellcheck="false">
+        <input id="q" type="search" placeholder="Describe a problem or a topic…" autocomplete="off" spellcheck="false">
         <kbd>/</kbd>
       </label>
       <button type="button" class="btn" data-random>
@@ -113,25 +114,133 @@ document.getElementById('chips').addEventListener('click', e => {
 });
 
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const words = q => q.toLowerCase().split(/\s+/).filter(Boolean);
+/* ---------- smart search ----------
+   1. Instant, on-device: ignores filler words, matches word forms ("printing" ~ "printer"),
+      forgives typos ("wifii", "pasword") and knows common synonyms ("laptop" ~ "computer").
+   2. Then the server's AI search ranks by meaning ("bugs in my kitchen" → fruit flies). */
+const STOP = new Set('a an the and or but to of for in on at by with from up my me i im i\'m you your it its is are was be been do does did doing can cant can\'t could how what why when where which who whats there this that these those not no wont won\'t dont don\'t doesnt doesn\'t isnt isn\'t keep keeps keeping get getting got make way ways best good easy easily help need want should will just really very some any all into about out after before without vs work works working worked stop stopped stopping fix fixed fixing problem problems issue issues anymore suddenly keep thing stuff'.split(' '));
+const SYN = [
+ 'computer pc laptop desktop windows mac macbook notebook',
+ 'phone iphone android cell mobile smartphone pixel samsung',
+ 'wifi internet network router online connection wireless connected',
+ 'slow lag laggy sluggish speed faster freeze frozen hang',
+ 'bug pest fly insect gnat',
+ 'money budget cash saving spending finance expense',
+ 'password login signin sign account locked',
+ 'print printer printing',
+ 'battery charge charging power',
+ 'screen display monitor',
+ 'sound audio speaker volume hear mic microphone',
+ 'math algebra equation number arithmetic',
+ 'code coding program programming developer software',
+ 'storage space disk full memory',
+ 'backup restore copy',
+ 'scam phishing fraud hack hacked virus malware security safe',
+ 'toilet plumbing drain clog sink pipe',
+ 'tv television stream streaming watch',
+ 'football nfl sport',
+ 'weather storm tornado hurricane flood',
+ 'vote election ballot voter',
+ 'clock daylight dst',
+ 'tie necktie knot',
+ 'keyboard typing type key',
+ 'voicemail greeting',
+ 'wall drywall hole patch',
+ 'credit debt loan interest',
+ 'email mail gmail outlook inbox'
+].map(g => g.split(' '));
+const norm = s => String(s).toLowerCase().replace(/wi-?fi/g, 'wifi').replace(/[’']/g, "'").replace(/[^a-z0-9' +%-]/g, ' ');
+const stem = w => w.replace(/'s$/, '').replace(/(ing|ers|er|ed|es|s)$/, m => w.length - m.length >= 3 ? '' : m);
+const tokens = s => norm(s).split(/[\s-]+/).filter(Boolean);
+const keyWords = q => tokens(q).filter(w => w.length > 1 && !STOP.has(w));
+const SYNMAP = new Map(); SYN.forEach(g => g.forEach(w => SYNMAP.set(stem(w), g.map(stem))));
+function lev(a, b, max){
+  if (Math.abs(a.length - b.length) > max) return max + 1;
+  let prev = Array.from({length: b.length + 1}, (_, i) => i);
+  for (let i = 1; i <= a.length; i++){
+    const cur = [i]; let low = i;
+    for (let j = 1; j <= b.length; j++){
+      cur[j] = Math.min(prev[j] + 1, cur[j-1] + 1, prev[j-1] + (a[i-1] === b[j-1] ? 0 : 1));
+      low = Math.min(low, cur[j]);
+    }
+    if (low > max) return max + 1;
+    prev = cur;
+  }
+  return prev[b.length];
+}
+// Index: every word of each tutorial, weighted by where it appears.
+const INDEX = ALL.map(t => {
+  const m = new Map();
+  const add = (text, w) => tokens(text).forEach(x => { const k = stem(x); if (k.length > 1 && !STOP.has(x)) m.set(k, Math.max(m.get(k) || 0, w)); });
+  add(t.summary, 1); add(t.category, 1); add((t.tags || []).join(' '), 2); add(t.title, 3);
+  return { t, m };
+});
+function wordScore(q, m){
+  const s = stem(q); let best = 0;
+  for (const [k, w] of m){
+    let v = 0;
+    if (k === s) v = 1;
+    else if (s.length >= 3 && k.startsWith(s)) v = 0.8;            // still typing
+    else if (s.length >= 5 && lev(s, k, s.length >= 7 ? 2 : 1) <= (s.length >= 7 ? 2 : 1)) v = 0.7; // typo
+    else if (SYNMAP.has(s) && SYNMAP.get(s).includes(k)) v = 0.5;   // synonym
+    if (v * w > best) best = v * w;
+  }
+  return best;
+}
+let SEM = { q: '', scores: null };
+function search(q){
+  const pool = cat ? INDEX.filter(x => x.t.category === cat) : INDEX;
+  const ws = keyWords(q);
+  if (!q.trim()) return pool.map(x => x.t);
+  if (!ws.length) return pool.map(x => x.t);
+  const useWs = ws;
+  const sem = SEM.q === q.trim().toLowerCase() ? SEM.scores : null;
+  let top = 0; if (sem) for (const v of sem.values()) top = Math.max(top, v);
+  const out = [];
+  for (const { t, m } of pool){
+    const parts = useWs.map(w => wordScore(w, m));
+    const hits = parts.filter(v => v > 0).length;
+    let kw = hits ? parts.reduce((a, b) => a + b, 0) / (3 * useWs.length) + hits / useWs.length : 0;
+    let sm = 0;
+    if (sem && sem.has(t.slug)){
+      const v = sem.get(t.slug);
+      if (v >= SEM_MIN && v >= top - SEM_BAND) sm = (v - (top - SEM_BAND)) / SEM_BAND;
+    }
+    if (kw > 0 && hits < Math.ceil(useWs.length / 2) && sm === 0 && sem) kw *= 0.5; // weak word match, AI disagrees
+    const score = kw + 1.6 * sm;
+    if (score > 0.25) out.push({ t, score });
+  }
+  out.sort((a, b) => b.score - a.score);
+  const best = out.length ? out[0].score : 0;
+  return out.filter(r => r.score >= best * 0.45).map(r => r.t);
+}
+const SEM_MIN = 0.6, SEM_BAND = 0.09;
+let semTimer = 0, semCtl = null;
+function askAI(q){
+  clearTimeout(semTimer); if (semCtl) semCtl.abort();
+  const key = q.trim().toLowerCase();
+  if (key.length < 3 || SEM.q === key) return;
+  semTimer = setTimeout(() => {
+    semCtl = new AbortController();
+    document.getElementById('count').classList.add('thinking');
+    fetch('/api/search?q=' + encodeURIComponent(key), { signal: semCtl.signal })
+      .then(r => r.ok ? r.json() : null)
+      .then(d => {
+        if (!d || !d.results) return;
+        SEM = { q: key, scores: new Map(d.results.map(r => [r.slug, r.score])) };
+        if (input.value.trim().toLowerCase() === key) render();
+      })
+      .catch(() => {})
+      .finally(() => document.getElementById('count').classList.remove('thinking'));
+  }, 280);
+}
 function highlight(text, q){
   let out = esc(text);
-  words(q).forEach(w => {
-    const re = new RegExp('(' + w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')', 'ig');
+  keyWords(q).filter(w => w.length > 2).forEach(w => {
+    const re = new RegExp('\\b(' + stem(w).replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + '\\w*)', 'ig');
     out = out.replace(/(<[^>]*>)|([^<]+)/g, (m, tag, txt) => tag || txt.replace(re, '<mark>$1</mark>'));
   });
   return out;
-}
-
-function search(q){
-  const ws = words(q);
-  const pool = cat ? ALL.filter(t => t.category === cat) : ALL;
-  if (!ws.length) return pool;
-  return pool.map(t => {
-    const title = t.title.toLowerCase(), hay = [t.title, t.summary, t.category, ...(t.tags||[])].join(' ').toLowerCase();
-    if (!ws.every(w => hay.includes(w))) return null;
-    return { t, score: ws.filter(w => title.includes(w)).length };
-  }).filter(Boolean).sort((a,b) => b.score - a.score).map(r => r.t);
 }
 
 function render(){
@@ -140,7 +249,7 @@ function render(){
   document.getElementById('listTitle').textContent = q ? 'Results' : (cat || 'All tutorials');
   document.getElementById('count').textContent = `${shown.length} ${shown.length === 1 ? 'tutorial' : 'tutorials'}`;
   if (!shown.length){
-    results.innerHTML = `<div class="empty"><b>No tutorial for “${esc(q)}” yet.</b><span>Try a different word, or explore something new.</span><button class="btn ghost small" data-random>Show me a random one</button></div>`;
+    results.innerHTML = `<div class="empty"><b>No tutorial for “${esc(q)}” yet.</b><span>Try describing the problem in a few words, or explore something new.</span><button class="btn ghost small" data-random>Show me a random one</button></div>`;
     return;
   }
   results.innerHTML = '<div class="grid">' + shown.map(t => `
@@ -161,7 +270,7 @@ function openFirst(){ if (shown.length) location.href = shown[0].slug + '/'; }
 
 document.addEventListener('click', e => { if (e.target.closest('[data-random]')) goRandom(); });
 input.addEventListener('input', () => {
-  render();
+  render(); askAI(input.value);
   const u = new URL(location); input.value.trim() ? u.searchParams.set('q', input.value.trim()) : u.searchParams.delete('q');
   history.replaceState(null, '', u);
 });
@@ -171,7 +280,7 @@ document.addEventListener('keydown', e => {
 });
 
 input.value = new URLSearchParams(location.search).get('q') || '';
-drawChips();
+drawChips(); if (input.value.trim()) askAI(input.value);
 document.getElementById('yr').textContent = new Date().getFullYear();
 render();
 </script>

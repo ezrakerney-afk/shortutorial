@@ -17,5 +17,9 @@
       "database_id": "5dfb6a95-6814-4d91-9a4f-ae967d4577db"
     }
   ],
+  // Workers AI powers the smart (meaning-based) search.
+  "ai": { "binding": "AI" },
+  // Rebuild the search catalog from public/tutorials.js before every deploy.
+  "build": { "command": "node scripts/build-catalog.mjs" },
   "observability": { "enabled": true }
 }

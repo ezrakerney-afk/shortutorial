@@ -1,6 +1,7 @@
 // Shortutorial API: accounts, certification quizzes and the world leaderboard.
 // Everything not under /api/ is served from the static files in /public.
 import QUIZZES from "./quizzes.js";
+import CATALOG from "./catalog.js";
 
 const COOKIE = "st_sess";
 const SESSION_DAYS = 30;
@@ -37,6 +38,7 @@ async function route(request, env, url) {
   if (path === "/api/logout" && method === "POST") return logout(request, env);
   if (path === "/api/leaderboard" && method === "GET") return leaderboard(request, env);
 
+  if (path === "/api/search" && method === "GET") return smartSearch(request, env, url);
   if (path === "/api/ratings" && method === "GET") return allRatings(env);
   const rm = path.match(/^\/api\/rating\/([a-z0-9-]+)$/);
   if (rm && method === "GET") return getRating(request, env, url, rm[1]);
@@ -272,4 +274,76 @@ function safeEqual(a, b) {
   let diff = 0;
   for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
   return diff === 0;
+}
+
+/* ---------------- smart search ----------------
+   Understands meaning, not just words: "bugs in my kitchen" finds the fruit fly guide.
+   Each tutorial's text is turned into an embedding (a list of numbers describing its meaning)
+   with Workers AI, stored in D1, and compared with the embedding of the search. */
+
+const EMBED_MODEL = "@cf/baai/bge-base-en-v1.5";
+const QUERY_PREFIX = "Represent this sentence for searching relevant passages: ";
+let VECS = null;            // Map slug -> Float32Array, cached per worker instance
+let VECS_VERSION = "";
+const searchHits = new Map(); // simple per-instance rate limit
+
+async function catalogVectors(env) {
+  const version = await sha256hex(CATALOG.map(c => c.slug + c.text).join("|"));
+  if (VECS && VECS_VERSION === version) return VECS;
+  await env.DB.prepare("CREATE TABLE IF NOT EXISTS search_vecs (slug TEXT PRIMARY KEY, hash TEXT NOT NULL, vec TEXT NOT NULL)").run();
+  const rows = (await env.DB.prepare("SELECT slug, hash, vec FROM search_vecs").all()).results || [];
+  const stored = new Map(rows.map(r => [r.slug, r]));
+  const map = new Map(), todo = [];
+  for (const c of CATALOG) {
+    const h = (await sha256hex(c.text)).slice(0, 16), r = stored.get(c.slug);
+    if (r && r.hash === h) map.set(c.slug, Float32Array.from(JSON.parse(r.vec)));
+    else todo.push({ ...c, h });
+  }
+  for (let i = 0; i < todo.length; i += 50) {
+    const part = todo.slice(i, i + 50);
+    const out = await env.AI.run(EMBED_MODEL, { text: part.map(c => c.text) });
+    const stmts = part.map((c, j) => {
+      const v = out.data[j];
+      map.set(c.slug, Float32Array.from(v));
+      return env.DB.prepare("INSERT OR REPLACE INTO search_vecs (slug, hash, vec) VALUES (?, ?, ?)")
+        .bind(c.slug, c.h, JSON.stringify(v.map(x => Math.round(x * 1e5) / 1e5)));
+    });
+    await env.DB.batch(stmts);
+  }
+  VECS = map; VECS_VERSION = version;
+  return map;
+}
+
+function cosine(a, b) {
+  let d = 0, na = 0, nb = 0;
+  for (let i = 0; i < a.length; i++) { d += a[i] * b[i]; na += a[i] * a[i]; nb += b[i] * b[i]; }
+  return d / (Math.sqrt(na * nb) || 1);
+}
+
+async function smartSearch(request, env, url) {
+  const q = (url.searchParams.get("q") || "").toLowerCase().replace(/\s+/g, " ").trim().slice(0, 120);
+  if (q.length < 2) return json({ results: [] });
+  if (!env.AI) return json({ error: "Smart search is not available." }, 503);
+
+  const cache = caches.default;
+  const key = new Request(`https://cache.shortutorial/search/v${CATALOG.length}/${encodeURIComponent(q)}`);
+  const hit = await cache.match(key);
+  if (hit) return hit;
+
+  const ip = request.headers.get("CF-Connecting-IP") || "local", t = now();
+  const rec = searchHits.get(ip) || { t, n: 0 };
+  if (t - rec.t > 60) { rec.t = t; rec.n = 0; }
+  if (++rec.n > 40) return json({ error: "Too many searches. Try again in a minute." }, 429);
+  searchHits.set(ip, rec);
+  if (searchHits.size > 5000) searchHits.clear();
+
+  const vecs = await catalogVectors(env);
+  const qv = (await env.AI.run(EMBED_MODEL, { text: [QUERY_PREFIX + q] })).data[0];
+  const results = [...vecs].map(([slug, v]) => ({ slug, score: Math.round(cosine(qv, v) * 1000) / 1000 }))
+    .sort((a, b) => b.score - a.score).slice(0, 12);
+  const res = new Response(JSON.stringify({ results }), {
+    headers: { "Content-Type": "application/json", "Cache-Control": "public, max-age=86400" }
+  });
+  await cache.put(key, res.clone());
+  return res;
 }
