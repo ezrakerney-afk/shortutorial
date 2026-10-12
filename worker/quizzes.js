@@ -1652,6 +1652,94 @@ export default {
     ]
   },
 
+  "weather-alerts": {
+    title: "Weather Watch vs Warning vs Advisory",
+    pass: 4,
+    questions: [
+      { q: "A tornado WATCH means…",
+        o: ["A tornado has been seen", "Conditions are right for tornadoes", "The danger has passed", "A tornado will definitely hit"], a: 1,
+        e: "A watch means be ready; a warning means act now." },
+      { q: "During a tornado warning, where should you go?",
+        o: ["Upstairs by a window", "A small interior room on the lowest floor", "Outside to look", "Your car"], a: 1,
+        e: "Lowest floor, interior room, no windows." },
+      { q: "Which is the most urgent?",
+        o: ["Advisory", "Watch", "Warning", "Special weather statement"], a: 2,
+        e: "A warning means it's happening or about to." },
+      { q: "What are a Category 3 hurricane's sustained winds?",
+        o: ["74–95 mph", "96–110 mph", "111–129 mph", "157+ mph"], a: 2,
+        e: "Category 3 and above are “major” hurricanes." },
+      { q: "What should you do at a flooded road?",
+        o: ["Drive through slowly", "Turn around", "Walk across", "Speed up"], a: 1,
+        e: "Turn around, don't drown. A foot of water can float a car." }
+    ]
+  },
+
+  "watch-football-without-cable": {
+    title: "How to Watch Football Without Cable",
+    pass: 4,
+    questions: [
+      { q: "What's the cheapest way to watch your local team's Sunday games?",
+        o: ["Sunday Ticket", "A TV antenna", "NFL+", "Twitch"], a: 1,
+        e: "Local CBS and Fox broadcasts are free over the air." },
+      { q: "Where is Thursday Night Football streamed?",
+        o: ["Netflix", "Peacock", "Prime Video", "Paramount+"], a: 2,
+        e: "Thursday Night Football is on Amazon Prime Video (and Twitch)." },
+      { q: "Which service streams Sunday Night Football?",
+        o: ["Peacock", "Fox One", "ESPN", "Netflix"], a: 0,
+        e: "SNF airs on NBC and streams on Peacock." },
+      { q: "NFL Sunday Ticket is for…",
+        o: ["Local games", "Out-of-market Sunday afternoon games", "Primetime games", "College games"], a: 1,
+        e: "It shows Sunday afternoon games from outside your market." },
+      { q: "What's the catch with NFL+?",
+        o: ["It's only on phones and tablets", "It's only replays", "It's only college", "It needs cable"], a: 0,
+        e: "NFL+ live games play on mobile devices, not TVs." }
+    ]
+  },
+
+  "nfl-overtime-rules": {
+    title: "NFL Overtime Rules Explained",
+    pass: 4,
+    questions: [
+      { q: "How long is regular-season NFL overtime?",
+        o: ["5 minutes", "10 minutes", "15 minutes", "Unlimited"], a: 1,
+        e: "One 10-minute period; it can end in a tie." },
+      { q: "A team kicks a field goal on the first OT drive. What happens?",
+        o: ["They win", "The other team gets a possession", "The game ends in a tie", "They kick again"], a: 1,
+        e: "Both teams are guaranteed a possession." },
+      { q: "Can a playoff game end in a tie?",
+        o: ["Yes", "No", "Only in the Super Bowl", "Only in the wild card round"], a: 1,
+        e: "Playoff overtime continues until there's a winner." },
+      { q: "After both teams have had the ball and it's still tied…",
+        o: ["It's a tie", "Next score wins", "Coin toss decides", "Penalty kicks"], a: 1,
+        e: "It becomes sudden death." },
+      { q: "What can end overtime on the very first drive?",
+        o: ["A field goal", "A punt", "A safety by the kicking team", "A timeout"], a: 2,
+        e: "A safety on the opening drive wins it for the kicking team." }
+    ]
+  },
+
+  "get-rid-of-fruit-flies": {
+    title: "How to Get Rid of Fruit Flies",
+    pass: 4,
+    questions: [
+      { q: "Why don't traps alone get rid of fruit flies?",
+        o: ["Traps don't work", "New flies keep hatching from breeding spots", "Flies are immune", "Traps attract more flies"], a: 1,
+        e: "Remove where they breed, or new ones hatch every week." },
+      { q: "What does a drop of dish soap do in a vinegar trap?",
+        o: ["Adds scent", "Breaks surface tension so flies sink", "Kills eggs", "Nothing"], a: 1,
+        e: "Without soap, flies can land on the vinegar and fly away." },
+      { q: "Which vinegar works best?",
+        o: ["White vinegar", "Apple cider vinegar", "Balsamic glaze", "Rice vinegar"], a: 1,
+        e: "Apple cider vinegar smells like ripe fruit." },
+      { q: "How can you check if a drain is breeding flies?",
+        o: ["Smell it", "Tape a clear bag over it overnight", "Pour in salt", "Listen to it"], a: 1,
+        e: "Flies in the bag next morning mean the drain is a source." },
+      { q: "How often should you refresh traps?",
+        o: ["Every day or two", "Once a month", "Never", "Every hour"], a: 0,
+        e: "Fresh bait keeps the traps attractive." }
+    ]
+  },
+
   "jcurses": {
     title: "JCurses Crash Course",
     pass: 8,

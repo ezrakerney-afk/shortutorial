@@ -605,6 +605,38 @@ window.TUTORIALS = [
     minutes: 15
   },
   {
+    slug: "weather-alerts",
+    title: "Weather Watch vs Warning vs Advisory",
+    summary: "What each weather alert means and exactly what to do.",
+    category: "Life skills",
+    tags: ["weather", "tornado", "hurricane", "storm", "watch", "warning", "advisory", "flood", "safety"],
+    minutes: 5
+  },
+  {
+    slug: "watch-football-without-cable",
+    title: "How to Watch Football Without Cable",
+    summary: "Every NFL game, which service shows it, and the free antenna trick.",
+    category: "Home & tech",
+    tags: ["nfl", "football", "streaming", "cord cutting", "antenna", "sunday ticket", "youtube tv", "peacock", "prime video"],
+    minutes: 5
+  },
+  {
+    slug: "nfl-overtime-rules",
+    title: "NFL Overtime Rules Explained",
+    summary: "Both teams get the ball, then next score wins. Ties, playoffs and more.",
+    category: "Life skills",
+    tags: ["nfl", "football", "overtime", "rules", "tie", "playoffs", "sports"],
+    minutes: 3
+  },
+  {
+    slug: "get-rid-of-fruit-flies",
+    title: "How to Get Rid of Fruit Flies",
+    summary: "Remove where they breed, clean drains, and set a vinegar trap.",
+    category: "Home & tech",
+    tags: ["fruit flies", "gnats", "pests", "bugs", "kitchen", "vinegar trap", "flies"],
+    minutes: 5
+  },
+  {
     slug: "jcurses",
     title: "JCurses Crash Course",
     summary: "Build colorful, keyboard-driven Java programs that run in a terminal.",
