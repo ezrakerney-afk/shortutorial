@@ -286,6 +286,7 @@ const RERANK_MODEL = "@cf/baai/bge-reranker-base";
 const QUERY_PREFIX = "Represent this sentence for searching relevant passages: ";
 let VECS = null;            // Map slug -> Float32Array, cached per worker instance
 let VECS_VERSION = "";
+let CAT_V = "";
 const searchHits = new Map(); // simple per-instance rate limit
 
 async function catalogVectors(env) {
@@ -327,7 +328,8 @@ async function smartSearch(request, env, url) {
   if (!env.AI) return json({ error: "Smart search is not available." }, 503);
 
   const cache = caches.default;
-  const key = new Request(`https://cache.shortutorial/search/v2-${CATALOG.length}/${encodeURIComponent(q)}`);
+  CAT_V = CAT_V || (await sha256hex(CATALOG.map(c => c.slug + c.text).join("|"))).slice(0, 12);
+  const key = new Request(`https://cache.shortutorial/search/${CAT_V}/${encodeURIComponent(q)}`);
   const hit = await cache.match(key);
   if (hit) return new Response(hit.body, { headers: { "Content-Type": "application/json", "Cache-Control": "public, max-age=300" } });
 
