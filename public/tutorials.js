@@ -931,5 +931,29 @@ window.TUTORIALS = [
     category: "Money",
     tags: ["negotiate salary", "salary negotiation", "job offer", "counteroffer", "ask for a raise", "salary expectations", "bls wages", "pay range", "negotiation script", "signing bonus", "benefits"],
     minutes: 13
+  },
+  {
+    slug: "retirement-accounts",
+    title: "Retirement Accounts Explained",
+    summary: "401(k), IRA, Roth vs traditional, employer match and 2026 limits, with calculators.",
+    category: "Money",
+    tags: ["401k", "ira", "roth ira", "roth vs traditional", "employer match", "retirement savings", "2026 contribution limits", "catch-up contributions", "early withdrawal penalty", "rollover", "403b"],
+    minutes: 14
+  },
+  {
+    slug: "strong-passwords",
+    title: "Strong Passwords and Password Managers",
+    summary: "Passphrases, password managers, passkeys and breach checks, with a passphrase generator.",
+    category: "Online safety",
+    tags: ["strong password", "passphrase", "password generator", "password manager", "passkeys", "password strength checker", "data breach", "have i been pwned", "reused passwords", "nist password guidelines", "master password"],
+    minutes: 12
+  },
+  {
+    slug: "tax-brackets-explained",
+    title: "How Tax Brackets Work",
+    summary: "Marginal vs effective tax rate and the 2026 federal brackets, with a calculator.",
+    category: "Money",
+    tags: ["tax brackets", "2026 tax brackets", "marginal tax rate", "effective tax rate", "standard deduction", "federal income tax", "taxable income", "raise higher bracket", "irs", "income tax calculator"],
+    minutes: 12
   }
 ];

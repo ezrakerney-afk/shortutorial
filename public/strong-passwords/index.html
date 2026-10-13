@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Strong Passwords and Password Managers: A Plain-English Guide · Shortutorial</title>
+<meta name="description" content="Make passwords that are easy to remember and hard to crack: why length beats complexity, passphrases, the danger of reuse, password managers, passkeys, and checking for breaches. Includes a passphrase generator and strength checker that run only on your device.">
+<link rel="canonical" href="https://shortutorial.com/strong-passwords/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Strong Passwords and Password Managers: A Plain-English Guide · Shortutorial">
+<meta property="og:description" content="Make passwords that are easy to remember and hard to crack: why length beats complexity, passphrases, the danger of reuse, password managers, passkeys, and checking for breaches. Includes a passphrase generator and strength checker that run only on your device.">
+<meta property="og:url" content="https://shortutorial.com/strong-passwords/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+/* generator + checker */
+.try select{width:auto;max-width:100%}
+.pp{font-family:var(--mono);font-size:1.15rem;font-weight:600;line-height:1.5;padding:14px 16px;border-radius:10px;background:var(--surface);border:1.5px solid var(--line);overflow-wrap:anywhere;word-break:break-word;min-height:3.2em}
+.check{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.82rem;color:var(--ink);cursor:pointer}
+.check input{width:18px;height:18px;accent-color:var(--accent)}
+.meter{height:10px;border-radius:99px;background:var(--line);overflow:hidden}
+.meter i{display:block;height:100%;width:0;border-radius:99px;transition:width .25s,background .25s}
+.pwrow{display:flex;gap:8px;flex-wrap:wrap;align-items:flex-end}
+.pwrow label{flex:1 1 200px}
+.try .pwrow input{width:100%}
+.times{display:flex;flex-direction:column;gap:6px}
+.times div{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:8px 12px;font-size:.92rem}
+.times b{font-family:var(--display)}
+.notes{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:4px;font-size:.92rem}
+.private{font-family:var(--mono);font-size:.74rem;color:var(--good)}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"Strong Passwords and Password Managers","item":"https://shortutorial.com/strong-passwords/"}]},{"@type":"Article","@id":"https://shortutorial.com/strong-passwords/#article","headline":"Strong Passwords and Password Managers","description":"Make passwords that are easy to remember and hard to crack: why length beats complexity, passphrases, the danger of reuse, password managers, passkeys, and checking for breaches. Includes a passphrase generator and strength checker that run only on your device.","url":"https://shortutorial.com/strong-passwords/","mainEntityOfPage":"https://shortutorial.com/strong-passwords/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Online safety","keywords":"strong password, passphrase, password generator, password manager, passkeys, password strength checker, data breach, have i been pwned, reused passwords, nist password guidelines, master password","timeRequired":"PT12M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long should my password be?","acceptedAnswer":{"@type":"Answer","text":"At least 15 to 16 characters. A passphrase of 5 or more random words easily clears that and is still easy to type."}},{"@type":"Question","name":"Should I change my passwords regularly?","acceptedAnswer":{"@type":"Answer","text":"Not on a schedule. NIST says forced periodic changes don't help. Change a password when there's a sign it leaked, or if you reused it."}},{"@type":"Question","name":"Is it OK to write passwords down?","acceptedAnswer":{"@type":"Answer","text":"A master passphrase written on paper and kept somewhere safe at home is fine while you learn it. Don't keep a list of passwords on a sticky note by your computer or in an unprotected notes app."}},{"@type":"Question","name":"Is the browser's built-in password manager good enough?","acceptedAnswer":{"@type":"Answer","text":"For most people, yes. It creates strong passwords, syncs them and warns about leaks. Protect the account it syncs to (Apple, Google or Microsoft) with a strong password and two-factor authentication."}},{"@type":"Question","name":"Are passkeys replacing passwords?","acceptedAnswer":{"@type":"Answer","text":"Gradually. Many sites support them now, but most still keep a password as a backup. Use a passkey where it's offered and a strong unique password everywhere else."}},{"@type":"Question","name":"Is this page's checker safe to use?","acceptedAnswer":{"@type":"Answer","text":"It runs only in your browser and has no code that sends what you type anywhere. Even so, a good habit is to never type a real password into any site other than the one it belongs to."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="strong-passwords">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=safety">Online safety</a> / Strong passwords</div>
+    <span class="eyebrow">Online safety · Passwords</span>
+    <h1>Strong Passwords and Password Managers</h1>
+    <p class="lede">Forget “P@ssw0rd!” rules. Long passphrases are easier to remember and much harder to crack, and a password manager means you only have to remember one. Generate a passphrase and test a password right here, without anything leaving your device.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~12 min read</span><span class="badge">6 lessons</span><span class="badge">Passphrase generator + strength checker</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#p1">1 · Length wins</a><a href="#p2">2 · Passphrases</a><a href="#p3">3 · How cracking works</a><a href="#p4">4 · Managers</a><a href="#p5">5 · Passkeys</a><a href="#p6">6 · Breaches</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="p1">
+    <div class="lesson-head"><span class="step">01</span><h2>Length beats complexity</h2></div>
+    <p>For years we were told to mix in capitals, numbers and symbols and change passwords every 90 days. The experts changed their minds. People responded to those rules with predictable tricks like <code>Summer2026!</code>, which attackers try early.</p>
+    <p>The US government's digital identity guideline, <b>NIST SP 800-63B</b>, now says websites should:</p>
+    <ul class="points">
+      <li>Require <b>at least 15 characters</b> when a password is the only thing protecting an account (at least 8 when it's paired with a second factor).</li>
+      <li>Allow passwords of <b>at least 64 characters</b>, including spaces.</li>
+      <li><b>Not</b> force composition rules like “one capital, one symbol.”</li>
+      <li><b>Not</b> force regular password changes, only when there's evidence of a breach.</li>
+      <li>Block passwords that are common or known to be leaked, and allow password managers and pasting.</li>
+    </ul>
+    <p><b>CISA</b>, the US cybersecurity agency, gives everyday advice that lines up: make every password <b>long</b> (at least 16 characters), <b>random</b>, and <b>unique</b> to each account.</p>
+    <div class="example"><div class="ex-h">Example · why length wins</div><ol><li><code>Tr0ub4dor&amp;3</code>: 11 characters, looks complex, but it's a dictionary word with common swaps</li><li><code>orbit-candle-mango-velvet-harbor</code>: 5 random words, 32 characters</li><li class="ans">The 5 random words are far harder to guess and far easier to type and remember</li></ol></div>
+  </section>
+
+  <section class="lesson" id="p2">
+    <div class="lesson-head"><span class="step">02</span><h2>Passphrases: random words</h2></div>
+    <p>A <b>passphrase</b> is several random words strung together. The key word is <b>random</b>. A phrase you choose yourself, like a song lyric or <code>ilovemydog</code>, is predictable. Words picked by a computer (or by rolling dice) are not.</p>
+    <p>Each random word from a list of 2,048 words adds 11 “bits” of unpredictability, which means it multiplies the number of guesses needed by 2,048. Five words is about 2,048⁵, roughly 36 million billion possibilities. Use <b>at least 5 words</b>, and <b>6 or more</b> for your most important ones, like email and your password manager's master password.</p>
+    <div class="try" id="gen"><span class="try-h">Try it · passphrase generator</span>
+      <p class="private">● Runs entirely in your browser using its secure random generator. Nothing is sent or saved.</p>
+      <div class="pp" id="genOut" aria-live="polite"></div>
+      <div class="row">
+        <label>Words<input type="number" id="genN" value="6" min="3" max="10" step="1" inputmode="numeric"></label>
+        <label>Separator<select id="genSep"><option value="-">dash  -</option><option value=" ">space</option><option value=".">dot  .</option><option value="_">underscore  _</option><option value="">none</option></select></label>
+      </div>
+      <div class="row">
+        <label class="check"><input type="checkbox" id="genCap"> Capitalize words</label>
+        <label class="check"><input type="checkbox" id="genNum"> Add a random number</label>
+      </div>
+      <div class="row"><button class="btn" type="button" id="genGo">New passphrase</button><button class="btn ghost" type="button" id="genCopy">Copy</button></div>
+      <div class="work" id="genWork"></div>
+    </div>
+    <p class="callout"><span><b>Capitals and numbers add very little</b> when they follow a pattern everyone uses (first letter capital, number on the end). One more random word adds more than both together. Add them only if a site insists.</span></p>
+  </section>
+
+  <section class="lesson" id="p3">
+    <div class="lesson-head"><span class="step">03</span><h2>How passwords get cracked, and why reuse is the real danger</h2></div>
+    <ul class="points">
+      <li><b>Guessing online:</b> an attacker types guesses into a login page. Good sites slow this down or lock the account, so only very common passwords fall this way.</li>
+      <li><b>Cracking offline:</b> when a company is breached, attackers may steal its scrambled (hashed) passwords and test billions of guesses per second on their own computers. Common words, names, dates and keyboard patterns go first.</li>
+      <li><b>Credential stuffing:</b> attackers take email and password pairs leaked from one site and try them on banks, email and shopping sites. If you reused that password, they're in, no cracking needed.</li>
+      <li><b>Phishing:</b> a fake login page simply asks you for it. No password is strong enough to survive being typed into a scam page. See <a href="../spot-scam-messages/">How to Spot a Scam</a>.</li>
+    </ul>
+    <p class="callout warn"><span><b>Never reuse a password</b>, especially for email. Your email can reset every other account, so a leaked password from some old forum could unlock your whole online life.</span></p>
+    <div class="try" id="chk"><span class="try-h">Try it · password strength checker</span>
+      <p class="private">● Checked only on this page with JavaScript. It is never sent anywhere or stored. Still, it's best to test a password similar to yours, not your real one.</p>
+      <div class="pwrow">
+        <label>Type a password<input type="password" id="chkIn" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="e.g. Summer2026!"></label>
+        <button class="btn ghost" type="button" id="chkShow" aria-pressed="false">Show</button>
+      </div>
+      <div class="meter" aria-hidden="true"><i id="chkBar"></i></div>
+      <p class="out" id="chkOut" aria-live="polite">Start typing to see an estimate.</p>
+      <div class="times" id="chkTimes"></div>
+      <ul class="notes" id="chkNotes"></ul>
+    </div>
+    <p>The checker looks for the same shortcuts attackers use: common passwords, dictionary words, letter-to-symbol swaps (<code>@</code> for <code>a</code>), years, keyboard runs like <code>qwerty</code>, and repeated characters. Its times are rough estimates using two assumptions: an online attack against a site that limits tries (about 100 guesses an hour) and an offline attack on leaked, quickly hashed passwords (about 10 billion guesses a second). That second number is a worst case: well-run sites store passwords with deliberately slow hashing, which cuts attackers to a tiny fraction of that speed.</p>
+  </section>
+
+  <section class="lesson" id="p4">
+    <div class="lesson-head"><span class="step">04</span><h2>Password managers</h2></div>
+    <p>Nobody can remember 100 long, unique passwords. A <b>password manager</b> does it for you: it creates a strong random password for each site, saves it in an encrypted vault, and fills it in when you log in. You remember just one strong <b>master password</b> (a passphrase is perfect).</p>
+    <div class="grid2">
+      <div><span class="tagline">Built in</span><h3>Free, already on your device</h3><p>Apple Passwords (iPhone, iPad, Mac), Google Password Manager (Chrome and Android), and Microsoft Edge's password manager. Easiest if you stay in one ecosystem.</p></div>
+      <div><span class="tagline">Standalone</span><h3>Works everywhere</h3><p>Dedicated apps work across Windows, Mac, iPhone and Android and every browser, with extras like secure sharing with family. Choose a well-known one with a good security track record.</p></div>
+    </div>
+    <h3>Set one up in 5 steps</h3>
+    <ol class="steps">
+      <li>Pick a manager and create a long master passphrase. Write it on paper and store it somewhere safe at home until you know it by heart.</li>
+      <li>Turn on <a href="../two-factor-authentication/">two-factor authentication</a> for the manager itself.</li>
+      <li>Import passwords saved in your browser, or let it save them as you log in.</li>
+      <li>Start with your most important accounts: email, bank, phone carrier, and the manager's recovery options.</li>
+      <li>Use the manager's security check to find weak, reused and leaked passwords, and change them a few at a time.</li>
+    </ol>
+    <p class="callout"><span><b>Is it safe to put everything in one place?</b> A good manager encrypts your vault so the company can't read it. One strong master password plus two-factor authentication is far safer than reusing passwords, which is what most people do without one.</span></p>
+  </section>
+
+  <section class="lesson" id="p5">
+    <div class="lesson-head"><span class="step">05</span><h2>Passkeys: logging in without a password</h2></div>
+    <p>A <b>passkey</b> replaces the password with a pair of digital keys. One stays on your phone, computer or password manager. The website only stores the other, public half. You unlock it with your fingerprint, face or device PIN.</p>
+    <ul class="points">
+      <li><b>Phishing-proof:</b> a passkey only works on the real website it was made for, so a fake look-alike site can't use it.</li>
+      <li><b>Nothing to steal from the site:</b> a breach of the website doesn't reveal anything an attacker can log in with.</li>
+      <li><b>Nothing to remember or type.</b></li>
+    </ul>
+    <p>To set one up, look in an account's <b>Security</b> or <b>Sign-in</b> settings for “Passkeys” or “Create a passkey.” Many big services, including Google, Apple, Microsoft and Amazon, support them. Your passkeys sync through your password manager, so a new phone gets them too.</p>
+    <p class="callout"><span><b>Keep a backup way in.</b> Before relying on passkeys, make sure your account recovery options (a recovery email, phone number or recovery codes) are up to date.</span></p>
+  </section>
+
+  <section class="lesson" id="p6">
+    <div class="lesson-head"><span class="step">06</span><h2>Check for breaches and fix them</h2></div>
+    <p>Data breaches are common, so assume some of your old passwords have leaked. You can check:</p>
+    <ul class="points">
+      <li><b>Your password manager:</b> Apple Passwords, Google Password Manager, Edge and most standalone managers warn you about passwords that appear in known breaches.</li>
+      <li><b>Have I Been Pwned</b> (haveibeenpwned.com): enter your email to see which known breaches included it. It's a long-running free service many security teams use.</li>
+    </ul>
+    <h3>If your password showed up in a breach</h3>
+    <ol class="steps">
+      <li>Change it on that site to a new, unique one.</li>
+      <li>Change it everywhere else you used the same or a similar password.</li>
+      <li>Turn on two-factor authentication or a passkey where you can, starting with email and banking.</li>
+      <li>Watch for phishing emails that mention the breach. Go to the site directly, don't click links.</li>
+    </ol>
+    <p class="callout warn"><span><b>No legit company will ask for your password</b> by phone, text or email. Anyone who does is a scammer.</span></p>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>How long should my password be?</summary><div class="a"><p>At least 15 to 16 characters. A passphrase of 5 or more random words easily clears that and is still easy to type.</p></div></details>
+      <details><summary>Should I change my passwords regularly?</summary><div class="a"><p>Not on a schedule. NIST says forced periodic changes don't help. Change a password when there's a sign it leaked, or if you reused it.</p></div></details>
+      <details><summary>Is it OK to write passwords down?</summary><div class="a"><p>A master passphrase written on paper and kept somewhere safe at home is fine while you learn it. Don't keep a list of passwords on a sticky note by your computer or in an unprotected notes app.</p></div></details>
+      <details><summary>Is the browser's built-in password manager good enough?</summary><div class="a"><p>For most people, yes. It creates strong passwords, syncs them and warns about leaks. Protect the account it syncs to (Apple, Google or Microsoft) with a strong password and two-factor authentication.</p></div></details>
+      <details><summary>Are passkeys replacing passwords?</summary><div class="a"><p>Gradually. Many sites support them now, but most still keep a password as a backup. Use a passkey where it's offered and a strong unique password everywhere else.</p></div></details>
+      <details><summary>Is this page's checker safe to use?</summary><div class="a"><p>It runs only in your browser and has no code that sends what you type anywhere. Even so, a good habit is to never type a real password into any site other than the one it belongs to.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://pages.nist.gov/800-63-4/sp800-63b.html" target="_blank" rel="noopener"><span class="src">NIST</span><b>SP 800-63B: Authentication and lifecycle management</b></a>
+      <a href="https://www.cisa.gov/secure-our-world/use-strong-passwords" target="_blank" rel="noopener"><span class="src">CISA</span><b>Use strong passwords</b></a>
+      <a href="https://www.cisa.gov/audiences/small-and-medium-businesses/secure-your-business/require-strong-passwords" target="_blank" rel="noopener"><span class="src">CISA</span><b>Require strong passwords</b></a>
+      <a href="https://haveibeenpwned.com/" target="_blank" rel="noopener"><span class="src">Have I Been Pwned</span><b>Check if your email was in a breach</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>The generator and checker run only in your browser. Nothing you type is sent or stored. Crack times are rough estimates.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  // 2,048-word list (BIP-39 English), 11 bits per word. Everything here runs locally; no network calls.
+  const WORDS = "abandon ability able about above absent absorb abstract absurd abuse access accident account accuse achieve acid acoustic acquire across act action actor actress actual adapt add addict address adjust admit adult advance advice aerobic affair afford afraid again age agent agree ahead aim air airport aisle alarm album alcohol alert alien all alley allow almost alone alpha already also alter always amateur amazing among amount amused analyst anchor ancient anger angle angry animal ankle announce annual another answer antenna antique anxiety any apart apology appear apple approve april arch arctic area arena argue arm armed armor army around arrange arrest arrive arrow art artefact artist artwork ask aspect assault asset assist assume asthma athlete atom attack attend attitude attract auction audit august aunt author auto autumn average avocado avoid awake aware away awesome awful awkward axis baby bachelor bacon badge bag balance balcony ball bamboo banana banner bar barely bargain barrel base basic basket battle beach bean beauty because become beef before begin behave behind believe below belt bench benefit best betray better between beyond bicycle bid bike bind biology bird birth bitter black blade blame blanket blast bleak bless blind blood blossom blouse blue blur blush board boat body boil bomb bone bonus book boost border boring borrow boss bottom bounce box boy bracket brain brand brass brave bread breeze brick bridge brief bright bring brisk broccoli broken bronze broom brother brown brush bubble buddy budget buffalo build bulb bulk bullet bundle bunker burden burger burst bus business busy butter buyer buzz cabbage cabin cable cactus cage cake call calm camera camp can canal cancel candy cannon canoe canvas canyon capable capital captain car carbon card cargo carpet carry cart case cash casino castle casual cat catalog catch category cattle caught cause caution cave ceiling celery cement census century cereal certain chair chalk champion change chaos chapter charge chase chat cheap check cheese chef cherry chest chicken chief child chimney choice choose chronic chuckle chunk churn cigar cinnamon circle citizen city civil claim clap clarify claw clay clean clerk clever click client cliff climb clinic clip clock clog close cloth cloud clown club clump cluster clutch coach coast coconut code coffee coil coin collect color column combine come comfort comic common company concert conduct confirm congress connect consider control convince cook cool copper copy coral core corn correct cost cotton couch country couple course cousin cover coyote crack cradle craft cram crane crash crater crawl crazy cream credit creek crew cricket crime crisp critic crop cross crouch crowd crucial cruel cruise crumble crunch crush cry crystal cube culture cup cupboard curious current curtain curve cushion custom cute cycle dad damage damp dance danger daring dash daughter dawn day deal debate debris decade december decide decline decorate decrease deer defense define defy degree delay deliver demand demise denial dentist deny depart depend deposit depth deputy derive describe desert design desk despair destroy detail detect develop device devote diagram dial diamond diary dice diesel diet differ digital dignity dilemma dinner dinosaur direct dirt disagree discover disease dish dismiss disorder display distance divert divide divorce dizzy doctor document dog doll dolphin domain donate donkey donor door dose double dove draft dragon drama drastic draw dream dress drift drill drink drip drive drop drum dry duck dumb dune during dust dutch duty dwarf dynamic eager eagle early earn earth easily east easy echo ecology economy edge edit educate effort egg eight either elbow elder electric elegant element elephant elevator elite else embark embody embrace emerge emotion employ empower empty enable enact end endless endorse enemy energy enforce engage engine enhance enjoy enlist enough enrich enroll ensure enter entire entry envelope episode equal equip era erase erode erosion error erupt escape essay essence estate eternal ethics evidence evil evoke evolve exact example excess exchange excite exclude excuse execute exercise exhaust exhibit exile exist exit exotic expand expect expire explain expose express extend extra eye eyebrow fabric face faculty fade faint faith fall false fame family famous fan fancy fantasy farm fashion fat fatal father fatigue fault favorite feature february federal fee feed feel female fence festival fetch fever few fiber fiction field figure file film filter final find fine finger finish fire firm first fiscal fish fit fitness fix flag flame flash flat flavor flee flight flip float flock floor flower fluid flush fly foam focus fog foil fold follow food foot force forest forget fork fortune forum forward fossil foster found fox fragile frame frequent fresh friend fringe frog front frost frown frozen fruit fuel fun funny furnace fury future gadget gain galaxy gallery game gap garage garbage garden garlic garment gas gasp gate gather gauge gaze general genius genre gentle genuine gesture ghost giant gift giggle ginger giraffe girl give glad glance glare glass glide glimpse globe gloom glory glove glow glue goat goddess gold good goose gorilla gospel gossip govern gown grab grace grain grant grape grass gravity great green grid grief grit grocery group grow grunt guard guess guide guilt guitar gun gym habit hair half hammer hamster hand happy harbor hard harsh harvest hat have hawk hazard head health heart heavy hedgehog height hello helmet help hen hero hidden high hill hint hip hire history hobby hockey hold hole holiday hollow home honey hood hope horn horror horse hospital host hotel hour hover hub huge human humble humor hundred hungry hunt hurdle hurry hurt husband hybrid ice icon idea identify idle ignore ill illegal illness image imitate immense immune impact impose improve impulse inch include income increase index indicate indoor industry infant inflict inform inhale inherit initial inject injury inmate inner innocent input inquiry insane insect inside inspire install intact interest into invest invite involve iron island isolate issue item ivory jacket jaguar jar jazz jealous jeans jelly jewel job join joke journey joy judge juice jump jungle junior junk just kangaroo keen keep ketchup key kick kid kidney kind kingdom kiss kit kitchen kite kitten kiwi knee knife knock know lab label labor ladder lady lake lamp language laptop large later latin laugh laundry lava law lawn lawsuit layer lazy leader leaf learn leave lecture left leg legal legend leisure lemon lend length lens leopard lesson letter level liar liberty library license life lift light like limb limit link lion liquid list little live lizard load loan lobster local lock logic lonely long loop lottery loud lounge love loyal lucky luggage lumber lunar lunch luxury lyrics machine mad magic magnet maid mail main major make mammal man manage mandate mango mansion manual maple marble march margin marine market marriage mask mass master match material math matrix matter maximum maze meadow mean measure meat mechanic medal media melody melt member memory mention menu mercy merge merit merry mesh message metal method middle midnight milk million mimic mind minimum minor minute miracle mirror misery miss mistake mix mixed mixture mobile model modify mom moment monitor monkey monster month moon moral more morning mosquito mother motion motor mountain mouse move movie much muffin mule multiply muscle museum mushroom music must mutual myself mystery myth naive name napkin narrow nasty nation nature near neck need negative neglect neither nephew nerve nest net network neutral never news next nice night noble noise nominee noodle normal north nose notable note nothing notice novel now nuclear number nurse nut oak obey object oblige obscure observe obtain obvious occur ocean october odor off offer office often oil okay old olive olympic omit once one onion online only open opera opinion oppose option orange orbit orchard order ordinary organ orient original orphan ostrich other outdoor outer output outside oval oven over own owner oxygen oyster ozone pact paddle page pair palace palm panda panel panic panther paper parade parent park parrot party pass patch path patient patrol pattern pause pave payment peace peanut pear peasant pelican pen penalty pencil people pepper perfect permit person pet phone photo phrase physical piano picnic picture piece pig pigeon pill pilot pink pioneer pipe pistol pitch pizza place planet plastic plate play please pledge pluck plug plunge poem poet point polar pole police pond pony pool popular portion position possible post potato pottery poverty powder power practice praise predict prefer prepare present pretty prevent price pride primary print priority prison private prize problem process produce profit program project promote proof property prosper protect proud provide public pudding pull pulp pulse pumpkin punch pupil puppy purchase purity purpose purse push put puzzle pyramid quality quantum quarter question quick quit quiz quote rabbit raccoon race rack radar radio rail rain raise rally ramp ranch random range rapid rare rate rather raven raw razor ready real reason rebel rebuild recall receive recipe record recycle reduce reflect reform refuse region regret regular reject relax release relief rely remain remember remind remove render renew rent reopen repair repeat replace report require rescue resemble resist resource response result retire retreat return reunion reveal review reward rhythm rib ribbon rice rich ride ridge rifle right rigid ring riot ripple risk ritual rival river road roast robot robust rocket romance roof rookie room rose rotate rough round route royal rubber rude rug rule run runway rural sad saddle sadness safe sail salad salmon salon salt salute same sample sand satisfy satoshi sauce sausage save say scale scan scare scatter scene scheme school science scissors scorpion scout scrap screen script scrub sea search season seat second secret section security seed seek segment select sell seminar senior sense sentence series service session settle setup seven shadow shaft shallow share shed shell sheriff shield shift shine ship shiver shock shoe shoot shop short shoulder shove shrimp shrug shuffle shy sibling sick side siege sight sign silent silk silly silver similar simple since sing siren sister situate six size skate sketch ski skill skin skirt skull slab slam sleep slender slice slide slight slim slogan slot slow slush small smart smile smoke smooth snack snake snap sniff snow soap soccer social sock soda soft solar soldier solid solution solve someone song soon sorry sort soul sound soup source south space spare spatial spawn speak special speed spell spend sphere spice spider spike spin spirit split spoil sponsor spoon sport spot spray spread spring spy square squeeze squirrel stable stadium staff stage stairs stamp stand start state stay steak steel stem step stereo stick still sting stock stomach stone stool story stove strategy street strike strong struggle student stuff stumble style subject submit subway success such sudden suffer sugar suggest suit summer sun sunny sunset super supply supreme sure surface surge surprise surround survey suspect sustain swallow swamp swap swarm swear sweet swift swim swing switch sword symbol symptom syrup system table tackle tag tail talent talk tank tape target task taste tattoo taxi teach team tell ten tenant tennis tent term test text thank that theme then theory there they thing this thought three thrive throw thumb thunder ticket tide tiger tilt timber time tiny tip tired tissue title toast tobacco today toddler toe together toilet token tomato tomorrow tone tongue tonight tool tooth top topic topple torch tornado tortoise toss total tourist toward tower town toy track trade traffic tragic train transfer trap trash travel tray treat tree trend trial tribe trick trigger trim trip trophy trouble truck true truly trumpet trust truth try tube tuition tumble tuna tunnel turkey turn turtle twelve twenty twice twin twist two type typical ugly umbrella unable unaware uncle uncover under undo unfair unfold unhappy uniform unique unit universe unknown unlock until unusual unveil update upgrade uphold upon upper upset urban urge usage use used useful useless usual utility vacant vacuum vague valid valley valve van vanish vapor various vast vault vehicle velvet vendor venture venue verb verify version very vessel veteran viable vibrant vicious victory video view village vintage violin virtual virus visa visit visual vital vivid vocal voice void volcano volume vote voyage wage wagon wait walk wall walnut want warfare warm warrior wash wasp waste water wave way wealth weapon wear weasel weather web wedding weekend weird welcome west wet whale what wheat wheel when where whip whisper wide width wife wild will win window wine wing wink winner winter wire wisdom wise wish witness wolf woman wonder wood wool word work world worry worth wrap wreck wrestle wrist write wrong yard year yellow you young youth zebra zero zone zoo".split(' ');
+  const COMMON = "123456 password 123456789 12345678 12345 qwerty 1234567 111111 1234567890 123123 abc123 1234 password1 iloveyou 1q2w3e4r 000000 qwerty123 zaq12wsx dragon sunshine princess letmein 654321 monkey 1qaz2wsx 123321 qwertyuiop superman asdfghjkl football baseball welcome admin login master hello freedom whatever qazwsx trustno1 starwars shadow passw0rd password123 123qwe 666666 121212 987654321 secret flower loveme michael jennifer charlie batman soccer hockey iloveu welcome1 admin123 changeme summer winter spring autumn".split(' ');
+  const EXTRA = "password love summer winter spring autumn football baseball dragon monkey princess sunshine welcome admin login hello master letmein qwerty iloveyou shadow michael jessica ashley charlie jordan hunter pepper tigger buster soccer hockey batman superman computer internet secret freedom whatever money family friend blessed jesus angel forever baby happy lucky cookie cheese orange purple yellow silver golden chicken pokemon starwars google apple samsung america texas london mustang thomas daniel matthew andrew robert william david james john mary".split(' ');
+  const DICT = new Set(WORDS.concat(EXTRA));
+  const SEQS = ['abcdefghijklmnopqrstuvwxyz', '01234567890', 'qwertyuiop', 'asdfghjkl', 'zxcvbnm', '1qaz2wsx3edc', 'qazwsxedc'];
+  const LEET = {'@':'a','4':'a','3':'e','1':'i','!':'i','0':'o','$':'s','5':'s','7':'t','8':'b','9':'g','|':'l','+':'t'};
+
+  /* ---------- generator ---------- */
+  function randInt(n){ // unbiased integer in [0, n)
+    const max = Math.floor(0xFFFFFFFF / n) * n, a = new Uint32Array(1);
+    do { crypto.getRandomValues(a); } while (a[0] >= max);
+    return a[0] % n;
+  }
+  let current = '';
+  function generate(){
+    const n = Math.min(10, Math.max(3, Math.round(parseFloat($('#genN').value) || 6)));
+    const sep = $('#genSep').value, cap = $('#genCap').checked, addNum = $('#genNum').checked;
+    let words = Array.from({length: n}, () => WORDS[randInt(WORDS.length)]);
+    if (cap) words = words.map(w => w[0].toUpperCase() + w.slice(1));
+    let bits = n * Math.log2(WORDS.length);
+    if (addNum){ const pos = randInt(n + 1); words.splice(pos, 0, String(randInt(100))); bits += Math.log2(100) + Math.log2(n + 1); }
+    current = words.join(sep);
+    $('#genOut').textContent = current;
+    $('#genWork').textContent = `${n} words × 11 bits${addNum ? ' + a number from 0–99 in a random spot' : ''} ≈ ${fmt(bits, 0)} bits of entropy\n` +
+      `${current.length} characters · offline cracking at 10 billion guesses/sec: about ${human(Math.pow(2, bits - 1) / 1e10)} on average` +
+      (sep === '' ? '\nTip: a separator makes it easier to read and type, and costs nothing.' : '');
+  }
+  $('#genGo').addEventListener('click', generate);
+  ['#genN', '#genSep', '#genCap', '#genNum'].forEach(id => $(id).addEventListener('change', generate));
+  $('#genCopy').addEventListener('click', async () => {
+    const b = $('#genCopy');
+    try { await navigator.clipboard.writeText(current); b.textContent = 'Copied'; }
+    catch(e){ b.textContent = 'Select and copy'; }
+    setTimeout(() => { b.textContent = 'Copy'; }, 1600);
+  });
+
+  /* ---------- time formatting ---------- */
+  function human(sec){
+    if (!isFinite(sec) || sec > 1e18) return 'longer than the age of the universe';
+    if (sec < 1) return 'less than a second';
+    const units = [['year', 31557600], ['day', 86400], ['hour', 3600], ['minute', 60], ['second', 1]];
+    for (const [u, s] of units){
+      if (sec >= s){
+        const v = sec / s;
+        if (u === 'year' && v >= 1e9) return fmt(v / 1e9, 0) + ' billion years';
+        if (u === 'year' && v >= 1e6) return fmt(v / 1e6, 0) + ' million years';
+        if (u === 'year' && v >= 1e3) return fmt(v / 1e3, 0) + ' thousand years';
+        const r = Math.round(v); return r + ' ' + u + (r === 1 ? '' : 's');
+      }
+    }
+    return 'less than a second';
+  }
+
+  /* ---------- strength estimator ---------- */
+  function poolOf(s){
+    let p = 0;
+    if (/[a-z]/.test(s)) p += 26; if (/[A-Z]/.test(s)) p += 26; if (/[0-9]/.test(s)) p += 10;
+    if (/[^a-zA-Z0-9]/.test(s)) p += 33; return p || 26;
+  }
+  function charBits(c){ return /[a-z]/i.test(c) ? Math.log2(26) : /[0-9]/.test(c) ? Math.log2(10) : Math.log2(33); }
+  function analyze(pw){
+    const notes = [];
+    const lower = pw.toLowerCase();
+    const unleet = lower.replace(/[@4310$57!89|+]/g, c => LEET[c] || c);
+    if (COMMON.includes(lower) || COMMON.includes(unleet)){
+      return {bits: Math.log2(COMMON.length + 1) + (lower === unleet ? 0 : 2), notes: ['This is one of the most common passwords. Attackers try it first.']};
+    }
+    let i = 0, bits = 0; const found = new Set();
+    const n = pw.length;
+    while (i < n){
+      let best = null;
+      // dictionary word (length 3+), using de-leeted text
+      for (let L = Math.min(12, n - i); L >= 3; L--){
+        const w = unleet.substr(i, L);
+        if (DICT.has(w)){
+          const raw = pw.substr(i, L);
+          let b = Math.log2(DICT.size);
+          if (/[A-Z]/.test(raw)) b += (raw === raw.toUpperCase() || /^[A-Z][^A-Z]*$/.test(raw)) ? 1 : 3;
+          if (raw.toLowerCase() !== w) { b += 1; found.add('swap'); }
+          best = {L, b, kind: 'word'}; break;
+        }
+      }
+      // sequences and keyboard runs (forward or backward), length 3+
+      if (!best){
+        for (const s of SEQS){
+          for (const t of [s, [...s].reverse().join('')]){
+            let L = 0;
+            while (i + L < n && t.includes(lower.substr(i, L + 1))) L++;
+            if (L >= 3 && (!best || L > best.L)) best = {L, b: Math.log2(26 * 2 * L), kind: 'seq'};
+          }
+        }
+      }
+      // years 1900-2039
+      if (!best && /^(19|20)\d\d/.test(pw.substr(i, 4)) && +pw.substr(i, 4) < 2040) best = {L: 4, b: Math.log2(140), kind: 'year'};
+      // repeats like aaaa or 1111
+      if (!best){
+        let L = 1; while (i + L < n && pw[i + L] === pw[i]) L++;
+        if (L >= 3) best = {L, b: charBits(pw[i]) + Math.log2(L), kind: 'repeat'};
+      }
+      if (best){ bits += best.b; found.add(best.kind); i += best.L; }
+      else { bits += charBits(pw[i]); i++; }
+    }
+    // a capital only at the start and digits/symbol only at the end is the most common pattern
+    if (/^[A-Z][a-z]+/.test(pw) && /[0-9!?.]+$/.test(pw)) { bits -= 2; found.add('pattern'); }
+    bits = Math.max(1, Math.min(bits, n * Math.log2(poolOf(pw))));
+    if (found.has('word')) notes.push('Contains dictionary words or names. Attackers try word lists first.');
+    if (found.has('swap')) notes.push('Swapping letters for look-alike symbols (like @ for a) barely slows attackers down.');
+    if (found.has('seq')) notes.push('Contains a sequence or keyboard run (like abc, 123 or qwerty).');
+    if (found.has('year')) notes.push('Contains a year. Birth years and the current year are guessed early.');
+    if (found.has('repeat')) notes.push('Contains repeated characters.');
+    if (found.has('pattern')) notes.push('Capital first letter plus numbers or a symbol at the end is the pattern attackers expect.');
+    if (n < 15) notes.push(`Only ${n} characters. Aim for at least 15.`);
+    return {bits, notes};
+  }
+  const LEVELS = [[28, 'Very weak', 'var(--bad)'], [40, 'Weak', 'var(--bad)'], [60, 'Fair', 'var(--amber)'], [80, 'Strong', 'var(--good)'], [Infinity, 'Very strong', 'var(--good)']];
+  function check(){
+    const pw = $('#chkIn').value;
+    if (!pw){ $('#chkOut').textContent = 'Start typing to see an estimate.'; $('#chkTimes').innerHTML = ''; $('#chkNotes').innerHTML = ''; $('#chkBar').style.width = '0'; return; }
+    const r = analyze(pw);
+    const lv = LEVELS.find(l => r.bits < l[0]);
+    $('#chkBar').style.width = Math.min(100, Math.max(6, r.bits / 90 * 100)) + '%';
+    $('#chkBar').style.background = lv[2];
+    $('#chkOut').innerHTML = `<b>${lv[1]}</b> · about ${fmt(r.bits, 0)} bits (around 10<sup>${Math.max(0, Math.round(r.bits * 0.30103))}</sup> guesses)`;
+    const avg = Math.pow(2, r.bits - 1);
+    $('#chkTimes').innerHTML =
+      `<div><span>Online, site limits tries (100/hour)</span><b>${human(avg / 100 * 3600)}</b></div>` +
+      `<div><span>Offline after a breach (10 billion/sec)</span><b>${human(avg / 1e10)}</b></div>`;
+    const notes = r.notes.length ? r.notes : ['No obvious patterns found. Make sure it is unique to one account.'];
+    $('#chkNotes').innerHTML = notes.map(t => `<li>${t}</li>`).join('');
+  }
+  $('#chkIn').addEventListener('input', check);
+  $('#chkShow').addEventListener('click', () => {
+    const show = $('#chkIn').type === 'password';
+    $('#chkIn').type = show ? 'text' : 'password';
+    $('#chkShow').textContent = show ? 'Hide' : 'Show';
+    $('#chkShow').setAttribute('aria-pressed', show);
+  });
+  generate();
+})();
+</script>
+</body>
+</html>

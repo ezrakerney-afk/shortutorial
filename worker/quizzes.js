@@ -2567,5 +2567,71 @@ export default {
         o: ["The first number on the table pulls the final number toward it", "Refusing to move from your number", "Asking for a long-term contract", "Negotiating only benefits"], a: 0,
         e: "The first number sets the reference point for the rest of the negotiation." }
     ]
+  },
+
+  "retirement-accounts": {
+    title: "Retirement Accounts Explained",
+    pass: 4,
+    questions: [
+      { q: "Your employer matches 50% of the first 6% of pay. How much should you contribute to get the full match?",
+        o: ["3%", "6%", "12%", "50%"], a: 1,
+        e: "You need to put in 6% of pay to get the full 3% match." },
+      { q: "When does a Roth account tend to win over a traditional one?",
+        o: ["When your tax rate is lower now than it will be in retirement", "When your tax rate is higher now", "Never, traditional always wins", "Only if you withdraw before 59½"], a: 0,
+        e: "With Roth you pay tax now, so it wins when today's rate is lower." },
+      { q: "What is the 2026 limit on your own 401(k) contributions if you're under 50?",
+        o: ["$7,500", "$24,500", "$8,000", "$11,250"], a: 1,
+        e: "The IRS set the 2026 401(k) employee limit at $24,500. $7,500 is the IRA limit." },
+      { q: "What usually happens if you take money from a traditional IRA at age 40?",
+        o: ["Nothing, it's your money", "It's tax-free", "It's taxed as income plus a 10% additional tax, unless an exception applies", "Your account is closed"], a: 2,
+        e: "Withdrawals before 59½ usually owe income tax plus a 10% additional tax." },
+      { q: "What can you take out of a Roth IRA at any time, tax- and penalty-free?",
+        o: ["Your earnings", "Your employer's match", "Nothing until age 73", "The contributions you put in"], a: 3,
+        e: "Roth IRA contributions can always come out; earnings follow the 59½ and 5-year rules." }
+    ]
+  },
+
+  "strong-passwords": {
+    title: "Strong Passwords and Password Managers",
+    pass: 4,
+    questions: [
+      { q: "According to NIST, what makes a password strongest?",
+        o: ["Required symbols and capitals", "Changing it every 90 days", "Length", "Using your birth year"], a: 2,
+        e: "NIST says sites should require length (15+ characters alone) and not force composition rules or regular changes." },
+      { q: "Why is reusing a password so dangerous?",
+        o: ["Sites delete reused passwords", "A leak from one site lets attackers log in to your other accounts", "It makes your password shorter", "It turns off two-factor authentication"], a: 1,
+        e: "Credential stuffing: attackers try leaked email and password pairs on other sites." },
+      { q: "What makes a passphrase strong?",
+        o: ["Words picked at random, like by a computer or dice", "A favorite song lyric", "Your pet's name plus 123", "Swapping a for @"], a: 0,
+        e: "A phrase you choose is predictable; randomly chosen words are not." },
+      { q: "Why are passkeys resistant to phishing?",
+        o: ["They're very long passwords", "They change every day", "They're stored on the website", "They only work on the real website they were made for"], a: 3,
+        e: "A passkey is tied to the real site, so a look-alike site can't use it." },
+      { q: "Your password shows up in a breach. What should you do first?",
+        o: ["Nothing, breaches don't matter", "Change it on that site and anywhere you reused it", "Add a 1 to the end", "Email the company your new password"], a: 1,
+        e: "Change it to a new unique password everywhere you used it, then turn on two-factor or a passkey." }
+    ]
+  },
+
+  "tax-brackets-explained": {
+    title: "How Tax Brackets Work",
+    pass: 4,
+    questions: [
+      { q: "A single filer has $60,000 of taxable income in 2026 and is in the 22% bracket. How much of it is taxed at 22%?",
+        o: ["All $60,000", "Only the part above $50,400", "Only the first $12,400", "None of it"], a: 1,
+        e: "Each rate applies only to the dollars inside its bracket, here the $9,600 above $50,400." },
+      { q: "What is your effective tax rate?",
+        o: ["The rate on your next dollar of income", "Your total tax divided by your income", "The highest bracket you reach", "The rate your state charges"], a: 1,
+        e: "Effective rate is your overall average: total tax ÷ income." },
+      { q: "What is the 2026 standard deduction for a single filer?",
+        o: ["$12,400", "$24,150", "$32,200", "$16,100"], a: 3,
+        e: "$16,100 for single (and married filing separately), $32,200 married jointly, $24,150 head of household." },
+      { q: "You get a $1,000 raise that pushes you into a higher bracket. What happens?",
+        o: ["You keep less money than before the raise", "All your income is taxed at the higher rate", "Only the dollars above the bracket line get the higher rate, so you keep most of the raise", "Your raise is taxed at 100%"], a: 2,
+        e: "Brackets never make a raise lower your take-home pay." },
+      { q: "Which saves you more: a $1,000 tax credit or a $1,000 deduction?",
+        o: ["The credit", "The deduction", "They're always the same", "Neither affects your tax"], a: 0,
+        e: "A credit cuts your tax bill dollar for dollar; a deduction only lowers taxable income." }
+    ]
   }
 };

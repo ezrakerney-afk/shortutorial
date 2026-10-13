@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How Tax Brackets Work (2026 Federal Brackets Explained) · Shortutorial</title>
+<meta name="description" content="How US federal tax brackets really work: marginal vs effective tax rate, the 2026 brackets and standard deduction, and why a raise never lowers your take-home pay. Includes a bracket calculator.">
+<link rel="canonical" href="https://shortutorial.com/tax-brackets-explained/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How Tax Brackets Work (2026 Federal Brackets Explained) · Shortutorial">
+<meta property="og:description" content="How US federal tax brackets really work: marginal vs effective tax rate, the 2026 brackets and standard deduction, and why a raise never lowers your take-home pay. Includes a bracket calculator.">
+<meta property="og:url" content="https://shortutorial.com/tax-brackets-explained/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+/* bracket calculator */
+.try select{width:auto;max-width:100%}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.kpis div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
+.kpis small{display:block;font-family:var(--mono);font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.kpis b{font-family:var(--display);font-size:1.15rem;color:var(--accent);overflow-wrap:anywhere}
+.stack{display:flex;height:34px;border-radius:9px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.stack i{display:block;height:100%;min-width:0;border-right:1px solid var(--surface);transition:flex-grow .25s}
+.stack .free,.stack-key .free{background:repeating-linear-gradient(45deg,var(--line) 0 4px,transparent 4px 9px)}
+.stack-key{display:flex;flex-wrap:wrap;gap:6px 14px;font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.stack-key i{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:-1px;margin-right:4px}
+.bk td,.bk th{font-size:.88rem}
+.bk tr.on td{font-weight:600}
+.bucket{display:flex;flex-direction:column;gap:6px}
+.bucket div{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.8rem}
+.bucket span.r{flex:none;width:44px;text-align:right;color:var(--amber);font-weight:600}
+.bucket span.bar{flex:1;height:16px;border-radius:5px;background:var(--line);overflow:hidden;min-width:0}
+.bucket span.bar b{display:block;height:100%;background:var(--accent)}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"How Tax Brackets Work","item":"https://shortutorial.com/tax-brackets-explained/"}]},{"@type":"Article","@id":"https://shortutorial.com/tax-brackets-explained/#article","headline":"How Tax Brackets Work","description":"How US federal tax brackets really work: marginal vs effective tax rate, the 2026 brackets and standard deduction, and why a raise never lowers your take-home pay. Includes a bracket calculator.","url":"https://shortutorial.com/tax-brackets-explained/","mainEntityOfPage":"https://shortutorial.com/tax-brackets-explained/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Money","keywords":"tax brackets, 2026 tax brackets, marginal tax rate, effective tax rate, standard deduction, federal income tax, taxable income, raise higher bracket, irs, income tax calculator","timeRequired":"PT12M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"If I'm in the 22% bracket, do I pay 22% of my income?","acceptedAnswer":{"@type":"Answer","text":"No. You pay 22% only on the part of your taxable income that falls inside the 22% bracket. The lower parts are taxed at 10% and 12%. Your overall (effective) rate is much lower."}},{"@type":"Question","name":"Can a raise push me into a higher bracket and lower my pay?","acceptedAnswer":{"@type":"Answer","text":"Not because of brackets. Only the extra dollars are taxed at the higher rate. You'll always keep more after a raise. Losing a credit or benefit at a certain income is the only way a raise can backfire, and that's uncommon."}},{"@type":"Question","name":"Which tax year do the 2026 brackets apply to?","acceptedAnswer":{"@type":"Answer","text":"Income you earn from January 1 to December 31, 2026. You report it on the return you file in early 2027."}},{"@type":"Question","name":"Do Social Security and Medicare taxes use these brackets?","acceptedAnswer":{"@type":"Answer","text":"No. Those payroll taxes (FICA) are separate flat-rate taxes on wages. The brackets here are only for federal income tax."}},{"@type":"Question","name":"Should I itemize or take the standard deduction?","acceptedAnswer":{"@type":"Answer","text":"Take whichever is bigger. Add up mortgage interest, state and local taxes, charitable gifts and qualifying medical costs. If the total beats your standard deduction, itemizing saves more. Tax software does this comparison for you."}},{"@type":"Question","name":"Does my state use the same brackets?","acceptedAnswer":{"@type":"Answer","text":"No. Each state sets its own income tax, and some have none. This page covers federal income tax only."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="tax-brackets-explained">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=money">Money</a> / Tax brackets explained</div>
+    <span class="eyebrow">Money · Taxes</span>
+    <h1>How Tax Brackets Work</h1>
+    <p class="lede">Being “in the 22% bracket” doesn't mean you pay 22% on everything. Learn how the brackets really stack, the difference between your marginal and effective rate, and why a raise always leaves you with more money. Uses the official 2026 IRS numbers.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~12 min read</span><span class="badge">5 lessons</span><span class="badge">2026 bracket calculator</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#t1">1 · Buckets</a><a href="#t2">2 · Taxable income</a><a href="#t3">3 · 2026 brackets</a><a href="#t4">4 · Marginal vs effective</a><a href="#t5">5 · Raises & refunds</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="t1">
+    <div class="lesson-head"><span class="step">01</span><h2>Brackets are buckets, not a cliff</h2></div>
+    <p>The US federal income tax is <b>progressive</b>: higher slices of income are taxed at higher rates. Picture your income being poured into a row of buckets. The first bucket fills up and is taxed at 10%. Only the money that spills over goes into the next bucket at 12%, then 22%, and so on.</p>
+    <p>Each rate applies <b>only to the dollars inside its bucket</b>. Moving into a higher bracket never changes the tax on the dollars already in the lower buckets.</p>
+    <figure>
+      <div class="bucket" aria-label="Example: a single filer with 60,000 dollars of taxable income fills the 10% bucket, the 12% bucket, and part of the 22% bucket">
+        <div><span class="r">10%</span><span class="bar"><b style="width:100%"></b></span><span>$12,400</span></div>
+        <div><span class="r">12%</span><span class="bar"><b style="width:100%"></b></span><span>$38,000</span></div>
+        <div><span class="r">22%</span><span class="bar"><b style="width:17%"></b></span><span>$9,600</span></div>
+        <div><span class="r">24%</span><span class="bar"><b style="width:0"></b></span><span>$0</span></div>
+      </div>
+      <figcaption>$60,000 of taxable income, single, 2026: three buckets get some money</figcaption>
+    </figure>
+    <div class="example"><div class="ex-h">Example · single filer, $60,000 taxable income (2026)</div><ol><li>First $12,400 × 10% = $1,240</li><li>Next $38,000 (up to $50,400) × 12% = $4,560</li><li>Last $9,600 × 22% = $2,112</li><li class="ans">Total tax $7,912, which is 13.2% of $60,000, not 22%</li></ol></div>
+  </section>
+
+  <section class="lesson" id="t2">
+    <div class="lesson-head"><span class="step">02</span><h2>From paycheck to taxable income</h2></div>
+    <p>Brackets apply to <b>taxable income</b>, not your salary. Several things come off first:</p>
+    <ol class="steps">
+      <li><b>Start with gross income:</b> wages, plus things like interest, freelance income and unemployment.</li>
+      <li><b>Subtract pre-tax contributions and adjustments:</b> traditional 401(k) contributions, HSA contributions, some student loan interest and similar. What's left is roughly your <b>adjusted gross income</b> (AGI).</li>
+      <li><b>Subtract your deduction:</b> the <b>standard deduction</b>, or your itemized deductions (mortgage interest, state and local taxes, charity, large medical bills) if those add up to more. Most people take the standard deduction.</li>
+      <li><b>The result is taxable income.</b> That's what goes into the buckets.</li>
+    </ol>
+    <div class="tw"><table class="t">
+      <tr><th>Filing status</th><th class="num">2026 standard deduction</th></tr>
+      <tr><td>Single or married filing separately</td><td class="num">$16,100</td></tr>
+      <tr><td>Married filing jointly</td><td class="num">$32,200</td></tr>
+      <tr><td>Head of household</td><td class="num">$24,150</td></tr>
+    </table></div>
+    <p class="callout"><span><b>Extra deductions:</b> people who are 65 or older or blind get a larger standard deduction. For 2025 through 2028 there's also a new deduction of up to $6,000 for people 65 and older, plus new deductions for some tip and overtime income. These phase out at higher incomes. The IRS links in Sources have the details.</span></p>
+  </section>
+
+  <section class="lesson" id="t3">
+    <div class="lesson-head"><span class="step">03</span><h2>The 2026 federal brackets</h2></div>
+    <p>These are the official IRS brackets for <b>tax year 2026</b>, the return you'll file in early 2027. The IRS adjusts the dollar amounts each year for inflation. The rates stay the same.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Rate</th><th class="num">Single</th><th class="num">Married jointly</th><th class="num">Head of household</th></tr>
+      <tr><td>10%</td><td class="num">$0 – $12,400</td><td class="num">$0 – $24,800</td><td class="num">$0 – $17,700</td></tr>
+      <tr><td>12%</td><td class="num">to $50,400</td><td class="num">to $100,800</td><td class="num">to $67,450</td></tr>
+      <tr><td>22%</td><td class="num">to $105,700</td><td class="num">to $211,400</td><td class="num">to $105,700</td></tr>
+      <tr><td>24%</td><td class="num">to $201,775</td><td class="num">to $403,550</td><td class="num">to $201,750</td></tr>
+      <tr><td>32%</td><td class="num">to $256,225</td><td class="num">to $512,450</td><td class="num">to $256,200</td></tr>
+      <tr><td>35%</td><td class="num">to $640,600</td><td class="num">to $768,700</td><td class="num">to $640,600</td></tr>
+      <tr><td>37%</td><td class="num">over $640,600</td><td class="num">over $768,700</td><td class="num">over $640,600</td></tr>
+    </table></div>
+    <div class="try" id="tx"><span class="try-h">Try it · 2026 bracket calculator</span>
+      <div class="row">
+        <label>Filing status<select id="txStatus"><option value="single">Single</option><option value="mfj">Married filing jointly</option><option value="hoh">Head of household</option></select></label>
+        <label>Gross income ($)<input type="number" id="txGross" value="75000" min="0" step="1000" inputmode="decimal"></label>
+        <label>Pre-tax 401(k), HSA ($)<input type="number" id="txPre" value="0" min="0" step="500" inputmode="decimal"></label>
+        <label>Itemized, if more ($)<input type="number" id="txItem" value="0" min="0" step="500" inputmode="decimal"></label>
+      </div>
+      <div class="kpis" aria-live="polite">
+        <div><small>Taxable income</small><b id="kTaxable">—</b></div>
+        <div><small>Federal income tax</small><b id="kTax">—</b></div>
+        <div><small>Marginal rate</small><b id="kMarg">—</b></div>
+        <div><small>Effective rate</small><b id="kEff">—</b></div>
+      </div>
+      <div class="stack" id="txStack" role="img" aria-label="Stacked bar of income in each bracket"></div>
+      <div class="stack-key" id="txKey"></div>
+      <div class="tw"><table class="t bk" id="txTable"></table></div>
+      <div class="row">
+        <label>Test a raise of ($)<input type="number" id="txRaise" value="1000" min="0" step="500" inputmode="decimal"></label>
+      </div>
+      <p class="out" id="txRaiseOut" aria-live="polite"></p>
+      <div class="work" id="txWork"></div>
+    </div>
+    <p class="callout"><span><b>What the calculator leaves out:</b> tax credits (like the Child Tax Credit), long-term capital gains and qualified dividends (taxed at their own lower rates), the new senior, tip and overtime deductions, self-employment tax, Social Security and Medicare (FICA), and state income tax. Use it to understand brackets, not to file.</span></p>
+  </section>
+
+  <section class="lesson" id="t4">
+    <div class="lesson-head"><span class="step">04</span><h2>Marginal rate vs effective rate</h2></div>
+    <div class="grid2">
+      <div><span class="tagline">Marginal rate</span><h3>The rate on your next dollar</h3><p>The rate of the highest bucket your income reaches. It tells you how much tax you'd pay on a raise, a bonus, or side income, and how much a pre-tax 401(k) contribution saves you.</p></div>
+      <div><span class="tagline">Effective rate</span><h3>Your overall average</h3><p>Total tax ÷ income. It tells you what share of your income actually goes to federal income tax. It's always lower than your marginal rate once you're past the first bracket.</p></div>
+    </div>
+    <div class="formula">Effective rate = <span class="v">total tax</span> ÷ <span class="v">income</span><small>People use either gross income or taxable income. Say which one you mean.</small></div>
+    <div class="example"><div class="ex-h">Example · single, $75,000 salary, standard deduction</div><ol><li>Taxable income: $75,000 − $16,100 = $58,900</li><li>Tax: $1,240 + $4,560 + 22% × $8,500 ($1,870) = $7,670</li><li>Marginal rate: 22%</li><li class="ans">Effective rate: $7,670 ÷ $75,000 ≈ 10.2% of gross pay</li></ol></div>
+    <p><b>Why it matters:</b> if your marginal rate is 22%, every $1,000 you put into a traditional 401(k) cuts your federal tax by about $220. That's the marginal rate at work.</p>
+  </section>
+
+  <section class="lesson" id="t5">
+    <div class="lesson-head"><span class="step">05</span><h2>Raises, deductions, credits and refunds</h2></div>
+    <h3>A raise never lowers your take-home pay (from brackets)</h3>
+    <p>Because only the dollars above the line get the higher rate, crossing into a new bracket costs you a higher rate on just those extra dollars. You always keep most of a raise.</p>
+    <div class="example"><div class="ex-h">Example · single, taxable income $50,000 → $51,000</div><ol><li>The first $400 of the raise stays in the 12% bucket: $48 tax</li><li>The other $600 lands in the 22% bucket: $132 tax</li><li class="ans">Raise $1,000, extra tax $180, you keep $820</li></ol></div>
+    <p class="callout"><span><b>The real exceptions are benefit cliffs, not brackets.</b> Some credits and benefits (like the Earned Income Tax Credit, health insurance subsidies or Medicaid) shrink or stop as income rises. In rare cases that can make a small raise cost more than it's worth. The brackets themselves can't.</span></p>
+    <h3>Deductions vs credits</h3>
+    <ul class="points">
+      <li>A <b>deduction</b> lowers your taxable income. A $1,000 deduction saves you $1,000 × your marginal rate, for example $120 in the 12% bracket.</li>
+      <li>A <b>credit</b> lowers your tax bill directly. A $1,000 credit saves you $1,000. Credits are worth more, dollar for dollar.</li>
+    </ul>
+    <h3>Withholding and refunds</h3>
+    <p>Your employer takes tax out of each paycheck based on your <b>Form W-4</b>. When you file, you compare the tax you actually owe with what was withheld. Too much withheld means a <b>refund</b>; too little means you owe. A refund isn't a bonus, it's your own money coming back. You can adjust your W-4 anytime with the IRS Tax Withholding Estimator. Waiting on one? See <a href="../check-tax-refund-status/">How to Check Your Tax Refund Status</a>.</p>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>If I'm in the 22% bracket, do I pay 22% of my income?</summary><div class="a"><p>No. You pay 22% only on the part of your taxable income that falls inside the 22% bracket. The lower parts are taxed at 10% and 12%. Your overall (effective) rate is much lower.</p></div></details>
+      <details><summary>Can a raise push me into a higher bracket and lower my pay?</summary><div class="a"><p>Not because of brackets. Only the extra dollars are taxed at the higher rate. You'll always keep more after a raise. Losing a credit or benefit at a certain income is the only way a raise can backfire, and that's uncommon.</p></div></details>
+      <details><summary>Which tax year do the 2026 brackets apply to?</summary><div class="a"><p>Income you earn from January 1 to December 31, 2026. You report it on the return you file in early 2027.</p></div></details>
+      <details><summary>Do Social Security and Medicare taxes use these brackets?</summary><div class="a"><p>No. Those payroll taxes (FICA) are separate flat-rate taxes on wages. The brackets here are only for federal income tax.</p></div></details>
+      <details><summary>Should I itemize or take the standard deduction?</summary><div class="a"><p>Take whichever is bigger. Add up mortgage interest, state and local taxes, charitable gifts and qualifying medical costs. If the total beats your standard deduction, itemizing saves more. Tax software does this comparison for you.</p></div></details>
+      <details><summary>Does my state use the same brackets?</summary><div class="a"><p>No. Each state sets its own income tax, and some have none. This page covers federal income tax only.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill" target="_blank" rel="noopener"><span class="src">IRS</span><b>Tax inflation adjustments for tax year 2026</b></a>
+      <a href="https://www.irs.gov/pub/irs-drop/rp-25-32.pdf" target="_blank" rel="noopener"><span class="src">IRS · Rev. Proc. 2025-32</span><b>Full 2026 tax rate tables (PDF)</b></a>
+      <a href="https://www.irs.gov/newsroom/new-and-enhanced-deductions-for-individuals" target="_blank" rel="noopener"><span class="src">IRS</span><b>New and enhanced deductions for individuals</b></a>
+      <a href="https://www.irs.gov/individuals/tax-withholding-estimator" target="_blank" rel="noopener"><span class="src">IRS</span><b>Tax Withholding Estimator</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>2026 figures from the IRS. Educational only, not tax advice; check irs.gov or a tax professional for your situation.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  // 2026 brackets (IRS Rev. Proc. 2025-32): upper limit of each bracket
+  const RATES = [10, 12, 22, 24, 32, 35, 37];
+  const TOPS = {
+    single: [12400, 50400, 105700, 201775, 256225, 640600, Infinity],
+    mfj:    [24800, 100800, 211400, 403550, 512450, 768700, Infinity],
+    hoh:    [17700, 67450, 105700, 201750, 256200, 640600, Infinity]
+  };
+  const STD = {single: 16100, mfj: 32200, hoh: 24150};
+  const money = n => '$' + Math.round(n).toLocaleString('en-US');
+  const shade = i => `color-mix(in srgb, var(--accent) ${30 + i * 11}%, var(--surface))`;
+
+  function tax(status, taxable){
+    const tops = TOPS[status]; let prev = 0, total = 0; const parts = [];
+    tops.forEach((top, i) => {
+      const amt = Math.max(0, Math.min(taxable, top) - prev);
+      parts.push({rate: RATES[i], from: prev, top, amt, tax: amt * RATES[i] / 100});
+      total += amt * RATES[i] / 100; prev = top;
+    });
+    return {total, parts};
+  }
+  const val = id => { const v = parseFloat($(id).value); return isFinite(v) && v > 0 ? Math.min(v, 1e9) : 0; };
+
+  function calc(){
+    const st = $('#txStatus').value, gross = val('#txGross'), pre = val('#txPre'), item = val('#txItem');
+    const ded = Math.max(STD[st], item);
+    const taxable = Math.max(0, gross - pre - ded);
+    const r = tax(st, taxable);
+    const top = r.parts.filter(p => p.amt > 0).pop();
+    const marg = taxable > 0 ? top.rate : 0;
+    $('#kTaxable').textContent = money(taxable);
+    $('#kTax').textContent = money(r.total);
+    $('#kMarg').textContent = taxable > 0 ? marg + '%' : '0%';
+    $('#kEff').textContent = gross > 0 ? fmt(100 * r.total / gross, 1) + '% of gross' : '—';
+
+    // stacked bar of gross: deduction-free part + each bracket
+    const free = Math.min(gross, pre + ded);
+    const segs = [{w: free, cls: 'free', label: 'Not taxed (deduction, pre-tax)'}]
+      .concat(r.parts.filter(p => p.amt > 0).map(p => ({w: p.amt, bg: shade(RATES.indexOf(p.rate)), label: p.rate + '% bracket'})));
+    const tot = segs.reduce((s, x) => s + x.w, 0) || 1;
+    $('#txStack').innerHTML = segs.map(s => `<i class="${s.cls || ''}" style="flex-grow:${s.w / tot};${s.bg ? 'background:' + s.bg : ''}" title="${s.label}: ${money(s.w)}"></i>`).join('');
+    $('#txStack').setAttribute('aria-label', 'Stacked bar: ' + segs.map(s => s.label + ' ' + money(s.w)).join(', '));
+    $('#txKey').innerHTML = segs.map(s => `<span><i class="${s.cls || ''}" style="${s.bg ? 'background:' + s.bg : ''}"></i>${s.label}</span>`).join('');
+
+    let rows = '<tr><th>Bracket</th><th class="num">Income in it</th><th class="num">Tax</th></tr>';
+    r.parts.forEach(p => {
+      if (p.amt <= 0 && p.from > taxable) return;
+      rows += `<tr class="${p.rate === marg ? 'on' : ''}"><td>${p.rate}%</td><td class="num">${money(p.amt)}</td><td class="num">${money(p.tax)}</td></tr>`;
+    });
+    rows += `<tr class="on"><td>Total</td><td class="num">${money(taxable)}</td><td class="num">${money(r.total)}</td></tr>`;
+    $('#txTable').innerHTML = rows;
+
+    const raise = val('#txRaise');
+    const r2 = tax(st, Math.max(0, gross + raise - pre - ded));
+    const extra = r2.total - r.total;
+    $('#txRaiseOut').innerHTML = raise > 0
+      ? `A ${money(raise)} raise adds <b>${money(extra)}</b> of federal income tax. You keep <b>${money(raise - extra)}</b> (${fmt(100 * (raise - extra) / raise, 0)}% of it).`
+      : 'Enter a raise amount to see how much you keep.';
+    $('#txWork').textContent = `${money(gross)} gross − ${money(pre)} pre-tax − ${money(ded)} ${item > STD[st] ? 'itemized' : 'standard'} deduction = ${money(taxable)} taxable` +
+      (taxable > 0 ? '\n' + r.parts.filter(p => p.amt > 0).map(p => `${money(p.amt)} × ${p.rate}% = ${money(p.tax)}`).join('\n') : '');
+  }
+  live($('#tx'), calc);
+})();
+</script>
+</body>
+</html>
