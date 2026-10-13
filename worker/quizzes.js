@@ -1907,5 +1907,71 @@ export default {
         o: ["More toothpicks without glue", "Drill it out and glue in a wood dowel", "Tape over the hole", "Use a shorter screw"], a: 1,
         e: "A glued-in dowel gives solid new wood to drill a fresh pilot hole into." }
     ]
+  },
+
+  "clean-silver-jewelry": {
+    title: "How to Clean Silver Jewelry",
+    pass: 4,
+    questions: [
+      { q: "What is tarnish on silver?",
+        o: ["Rust from iron in the metal", "A thin layer of silver sulfide from sulfur in the air and on skin", "Dried soap", "Scratches in the surface"], a: 1,
+        e: "Silver reacts with sulfur compounds to form dark silver sulfide." },
+      { q: "Which stamp usually means a piece is solid sterling silver?",
+        o: ["14K", "GP", "925", "SS-plate"], a: 2,
+        e: "Sterling is marked 925, .925 or Sterling." },
+      { q: "In the baking soda and foil bath, what must the jewelry do?",
+        o: ["Touch the aluminum foil", "Float above the foil", "Be wrapped in plastic", "Sit in cold water overnight"], a: 0,
+        e: "The reaction that turns tarnish back into silver only works where the silver touches the aluminum." },
+      { q: "Which piece should NOT go in the foil bath?",
+        o: ["A plain sterling silver chain", "A plain sterling ring", "A solid silver bangle with no stones", "A pearl and silver necklace"], a: 3,
+        e: "Pearls, soft stones, glued parts, plated and antiqued pieces should skip the bath." },
+      { q: "Why avoid toothpaste for cleaning silver?",
+        o: ["It's too acidic", "It's abrasive and leaves fine scratches", "It turns silver green", "It only works on gold"], a: 1,
+        e: "Toothpaste is abrasive; a silver polishing cloth is gentler." }
+    ]
+  },
+
+  "clear-cache": {
+    title: "How to Clear Cache and Cookies",
+    pass: 4,
+    questions: [
+      { q: "What happens when you clear your browser's cookies?",
+        o: ["Your bookmarks are deleted", "You're signed out of most websites", "Your downloaded files are removed", "Nothing you would notice"], a: 1,
+        e: "Cookies are what keep you signed in, so clearing them signs you out and resets site preferences." },
+      { q: "Which is the safest thing to clear when a page looks broken?",
+        o: ["Saved passwords", "Autofill data", "The cache (cached images and files)", "Site settings"], a: 2,
+        e: "The cache holds only copies of website files. Clearing it loses nothing personal." },
+      { q: "What does a hard refresh (Ctrl + F5, or Cmd + Shift + R on a Mac) do?",
+        o: ["Reloads the page and skips the saved copy", "Deletes all your cookies", "Restarts the computer", "Clears your history"], a: 0,
+        e: "A hard refresh fetches a fresh copy of the page without clearing anything else." },
+      { q: "In Safari on a Mac, what does History › Clear History remove?",
+        o: ["Only the list of pages you visited", "Only the cache", "Only saved passwords", "History plus the cookies and cached website data for that period"], a: 3,
+        e: "Safari bundles them: clearing history also removes related cookies and website data." },
+      { q: "Why should you be careful clearing data while browser sync is on?",
+        o: ["It slows down your internet", "It can also clear that data on your other devices", "It uninstalls the browser", "It turns off your antivirus"], a: 1,
+        e: "With sync on, clearing history or passwords while signed in can remove them from your other devices too." }
+    ]
+  },
+
+  "get-rid-of-ants": {
+    title: "How to Get Rid of Ants in the House",
+    pass: 4,
+    questions: [
+      { q: "Why don't sprays usually solve an ant problem?",
+        o: ["Ants are immune to all sprays", "They only kill the foragers you see, not the queens in the nest", "Sprays attract more ants", "Sprays only work outdoors"], a: 1,
+        e: "Most of the colony and the queens stay in the nest; baits are carried back to reach them." },
+      { q: "What should you wipe an ant trail with to remove the scent they follow?",
+        o: ["Soapy water", "Sugar water", "Bleach mixed with ammonia", "Nothing; leave it"], a: 0,
+        e: "Soapy water on a sponge removes the scent trail. (Never mix bleach and ammonia.)" },
+      { q: "Where should you put bait stations?",
+        o: ["Far from the trail so ants don't get scared", "Only on high shelves", "Next to a fresh layer of bug spray", "Right on or next to the trail and at entry points"], a: 3,
+        e: "Put baits where ants already travel, and don't spray near them." },
+      { q: "Why do UC experts say homemade liquid borax baits should be weak (about 0.5% to 1%)?",
+        o: ["Stronger baits taste too sweet", "Strong borax attracts other insects", "Stronger baits kill workers before they share the bait with the colony", "Weak baits are illegal to sell"], a: 2,
+        e: "A slow-acting, low-strength bait lets workers carry it home and share it before they die." },
+      { q: "Which ant should you never spray, because spraying can make its colony split?",
+        o: ["Pavement ant", "Argentine ant", "Pharaoh ant", "Fire ant"], a: 2,
+        e: "Repellent sprays can cause pharaoh ant colonies to bud into several new ones; use baits." }
+    ]
   }
 };

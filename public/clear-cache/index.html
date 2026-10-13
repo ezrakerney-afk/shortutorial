@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Clear Cache and Cookies in Chrome, Edge, Safari and Firefox · Shortutorial</title>
+<meta name="description" content="Clear your browser cache and cookies on a computer in Chrome, Edge, Safari or Firefox. Learn the difference between cache, cookies and history, and see exactly what you'll lose before you click.">
+<link rel="canonical" href="https://shortutorial.com/clear-cache/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How to Clear Cache and Cookies in Chrome, Edge, Safari and Firefox · Shortutorial">
+<meta property="og:description" content="Clear your browser cache and cookies on a computer in Chrome, Edge, Safari or Firefox. Learn the difference between cache, cookies and history, and see exactly what you'll lose before you click.">
+<meta property="og:url" content="https://shortutorial.com/clear-cache/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../guide.css">
+<style>
+/* Browser picker (own switch so it doesn't overwrite the site-wide Windows/Mac choice) */
+.br-switch{display:inline-flex;flex-wrap:wrap;padding:3px;border-radius:999px;background:var(--surface);border:1px solid var(--line)}
+.br-switch button{all:unset;cursor:pointer;font-family:var(--display);font-weight:600;font-size:.92rem;padding:6px 14px;border-radius:999px;color:var(--muted);transition:background .15s,color .15s}
+.br-switch button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.br-switch button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:420px){.br-switch{border-radius:14px}.br-switch button{padding:6px 11px}}
+.tool{border:1.5px dashed var(--accent);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:14px;background:color-mix(in srgb,var(--accent-soft) 45%,var(--surface))}
+.tool-h{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.74rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.tool-h::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.goals{display:flex;flex-wrap:wrap;gap:8px}
+.goals button{all:unset;cursor:pointer;font-family:var(--mono);font-size:.8rem;padding:6px 12px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink)}
+.goals button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.goals button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media (max-width:560px){.checks{grid-template-columns:1fr}}
+.checks label{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-size:.95rem;line-height:1.35}
+.checks label:has(input:checked){border-color:var(--accent)}
+.checks input{accent-color:var(--accent);width:18px;height:18px;margin:1px 0 0;flex:none}
+.checks small{display:block;font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-top:2px}
+.verdict{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.verdict{grid-template-columns:1fr}}
+.verdict>div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:6px}
+.verdict h3{font-size:.95rem;font-family:var(--mono);text-transform:uppercase;letter-spacing:.06em}
+.verdict .lose h3{color:var(--bad)} .verdict .keep h3{color:var(--good)}
+.verdict ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:5px;font-size:.93rem}
+.how{font-size:.95rem}
+</style>
+</head>
+<body data-slug="clear-cache">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=computer">Computer help</a> / Clear cache and cookies</div>
+    <span class="eyebrow">Computer help · Browsers</span>
+    <h1>How to Clear Cache and Cookies</h1>
+    <p class="lede">A website looks broken, won't load, or keeps showing old info? Clearing your browser's cache and cookies fixes it surprisingly often. Here's how in every major browser, and what you'll lose before you click.</p>
+    <div class="badges"><span class="badge level">How-to + fix</span><span class="badge">~5 min</span><span class="badge">Easy</span></div>
+    <div class="os-row"><span class="lbl">Show steps for</span>
+      <div class="br-switch" role="group" aria-label="Browser"><button type="button" data-br-set="chrome">Chrome</button><button type="button" data-br-set="edge">Edge</button><button type="button" data-br-set="safari">Safari</button><button type="button" data-br-set="firefox">Firefox</button></div>
+    </div>
+  </header>
+
+  <section class="block">
+    <div class="first">
+      <span class="eyebrow">Fastest way · 30 seconds</span>
+      <h3>Open the “clear data” window in one go</h3>
+      <div data-br="chrome"><p>Press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Delete</kbd> on Windows, or <kbd>⌘ Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Delete</kbd> on a Mac. Or click the <b>⋮</b> menu at the top right and choose <b>Delete browsing data</b>. Pick a <b>Time range</b>, tick <b>Cached images and files</b> and <b>Cookies and other site data</b>, then click <b>Delete data</b>.</p></div>
+      <div data-br="edge"><p>Press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Delete</kbd> on Windows, or <kbd>⌘ Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Delete</kbd> on a Mac. Or go to <span class="path">⋯ Settings and more <i>›</i> Settings <i>›</i> Privacy, search, and services <i>›</i> Clear browsing data</span> and click <b>Choose what to clear</b>. Pick a <b>Time range</b>, tick <b>Cookies and other site data</b> and <b>Cached images and files</b>, then click <b>Clear now</b>.</p></div>
+      <div data-br="safari"><p>Safari bundles things together. Choose <span class="path">History <i>›</i> Clear History…</span> in the menu bar, pick how far back, and click <b>Clear History</b>. That removes your history <b>plus</b> the cookies and cached website data for that period. To clear only cookies, or only the cache, use steps 2 and 3 below.</p></div>
+      <div data-br="firefox"><p>Press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Delete</kbd> on Windows, or <kbd>⌘ Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Delete</kbd> on a Mac. Or click the <b>☰</b> menu › <b>History</b> › <b>Clear Recent History…</b>. Set <b>When</b> to <b>Everything</b>, tick <b>Cookies and site data</b> and <b>Temporary cached files and pages</b>, then click <b>Clear</b>.</p></div>
+      <p>Then close and reopen the browser and try the website again. Not sure what to tick? Use the checker below first.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">101</span>Cache, cookies and history: what's the difference?</h2>
+    <div class="habits">
+      <div><h3>🗂️ Cache</h3><p>Copies of pictures, code and pages your browser saved so sites load faster next time. Nothing personal. Clearing it is safe; pages just load a little slower once. An old or damaged copy is a common cause of a page looking broken.</p></div>
+      <div><h3>🍪 Cookies and site data</h3><p>Small files websites save to remember <b>you</b>: that you're signed in, what's in your cart, your language. Clearing them <b>signs you out</b> of most websites and resets their settings.</p></div>
+      <div><h3>🕘 History</h3><p>The list of pages you've visited and files you've downloaded. Clearing it removes the list and address-bar suggestions. Your bookmarks and downloaded files stay.</p></div>
+      <div><h3>🔑 Passwords and autofill</h3><p>Saved passwords, addresses and cards. These are separate boxes in the clear-data window. <b>Leave them unticked</b> unless you're sure; clearing passwords can't be undone.</p></div>
+    </div>
+    <div class="note"><span><b>Signed in to the browser?</b> If Chrome or Edge sync is on, clearing history and other synced data while signed in can also clear it on your other devices. Edge's help suggests turning off sync first if you only want to clear this computer.</span></div>
+  </section>
+
+  <section class="block" id="checker">
+    <h2 class="sec"><span class="n">TOOL</span>What will I lose? Check before you clear</h2>
+    <div class="tool" id="lossTool">
+      <span class="tool-h">Try it · clear-data checker</span>
+      <p>Tap what you're trying to do, or tick boxes yourself. Box names match <b id="ltName">your browser</b>.</p>
+      <div class="goals" role="group" aria-label="What are you trying to do?">
+        <button type="button" data-goal="fix">Fix a broken page</button>
+        <button type="button" data-goal="login">Fix a sign-in problem</button>
+        <button type="button" data-goal="shared">Privacy on a shared computer</button>
+        <button type="button" data-goal="space">Free up disk space</button>
+      </div>
+      <div class="checks" id="ltChecks"></div>
+      <div class="verdict" aria-live="polite"><div class="lose"><h3>You'll lose</h3><ul id="ltLose"></ul></div><div class="keep"><h3>You'll keep</h3><ul id="ltKeep"></ul></div></div>
+      <p class="how" id="ltHow"></p>
+    </div>
+  </section>
+
+  <section class="block" id="fixes">
+    <h2 class="sec"><span class="n">FIX</span>Fix a misbehaving website, gentlest first</h2>
+    <div class="steps-head"><p>Start at step 1. Each step clears a bit more, so you lose as little as possible.</p><button class="linkbtn" id="expandAll">Show all steps</button></div>
+    <div class="steps" data-q="Is the site working now?" data-yes="Yes, it works" data-no="No, next step →">
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Do a hard refresh of the page</span><span class="fix-time">10 sec</span></button>
+        <div class="fix-body">
+          <p>A hard refresh reloads the page and skips the saved copy, without clearing anything else.</p>
+          <p data-br="chrome">Windows: <kbd>Ctrl</kbd> + <kbd>F5</kbd> or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>. Mac: <kbd>⌘ Cmd</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>.</p>
+          <p data-br="edge">Windows: <kbd>Ctrl</kbd> + <kbd>F5</kbd> or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>. Mac: <kbd>⌘ Cmd</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>.</p>
+          <p data-br="safari">Press <kbd>⌘ Cmd</kbd> + <kbd>Option</kbd> + <kbd>R</kbd>, or hold <kbd>Shift</kbd> and click the reload button in the address bar.</p>
+          <p data-br="firefox">Windows: <kbd>Ctrl</kbd> + <kbd>F5</kbd> or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>. Mac: <kbd>⌘ Cmd</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>.</p>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Clear cookies and data for just that website</span><span class="fix-time">1 min</span></button>
+        <div class="fix-body">
+          <p>This signs you out of that one site only, and leaves every other site alone. Great for a site stuck in a sign-in loop.</p>
+          <ol class="list" data-br="chrome"><li>Click the <b>⋮</b> menu › <b>Settings</b> › <b>Privacy and security</b> › <b>Third-party cookies</b>.</li><li>Click <b>See all site data and permissions</b>.</li><li>Search for the site's name at the top right, click <b>Delete</b> next to it, and confirm.</li></ol>
+          <ol class="list" data-br="edge"><li>Click <b>⋯</b> › <b>Settings</b> › <b>Cookies and site permissions</b>.</li><li>Click <b>Manage and delete cookies and site data</b> › <b>See all cookies and site data</b>.</li><li>Search for the site's name, then click the trash can next to it.</li></ol>
+          <ol class="list" data-br="safari"><li>Choose <span class="path">Safari <i>›</i> Settings</span> and click <b>Privacy</b>.</li><li>Click <b>Manage Website Data…</b></li><li>Search for the site, select it, click <b>Remove</b>, then <b>Done</b>.</li></ol>
+          <ol class="list" data-br="firefox"><li>While on the site, click the padlock or shield icon to the left of the address bar.</li><li>Click <b>Clear cookies and site data…</b> and confirm.</li><li>Or go to <span class="path">Settings <i>›</i> Privacy &amp; Security <i>›</i> Cookies and Site Data <i>›</i> Manage Data…</span>, search for the site, and click <b>Remove Selected</b> › <b>Save Changes</b>.</li></ol>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Clear the whole cache (keep your sign-ins)</span><span class="fix-time">1 min</span></button>
+        <div class="fix-body">
+          <p>Clearing only the cache is safe: you stay signed in everywhere and lose nothing personal.</p>
+          <ol class="list" data-br="chrome"><li>Press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Delete</kbd> (Mac: <kbd>⌘</kbd> + <kbd>Shift</kbd> + <kbd>Delete</kbd>), or <b>⋮</b> › <b>Delete browsing data</b>.</li><li>Set <b>Time range</b> to <b>All time</b>.</li><li>Tick only <b>Cached images and files</b> and untick everything else.</li><li>Click <b>Delete data</b>.</li></ol>
+          <ol class="list" data-br="edge"><li>Press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Delete</kbd> (Mac: <kbd>⌘</kbd> + <kbd>Shift</kbd> + <kbd>Delete</kbd>).</li><li>Set <b>Time range</b> to <b>All time</b>.</li><li>Tick only <b>Cached images and files</b>.</li><li>Click <b>Clear now</b>.</li></ol>
+          <ol class="list" data-br="safari"><li>Choose <span class="path">Safari <i>›</i> Settings <i>›</i> Advanced</span> and turn on <b>Show features for web developers</b> (older versions say “Show Develop menu in menu bar”).</li><li>A <b>Develop</b> menu appears in the menu bar. Choose <span class="path">Develop <i>›</i> Empty Caches</span>.</li><li>Close and reopen Safari.</li></ol>
+          <ol class="list" data-br="firefox"><li>Click <b>☰</b> › <b>Settings</b> › <b>Privacy &amp; Security</b>.</li><li>Under <b>Cookies and Site Data</b> (called Browsing data in some versions), click <b>Clear Data…</b></li><li>Set <b>When</b> to <b>Everything</b>, tick only <b>Temporary cached files and pages</b>, and click <b>Clear</b>.</li></ol>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Clear cookies and cache together</span><span class="fix-time">2 min</span></button>
+        <div class="fix-body">
+          <p>The classic “clear cache and cookies.” You'll be <b>signed out of most websites</b>, so make sure you know your passwords (or have them saved in a password manager) first.</p>
+          <p data-br="chrome">Open <b>Delete browsing data</b> as above, set <b>All time</b>, tick <b>Cookies and other site data</b> and <b>Cached images and files</b>, and click <b>Delete data</b>.</p>
+          <p data-br="edge">Open <b>Clear browsing data</b> as above, set <b>All time</b>, tick <b>Cookies and other site data</b> and <b>Cached images and files</b>, and click <b>Clear now</b>.</p>
+          <p data-br="safari">Go to <span class="path">Safari <i>›</i> Settings <i>›</i> Privacy <i>›</i> Manage Website Data…</span> and click <b>Remove All</b>. This removes cookies and website data for every site but keeps your history. Or use <span class="path">History <i>›</i> Clear History…</span> to remove history, cookies and cache together.</p>
+          <p data-br="firefox">In <b>Clear Data…</b> (or <b>Clear Recent History…</b>), set <b>When</b> to <b>Everything</b>, tick <b>Cookies and site data</b> and <b>Temporary cached files and pages</b>, and click <b>Clear</b>.</p>
+          <div class="note warn"><span>Leave <b>Passwords</b> unticked. If you clear saved passwords while sync is on, they can disappear from your phone and other computers too.</span></div>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Try a private window, then turn off extensions</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <p>A private window starts with no cookies, no cache and (usually) no extensions. If the site works there, the problem is your saved data or an extension such as an ad blocker.</p>
+          <p data-br="chrome">Open an Incognito window with <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>N</kbd> (Mac: <kbd>⌘</kbd> + <kbd>Shift</kbd> + <kbd>N</kbd>). To turn off extensions, go to <span class="path">⋮ <i>›</i> Extensions <i>›</i> Manage Extensions</span> and switch them off one at a time.</p>
+          <p data-br="edge">Open an InPrivate window with <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>N</kbd> (Mac: <kbd>⌘</kbd> + <kbd>Shift</kbd> + <kbd>N</kbd>). To turn off extensions, go to <span class="path">⋯ <i>›</i> Extensions <i>›</i> Manage extensions</span>.</p>
+          <p data-br="safari">Choose <span class="path">File <i>›</i> New Private Window</span> (<kbd>⌘</kbd> + <kbd>Shift</kbd> + <kbd>N</kbd>). To turn off extensions, go to <span class="path">Safari <i>›</i> Settings <i>›</i> Extensions</span> and untick them.</p>
+          <p data-br="firefox">Open a private window with <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> (Mac: <kbd>⌘</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>). To turn off extensions, go to <span class="path">☰ <i>›</i> Add-ons and themes <i>›</i> Extensions</span>.</p>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Update and restart the browser</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <p data-br="chrome">Click <b>⋮</b> › <b>Help</b> › <b>About Google Chrome</b>. Chrome checks for updates; click <b>Relaunch</b> if one is waiting.</p>
+          <p data-br="edge">Click <b>⋯</b> › <b>Help and feedback</b> › <b>About Microsoft Edge</b>. Edge updates itself; click <b>Restart</b> when asked.</p>
+          <p data-br="safari">Safari updates with macOS. Open <span class="path">System Settings <i>›</i> General <i>›</i> Software Update</span> and install anything waiting.</p>
+          <p data-br="firefox">Click <b>☰</b> › <b>Help</b> › <b>About Firefox</b>. Firefox downloads any update; click <b>Restart to update Firefox</b>.</p>
+          <p>If a site still fails in a different browser too, the problem is probably the website itself, or your internet connection.</p>
+        </div>
+      </div>
+    </div>
+    <div class="solved-banner" role="status"><span style="font-size:1.6rem">🧹</span><div><b>Fresh start.</b><p>Next time, try a hard refresh first. It fixes a lot without signing you out of anything.</p></div></div>
+    <div class="stuck" role="status"><b>Still not working?</b><ul class="list"><li>Try the site on your phone using mobile data. If it fails there too, the site is likely down.</li><li>Check your connection with our <a href="../no-internet/">no internet</a> guide.</li><li>Contact the website's support and tell them which browser you use.</li></ul><div><button class="btn ghost small" data-restart>Start over</button></div></div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Will clearing my cache delete my passwords or bookmarks?</summary><div class="a"><p>No. The cache only holds copies of website files. Bookmarks are never touched, and passwords are only deleted if you tick the separate Passwords box.</p></div></details>
+      <details><summary>Why was I signed out of everything?</summary><div class="a"><p>Cookies are what keep you signed in. Clearing them signs you out. Next time, clear only the cache, or clear cookies for one site.</p></div></details>
+      <details><summary>How often should I clear my cache?</summary><div class="a"><p>You don't need to on a schedule. Browsers manage the cache themselves. Clear it when a site misbehaves, or when you're finished on a shared or public computer.</p></div></details>
+      <details><summary>Does clearing cookies stop tracking?</summary><div class="a"><p>It removes the trackers saved so far, but new ones come back as you browse. Your browser's privacy settings, or a private window, do more to limit tracking.</p></div></details>
+      <details><summary>Does a private or Incognito window hide me completely?</summary><div class="a"><p>No. It just doesn't save history, cookies or form data on your computer after you close it. Your internet provider, employer or school, and the websites you visit can still see your activity.</p></div></details>
+      <details><summary>I cleared my history on my computer. Is it gone from my phone too?</summary><div class="a"><p>It can be. If you're signed in with sync on (Chrome, Edge, Firefox) or use iCloud for Safari, clearing history can also clear it on your other devices. For your phone, see <a href="../clear-cache-iphone/">clear cache on iPhone and Android</a>.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Official help</h2>
+    <div class="links">
+      <a href="https://support.google.com/chrome/answer/2392709?hl=en&co=GENIE.Platform%3DDesktop" target="_blank" rel="noopener"><span class="src">Google Chrome Help</span><b>Clear cache and cookies</b></a>
+      <a href="https://support.microsoft.com/en-us/microsoft-edge/view-and-delete-browser-history-in-microsoft-edge-00cf7943-a9e1-975a-a33d-ac10ce454ca4" target="_blank" rel="noopener"><span class="src">Microsoft Support</span><b>View and delete browser history in Microsoft Edge</b></a>
+      <a href="https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>Manage cookies and website data in Safari on Mac</b></a>
+      <a href="https://support.mozilla.org/en-US/kb/clear-cookies-and-site-data-firefox" target="_blank" rel="noopener"><span class="src">Mozilla Support</span><b>Clear cookies and site data in Firefox</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Related fixes</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/leaderboard/">Leaderboard</a></nav></span><span>Steps checked against current Chrome, Edge, Safari and Firefox in October 2026. Menu names can shift slightly between versions.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../guide.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  /* ---------- Browser picker ---------- */
+  const names = {chrome:'Chrome', edge:'Edge', safari:'Safari', firefox:'Firefox'};
+  const ua = navigator.userAgent;
+  const guess = /Edg\//.test(ua) ? 'edge' : /Firefox\//.test(ua) ? 'firefox' : (/Safari\//.test(ua) && !/Chrome|Chromium|CriOS/.test(ua)) ? 'safari' : 'chrome';
+  let br = guess;
+  try { br = localStorage.getItem('st-browser') || guess; } catch(e){}
+  if (!names[br]) br = 'chrome';
+  const btns = [...document.querySelectorAll('[data-br-set]')];
+  function setBr(b){
+    br = b;
+    btns.forEach(x => x.setAttribute('aria-pressed', x.dataset.brSet === b));
+    document.querySelectorAll('[data-br]').forEach(el => el.classList.toggle('os-off', el.dataset.br !== b));
+    try { localStorage.setItem('st-browser', b); } catch(e){}
+    renderTool();
+  }
+  btns.forEach(x => x.addEventListener('click', () => setBr(x.dataset.brSet)));
+
+  /* ---------- What will I lose? ---------- */
+  const items = [
+    {k:'cache', label:{chrome:'Cached images and files', edge:'Cached images and files', safari:'Caches (Develop › Empty Caches)', firefox:'Temporary cached files and pages'},
+      lose:'Saved copies of pages and pictures. Sites load a little slower the first time.', keep:'Nothing personal is stored in the cache.'},
+    {k:'cookies', label:{chrome:'Cookies and other site data', edge:'Cookies and other site data', safari:'Website data (Manage Website Data)', firefox:'Cookies and site data'},
+      lose:'You\'re signed out of most websites. Carts, cookie-banner choices and site preferences reset. Have your passwords and any 2-step codes handy.', keep:'You stay signed in to websites.'},
+    {k:'history', label:{chrome:'Browsing history', edge:'Browsing history', safari:'History (Clear History…)', firefox:'History'},
+      lose:'The list of sites you visited and address-bar suggestions.', keep:'Your history and address-bar suggestions.'},
+    {k:'downloads', label:{chrome:'Download history', edge:'Download history', safari:'Downloads list (part of history)', firefox:'Download history (part of History)'},
+      lose:'The list of downloads. The files themselves stay on your computer.', keep:'Your downloads list.'},
+    {k:'autofill', label:{chrome:'Autofill form data', edge:'Autofill form data', safari:'AutoFill (in Settings › AutoFill)', firefox:'Saved form and search data'},
+      lose:'Saved addresses and form entries on this computer. You\'ll retype them.', keep:'Saved addresses and form entries.'},
+    {k:'passwords', label:{chrome:'Passwords and passkeys', edge:'Passwords', safari:'Passwords (separate Passwords app)', firefox:'Saved logins (separate Passwords page)'},
+      lose:'⚠️ Saved passwords. This can\'t be undone, and with sync on they can vanish from your other devices.', keep:'Your saved passwords.'},
+    {k:'site', label:{chrome:'Site settings', edge:'Site permissions', safari:'Website settings', firefox:'Site settings'},
+      lose:'Permissions you gave sites: camera, microphone, location, notifications and pop-ups. Sites will ask again.', keep:'Permissions you gave websites.'},
+  ];
+  const goals = {
+    fix:{set:['cache'], how:'Start with just the cache. If the page is still broken, add cookies, or clear cookies for only that site (step 2 below).'},
+    login:{set:['cache','cookies'], how:'Sign-in loops are almost always cookies. Clearing cookies for just that one site (step 2 below) is gentler than clearing them all.'},
+    shared:{set:['cache','cookies','history','downloads','autofill'], how:'On a shared or public computer, also sign out of every site first, and never let the browser save your password.'},
+    space:{set:['cache'], how:'The cache is the only part that takes real space, usually a few hundred megabytes to a couple of gigabytes. It refills as you browse.'},
+  };
+  const checks = document.getElementById('ltChecks');
+  let chosen = new Set(['cache']), goal = 'fix';
+  function renderTool(){
+    document.getElementById('ltName').textContent = names[br];
+    checks.innerHTML = items.map(it => `<label><input type="checkbox" data-k="${it.k}" ${chosen.has(it.k) ? 'checked' : ''}><span>${it.label[br]}<small>${it.k === 'passwords' ? 'Leave this one off' : it.k === 'cache' ? 'Always safe' : ''}</small></span></label>`).join('');
+    checks.querySelectorAll('input').forEach(i => i.addEventListener('change', () => {
+      i.checked ? chosen.add(i.dataset.k) : chosen.delete(i.dataset.k);
+      goal = null; markGoals(); renderVerdict();
+    }));
+    renderVerdict();
+  }
+  function renderVerdict(){
+    const lose = items.filter(i => chosen.has(i.k)), keep = items.filter(i => !chosen.has(i.k));
+    document.getElementById('ltLose').innerHTML = lose.length ? lose.map(i => `<li>${i.lose}</li>`).join('') : '<li>Nothing yet. Tick a box.</li>';
+    document.getElementById('ltKeep').innerHTML = keep.length ? keep.map(i => `<li>${i.keep}</li>`).join('') : '<li>Bookmarks and downloaded files.</li>';
+    let how = goal ? goals[goal].how + ' ' : '';
+    if (br === 'safari'){
+      const s = chosen.has('history') ? 'In Safari, History › Clear History… removes history, cookies and cache together.' :
+        chosen.has('cookies') ? 'In Safari, use Settings › Privacy › Manage Website Data… for cookies, and Develop › Empty Caches for the cache.' :
+        chosen.has('cache') ? 'In Safari, use Develop › Empty Caches (see step 3 below).' : '';
+      how += s;
+    } else if (chosen.size){
+      how += `In ${names[br]}, press Ctrl + Shift + Delete (Mac: ⌘ + Shift + Delete) and tick just these boxes.`;
+    }
+    document.getElementById('ltHow').textContent = how;
+  }
+  const goalBtns = [...document.querySelectorAll('[data-goal]')];
+  function markGoals(){ goalBtns.forEach(b => b.setAttribute('aria-pressed', b.dataset.goal === goal)); }
+  goalBtns.forEach(b => b.addEventListener('click', () => { goal = b.dataset.goal; chosen = new Set(goals[goal].set); markGoals(); renderTool(); }));
+  markGoals();
+  setBr(br);
+})();
+</script>
+</body>
+</html>

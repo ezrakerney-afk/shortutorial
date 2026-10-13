@@ -691,5 +691,29 @@ window.TUTORIALS = [
     category: "Home & tech",
     tags: ["stripped screw", "screw hole", "loose screw", "toothpicks", "wood glue", "dowel", "drywall anchor", "door hinge", "screw extractor", "diy"],
     minutes: 10
+  },
+  {
+    slug: "clean-silver-jewelry",
+    title: "How to Clean Silver Jewelry",
+    summary: "Remove tarnish safely with soap, a polishing cloth or the baking soda and foil bath.",
+    category: "Life skills",
+    tags: ["clean silver", "silver jewelry", "tarnish", "sterling silver", "baking soda", "aluminum foil", "polishing cloth", "pearls", "jewelry cleaning", "silver plated"],
+    minutes: 7
+  },
+  {
+    slug: "clear-cache",
+    title: "How to Clear Cache and Cookies",
+    summary: "Clear cache and cookies in Chrome, Edge, Safari or Firefox, and know what you'll lose.",
+    category: "Computer help",
+    tags: ["clear cache", "cookies", "browsing data", "chrome", "edge", "safari", "firefox", "history", "hard refresh", "website not loading", "sign in loop"],
+    minutes: 5
+  },
+  {
+    slug: "get-rid-of-ants",
+    title: "How to Get Rid of Ants in the House",
+    summary: "Identify the ant, follow the trail, bait instead of spray, and seal entry points.",
+    category: "Home & tech",
+    tags: ["ants", "get rid of ants", "ant bait", "borax", "boric acid", "sugar ants", "carpenter ants", "pharaoh ants", "pests", "kitchen ants", "bugs"],
+    minutes: 8
   }
 ];
