@@ -1973,5 +1973,71 @@ export default {
         o: ["Pavement ant", "Argentine ant", "Pharaoh ant", "Fire ant"], a: 2,
         e: "Repellent sprays can cause pharaoh ant colonies to bud into several new ones; use baits." }
     ]
+  },
+
+  "clear-cache-iphone": {
+    title: "Clear Cache on iPhone and Android",
+    pass: 4,
+    questions: [
+      { q: "Where do you clear Safari's history and website data on an iPhone?",
+        o: ["Inside Safari's address bar", "In the App Store", "Settings › Apps › Safari", "Photos › Recently Deleted"], a: 2,
+        e: "Safari's data is cleared from the Settings app: Settings › Apps › Safari › Clear History and Website Data." },
+      { q: "On Android, what's the difference between Clear cache and Clear storage?",
+        o: ["Clear cache removes temporary files; Clear storage deletes all the app's data", "They do exactly the same thing", "Clear cache deletes the app; Clear storage keeps it", "Clear storage only removes photos"], a: 0,
+        e: "Clear cache is safe. Clear storage resets the app completely and can delete things saved in it." },
+      { q: "What does Offload App do on an iPhone?",
+        o: ["Deletes the app and all its data", "Moves the app to an SD card", "Clears the app's cache only", "Removes the app but keeps its documents and data"], a: 3,
+        e: "Offloading frees the space the app uses but keeps its documents and data for when you reinstall." },
+      { q: "Will clearing the cache delete your photos or messages?",
+        o: ["Yes, always", "No, the cache only holds temporary copies", "Only on Android", "Only if you're signed in"], a: 1,
+        e: "Photos and messages are stored separately from the cache." },
+      { q: "Before deleting and reinstalling WhatsApp, what should you do?",
+        o: ["Clear Safari's history", "Turn on airplane mode", "Turn on the app's own chat backup", "Offload every other app"], a: 2,
+        e: "Messaging apps keep chats on the phone, so back them up first or you could lose them." }
+    ]
+  },
+
+  "mac-keyboard-shortcuts": {
+    title: "Essential Mac Keyboard Shortcuts",
+    pass: 4,
+    questions: [
+      { q: "What's the Mac version of Ctrl + C on Windows?",
+        o: ["Option + C", "Command + C", "Control + C", "Fn + C"], a: 1,
+        e: "Most Windows shortcuts use the same letter with Command (⌘) instead of Ctrl." },
+      { q: "What's the difference between Command-W and Command-Q?",
+        o: ["W closes the front window or tab; Q quits the whole app", "They both quit the app", "W saves; Q prints", "W minimizes; Q hides"], a: 0,
+        e: "Command-W closes a window and the app stays open. Command-Q quits the app completely." },
+      { q: "Which shortcut takes a screenshot of an area you drag to select?",
+        o: ["Shift-Command-3", "Command-Space", "Option-Command-Esc", "Shift-Command-4"], a: 3,
+        e: "Shift-Command-4 lets you drag to select an area. Shift-Command-3 captures the whole screen." },
+      { q: "How do you open Spotlight search?",
+        o: ["Command-Tab", "Command-F", "Command-Space", "Control-Command-Q"], a: 2,
+        e: "Command-Space opens Spotlight, the fastest way to open apps, files and settings." },
+      { q: "An app has frozen. Which shortcut opens Force Quit?",
+        o: ["Option-Command-Esc", "Command-M", "Shift-Command-Z", "Command-H"], a: 0,
+        e: "Option-Command-Esc opens the Force Quit window. Unsaved work in that app will be lost." }
+    ]
+  },
+
+  "use-zoom": {
+    title: "How to Use Zoom",
+    pass: 4,
+    questions: [
+      { q: "You clicked a Zoom link and see “Please wait, the host will let you in soon.” What's happening?",
+        o: ["Your internet is broken", "You're in the waiting room until the host admits you", "The meeting was cancelled", "You need a paid account"], a: 1,
+        e: "The waiting room holds people until the host lets them in. You don't need to do anything." },
+      { q: "Nobody can hear you. What should you check first?",
+        o: ["Your screen brightness", "Whether you're sharing your screen", "Whether the microphone icon shows you're muted", "Your camera background"], a: 2,
+        e: "A red line through the microphone means you're muted. Click Unmute." },
+      { q: "When sharing your screen, why pick a single window instead of the whole screen?",
+        o: ["It keeps pop-up messages and other windows private", "It makes the video faster", "It's the only option on a Mac", "It records the meeting"], a: 0,
+        e: "Sharing one window means others can't see notifications or other apps." },
+      { q: "How long can a meeting last on Zoom's free Basic plan?",
+        o: ["10 minutes", "Unlimited", "2 hours", "40 minutes"], a: 3,
+        e: "The free Basic plan allows meetings of up to 40 minutes with up to 100 participants." },
+      { q: "What's the Windows shortcut to mute or unmute yourself in Zoom?",
+        o: ["Ctrl + M", "Alt + A", "Alt + F4", "Windows + M"], a: 1,
+        e: "Alt + A mutes and unmutes on Windows. On a Mac it's Command + Shift + A." }
+    ]
   }
 };

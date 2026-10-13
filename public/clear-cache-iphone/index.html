@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Clear Cache on iPhone and Android · Shortutorial</title>
+<meta name="description" content="Clear the cache on your iPhone or Android phone: Safari, Chrome, Samsung Browser and individual apps, plus offloading and archiving apps. Pick an app to see the exact steps.">
+<link rel="canonical" href="https://shortutorial.com/clear-cache-iphone/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How to Clear Cache on iPhone and Android · Shortutorial">
+<meta property="og:description" content="Clear the cache on your iPhone or Android phone: Safari, Chrome, Samsung Browser and individual apps, plus offloading and archiving apps. Pick an app to see the exact steps.">
+<meta property="og:url" content="https://shortutorial.com/clear-cache-iphone/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../guide.css">
+<style>
+.tool{border:1.5px dashed var(--accent);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:14px;background:color-mix(in srgb,var(--accent-soft) 45%,var(--surface))}
+.tool-h{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.74rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.tool-h::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.apps{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+@media (max-width:560px){.apps{grid-template-columns:repeat(2,1fr)}}
+.apps button{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 8px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface);font-family:var(--display);font-weight:600;font-size:.92rem;text-align:center;color:var(--ink)}
+.apps button span{font-size:1.4rem;line-height:1}
+.apps button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.apps button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.result{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.result h3{font-size:1.1rem}
+.result ol{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:6px}
+.result ol li::marker{font-family:var(--mono);color:var(--amber);font-weight:600}
+.meter{display:flex;gap:8px;flex-wrap:wrap}
+.meter span{font-family:var(--mono);font-size:.74rem;font-weight:600;padding:4px 10px;border-radius:999px}
+.m-ok{background:var(--good-bg);color:var(--good)} .m-warn{background:var(--bad-bg);color:var(--bad)}
+</style>
+</head>
+<body data-slug="clear-cache-iphone">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=phone">Phone help</a> / Clear cache on a phone</div>
+    <span class="eyebrow">Phone help · Browsers and apps</span>
+    <h1>Clear Cache on iPhone and Android</h1>
+    <p class="lede">Web pages loading wrong, an app acting up, or your phone short on space? Clearing the cache usually helps. Here's how for your browser and individual apps, and what each option deletes.</p>
+    <div class="badges"><span class="badge level">How-to + fix</span><span class="badge">~5–10 min</span><span class="badge">Easy</span></div>
+    <div class="os-row"><span class="lbl">Show steps for</span>
+      <div class="os-switch" role="group" aria-label="Device type"><button data-set="ios">iPhone</button><button data-set="android">Android</button></div>
+    </div>
+  </header>
+
+  <section class="block">
+    <div class="first">
+      <span class="eyebrow">Know this first · 30 seconds</span>
+      <h3>Cache is safe to clear. Data is not.</h3>
+      <p>The <b>cache</b> is temporary copies of pictures and files that help pages and apps open faster. Clearing it is safe; things just load a bit slower once.</p>
+      <p><b>Cookies</b> and <b>website data</b> keep you signed in. Clearing them signs you out of websites. An app's <b>data</b> or <b>storage</b> is everything saved inside it. Clearing that resets the app like new.</p>
+      <p data-os="ios">On iPhone, Safari's cache is cleared from the <b>Settings</b> app, not from inside Safari. Most other apps have no clear-cache button; you offload or reinstall them instead.</p>
+      <p data-os="android">On Android, every app has its own <b>Clear cache</b> button in Settings. That's the one you want. Leave <b>Clear storage</b> alone unless you mean to reset the app.</p>
+    </div>
+  </section>
+
+  <section class="block" id="picker">
+    <h2 class="sec"><span class="n">TOOL</span>Pick an app, get the exact steps</h2>
+    <div class="tool">
+      <span class="tool-h">Try it · cache finder</span>
+      <p>Choose the app that's causing trouble. Steps change with the iPhone/Android switch at the top.</p>
+      <div class="apps" role="group" aria-label="Choose an app">
+        <button type="button" data-app="safari"><span>🧭</span>Safari</button>
+        <button type="button" data-app="chrome"><span>🌐</span>Chrome</button>
+        <button type="button" data-app="samsung"><span>🪐</span>Samsung Browser</button>
+        <button type="button" data-app="spotify"><span>🎧</span>Spotify</button>
+        <button type="button" data-app="tiktok"><span>🎵</span>TikTok</button>
+        <button type="button" data-app="other"><span>📱</span>Any other app</button>
+      </div>
+      <div class="result" id="cfOut" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="block" id="fixes">
+    <h2 class="sec"><span class="n">FIX</span>Clear the cache, step by step</h2>
+    <div class="steps-head"><p>Stop as soon as things work again.</p><button class="linkbtn" id="expandAll">Show all steps</button></div>
+    <div class="steps" data-q="Did that do the trick?" data-yes="Yes, all good" data-no="Not yet, next step →">
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t" data-os="ios">Clear Safari's history and website data</span><span class="fix-t" data-os="android">Clear Chrome's cache and cookies</span><span class="fix-time">1 min</span></button>
+        <div class="fix-body">
+          <ol class="list" data-os="ios"><li>Open the <b>Settings</b> app and go to <span class="path">Apps <i>›</i> Safari</span>. (On iOS 17 and earlier, Safari is right in the main Settings list.)</li><li>Scroll down and tap <b>Clear History and Website Data</b>.</li><li>Choose a timeframe (pick <b>All History</b> for a full clean), then tap <b>Clear History</b>.</li></ol>
+          <div class="note" data-os="ios"><span><b>Want to keep your history?</b> Go to <span class="path">Settings <i>›</i> Apps <i>›</i> Safari <i>›</i> Advanced <i>›</i> Website Data</span> and tap <b>Remove All Website Data</b>. That clears cookies and cache only. If the button is gray, there's nothing to clear or Screen Time restrictions are blocking it.</span></div>
+          <ol class="list" data-os="android"><li>Open <b>Chrome</b> and tap <b>⋮</b> (More) next to the address bar.</li><li>Tap <b>Delete browsing data</b>. The default time range is short, so pick <b>All time</b> for a full clean.</li><li>Tap <b>More options</b>, tick <b>Cached images and files</b> (and <b>Cookies and site data</b> if a site won't sign in properly).</li><li>Tap <b>Delete data</b>.</li></ol>
+          <p>Clearing website data signs you out of websites in that browser. Your bookmarks and saved passwords stay.</p>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t" data-os="ios">Using Chrome on iPhone? Clear it too</span><span class="fix-t" data-os="android">Using Samsung Browser? Clear it too</span><span class="fix-time">1 min</span></button>
+        <div class="fix-body">
+          <ol class="list" data-os="ios"><li>Open <b>Chrome</b> and tap <b>⋯</b> (More).</li><li>Tap <b>Delete Browsing Data</b>, then pick a <b>Time Range</b> (the default is only 15 minutes).</li><li>Tap <b>Browsing Data</b> and select <b>Cached Images and Files</b>, plus <b>Cookies, Site Data</b> if needed.</li><li>Tap <b>Confirm</b>, then <b>Delete Browsing Data</b>.</li></ol>
+          <ol class="list" data-os="android"><li>Open <b>Samsung Browser</b> (called Samsung Internet on older phones) and tap the <b>☰</b> or <b>⋮</b> menu.</li><li>Tap <span class="path">Settings <i>›</i> Personal browsing data <i>›</i> Delete browsing data</span>.</li><li>Tick <b>Cached images and files</b>, and <b>Cookies and site data</b> if needed.</li><li>Tap <b>Delete data</b>, then <b>Delete</b> to confirm.</li></ol>
+          <p>Other browsers (Firefox, Edge, DuckDuckGo) have a similar option in their own settings, usually called <b>Delete browsing data</b> or <b>Clear private data</b>.</p>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Clear the cache of one misbehaving app</span><span class="fix-time">2 min</span></button>
+        <div class="fix-body">
+          <div data-os="ios"><p>iPhone has no system-wide “clear cache” button for apps, and iOS clears temporary files on its own when it needs space. Some apps have their own button in their settings:</p>
+            <ul class="list"><li><b>Spotify:</b> profile picture › <b>Settings and privacy</b> › <b>Data-saving and offline</b> › <b>Clear cache</b>.</li><li><b>TikTok:</b> Profile › <b>☰</b> › <b>Settings and privacy</b> › <b>Free up space</b> › <b>Clear</b> next to Cache.</li><li>For other apps, look in the app's own settings for <b>Storage</b> or <b>Clear cache</b>. If there isn't one, use steps 4 and 5.</li></ul></div>
+          <div data-os="android"><ol class="list"><li>Open <b>Settings</b> › <b>Apps</b> (on some phones, tap <b>See all apps</b>).</li><li>Tap the app that's acting up.</li><li>Tap <b>Storage &amp; cache</b> (on Samsung, just <b>Storage</b>).</li><li>Tap <b>Clear cache</b>.</li></ol>
+            <div class="note warn"><span><b>Clear cache</b> deletes temporary files only. <b>Clear storage</b> (or <b>Clear data</b>) permanently deletes everything in the app, including sign-ins and settings. Use it only as a last resort, and back up anything inside the app first.</span></div></div>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t" data-os="ios">Offload apps you rarely use</span><span class="fix-t" data-os="android">Archive apps you rarely use</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <ol class="list" data-os="ios"><li>Open <span class="path">Settings <i>›</i> General <i>›</i> iPhone Storage</span> and wait for the list to load.</li><li>Tap an app, then <b>Offload App</b>. This removes the app but <b>keeps its documents and data</b>. Its icon stays on your Home Screen; tap it to download the app again.</li><li>To do this automatically, look for the <b>Offload Unused Apps</b> recommendation at the top and tap <b>Enable</b>.</li></ol>
+          <ol class="list" data-os="android"><li>Open <b>Settings</b> › <b>Apps</b> and tap an app you rarely use.</li><li>Tap <b>Archive</b>. This removes the app's software and temporary files but keeps your data. Tap the faded icon later to restore it.</li><li>Archiving needs a recent phone (some features need Android 15 or later). If you don't see the button, uninstall the app instead.</li></ol>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Delete and reinstall the problem app</span><span class="fix-time">5 min</span></button>
+        <div class="fix-body">
+          <p>This is the most thorough reset: it removes the app's cache <b>and</b> everything stored inside it. Make sure your stuff is backed up to your account first (most apps like email, social media and streaming keep everything online).</p>
+          <p data-os="ios">Touch and hold the app icon, tap <b>Remove App</b> › <b>Delete App</b>. Then reinstall it from the <b>App Store</b> and sign in.</p>
+          <p data-os="android">Touch and hold the app icon, tap <b>Uninstall</b> (or drag it to Uninstall). Then reinstall it from the <b>Play Store</b> and sign in.</p>
+          <div class="note warn"><span>Messaging apps like WhatsApp keep chats on the phone. Turn on the app's own chat backup before you delete it, or you could lose your messages.</span></div>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Restart the phone and update everything</span><span class="fix-time">5 min</span></button>
+        <div class="fix-body">
+          <p>A restart clears out temporary memory and lets the phone tidy up “System Data.” Then update the phone and the app.</p>
+          <p data-os="ios">Update the phone in <span class="path">Settings <i>›</i> General <i>›</i> Software Update</span>. Update apps in the <b>App Store</b>: tap your profile picture and scroll to pending updates.</p>
+          <p data-os="android">Update the phone in <span class="path">Settings <i>›</i> System <i>›</i> Software updates</span> (on Samsung, <b>Software update</b>). Update apps in the <b>Play Store</b>: tap your profile picture › <b>Manage apps &amp; device</b>.</p>
+        </div>
+      </div>
+    </div>
+    <div class="solved-banner" role="status"><span style="font-size:1.6rem">✨</span><div><b>All cleaned up.</b><p>You don't need to clear the cache regularly. Do it when something misbehaves.</p></div></div>
+    <div class="stuck" role="status"><b>Still having trouble?</b><ul class="list"><li>If storage is the problem, see <a href="../phone-storage-full/">phone storage full</a> for bigger wins like photos and videos.</li><li>If a website still fails, try it on Wi-Fi and on mobile data. If both fail, the site itself may be down.</li></ul><div><button class="btn ghost small" data-restart>Start over</button></div></div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Will clearing the cache delete my photos or messages?</summary><div class="a"><p>No. The cache only holds temporary copies. Photos, messages and documents are stored separately. Only “Clear storage,” “Clear data” or deleting an app removes what's inside an app.</p></div></details>
+      <details><summary>Why did I get signed out of websites?</summary><div class="a"><p>Clearing Safari's history and website data, or cookies in Chrome, removes the cookies that keep you signed in. Sign in again and you're back.</p></div></details>
+      <details><summary>Does clearing the cache make my phone faster?</summary><div class="a"><p>Not usually. It fixes specific glitches: a page showing old content, an app that crashes or won't load. Apps can even feel slower the first time, while they rebuild the cache.</p></div></details>
+      <details><summary>What's the difference between offloading and deleting an app on iPhone?</summary><div class="a"><p>Offloading removes the app but keeps its documents and data, so it's all there when you reinstall. Deleting removes the app and everything stored in it on the phone.</p></div></details>
+      <details><summary>Does clearing history on my iPhone clear it on my Mac too?</summary><div class="a"><p>If Safari is turned on in iCloud settings, yes. History syncs across devices signed in to the same Apple Account. For computers, see <a href="../clear-cache/">clear cache and cookies on a computer</a>.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Official help</h2>
+    <div class="links">
+      <a href="https://support.apple.com/en-us/105082" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>Clear the history, cache and cookies from Safari on iPhone</b></a>
+      <a href="https://support.google.com/chrome/answer/2392709?hl=en&co=GENIE.Platform%3DAndroid" target="_blank" rel="noopener"><span class="src">Google Chrome Help</span><b>Clear cache and cookies (Android and iPhone)</b></a>
+      <a href="https://support.apple.com/en-us/108429" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>Check storage and offload apps on iPhone</b></a>
+      <a href="https://support.google.com/android/answer/15523443?hl=en" target="_blank" rel="noopener"><span class="src">Android Help</span><b>Archive unused apps on Android</b></a>
+      <a href="https://www.samsung.com/us/support/answer/ANS10010562" target="_blank" rel="noopener"><span class="src">Samsung Support</span><b>Clear history, cache and cookies in Samsung Browser</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Related fixes</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/leaderboard/">Leaderboard</a></nav></span><span>Steps written for recent iOS and Android in October 2026. Menu names vary slightly between phone makers and app versions.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../guide.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  const A = {
+    safari:{name:'Safari', safe:'Safe: keeps bookmarks and passwords', warn:'Signs you out of websites',
+      ios:['Open the Settings app (not Safari).','Tap Apps › Safari.','Tap Clear History and Website Data, choose All History, then Clear History.','To keep your history, use Advanced › Website Data › Remove All Website Data instead.'],
+      android:null, nope:'Safari only exists on Apple devices. On Android, try Chrome or Samsung Browser.'},
+    chrome:{name:'Chrome', safe:'Safe: keeps bookmarks and passwords', warn:'Cookies sign you out of websites',
+      ios:['Open Chrome and tap ⋯ (More).','Tap Delete Browsing Data and set the Time Range (default is 15 minutes).','Tap Browsing Data and select Cached Images and Files (add Cookies, Site Data if needed).','Tap Confirm, then Delete Browsing Data.'],
+      android:['Open Chrome and tap ⋮ (More).','Tap Delete browsing data and set the time range to All time.','Tap More options and tick Cached images and files (add Cookies and site data if needed).','Tap Delete data.']},
+    samsung:{name:'Samsung Browser', safe:'Safe: choose exactly what to clear', warn:'Leave Passwords unticked',
+      ios:null, nope:'Samsung Browser is an Android app. On iPhone, use Safari or Chrome.',
+      android:['Open Samsung Browser and tap the menu.','Tap Settings › Personal browsing data › Delete browsing data.','Tick Cached images and files (add Cookies and site data if needed).','Tap Delete data, then Delete.']},
+    spotify:{name:'Spotify', safe:'Safe: keeps playlists and your account', warn:'Songs buffer again the first time',
+      ios:['Tap your profile picture at the top.','Tap Settings and privacy › Data-saving and offline.','Under Storage, tap Clear next to Clear cache.'],
+      android:['Tap your profile picture at the top (or swipe left).','Tap Settings and privacy › Data-saving and offline.','Under Storage, tap Clear next to Clear cache.','Or use Settings › Apps › Spotify › Storage & cache › Clear cache.']},
+    tiktok:{name:'TikTok', safe:'Safe: keeps your account and drafts', warn:'Videos load a little slower at first',
+      ios:['Open TikTok and tap Profile.','Tap ☰ (menu) › Settings and privacy.','Tap Free up space, then Clear next to Cache.'],
+      android:['Open TikTok and tap Profile.','Tap ☰ (menu) › Settings and privacy › Free up space › Clear next to Cache.','Or use Settings › Apps › TikTok › Storage & cache › Clear cache.']},
+    other:{name:'Any other app', safe:'Clear cache is always safe', warn:'Deleting or “Clear storage” resets the app',
+      ios:['First look in the app\'s own settings for Storage or Clear cache.','No button? Go to Settings › General › iPhone Storage, tap the app, and tap Offload App (keeps your data), then tap its icon to reinstall.','Still misbehaving? Delete the app and reinstall it from the App Store. This removes everything stored in it, so back up first.'],
+      android:['Open Settings › Apps (tap See all apps if needed).','Tap the app, then Storage & cache (Samsung: Storage).','Tap Clear cache. Avoid Clear storage unless you want to reset the app completely.']},
+  };
+  const out = document.getElementById('cfOut');
+  const btns = [...document.querySelectorAll('[data-app]')];
+  let app = 'chrome';
+  const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  function render(){
+    const os = document.documentElement.dataset.os === 'android' ? 'android' : 'ios';
+    const a = A[app], steps = a[os];
+    btns.forEach(b => b.setAttribute('aria-pressed', b.dataset.app === app));
+    const where = os === 'ios' ? 'iPhone' : 'Android';
+    if (!steps){ out.innerHTML = `<h3>${a.name} on ${where}</h3><p>${a.nope}</p>`; return; }
+    out.innerHTML = `<h3>${a.name} on ${where}</h3><div class="meter"><span class="m-ok">✓ ${a.safe}</span><span class="m-warn">! ${a.warn}</span></div><ol>${steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>`;
+  }
+  btns.forEach(b => b.addEventListener('click', () => { app = b.dataset.app; render(); }));
+  document.querySelectorAll('.os-switch button').forEach(b => b.addEventListener('click', () => setTimeout(render)));
+  render();
+})();
+</script>
+</body>
+</html>

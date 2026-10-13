@@ -715,5 +715,29 @@ window.TUTORIALS = [
     category: "Home & tech",
     tags: ["ants", "get rid of ants", "ant bait", "borax", "boric acid", "sugar ants", "carpenter ants", "pharaoh ants", "pests", "kitchen ants", "bugs"],
     minutes: 8
+  },
+  {
+    slug: "clear-cache-iphone",
+    title: "Clear Cache on iPhone and Android",
+    summary: "Clear Safari, Chrome and app caches on your phone, plus offload or archive apps.",
+    category: "Phone help",
+    tags: ["clear cache iphone", "clear cache android", "safari", "chrome", "samsung browser", "app cache", "offload app", "archive app", "cookies", "website data", "phone"],
+    minutes: 7
+  },
+  {
+    slug: "mac-keyboard-shortcuts",
+    title: "Essential Mac Keyboard Shortcuts",
+    summary: "Command key basics, text editing, apps, screenshots and Finder, with a trainer.",
+    category: "Computer help",
+    tags: ["mac", "keyboard shortcuts", "command key", "macos", "copy paste", "screenshot", "spotlight", "finder", "force quit", "option key", "macbook"],
+    minutes: 12
+  },
+  {
+    slug: "use-zoom",
+    title: "How to Use Zoom",
+    summary: "Join by link or ID, mute, share your screen, chat, host a meeting and fix audio.",
+    category: "Computer help",
+    tags: ["zoom", "video call", "join meeting", "meeting id", "mute", "share screen", "zoom workplace", "host meeting", "no audio", "webcam", "online meeting"],
+    minutes: 12
   }
 ];

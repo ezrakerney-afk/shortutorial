@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Essential Mac Keyboard Shortcuts · Shortutorial</title>
+<meta name="description" content="Learn the Mac keyboard shortcuts worth knowing: the Command key, copy and paste, text editing, switching apps and windows, screenshots, Finder and Spotlight, with a shortcut trainer you can practice on.">
+<link rel="canonical" href="https://shortutorial.com/mac-keyboard-shortcuts/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Essential Mac Keyboard Shortcuts · Shortutorial">
+<meta property="og:description" content="Learn the Mac keyboard shortcuts worth knowing: the Command key, copy and paste, text editing, switching apps and windows, screenshots, Finder and Spotlight, with a shortcut trainer you can practice on.">
+<meta property="og:url" content="https://shortutorial.com/mac-keyboard-shortcuts/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+/* FAQ and source links (same look as fix guides) */
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink)}
+.links a:hover{border-color:var(--accent)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+/* Modifier key cards */
+.mods{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.mods>div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:4px}
+.mods .sym{font-family:var(--mono);font-size:1.6rem;font-weight:600;color:var(--accent);line-height:1.1}
+.mods b{font-family:var(--display)}
+.mods p{font-size:.9rem;color:var(--muted)}
+td kbd{font-size:.78em}
+/* Trainer */
+.trainer{outline:none}
+.trainer:focus-visible .tr-card,.trainer:focus .tr-card{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.tr-card{background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:10px;align-items:center;text-align:center}
+.tr-task{font-family:var(--display);font-size:1.35rem;font-weight:700;line-height:1.25}
+.tr-hint{font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+.tr-pressed{font-family:var(--mono);font-size:1rem;min-height:1.6em}
+.tr-choices{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%}
+.tr-choices button{all:unset;box-sizing:border-box;cursor:pointer;padding:10px 8px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);font-family:var(--mono);font-size:.92rem;text-align:center;color:var(--ink)}
+.tr-choices button:hover{border-color:var(--accent)}
+.tr-choices button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tr-choices button.right{border-color:var(--good);background:var(--good-bg);color:var(--good)}
+.tr-choices button.wrong{border-color:var(--bad);background:var(--bad-bg);color:var(--bad)}
+.tr-stats{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-family:var(--mono);font-size:.8rem;color:var(--muted)}
+.tr-stats b{color:var(--ink)}
+.tr-fb{font-family:var(--display);font-weight:600;min-height:1.5em}
+</style>
+</head>
+<body data-slug="mac-keyboard-shortcuts">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=computer">Computer help</a> / Mac keyboard shortcuts</div>
+    <span class="eyebrow">Computer help · Mac</span>
+    <h1>Essential Mac Keyboard Shortcuts</h1>
+    <p class="lede">A handful of shortcuts saves you hundreds of trips to the menu bar every day. Learn the ones Mac users rely on most, then drill them in the trainer at the end.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~12 min</span><span class="badge">6 lessons</span><span class="badge">Shortcut trainer</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#m1">1 · Modifier keys</a><a href="#m2">2 · Editing text</a><a href="#m3">3 · Apps &amp; windows</a><a href="#m4">4 · Screenshots</a><a href="#m5">5 · Finder &amp; Spotlight</a><a href="#m6">6 · Trainer</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="m1">
+    <div class="lesson-head"><span class="step">01</span><h2>Meet the modifier keys</h2></div>
+    <p>A shortcut means holding one or more <b>modifier keys</b>, then tapping a letter or another key. Menus and Apple's guides show modifiers as symbols, so it helps to know them.</p>
+    <div class="mods">
+      <div><span class="sym">⌘</span><b>Command</b><p>The main shortcut key. Next to the space bar.</p></div>
+      <div><span class="sym">⇧</span><b>Shift</b><p>Usually adds a twist: Undo becomes Redo.</p></div>
+      <div><span class="sym">⌥</span><b>Option</b><p>Also labeled Alt. Works on whole words and hidden extras.</p></div>
+      <div><span class="sym">⌃</span><b>Control</b><p>Used less. Control-click is the same as a right-click.</p></div>
+      <div><span class="sym">🌐</span><b>Fn / Globe</b><p>Bottom-left on newer keyboards. Opens emoji, dictation and more.</p></div>
+    </div>
+    <p class="callout"><span><b>Coming from Windows?</b> Most shortcuts are the same letters, just with <kbd>⌘ Command</kbd> instead of <kbd>Ctrl</kbd>. <kbd>Ctrl</kbd>+<kbd>C</kbd> on a PC is <kbd>⌘</kbd>+<kbd>C</kbd> on a Mac.</span></p>
+    <p>How to press one: hold the modifier down, tap the letter, then let go of both. For <kbd>⇧</kbd><kbd>⌘</kbd><kbd>Z</kbd>, hold Shift and Command together, tap Z.</p>
+    <div class="tw"><table class="t"><tr><th>Shortcut</th><th>What it does</th></tr>
+      <tr><td><kbd>⌘</kbd> <kbd>C</kbd></td><td>Copy</td></tr>
+      <tr><td><kbd>⌘</kbd> <kbd>X</kbd></td><td>Cut (copy, then remove)</td></tr>
+      <tr><td><kbd>⌘</kbd> <kbd>V</kbd></td><td>Paste</td></tr>
+      <tr><td><kbd>⌘</kbd> <kbd>Z</kbd></td><td>Undo</td></tr>
+      <tr><td><kbd>⇧</kbd> <kbd>⌘</kbd> <kbd>Z</kbd></td><td>Redo (undo the undo)</td></tr>
+      <tr><td><kbd>⌘</kbd> <kbd>A</kbd></td><td>Select all</td></tr>
+      <tr><td><kbd>⌘</kbd> <kbd>F</kbd></td><td>Find on the page or in the document</td></tr>
+      <tr><td><kbd>⌘</kbd> <kbd>S</kbd> / <kbd>⌘</kbd> <kbd>P</kbd></td><td>Save / Print</td></tr>
+    </table></div>
+    <p>These copy-and-paste shortcuts work on files in Finder too: <kbd>⌘</kbd> <kbd>C</kbd> a file, open another folder, <kbd>⌘</kbd> <kbd>V</kbd>.</p>
+  </section>
+
+  <section class="lesson" id="m2">
+    <div class="lesson-head"><span class="step">02</span><h2>Move and edit text faster</h2></div>
+    <p>These work in almost every app that has a text box: Mail, Notes, Pages, Word, browsers.</p>
+    <div class="tw"><table class="t"><tr><th>Shortcut</th><th>What it does</th></tr>
+      <tr><td><kbd>⌘</kbd> <kbd>←</kbd> / <kbd>⌘</kbd> <kbd>→</kbd></td><td>Jump to the start / end of the line</td></tr>
+      <tr><td><kbd>⌘</kbd> <kbd>↑</kbd> / <kbd>⌘</kbd> <kbd>↓</kbd></td><td>Jump to the start / end of the document</td></tr>
+      <tr><td><kbd>⌥</kbd> <kbd>←</kbd> / <kbd>⌥</kbd> <kbd>→</kbd></td><td>Jump one word left / right</td></tr>
+      <tr><td><kbd>⌥</kbd> <kbd>Delete</kbd></td><td>Delete the whole word to the left</td></tr>
+      <tr><td><kbd>Fn</kbd> <kbd>Delete</kbd></td><td>Forward delete (deletes to the right)</td></tr>
+      <tr><td><kbd>⌘</kbd> <kbd>B</kbd> / <kbd>I</kbd> / <kbd>U</kbd></td><td>Bold / italic / underline</td></tr>
+      <tr><td><kbd>⌥</kbd> <kbd>⇧</kbd> <kbd>⌘</kbd> <kbd>V</kbd></td><td>Paste and Match Style (pastes without the original fonts and colors)</td></tr>
+    </table></div>
+    <div class="example"><div class="ex-h">Example · fix a typo three words back</div><div class="ex-b"><p>Instead of reaching for the mouse: press <kbd>⌥</kbd> <kbd>←</kbd> three times to hop back three words, fix the typo, then <kbd>⌘</kbd> <kbd>→</kbd> to jump straight back to the end of the line.</p></div></div>
+    <p class="callout"><span><b>Add Shift to select.</b> Any of the movement shortcuts selects text if you also hold <kbd>⇧</kbd>. <kbd>⇧</kbd> <kbd>⌘</kbd> <kbd>→</kbd> selects from the cursor to the end of the line.</span></p>
+  </section>
+
+  <section class="lesson" id="m3">
+    <div class="lesson-head"><span class="step">03</span><h2>Switch apps and manage windows</h2></div>
+    <div class="tw"><table class="t"><tr><th>Shortcut</th><th>What it does</th></tr>
+      <tr><td><kbd>⌘</kbd> <kbd>Tab</kbd></td><td>Switch apps. Keep holding ⌘ and tap Tab to move along the row; let go to switch.</td></tr>
+      <tr><td><kbd>⌘</kbd> <kbd>`</kbd></td><td>Switch between windows of the same app (the key above Tab)</td></tr>
+      <tr><td><kbd>⌘</kbd> <kbd>T</kbd> / <kbd>⌘</kbd> <kbd>N</kbd></td><td>New tab / new window</td></tr>
+      <tr><td><kbd>⌘</kbd> <kbd>W</kbd></td><td>Close the front window or tab (the app stays open)</td></tr>
+      <tr><td><kbd>⌘</kbd> <kbd>Q</kbd></td><td>Quit the app completely</td></tr>
+      <tr><td><kbd>⌘</kbd> <kbd>M</kbd></td><td>Minimize the window to the Dock</td></tr>
+      <tr><td><kbd>⌘</kbd> <kbd>H</kbd></td><td>Hide the app's windows</td></tr>
+      <tr><td><kbd>⌘</kbd> <kbd>,</kbd></td><td>Open the app's settings</td></tr>
+      <tr><td><kbd>⌥</kbd> <kbd>⌘</kbd> <kbd>Esc</kbd></td><td>Force Quit an app that's frozen</td></tr>
+      <tr><td><kbd>⌃</kbd> <kbd>⌘</kbd> <kbd>Q</kbd></td><td>Lock your screen right away</td></tr>
+    </table></div>
+    <p class="callout warn"><span><b>W closes, Q quits.</b> <kbd>W</kbd> and <kbd>Q</kbd> sit right next to each other. <kbd>⌘</kbd> <kbd>Q</kbd> closes every window of the app at once, so slow down near that corner of the keyboard.</span></p>
+    <p>Stepping away from your desk? <kbd>⌃</kbd> <kbd>⌘</kbd> <kbd>Q</kbd> locks the Mac so nobody can read your screen. You'll need your password or Touch ID to get back in.</p>
+  </section>
+
+  <section class="lesson" id="m4">
+    <div class="lesson-head"><span class="step">04</span><h2>Take screenshots</h2></div>
+    <div class="tw"><table class="t"><tr><th>Shortcut</th><th>What it captures</th></tr>
+      <tr><td><kbd>⇧</kbd> <kbd>⌘</kbd> <kbd>3</kbd></td><td>The whole screen</td></tr>
+      <tr><td><kbd>⇧</kbd> <kbd>⌘</kbd> <kbd>4</kbd></td><td>An area you drag to select (Esc cancels)</td></tr>
+      <tr><td><kbd>⇧</kbd> <kbd>⌘</kbd> <kbd>4</kbd> then <kbd>Space</kbd></td><td>One window or menu: the pointer becomes a camera, click the window</td></tr>
+      <tr><td><kbd>⇧</kbd> <kbd>⌘</kbd> <kbd>5</kbd></td><td>The Screenshot toolbar: screen recording, a timer, and where to save</td></tr>
+    </table></div>
+    <p>Screenshots save to your <b>Desktop</b> unless you change it in the <kbd>⇧</kbd> <kbd>⌘</kbd> <kbd>5</kbd> Options menu.</p>
+    <p class="callout"><span><b>Paste it instead of saving it.</b> Add <kbd>⌃ Control</kbd> to any screenshot shortcut, like <kbd>⌃</kbd> <kbd>⇧</kbd> <kbd>⌘</kbd> <kbd>4</kbd>, to copy the picture to the clipboard. Then <kbd>⌘</kbd> <kbd>V</kbd> it into an email or message.</span></p>
+    <p>More on screenshots, including Windows and phones, in <a href="../take-screenshot/">how to take a screenshot</a>.</p>
+  </section>
+
+  <section class="lesson" id="m5">
+    <div class="lesson-head"><span class="step">05</span><h2>Finder and Spotlight</h2></div>
+    <p><b>Spotlight</b> is the fastest way to open anything. Press <kbd>⌘</kbd> <kbd>Space</kbd>, type the first few letters of an app, file or setting, and press <kbd>Return</kbd>. It can do quick math and conversions too: try typing <code>250*1.08</code>.</p>
+    <div class="tw"><table class="t"><tr><th>In Finder</th><th>What it does</th></tr>
+      <tr><td><kbd>Space</kbd></td><td>Quick Look: preview the selected file without opening it</td></tr>
+      <tr><td><kbd>⌘</kbd> <kbd>Delete</kbd></td><td>Move the selected file to the Trash</td></tr>
+      <tr><td><kbd>⇧</kbd> <kbd>⌘</kbd> <kbd>N</kbd></td><td>New folder</td></tr>
+      <tr><td><kbd>⌘</kbd> <kbd>D</kbd></td><td>Duplicate the selected file</td></tr>
+      <tr><td><kbd>⌘</kbd> <kbd>I</kbd></td><td>Get Info: size, date, where it lives</td></tr>
+      <tr><td><kbd>⇧</kbd> <kbd>⌘</kbd> <kbd>D</kbd></td><td>Open the Desktop folder</td></tr>
+      <tr><td><kbd>⌘</kbd> <kbd>↑</kbd></td><td>Go up to the folder that contains this one</td></tr>
+    </table></div>
+    <p><b>Handy Fn (🌐) shortcuts:</b> <kbd>Fn</kbd> <kbd>E</kbd> opens emoji and symbols, <kbd>Fn</kbd> <kbd>N</kbd> opens Notification Center, and <kbd>Fn</kbd> <kbd>C</kbd> opens Control Center. On macOS Tahoe 26 or later, <kbd>Fn</kbd> <kbd>⇧</kbd> <kbd>A</kbd> shows all your Apps.</p>
+    <p class="callout"><span><b>Find any shortcut yourself.</b> Open a menu in the menu bar: the shortcut is printed on the right of each item. And in any app, <kbd>⇧</kbd> <kbd>⌘</kbd> <kbd>?</kbd> opens the Help menu search, so you can type a command's name.</span></p>
+  </section>
+
+  <section class="lesson" id="m6">
+    <div class="lesson-head"><span class="step">06</span><h2>Practice: the shortcut trainer</h2></div>
+    <p>On a Mac, click the trainer and press the real shortcut. On a phone, tablet or Windows PC, tap the right answer instead. (On Windows, <kbd>Ctrl</kbd> counts as <kbd>⌘</kbd> and <kbd>Alt</kbd> as <kbd>⌥</kbd>.) Shortcuts that would really quit your browser or lock your screen are tap-only.</p>
+    <div class="try"><span class="try-h">Try it · shortcut trainer</span>
+      <div class="chipset" role="group" aria-label="Which shortcuts to practice" id="trSets">
+        <button type="button" data-set="all" aria-pressed="true">All</button><button type="button" data-set="basics" aria-pressed="false">Basics</button><button type="button" data-set="text" aria-pressed="false">Text</button><button type="button" data-set="apps" aria-pressed="false">Apps &amp; windows</button><button type="button" data-set="shots" aria-pressed="false">Screenshots</button><button type="button" data-set="finder" aria-pressed="false">Finder</button>
+      </div>
+      <div class="trainer" id="trainer" tabindex="0" aria-label="Shortcut trainer. Focus here and press the shortcut.">
+        <div class="tr-card">
+          <span class="tr-hint" id="trMode">Click here, then press the shortcut</span>
+          <div class="tr-task" id="trTask"></div>
+          <div class="tr-pressed" id="trPressed" aria-live="polite"></div>
+          <div class="tr-choices" id="trChoices"></div>
+          <div class="tr-fb" id="trFb" aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="tr-stats"><span>Score <b id="trScore">0</b> / <b id="trTotal">0</b></span><span>Streak <b id="trStreak">0</b> · Best <b id="trBest">0</b></span><button class="btn ghost small" type="button" id="trSkip">Skip</button></div>
+    </div>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Where is the Command key?</summary><div class="a"><p>On both sides of the space bar, marked <b>⌘</b> and “command.” On some older keyboards it also shows an Apple logo.</p></div></details>
+      <details><summary>How do I right-click on a Mac?</summary><div class="a"><p>Hold <kbd>⌃ Control</kbd> and click. On a trackpad you can also click with two fingers.</p></div></details>
+      <details><summary>Can I use a Windows keyboard with a Mac?</summary><div class="a"><p>Yes. The <b>Windows</b> key acts as <kbd>⌘ Command</kbd> and <b>Alt</b> acts as <kbd>⌥ Option</kbd>. You can swap them in <span>System Settings › Keyboard › Keyboard Shortcuts › Modifier Keys</span>.</p></div></details>
+      <details><summary>My app is frozen. What do I press?</summary><div class="a"><p><kbd>⌥</kbd> <kbd>⌘</kbd> <kbd>Esc</kbd> opens Force Quit. Pick the app and click <b>Force Quit</b>. Anything unsaved in that app will be lost.</p></div></details>
+      <details><summary>Can I make my own shortcuts?</summary><div class="a"><p>Yes. In <b>System Settings › Keyboard › Keyboard Shortcuts › App Shortcuts</b>, click <b>+</b>, choose an app, type the exact menu command name, and press the keys you want.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Official help</h2>
+    <div class="links">
+      <a href="https://support.apple.com/en-us/102650" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>Mac keyboard shortcuts</b></a>
+      <a href="https://support.apple.com/en-us/102646" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>How to take a screenshot on your Mac</b></a>
+    </div>
+  </section>
+
+  <section id="cert" style="scroll-margin-top:80px"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/leaderboard/">Leaderboard</a></nav></span><span>Shortcuts checked against Apple's list for current macOS, October 2026.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  // combo: modifiers in Apple's order (⌃ ⌥ ⇧ ⌘) + key. safe=false means tap-only (browser or OS would grab it).
+  const T = [
+    ['basics','Copy the selected text','⌘C'],['basics','Paste','⌘V'],['basics','Cut','⌘X'],['basics','Undo your last change','⌘Z'],
+    ['basics','Redo (undo the undo)','⇧⌘Z'],['basics','Select everything','⌘A'],['basics','Find a word on the page','⌘F'],['basics','Save the document','⌘S'],['basics','Print','⌘P'],
+    ['text','Jump to the end of the line','⌘→'],['text','Jump to the start of the line','⌘←'],['text','Jump one word to the left','⌥←'],
+    ['text','Delete the whole word to the left','⌥⌫'],['text','Jump to the top of the document','⌘↑'],['text','Make text bold','⌘B'],['text','Paste and Match Style','⌥⇧⌘V'],
+    ['apps','Switch to another app','⌘Tab',0],['apps','Quit the app','⌘Q',0],['apps','Close the window or tab','⌘W',0],['apps','Open a new tab','⌘T',0],
+    ['apps','Minimize the window','⌘M',0],['apps','Open the app\'s settings','⌘,'],['apps','Force Quit a frozen app','⌥⌘Esc',0],['apps','Lock your screen','⌃⌘Q',0],['apps','Hide the app','⌘H',0],
+    ['shots','Screenshot the whole screen','⇧⌘3',0],['shots','Screenshot an area you drag','⇧⌘4',0],['shots','Open the Screenshot toolbar','⇧⌘5',0],['shots','Copy a screenshot of an area to the clipboard','⌃⇧⌘4',0],
+    ['finder','Open Spotlight search','⌘Space',0],['finder','Move a file to the Trash','⌘⌫'],['finder','Make a new folder','⇧⌘N',0],['finder','Get Info on a file','⌘I'],['finder','Duplicate a file','⌘D'],['finder','Preview a file with Quick Look','Space'],
+  ].map(([set,task,combo,safe]) => ({set,task,combo,safe: safe !== 0}));
+  const pretty = c => c.replace('⌫',' Delete').replace(/(Tab|Space|Esc)/,' $1').replace(/([⌃⌥⇧⌘])/g,'$1 ').replace(/\s+/g,' ').trim();
+  const $ = s => document.getElementById(s);
+  const touch = 'ontouchend' in document;
+  const isMac = /Mac/.test(navigator.platform) && !touch;
+  let set = 'all', cur = null, answered = false, score = 0, total = 0, streak = 0, best = 0, last = null;
+  try { best = +localStorage.getItem('st-macsc-best') || 0; } catch(e){}
+  $('trBest').textContent = best;
+
+  function pool(){ return T.filter(t => set === 'all' || t.set === set); }
+  function next(){
+    const p = pool(); let n;
+    do { n = p[Math.floor(Math.random() * p.length)]; } while (p.length > 1 && n === last);
+    cur = last = n; answered = false;
+    $('trTask').textContent = cur.task;
+    $('trPressed').textContent = '';
+    $('trFb').textContent = '';
+    $('trMode').textContent = cur.safe ? (isMac ? 'Press the shortcut, or tap an answer' : touch ? 'Tap the right shortcut' : 'Press it (Ctrl = ⌘, Alt = ⌥) or tap an answer') : 'Tap-only: this one would really do it!';
+    const others = T.filter(t => t.combo !== cur.combo).sort(() => Math.random() - .5);
+    const near = others.filter(t => t.set === cur.set).slice(0, 2), rest = others.filter(t => !near.includes(t)).slice(0, 3 - near.length);
+    const opts = [cur, ...near, ...rest].sort(() => Math.random() - .5);
+    $('trChoices').innerHTML = opts.map(o => `<button type="button" data-c="${o.combo}">${pretty(o.combo)}</button>`).join('');
+    $('trChoices').querySelectorAll('button').forEach(b => b.addEventListener('click', () => answer(b.dataset.c, b)));
+  }
+  function answer(c, btn){
+    if (answered) return;
+    answered = true; total++;
+    const ok = c === cur.combo;
+    if (ok){ score++; streak++; if (streak > best){ best = streak; try { localStorage.setItem('st-macsc-best', best); } catch(e){} } }
+    else streak = 0;
+    $('trChoices').querySelectorAll('button').forEach(b => { if (b.dataset.c === cur.combo) b.classList.add('right'); else if (b === btn && !ok) b.classList.add('wrong'); });
+    $('trFb').innerHTML = ok ? '<span style="color:var(--good)">✓ Correct!</span>' : `<span style="color:var(--bad)">Not quite. It's ${pretty(cur.combo)}</span>`;
+    $('trScore').textContent = score; $('trTotal').textContent = total; $('trStreak').textContent = streak; $('trBest').textContent = best;
+    setTimeout(next, ok ? 900 : 1900);
+  }
+  // Keyboard listening
+  const keyName = e => {
+    const c = e.code;
+    if (/^Key[A-Z]$/.test(c)) return c.slice(3);
+    if (/^Digit\d$/.test(c)) return c.slice(5);
+    return {ArrowLeft:'←',ArrowRight:'→',ArrowUp:'↑',ArrowDown:'↓',Backspace:'⌫',Delete:'⌫',Comma:',',Space:'Space',Tab:'Tab',Escape:'Esc',Backquote:'`'}[c] || null;
+  };
+  $('trainer').addEventListener('keydown', e => {
+    if (!cur || answered) return;
+    const k = keyName(e);
+    if (!k) return; // modifier alone
+    const cmd = isMac ? e.metaKey : e.ctrlKey;
+    const ctrl = isMac ? e.ctrlKey : false;
+    const hasMod = cmd || e.altKey || e.shiftKey || ctrl;
+    if (!hasMod && k !== 'Space') return; // let plain Tab etc. work normally
+    e.preventDefault();
+    const combo = (ctrl ? '⌃' : '') + (e.altKey ? '⌥' : '') + (e.shiftKey ? '⇧' : '') + (cmd ? '⌘' : '') + k;
+    $('trPressed').textContent = 'You pressed: ' + pretty(combo);
+    if (!cur.safe) return;
+    if (combo === cur.combo) answer(combo, null);
+    else if (cmd || e.altKey || ctrl){ answer(combo, null); }
+  });
+  document.querySelectorAll('#trSets button').forEach(b => b.addEventListener('click', () => {
+    set = b.dataset.set;
+    document.querySelectorAll('#trSets button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    next();
+  }));
+  $('trSkip').addEventListener('click', () => { streak = 0; $('trStreak').textContent = 0; next(); });
+  next();
+})();
+</script>
+</body>
+</html>
