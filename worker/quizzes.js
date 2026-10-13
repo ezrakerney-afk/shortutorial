@@ -1841,5 +1841,71 @@ export default {
         o: ["Test for lead and follow lead-safe practices", "Nothing special", "Just open a window", "Use a heat gun to remove it"], a: 0,
         e: "Homes built before 1978 may have lead paint; sanding creates dangerous dust." }
     ]
+  },
+
+  "change-furnace-filter": {
+    title: "How to Change a Furnace Filter",
+    pass: 4,
+    questions: [
+      { q: "Which way should the airflow arrow on a furnace filter point?",
+        o: ["Toward the return duct and the room", "Up", "Toward the furnace, the way the air flows", "It doesn't matter"], a: 2,
+        e: "Point it in the direction the air travels: toward the furnace." },
+      { q: "Your old filter says 16x25x1. What does that number describe?",
+        o: ["Its exact measured size", "Its nominal size, which is what you buy", "Its MERV rating", "Its price code"], a: 1,
+        e: "It's the rounded nominal size. The real filter is slightly smaller." },
+      { q: "What does a higher MERV rating mean?",
+        o: ["The filter lasts longer", "The filter is washable", "The filter is thinner", "The filter catches more small particles"], a: 3,
+        e: "MERV rates how well a filter traps particles; higher catches more." },
+      { q: "What does ENERGY STAR recommend for 1-inch filters?",
+        o: ["Check monthly and change at least every three months", "Change once a year", "Change only when the furnace stops", "Vacuum and reuse it"], a: 0,
+        e: "Check monthly, change at least every three months or when dirty." },
+      { q: "Which MERV does the EPA suggest if your system can handle it?",
+        o: ["MERV 4", "MERV 8", "At least MERV 13", "Any filter is the same"], a: 2,
+        e: "The EPA suggests at least MERV 13, or as high as your system allows." }
+    ]
+  },
+
+  "clean-microwave": {
+    title: "How to Clean a Microwave Fast",
+    pass: 4,
+    questions: [
+      { q: "What does the lemon or vinegar water mainly do when you heat it?",
+        o: ["Disinfects the door seal", "Fills the microwave with steam that softens dried-on food", "Polishes the turntable", "Recharges the magnetron"], a: 1,
+        e: "The steam loosens baked-on food so it wipes off without scrubbing." },
+      { q: "Why wait a few minutes before opening the door after steaming?",
+        o: ["The microwave needs to cool its fan", "The door locks automatically", "Vinegar needs time to evaporate completely", "It keeps the steam working and lets very hot water settle so it's less likely to erupt"], a: 3,
+        e: "Superheated water can erupt when disturbed; waiting lets it settle while the steam keeps softening grime." },
+      { q: "What should you do before washing the glass turntable?",
+        o: ["Let it cool completely", "Run it under cold water right away", "Heat it for one more minute", "Scrub it with steel wool"], a: 0,
+        e: "Cold water on a hot glass tray can crack or shatter it." },
+      { q: "Which is the FDA's advice for cleaning inside a microwave?",
+        o: ["Bleach and a scouring pad", "Oven cleaner sprayed into the vents", "Water and a mild detergent, no abrasives", "Dry wiping only"], a: 2,
+        e: "The FDA recommends water and mild detergent and warns against scouring pads, steel wool and abrasives." },
+      { q: "Which of these is safe to leave in the microwave overnight to absorb smells?",
+        o: ["A bowl of bleach", "An open box of baking soda, removed before you turn it on", "A foil-wrapped lemon", "Nothing should ever be left inside"], a: 1,
+        e: "An open box of baking soda absorbs odors, but take it out before running the microwave." }
+    ]
+  },
+
+  "fix-stripped-screw-hole": {
+    title: "How to Fix a Stripped Screw Hole",
+    pass: 4,
+    questions: [
+      { q: "What's the classic quick fix for a stripped screw hole in wood?",
+        o: ["Pack it with toothpicks and wood glue", "Fill it with spackle", "Use a drywall anchor", "Drive the same screw faster"], a: 0,
+        e: "Glue-dipped toothpicks give the threads fresh wood to grip." },
+      { q: "A screw spins in drywall with no stud behind it. What should you use?",
+        o: ["Toothpicks and glue", "A longer wood screw", "Super glue", "A drywall anchor or toggle bolt"], a: 3,
+        e: "Drywall can't hold threads; use an anchor, or move to a stud." },
+      { q: "Why should a longer hinge screw have the same head size as the original?",
+        o: ["So it's cheaper", "A bigger head can stick up and make the door bind", "So it reaches the stud", "It doesn't matter"], a: 1,
+        e: "A head that sticks up past the hinge can make the door bind." },
+      { q: "How does the rubber band trick help?",
+        o: ["It glues the screw in place", "It lubricates the threads", "It fills the worn head and adds grip for the screwdriver", "It makes the hole smaller"], a: 2,
+        e: "The rubber fills the stripped grooves so the bit can grip." },
+      { q: "For a badly chewed-up hole, what's the most permanent fix?",
+        o: ["More toothpicks without glue", "Drill it out and glue in a wood dowel", "Tape over the hole", "Use a shorter screw"], a: 1,
+        e: "A glued-in dowel gives solid new wood to drill a fresh pilot hole into." }
+    ]
   }
 };

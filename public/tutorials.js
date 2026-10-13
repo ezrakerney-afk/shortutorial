@@ -667,5 +667,29 @@ window.TUTORIALS = [
     category: "Home & tech",
     tags: ["paint", "painting", "paint a room", "walls", "primer", "roller", "cut in", "how much paint", "paint calculator", "diy", "decorating"],
     minutes: 15
+  },
+  {
+    slug: "change-furnace-filter",
+    title: "How to Change a Furnace Filter",
+    summary: "Find, size and swap your HVAC filter, and know how often to change it.",
+    category: "Home & tech",
+    tags: ["furnace filter", "air filter", "hvac", "merv", "heating", "air conditioner", "replace filter", "filter size", "allergies", "home maintenance"],
+    minutes: 10
+  },
+  {
+    slug: "clean-microwave",
+    title: "How to Clean a Microwave Fast",
+    summary: "Steam it with lemon or vinegar, wipe it down, and lift stubborn stains and smells.",
+    category: "Home & tech",
+    tags: ["clean microwave", "microwave", "lemon", "vinegar", "steam clean", "turntable", "kitchen cleaning", "microwave smell", "baking soda", "superheated water"],
+    minutes: 6
+  },
+  {
+    slug: "fix-stripped-screw-hole",
+    title: "How to Fix a Stripped Screw Hole",
+    summary: "Toothpicks, dowels, longer screws and anchors to make screws hold again.",
+    category: "Home & tech",
+    tags: ["stripped screw", "screw hole", "loose screw", "toothpicks", "wood glue", "dowel", "drywall anchor", "door hinge", "screw extractor", "diy"],
+    minutes: 10
   }
 ];
