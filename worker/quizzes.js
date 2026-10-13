@@ -2171,5 +2171,71 @@ export default {
         o: ["It cools down faster", "Left on the grounds, it keeps brewing and turns bitter", "The glass can crack", "It loses caffeine"], a: 1,
         e: "Coffee sitting on the grounds keeps extracting and gets bitter." }
     ]
+  },
+
+  "airpods-noise-cancellation": {
+    title: "Use AirPods Noise Cancellation, Transparency and Adaptive",
+    pass: 4,
+    questions: [
+      { q: "What does Transparency mode do?",
+        o: ["Blocks as much outside sound as possible", "Lets outside sound in so you can hear your surroundings", "Turns off the microphones", "Boosts the bass"], a: 1,
+        e: "Transparency lets outside sound in, so you can hear traffic, announcements and people." },
+      { q: "How do you switch listening modes on AirPods Pro without your phone?",
+        o: ["Double-tap the case", "Say \"next mode\"", "Shake your head", "Press and hold the stem until you hear a chime"], a: 3,
+        e: "Press and hold the stem's force sensor; each press moves to the next mode in your cycle." },
+      { q: "Which of these does NOT have Adaptive mode?",
+        o: ["AirPods Pro 2", "AirPods 4 with ANC", "Original AirPods Max", "AirPods 5"], a: 2,
+        e: "The original AirPods Pro and original AirPods Max don't have Adaptive." },
+      { q: "Noise cancellation on your AirPods Pro sounds weak and bass-light. What's a good first check?",
+        o: ["Run the Ear Tip Fit Test or Acoustic Seal test", "Run them under the tap", "Turn on Airplane mode", "Buy new AirPods"], a: 0,
+        e: "A poor seal lets noise in and drains bass. The fit or seal test tells you if you need a different tip size." },
+      { q: "Which mode is the best choice when walking or cycling near traffic?",
+        o: ["Noise Cancellation at full volume", "Transparency or Adaptive", "Off with music at max volume", "It doesn't matter"], a: 1,
+        e: "You need to hear cars, bikes and sirens, so use Transparency or Adaptive at a moderate volume." }
+    ]
+  },
+
+  "get-rid-of-hiccups": {
+    title: "How to Get Rid of Hiccups",
+    pass: 4,
+    questions: [
+      { q: "What causes the “hic” sound?",
+        o: ["Your vocal cords snapping shut after the diaphragm spasms", "Your stomach growling", "Air leaving your nose", "Your heart skipping"], a: 0,
+        e: "A diaphragm spasm pulls in air, and the vocal cords close suddenly, making the sound." },
+      { q: "How long should you hold your breath to try to stop hiccups?",
+        o: ["2 to 3 seconds", "2 minutes", "10 to 20 seconds", "As long as possible"], a: 2,
+        e: "Cleveland Clinic suggests holding a deep breath about 10 to 20 seconds, repeated a few times." },
+      { q: "If you breathe into a bag, what kind must it be?",
+        o: ["Plastic", "Paper, and never over your head", "Any bag", "A zip-top bag"], a: 1,
+        e: "Use a paper bag only. Never plastic, and never put it over your head." },
+      { q: "When should you see a doctor about hiccups?",
+        o: ["After 10 minutes", "Every time you get them", "Only if they happen at night", "If they last more than 48 hours or make it hard to eat, sleep or breathe"], a: 3,
+        e: "Hiccups lasting over 48 hours, or that interfere with eating, sleeping or breathing, need a doctor." },
+      { q: "Which of these is a common hiccup trigger?",
+        o: ["Drinking water slowly", "Fizzy drinks and eating too fast", "Sleeping on your side", "Reading"], a: 1,
+        e: "Carbonated drinks, alcohol, big meals and swallowing air are common triggers." }
+    ]
+  },
+
+  "write-a-check": {
+    title: "How to Write a Check",
+    pass: 4,
+    questions: [
+      { q: "How do you write $125.50 on the amount line?",
+        o: ["One hundred twenty-five dollars point five", "One hundred and twenty-five and 50/100", "One hundred twenty-five and 50/100", "125 and fifty"], a: 2,
+        e: "Dollars in words, “and” only before the cents, and cents as a fraction over 100." },
+      { q: "If the numbers and the words on a check don't match, which counts?",
+        o: ["The numbers", "Whichever is larger", "The memo", "The words"], a: 3,
+        e: "The written amount is the legal amount of the check." },
+      { q: "What's the safest endorsement for depositing a check?",
+        o: ["“For deposit only” with your signature", "Just your signature", "Leave it blank", "“Pay to the order of Cash”"], a: 0,
+        e: "A restrictive “For deposit only” endorsement means it can only go into your account." },
+      { q: "How do you void a check?",
+        o: ["Tear off the corner", "Write VOID across the front in pen and note it in your register", "Sign the back", "Cross out the date"], a: 1,
+        e: "Write VOID across the front, record it in your register, then shred it when it's no longer needed." },
+      { q: "Why keep a check register?",
+        o: ["A check may not clear for days, so your bank balance can look higher than it really is", "Banks require it by law", "It makes checks clear faster", "To get a lower fee"], a: 0,
+        e: "Tracking outstanding checks stops you spending money that's already promised." }
+    ]
   }
 };

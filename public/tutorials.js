@@ -787,5 +787,29 @@ window.TUTORIALS = [
     category: "Life skills",
     tags: ["coffee", "french press", "press pot", "coffee ratio", "brew coffee", "coffee to water", "grind", "cold brew", "bloom", "coffee timer"],
     minutes: 8
+  },
+  {
+    slug: "airpods-noise-cancellation",
+    title: "Use AirPods Noise Cancellation, Transparency and Adaptive",
+    summary: "Switch AirPods listening modes from the stem, iPhone, Mac or Watch, and fix weak ANC",
+    category: "Phone help",
+    tags: ["airpods", "noise cancellation", "anc", "transparency mode", "adaptive audio", "airpods pro", "airpods max", "airpods 4", "airpods 5", "listening mode", "ear tip fit test", "anc not working"],
+    minutes: 10
+  },
+  {
+    slug: "get-rid-of-hiccups",
+    title: "How to Get Rid of Hiccups",
+    summary: "Why hiccups happen, what to try in order, and when to see a doctor.",
+    category: "Life skills",
+    tags: ["hiccups", "stop hiccups", "hiccup cure", "get rid of hiccups", "hold breath", "diaphragm", "persistent hiccups", "breathing", "home remedy", "health"],
+    minutes: 6
+  },
+  {
+    slug: "write-a-check",
+    title: "How to Write a Check",
+    summary: "Fill out a check step by step, write the amount in words, void and endorse.",
+    category: "Money",
+    tags: ["check", "write a check", "checkbook", "amount in words", "void a check", "endorse a check", "check register", "balance checkbook", "routing number", "memo line", "bank"],
+    minutes: 8
   }
 ];

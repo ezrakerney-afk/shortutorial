@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Write a Check · Shortutorial</title>
+<meta name="description" content="Write a check step by step: date, payee, amount in numbers and words, memo and signature. Plus how to void a check, endorse one you receive and keep your register balanced, with a live check writer.">
+<link rel="canonical" href="https://shortutorial.com/write-a-check/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How to Write a Check · Shortutorial">
+<meta property="og:description" content="Write a check step by step: date, payee, amount in numbers and words, memo and signature. Plus how to void a check, endorse one you receive and keep your register balanced, with a live check writer.">
+<meta property="og:url" content="https://shortutorial.com/write-a-check/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+/* check drawing */
+.chk{width:100%;height:auto;display:block;border-radius:10px;box-shadow:0 10px 26px -18px rgba(0,0,0,.5)}
+.chk .paper{fill:#eef6f2;stroke:#9fb9ad}
+.chk .ln{stroke:#6f8a7e;stroke-width:1}
+.chk .lb{font-family:var(--mono);font-size:10px;fill:#4d6358;letter-spacing:.04em}
+.chk .pr{font-family:var(--display);font-size:15px;fill:#2b3a33;font-weight:600}
+.chk .hw{font-family:"Caveat","Segoe Print","Bradley Hand",cursive;font-size:24px;fill:#1b3f8f}
+.chk .hw.sm{font-size:20px}
+.chk .micr{font-family:var(--mono);font-size:13px;fill:#2b3a33;letter-spacing:.12em}
+.chk .box{fill:#ffffff;stroke:#6f8a7e}
+.chk .void{font-family:var(--display);font-weight:700;font-size:96px;fill:none;stroke:#c0392b;stroke-width:3;opacity:.85}
+.chk .hint{fill:var(--accent);opacity:.12}
+.chk .callout-t{font-family:var(--mono);font-size:10px;font-weight:600;fill:#0f7a6c}
+.cw-form{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.cw-form{grid-template-columns:1fr}}
+.try .cw-form input,.try .cw-form select{width:100%}
+.try input[type=date]{font:inherit;font-family:var(--mono);font-size:1rem;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:9px;padding:8px 10px;width:100%;outline:none}
+.words{font-family:var(--display);font-size:1.1rem;font-weight:600;padding:10px 12px;border-radius:10px;background:var(--surface);border:1px solid var(--line)}
+.words small{display:block;font-family:var(--mono);font-size:.7rem;color:var(--muted);font-weight:400;text-transform:uppercase;letter-spacing:.06em}
+.checks{display:flex;flex-direction:column;gap:6px;margin:0;padding:0;list-style:none;font-size:.95rem}
+.checks li::before{content:"✓ ";color:var(--good);font-family:var(--mono)}
+.checks li.bad::before{content:"! ";color:var(--bad)}
+.reg{font-family:var(--mono);font-size:.82rem}
+.reg td,.reg th{padding:7px 9px}
+</style>
+</head>
+<body data-slug="write-a-check">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=money">Money</a> / Write a check</div>
+    <span class="eyebrow">Money · Banking basics</span>
+    <h1>How to Write a Check</h1>
+    <p class="lede">Rent, a contractor, a gift, a government office that won't take cards: checks still come up. Here's how to fill one out correctly, plus how to void, endorse and keep track of them.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~8 min read</span><span class="badge">5 lessons</span><span class="badge">Live check writer</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#k1">1 · Parts of a check</a><a href="#k2">2 · Fill it out</a><a href="#k3">3 · Amount in words</a><a href="#k4">4 · Void & endorse</a><a href="#k5">5 · Balance</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="k1">
+    <div class="lesson-head"><span class="step">01</span><h2>The parts of a check</h2></div>
+    <p>Every personal check has the same six spaces for you to fill in, plus some printed numbers at the bottom.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Space</th><th>Where</th><th>What goes there</th></tr>
+      <tr><td><b>Date</b></td><td>Top right</td><td>Today's date</td></tr>
+      <tr><td><b>Pay to the order of</b></td><td>Middle left</td><td>Who you're paying (the payee)</td></tr>
+      <tr><td><b>Amount box</b></td><td>Right, next to $</td><td>The amount in numbers</td></tr>
+      <tr><td><b>Amount line</b></td><td>Under the payee, ends in “Dollars”</td><td>The amount in words</td></tr>
+      <tr><td><b>Memo</b></td><td>Bottom left</td><td>What it's for (optional)</td></tr>
+      <tr><td><b>Signature</b></td><td>Bottom right</td><td>Your signature</td></tr>
+    </table></div>
+    <p>Printed along the bottom are your bank's <b>routing number</b> (9 digits), your <b>account number</b>, and the <b>check number</b>, which also appears in the top right corner. You'll need the routing and account numbers to set up direct deposit.</p>
+  </section>
+
+  <section class="lesson" id="k2">
+    <div class="lesson-head"><span class="step">02</span><h2>Fill it out, step by step</h2></div>
+    <p>Use a pen with <b>blue or black ink</b>, never pencil or erasable ink.</p>
+    <ol class="steps">
+      <li><b>Date.</b> Write today's date, like <i>10/13/2026</i> or <i>October 13, 2026</i>.</li>
+      <li><b>Payee.</b> Write the full name of the person or company exactly, like <i>Maria Lopez</i> or <i>City of Springfield Water Dept.</i> Ask if you're unsure what name to use. Never write “Cash” unless you mean it: anyone holding it could cash it.</li>
+      <li><b>Amount in numbers.</b> In the box, write the amount close to the dollar sign so nothing can be added in front: <i>125.50</i>. Always include the cents, even if it's <i>.00</i>.</li>
+      <li><b>Amount in words.</b> On the long line, write the dollars in words and the cents as a fraction over 100: <i>One hundred twenty-five and 50/100</i>. Start at the far left and draw a line through any leftover space up to the word “Dollars.”</li>
+      <li><b>Memo.</b> Optional, but helpful: <i>October rent, Apt 4B</i> or an account or invoice number.</li>
+      <li><b>Sign.</b> Sign the bottom right line the same way your name appears on the account. Sign last, after everything else is filled in.</li>
+    </ol>
+    <p class="callout warn"><span><b>Never sign a blank check.</b> Anyone who gets it can fill in any amount. And don't leave gaps: empty space on the payee or amount line is where someone could add to it.</span></p>
+  </section>
+
+  <section class="lesson" id="k3">
+    <div class="lesson-head"><span class="step">03</span><h2>Writing the amount in words</h2></div>
+    <p>The written amount is the <b>legal amount</b> of the check. If the words and numbers don't match, the bank goes by the words, or may refuse the check. So it's worth getting right.</p>
+    <ul class="points">
+      <li><b>Hyphenate 21 to 99:</b> twenty-one, forty-five, ninety-nine.</li>
+      <li><b>Use “and” only once</b>, before the cents: <i>One thousand two hundred five and 00/100</i>, not “one thousand two hundred <s>and</s> five.”</li>
+      <li><b>Cents go over 100:</b> $7.05 is <i>Seven and 05/100</i>. No cents? Write <i>and 00/100</i> or <i>and no/100</i>.</li>
+      <li><b>Under a dollar:</b> $0.75 is <i>Zero and 75/100</i>, though most people just pay that in cash.</li>
+    </ul>
+    <div class="try" id="cw"><span class="try-h">Try it · live check writer</span>
+      <div class="chipset" id="cwSide" aria-label="Side of check"><button type="button" data-s="front" aria-pressed="true">Front</button><button type="button" data-s="void" aria-pressed="false">Voided</button><button type="button" data-s="back" aria-pressed="false">Back (endorse)</button></div>
+      <svg class="chk" id="cwSvg" viewBox="0 0 600 270" role="img" aria-label="Preview of your check"></svg>
+      <div class="words" aria-live="polite"><small>Amount in words</small><span id="cwWords"></span></div>
+      <div class="cw-form">
+        <label>Date<input type="date" id="cwDate"></label>
+        <label>Pay to the order of<input type="text" id="cwPayee" value="Maria Lopez" maxlength="40" autocomplete="off"></label>
+        <label>Amount ($)<input type="number" id="cwAmt" value="1205.50" min="0" max="999999999.99" step="0.01" inputmode="decimal"></label>
+        <label>Memo<input type="text" id="cwMemo" value="October rent" maxlength="34" autocomplete="off"></label>
+        <label>Your name (signature)<input type="text" id="cwSig" value="Alex Kim" maxlength="30" autocomplete="off"></label>
+        <label id="cwEndL">Endorsement (back)<select id="cwEnd">
+          <option value="restrict">For deposit only</option>
+          <option value="mobile">For mobile deposit only</option>
+          <option value="blank">Signature only (blank)</option>
+          <option value="special">Sign it over to someone</option>
+        </select></label>
+      </div>
+      <ul class="checks" id="cwCheck"></ul>
+    </div>
+  </section>
+
+  <section class="lesson" id="k4">
+    <div class="lesson-head"><span class="step">04</span><h2>Voiding and endorsing</h2></div>
+    <h3>Void a check</h3>
+    <p>An employer or a company setting up automatic payments may ask for a <b>voided check</b> so they can copy your routing and account numbers. Also void any check you mess up.</p>
+    <ol class="steps">
+      <li>Write <b>VOID</b> in large letters across the front in pen. Don't cover the numbers along the bottom if someone needs to read them.</li>
+      <li>Write “VOID” in your check register next to that check number.</li>
+      <li>Once it's no longer needed, shred it or cut it up. If that check number ever shows up as paid, call your bank right away.</li>
+    </ol>
+    <h3>Endorse a check you received</h3>
+    <p>Before you can deposit or cash a check made out to you, you sign the back in the endorsement area near the top, on the left end. Don't write below the line that says not to.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Type</th><th>What you write</th><th>When</th></tr>
+      <tr><td><b>Restrictive</b></td><td>“For deposit only” + signature (some banks also want your account number)</td><td>Safest. It can only go into your account.</td></tr>
+      <tr><td><b>Mobile deposit</b></td><td>Signature + “For mobile deposit only,” sometimes with your bank's name</td><td>Depositing with a phone app. Many banks require this exact wording, so check your app.</td></tr>
+      <tr><td><b>Blank</b></td><td>Just your signature</td><td>Only at the teller window. If lost, anyone holding it could cash it.</td></tr>
+      <tr><td><b>Special</b></td><td>Your signature, then “Pay to the order of [name]” below it</td><td>Signing it over to someone else. Their bank may not accept it, so ask first.</td></tr>
+    </table></div>
+    <p class="callout"><span><b>Use the live check writer above</b> and tap “Back (endorse)” to see where each endorsement goes.</span></p>
+  </section>
+
+  <section class="lesson" id="k5">
+    <div class="lesson-head"><span class="step">05</span><h2>Keep your account balanced</h2></div>
+    <p>A check doesn't come out of your account until the other person deposits it, which could be days or weeks later. If you only look at your bank balance, you might spend money that's already promised. A <b>check register</b> fixes that: the small booklet in your checkbook, a notes app or a spreadsheet.</p>
+    <ol class="steps">
+      <li><b>Write it down right away:</b> check number, date, payee and amount.</li>
+      <li><b>Keep a running balance:</b> subtract each check, debit card payment and fee; add each deposit.</li>
+      <li><b>Reconcile monthly:</b> when your statement arrives, tick off each item that cleared. Checks that haven't cleared yet are <b>outstanding</b>.</li>
+      <li><b>Check the math:</b> statement balance − outstanding checks + deposits not yet shown should equal your register balance. If not, look for a missed fee or a typo, and call the bank if you spot an error.</li>
+    </ol>
+    <div class="example"><div class="ex-h">Example · a register</div><div class="ex-b"><div class="tw"><table class="t reg">
+      <tr><th>#</th><th>Date</th><th>Description</th><th class="num">−</th><th class="num">+</th><th class="num">Balance</th></tr>
+      <tr><td></td><td>10/01</td><td>Starting balance</td><td></td><td></td><td class="num">2,000.00</td></tr>
+      <tr><td>1001</td><td>10/02</td><td>Maria Lopez · rent</td><td class="num">1,205.50</td><td></td><td class="num">794.50</td></tr>
+      <tr><td></td><td>10/09</td><td>Paycheck deposit</td><td></td><td class="num">1,150.00</td><td class="num">1,944.50</td></tr>
+      <tr><td>1002</td><td>10/10</td><td>VOID</td><td></td><td></td><td class="num">1,944.50</td></tr>
+    </table></div></div></div>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>What if I make a mistake on a check?</summary><div class="a"><p>Don't cross it out and keep going. Write VOID across it, note it in your register, and start a fresh check. A bank may refuse a check with changes on it.</p></div></details>
+      <details><summary>Can I postdate a check (write a future date)?</summary><div class="a"><p>You can, but don't count on it. In the U.S., a bank can still cash a postdated check before that date unless you've formally told your bank in advance. Only hand over a check when there's money to cover it.</p></div></details>
+      <details><summary>How long is a check good for?</summary><div class="a"><p>Personal checks are generally good for 6 months. After that, a bank isn't required to cash it, though it may. Some checks print a shorter limit, like “void after 90 days.”</p></div></details>
+      <details><summary>Where do I find my routing and account numbers?</summary><div class="a"><p>On the bottom of the check: the 9-digit routing number is first, then your account number, then the check number. They're also in your bank's app or website.</p></div></details>
+      <details><summary>What happens if the check bounces?</summary><div class="a"><p>If you don't have enough money in the account, the bank may return the check unpaid and charge you a fee, and the person you paid may charge one too. Keeping a register helps you avoid it.</p></div></details>
+      <details><summary>How do I write a check for cents only, like $0.50?</summary><div class="a"><p>Write <i>0.50</i> in the box and <i>Zero and 50/100</i> on the line. Many people write “Only 50/100” or “Fifty cents” and cross out “Dollars”; ask the payee if they have a preference.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://www.chase.com/personal/banking/education/basics/how-to-write-a-check" target="_blank" rel="noopener"><span class="src">Chase</span><b>How to write a check</b></a>
+      <a href="https://www.huntington.com/learn/checking-basics/how-to-write-a-check" target="_blank" rel="noopener"><span class="src">Huntington Bank</span><b>How to write a check, endorse and keep a register</b></a>
+      <a href="https://www.helpwithmybank.gov/help-topics/bank-accounts/check-writing-cashing/writing-cashing-checks/check-writing-postdate.html" target="_blank" rel="noopener"><span class="src">OCC · HelpWithMyBank.gov</span><b>Can a bank cash a postdated check early?</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/leaderboard/">Leaderboard</a></nav></span><span>The check writer is a practice tool. Nothing you type is saved or sent.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  /* ---------- number to words, check style ---------- */
+  const ONES = ['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'];
+  const TENS = ['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];
+  function under1000(n){
+    const h = Math.floor(n / 100), r = n % 100, out = [];
+    if (h) out.push(ONES[h] + ' hundred');
+    if (r){ out.push(r < 20 ? ONES[r] : TENS[Math.floor(r / 10)] + (r % 10 ? '-' + ONES[r % 10] : '')); }
+    return out.join(' ');
+  }
+  function dollarsToWords(n){
+    if (n === 0) return 'zero';
+    const scales = [[1e9,'billion'],[1e6,'million'],[1e3,'thousand']], out = [];
+    for (const [v, name] of scales){ if (n >= v){ out.push(under1000(Math.floor(n / v)) + ' ' + name); n %= v; } }
+    if (n) out.push(under1000(n));
+    return out.join(' ');
+  }
+  window.checkWords = function(amount){
+    const cents = Math.round(amount * 100), d = Math.floor(cents / 100), c = cents % 100;
+    const w = dollarsToWords(d);
+    return w.charAt(0).toUpperCase() + w.slice(1) + ' and ' + String(c).padStart(2, '0') + '/100';
+  };
+
+  /* ---------- drawing ---------- */
+  const svg = $('#cwSvg');
+  let side = 'front';
+  const esc = s => String(s).replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+  // rough width of handwriting text at 17px, to squeeze long lines
+  const fit = (txt, max) => ` data-max="${max}"`;
+  // After drawing, squeeze any handwriting that runs past its line, and draw the fill line after the words.
+  function measure(){
+    svg.querySelectorAll('text[data-max]').forEach(t => {
+      const max = +t.dataset.max;
+      try { if (t.getComputedTextLength() > max){ t.setAttribute('textLength', max); t.setAttribute('lengthAdjust', 'spacingAndGlyphs'); } } catch(e){}
+    });
+    const w = svg.querySelector('#cwWordsT'), dash = svg.querySelector('#cwDash');
+    if (w && dash){
+      let len = 0; try { len = Math.min(+w.dataset.max, w.getComputedTextLength()); } catch(e){}
+      const x = 34 + len + 8;
+      if (len && x < 34 + 430 - 10){ dash.setAttribute('x1', x); dash.style.display = ''; } else dash.style.display = 'none';
+    }
+  }
+  function fmtDate(v){
+    if (!v) return '';
+    const [y, m, d] = v.split('-'); return `${+m}/${+d}/${y}`;
+  }
+  function money(n){ return n.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2}); }
+  function front(st, voided){
+    const words = st.ok ? checkWords(st.amt) : '';
+    const wordsW = 430;
+    const dash = st.ok ? `<line id="cwDash" x1="0" y1="140" x2="${34 + wordsW + 30}" y2="140" stroke="#1b3f8f" stroke-width="1.6" style="display:none"/>` : '';
+    return `<rect class="paper" x="1" y="1" width="598" height="268" rx="10"/>
+      <text class="pr" x="24" y="30">${esc(st.sig || 'Your Name')}</text>
+      <text class="lb" x="24" y="44">123 Main Street · Anytown, USA</text>
+      <text class="pr" x="560" y="30" text-anchor="end">1001</text>
+      <text class="lb" x="386" y="66">DATE</text><line class="ln" x1="420" y1="68" x2="572" y2="68"/>
+      <text class="hw sm" x="428" y="64">${esc(fmtDate(st.date))}</text>
+      <text class="lb" x="24" y="98">PAY TO THE</text><text class="lb" x="24" y="109">ORDER OF</text>
+      <line class="ln" x1="84" y1="110" x2="440" y2="110"/>
+      <text class="hw" x="92" y="105"${fit(st.payee, 340)}>${esc(st.payee)}</text>
+      <text class="pr" x="452" y="108">$</text><rect class="box" x="466" y="88" width="108" height="28" rx="3"/>
+      <text class="hw" x="472" y="108"${fit('', 96)}>${st.ok ? money(st.amt) : ''}</text>
+      <line class="ln" x1="24" y1="150" x2="500" y2="150"/><text class="lb" x="506" y="150">DOLLARS</text>
+      <text class="hw" id="cwWordsT" x="34" y="145"${fit(words, wordsW)}>${esc(words)}</text>${dash}
+      <text class="pr" x="24" y="186">Your Bank</text>
+      <text class="lb" x="24" y="226">MEMO</text><line class="ln" x1="60" y1="228" x2="290" y2="228"/>
+      <text class="hw sm" x="66" y="223"${fit(st.memo, 220)}>${esc(st.memo)}</text>
+      <line class="ln" x1="330" y1="228" x2="574" y2="228"/><text class="lb" x="330" y="240">SIGNATURE</text>
+      <text class="hw" x="340" y="222"${fit(st.sig, 230)}>${esc(st.sig)}</text>
+      <text class="micr" x="24" y="258">⑆000000000⑆ 0000000000⑈ 1001</text>
+      ${voided ? '<text class="void" x="300" y="170" text-anchor="middle" transform="rotate(-8 300 150)">VOID</text>' : ''}`;
+  }
+  function back(st){
+    const e = $('#cwEnd').value, lines = [];
+    if (e === 'restrict') lines.push('For deposit only', st.sig, 'Acct # ••••1234');
+    if (e === 'mobile') lines.push(st.sig, 'For mobile deposit only', 'at Your Bank');
+    if (e === 'blank') lines.push(st.sig);
+    if (e === 'special') lines.push(st.sig, 'Pay to the order of', 'Sam Rivera');
+    return `<rect class="paper" x="1" y="1" width="598" height="268" rx="10"/>
+      <rect class="hint" x="440" y="8" width="152" height="254" rx="6"/>
+      <text class="callout-t" x="516" y="22" text-anchor="middle">ENDORSE HERE</text>
+      ${[0,1,2].map(k => `<line class="ln" x1="${552 - k*36}" y1="40" x2="${552 - k*36}" y2="250"/>`).join('')}
+      ${lines.map((t, k) => `<text class="hw sm" transform="translate(${556 - k*36} 44) rotate(90)">${esc(t)}</text>`).join('')}
+      <line x1="440" y1="8" x2="440" y2="262" stroke="#c0392b" stroke-dasharray="4 3"/>
+      <text class="lb" transform="translate(430 40) rotate(90)" style="fill:#c0392b">DO NOT WRITE BELOW THIS LINE</text>
+      <text class="lb" x="210" y="130" text-anchor="middle">Back of the check. The endorsement area is</text>
+      <text class="lb" x="210" y="144" text-anchor="middle">at the end behind the left side of the front.</text>
+      <text class="lb" x="210" y="158" text-anchor="middle">Turn the check sideways to sign it.</text>`;
+  }
+  function state(){
+    const raw = $('#cwAmt').value, amt = parseFloat(raw);
+    const ok = raw !== '' && isFinite(amt) && amt >= 0 && amt <= 999999999.99;
+    return { amt: ok ? Math.round(amt * 100) / 100 : 0, ok, payee: $('#cwPayee').value.trim(), memo: $('#cwMemo').value.trim(), sig: $('#cwSig').value.trim(), date: $('#cwDate').value };
+  }
+  function draw(){
+    const st = state();
+    svg.innerHTML = side === 'back' ? back(st) : front(st, side === 'void');
+    measure();
+    $('#cwEndL').style.opacity = side === 'back' ? 1 : .55;
+    $('#cwWords').textContent = st.ok ? checkWords(st.amt) + ' Dollars' : 'Enter an amount from 0 to 999,999,999.99';
+    const C = [];
+    const add = (good, t) => C.push(`<li class="${good ? '' : 'bad'}">${t}</li>`);
+    if (side === 'back'){
+      const e = $('#cwEnd').value;
+      add(e !== 'blank', e === 'blank' ? 'A blank endorsement makes the check cashable by anyone who holds it. Sign it only at the bank.' : 'Endorsement is in the top area on the back, above the “do not write below” line.');
+      if (e === 'mobile') add(true, 'Check your bank app for its exact required wording.');
+      if (e === 'special') add(true, 'Ask the other person\'s bank first; many won\'t accept a signed-over check.');
+    } else if (side === 'void'){
+      add(true, 'VOID is written across the front, but the numbers at the bottom are still readable.');
+      add(true, 'Record check 1001 as VOID in your register.');
+    } else {
+      add(!!st.date, st.date ? 'Date filled in.' : 'Add the date.');
+      add(!!st.payee && !/^cash$/i.test(st.payee), !st.payee ? 'Add who you\'re paying.' : /^cash$/i.test(st.payee) ? 'A check to “Cash” can be cashed by anyone holding it.' : 'Payee filled in. Spell it exactly.');
+      add(st.ok && st.amt > 0, st.ok && st.amt > 0 ? `Box says ${money(st.amt)}; words say the same amount.` : 'Enter an amount above zero.');
+      add(true, 'A line fills the space after the words, so nothing can be added.');
+      add(!!st.sig, st.sig ? 'Signed last, matching the name on the account.' : 'Sign it last.');
+    }
+    $('#cwCheck').innerHTML = C.join('');
+  }
+  document.querySelectorAll('#cwSide button').forEach(b => b.addEventListener('click', () => {
+    side = b.dataset.s; document.querySelectorAll('#cwSide button').forEach(x => x.setAttribute('aria-pressed', x === b)); draw();
+  }));
+  const today = new Date();
+  $('#cwDate').value = `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
+  live($('#cw'), draw);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+})();
+</script>
+</body>
+</html>

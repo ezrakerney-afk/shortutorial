@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AirPods Noise Cancellation, Transparency and Adaptive Modes · Shortutorial</title>
+<meta name="description" content="How to use Noise Cancellation, Transparency and Adaptive on AirPods Pro, AirPods 4 and 5 with ANC and AirPods Max, from the stem, iPhone, Mac or Apple Watch, plus fixes when ANC isn't working.">
+<link rel="canonical" href="https://shortutorial.com/airpods-noise-cancellation/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="AirPods Noise Cancellation, Transparency and Adaptive Modes · Shortutorial">
+<meta property="og:description" content="How to use Noise Cancellation, Transparency and Adaptive on AirPods Pro, AirPods 4 and 5 with ANC and AirPods Max, from the stem, iPhone, Mac or Apple Watch, plus fixes when ANC isn't working.">
+<meta property="og:url" content="https://shortutorial.com/airpods-noise-cancellation/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../guide.css">
+<style>
+.tool{border:1.5px dashed var(--accent);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:14px;background:color-mix(in srgb,var(--accent-soft) 45%,var(--surface))}
+.tool-h{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.74rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.tool-h::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.tool .lbl{font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+.chipset{display:flex;flex-wrap:wrap;gap:8px}
+.chipset button{all:unset;box-sizing:border-box;cursor:pointer;font-family:var(--display);font-weight:600;font-size:.9rem;padding:7px 13px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);line-height:1.25}
+.chipset button[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.chipset button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.res{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.res h3{font-size:1.15rem}
+.res p{font-size:.97rem}
+.modes{display:flex;flex-wrap:wrap;gap:8px}
+.mode{font-family:var(--mono);font-size:.76rem;font-weight:600;padding:4px 10px;border-radius:999px}
+.mode.y{background:var(--good-bg);color:var(--good)}
+.mode.n{background:var(--bad-bg);color:var(--bad)}
+.res dl{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;margin:0;font-size:.95rem}
+.res dt{font-family:var(--mono);font-size:.74rem;color:var(--muted);padding-top:3px}
+.res dd{margin:0}
+@media (max-width:480px){.res dl{grid-template-columns:1fr}.res dt{padding-top:0}}
+.pick{font-family:var(--display);font-size:1.2rem;font-weight:700;color:var(--accent)}
+</style>
+</head>
+<body data-slug="airpods-noise-cancellation">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=phone">Phone help</a> / AirPods noise cancellation</div>
+    <span class="eyebrow">Phone help · AirPods</span>
+    <h1>Use AirPods Noise Cancellation, Transparency and Adaptive</h1>
+    <p class="lede">Block out a noisy train, hear the world around you, or let your AirPods decide. Here's which modes your AirPods have, how to switch between them, and what to do when noise cancellation seems weak.</p>
+    <div class="badges"><span class="badge level">Learn + fix</span><span class="badge">~10 min</span><span class="badge">Easy</span></div>
+  </header>
+
+  <section class="block">
+    <div class="first">
+      <span class="eyebrow">Start here · 30 seconds</span>
+      <h3>The three listening modes</h3>
+      <ul class="list">
+        <li><b>Noise Cancellation</b> uses microphones to listen to outside sound and cancel it out. Best for planes, trains, offices and focus.</li>
+        <li><b>Transparency</b> lets outside sound in, so you can hear traffic, announcements and people talking while you listen.</li>
+        <li><b>Adaptive</b> blends the two and adjusts on its own as your surroundings get louder or quieter.</li>
+      </ul>
+      <p>There's also <b>Off</b>, which uses neither. Not every model has every mode, so pick yours below.</p>
+    </div>
+  </section>
+
+  <section class="block" id="models">
+    <h2 class="sec"><span class="n">PICK</span>What can your AirPods do?</h2>
+    <div class="tool">
+      <span class="tool-h">Try it · model picker</span>
+      <span class="lbl" id="mLbl">Which AirPods do you have?</span>
+      <div class="chipset" id="modelPick" role="group" aria-labelledby="mLbl">
+        <button data-m="pro3">AirPods Pro 3</button>
+        <button data-m="pro2">AirPods Pro 2</button>
+        <button data-m="pro1">AirPods Pro (1st gen)</button>
+        <button data-m="a5">AirPods 5</button>
+        <button data-m="a4anc">AirPods 4 with ANC</button>
+        <button data-m="max2">AirPods Max 2</button>
+        <button data-m="max1">AirPods Max</button>
+        <button data-m="basic">AirPods 4 (no ANC) or older</button>
+      </div>
+      <div class="res" id="modelOut" aria-live="polite"></div>
+      <p class="lbl">Not sure which you have? On iPhone, open Settings and tap your AirPods' name near the top, then look under About.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">HOW</span>Switch modes from your devices</h2>
+    <p>Put your AirPods in and make sure they're connected first. Every method changes the same setting, so use whichever is handy.</p>
+    <div class="habits">
+      <div><h3>iPhone or iPad: Control Center</h3><p>Swipe down from the top-right corner to open Control Center. Touch and hold the volume slider, then tap the mode you want. On iOS 27 and iPadOS 27, Adaptive also has a slider for how much outside sound comes through.</p></div>
+      <div><h3>iPhone or iPad: Settings</h3><p>Open <span class="path">Settings</span>, tap your AirPods' name near the top, and choose a listening mode. Here you can also pick which modes the stem or button cycles through.</p></div>
+      <div><h3>Mac</h3><p>Click the AirPods icon in the menu bar (or <span class="path">Control Center <i>›</i> Sound</span>), click your AirPods' name and choose a mode. To change what the stem cycles through: <span class="path">System Settings <i>›</i> your AirPods <i>›</i> Press and Hold to Cycle Between</span>.</p></div>
+      <div><h3>Apple Watch</h3><p>While audio is playing, press the side button to open Control Center, tap the AirPods icon, and choose a mode.</p></div>
+    </div>
+    <div class="note"><span><b>Want noise cancellation with just one AirPod in?</b> Turn on <span class="path">Settings <i>›</i> Accessibility <i>›</i> AirPods <i>›</i> your AirPods <i>›</i> Noise Cancellation with One AirPod</span>. By default it only works with both in.</span></div>
+  </section>
+
+  <section class="block" id="chooser">
+    <h2 class="sec"><span class="n">CHOOSE</span>Which mode should I use?</h2>
+    <div class="tool">
+      <span class="tool-h">Try it · mode chooser</span>
+      <span class="lbl" id="sLbl">Where are you?</span>
+      <div class="chipset" id="situPick" role="group" aria-labelledby="sLbl">
+        <button data-s="plane">Plane, train or bus</button>
+        <button data-s="focus">Office or studying</button>
+        <button data-s="street">Walking or cycling near traffic</button>
+        <button data-s="talk">Chatting with someone</button>
+        <button data-s="mixed">Moving between quiet and loud places</button>
+        <button data-s="quiet">Quiet room at home</button>
+        <button data-s="sleep">Trying to sleep</button>
+      </div>
+      <div class="res" id="situOut" aria-live="polite"><p>Pick a situation to see a suggestion.</p></div>
+    </div>
+    <div class="note warn"><span><b>Stay aware of your surroundings.</b> Noise Cancellation can hide car horns, bikes and announcements. Use Transparency or Adaptive, at a sensible volume, whenever you need to hear what's around you.</span></div>
+  </section>
+
+  <section class="block" id="fixes">
+    <h2 class="sec"><span class="n">FIX</span>Noise cancellation not working?</h2>
+    <div class="steps-head"><p>If ANC sounds weak, uneven or won't turn on, try these in order.</p><button class="linkbtn" id="expandAll">Show all steps</button></div>
+
+    <div class="steps">
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Check that Noise Cancellation is really on</span><span class="fix-time">1 min</span></button>
+        <div class="fix-body">
+          <ol class="list">
+            <li>With both AirPods in, open Control Center, touch and hold the volume slider, and make sure <b>Noise Cancellation</b> is selected.</li>
+            <li>Make sure <b>Adaptive</b> isn't the mode selected. Adaptive lets some sound through on purpose, so it can feel weaker than full Noise Cancellation.</li>
+            <li>Using only one AirPod? ANC turns off unless you've switched on <b>Noise Cancellation with One AirPod</b> in Accessibility settings.</li>
+          </ol>
+          <div class="note"><span>Play some audio and take one AirPod out. If the audio doesn't pause, the ear detection isn't working properly and a reset (step 5) usually fixes it.</span></div>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Update your iPhone and AirPods firmware</span><span class="fix-time">5–30 min</span></button>
+        <div class="fix-body">
+          <ol class="list">
+            <li>Update your iPhone in <span class="path">Settings <i>›</i> General <i>›</i> Software Update</span> (or your Mac in <span class="path">System Settings <i>›</i> General <i>›</i> Software Update</span>).</li>
+            <li>AirPods update themselves. To help it along, put them in their case, plug the case into power, and leave it near your iPhone while the iPhone is on Wi-Fi. Give it at least 30 minutes.</li>
+            <li>To see the firmware version, open <span class="path">Settings</span>, tap your AirPods' name and scroll to <b>About</b>.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Get a better seal in your ears</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <p>On AirPods Pro, noise cancellation depends on the ear tips sealing your ear canal. A tip that's too small lets in noise and drains the bass.</p>
+          <ol class="list">
+            <li>With your AirPods Pro in and connected, open <span class="path">Settings</span> and tap your AirPods' name (or <span class="path">Settings <i>›</i> Bluetooth</span>, then the info button next to them).</li>
+            <li>Tap <b>Ear Tip Fit Test</b> (AirPods Pro and Pro 2) or <b>Test Acoustic Seal</b> (AirPods Pro 3), then follow the prompts.</li>
+            <li>If it says to adjust or try a different tip, swap to another size from the box and test again. Each ear can use a different size.</li>
+          </ol>
+          <p>AirPods 4 and AirPods 5 don't have ear tips. Twist them gently so they sit snugly in your ear. AirPods Max need the ear cushions to sit flat around your ears; glasses arms and hair can break the seal.</p>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Uncover and clean the microphones</span><span class="fix-time">5 min + drying</span></button>
+        <div class="fix-body">
+          <p>ANC needs its outer microphones to hear outside noise. Covering them, or a build-up of earwax and dust on the mesh, can cause weak cancellation, squeals, chirps or crackling.</p>
+          <ul class="list">
+            <li>Keep fingers, hats and hoods off the AirPods while testing.</li>
+            <li>If you notice less bass or more background noise, Apple's cleaning method is to brush only the microphone and speaker meshes with a soft-bristled toothbrush dipped in micellar water, blot on a paper towel, repeat with distilled water, then let them dry at least two hours.</li>
+            <li>Pull AirPods Pro ear tips off and rinse them in plain water (no soap), then dry them completely before putting them back.</li>
+          </ul>
+          <div class="note warn"><span><b>Don't run AirPods under the tap or poke the mesh</b> with pins, needles or anything sharp. Don't charge or use them until they're fully dry.</span></div>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Reset your AirPods</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <p>A reset fixes ANC that won't turn on from Settings or Control Center, and ear detection problems.</p>
+          <ol class="list">
+            <li>Put the AirPods in their case, close the lid and wait 30 seconds.</li>
+            <li>On your iPhone, go to <span class="path">Settings <i>›</i> Bluetooth</span>, tap the info button next to your AirPods, then <b>Forget This Device</b>.</li>
+            <li>Open the lid and reset:
+              <ul class="list">
+                <li><b>AirPods Pro and Pro 2:</b> press and hold the button on the back of the case for about 15 seconds, until the light flashes amber, then white.</li>
+                <li><b>AirPods Pro 3, AirPods 4 and AirPods 5:</b> double-tap the front of the case while the light is on, again when it flashes white, and a third time when it flashes faster. Wait for amber, then white.</li>
+                <li><b>AirPods Max:</b> charge them for a few minutes, then press and hold the noise control button and the Digital Crown together until the light flashes amber, then white (about 15 seconds).</li>
+              </ul>
+            </li>
+            <li>Hold the open case (or the Max) next to your iPhone and follow the setup prompts.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Test one AirPod at a time</span><span class="fix-time">2 min</span></button>
+        <div class="fix-body">
+          <p>Turn on Noise Cancellation with One AirPod (see above), then try each AirPod on its own in the same noisy spot. If one is clearly worse after cleaning and a fresh seal test, that AirPod may need service. Apple can replace a single AirPod.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="solved-banner" role="status"><span style="font-size:1.6rem">🎧</span><div><b>Peace and quiet restored.</b><p>Rerun the seal test whenever ANC feels weaker, and clean the meshes every few months.</p></div></div>
+    <div class="stuck" role="status">
+      <b>Still not working?</b>
+      <p>Contact <a href="https://support.apple.com/airpods/repair" target="_blank" rel="noopener">Apple Support</a> or visit an Apple Store. Tell them you've updated the firmware, done the seal test, cleaned the mesh and reset the AirPods. Check your coverage first at <a href="https://checkcoverage.apple.com" target="_blank" rel="noopener">checkcoverage.apple.com</a>.</p>
+      <div><button class="btn ghost small" data-restart>Start over</button></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>What's the difference between Adaptive and Transparency?</summary><div class="a"><p>Transparency always lets outside sound in. Adaptive changes how much it lets in: when it gets loud, it cuts more noise; when it's quiet, it lets more in. It's a good "leave it on all day" mode.</p></div></details>
+      <details><summary>Why don't I see Adaptive?</summary><div class="a"><p>Adaptive is on AirPods Pro 2, AirPods Pro 3, AirPods 4 with ANC, AirPods 5 and AirPods Max 2, with up-to-date firmware and software. The original AirPods Pro and original AirPods Max don't have it.</p></div></details>
+      <details><summary>Do the regular AirPods 4 have noise cancellation?</summary><div class="a"><p>No. Only the "AirPods 4 with Active Noise Cancellation" model has listening modes. Both AirPods 5 models have Noise Cancellation, Transparency and Adaptive.</p></div></details>
+      <details><summary>Does noise cancellation use more battery?</summary><div class="a"><p>Yes, a little. If you're in a quiet room and need every minute of battery, switch to Off.</p></div></details>
+      <details><summary>Why do I hear a hiss or squeal with ANC on?</summary><div class="a"><p>Usually something is covering the outer microphones, or the mesh is dirty. Uncover them, clean the mesh as in step 4, and update the firmware.</p></div></details>
+      <details><summary>Can I choose which modes the stem switches between?</summary><div class="a"><p>Yes. On iPhone, open Settings, tap your AirPods' name and change <b>Button Cycles Between</b> (or Press and Hold). On Mac it's in System Settings under your AirPods.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Official help</h2>
+    <div class="links">
+      <a href="https://support.apple.com/en-us/108918" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>Listening modes on your AirPods</b></a>
+      <a href="https://support.apple.com/en-us/111108" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>If Active Noise Cancellation isn't working as expected</b></a>
+      <a href="https://support.apple.com/en-us/120409" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>How to clean your AirPods Pro</b></a>
+      <a href="https://support.apple.com/en-us/118531" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>Reset your AirPods</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Related fixes</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/leaderboard/">Leaderboard</a></nav></span><span>Written for iOS 27, macOS and AirPods models current in October 2026. Menu names may differ slightly on older software.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../guide.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  function store(k, v){ try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch(e){ return null; } }
+  const stem = 'Press and hold the stem (the flat force sensor) until you hear a chime. Each press moves to the next mode in your cycle.';
+  const maxBtn = 'Press the noise control button on top of the right ear cup (the button next to the Digital Crown). Each press moves to the next mode.';
+  const M = {
+    pro3:  {n:'AirPods Pro 3', anc:1, tr:1, ad:1, ctl:stem, seal:'Test Acoustic Seal', reset:'Double-tap the front of the case (no back button).'},
+    pro2:  {n:'AirPods Pro 2', anc:1, tr:1, ad:1, ctl:stem, seal:'Ear Tip Fit Test', reset:'Hold the button on the back of the case about 15 seconds.'},
+    pro1:  {n:'AirPods Pro (1st generation)', anc:1, tr:1, ad:0, ctl:stem, seal:'Ear Tip Fit Test', reset:'Hold the button on the back of the case about 15 seconds.'},
+    a5:    {n:'AirPods 5 (both models)', anc:1, tr:1, ad:1, ctl:stem + ' The Wireless Charging Case model also lets you swipe the stem to change volume.', seal:'None. AirPods 5 have no ear tips, so make sure they sit snugly.', reset:'Double-tap the front of the case.'},
+    a4anc: {n:'AirPods 4 with Active Noise Cancellation', anc:1, tr:1, ad:1, ctl:stem, seal:'None. AirPods 4 have no ear tips, so make sure they sit snugly.', reset:'Double-tap the front of the case.'},
+    max2:  {n:'AirPods Max 2', anc:1, tr:1, ad:1, ctl:maxBtn, seal:'None. Make sure the cushions sit flat around your ears.', reset:'Hold the noise control button and Digital Crown together.'},
+    max1:  {n:'AirPods Max (original)', anc:1, tr:1, ad:0, ctl:maxBtn, seal:'None. Make sure the cushions sit flat around your ears.', reset:'Hold the noise control button and Digital Crown together about 15 seconds.'},
+    basic: {n:'AirPods 4 (without ANC), AirPods 3, AirPods 2 or earlier', anc:0, tr:0, ad:0}
+  };
+  const out = document.getElementById('modelOut');
+  const btns = [...document.querySelectorAll('#modelPick button')];
+  const tag = (on, t) => `<span class="mode ${on ? 'y' : 'n'}">${on ? '✓' : '✗'} ${t}</span>`;
+  function show(k){
+    const m = M[k] || M.pro2;
+    btns.forEach(b => b.setAttribute('aria-pressed', b.dataset.m === k));
+    let h = `<h3>${m.n}</h3><div class="modes">${tag(m.anc,'Noise Cancellation')}${tag(m.tr,'Transparency')}${tag(m.ad,'Adaptive')}</div>`;
+    if (!m.anc){
+      h += `<p>These models don't have listening modes, so there's nothing to switch. If you want noise cancellation, you'd need AirPods 4 with ANC, AirPods 5, AirPods Pro or AirPods Max.</p>`;
+    } else {
+      h += `<dl><dt>On the AirPods</dt><dd>${m.ctl}</dd><dt>Seal check</dt><dd>${m.seal}</dd><dt>Reset</dt><dd>${m.reset} Full steps in step 5 below.</dd></dl>`;
+      if (!m.ad) h += `<p>No Adaptive on this model, so you'll switch between Noise Cancellation, Transparency and Off.</p>`;
+    }
+    out.innerHTML = h;
+    store('st-airpods', k);
+  }
+  btns.forEach(b => b.addEventListener('click', () => show(b.dataset.m)));
+  show(store('st-airpods') || 'pro2');
+
+  const S = {
+    plane: ['Noise Cancellation', 'Steady engine and road rumble is exactly what ANC handles best. You can listen at a lower volume, which is easier on your ears.'],
+    focus: ['Noise Cancellation', 'Cuts chatter, air conditioning and keyboard noise. Use Conversation Awareness (on newer models) so your music drops when you start talking to someone.'],
+    street: ['Transparency or Adaptive', 'You need to hear cars, bikes and sirens. Adaptive still softens loud noises like a passing truck. Keep the volume moderate.'],
+    talk: ['Transparency', 'You can hear the other person clearly without taking your AirPods out. Pause your audio too, to be polite.'],
+    mixed: ['Adaptive', 'It adjusts on its own as you go from a quiet street into a loud café or onto a train, so you don\'t have to keep switching. Not on your model? Use Transparency outdoors and Noise Cancellation indoors.'],
+    quiet: ['Off', 'There\'s little noise to cancel, so Off saves a bit of battery and can sound a touch more natural.'],
+    sleep: ['Noise Cancellation', 'It blocks steady sounds like a fan or traffic hum. Keep in mind you may not hear alarms or someone calling you, so don\'t rely on it if you need to stay alert.']
+  };
+  const sOut = document.getElementById('situOut');
+  const sBtns = [...document.querySelectorAll('#situPick button')];
+  sBtns.forEach(b => b.addEventListener('click', () => {
+    sBtns.forEach(x => x.setAttribute('aria-pressed', x === b));
+    const [mode, why] = S[b.dataset.s];
+    sOut.innerHTML = `<span class="lbl">Try</span><span class="pick">${mode}</span><p>${why}</p>`;
+  }));
+  sBtns.forEach(b => b.setAttribute('aria-pressed', 'false'));
+})();
+</script>
+</body>
+</html>
