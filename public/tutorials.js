@@ -763,5 +763,29 @@ window.TUTORIALS = [
     category: "Life skills",
     tags: ["vegetable garden", "start a garden", "raised bed", "square foot gardening", "hardiness zone", "plant garlic", "cover crops", "soil test", "fall garden", "gardening for beginners", "october"],
     minutes: 12
+  },
+  {
+    slug: "cook-chicken",
+    title: "How to Cook Chicken Safely (and Keep It Juicy)",
+    summary: "Cook chicken to 165°F: thaw safely, skip washing, and bake, sear or grill it right.",
+    category: "Life skills",
+    tags: ["chicken", "cook chicken", "chicken temperature", "165", "thaw chicken", "defrost", "chicken breast", "bake chicken", "grill chicken", "food safety", "usda", "meat thermometer"],
+    minutes: 12
+  },
+  {
+    slug: "cook-rice",
+    title: "How to Cook Perfect Rice",
+    summary: "Fluffy rice every time: ratios for white, brown, jasmine and basmati, plus a timer.",
+    category: "Life skills",
+    tags: ["rice", "cook rice", "rice ratio", "water to rice", "jasmine rice", "basmati", "brown rice", "rice cooker", "microwave rice", "mushy rice", "cooking", "leftover rice"],
+    minutes: 10
+  },
+  {
+    slug: "french-press-coffee",
+    title: "How to Make French Press Coffee",
+    summary: "Brew rich French press coffee with the right ratio, grind and 4-minute timer.",
+    category: "Life skills",
+    tags: ["coffee", "french press", "press pot", "coffee ratio", "brew coffee", "coffee to water", "grind", "cold brew", "bloom", "coffee timer"],
+    minutes: 8
   }
 ];

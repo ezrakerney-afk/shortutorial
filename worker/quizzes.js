@@ -2105,5 +2105,71 @@ export default {
         o: ["Right after the first spring frost", "About 4 to 6 weeks before the ground freezes", "In midsummer", "Only after the ground is frozen solid"], a: 1,
         e: "Plant cloves 4 to 6 weeks before the ground freezes, pointed end up." }
     ]
+  },
+
+  "cook-chicken": {
+    title: "How to Cook Chicken Safely (and Keep It Juicy)",
+    pass: 4,
+    questions: [
+      { q: "What is the USDA's safe minimum internal temperature for chicken?",
+        o: ["145°F", "155°F", "165°F", "180°F"], a: 2,
+        e: "All chicken, including whole birds, parts and leftovers, should reach 165°F." },
+      { q: "Why shouldn't you wash raw chicken?",
+        o: ["It spreads bacteria around your sink and kitchen without removing them", "It makes it tough", "It washes off the flavor", "It's against the law"], a: 0,
+        e: "Rinsing doesn't remove bacteria; it splashes them onto surfaces and other food." },
+      { q: "Which is NOT a safe way to thaw chicken?",
+        o: ["In the refrigerator", "In cold water, changed every 30 minutes", "In the microwave, then cook right away", "On the kitchen counter"], a: 3,
+        e: "On the counter, the outside sits in the danger zone while the inside thaws." },
+      { q: "Where should you check the temperature of a chicken breast?",
+        o: ["The thinnest part", "The thickest part, not touching bone", "On the surface", "In the juices on the plate"], a: 1,
+        e: "The thickest part is the last to cook; bone gives a falsely high reading." },
+      { q: "Chicken thawed in cold water should be:",
+        o: ["Refrozen raw", "Kept in the fridge for a week", "Cooked right away", "Rinsed before cooking"], a: 2,
+        e: "Cold-water-thawed chicken should be cooked immediately." }
+    ]
+  },
+
+  "cook-rice": {
+    title: "How to Cook Perfect Rice",
+    pass: 4,
+    questions: [
+      { q: "How much water does USA Rice suggest for 1 cup of long-grain white rice?",
+        o: ["1 cup", "1¼ cups", "2 cups", "3 cups"], a: 2,
+        e: "Long-grain white rice takes about 2 cups of water per cup of rice." },
+      { q: "Why might you skip rinsing US enriched white rice?",
+        o: ["Rinsing washes off the added vitamins and iron", "It makes the rice burn", "It doubles the cooking time", "It makes the rice too dry"], a: 0,
+        e: "Enriched rice has nutrients added to the outside; rinsing washes them away." },
+      { q: "What should you do right after the simmering time ends?",
+        o: ["Stir it hard", "Add cold water", "Remove the lid and keep boiling", "Take it off the heat and let it rest, lid on, 5 to 10 minutes"], a: 3,
+        e: "Resting with the lid on evens out the moisture before you fluff it." },
+      { q: "Your rice is still crunchy but the water is gone. What's the fix?",
+        o: ["Throw it out", "Add 2 to 4 Tbsp hot water, cover and cook a few more minutes on low", "Turn the heat to high uncovered", "Add more salt"], a: 1,
+        e: "A little more water and a few more covered minutes softens it." },
+      { q: "How long can cooked rice safely stay in the fridge?",
+        o: ["1 week", "1 month", "3 to 4 days", "Overnight only, if left on the counter"], a: 2,
+        e: "Refrigerate within 2 hours and eat within 3 to 4 days, per USDA leftovers guidance." }
+    ]
+  },
+
+  "french-press-coffee": {
+    title: "How to Make French Press Coffee",
+    pass: 4,
+    questions: [
+      { q: "What's a good starting coffee-to-water ratio for French press?",
+        o: ["1:5", "1:15", "1:30", "1:50"], a: 1,
+        e: "1 gram of coffee to about 15 grams of water is a classic starting point." },
+      { q: "What grind size works best?",
+        o: ["Extra fine, like powder", "Fine, like table salt", "Coarse, like rock salt", "Whole beans"], a: 2,
+        e: "A coarse grind keeps fine particles out of the cup and makes pressing easy." },
+      { q: "No thermometer? How do you get water to about 200°F?",
+        o: ["Use hot tap water", "Boil it for 5 minutes", "Microwave it for 30 seconds", "Boil it, then let it sit about 30 seconds"], a: 3,
+        e: "Just off the boil, after about 30 seconds, is close to the ideal 195–205°F." },
+      { q: "Your French press coffee tastes bitter. What should you try first?",
+        o: ["Grind coarser or press on time", "Grind finer", "Steep longer", "Use hotter water"], a: 0,
+        e: "Bitterness means over-extraction: go coarser, press at 4 minutes, and don't use boiling water." },
+      { q: "Why pour the coffee out right after pressing?",
+        o: ["It cools down faster", "Left on the grounds, it keeps brewing and turns bitter", "The glass can crack", "It loses caffeine"], a: 1,
+        e: "Coffee sitting on the grounds keeps extracting and gets bitter." }
+    ]
   }
 };
