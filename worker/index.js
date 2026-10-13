@@ -46,6 +46,12 @@ async function route(request, env, url) {
   if (rm && method === "GET") return getRating(request, env, url, rm[1]);
   if (rm && method === "POST") return rate(request, env, rm[1]);
 
+  const cm = path.match(/^\/api\/comments\/([a-z0-9-]+)$/);
+  if (cm && method === "GET") return listComments(request, env, cm[1]);
+  if (cm && method === "POST") return addComment(request, env, cm[1]);
+  const cd = path.match(/^\/api\/comments\/([a-z0-9-]+)\/delete$/);
+  if (cd && method === "POST") return deleteComment(request, env, cd[1]);
+
   const m = path.match(/^\/api\/quiz\/([a-z0-9-]+)$/);
   if (m && method === "GET") return getQuiz(m[1]);
   if (m && method === "POST") return gradeQuiz(request, env, m[1]);
@@ -253,6 +259,63 @@ async function rate(request, env, slug) {
     env.DB.prepare("DELETE FROM rate_log WHERE ts < ?").bind(now() - 86400)
   ]);
   return json({ ...(await summary(env, slug)), mine: stars });
+}
+
+/* ---------------- comments ----------------
+   Anyone can read comments; posting needs an account, so every comment shows its username.
+   People can delete their own comments. */
+const COMMENT_MAX = 1000;
+let commentsReady = false;
+async function commentsTable(env) {
+  if (commentsReady) return;
+  await env.DB.batch([
+    env.DB.prepare("CREATE TABLE IF NOT EXISTS comments (id INTEGER PRIMARY KEY AUTOINCREMENT, slug TEXT NOT NULL, user_id INTEGER NOT NULL, body TEXT NOT NULL, ts INTEGER NOT NULL)"),
+    env.DB.prepare("CREATE INDEX IF NOT EXISTS idx_comments_slug ON comments(slug, ts)"),
+    env.DB.prepare("CREATE INDEX IF NOT EXISTS idx_comments_user ON comments(user_id, ts)")
+  ]);
+  commentsReady = true;
+}
+
+async function listComments(request, env, slug) {
+  if (!QUIZZES[slug]) return json({ error: "Unknown tutorial." }, 404);
+  await commentsTable(env);
+  const user = await currentUser(request, env);
+  const { results } = await env.DB.prepare(
+    "SELECT c.id, c.body, c.ts, c.user_id, u.username FROM comments c JOIN users u ON u.id = c.user_id WHERE c.slug = ? ORDER BY c.ts DESC LIMIT 200"
+  ).bind(slug).all();
+  return json({ comments: results.map(c => ({ id: c.id, username: c.username, body: c.body, ts: c.ts, mine: !!user && user.id === c.user_id })) });
+}
+
+async function addComment(request, env, slug) {
+  if (!QUIZZES[slug]) return json({ error: "Unknown tutorial." }, 404);
+  const user = await currentUser(request, env);
+  if (!user) return json({ error: "Log in to comment." }, 401);
+  let { text } = await body(request);
+  text = typeof text === "string" ? text.replace(/\r\n?/g, "\n").replace(/\n{3,}/g, "\n\n").trim() : "";
+  if (!text) return json({ error: "Write something first." }, 400);
+  if (text.length > COMMENT_MAX) return json({ error: `Comments can be up to ${COMMENT_MAX} characters.` }, 400);
+  await commentsTable(env);
+
+  // Slow down spam: a few comments per account every 10 minutes, and no exact repeats.
+  const recent = await env.DB.prepare("SELECT COUNT(*) n FROM comments WHERE user_id = ? AND ts > ?").bind(user.id, now() - 600).first();
+  if (recent.n >= 5) return json({ error: "You're commenting a lot. Wait a few minutes and try again." }, 429);
+  const dup = await env.DB.prepare("SELECT 1 FROM comments WHERE user_id = ? AND slug = ? AND body = ?").bind(user.id, slug, text).first();
+  if (dup) return json({ error: "You already posted that comment." }, 409);
+
+  const ts = now();
+  const res = await env.DB.prepare("INSERT INTO comments (slug, user_id, body, ts) VALUES (?, ?, ?, ?)").bind(slug, user.id, text, ts).run();
+  return json({ comment: { id: res.meta.last_row_id, username: user.username, body: text, ts, mine: true } }, 201);
+}
+
+async function deleteComment(request, env, slug) {
+  const user = await currentUser(request, env);
+  if (!user) return json({ error: "Log in first." }, 401);
+  const { id } = await body(request);
+  if (!Number.isInteger(id)) return json({ error: "Unknown comment." }, 400);
+  await commentsTable(env);
+  const res = await env.DB.prepare("DELETE FROM comments WHERE id = ? AND slug = ? AND user_id = ?").bind(id, slug, user.id).run();
+  if (!res.meta.changes) return json({ error: "You can only delete your own comments." }, 403);
+  return json({ ok: true });
 }
 
 /* ---------------- leaderboard ---------------- */

@@ -66,3 +66,14 @@ CREATE TABLE IF NOT EXISTS read_log (
   PRIMARY KEY (slug, who, day)
 );
 CREATE INDEX IF NOT EXISTS idx_read_log_ip ON read_log(ip_hash, day);
+
+-- Comments under each tutorial. Posting needs an account; the worker also creates this table on first use.
+CREATE TABLE IF NOT EXISTS comments (
+  id      INTEGER PRIMARY KEY AUTOINCREMENT,
+  slug    TEXT NOT NULL,
+  user_id INTEGER NOT NULL,
+  body    TEXT NOT NULL,
+  ts      INTEGER NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_comments_slug ON comments(slug, ts);
+CREATE INDEX IF NOT EXISTS idx_comments_user ON comments(user_id, ts);

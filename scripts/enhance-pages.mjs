@@ -3,7 +3,7 @@
 //   node scripts/enhance-pages.mjs
 // It adds or updates:
 //   - favicon links Google can use (real files, not inline images)
-//   - the learning-paths script on tutorial pages
+//   - the learning-paths and comments scripts on tutorial pages
 //   - "Learning paths" and "Privacy" links in the footer
 //   - Google structured data (JSON-LD): breadcrumbs, article info and FAQs from the page itself
 import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
@@ -61,6 +61,7 @@ for (const p of pages) {
   h = h.replace(/<nav class="foot-nav" aria-label="Footer">[\s\S]*?<\/nav>/, FOOT_NAV);
   const slug = (h.match(/<body[^>]*data-slug="([^"]+)"/) || [])[1];
   if (slug && !h.includes('src="../paths.js"')) h = h.replace('<script src="../tutorials.js"></script>', '<script src="../tutorials.js"></script>\n<script src="../paths.js"></script>');
+  if (slug && !h.includes('src="../comments.js"')) h = h.replace('<script src="../rating.js"></script>', '<script src="../rating.js"></script>\n<script src="../comments.js"></script>');
   if (p === "index.html" || (slug && BY[slug])) {
     const ld = `<!-- ld --><script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@graph": ldFor(h, p === "index.html" ? null : slug) }).replace(/</g, "\\u003c")}</script><!-- /ld -->`;
     h = h.includes("<!-- ld -->") ? h.replace(/<!-- ld -->[\s\S]*?<!-- \/ld -->/, ld) : h.replace("</head>", ld + "\n</head>");
