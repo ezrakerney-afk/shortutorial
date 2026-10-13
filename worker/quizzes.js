@@ -2237,5 +2237,71 @@ export default {
         o: ["A check may not clear for days, so your bank balance can look higher than it really is", "Banks require it by law", "It makes checks clear faster", "To get a lower fee"], a: 0,
         e: "Tracking outstanding checks stops you spending money that's already promised." }
     ]
+  },
+
+  "check-tax-refund-status": {
+    title: "Where's My Refund? Check Your Tax Refund Status",
+    pass: 4,
+    questions: [
+      { q: "Which three things do you need to use Where's My Refund?",
+        o: ["Bank PIN, address and phone number", "Your tax preparer's ID", "Driver's license, W-2 and employer name", "SSN or ITIN, filing status and exact refund amount"], a: 3,
+        e: "You need your SSN or ITIN, filing status and the exact refund amount in whole dollars." },
+      { q: "How soon after e-filing a current-year return can you check its status?",
+        o: ["24 hours", "4 weeks", "3 months", "Right after you click submit"], a: 0,
+        e: "Status is available 24 hours after you e-file a current-year return (4 weeks for paper)." },
+      { q: "What does the \"Refund Approved\" stage mean?",
+        o: ["The IRS hasn't seen your return yet", "Your refund is approved and the tool shows when it should be sent", "The money is already in your bank", "You owe money"], a: 1,
+        e: "Refund Approved means it's approved; Refund Sent comes next." },
+      { q: "When should you call the IRS about a refund?",
+        o: ["The day after filing", "Every week until it arrives", "Only if it's been over 21 days since e-filing, over 6 weeks since mailing, or the tool tells you to", "Never, under any circumstances"], a: 2,
+        e: "Calling earlier won't help; phone agents see the same information as the tool." },
+      { q: "If you got an extension on your 2025 return, what's the deadline to file it?",
+        o: ["April 15, 2026", "December 31, 2026", "October 15, 2026", "There's no deadline"], a: 2,
+        e: "Extension filers have until October 15, 2026 to file their 2025 return." }
+    ]
+  },
+
+  "delete-facebook-account": {
+    title: "Delete or Deactivate Your Facebook Account",
+    pass: 4,
+    questions: [
+      { q: "You want to stop using Facebook but keep chatting on Messenger. What should you do?",
+        o: ["Delete your account", "Deactivate and choose to keep using Messenger", "Uninstall the Facebook app", "Remove all your friends"], a: 1,
+        e: "Only deactivation lets you keep Messenger. Deleting your account means you can't use Messenger." },
+      { q: "How long do you have to cancel a Facebook deletion?",
+        o: ["30 days", "7 days", "90 days", "There's no way to cancel"], a: 0,
+        e: "Log in within 30 days and choose Cancel deletion." },
+      { q: "What happens to Pages that only you control when you delete your account?",
+        o: ["They're transferred to Facebook", "They become Instagram accounts", "They stay up forever", "They're deleted too"], a: 3,
+        e: "Pages that only you control are deleted, so add another admin first if the Page should stay." },
+      { q: "After you delete your account, can friends still see messages you sent them?",
+        o: ["No, they vanish instantly", "Only if they're Pages", "Yes, they may, because copies are in their inboxes", "Only for 24 hours"], a: 2,
+        e: "Messages you sent may still be visible to the people you sent them to." },
+      { q: "How long does Facebook say it can take to delete everything you posted?",
+        o: ["Up to 90 days from the start of deletion", "1 hour", "Exactly 30 days", "5 years"], a: 0,
+        e: "Facebook says it can take up to 90 days from the beginning of the deletion process." }
+    ]
+  },
+
+  "delete-instagram-account": {
+    title: "Delete or Deactivate Your Instagram Account",
+    pass: 4,
+    questions: [
+      { q: "What happens when you deactivate Instagram?",
+        o: ["Your account is deleted after 30 days", "Only your messages are deleted", "Your profile is hidden until you log back in, and nothing is deleted", "Your followers are removed"], a: 2,
+        e: "Deactivation hides your profile, photos, comments and likes; logging back in brings it all back." },
+      { q: "After you request deletion, how long do you have to change your mind?",
+        o: ["30 days", "7 days", "24 hours", "1 year"], a: 0,
+        e: "Your account is hidden for 30 days. Logging in during that time cancels the deletion." },
+      { q: "Where do you delete or deactivate Instagram?",
+        o: ["Your phone's Settings app", "By emailing Instagram", "By uninstalling the app", "Meta's Accounts Center, under Deactivation or deletion"], a: 3,
+        e: "Both options live in Accounts Center under Deactivation or deletion." },
+      { q: "What should you do before deleting?",
+        o: ["Nothing, Instagram keeps a backup for you", "Export (download) your information and check your photos open", "Change your username", "Unfollow everyone"], a: 1,
+        e: "Once the account is permanently deleted, your photos can't be recovered, so download them first." },
+      { q: "How often can you deactivate your Instagram account?",
+        o: ["Once a day", "Once a week", "Once a year", "Only once ever"], a: 1,
+        e: "Instagram only lets you deactivate once a week." }
+    ]
   }
 };

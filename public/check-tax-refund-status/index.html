@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Where's My Refund? Check Your Tax Refund Status · Shortutorial</title>
+<meta name="description" content="Check your federal tax refund with the IRS Where's My Refund tool or IRS2Go app, learn what each status means, how long refunds take, and how to track a state refund. Includes a refund timing estimator.">
+<link rel="canonical" href="https://shortutorial.com/check-tax-refund-status/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Where's My Refund? Check Your Tax Refund Status · Shortutorial">
+<meta property="og:description" content="Check your federal tax refund with the IRS Where's My Refund tool or IRS2Go app, learn what each status means, how long refunds take, and how to track a state refund. Includes a refund timing estimator.">
+<meta property="og:url" content="https://shortutorial.com/check-tax-refund-status/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../guide.css">
+<style>
+.tool{border:1.5px dashed var(--accent);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:14px;background:color-mix(in srgb,var(--accent-soft) 45%,var(--surface))}
+.tool-h{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.74rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.tool-h::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.tool .lbl{font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.fields{grid-template-columns:1fr}}
+.tool label{display:flex;flex-direction:column;gap:6px;font-family:var(--mono);font-size:.76rem;color:var(--muted);min-width:0}
+.tool select,.tool input[type=date]{font:inherit;font-family:var(--display);font-size:1rem;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:9px;padding:8px 10px;width:100%;min-width:0}
+.tool select:focus,.tool input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);outline:none}
+.res{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.big{font-family:var(--display);font-size:1.3rem;font-weight:700;color:var(--accent);line-height:1.3}
+.res ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;font-size:.96rem}
+.est{font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:#fdf0dc;color:var(--amber);align-self:flex-start}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .est{background:#3a2a12}}
+:root[data-theme="dark"] .est{background:#3a2a12}
+.stages{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stages>div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:6px;position:relative}
+.stages .sn{font-family:var(--mono);font-size:.72rem;color:var(--amber);font-weight:600}
+.stages h3{font-size:1.02rem}
+.stages p{font-size:.93rem;color:var(--muted)}
+@media (max-width:560px){.stages{grid-template-columns:1fr}}
+</style>
+</head>
+<body data-slug="check-tax-refund-status">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=money">Money</a> / Tax refund status</div>
+    <span class="eyebrow">Money · Taxes</span>
+    <h1>Where's My Refund? Check Your Tax Refund Status</h1>
+    <p class="lede">Filed your taxes and waiting on the money? The IRS has a free tracker that shows exactly where your federal refund is. Here's how to use it, what the statuses mean, how long refunds usually take, and how to check your state refund.</p>
+    <div class="badges"><span class="badge level">Quick guide</span><span class="badge">~8 min</span><span class="badge">United States</span></div>
+  </header>
+
+  <section class="block">
+    <div class="first">
+      <span class="eyebrow">Start here · 1 minute</span>
+      <h3>Have these three things ready</h3>
+      <ul class="list">
+        <li>Your <b>Social Security number</b> or ITIN</li>
+        <li>Your <b>filing status</b> (single, married filing jointly, and so on)</li>
+        <li>The <b>exact refund amount</b> in whole dollars, from your return</li>
+      </ul>
+      <p>Then go to <a href="https://www.irs.gov/wheres-my-refund" target="_blank" rel="noopener">irs.gov/wheres-my-refund</a> and choose the tax year. It's free, and it's the same information an IRS phone agent would see.</p>
+      <p class="updated">Filed for an extension on your 2025 return? Your deadline to file is <b>October 15, 2026</b>. An extension gave you more time to file, not to pay.</p>
+    </div>
+  </section>
+
+  <section class="block" id="estimate">
+    <h2 class="sec"><span class="n">WHEN</span>When will my refund come?</h2>
+    <div class="tool">
+      <span class="tool-h">Try it · refund timing estimator</span>
+      <div class="fields">
+        <label for="fKind">What did you file?<select id="fKind"><option value="orig">Original tax return (Form 1040)</option><option value="amend">Amended return (Form 1040-X)</option></select></label>
+        <label for="fYear">Which tax year?<select id="fYear"><option value="cur">2025 (filed in 2026)</option><option value="prior">An earlier year</option></select></label>
+        <label for="fHow">How did you file?<select id="fHow"><option value="e">E-filed (online or through a preparer)</option><option value="p">Mailed a paper return</option></select></label>
+        <label for="fDate" id="fDateLbl">Date the IRS accepted your e-filed return<input type="date" id="fDate"></label>
+        <label for="fPay">How will you get it?<select id="fPay"><option value="dd">Direct deposit to my bank account</option><option value="none">I didn't give bank details</option></select></label>
+        <label for="fCred">Did you claim the EITC or Additional Child Tax Credit?<select id="fCred"><option value="n">No</option><option value="y">Yes</option></select></label>
+      </div>
+      <div class="res" id="estOut" aria-live="polite"></div>
+      <p class="lbl">This is an estimate based on the IRS's published guidance, not a promise. Errors, identity checks, debts or extra review can make any refund take longer. Where's My Refund has your real status.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">STATUS</span>What the statuses mean</h2>
+    <p>Where's My Refund and the IRS2Go app show a progress bar with three stages. It updates once a day, usually overnight, so there's no need to check more often.</p>
+    <div class="stages">
+      <div><span class="sn">STAGE 1</span><h3>Return Received</h3><p>The IRS has your return and is processing it. Nothing is wrong; this is often the longest stage.</p></div>
+      <div><span class="sn">STAGE 2</span><h3>Refund Approved</h3><p>Your refund is approved. The tool shows the date the IRS expects to send it.</p></div>
+      <div><span class="sn">STAGE 3</span><h3>Refund Sent</h3><p>It's on its way to your bank or in the mail. Banks can take a few days to post it, and don't post on weekends or holidays.</p></div>
+    </div>
+    <div class="note"><span><b>See a message instead of a stage?</b> If the tool says the IRS needs more information, or that it needs your bank details, watch your mail for a letter. The IRS contacts you by mail, never by text, email or social media.</span></div>
+  </section>
+
+  <section class="block" id="fixes">
+    <h2 class="sec"><span class="n">HOW</span>Track your refund step by step</h2>
+    <div class="steps-head"><p>Start with step 1. Most people have their answer by step 2.</p><button class="linkbtn" id="expandAll">Show all steps</button></div>
+    <div class="steps" data-q="Found your refund status?" data-yes="Yes, got it" data-no="Next step →">
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Wait until the tracker has your return</span><span class="fix-time">1 min</span></button>
+        <div class="fix-body">
+          <p>Checking too early just gives an error. Status is available:</p>
+          <ul class="list">
+            <li><b>24 hours</b> after you e-file a current-year return</li>
+            <li><b>3 days</b> after you e-file a prior-year return</li>
+            <li><b>4 weeks</b> after you mail a paper return</li>
+            <li><b>3 weeks</b> after you file an amended return (Form 1040-X), using the separate <a href="https://www.irs.gov/filing/wheres-my-amended-return" target="_blank" rel="noopener">Where's My Amended Return</a> tool</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Check Where's My Refund on IRS.gov</span><span class="fix-time">2 min</span></button>
+        <div class="fix-body">
+          <ol class="list">
+            <li>Go to <a href="https://www.irs.gov/wheres-my-refund" target="_blank" rel="noopener">irs.gov/wheres-my-refund</a> and click <b>Check your refund</b>.</li>
+            <li>Choose the tax year, then enter your SSN or ITIN, filing status and exact refund amount.</li>
+            <li>Read your stage and any message under it.</li>
+          </ol>
+          <div class="note warn"><span><b>Only use irs.gov.</b> Checking your refund is always free. Don't enter your Social Security number on a site you reached from a text or email link.</span></div>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Or use the IRS2Go app or your IRS Online Account</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <ul class="list">
+            <li><b>IRS2Go</b> is the IRS's free official app for iPhone and Android. Tap <b>Refund Status</b> and enter the same details. If a paper check is lost, single, head-of-household and married-filing-separately filers can also start a refund trace in the app.</li>
+            <li>Your <a href="https://www.irs.gov/your-account" target="_blank" rel="noopener">IRS Individual Online Account</a> shows refund status, amended return status, payments and notices in one place. It's also where you add bank details if the IRS asks for them.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Check your state refund separately</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <p>State refunds come from your state's tax department, not the IRS, and run on their own timetable.</p>
+          <ol class="list">
+            <li>Search for your state's department of revenue or taxation (the address ends in <b>.gov</b>), or use <a href="https://www.usa.gov/state-taxes" target="_blank" rel="noopener">USA.gov's list of state tax agencies</a>.</li>
+            <li>Look for a <b>Where's my refund</b> or <b>Check refund status</b> link. Most ask for your SSN and the exact state refund amount.</li>
+          </ol>
+          <p>A handful of states have no state income tax, so there's no state refund to track there.</p>
+        </div>
+      </div>
+
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">If it's taking longer than normal</span><span class="fix-time">5 min</span></button>
+        <div class="fix-body">
+          <ul class="list">
+            <li><b>Common causes:</b> a math error or missing signature, claiming the Earned Income Tax Credit or Additional Child Tax Credit (EITC refunds are held by law until at least mid-February), an injured spouse claim, or identity checks.</li>
+            <li><b>Smaller than expected?</b> Your refund may have been reduced to pay past-due taxes, child support, federal debts or state tax. The Bureau of the Fiscal Service mails a notice explaining any offset.</li>
+            <li><b>No bank details on your return?</b> The IRS is phasing out paper refund checks. It sends a letter (CP53E) asking you to add bank information through your Online Account. If you don't respond, it releases a paper check after about six weeks.</li>
+            <li><b>When to call:</b> only if it's been more than 21 days since you e-filed, more than 6 weeks since you mailed your return, or the tool tells you to contact the IRS. The automated refund line is <b>800-829-1954</b>. Calling earlier won't speed things up.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="solved-banner" role="status"><span style="font-size:1.6rem">💵</span><div><b>Got your answer.</b><p>Next year, e-file and choose direct deposit. It's the fastest way to get a refund.</p></div></div>
+    <div class="stuck" role="status">
+      <b>Still stuck?</b>
+      <ul class="list">
+        <li>If your refund is badly delayed and causing financial hardship, the free, independent <a href="https://www.taxpayeradvocate.irs.gov/" target="_blank" rel="noopener">Taxpayer Advocate Service</a> may be able to help.</li>
+        <li>If you used a tax preparer, ask them to confirm your return was accepted and that the refund amount and bank details are right.</li>
+      </ul>
+      <div><button class="btn ghost small" data-restart>Start over</button></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>How long does a tax refund take?</summary><div class="a"><p>The IRS says most e-filed returns are refunded within about 3 weeks (21 days). Paper returns take 6 weeks or more from when the IRS receives them. Amended returns usually take 8 to 12 weeks, and sometimes up to 16.</p></div></details>
+      <details><summary>Will calling the IRS speed up my refund?</summary><div class="a"><p>No. Phone agents see the same information as Where's My Refund. Only call if it's been over 21 days since e-filing, over 6 weeks since mailing, or the tool tells you to.</p></div></details>
+      <details><summary>Why does the tool say my information doesn't match?</summary><div class="a"><p>Check that you've entered the exact refund amount from your return in whole dollars, the right filing status and the right tax year. If you only just filed, wait 24 hours (e-file) or 4 weeks (paper).</p></div></details>
+      <details><summary>How often does Where's My Refund update?</summary><div class="a"><p>Once a day, usually overnight. Checking several times a day won't show anything new.</p></div></details>
+      <details><summary>Is the October 15 deadline for everyone?</summary><div class="a"><p>No. October 15, 2026 is the deadline for people who requested an extension on their 2025 return. If you didn't get an extension, your return was due in April. Some disaster areas get extra time; check IRS.gov for your area.</p></div></details>
+      <details><summary>Does a refund check still come in the mail?</summary><div class="a"><p>The IRS is phasing out paper refund checks in favor of direct deposit. If you didn't give bank details, the IRS sends a letter asking for them, and releases a paper check after about six weeks if you don't respond and there are no other problems.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Official help</h2>
+    <div class="links">
+      <a href="https://www.irs.gov/wheres-my-refund" target="_blank" rel="noopener"><span class="src">IRS</span><b>Where's My Refund?</b></a>
+      <a href="https://www.irs.gov/taxtopics/tc152" target="_blank" rel="noopener"><span class="src">IRS</span><b>Topic 152: Refund information</b></a>
+      <a href="https://www.irs.gov/filing/wheres-my-amended-return" target="_blank" rel="noopener"><span class="src">IRS</span><b>Where's My Amended Return?</b></a>
+      <a href="https://www.irs.gov/filing/get-an-extension-to-file-your-tax-return" target="_blank" rel="noopener"><span class="src">IRS</span><b>Get an extension to file your tax return</b></a>
+      <a href="https://www.usa.gov/check-tax-status" target="_blank" rel="noopener"><span class="src">USA.gov</span><b>Check your federal or state tax refund status</b></a>
+      <a href="https://www.taxpayeradvocate.irs.gov/" target="_blank" rel="noopener"><span class="src">Taxpayer Advocate Service</span><b>Free help with IRS problems</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Related guides</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/leaderboard/">Leaderboard</a></nav></span><span>Based on IRS guidance as of October 2026. This is general information, not tax advice; IRS.gov has the final word.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../guide.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const kind = $('fKind'), year = $('fYear'), how = $('fHow'), date = $('fDate'), pay = $('fPay'), cred = $('fCred'), out = $('estOut'), lbl = $('fDateLbl');
+  const iso = d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  const nice = d => d.toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'});
+  const add = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); return x; };
+  date.value = iso(new Date());
+
+  function calc(){
+    lbl.firstChild.textContent = how.value === 'e' ? 'Date the IRS accepted your e-filed return' : 'Date you mailed your return';
+    cred.disabled = kind.value === 'amend'; pay.disabled = kind.value === 'amend';
+    const p = (date.value || '').split('-').map(Number);
+    if (p.length !== 3 || !p[0]) { out.innerHTML = '<p>Enter a date to see your estimate.</p>'; return; }
+    const d = new Date(p[0], p[1] - 1, p[2]);
+    const today = new Date(); today.setHours(0,0,0,0);
+    const notes = [];
+    let check, from, to, label, callAfter;
+
+    if (kind.value === 'amend'){
+      check = add(d, 21); from = add(d, 56); to = add(d, 84);
+      label = `Usually between <b>${nice(from)}</b> and <b>${nice(to)}</b>`;
+      notes.push(`Track it with <b>Where's My Amended Return</b> starting around ${nice(check)}.`);
+      notes.push(`Some amended returns take up to 16 weeks, which would be about ${nice(add(d, 112))}.`);
+      if (how.value === 'p') notes.push('Mail adds a few days before the IRS receives it.');
+    } else {
+      if (how.value === 'e'){
+        check = add(d, year.value === 'cur' ? 1 : 3);
+        from = add(d, 7); to = add(d, 21); callAfter = to;
+        label = `Most e-filed refunds arrive within 21 days: by about <b>${nice(to)}</b>`;
+      } else {
+        check = add(d, 28);
+        from = add(d, 42); to = add(d, 56); callAfter = add(d, 42);
+        label = `Expect it <b>${nice(from)}</b> or later`;
+        notes.push('Paper returns take 6 weeks or more from when the IRS receives them, plus mail time. Busy periods can be slower.');
+      }
+      if (cred.value === 'y'){
+        const midFeb = new Date(d.getFullYear(), 1, 15);
+        if (d.getMonth() < 2 && from < midFeb){
+          label = `Not before mid-February: after <b>${nice(midFeb)}</b>`;
+          to = add(midFeb, 14); if (callAfter < to) callAfter = to;
+        }
+        notes.push('By law, the IRS can\'t release refunds that include the EITC before mid-February. The Additional Child Tax Credit also needs extra review time.');
+      }
+      if (pay.value === 'none'){
+        notes.push('No bank details: the IRS will mail a letter (CP53E) asking you to add them through your IRS Online Account. Once you do, the refund is released. If you don\'t respond, a paper check is released after about six weeks, roughly <b>' + nice(add(to, 42)) + '</b> or later.');
+      } else {
+        notes.push('Direct deposit is the fastest option. Your bank may take a few days to post it.');
+      }
+      notes.unshift(`Check <b>Where's My Refund</b> from <b>${nice(check)}</b>.`);
+      notes.push(`Only call the IRS if you haven't received it after <b>${nice(callAfter)}</b>.`);
+    }
+    if (year.value === 'cur' && d > new Date(2026, 9, 15) && kind.value === 'orig') notes.push('Filing a 2025 return after October 15, 2026 means it\'s late. If you\'re owed a refund there\'s usually no late-filing penalty, but file as soon as you can.');
+    const past = to < today ? '<p>That date has passed. If Where\'s My Refund doesn\'t show <b>Refund Sent</b>, check it for messages and see step 5 below.</p>' : '';
+    out.innerHTML = `<span class="est">Estimate</span><span class="big">${label}</span>${past}<ul>${notes.map(n => `<li>${n}</li>`).join('')}</ul>`;
+  }
+  [kind, year, how, date, pay, cred].forEach(el => { el.addEventListener('input', calc); el.addEventListener('change', calc); });
+  calc();
+})();
+</script>
+</body>
+</html>

@@ -811,5 +811,29 @@ window.TUTORIALS = [
     category: "Money",
     tags: ["check", "write a check", "checkbook", "amount in words", "void a check", "endorse a check", "check register", "balance checkbook", "routing number", "memo line", "bank"],
     minutes: 8
+  },
+  {
+    slug: "check-tax-refund-status",
+    title: "Where's My Refund? Check Your Tax Refund Status",
+    summary: "Track your federal and state tax refund, decode the statuses, and estimate timing",
+    category: "Money",
+    tags: ["where's my refund", "tax refund status", "irs refund", "irs2go", "refund tracker", "tax return", "state refund", "amended return", "refund delay", "direct deposit", "october 15 extension"],
+    minutes: 8
+  },
+  {
+    slug: "delete-facebook-account",
+    title: "Delete or Deactivate Your Facebook Account",
+    summary: "Leave Facebook safely: save your info, sort out Messenger and Pages, then delete",
+    category: "Online safety",
+    tags: ["delete facebook", "deactivate facebook", "facebook account", "accounts center", "messenger", "download your information", "close facebook", "facebook privacy", "cancel deletion", "meta"],
+    minutes: 10
+  },
+  {
+    slug: "delete-instagram-account",
+    title: "Delete or Deactivate Your Instagram Account",
+    summary: "Deactivate or permanently delete Instagram in Accounts Center, after saving your data",
+    category: "Online safety",
+    tags: ["delete instagram", "deactivate instagram", "instagram account", "accounts center", "download instagram data", "close instagram", "remove instagram", "instagram privacy", "threads", "meta"],
+    minutes: 10
   }
 ];
