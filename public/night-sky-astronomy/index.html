@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stargazing for Beginners: Read the Night Sky · Shortutorial</title>
+<meta name="description" content="Learn to stargaze: tell planets from stars, understand Moon phases, find the North Star with the Big Dipper, spot the best constellations each season, beat light pollution, and choose apps and binoculars. With a Moon phase calculator and a seasonal constellation picker.">
+<link rel="canonical" href="https://shortutorial.com/night-sky-astronomy/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Stargazing for Beginners: Read the Night Sky · Shortutorial">
+<meta property="og:description" content="Learn to stargaze: tell planets from stars, understand Moon phases, find the North Star with the Big Dipper, spot the best constellations each season, beat light pollution, and choose apps and binoculars. With a Moon phase calculator and a seasonal constellation picker.">
+<meta property="og:url" content="https://shortutorial.com/night-sky-astronomy/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+.moon-wrap{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.moon-wrap svg{width:150px;height:150px;flex:none}
+.moon-wrap .moon-info{flex:1 1 180px;min-width:0;display:flex;flex-direction:column;gap:6px}
+.moon-dark{fill:#2b2f3a;stroke:var(--line);stroke-width:1}
+.moon-lit{fill:#f3efe0}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.kv div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
+.kv small{display:block;font-family:var(--mono);font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.kv b{font-family:var(--display);font-size:1.05rem;color:var(--accent)}
+.try input[type=date]{font:inherit;font-family:var(--mono);font-size:1rem;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:9px;padding:8px 10px;outline:none;max-width:100%}
+.try input[type=date]:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.cons{display:flex;flex-direction:column;gap:10px}
+.con{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.con b{font-family:var(--display);font-size:1.05rem}
+.con small{font-family:var(--mono);font-size:.72rem;color:var(--amber)}
+.con p{font-size:.94rem;color:var(--muted)}
+.sky{background:#0f1730;border-radius:12px;padding:10px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.sky svg{width:100%;max-width:300px;height:auto}
+.sky .ln{stroke:#7fa6d9;stroke-width:.6;opacity:.7}
+.sky .st{fill:#fff}
+.sky text{fill:#c9d6ee;font-family:var(--mono);font-size:4px}
+.sky figcaption{color:#c9d6ee}
+.cl{display:flex;flex-direction:column;gap:8px;list-style:none;margin:0;padding:0}
+.cl label{display:flex;gap:10px;align-items:flex-start;font-family:var(--body,inherit);font-size:.97rem;color:var(--ink);flex-direction:row}
+.cl input{margin-top:4px;accent-color:var(--accent);width:18px;height:18px;flex:none}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"Stargazing for Beginners: Read the Night Sky","item":"https://shortutorial.com/night-sky-astronomy/"}]},{"@type":"Article","@id":"https://shortutorial.com/night-sky-astronomy/#article","headline":"Stargazing for Beginners: Read the Night Sky","description":"Learn to stargaze: tell planets from stars, understand Moon phases, find the North Star with the Big Dipper, spot the best constellations each season, beat light pollution, and choose apps and binoculars. With a Moon phase calculator and a seasonal constellation picker.","url":"https://shortutorial.com/night-sky-astronomy/","mainEntityOfPage":"https://shortutorial.com/night-sky-astronomy/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Science","keywords":"stargazing, astronomy, night sky, moon phase, north star, big dipper, constellations, planets, light pollution, binoculars, telescope, orion","timeRequired":"PT14M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the North Star the brightest star?","acceptedAnswer":{"@type":"Answer","text":"No. Many stars are brighter. The brightest star in the night sky is Sirius, in Canis Major, best seen on winter evenings. Polaris is special because of its position, not its brightness."}},{"@type":"Question","name":"Why do stars twinkle?","acceptedAnswer":{"@type":"Answer","text":"Turbulence in Earth's atmosphere bends starlight back and forth. Stars are tiny points, so they flicker a lot. Planets show a small disk, which smooths out the effect."}},{"@type":"Question","name":"What's the difference between a constellation and an asterism?","acceptedAnswer":{"@type":"Answer","text":"The International Astronomical Union recognizes 88 official constellations, which cover the whole sky. An asterism is a familiar pattern that isn't one of those, like the Big Dipper (part of Ursa Major) or the Summer Triangle."}},{"@type":"Question","name":"When is the best time to see meteors?","acceptedAnswer":{"@type":"Answer","text":"Two reliable annual showers are the Perseids (peak around August 12–13) and the Geminids (peak around December 13–14). Watch after midnight, away from lights, on a night when the Moon isn't bright."}},{"@type":"Question","name":"Can I see the Milky Way from my backyard?","acceptedAnswer":{"@type":"Answer","text":"Only if your sky is quite dark. In most suburbs it's washed out. On a moonless summer or early fall night at a dark site, it looks like a faint glowing band running through the Summer Triangle down to Sagittarius."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="night-sky-astronomy">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=science">Science</a> / Night sky</div>
+    <span class="eyebrow">Science · Astronomy</span>
+    <h1>Stargazing for Beginners</h1>
+    <p class="lede">You don't need a telescope to enjoy the night sky. Learn to tell planets from stars, read the Moon, find the North Star in seconds, and know which constellations are up this season. Check any date's Moon phase with the calculator.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~14 min read</span><span class="badge">6 lessons</span><span class="badge">Moon calculator + constellation picker</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#n1">1 · Getting started</a><a href="#n2">2 · Planets vs stars</a><a href="#n3">3 · Moon phases</a><a href="#n4">4 · North Star</a><a href="#n5">5 · Constellations</a><a href="#n6">6 · Light &amp; gear</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="n1">
+    <div class="lesson-head"><span class="step">01</span><h2>Your first night out</h2></div>
+    <ol class="steps">
+      <li><b>Pick a night near the new Moon</b> (use the calculator below). A bright Moon washes out faint stars.</li>
+      <li><b>Get away from lights.</b> A backyard works, but a park or rural spot away from streetlights is much better.</li>
+      <li><b>Let your eyes adapt.</b> It takes about 20 to 30 minutes in the dark for your eyes to fully adjust. One glance at a phone screen resets much of that.</li>
+      <li><b>Use red light.</b> A red flashlight, or your phone's red/night mode, lets you read a chart without ruining your night vision.</li>
+      <li><b>Get comfortable.</b> Bring a reclining chair or blanket, warm layers (it gets colder than you expect), and bug spray in summer.</li>
+    </ol>
+    <p class="callout"><span><b>Measure the sky with your hand.</b> Held at arm's length, your little finger covers about 1°, your fist about 10°, and your spread hand (thumb to pinky) about 20 to 25°. Star charts use degrees, so this helps you find things.</span></p>
+  </section>
+
+  <section class="lesson" id="n2">
+    <div class="lesson-head"><span class="step">02</span><h2>Planets vs stars</h2></div>
+    <p>Stars are distant suns, so far away they look like points. Planets are nearby worlds in our solar system that shine by reflecting sunlight. Five are easy to see with just your eyes: <b>Mercury, Venus, Mars, Jupiter and Saturn</b>.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Clue</th><th>Star</th><th>Planet</th></tr>
+      <tr><td>Twinkling</td><td>Twinkles a lot, especially near the horizon</td><td>Usually shines with a steadier light</td></tr>
+      <tr><td>Position</td><td>Fixed in its constellation</td><td>Wanders against the stars over weeks</td></tr>
+      <tr><td>Path</td><td>Anywhere in the sky</td><td>Always near the <b>ecliptic</b>, the line the Sun and Moon follow</td></tr>
+      <tr><td>In binoculars</td><td>Still a point</td><td>A tiny disk; Jupiter shows up to four moons</td></tr>
+    </table></div>
+    <ul class="points">
+      <li><b>Venus</b> is the brightest thing in the night sky after the Moon. It's never far from the Sun, so look low in the west after sunset or the east before sunrise.</li>
+      <li><b>Mars</b> has a clear orange-red color.</li>
+      <li><b>Jupiter</b> is very bright and steady; <b>Saturn</b> is fainter and a bit golden. Its rings need a small telescope.</li>
+      <li>A steady light that moves across the sky in a few minutes is likely a <b>satellite</b> or the space station. Blinking lights are aircraft.</li>
+    </ul>
+    <p>Which planets are up changes month to month. NASA's free monthly “What's Up” guide (in the sources) tells you what to look for.</p>
+  </section>
+
+  <section class="lesson" id="n3">
+    <div class="lesson-head"><span class="step">03</span><h2>Moon phases</h2></div>
+    <p>Half the Moon is always lit by the Sun. As the Moon orbits Earth, we see different amounts of that lit half. The full cycle from new Moon to new Moon (the <b>synodic month</b>) averages about <b>29.53 days</b>.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Phase</th><th>What you see (Northern Hemisphere)</th><th>When it's up</th></tr>
+      <tr><td>New Moon</td><td>Nothing; the lit side faces away</td><td>Up with the Sun</td></tr>
+      <tr><td>Waxing crescent</td><td>Thin sliver lit on the right</td><td>Evening, in the west</td></tr>
+      <tr><td>First quarter</td><td>Right half lit</td><td>Afternoon to midnight</td></tr>
+      <tr><td>Waxing gibbous</td><td>More than half, growing</td><td>Most of the evening</td></tr>
+      <tr><td>Full Moon</td><td>Fully lit</td><td>All night, sunset to sunrise</td></tr>
+      <tr><td>Waning gibbous / last quarter / waning crescent</td><td>Shrinking, lit on the left</td><td>Late night and morning</td></tr>
+    </table></div>
+    <p class="callout"><span><b>Memory trick:</b> “waxing” means growing. In the Northern Hemisphere, if the right side is lit, it's waxing. In the Southern Hemisphere it's flipped. And the phases are <b>not</b> caused by Earth's shadow. That's a lunar eclipse, which only happens at full Moon.</span></p>
+    <div class="try" id="mn"><span class="try-h">Try it · Moon phase calculator</span>
+      <div class="row">
+        <label>Date<input type="date" id="mnDate"></label>
+        <button class="btn ghost" type="button" id="mnPrev" aria-label="Previous day">◀ Day</button>
+        <button class="btn ghost" type="button" id="mnNext" aria-label="Next day">Day ▶</button>
+        <button class="btn ghost" type="button" id="mnToday">Today</button>
+      </div>
+      <div class="chipset" id="mnHemi" aria-label="Hemisphere"><button type="button" data-h="n" aria-pressed="true">Northern Hemisphere</button><button type="button" data-h="s" aria-pressed="false">Southern Hemisphere</button></div>
+      <div class="moon-wrap">
+        <svg id="mnSvg" viewBox="0 0 120 120" role="img" aria-label="Moon phase"></svg>
+        <div class="moon-info"><p class="out" id="mnName" aria-live="polite"></p><p class="work" id="mnTip"></p></div>
+      </div>
+      <div class="kv">
+        <div><small>Moon age</small><b id="mnAge"></b></div>
+        <div><small>Lit</small><b id="mnIll"></b></div>
+        <div><small>Next full Moon</small><b id="mnFull"></b></div>
+        <div><small>Next new Moon</small><b id="mnNew"></b></div>
+      </div>
+      <p class="work">How it works: counts days since a known new Moon (Jan 6, 2000, 18:14 UTC) and divides by the average cycle of 29.530589 days. Real cycles vary by several hours, so dates may be off by up to about a day. Uses noon on the chosen date in your time zone.</p>
+    </div>
+  </section>
+
+  <section class="lesson" id="n4">
+    <div class="lesson-head"><span class="step">04</span><h2>Find the North Star with the Big Dipper</h2></div>
+    <p><b>Polaris</b>, the North Star, sits almost exactly above Earth's North Pole, so it barely moves while the rest of the sky turns around it. Face it and you're facing north. It's not the brightest star, just a medium-bright one, which is why you find it with the Big Dipper.</p>
+    <ol class="steps">
+      <li><b>Find the Big Dipper</b> in the northern sky: seven bright stars shaped like a ladle (a bowl of four and a handle of three). It's part of the constellation Ursa Major, the Great Bear. It can be high in spring and summer evenings, low in fall and winter.</li>
+      <li><b>Find the pointer stars</b>: the two stars at the outer edge of the bowl, <b>Merak</b> (bottom) and <b>Dubhe</b> (top).</li>
+      <li><b>Draw a line</b> from Merak through Dubhe and keep going about <b>five times</b> the distance between them.</li>
+      <li><b>That's Polaris.</b> It's the end of the Little Dipper's handle.</li>
+    </ol>
+    <figure class="sky"><svg viewBox="0 0 100 70" role="img" aria-label="Diagram: the pointer stars of the Big Dipper lead to Polaris">
+      <line class="ln" x1="4" y1="24" x2="12" y2="32"/><line class="ln" x1="12" y1="32" x2="21" y2="38"/><line class="ln" x1="21" y1="38" x2="31" y2="43"/><line class="ln" x1="31" y1="43" x2="33" y2="57"/><line class="ln" x1="33" y1="57" x2="46" y2="60"/><line class="ln" x1="46" y1="60" x2="51" y2="46"/><line class="ln" x1="51" y1="46" x2="31" y2="43"/>
+      <line x1="46" y1="60" x2="66" y2="10" stroke="#f4c86a" stroke-width=".7" stroke-dasharray="2 2"/>
+      <circle class="st" cx="4" cy="24" r="1.3"/><circle class="st" cx="12" cy="32" r="1.4"/><circle class="st" cx="21" cy="38" r="1.4"/><circle class="st" cx="31" cy="43" r="1.1"/><circle class="st" cx="33" cy="57" r="1.3"/><circle class="st" cx="46" cy="60" r="1.4"/><circle class="st" cx="51" cy="46" r="1.6"/>
+      <circle class="st" cx="66" cy="10" r="1.8"/>
+      <text x="49" y="64">Merak</text><text x="54" y="47">Dubhe</text><text x="70" y="11">Polaris</text><text x="6" y="52">Big Dipper</text>
+    </svg><figcaption>Schematic, not to scale. The dashed line runs from Merak through Dubhe.</figcaption></figure>
+    <p class="callout"><span><b>Bonus: find your latitude.</b> Polaris's height above the horizon, in degrees, is about equal to your latitude. In Miami (about 26° N) it's low; in Seattle (about 47° N) it's about halfway up. Use your fist (10°) to measure.</span></p>
+    <p>On the opposite side of Polaris from the Big Dipper is <b>Cassiopeia</b>, a bright W or M shape. When the Dipper is low, Cassiopeia is high, so one of them is usually easy to see from the US.</p>
+  </section>
+
+  <section class="lesson" id="n5">
+    <div class="lesson-head"><span class="step">05</span><h2>Constellations by season</h2></div>
+    <p>Earth's orbit means we face a different part of space at night through the year. The same stars rise about 4 minutes earlier each night, so a season's constellations shift into the evening sky over a few months. The picker shows the highlights around 9 to 10 p.m. from the continental US and other mid-northern latitudes.</p>
+    <div class="try" id="cn"><span class="try-h">Try it · seasonal constellation picker</span>
+      <div class="chipset" id="cnSeason" aria-label="Season"><button type="button" data-s="winter" aria-pressed="false">Winter</button><button type="button" data-s="spring" aria-pressed="false">Spring</button><button type="button" data-s="summer" aria-pressed="false">Summer</button><button type="button" data-s="fall" aria-pressed="false">Fall</button></div>
+      <p class="out" id="cnHead" aria-live="polite"></p>
+      <figure class="sky" id="cnSky"></figure>
+      <div class="cons" id="cnList"></div>
+      <p class="work">Tick what you spot. Your list is saved in this browser only.</p>
+    </div>
+  </section>
+
+  <section class="lesson" id="n6">
+    <div class="lesson-head"><span class="step">06</span><h2>Light pollution, apps and binoculars</h2></div>
+    <h3>Light pollution</h3>
+    <p>Outdoor lighting scatters into the sky and hides faint stars. The <b>Bortle scale</b> rates sky darkness from 1 (pristine) to 9 (inner city). From a city you may see only a few dozen stars; under a truly dark sky you can see thousands, plus the Milky Way.</p>
+    <ul class="points">
+      <li>Even 30 to 60 minutes' drive from a city can make a big difference. Look for a light pollution map or a certified Dark Sky Place from DarkSky International.</li>
+      <li>At home, turn off porch lights, and stand where a building blocks streetlights.</li>
+      <li>Help science: Globe at Night lets anyone report how many stars they can see.</li>
+    </ul>
+    <h3>Apps</h3>
+    <p>Star apps use your phone's GPS and compass: hold it up and it labels what you're looking at. <b>Stellarium</b> is free and open source (on phones, computers and the web); popular alternatives include SkySafari, Star Walk and Sky Tonight. Turn on the app's night (red) mode.</p>
+    <h3>Binoculars before a telescope</h3>
+    <p>Ordinary binoculars are the best first instrument: cheap, easy, and wide enough to find things. Look for <b>7×50</b> or <b>10×50</b> (magnification × lens width in mm). Prop your elbows or use a tripod to steady them. Try the Moon's craters, the Pleiades star cluster, the Andromeda Galaxy and Jupiter's moons.</p>
+    <p class="callout warn"><span><b>Never look at the Sun</b> through binoculars or a telescope, even for a second, and never with your bare eyes. It can permanently damage your eyesight. Solar viewing needs certified solar filters made for that purpose.</span></p>
+    <div class="try" id="ck"><span class="try-h">Try it · first-night checklist</span>
+      <ul class="cl" id="ckList"></ul>
+      <p class="out" id="ckOut" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Is the North Star the brightest star?</summary><div class="a"><p>No. Many stars are brighter. The brightest star in the night sky is Sirius, in Canis Major, best seen on winter evenings. Polaris is special because of its position, not its brightness.</p></div></details>
+      <details><summary>Why do stars twinkle?</summary><div class="a"><p>Turbulence in Earth's atmosphere bends starlight back and forth. Stars are tiny points, so they flicker a lot. Planets show a small disk, which smooths out the effect.</p></div></details>
+      <details><summary>What's the difference between a constellation and an asterism?</summary><div class="a"><p>The International Astronomical Union recognizes 88 official constellations, which cover the whole sky. An asterism is a familiar pattern that isn't one of those, like the Big Dipper (part of Ursa Major) or the Summer Triangle.</p></div></details>
+      <details><summary>When is the best time to see meteors?</summary><div class="a"><p>Two reliable annual showers are the Perseids (peak around August 12–13) and the Geminids (peak around December 13–14). Watch after midnight, away from lights, on a night when the Moon isn't bright.</p></div></details>
+      <details><summary>Can I see the Milky Way from my backyard?</summary><div class="a"><p>Only if your sky is quite dark. In most suburbs it's washed out. On a moonless summer or early fall night at a dark site, it looks like a faint glowing band running through the Summer Triangle down to Sagittarius.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://science.nasa.gov/moon/moon-phases/" target="_blank" rel="noopener"><span class="src">NASA</span><b>Moon phases</b></a>
+      <a href="https://science.nasa.gov/skywatching/whats-up/" target="_blank" rel="noopener"><span class="src">NASA</span><b>What's Up: monthly skywatching tips</b></a>
+      <a href="https://darksky.org/" target="_blank" rel="noopener"><span class="src">DarkSky International</span><b>Light pollution and Dark Sky Places</b></a>
+      <a href="https://globeatnight.org/" target="_blank" rel="noopener"><span class="src">Globe at Night</span><b>Measure your night sky brightness</b></a>
+      <a href="https://stellarium.org/" target="_blank" rel="noopener"><span class="src">Stellarium</span><b>Free planetarium software</b></a>
+      <a href="https://www.iau.org/public/themes/constellations/" target="_blank" rel="noopener"><span class="src">International Astronomical Union</span><b>The 88 constellations</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>Moon phases here are calculated from the average lunar cycle and can be off by up to about a day. Never point binoculars or a telescope at the Sun.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  const store = {get(k){ try { return JSON.parse(localStorage.getItem(k)); } catch(e){ return null; } }, set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }};
+
+  /* ---------- Moon phase ---------- */
+  const SYN = 29.530588853, REF = Date.UTC(2000, 0, 6, 18, 14) , DAY = 86400000;
+  let hemi = 'n';
+  const iso = d => d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+  const parse = s => { const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s); return m ? new Date(+m[1], +m[2]-1, +m[3], 12) : null; };
+  const nice = d => d.toLocaleDateString(undefined, {month:'short', day:'numeric', year:'numeric'});
+  const NAMES = [
+    [1.84566,'New Moon','Too close to the Sun to see. Great night for faint stars.'],
+    [5.53699,'Waxing crescent','A thin sliver low in the west after sunset. Look for “earthshine” on the dark part.'],
+    [9.22831,'First quarter','Half lit. The best time to see craters along the terminator with binoculars.'],
+    [12.91963,'Waxing gibbous','Bright and up most of the evening.'],
+    [16.61096,'Full Moon','Rises around sunset and is up all night. Bright, so faint stars are hard to see.'],
+    [20.30228,'Waning gibbous','Rises later each night, after dark.'],
+    [23.99361,'Last quarter','Half lit, rising around midnight. Evenings are dark again.'],
+    [27.68493,'Waning crescent','A sliver in the east before dawn.'],
+    [99,'New Moon','Too close to the Sun to see. Great night for faint stars.']
+  ];
+  function moonPath(f){
+    const cx = 60, cy = 60, r = 50, k = Math.cos(2*Math.PI*f), rx = Math.abs(k) * r;
+    const waxing = f < 0.5;
+    const outer = waxing ? 1 : 0;
+    const inner = waxing ? (k > 0 ? 0 : 1) : (k < 0 ? 0 : 1);
+    return `M${cx} ${cy-r} A${r} ${r} 0 0 ${outer} ${cx} ${cy+r} A${rx.toFixed(2)} ${r} 0 0 ${inner} ${cx} ${cy-r}Z`;
+  }
+  function moon(){
+    const d = parse($('#mnDate').value);
+    if (!d){ $('#mnName').textContent = 'Pick a date.'; return; }
+    const days = (d.getTime() - REF) / DAY;
+    let age = days % SYN; if (age < 0) age += SYN;
+    const f = age / SYN, ill = (1 - Math.cos(2*Math.PI*f)) / 2;
+    const n = NAMES.find(x => age < x[0]);
+    let svg = `<circle class="moon-dark" cx="60" cy="60" r="50"/>`;
+    if (ill > 0.005) svg += `<g${hemi === 's' ? ' transform="translate(120 0) scale(-1 1)"' : ''}><path class="moon-lit" d="${moonPath(f)}"/></g>`;
+    $('#mnSvg').innerHTML = svg;
+    $('#mnSvg').setAttribute('aria-label', n[1] + ', ' + Math.round(ill*100) + '% lit');
+    $('#mnName').innerHTML = `<b>${n[1]}</b> on ${nice(d)}`;
+    $('#mnTip').textContent = n[2] + (hemi === 's' ? ' (Southern Hemisphere view: lit side flipped.)' : '');
+    $('#mnAge').textContent = age.toFixed(1) + ' days';
+    $('#mnIll').textContent = Math.round(ill * 100) + '%';
+    const toFull = ((SYN/2 - age) % SYN + SYN) % SYN, toNew = SYN - age;
+    $('#mnFull').textContent = toFull < 0.5 ? 'Today' : nice(new Date(d.getTime() + toFull*DAY));
+    $('#mnNew').textContent = (toNew < 0.5 || toNew > SYN - 0.5) ? 'Today' : nice(new Date(d.getTime() + toNew*DAY));
+  }
+  const shift = n => { const d = parse($('#mnDate').value) || new Date(); d.setDate(d.getDate() + n); $('#mnDate').value = iso(d); moon(); };
+  $('#mnDate').value = iso(new Date());
+  $('#mnDate').addEventListener('input', moon);
+  $('#mnPrev').addEventListener('click', () => shift(-1));
+  $('#mnNext').addEventListener('click', () => shift(1));
+  $('#mnToday').addEventListener('click', () => { $('#mnDate').value = iso(new Date()); moon(); });
+  document.querySelectorAll('#mnHemi button').forEach(b => b.addEventListener('click', () => {
+    hemi = b.dataset.h; document.querySelectorAll('#mnHemi button').forEach(x => x.setAttribute('aria-pressed', x === b)); moon();
+  }));
+  moon();
+
+  /* ---------- constellations ---------- */
+  const SKY = {
+    winter: {head:'Winter evenings (Dec to Feb): the brightest season', cap:'Orion: shoulders, three-star belt, and feet',
+      stars:[[30,18,2,'Betelgeuse'],[70,22,1.6,'Bellatrix'],[44,52,1.2],[50,50,1.2],[56,48,1.2],[34,84,1.4,'Saiph'],[72,82,2,'Rigel']],
+      lines:[[0,2],[1,4],[2,3],[3,4],[2,5],[4,6],[0,1]],
+      list:[
+        ['Orion, the Hunter','Easiest constellation to learn','Look south for three bright stars in a short, straight row: Orion\'s Belt. Red Betelgeuse marks a shoulder and blue-white Rigel a foot. Below the belt, the fuzzy “star” in the sword is the Orion Nebula, great in binoculars.'],
+        ['Canis Major and Sirius','Brightest star at night','Follow Orion\'s Belt down and to the left to Sirius, the brightest star in the night sky.'],
+        ['Taurus and the Pleiades','A star cluster you can see with your eyes','Follow the belt up and to the right to orange Aldebaran, then on to the Pleiades, a tiny dipper-shaped cluster sometimes called the Seven Sisters.'],
+        ['Gemini','The Twins','Two bright stars side by side, Castor and Pollux, up and to the left of Orion.'],
+        ['Auriga','The Charioteer','A pentagon of stars high overhead, led by bright, yellowish Capella.']]},
+    spring: {head:'Spring evenings (Mar to May): follow the Dipper', cap:'“Arc to Arcturus”: follow the curve of the Big Dipper\'s handle',
+      stars:[[10,30,1.3],[22,26,1.3],[24,38,1.3],[12,42,1.3],[36,34,1.3],[48,38,1.3],[58,46,1.3],[78,74,2.2,'Arcturus'],[84,94,1.7,'Spica']],
+      lines:[[0,1],[1,2],[2,3],[3,0],[1,4],[4,5],[5,6]],
+      arc:true,
+      list:[
+        ['The Big Dipper (Ursa Major)','High in the north','The Dipper rides high in spring evenings, the best time to use its pointer stars to find Polaris.'],
+        ['Boötes and Arcturus','“Arc to Arcturus”','Follow the curve of the Dipper\'s handle away from the bowl to the bright orange star Arcturus.'],
+        ['Virgo and Spica','“Speed on to Spica”','Keep the same curve going past Arcturus to the blue-white star Spica.'],
+        ['Leo, the Lion','Look for a backward question mark','The “Sickle” of Leo is a backward question mark, with bright Regulus at the bottom. It\'s high in the south.'],
+        ['Cancer and the Beehive','A fuzzy patch','Between Leo and Gemini, a dim constellation holds the Beehive Cluster, lovely in binoculars from a dark site.']]},
+    summer: {head:'Summer evenings (Jun to Aug): the Milky Way season', cap:'The Summer Triangle: Vega, Deneb and Altair',
+      stars:[[40,18,2,'Vega'],[80,28,1.7,'Deneb'],[50,82,1.8,'Altair']],
+      lines:[[0,1],[1,2],[2,0]],
+      list:[
+        ['The Summer Triangle','Three bright stars, three constellations','High in the east to overhead: Vega (in Lyra), Deneb (in Cygnus) and Altair (in Aquila). It\'s an asterism, not an official constellation.'],
+        ['Cygnus, the Swan','The Northern Cross','Deneb marks the swan\'s tail; its long neck stretches down the Milky Way.'],
+        ['Scorpius','A hook of stars in the south','Low in the south, with red Antares at its heart. Its curving tail is easier to see from the southern US.'],
+        ['Sagittarius','The Teapot','Just east of Scorpius, a group shaped like a teapot. The Milky Way\'s center lies in this direction, so it looks like steam rising from the spout.'],
+        ['Hercules','The Keystone','A lopsided square between Vega and Arcturus. Binoculars show the Great Globular Cluster (M13) as a fuzzy ball.']]},
+    fall: {head:'Fall evenings (Sep to Nov): look to the north and east', cap:'The Great Square of Pegasus, with Andromeda trailing from one corner',
+      stars:[[26,30,1.5],[70,28,1.5],[72,70,1.5],[28,72,1.5,'Alpheratz'],[14,82,1.3],[6,92,1.4]],
+      lines:[[0,1],[1,2],[2,3],[3,0],[3,4],[4,5]],
+      list:[
+        ['Pegasus','The Great Square','Four stars marking a big square, high in the east to south. Few stars are inside it, which makes it stand out.'],
+        ['Andromeda and its galaxy','The farthest thing you can see with your eyes','A chain of stars from the Square\'s corner leads to the Andromeda Galaxy, about 2.5 million light-years away. It looks like a faint smudge from a dark site.'],
+        ['Cassiopeia','The W','A bright W or M shape high in the northeast, across Polaris from the Big Dipper.'],
+        ['Perseus','The Hero','Below Cassiopeia. The famous Perseid meteors in August seem to come from this direction.'],
+        ['Summer Triangle, setting','Still up early','The Summer Triangle lingers in the west through fall evenings.']]}
+  };
+  let seen = store.get('sky-seen') || {};
+  function season(s){
+    document.querySelectorAll('#cnSeason button').forEach(b => b.setAttribute('aria-pressed', b.dataset.s === s));
+    const S = SKY[s];
+    $('#cnHead').textContent = S.head;
+    let g = '<svg viewBox="0 0 100 100" role="img" aria-label="' + S.cap + '">';
+    S.lines.forEach(([a, b]) => { g += `<line class="ln" x1="${S.stars[a][0]}" y1="${S.stars[a][1]}" x2="${S.stars[b][0]}" y2="${S.stars[b][1]}"/>`; });
+    if (S.arc) g += '<path d="M58 46 Q72 56 78 74 Q82 84 84 94" fill="none" stroke="#f4c86a" stroke-width=".6" stroke-dasharray="2 2"/>';
+    S.stars.forEach(st => { g += `<circle class="st" cx="${st[0]}" cy="${st[1]}" r="${st[2]}"/>`; if (st[3]) g += `<text x="${st[0] + 3}" y="${st[1] - 3}">${st[3]}</text>`; });
+    g += '</svg><figcaption>' + S.cap + ' (schematic)</figcaption>';
+    $('#cnSky').innerHTML = g;
+    const box = $('#cnList'); box.innerHTML = '';
+    S.list.forEach(([n, sub, how]) => {
+      const id = s + ':' + n;
+      const d = document.createElement('div'); d.className = 'con';
+      const lab = document.createElement('label'); lab.className = 'cl';
+      lab.style.cssText = 'display:flex;flex-direction:row;gap:10px;align-items:flex-start;font-size:1rem;color:var(--ink)';
+      const cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = !!seen[id];
+      cb.style.cssText = 'margin-top:4px;accent-color:var(--accent);width:18px;height:18px;flex:none';
+      cb.addEventListener('change', () => { if (cb.checked) seen[id] = 1; else delete seen[id]; store.set('sky-seen', seen); });
+      const t = document.createElement('span'); t.innerHTML = '<b></b>'; t.firstChild.textContent = n;
+      lab.appendChild(cb); lab.appendChild(t); d.appendChild(lab);
+      const sm = document.createElement('small'); sm.textContent = sub; d.appendChild(sm);
+      const p = document.createElement('p'); p.textContent = how; d.appendChild(p);
+      box.appendChild(d);
+    });
+  }
+  document.querySelectorAll('#cnSeason button').forEach(b => b.addEventListener('click', () => season(b.dataset.s)));
+  const m = new Date().getMonth();
+  season(m === 11 || m < 2 ? 'winter' : m < 5 ? 'spring' : m < 8 ? 'summer' : 'fall');
+
+  /* ---------- checklist ---------- */
+  const CK = ['Checked the Moon phase (aim for a dim Moon)','Checked the weather for clear skies','Found a spot away from bright lights','Red flashlight or phone night mode','Warm layers, chair or blanket','Star app downloaded and set to night mode','Binoculars (optional)','Gave my eyes 20 to 30 minutes to adapt'];
+  let ck = store.get('sky-check') || {};
+  const ul = $('#ckList');
+  function ckOut(){ const n = CK.filter((_, i) => ck[i]).length; $('#ckOut').innerHTML = n === CK.length ? '<b>All set.</b> Clear skies!' : `${n} of ${CK.length} ready.`; }
+  CK.forEach((t, i) => {
+    const li = document.createElement('li'); const lab = document.createElement('label');
+    const cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = !!ck[i];
+    cb.addEventListener('change', () => { if (cb.checked) ck[i] = 1; else delete ck[i]; store.set('sky-check', ck); ckOut(); });
+    const sp = document.createElement('span'); sp.textContent = t;
+    lab.appendChild(cb); lab.appendChild(sp); li.appendChild(lab); ul.appendChild(li);
+  });
+  ckOut();
+})();
+</script>
+</body>
+</html>

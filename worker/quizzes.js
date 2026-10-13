@@ -2699,5 +2699,71 @@ export default {
         o: ["Epictetus", "Seneca", "Zeno", "Marcus Aurelius"], a: 3,
         e: "Marcus Aurelius, a Roman emperor, wrote it for himself, not for publication." }
     ]
+  },
+
+  "how-the-economy-works": {
+    title: "How the Economy Works: A Plain-English Guide",
+    pass: 4,
+    questions: [
+      { q: "If supply of coffee falls because of a bad harvest, what usually happens?",
+        o: ["Price falls, quantity rises", "Price rises, quantity falls", "Both price and quantity rise", "Nothing changes"], a: 1,
+        e: "A supply decrease shifts the supply curve left: higher price, lower quantity." },
+      { q: "What does the Consumer Price Index (CPI) measure?",
+        o: ["Changes in the price of a basket of goods and services households buy", "The total value of everything a country produces", "The interest rate banks charge each other", "The share of people out of work"], a: 0,
+        e: "The BLS publishes CPI monthly; its 12-month change is the usual inflation figure." },
+      { q: "What inflation rate does the Federal Reserve aim for over time?",
+        o: ["0%", "5%", "10%", "2%"], a: 3,
+        e: "The Fed targets 2% inflation over the longer run." },
+      { q: "When the Fed raises interest rates, what is it usually trying to do?",
+        o: ["Boost borrowing and spending", "Print more money", "Cool demand to ease inflation", "Lower the unemployment rate quickly"], a: 2,
+        e: "Higher rates make borrowing costlier, slowing spending and inflation." },
+      { q: "Who officially dates US recessions?",
+        o: ["The Treasury Department", "The National Bureau of Economic Research (NBER)", "Congress", "The stock market"], a: 1,
+        e: "NBER looks at many measures; 'two quarters of falling GDP' is only a rule of thumb." }
+    ]
+  },
+
+  "night-sky-astronomy": {
+    title: "Stargazing for Beginners: Read the Night Sky",
+    pass: 4,
+    questions: [
+      { q: "How do you find Polaris using the Big Dipper?",
+        o: ["Follow the handle's curve", "Go straight up from the bowl's bottom-left star", "Draw a line from Merak through Dubhe and go about five times that distance", "Look for the brightest star in the sky"], a: 2,
+        e: "Merak and Dubhe are the pointer stars at the outer edge of the bowl." },
+      { q: "In the Northern Hemisphere, a Moon lit on the right side is:",
+        o: ["Waxing (growing)", "Waning (shrinking)", "Always full", "In eclipse"], a: 0,
+        e: "Right side lit means waxing in the Northern Hemisphere; it's flipped in the Southern." },
+      { q: "About how long is the cycle from one new Moon to the next?",
+        o: ["7 days", "24.5 days", "35 days", "29.5 days"], a: 3,
+        e: "The synodic month averages about 29.53 days." },
+      { q: "Which clue usually means you're looking at a planet, not a star?",
+        o: ["It twinkles strongly", "It shines with a steadier light near the ecliptic", "It's always directly overhead", "It's red and blinking"], a: 1,
+        e: "Planets show a tiny disk, so they twinkle less, and they stay near the ecliptic." },
+      { q: "How long does it take your eyes to fully adapt to the dark?",
+        o: ["About 1 minute", "About 5 minutes", "About 20 to 30 minutes", "About 3 hours"], a: 2,
+        e: "And a glance at a bright phone screen resets much of it, so use red light." }
+    ]
+  },
+
+  "us-government-basics": {
+    title: "How the US Government Works: A Nonpartisan Guide",
+    pass: 4,
+    questions: [
+      { q: "Which branch interprets laws and can declare them unconstitutional?",
+        o: ["Legislative", "Executive", "Judicial", "The states"], a: 2,
+        e: "Judicial review was established in Marbury v. Madison (1803)." },
+      { q: "How can Congress override a presidential veto?",
+        o: ["A two-thirds vote in both the House and Senate", "A simple majority in the House", "A Supreme Court ruling", "A vote of three-fourths of the states"], a: 0,
+        e: "Overrides need two-thirds of both chambers, and they are rare." },
+      { q: "How long is a US senator's term?",
+        o: ["2 years", "4 years", "8 years", "6 years"], a: 3,
+        e: "Senators serve 6-year terms; House members serve 2 years." },
+      { q: "What happens if the President does nothing with a bill and Congress adjourns within the 10 days?",
+        o: ["It becomes law automatically", "It's a pocket veto and the bill dies", "It goes to the Supreme Court", "Congress votes again"], a: 1,
+        e: "If Congress is in session it becomes law; if Congress has adjourned, it's a pocket veto." },
+      { q: "When are the 2026 midterm elections?",
+        o: ["Tuesday, November 3, 2026", "Monday, November 2, 2026", "Tuesday, November 10, 2026", "Tuesday, October 27, 2026"], a: 0,
+        e: "Federal elections are on the Tuesday after the first Monday in November." }
+    ]
   }
 };

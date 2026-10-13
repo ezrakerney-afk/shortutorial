@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How the US Government Works: A Nonpartisan Guide · Shortutorial</title>
+<meta name="description" content="A plain-English, nonpartisan guide to the US government: the Constitution, the three branches, checks and balances, how a bill becomes law, federal vs state powers, and elections including the November 3, 2026 midterms. With a bill simulator and a matching game.">
+<link rel="canonical" href="https://shortutorial.com/us-government-basics/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How the US Government Works: A Nonpartisan Guide · Shortutorial">
+<meta property="og:description" content="A plain-English, nonpartisan guide to the US government: the Constitution, the three branches, checks and balances, how a bill becomes law, federal vs state powers, and elections including the November 3, 2026 midterms. With a bill simulator and a matching game.">
+<meta property="og:url" content="https://shortutorial.com/us-government-basics/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+.br3{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.br3>div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.br3 p{font-size:.93rem;color:var(--muted)}
+.bill-path{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0}
+.bill-path li{font-family:var(--mono);font-size:.72rem;padding:3px 9px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--muted)}
+.bill-path li.cur{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.bill-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.bill-card .where{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--amber);font-weight:600}
+.bill-card h3{font-size:1.15rem}
+.bill-card.law{border-color:var(--good);background:var(--good-bg)}
+.bill-card.dead{border-color:var(--bad);background:var(--bad-bg)}
+.bill-ch{display:flex;flex-direction:column;gap:8px}
+.bill-ch button{all:unset;box-sizing:border-box;cursor:pointer;padding:10px 14px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);font-size:.95rem;line-height:1.4}
+.bill-ch button:hover{border-color:var(--accent)}
+.bill-ch button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.cb-item{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.cb-item .q{font-family:var(--display);font-weight:600}
+.cb-item .fb{font-size:.9rem}
+.cb-list{display:flex;flex-direction:column;gap:10px}
+.cb-item .chipset button[data-r=ok]{background:var(--good);border-color:var(--good);color:#fff}
+.cb-item .chipset button[data-r=no]{border-color:var(--bad);color:var(--bad)}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"How the US Government Works: A Nonpartisan Guide","item":"https://shortutorial.com/us-government-basics/"}]},{"@type":"Article","@id":"https://shortutorial.com/us-government-basics/#article","headline":"How the US Government Works: A Nonpartisan Guide","description":"A plain-English, nonpartisan guide to the US government: the Constitution, the three branches, checks and balances, how a bill becomes law, federal vs state powers, and elections including the November 3, 2026 midterms. With a bill simulator and a matching game.","url":"https://shortutorial.com/us-government-basics/","mainEntityOfPage":"https://shortutorial.com/us-government-basics/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Life skills","keywords":"us government, civics, constitution, three branches, checks and balances, how a bill becomes law, congress, supreme court, midterm elections, electoral college, veto, federalism","timeRequired":"PT15M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What's the difference between Congress and the House?","acceptedAnswer":{"@type":"Answer","text":"Congress is both chambers together: the House of Representatives and the Senate. “Congressman” or “congresswoman” usually refers to a House member, though senators are members of Congress too."}},{"@type":"Question","name":"Can the Supreme Court make laws?","acceptedAnswer":{"@type":"Answer","text":"No. It decides cases. But its rulings on what the Constitution or a law means apply nationwide and can strike down laws, so its decisions have a large effect."}},{"@type":"Question","name":"Can the President declare war?","acceptedAnswer":{"@type":"Answer","text":"The Constitution gives Congress the power to declare war. The President is commander in chief and directs the military. How these powers fit together has been debated for a long time."}},{"@type":"Question","name":"Why does a state's number of House seats change?","acceptedAnswer":{"@type":"Answer","text":"Seats are reapportioned among the states after each census, every 10 years, based on population. The total stays at 435."}},{"@type":"Question","name":"How do I find who represents me?","acceptedAnswer":{"@type":"Answer","text":"Search by your address on the official House and Senate websites (house.gov and senate.gov), or usa.gov's elected officials page."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="us-government-basics">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=skills">Life skills</a> / US government basics</div>
+    <span class="eyebrow">Skills · Civics</span>
+    <h1>How the US Government Works</h1>
+    <p class="lede">A clear, nonpartisan tour of the system: the Constitution, the three branches, how they check each other, how an idea becomes a law, and how elections work, including the 2026 midterms. Then walk a bill through Congress yourself.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~15 min read</span><span class="badge">6 lessons</span><span class="badge">Bill simulator + matching game</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#g1">1 · Constitution</a><a href="#g2">2 · Three branches</a><a href="#g3">3 · Checks</a><a href="#g4">4 · Bill to law</a><a href="#g5">5 · Federal &amp; state</a><a href="#g6">6 · Elections</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="g1">
+    <div class="lesson-head"><span class="step">01</span><h2>The Constitution</h2></div>
+    <p>The <b>US Constitution</b> is the country's supreme law. It was written in Philadelphia in <b>1787</b>, took effect in <b>1789</b>, and is the oldest written national constitution still in use. It does three big jobs:</p>
+    <ul class="points">
+      <li><b>Sets up the government:</b> three branches with separate powers (Articles I, II and III).</li>
+      <li><b>Limits that government:</b> it can only use the powers the Constitution gives it.</li>
+      <li><b>Protects rights:</b> the first ten amendments, the <b>Bill of Rights</b> (ratified 1791), protect freedoms like speech, religion, press, assembly, and a fair trial.</li>
+    </ul>
+    <p>It opens with “We the People,” the idea that the government's power comes from the people.</p>
+    <h3>Changing it is hard on purpose</h3>
+    <p>There have been <b>27 amendments</b>. The usual path: two-thirds of both the House and Senate propose an amendment, then three-fourths of the states (38 of 50) ratify it. (The Constitution also allows a convention called by two-thirds of the states, but that route has never been used.)</p>
+  </section>
+
+  <section class="lesson" id="g2">
+    <div class="lesson-head"><span class="step">02</span><h2>The three branches</h2></div>
+    <div class="br3">
+      <div><span class="tagline">Legislative · Article I</span><h3>Congress makes laws</h3><p><b>House of Representatives:</b> 435 voting members, seats divided by state population, 2-year terms. <b>Senate:</b> 100 members, 2 per state, 6-year terms. Congress also controls federal spending and can declare war.</p></div>
+      <div><span class="tagline">Executive · Article II</span><h3>The President carries out laws</h3><p>The President (4-year term, limit of two elected terms) leads the executive branch, the Vice President, the Cabinet and federal agencies, and is commander in chief of the military.</p></div>
+      <div><span class="tagline">Judicial · Article III</span><h3>Courts interpret laws</h3><p>The <b>Supreme Court</b> (nine justices today) and lower federal courts decide cases about what laws and the Constitution mean. Federal judges serve during “good behavior,” which in practice means for life.</p></div>
+    </div>
+    <div class="tw"><table class="t">
+      <tr><th>Office</th><th>Minimum age</th><th>Term</th></tr>
+      <tr><td>Representative</td><td>25</td><td>2 years</td></tr>
+      <tr><td>Senator</td><td>30</td><td>6 years</td></tr>
+      <tr><td>President</td><td>35</td><td>4 years</td></tr>
+      <tr><td>Federal judge</td><td>None set</td><td>Good behavior</td></tr>
+    </table></div>
+  </section>
+
+  <section class="lesson" id="g3">
+    <div class="lesson-head"><span class="step">03</span><h2>Checks and balances</h2></div>
+    <p>The framers worried about any one person or group gaining too much power. So each branch has ways to limit the others. This is called <b>checks and balances</b>, and it often means change happens slowly, which is part of the design.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Branch</th><th>Checks on others</th></tr>
+      <tr><td><b>Legislative</b></td><td>Override a veto (two-thirds of both chambers) · control spending · impeach and remove officials · Senate confirms judges and top officials · Senate approves treaties (two-thirds)</td></tr>
+      <tr><td><b>Executive</b></td><td>Veto bills · nominate judges · grant pardons for federal crimes · enforce (carry out) laws</td></tr>
+      <tr><td><b>Judicial</b></td><td>Declare laws or executive actions unconstitutional (<b>judicial review</b>, established in <i>Marbury v. Madison</i>, 1803)</td></tr>
+    </table></div>
+    <div class="try" id="cb"><span class="try-h">Try it · who holds this power?</span>
+      <p class="work">For each power, pick the branch that holds it.</p>
+      <div class="cb-list" id="cbList"></div>
+      <div class="row"><button class="btn ghost" type="button" id="cbReset">Shuffle and restart</button></div>
+      <p class="out" id="cbScore" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <section class="lesson" id="g4">
+    <div class="lesson-head"><span class="step">04</span><h2>How a bill becomes a law</h2></div>
+    <ol class="steps">
+      <li><b>Introduced.</b> Only a member of Congress can introduce a bill, in the House or the Senate. (Tax bills must start in the House.) Anyone can suggest an idea to their member.</li>
+      <li><b>Committee.</b> The bill goes to a committee of members who specialize in that topic. They may hold hearings, make changes (“markup”), and vote. Most bills never make it out of committee.</li>
+      <li><b>Floor vote.</b> The full chamber debates and votes. A simple majority passes it. In the Senate, ending debate on most bills takes 60 votes (cloture), so the filibuster can block a bill that has majority support.</li>
+      <li><b>Other chamber.</b> The bill goes through the same process in the other chamber. Both must pass the <b>exact same text</b>. If they differ, they negotiate (sometimes in a <b>conference committee</b>) and both vote again.</li>
+      <li><b>The President.</b> The President can <b>sign</b> it (it becomes law), <b>veto</b> it, or do nothing. If the President does nothing for 10 days (not counting Sundays) while Congress is in session, it becomes law. If Congress has adjourned in those 10 days, it's a <b>pocket veto</b> and the bill dies.</li>
+      <li><b>Veto override.</b> Congress can override a veto with a <b>two-thirds</b> vote in both the House and Senate. Overrides are rare.</li>
+    </ol>
+    <div class="try" id="bl"><span class="try-h">Try it · walk a bill through Congress</span>
+      <ul class="bill-path" id="blPath" aria-label="Path so far"></ul>
+      <div class="bill-card" id="blCard" aria-live="polite"></div>
+      <div class="row"><button class="btn ghost" type="button" id="blBack">Undo</button><button class="btn ghost" type="button" id="blReset">Start over</button></div>
+    </div>
+  </section>
+
+  <section class="lesson" id="g5">
+    <div class="lesson-head"><span class="step">05</span><h2>Federal vs state government</h2></div>
+    <p>The US uses <b>federalism</b>: power is shared between the national (federal) government and the 50 states. Each state has its own constitution, governor, legislature and courts. Local governments (counties, cities, school districts) get their powers from the state.</p>
+    <div class="grid2">
+      <div><span class="tagline">Federal</span><h3>Nationwide matters</h3><p>Printing money, the military and declaring war, foreign treaties, interstate and international trade, immigration and naturalization, the postal service.</p></div>
+      <div><span class="tagline">State &amp; local</span><h3>Most daily life</h3><p>Running elections, driver's licenses, most criminal law, public schools, marriage law, local police and fire, and zoning.</p></div>
+    </div>
+    <ul class="points">
+      <li><b>Shared powers:</b> both levels can tax, borrow, make and enforce laws, and run courts.</li>
+      <li><b>10th Amendment:</b> powers not given to the federal government, nor denied to the states, are reserved to the states or the people.</li>
+      <li><b>Supremacy Clause:</b> when a valid federal law conflicts with a state law, the federal law wins.</li>
+    </ul>
+  </section>
+
+  <section class="lesson" id="g6">
+    <div class="lesson-head"><span class="step">06</span><h2>Elections, including the 2026 midterms</h2></div>
+    <p>Federal general elections are held on the <b>Tuesday after the first Monday in November</b> in even-numbered years.</p>
+    <ul class="points">
+      <li><b>Presidential elections</b> (every 4 years) use the <b>Electoral College</b>. Each state gets electors equal to its House seats plus its two senators; DC gets 3. That's 538 in all, and a candidate needs <b>270</b> to win. Most states give all their electors to the statewide winner; Maine and Nebraska split theirs by congressional district.</li>
+      <li><b>Midterm elections</b> fall halfway through a presidential term. All 435 House seats are up, plus about a third of the Senate (senators' terms are staggered). Many states also elect governors, legislators and local officials, and vote on ballot measures.</li>
+    </ul>
+    <p class="callout"><span><b>The 2026 midterms are on Tuesday, November 3, 2026.</b> Every House seat and roughly a third of Senate seats are on the ballot, along with many state and local races.</span></p>
+    <h3>How to be ready to vote</h3>
+    <ol class="steps">
+      <li><b>Check you're eligible.</b> US citizen, meet your state's residency rules, and 18 by Election Day.</li>
+      <li><b>Register or check your registration</b> at <a href="https://vote.gov/" target="_blank" rel="noopener">vote.gov</a>. Deadlines vary by state; some allow same-day registration, and North Dakota has no voter registration.</li>
+      <li><b>Learn your options.</b> Early voting and mail-in (absentee) voting rules and deadlines vary by state. Your state or local election office has the official details.</li>
+      <li><b>Find your polling place</b> and what to bring, since ID rules also vary by state.</li>
+    </ol>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>What's the difference between Congress and the House?</summary><div class="a"><p>Congress is both chambers together: the House of Representatives and the Senate. “Congressman” or “congresswoman” usually refers to a House member, though senators are members of Congress too.</p></div></details>
+      <details><summary>Can the Supreme Court make laws?</summary><div class="a"><p>No. It decides cases. But its rulings on what the Constitution or a law means apply nationwide and can strike down laws, so its decisions have a large effect.</p></div></details>
+      <details><summary>Can the President declare war?</summary><div class="a"><p>The Constitution gives Congress the power to declare war. The President is commander in chief and directs the military. How these powers fit together has been debated for a long time.</p></div></details>
+      <details><summary>Why does a state's number of House seats change?</summary><div class="a"><p>Seats are reapportioned among the states after each census, every 10 years, based on population. The total stays at 435.</p></div></details>
+      <details><summary>How do I find who represents me?</summary><div class="a"><p>Search by your address on the official House and Senate websites (house.gov and senate.gov), or usa.gov's elected officials page.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://www.archives.gov/founding-docs/constitution-transcript" target="_blank" rel="noopener"><span class="src">National Archives</span><b>The Constitution: full text</b></a>
+      <a href="https://www.usa.gov/branches-of-government" target="_blank" rel="noopener"><span class="src">USA.gov</span><b>Branches of the U.S. government</b></a>
+      <a href="https://www.usa.gov/how-laws-are-made" target="_blank" rel="noopener"><span class="src">USA.gov</span><b>How laws are made</b></a>
+      <a href="https://www.congress.gov/legislative-process" target="_blank" rel="noopener"><span class="src">Congress.gov</span><b>The legislative process (videos)</b></a>
+      <a href="https://vote.gov/" target="_blank" rel="noopener"><span class="src">Vote.gov</span><b>Register to vote and check deadlines</b></a>
+      <a href="https://constitution.congress.gov/" target="_blank" rel="noopener"><span class="src">Congress.gov</span><b>Constitution Annotated</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>Nonpartisan civics education. For election rules and deadlines in your state, check vote.gov or your state election office.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  /* ---------- checks & balances matching ---------- */
+  const B = ['Legislative','Executive','Judicial'];
+  const P = [
+    ['Veto a bill passed by Congress', 1, 'The President can veto, and Congress can try to override.'],
+    ['Override a veto with a two-thirds vote', 0, 'Both the House and Senate must reach two-thirds.'],
+    ['Declare a law unconstitutional', 2, 'Judicial review, established in Marbury v. Madison (1803).'],
+    ['Nominate Supreme Court justices', 1, 'The President nominates; the Senate decides whether to confirm.'],
+    ['Confirm federal judges and Cabinet members', 0, 'The Senate gives “advice and consent.”'],
+    ['Impeach and remove federal officials', 0, 'The House impeaches (charges); the Senate holds the trial.'],
+    ['Grant pardons for federal crimes', 1, 'A presidential power in Article II.'],
+    ['Decide how federal money is spent', 0, 'The “power of the purse” belongs to Congress.'],
+    ['Rule that a presidential action is unconstitutional', 2, 'Courts can check the executive branch too.'],
+    ['Approve treaties (two-thirds vote)', 0, 'The President negotiates treaties; the Senate must approve them.']
+  ];
+  let order = [], ans = {};
+  function shuffle(a){ for (let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+  function cbPaint(){
+    const box = $('#cbList'); box.innerHTML = '';
+    order.forEach(k => {
+      const [q, a, e] = P[k];
+      const it = document.createElement('div'); it.className = 'cb-item';
+      const h = document.createElement('span'); h.className = 'q'; h.textContent = q; it.appendChild(h);
+      const cs = document.createElement('div'); cs.className = 'chipset'; cs.setAttribute('role', 'group'); cs.setAttribute('aria-label', 'Branch for: ' + q);
+      B.forEach((bn, bi) => {
+        const b = document.createElement('button'); b.type = 'button'; b.textContent = bn;
+        const picked = ans[k] === bi;
+        b.setAttribute('aria-pressed', picked);
+        if (ans[k] !== undefined){ if (bi === a) b.dataset.r = 'ok'; else if (picked) b.dataset.r = 'no'; }
+        b.addEventListener('click', () => { if (ans[k] !== undefined) return; ans[k] = bi; cbPaint(); });
+        cs.appendChild(b);
+      });
+      it.appendChild(cs);
+      if (ans[k] !== undefined){
+        const fb = document.createElement('span'); fb.className = 'fb ' + (ans[k] === a ? 'ok' : 'no');
+        fb.textContent = (ans[k] === a ? 'Correct. ' : 'Not quite: it\'s the ' + B[a] + ' branch. ') + e;
+        it.appendChild(fb);
+      }
+      box.appendChild(it);
+    });
+    const done = Object.keys(ans).length, right = Object.keys(ans).filter(k => ans[k] === P[k][1]).length;
+    $('#cbScore').innerHTML = done === P.length ? `You got <b>${right} of ${P.length}</b>. ${right >= 8 ? 'Nicely done.' : 'Review the table above and try again.'}` : done ? `${right} of ${done} correct so far.` : '';
+  }
+  function cbReset(){ order = shuffle(P.map((_, i) => i)); ans = {}; cbPaint(); }
+  $('#cbReset').addEventListener('click', cbReset);
+  cbReset();
+
+  /* ---------- bill simulator ---------- */
+  const N = {
+    start: {w:'Your idea', h:'A bill is born', t:'A member of Congress agrees to sponsor your bill. Where will it be introduced?', c:[['Introduce it in the House', 'h_intro'], ['Introduce it in the Senate', 's_intro']]},
+    h_intro: {w:'House', h:'Sent to committee', t:'The Speaker refers the bill to the relevant House committee. The committee holds hearings and a markup. What happens?', c:[['Committee approves it (with amendments)', 'h_floor'], ['Committee never acts on it', 'dead_comm']]},
+    s_intro: {w:'Senate', h:'Sent to committee', t:'The bill is referred to a Senate committee for hearings and markup. What happens?', c:[['Committee approves it', 's_floor'], ['Committee never acts on it', 'dead_comm']]},
+    h_floor: {w:'House floor', h:'Full House debates and votes', t:'The House needs a simple majority of those voting (218 if all 435 seats are filled and everyone votes).', c:[['It passes', 'h_pass'], ['It fails', 'dead_floor']]},
+    s_floor: {w:'Senate floor', h:'Full Senate debates', t:'To end debate on most bills, 60 senators must vote for cloture. Then passage needs a simple majority.', c:[['60+ vote to end debate, then it passes', 's_pass'], ['Filibustered: fewer than 60 vote to end debate', 'dead_fili']]},
+    h_pass: {w:'Senate', h:'On to the Senate', t:'The House-passed bill goes to the Senate, which runs its own committee and floor process.', c:[['Senate passes the identical bill', 'pres'], ['Senate passes a different version', 'conf'], ['Senate never takes it up', 'dead_other']]},
+    s_pass: {w:'House', h:'On to the House', t:'The Senate-passed bill goes to the House for its own committee and floor process.', c:[['House passes the identical bill', 'pres'], ['House passes a different version', 'conf'], ['House never takes it up', 'dead_other']]},
+    conf: {w:'Both chambers', h:'Working out the differences', t:'Both chambers must pass the exact same text. They negotiate, by trading amendments or in a conference committee.', c:[['They agree, and both pass the final text', 'pres'], ['They can\'t agree', 'dead_conf']]},
+    pres: {w:'The President', h:'On the President\'s desk', t:'The enrolled bill goes to the President, who has 10 days (Sundays excepted) to act.', c:[['Sign it', 'law_sign'], ['Veto it and send it back with objections', 'veto'], ['Do nothing while Congress is in session', 'law_10'], ['Do nothing, and Congress adjourns within the 10 days', 'dead_pocket']]},
+    veto: {w:'Congress', h:'Vetoed! Try to override', t:'Congress can override with a two-thirds vote in both chambers.', c:[['Two-thirds of both House and Senate vote to override', 'law_over'], ['Override fails in at least one chamber', 'dead_veto']]},
+    law_sign: {end:'law', w:'Law', h:'It\'s a law!', t:'The President signed it. It becomes a public law and is published and assigned a number. Agencies now carry it out, and courts may be asked to interpret it.'},
+    law_10: {end:'law', w:'Law', h:'Law without a signature', t:'Because Congress was in session and the President neither signed nor vetoed it within 10 days (Sundays excepted), it became law automatically. This is uncommon.'},
+    law_over: {end:'law', w:'Law', h:'Law by veto override', t:'Congress overrode the veto with two-thirds in both chambers. That\'s rare, and a strong check on the President.'},
+    dead_comm: {end:'dead', w:'Died', h:'Died in committee', t:'This is the most common fate. Most bills introduced in Congress never get out of committee. At the end of a two-year Congress, unfinished bills die and must be reintroduced.'},
+    dead_floor: {end:'dead', w:'Died', h:'Failed on the floor', t:'Without a majority, the bill fails. Supporters can try again later, often with changes.'},
+    dead_fili: {end:'dead', w:'Died', h:'Blocked by a filibuster', t:'Even with majority support, most bills need 60 votes to end Senate debate. Some measures, like budget reconciliation bills, have special rules with no filibuster.'},
+    dead_other: {end:'dead', w:'Died', h:'Stalled in the other chamber', t:'Passing one chamber isn\'t enough. If the other chamber never votes, the bill dies when the two-year Congress ends.'},
+    dead_conf: {end:'dead', w:'Died', h:'No agreement', t:'Because both chambers must pass identical text, a disagreement can sink a bill that both sides passed in some form.'},
+    dead_pocket: {end:'dead', w:'Died', h:'Pocket veto', t:'Congress adjourned, so it couldn\'t receive a veto message. The bill dies without a signature, and Congress can\'t override it.'},
+    dead_veto: {end:'dead', w:'Died', h:'Veto stands', t:'Without two-thirds in both chambers, the veto holds and the bill dies.'}
+  };
+  let hist = ['start'];
+  function blPaint(){
+    const id = hist[hist.length - 1], n = N[id];
+    $('#blPath').innerHTML = hist.map((h, i) => `<li class="${i === hist.length - 1 ? 'cur' : ''}">${N[h].w}</li>`).join('');
+    const c = $('#blCard'); c.className = 'bill-card' + (n.end ? ' ' + n.end : ''); c.innerHTML = '';
+    const w = document.createElement('span'); w.className = 'where'; w.textContent = 'Step ' + hist.length + ' · ' + n.w; c.appendChild(w);
+    const h = document.createElement('h3'); h.textContent = n.h; c.appendChild(h);
+    const p = document.createElement('p'); p.textContent = n.t; c.appendChild(p);
+    if (n.c){
+      const ch = document.createElement('div'); ch.className = 'bill-ch';
+      n.c.forEach(([lab, nx]) => { const b = document.createElement('button'); b.type = 'button'; b.textContent = lab; b.addEventListener('click', () => { hist.push(nx); blPaint(); const f = $('#blCard button'); if (f) f.focus(); }); ch.appendChild(b); });
+      c.appendChild(ch);
+    } else {
+      const p2 = document.createElement('p'); p2.className = 'work'; p2.textContent = 'Use Undo to try a different choice, or Start over.'; c.appendChild(p2);
+    }
+    $('#blBack').disabled = hist.length < 2;
+  }
+  $('#blBack').addEventListener('click', () => { if (hist.length > 1){ hist.pop(); blPaint(); } });
+  $('#blReset').addEventListener('click', () => { hist = ['start']; blPaint(); });
+  blPaint();
+})();
+</script>
+</body>
+</html>

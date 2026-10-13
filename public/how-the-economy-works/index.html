@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How the Economy Works: A Plain-English Guide · Shortutorial</title>
+<meta name="description" content="Understand the economy in plain English: supply and demand, how prices are set, inflation and the CPI, interest rates and the Federal Reserve, GDP, recessions and unemployment. With an interactive supply-and-demand graph and an inflation calculator.">
+<link rel="canonical" href="https://shortutorial.com/how-the-economy-works/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How the Economy Works: A Plain-English Guide · Shortutorial">
+<meta property="og:description" content="Understand the economy in plain English: supply and demand, how prices are set, inflation and the CPI, interest rates and the Federal Reserve, GDP, recessions and unemployment. With an interactive supply-and-demand graph and an inflation calculator.">
+<meta property="og:url" content="https://shortutorial.com/how-the-economy-works/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+.sd-wrap{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px}
+.sd-wrap svg{width:100%;max-width:440px;margin:0 auto}
+.sd-wrap text{font-family:var(--mono);font-size:11px;fill:var(--muted)}
+.sd-wrap .ax{stroke:var(--muted);stroke-width:1.5}
+.sd-wrap .dem{stroke:var(--accent);stroke-width:3;fill:none}
+.sd-wrap .sup{stroke:var(--amber);stroke-width:3;fill:none}
+.sd-wrap .old{stroke-width:1.5;stroke-dasharray:5 5;opacity:.55}
+.sd-wrap .guide{stroke:var(--muted);stroke-dasharray:3 4;stroke-width:1}
+.sd-wrap .eq{fill:var(--ink)}
+.sd-wrap .lab-d{fill:var(--accent);font-weight:600;font-size:13px}
+.sd-wrap .lab-s{fill:var(--amber);font-weight:600;font-size:13px}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.kv div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
+.kv small{display:block;font-family:var(--mono);font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.kv b{font-family:var(--display);font-size:1.15rem;color:var(--accent)}
+.try label.grow{flex:1 1 220px}
+.try .note{font-size:.9rem;color:var(--muted)}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"How the Economy Works: A Plain-English Guide","item":"https://shortutorial.com/how-the-economy-works/"}]},{"@type":"Article","@id":"https://shortutorial.com/how-the-economy-works/#article","headline":"How the Economy Works: A Plain-English Guide","description":"Understand the economy in plain English: supply and demand, how prices are set, inflation and the CPI, interest rates and the Federal Reserve, GDP, recessions and unemployment. With an interactive supply-and-demand graph and an inflation calculator.","url":"https://shortutorial.com/how-the-economy-works/","mainEntityOfPage":"https://shortutorial.com/how-the-economy-works/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Money","keywords":"economy, economics, supply and demand, inflation, cpi, interest rates, federal reserve, gdp, recession, unemployment, prices, fed","timeRequired":"PT15M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the President set interest rates?","acceptedAnswer":{"@type":"Answer","text":"No. The Federal Reserve's FOMC sets its policy rate independently. The President nominates Fed governors, including the chair, and the Senate confirms them."}},{"@type":"Question","name":"Does the Fed set mortgage rates?","acceptedAnswer":{"@type":"Answer","text":"Not directly. Mortgage rates follow longer-term interest rates set in markets, which are influenced by the Fed's moves and by what investors expect about inflation and the economy."}},{"@type":"Question","name":"Why not aim for 0% inflation?","acceptedAnswer":{"@type":"Answer","text":"The Fed says 2% over the longer run best fits its goals. A small positive rate gives it more room to cut rates in a downturn and lowers the risk of deflation, which can be very damaging."}},{"@type":"Question","name":"If inflation goes down, will prices fall back?","acceptedAnswer":{"@type":"Answer","text":"Usually not. Lower inflation means prices are rising more slowly , not falling. Prices actually falling broadly would be deflation."}},{"@type":"Question","name":"Where can I find today's numbers?","acceptedAnswer":{"@type":"Answer","text":"CPI and unemployment: bls.gov. GDP: bea.gov. Interest rate decisions: federalreserve.gov. All are free and official."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="how-the-economy-works">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=money">Money</a> / How the economy works</div>
+    <span class="eyebrow">Money · Economics basics</span>
+    <h1>How the Economy Works</h1>
+    <p class="lede">Why do prices rise? What does the Fed actually do? What's a recession? Learn the core ideas behind the headlines in six short lessons, and play with a live supply-and-demand graph and an inflation calculator.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~15 min read</span><span class="badge">6 lessons</span><span class="badge">Supply &amp; demand graph + calculator</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#e1">1 · Supply &amp; demand</a><a href="#e2">2 · Prices</a><a href="#e3">3 · Inflation</a><a href="#e4">4 · The Fed</a><a href="#e5">5 · GDP</a><a href="#e6">6 · Recessions &amp; jobs</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="e1">
+    <div class="lesson-head"><span class="step">01</span><h2>Supply and demand</h2></div>
+    <p>An <b>economy</b> is all the ways people produce, buy and sell goods and services. Because time, money and materials are limited (economists call this <b>scarcity</b>), we have to make choices. Prices help coordinate those choices.</p>
+    <ul class="points">
+      <li><b>Demand</b> is how much buyers want at each price. When the price goes up, people usually buy less. That's the <b>law of demand</b>, and why the demand curve slopes down.</li>
+      <li><b>Supply</b> is how much sellers will offer at each price. A higher price makes it worth producing more, so the supply curve slopes up.</li>
+      <li>Where the two curves cross is the <b>equilibrium</b>: the price at which the amount people want to buy equals the amount sellers want to sell.</li>
+    </ul>
+    <div class="try" id="sd"><span class="try-h">Try it · supply and demand graph</span>
+      <div class="chipset" id="sdPre" aria-label="Scenarios">
+        <button type="button" data-d="0" data-s="0" aria-pressed="true">Start</button>
+        <button type="button" data-d="20" data-s="0" aria-pressed="false">Heat wave: ice cream</button>
+        <button type="button" data-d="0" data-s="-20" aria-pressed="false">Bad harvest: coffee</button>
+        <button type="button" data-d="0" data-s="20" aria-pressed="false">Cheaper tech: TVs</button>
+        <button type="button" data-d="-20" data-s="0" aria-pressed="false">Fad ends: fidget toys</button>
+        <button type="button" data-d="15" data-s="15" aria-pressed="false">Both rise</button>
+      </div>
+      <div class="sd-wrap"><svg id="sdSvg" viewBox="0 0 320 260" role="img" aria-label="Supply and demand graph"></svg></div>
+      <div class="row">
+        <label class="grow">Demand shift: <span id="sdDv">none</span><input type="range" id="sdD" min="-30" max="30" step="1" value="0"></label>
+        <label class="grow">Supply shift: <span id="sdSv">none</span><input type="range" id="sdS" min="-30" max="30" step="1" value="0"></label>
+      </div>
+      <div class="kv" aria-live="polite">
+        <div><small>Equilibrium price</small><b id="sdP">$5.00</b></div>
+        <div><small>Quantity sold</small><b id="sdQ">500</b></div>
+        <div><small>Price change</small><b id="sdPc">0%</b></div>
+        <div><small>Quantity change</small><b id="sdQc">0%</b></div>
+      </div>
+      <p class="work" id="sdWork"></p>
+    </div>
+  </section>
+
+  <section class="lesson" id="e2">
+    <div class="lesson-head"><span class="step">02</span><h2>What moves prices</h2></div>
+    <p>A change in price moves you <i>along</i> a curve. A change in anything else <b>shifts</b> the whole curve. Shifts are what change the equilibrium price.</p>
+    <div class="grid2">
+      <div><span class="tagline">Shifts demand</span><h3>Buyers want more or less</h3><p>Income changes, tastes and trends, population, the price of substitutes (tea vs coffee) and complements (printers and ink), and what people expect prices to do next.</p></div>
+      <div><span class="tagline">Shifts supply</span><h3>Sellers can make more or less</h3><p>Costs of materials and labor, new technology, weather and disasters, the number of sellers, and taxes or subsidies.</p></div>
+    </div>
+    <div class="tw"><table class="t">
+      <tr><th>What happens</th><th>Price</th><th>Quantity</th></tr>
+      <tr><td>Demand rises</td><td>Up</td><td>Up</td></tr>
+      <tr><td>Demand falls</td><td>Down</td><td>Down</td></tr>
+      <tr><td>Supply rises</td><td>Down</td><td>Up</td></tr>
+      <tr><td>Supply falls</td><td>Up</td><td>Down</td></tr>
+    </table></div>
+    <p class="callout"><span><b>Shortages and surpluses.</b> If a price is held below equilibrium (say, by a price cap), people want more than sellers offer: a <b>shortage</b>. Held above it, sellers can't sell it all: a <b>surplus</b>. In a free market, those gaps push the price back toward equilibrium.</span></p>
+  </section>
+
+  <section class="lesson" id="e3">
+    <div class="lesson-head"><span class="step">03</span><h2>Inflation and the CPI</h2></div>
+    <p><b>Inflation</b> is a general rise in prices across the economy, so each dollar buys a bit less. One pricier item isn't inflation. Most prices rising together is. The opposite, a general fall in prices, is <b>deflation</b>.</p>
+    <p>The best-known measure in the US is the <b>Consumer Price Index (CPI)</b>, published monthly by the Bureau of Labor Statistics (BLS). It tracks the price of a “basket” of goods and services that urban households buy: food, housing, gas, medical care, clothes and more. The inflation rate you hear in the news is usually the CPI's change over the last 12 months.</p>
+    <div class="formula">Inflation rate = <span class="v">(CPI now − CPI a year ago) ÷ CPI a year ago × 100</span><small>“core” inflation leaves out food and energy, which swing a lot</small></div>
+    <ul class="points">
+      <li><b>Too much demand</b> (“demand-pull”): spending grows faster than the economy can produce.</li>
+      <li><b>Rising costs</b> (“cost-push”): energy, materials or wages get more expensive and businesses pass it on.</li>
+      <li><b>Expectations:</b> if everyone expects prices to rise, workers ask for raises and firms raise prices, which can keep it going.</li>
+    </ul>
+    <p>The Federal Reserve aims for <b>2% inflation</b> over time, measured by a related index (PCE prices). A little inflation is considered healthy; high or unpredictable inflation hurts savers and makes planning hard.</p>
+    <div class="try" id="inf"><span class="try-h">Try it · inflation calculator</span>
+      <div class="row">
+        <label>Amount ($)<input type="number" id="infA" value="100" min="0" step="1" inputmode="decimal"></label>
+        <label>Years<input type="number" id="infY" value="10" min="1" max="80" step="1" inputmode="numeric"></label>
+        <label>Average yearly inflation (%)<input type="number" id="infR" value="2" min="-5" max="50" step="0.1" inputmode="decimal"></label>
+      </div>
+      <div class="chipset" id="infPre" aria-label="Rate presets"><button type="button" data-r="2" aria-pressed="true">2% (Fed target)</button><button type="button" data-r="3" aria-pressed="false">3%</button><button type="button" data-r="5" aria-pressed="false">5%</button></div>
+      <p class="out" id="infOut" aria-live="polite"></p>
+      <p class="work" id="infWork"></p>
+      <p class="note">This assumes the same rate every year, which never happens in real life. For actual past prices, use the BLS CPI Inflation Calculator linked in the sources.</p>
+    </div>
+  </section>
+
+  <section class="lesson" id="e4">
+    <div class="lesson-head"><span class="step">04</span><h2>Interest rates and the Federal Reserve</h2></div>
+    <p>The <b>Federal Reserve</b> (“the Fed”) is the central bank of the United States. Congress gave it a <b>dual mandate</b>: <b>maximum employment</b> and <b>stable prices</b>. It also oversees banks and keeps the payment system running.</p>
+    <p>Its main tool is the <b>federal funds rate</b>, the interest rate banks charge each other for overnight loans. The Fed's <b>Federal Open Market Committee (FOMC)</b> meets eight times a year and sets a target range for it. That rate ripples out to credit cards, car loans, business loans and savings accounts, and influences mortgage rates.</p>
+    <div class="grid2">
+      <div><span class="tagline">Raise rates</span><h3>Cool things down</h3><p>Borrowing costs more, so people and businesses spend and invest less. Demand slows, which eases inflation, but it can also slow hiring.</p></div>
+      <div><span class="tagline">Cut rates</span><h3>Heat things up</h3><p>Borrowing is cheaper, so spending and investment pick up. That supports jobs, but too much can push inflation up.</p></div>
+    </div>
+    <p class="callout"><span><b>Why it takes time.</b> Rate changes can take many months to fully affect the economy. That's why the Fed watches forecasts, not just today's numbers.</span></p>
+    <p>Separately, <b>fiscal policy</b> (taxes and government spending) is decided by Congress and the President. The Fed handles <b>monetary policy</b>.</p>
+  </section>
+
+  <section class="lesson" id="e5">
+    <div class="lesson-head"><span class="step">05</span><h2>GDP: measuring the whole economy</h2></div>
+    <p><b>Gross domestic product (GDP)</b> is the total market value of all final goods and services produced in a country in a period. In the US, the Bureau of Economic Analysis (BEA) publishes it every quarter. It's the broadest single measure of how big the economy is and whether it's growing.</p>
+    <div class="formula">GDP = <span class="v">C + I + G + (X − M)</span><small>consumer spending + business investment + government spending + (exports − imports)</small></div>
+    <p>Consumer spending is the biggest piece of US GDP by far, about two-thirds.</p>
+    <ul class="points">
+      <li><b>Nominal GDP</b> uses today's prices. <b>Real GDP</b> removes inflation, so it shows whether we actually produced more. Growth figures in the news are real GDP, usually stated as an annual rate.</li>
+      <li><b>GDP per person</b> divides by population, a rough guide to average living standards.</li>
+      <li><b>What GDP misses:</b> unpaid work like caregiving, how income is shared, leisure time and environmental damage.</li>
+    </ul>
+  </section>
+
+  <section class="lesson" id="e6">
+    <div class="lesson-head"><span class="step">06</span><h2>Recessions and unemployment</h2></div>
+    <p>Economies move in a <b>business cycle</b>: expansions (growth) and contractions. A <b>recession</b> is a significant, widespread decline in economic activity lasting more than a few months.</p>
+    <p class="callout"><span><b>The “two quarters” myth.</b> Two quarters in a row of falling real GDP is a popular rule of thumb, but it's not the official US definition. Recession dates are set by the <b>National Bureau of Economic Research (NBER)</b>, which looks at many measures together: jobs, income, spending, sales and production. It often announces a recession months after it starts.</span></p>
+    <h3>Unemployment</h3>
+    <p>The <b>unemployment rate</b> is the share of the labor force who don't have a job but are available and have looked for one in the past four weeks. The BLS publishes it monthly in the “jobs report,” based on a survey of households.</p>
+    <div class="formula">Unemployment rate = <span class="v">unemployed ÷ labor force × 100</span><small>labor force = people working + people looking for work</small></div>
+    <ul class="points">
+      <li><b>Frictional:</b> between jobs or just starting out. Normal and healthy.</li>
+      <li><b>Structural:</b> skills or locations don't match the jobs available.</li>
+      <li><b>Cyclical:</b> caused by a recession, when demand falls and employers cut back.</li>
+    </ul>
+    <p>People who've given up looking aren't counted as unemployed, because they've left the labor force. That's one reason economists also watch the share of adults who have a job.</p>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Does the President set interest rates?</summary><div class="a"><p>No. The Federal Reserve's FOMC sets its policy rate independently. The President nominates Fed governors, including the chair, and the Senate confirms them.</p></div></details>
+      <details><summary>Does the Fed set mortgage rates?</summary><div class="a"><p>Not directly. Mortgage rates follow longer-term interest rates set in markets, which are influenced by the Fed's moves and by what investors expect about inflation and the economy.</p></div></details>
+      <details><summary>Why not aim for 0% inflation?</summary><div class="a"><p>The Fed says 2% over the longer run best fits its goals. A small positive rate gives it more room to cut rates in a downturn and lowers the risk of deflation, which can be very damaging.</p></div></details>
+      <details><summary>If inflation goes down, will prices fall back?</summary><div class="a"><p>Usually not. Lower inflation means prices are rising more <i>slowly</i>, not falling. Prices actually falling broadly would be deflation.</p></div></details>
+      <details><summary>Where can I find today's numbers?</summary><div class="a"><p>CPI and unemployment: bls.gov. GDP: bea.gov. Interest rate decisions: federalreserve.gov. All are free and official.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://www.federalreserve.gov/monetarypolicy/fomc.htm" target="_blank" rel="noopener"><span class="src">Federal Reserve</span><b>Federal Open Market Committee</b></a>
+      <a href="https://www.federalreserve.gov/faqs/economy_14400.htm" target="_blank" rel="noopener"><span class="src">Federal Reserve</span><b>Why does the Fed aim for 2 percent inflation?</b></a>
+      <a href="https://www.bls.gov/cpi/" target="_blank" rel="noopener"><span class="src">Bureau of Labor Statistics</span><b>Consumer Price Index</b></a>
+      <a href="https://www.bls.gov/data/inflation_calculator.htm" target="_blank" rel="noopener"><span class="src">Bureau of Labor Statistics</span><b>CPI Inflation Calculator</b></a>
+      <a href="https://www.bea.gov/data/gdp/gross-domestic-product" target="_blank" rel="noopener"><span class="src">Bureau of Economic Analysis</span><b>Gross Domestic Product</b></a>
+      <a href="https://www.nber.org/research/business-cycle-dating" target="_blank" rel="noopener"><span class="src">NBER</span><b>Business cycle dating</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>This is general education, not financial advice. For the latest numbers, check the BLS, BEA and Federal Reserve links in the sources.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  /* ---------- supply & demand ----------
+     Units: Q in hundreds (0-10), P in dollars (0-10).
+     Demand: P = 8 - 0.6Q + d   Supply: P = 2 + 0.6Q - s   (d, s in dollars) */
+  const W = 320, H = 260, L = 40, B = 225, T = 12, R = 305;
+  const x = q => L + (q / 10) * (R - L), y = p => B - (p / 10) * (B - T);
+  const eq = (d, s) => { const q = (6 + d + s) / 1.2; return {q, p: 8 - 0.6*q + d}; };
+  const base = eq(0, 0);
+  function line(fn, cls){
+    let pts = [];
+    for (let q = 0; q <= 10.001; q += 0.25){ const p = fn(q); if (p >= 0 && p <= 10) pts.push(x(q).toFixed(1) + ',' + y(p).toFixed(1)); }
+    return `<polyline class="${cls}" points="${pts.join(' ')}"/>`;
+  }
+  function draw(){
+    const d = +$('#sdD').value / 10, s = +$('#sdS').value / 10;
+    const e = eq(d, s);
+    let g = `<line class="ax" x1="${L}" y1="${T}" x2="${L}" y2="${B}"/><line class="ax" x1="${L}" y1="${B}" x2="${R}" y2="${B}"/>`;
+    g += `<text x="${L}" y="${B+16}">0</text><text x="${R}" y="${B+16}" text-anchor="end">Quantity →</text>`;
+    g += `<text x="${L-6}" y="${T+8}" text-anchor="end">$10</text><text x="${L-6}" y="${y(5)+4}" text-anchor="end">$5</text>`;
+    g += `<text x="12" y="${T+60}" transform="rotate(-90 12 ${T+60})" text-anchor="middle">Price</text>`;
+    if (d) g += line(q => 8 - 0.6*q, 'dem old');
+    if (s) g += line(q => 2 + 0.6*q, 'sup old');
+    g += line(q => 8 - 0.6*q + d, 'dem') + line(q => 2 + 0.6*q - s, 'sup');
+    const dEnd = Math.min(10, (8 + d - 0.3) / 0.6), sEnd = Math.min(10, (9.7 - 2 + s) / 0.6);
+    g += `<text class="lab-d" x="${x(Math.max(0.3, Math.min(9.6, dEnd)))}" y="${y(Math.max(0.4, 8 - 0.6*Math.min(9.6, dEnd) + d)) - 6}" text-anchor="middle">D</text>`;
+    g += `<text class="lab-s" x="${x(Math.max(0.3, Math.min(9.6, sEnd)))}" y="${y(Math.min(9.6, 2 + 0.6*Math.min(9.6, sEnd) - s)) - 6}" text-anchor="middle">S</text>`;
+    if (e.q > 0 && e.q < 10 && e.p > 0 && e.p < 10){
+      g += `<line class="guide" x1="${L}" y1="${y(e.p)}" x2="${x(e.q)}" y2="${y(e.p)}"/><line class="guide" x1="${x(e.q)}" y1="${y(e.p)}" x2="${x(e.q)}" y2="${B}"/>`;
+      g += `<circle class="eq" cx="${x(e.q)}" cy="${y(e.p)}" r="5"/>`;
+      g += `<text x="${x(e.q)+8}" y="${y(e.p)-8}" style="fill:var(--ink)">E</text>`;
+    }
+    $('#sdSvg').innerHTML = g;
+    const lab = v => v === 0 ? 'none' : (v > 0 ? 'right (+' + v + ')' : 'left (' + v + ')');
+    $('#sdDv').textContent = lab(+$('#sdD').value); $('#sdSv').textContent = lab(+$('#sdS').value);
+    $('#sdP').textContent = '$' + e.p.toFixed(2);
+    $('#sdQ').textContent = Math.round(e.q * 100).toLocaleString();
+    const pc = (e.p / base.p - 1) * 100, qc = (e.q / base.q - 1) * 100;
+    const sg = v => (v > 0.05 ? '+' : '') + v.toFixed(0) + '%';
+    $('#sdPc').textContent = sg(pc); $('#sdQc').textContent = sg(qc);
+    let w = [];
+    if (d > 0) w.push('Demand shifted right: buyers want more at every price.');
+    if (d < 0) w.push('Demand shifted left: buyers want less at every price.');
+    if (s > 0) w.push('Supply shifted right: sellers offer more at every price.');
+    if (s < 0) w.push('Supply shifted left: sellers offer less at every price.');
+    if (!w.length) w.push('Start: demand (D) and supply (S) cross at $5.00 and 500 units. Move a slider or pick a scenario.');
+    else w.push(`New equilibrium: price ${pc >= 0 ? 'up' : 'down'} ${Math.abs(pc).toFixed(0)}% to $${e.p.toFixed(2)}, quantity ${qc >= 0 ? 'up' : 'down'} ${Math.abs(qc).toFixed(0)}%. Dashed lines show the original curves.`);
+    $('#sdWork').textContent = w.join('\n');
+  }
+  document.querySelectorAll('#sdPre button').forEach(b => b.addEventListener('click', () => {
+    $('#sdD').value = b.dataset.d; $('#sdS').value = b.dataset.s;
+    document.querySelectorAll('#sdPre button').forEach(x2 => x2.setAttribute('aria-pressed', x2 === b));
+    draw();
+  }));
+  ['#sdD','#sdS'].forEach(id => $(id).addEventListener('input', () => { document.querySelectorAll('#sdPre button').forEach(x2 => x2.setAttribute('aria-pressed', 'false')); draw(); }));
+  draw();
+
+  /* ---------- inflation calculator ---------- */
+  const money = n => '$' + n.toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2});
+  function calc(){
+    const a = parseFloat($('#infA').value), yrs = parseFloat($('#infY').value), r = parseFloat($('#infR').value);
+    document.querySelectorAll('#infPre button').forEach(b => b.setAttribute('aria-pressed', +b.dataset.r === r));
+    if (!(a >= 0) || !(yrs > 0) || !isFinite(r) || r <= -100){ $('#infOut').textContent = 'Enter an amount, years and a rate.'; $('#infWork').textContent = ''; return; }
+    const f = Math.pow(1 + r/100, yrs);
+    $('#infOut').innerHTML = `Something that costs <b>${money(a)}</b> today would cost about <b>${money(a*f)}</b> in ${yrs} year${yrs === 1 ? '' : 's'}. And ${money(a)} stashed in cash would buy only what <b>${money(a/f)}</b> buys today.`;
+    let w = `${money(a)} × (1 + ${r}%)^${yrs} = ${money(a*f)}\nPrices change by ${((f-1)*100).toFixed(1)}% in total.`;
+    if (r > 0) w += `\nRule of 70: at ${r}% a year, prices double in about ${(70/r).toFixed(0)} years.`;
+    $('#infWork').textContent = w;
+  }
+  document.querySelectorAll('#infPre button').forEach(b => b.addEventListener('click', () => { $('#infR').value = b.dataset.r; calc(); }));
+  live($('#inf'), calc);
+})();
+</script>
+</body>
+</html>

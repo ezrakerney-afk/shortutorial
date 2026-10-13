@@ -979,5 +979,29 @@ window.TUTORIALS = [
     category: "Life skills",
     tags: ["stoicism", "stoic", "marcus aurelius", "epictetus", "seneca", "meditations", "dichotomy of control", "journaling", "negative visualization", "philosophy", "anxiety", "mindset"],
     minutes: 12
+  },
+  {
+    slug: "how-the-economy-works",
+    title: "How the Economy Works: A Plain-English Guide",
+    summary: "Supply and demand, inflation, the Fed, GDP and recessions, with a live graph",
+    category: "Money",
+    tags: ["economy", "economics", "supply and demand", "inflation", "cpi", "interest rates", "federal reserve", "gdp", "recession", "unemployment", "prices", "fed"],
+    minutes: 15
+  },
+  {
+    slug: "night-sky-astronomy",
+    title: "Stargazing for Beginners: Read the Night Sky",
+    summary: "Moon phases, the North Star, seasonal constellations and gear, with a Moon calculator",
+    category: "Science",
+    tags: ["stargazing", "astronomy", "night sky", "moon phase", "north star", "big dipper", "constellations", "planets", "light pollution", "binoculars", "telescope", "orion"],
+    minutes: 14
+  },
+  {
+    slug: "us-government-basics",
+    title: "How the US Government Works: A Nonpartisan Guide",
+    summary: "The Constitution, three branches, checks and balances, and how a bill becomes law",
+    category: "Life skills",
+    tags: ["us government", "civics", "constitution", "three branches", "checks and balances", "how a bill becomes law", "congress", "supreme court", "midterm elections", "electoral college", "veto", "federalism"],
+    minutes: 15
   }
 ];
