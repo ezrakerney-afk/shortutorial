@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Stop Procrastinating · Shortutorial</title>
+<meta name="description" content="Research-backed ways to stop procrastinating: why we really put things off, the tiny first step, the Pomodoro Technique, if-then plans, cutting distractions and self-compassion, with a Pomodoro timer, task list and task breaker.">
+<link rel="canonical" href="https://shortutorial.com/stop-procrastinating/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How to Stop Procrastinating · Shortutorial">
+<meta property="og:description" content="Research-backed ways to stop procrastinating: why we really put things off, the tiny first step, the Pomodoro Technique, if-then plans, cutting distractions and self-compassion, with a Pomodoro timer, task list and task breaker.">
+<meta property="og:url" content="https://shortutorial.com/stop-procrastinating/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+
+.try input[type=text].wide,.try select.wide{width:100%;box-sizing:border-box;font-family:var(--body)}
+.try label.grow{flex:1;min-width:200px}
+/* Steps list */
+.tlist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.tlist li{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+.tlist li.done .txt{text-decoration:line-through;color:var(--muted)}
+.tlist li.cur{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}
+.tlist input[type=checkbox]{width:18px;height:18px;accent-color:var(--accent);flex:none;margin:0}
+.tlist .txt{flex:1;min-width:0;overflow-wrap:anywhere;outline:none;border-radius:4px}
+.tlist .txt:focus{background:var(--accent-soft)}
+.tlist .min{font-family:var(--mono);font-size:.7rem;color:var(--muted);flex:none}
+.tlist .pc{font-family:var(--mono);font-size:.72rem;color:var(--amber);flex:none}
+.ib{all:unset;cursor:pointer;font-family:var(--mono);font-size:.72rem;color:var(--muted);padding:3px 7px;border-radius:6px;border:1px solid var(--line);flex:none}
+.ib:hover{color:var(--accent);border-color:var(--accent)}
+.ib:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.ib[aria-pressed=true]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+/* Timer */
+.pomo{display:grid;grid-template-columns:200px 1fr;gap:20px;align-items:center}
+@media (max-width:560px){.pomo{grid-template-columns:1fr;justify-items:center}}
+.ring{position:relative;width:200px;height:200px}
+.ring svg{width:200px;height:200px;transform:rotate(-90deg)}
+.ring .tm{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.ring .clock{font-family:var(--mono);font-size:2.6rem;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.ring .md{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}
+.pside{display:flex;flex-direction:column;gap:12px;width:100%;min-width:0}
+.dots{display:flex;gap:6px;align-items:center;font-family:var(--mono);font-size:.75rem;color:var(--muted)}
+.dots i{width:12px;height:12px;border-radius:50%;border:1.5px solid var(--accent)}
+.dots i.on{background:var(--accent)}
+.try input.mins{width:70px}
+.ifthen{font-family:var(--display);font-size:1.15rem;font-weight:600;line-height:1.45;padding:14px 16px;border-radius:10px;background:var(--surface);border:1px solid var(--line)}
+.ifthen b{color:var(--accent)}
+.cur-task{font-family:var(--display);font-weight:600;font-size:1.05rem;overflow-wrap:anywhere}
+.cur-task small{display:block;font-family:var(--mono);font-size:.7rem;color:var(--muted);font-weight:400;text-transform:uppercase;letter-spacing:.08em}
+</style>
+</head>
+<body data-slug="stop-procrastinating">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=productivity">Life skills</a> / Stop procrastinating</div>
+    <span class="eyebrow">Life skills · Productivity</span>
+    <h1>How to Stop Procrastinating</h1>
+    <p class="lede">Procrastination isn't laziness, and willpower alone rarely fixes it. Six short lessons cover what psychologists have found actually helps, with a timer and task breaker so you can start right now.</p>
+    <div class="badges"><span class="badge level">Practical</span><span class="badge">~12 min</span><span class="badge">6 lessons</span><span class="badge">Pomodoro timer</span><span class="badge">5-question quiz</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#pr1">1 · Why</a><a href="#pr2">2 · Tiny step</a><a href="#pr3">3 · Pomodoro</a><a href="#pr4">4 · If-then plans</a><a href="#pr5">5 · Distractions</a><a href="#pr6">6 · Self-compassion</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="pr1">
+    <div class="lesson-head"><span class="step">01</span><h2>Why we really procrastinate</h2></div>
+    <p>Procrastination is putting off something you intended to do, even though you expect the delay to make things worse. Psychologist Fuschia Sirois puts it neatly: “all procrastination is delay, but not all delay is procrastination.” Waiting for information you need isn't procrastinating.</p>
+    <p>Research by Sirois and Timothy Pychyl points to the real cause: <b>mood repair</b>. A task makes us feel something unpleasant (bored, anxious, confused, afraid of doing it badly), and avoiding it makes that feeling go away right now. The relief is a reward, so the habit gets stronger each time. Our future self gets stuck with the bill.</p>
+    <ul class="points">
+      <li>It's very common: in an <a href="https://www.apa.org/news/podcasts/speaking-of-psychology/procrastinate" target="_blank" rel="noopener">American Psychological Association interview</a>, Sirois estimates 15% to 25% of adults procrastinate chronically, and around half of college students do.</li>
+      <li>It's <b>not a time-management problem</b> at heart. That's why calendars and to-do lists on their own often don't fix it.</li>
+      <li>Chronic procrastination is linked to more stress and worse health habits, so it's worth tackling.</li>
+    </ul>
+    <p class="callout"><span><b>The key idea:</b> you don't need to <i>feel like</i> doing the task. Every method below works by making the start feel smaller, clearer or less unpleasant.</span></p>
+  </section>
+
+  <section class="lesson" id="pr2">
+    <div class="lesson-head"><span class="step">02</span><h2>Shrink the first step until it's easy</h2></div>
+    <p>“Do taxes” is a cloud of dread. “Find last year's tax return” is a five-minute job. Vague tasks feel bigger and scarier than they are, so the brain avoids them.</p>
+    <ul class="points">
+      <li><b>Name the next physical action.</b> Not “work on the report” but “open the report and write the headings”.</li>
+      <li><b>Promise yourself only five minutes.</b> Once you start, it's usually easier to keep going. If you still want to stop after five minutes, you're allowed to.</li>
+      <li><b>Lower the bar for the first try.</b> A messy first draft or a half-cleaned room is progress. “Good enough to improve” beats “perfect someday”.</li>
+    </ul>
+    <div class="try"><span class="try-h">Try it · break a task into 5-minute steps</span>
+      <div class="row">
+        <label class="grow">The task you're avoiding<input type="text" class="wide" id="bkTask" placeholder="e.g. Write my history essay" maxlength="120"></label>
+        <label>What kind of task?<select id="bkType"><option value="writing">Writing</option><option value="study">Studying</option><option value="clean">Cleaning or tidying</option><option value="admin">Paperwork, bills or forms</option><option value="email">Emails or calls</option><option value="other" selected>Something else</option></select></label>
+      </div>
+      <div class="row"><button class="btn" id="bkGo" type="button">Break it down</button></div>
+      <ol class="tlist" id="bkList" aria-label="5-minute steps"></ol>
+      <div class="row" id="bkAct" hidden><button class="btn ghost" id="bkAdd" type="button">Add these to my task list ↓</button><span class="work" id="bkNote">Click a step to edit it. These are starter steps; make them fit your task.</span></div>
+    </div>
+  </section>
+
+  <section class="lesson" id="pr3">
+    <div class="lesson-head"><span class="step">03</span><h2>The Pomodoro Technique</h2></div>
+    <p>Created by Francesco Cirillo in the late 1980s and named after his tomato-shaped kitchen timer, the <a href="https://www.francescocirillo.com/products/the-pomodoro-technique" target="_blank" rel="noopener">Pomodoro Technique</a> turns work into short, timed sprints:</p>
+    <ol class="steps">
+      <li>Pick one task.</li>
+      <li>Set a timer for <b>25 minutes</b> and work only on that task until it rings.</li>
+      <li>Take a <b>short break of about 5 minutes</b>. Stand up, stretch, get water. Not your phone, if you can help it.</li>
+      <li>After <b>four</b> pomodoros, take a <b>longer break of 15 to 30 minutes</b>.</li>
+    </ol>
+    <p>Why it helps: 25 minutes feels doable, so starting is easier. A visible finish line makes it easier to ignore distractions. If something pops into your head, jot it down and get back to the task.</p>
+    <div class="try" id="pomo"><span class="try-h">Try it · Pomodoro timer and task list</span>
+      <div class="pomo">
+        <div class="ring"><svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="88" fill="none" stroke="var(--line)" stroke-width="10"/><circle id="pRing" cx="100" cy="100" r="88" fill="none" stroke="var(--accent)" stroke-width="10" stroke-linecap="round" stroke-dasharray="552.92" stroke-dashoffset="0"/></svg>
+          <div class="tm"><span class="md" id="pMode">Focus</span><span class="clock" id="pClock" role="timer" aria-live="off">25:00</span></div></div>
+        <div class="pside">
+          <div class="cur-task" id="pCur"><small>Working on</small>Pick a task from your list below, or just start.</div>
+          <div class="row"><button class="btn" id="pStart" type="button">Start</button><button class="btn ghost" id="pReset" type="button">Reset</button><button class="btn ghost" id="pSkip" type="button">Skip</button></div>
+          <div class="dots" id="pDots" aria-label="Pomodoros completed"></div>
+          <div class="chipset" id="pModes" role="group" aria-label="Timer mode"><button type="button" data-m="focus" aria-pressed="true">Focus</button><button type="button" data-m="short" aria-pressed="false">Short break</button><button type="button" data-m="long" aria-pressed="false">Long break</button></div>
+        </div>
+      </div>
+      <div class="row"><label>Focus (min)<input type="number" class="mins" id="dFocus" min="1" max="90" value="25"></label><label>Short break<input type="number" class="mins" id="dShort" min="1" max="30" value="5"></label><label>Long break<input type="number" class="mins" id="dLong" min="1" max="60" value="15"></label><label class="tog" style="flex-direction:row;align-items:center;gap:6px"><input type="checkbox" id="pSound" checked> Chime</label></div>
+      <div class="out" id="pOut" aria-live="polite"></div>
+      <h3 style="margin-top:4px">Task list</h3>
+      <form class="row" id="tForm" onsubmit="return false"><label class="grow">Add a task<input type="text" class="wide" id="tNew" placeholder="e.g. Reply to Sam's email" maxlength="140"></label><button class="btn" id="tAdd" type="submit">Add</button></form>
+      <ul class="tlist" id="tList" aria-label="Your tasks"></ul>
+      <div class="row"><button class="ib" id="tClearDone" type="button">Clear completed</button><span class="work" id="tNote">Tasks are saved in this browser only.</span></div>
+    </div>
+  </section>
+
+  <section class="lesson" id="pr4">
+    <div class="lesson-head"><span class="step">04</span><h2>Make an if-then plan</h2></div>
+    <p>“I'll exercise more” rarely works. “<b>When</b> I get home from work, <b>then</b> I'll put on my running shoes” works much better. Psychologists call this an <b>implementation intention</b>: you decide in advance exactly when, where and how you'll act.</p>
+    <p>It's one of the best-supported tricks in behavior research. A <a href="https://doi.org/10.1016/S0065-2601(06)38002-1" target="_blank" rel="noopener">2006 review by Peter Gollwitzer and Paschal Sheeran</a> combined 94 tests and found a medium-to-large effect on reaching goals. If-then plans especially help with <b>getting started</b> and with <b>shielding a task from distractions</b>.</p>
+    <div class="try"><span class="try-h">Try it · write your if-then plan</span>
+      <div class="row"><label class="grow">When / if…<input type="text" class="wide" id="ifW" value="it's 9 a.m. and I sit down at my desk"></label></div>
+      <div class="row"><label class="grow">Then I will…<input type="text" class="wide" id="ifT" value="open my essay and write for one pomodoro before checking messages"></label></div>
+      <div class="ifthen" id="ifOut"></div>
+      <div class="row"><button class="btn ghost" id="ifAdd" type="button">Add to my task list</button><span class="work">Tip: make the “when” a specific time, place or cue you can't miss.</span></div>
+    </div>
+    <p>You can also plan for obstacles: “<b>If</b> I feel the urge to check my phone, <b>then</b> I'll take one deep breath and keep going for two more minutes.”</p>
+  </section>
+
+  <section class="lesson" id="pr5">
+    <div class="lesson-head"><span class="step">05</span><h2>Make distractions harder to reach</h2></div>
+    <p>Willpower is unreliable, so change your surroundings instead. Make the task easy to start and distractions a little annoying to reach.</p>
+    <ul class="points">
+      <li><b>Put your phone in another room</b>, or at least out of sight and face down. Silence notifications for the length of a pomodoro.</li>
+      <li><b>Use your phone's focus tools:</b> <i>Focus</i> on iPhone (Settings &gt; Focus) or <i>Focus mode</i> in Digital Wellbeing on Android pause distracting apps while you work.</li>
+      <li><b>Close extra tabs and apps.</b> Keep open only what the current task needs. Website blockers can help for stubborn habits.</li>
+      <li><b>Set up the night before:</b> lay out your gym clothes, leave the document open, put the bills on the table. A ready start is an easy start.</li>
+      <li><b>Pick your best hours.</b> Do the dreaded task when your energy is highest, and save easy tasks for slumps.</li>
+    </ul>
+  </section>
+
+  <section class="lesson" id="pr6">
+    <div class="lesson-head"><span class="step">06</span><h2>Be kind to yourself (it actually works)</h2></div>
+    <p>It sounds backwards, but beating yourself up makes procrastination <b>worse</b>. Guilt and shame are more bad feelings to escape, which feeds the avoid-and-relieve loop.</p>
+    <p>In a <a href="https://www.bps.org.uk/research-digest/cure-procrastination-forgive-yourself" target="_blank" rel="noopener">2010 study of 134 first-year university students</a>, Michael Wohl, Timothy Pychyl and Shannon Bennett found that students who <b>forgave themselves</b> for procrastinating before their first midterms procrastinated <b>less</b> when studying for the next ones.</p>
+    <ul class="points">
+      <li><b>Talk to yourself like a friend.</b> “That got away from me. What's one small thing I can do now?” beats “I'm hopeless.”</li>
+      <li><b>Watch out for perfectionism.</b> Fear of doing it badly is a common reason not to start. Aim for a first draft.</li>
+      <li><b>Notice the feeling, then start anyway.</b> “I feel anxious about this, and I'll do five minutes” is allowed.</li>
+    </ul>
+    <p class="callout"><span><b>When it's more than a habit:</b> if putting things off is constant, hurts your work or relationships, or comes with trouble focusing, low mood or anxiety, talk to a doctor or counselor. ADHD, depression and anxiety can all make starting tasks much harder, and they're treatable.</span></p>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Is procrastination just laziness?</summary><div class="a"><p>No. Lazy means not wanting to do anything. People who procrastinate often want to do the task and feel bad about not doing it. Research shows it's mostly about avoiding unpleasant feelings the task brings up.</p></div></details>
+      <details><summary>Does the Pomodoro Technique have to be 25 minutes?</summary><div class="a"><p>No. 25 minutes is Cirillo's standard, but the idea is a short, focused stretch with a real break. If 25 feels impossible, start with 10. If you're deep in flow, 45 or 50 minutes with a longer break is fine. You can change the times in the timer above.</p></div></details>
+      <details><summary>Do “I work better under pressure” people really?</summary><div class="a"><p>A deadline can make starting easier because the fear of missing it beats the dislike of the task. But last-minute work leaves no time to fix mistakes, and research links chronic procrastination to more stress and lower-quality work.</p></div></details>
+      <details><summary>What if I keep breaking my plans?</summary><div class="a"><p>Make the plan smaller, not stricter. Shrink the first step, shorten the timer, and use an if-then plan for the exact moment you usually slip. Forgive the miss and restart at the next cue.</p></div></details>
+      <details><summary>Will the timer keep running if I switch tabs?</summary><div class="a"><p>Yes. It keeps time from the clock, so it stays accurate in a background tab, and the countdown shows in the tab title. Some phones pause web pages when the screen locks; the timer catches up when you come back.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://www.apa.org/news/podcasts/speaking-of-psychology/procrastinate" target="_blank" rel="noopener"><span class="src">American Psychological Association</span><b>Why we procrastinate, with Fuschia Sirois, PhD</b></a>
+      <a href="https://eprints.whiterose.ac.uk/91793/" target="_blank" rel="noopener"><span class="src">Sirois &amp; Pychyl (2013)</span><b>Procrastination and the priority of short-term mood regulation</b></a>
+      <a href="https://doi.org/10.1016/S0065-2601(06)38002-1" target="_blank" rel="noopener"><span class="src">Gollwitzer &amp; Sheeran (2006)</span><b>Implementation intentions and goal achievement: a meta-analysis</b></a>
+      <a href="https://www.bps.org.uk/research-digest/cure-procrastination-forgive-yourself" target="_blank" rel="noopener"><span class="src">British Psychological Society</span><b>Wohl, Pychyl &amp; Bennett (2010): forgive yourself to procrastinate less</b></a>
+      <a href="https://www.francescocirillo.com/products/the-pomodoro-technique" target="_blank" rel="noopener"><span class="src">Francesco Cirillo</span><b>The Pomodoro Technique (official)</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/leaderboard/">Leaderboard</a></nav></span><span>General self-help information, not medical advice.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const store = {
+    get(k, d){ try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } },
+    set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
+  };
+
+  /* ---------- Task list ---------- */
+  let tasks = store.get('sp-tasks', []);
+  let curId = store.get('sp-cur', null);
+  const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+  function save(){ store.set('sp-tasks', tasks); store.set('sp-cur', curId); }
+  function addTask(text){ text = text.trim(); if (!text) return; tasks.push({id: uid(), t: text.slice(0, 140), done: false, p: 0}); save(); renderTasks(); }
+  function renderTasks(){
+    const ul = $('#tList');
+    if (!tasks.length){ ul.innerHTML = '<li style="color:var(--muted);justify-content:center">No tasks yet. Add one above, or break a task down in lesson 2.</li>'; }
+    else ul.innerHTML = tasks.map(t => `<li class="${t.done ? 'done' : ''} ${t.id === curId ? 'cur' : ''}" data-id="${t.id}">
+      <input type="checkbox" ${t.done ? 'checked' : ''} aria-label="Mark done: ${esc(t.t)}">
+      <span class="txt">${esc(t.t)}</span>${t.p ? `<span class="pc" title="Pomodoros spent">● ${t.p}</span>` : ''}
+      <button class="ib" type="button" data-act="focus" aria-pressed="${t.id === curId}">${t.id === curId ? 'Focusing' : 'Focus'}</button>
+      <button class="ib" type="button" data-act="del" aria-label="Delete task: ${esc(t.t)}">✕</button></li>`).join('');
+    const cur = tasks.find(t => t.id === curId);
+    $('#pCur').innerHTML = `<small>Working on</small>${cur ? esc(cur.t) : 'Pick a task from your list below, or just start.'}`;
+  }
+  $('#tList').addEventListener('click', e => {
+    const li = e.target.closest('li[data-id]'); if (!li) return;
+    const t = tasks.find(x => x.id === li.dataset.id); if (!t) return;
+    const act = e.target.dataset.act;
+    if (act === 'del'){ tasks = tasks.filter(x => x !== t); if (curId === t.id) curId = null; }
+    else if (act === 'focus'){ curId = curId === t.id ? null : t.id; }
+    else return;
+    save(); renderTasks();
+  });
+  $('#tList').addEventListener('change', e => {
+    const li = e.target.closest('li[data-id]'); if (!li) return;
+    const t = tasks.find(x => x.id === li.dataset.id); if (!t) return;
+    t.done = e.target.checked;
+    if (t.done && curId === t.id){
+      curId = null;
+      const next = tasks.find(x => !x.done);
+      if (next){ curId = next.id; $('#pOut').innerHTML = `<span class="ok">Done!</span> Next up: <b>${esc(next.t)}</b>`; }
+      else $('#pOut').innerHTML = '<span class="ok">Every task is done. Nice work.</span>';
+    }
+    save(); renderTasks();
+  });
+  $('#tForm').addEventListener('submit', () => { addTask($('#tNew').value); $('#tNew').value = ''; $('#tNew').focus(); });
+  $('#tClearDone').addEventListener('click', () => { tasks = tasks.filter(t => !t.done); save(); renderTasks(); });
+  renderTasks();
+
+  /* ---------- Task breaker ---------- */
+  const T = {
+    writing: ['Open a blank document and give it a title', 'Write 3 bullet points: the main things you want to say about {t}', 'Write one messy sentence under each bullet (no fixing yet)', 'Turn the first bullet into a rough paragraph', 'Turn the next bullet into a rough paragraph', 'Read it once and fix only the worst sentence'],
+    study: ['Clear your desk and get out what you need for {t}', 'Skim the headings or outline of one section', 'Write 3 questions you need to be able to answer', 'Read one short section and sum it up in 2 lines', 'Answer your 3 questions without looking', 'Write down what to review next time'],
+    clean: ['Grab a trash bag and throw out obvious trash', 'Put away 10 things that have a home', 'Clear and wipe one surface', 'Deal with one pile (dishes, laundry or mail)', 'Sweep or vacuum the most-used spot', 'Take a look and pick the next 5-minute area'],
+    admin: ['Find the form, bill or login you need for {t}', 'List the information or documents it asks for', 'Gather the first two items on the list', 'Fill in all the easy parts', 'Fill in the rest, or write down exactly what\'s missing', 'Submit it, pay it, or put the next step on your calendar'],
+    email: ['Open the message and reread what\'s being asked', 'Write a one-sentence answer, even if rough', 'Add any details or dates they need', 'Read it once, fix typos, and hit send', 'Pick the next message and repeat'],
+    other: ['Write one sentence about what “done” looks like for {t}', 'List every step you can think of, in any order', 'Do the smallest step on the list', 'Do the next smallest step', 'Do one more step', 'Write down where you stopped and the very next step']
+  };
+  let bkSteps = [];
+  function renderSteps(){
+    $('#bkList').innerHTML = bkSteps.map((s, i) => `<li><span class="min">5 min</span><span class="txt" contenteditable="true" spellcheck="true" data-i="${i}" aria-label="Step ${i + 1}">${esc(s)}</span></li>`).join('');
+    $('#bkAct').hidden = !bkSteps.length;
+  }
+  $('#bkList').addEventListener('input', e => { const i = e.target.dataset.i; if (i != null) bkSteps[+i] = e.target.textContent; });
+  $('#bkList').addEventListener('keydown', e => { if (e.key === 'Enter' && e.target.isContentEditable){ e.preventDefault(); e.target.blur(); } });
+  $('#bkGo').addEventListener('click', () => {
+    const raw = $('#bkTask').value.trim();
+    const t = raw ? '“' + raw + '”' : 'this task';
+    bkSteps = T[$('#bkType').value].map(s => s.replace('{t}', t));
+    renderSteps();
+    $('#bkNote').textContent = `${bkSteps.length} steps, about ${bkSteps.length * 5} minutes. Click a step to edit it. These are starter steps; make them fit your task.`;
+  });
+  $('#bkTask').addEventListener('keydown', e => { if (e.key === 'Enter') $('#bkGo').click(); });
+  $('#bkAdd').addEventListener('click', () => {
+    const before = tasks.length;
+    bkSteps.map(s => s.trim()).filter(Boolean).forEach(addTask);
+    if (!curId && tasks[before]){ curId = tasks[before].id; save(); renderTasks(); }
+    $('#bkNote').innerHTML = '<span class="ok">Added.</span> The first step is set as your focus in the timer below.';
+  });
+
+  /* ---------- If-then ---------- */
+  function ifUpdate(){
+    const w = $('#ifW').value.trim() || '…', t = $('#ifT').value.trim() || '…';
+    $('#ifOut').innerHTML = `<b>When</b> ${esc(w)}, <b>then</b> I will ${esc(t)}.`;
+  }
+  ['#ifW','#ifT'].forEach(s => $(s).addEventListener('input', ifUpdate)); ifUpdate();
+  $('#ifAdd').addEventListener('click', e => { addTask(`When ${$('#ifW').value.trim()}, I will ${$('#ifT').value.trim()}`); e.currentTarget.textContent = 'Added ✓'; setTimeout(() => e.currentTarget.textContent = 'Add to my task list', 1500); });
+
+  /* ---------- Pomodoro timer ---------- */
+  const C = 2 * Math.PI * 88;
+  let mode = 'focus', running = false, endAt = 0, remain = 0, total = 0, tick = null, count = store.get('sp-count', 0);
+  const baseTitle = document.title;
+  const durs = () => ({ focus: clamp($('#dFocus').value, 25), short: clamp($('#dShort').value, 5), long: clamp($('#dLong').value, 15) });
+  function clamp(v, d){ v = Math.round(+v); return isFinite(v) && v > 0 ? Math.min(v, 120) : d; }
+  const label = {focus: 'Focus', short: 'Short break', long: 'Long break'};
+  function setMode(m, keepMsg){
+    mode = m; running = false; clearInterval(tick);
+    total = remain = durs()[m] * 60 * 1000;
+    $('#pModes').querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.m === m));
+    $('#pStart').textContent = 'Start';
+    if (!keepMsg) $('#pOut').textContent = '';
+    paint();
+  }
+  function fmtT(ms){ const s = Math.max(0, Math.ceil(ms / 1000)); return String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); }
+  function paint(){
+    $('#pClock').textContent = fmtT(remain);
+    $('#pMode').textContent = label[mode];
+    $('#pRing').style.stroke = mode === 'focus' ? 'var(--accent)' : 'var(--amber)';
+    $('#pRing').setAttribute('stroke-dashoffset', String(C * (1 - remain / total)));
+    document.title = running ? `${fmtT(remain)} · ${label[mode]}` : baseTitle;
+    const inSet = count % 4;
+    $('#pDots').innerHTML = [0,1,2,3].map(i => `<i class="${i < inSet ? 'on' : ''}"></i>`).join('') + `<span>&nbsp;${count} pomodoro${count === 1 ? '' : 's'} today</span>`;
+  }
+  function loop(){
+    remain = endAt - Date.now();
+    if (remain <= 0){ remain = 0; finish(); return; }
+    paint();
+  }
+  function start(){
+    if (running){ running = false; clearInterval(tick); remain = endAt - Date.now(); $('#pStart').textContent = 'Resume'; paint(); return; }
+    running = true; endAt = Date.now() + remain; $('#pStart').textContent = 'Pause';
+    unlockAudio();
+    clearInterval(tick); tick = setInterval(loop, 250); loop();
+  }
+  function finish(){
+    clearInterval(tick); running = false;
+    if ($('#pSound').checked) chime();
+    if (mode === 'focus'){
+      count++; store.set('sp-count', count); store.set('sp-day', new Date().toDateString());
+      const cur = tasks.find(t => t.id === curId); if (cur){ cur.p++; save(); renderTasks(); }
+      const next = count % 4 === 0 ? 'long' : 'short';
+      setMode(next, true);
+      $('#pOut').innerHTML = `<span class="ok">Pomodoro done!</span> Take a ${next === 'long' ? 'long' : 'short'} break. Press Start when you're ready.`;
+    } else {
+      setMode('focus', true);
+      $('#pOut').innerHTML = 'Break over. Pick up where you left off, or tick off the task if it\'s done.';
+    }
+    document.title = '✓ ' + baseTitle;
+  }
+  // Reset the daily counter on a new day.
+  if (store.get('sp-day', '') !== new Date().toDateString()){ count = 0; store.set('sp-count', 0); store.set('sp-day', new Date().toDateString()); }
+
+  let actx = null;
+  function unlockAudio(){ try { if (!actx){ const AC = window.AudioContext || window.webkitAudioContext; if (AC) actx = new AC(); } if (actx && actx.state === 'suspended') actx.resume(); } catch(e){} }
+  function chime(){
+    if (!actx) return;
+    const t0 = actx.currentTime;
+    [880, 1318.5, 1760].forEach((f, i) => {
+      const o = actx.createOscillator(), g = actx.createGain();
+      o.type = 'sine'; o.frequency.value = f;
+      const t = t0 + i * 0.22;
+      g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.25, t + 0.01); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.9);
+      o.connect(g); g.connect(actx.destination); o.start(t); o.stop(t + 1);
+    });
+  }
+
+  $('#pStart').addEventListener('click', start);
+  $('#pReset').addEventListener('click', () => setMode(mode));
+  $('#pSkip').addEventListener('click', () => { if (mode === 'focus') setMode(count % 4 === 3 ? 'long' : 'short'); else setMode('focus'); });
+  $('#pModes').querySelectorAll('button').forEach(b => b.addEventListener('click', () => setMode(b.dataset.m)));
+  ['#dFocus','#dShort','#dLong'].forEach(s => $(s).addEventListener('change', () => { if (!running) setMode(mode); }));
+  setMode('focus');
+})();
+</script>
+</body>
+</html>

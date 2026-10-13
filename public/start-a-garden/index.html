@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Start a Vegetable Garden (Including What to Do This Fall) · Shortutorial</title>
+<meta name="description" content="Start a vegetable garden step by step: pick a sunny site, choose a raised bed or in-ground plot, test and build the soil, plan what to plant with square-foot spacing, water right, and use October to plant garlic, sow cover crops and prep beds for spring.">
+<link rel="canonical" href="https://shortutorial.com/start-a-garden/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How to Start a Vegetable Garden (Including What to Do This Fall) · Shortutorial">
+<meta property="og:description" content="Start a vegetable garden step by step: pick a sunny site, choose a raised bed or in-ground plot, test and build the soil, plan what to plant with square-foot spacing, water right, and use October to plant garlic, sow cover crops and prep beds for spring.">
+<meta property="og:url" content="https://shortutorial.com/start-a-garden/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+/* Bed planner (page-specific) */
+.bed{display:grid;gap:3px;padding:6px;border-radius:10px;background:#7a5230;max-width:100%;overflow-x:auto}
+.bed button{all:unset;box-sizing:border-box;cursor:pointer;aspect-ratio:1;min-width:0;border-radius:5px;background:#4a3220;color:#fff;display:grid;place-items:center;font-size:clamp(.8rem,3.4vw,1.15rem);line-height:1;position:relative}
+.bed button:hover{outline:2px solid var(--amber)}
+.bed button:focus-visible{outline:3px solid var(--accent);outline-offset:1px;z-index:1}
+.bed button small{position:absolute;right:3px;bottom:2px;font-family:var(--mono);font-size:.55rem;opacity:.85}
+.bed button.span2{background:#3f5a2a}
+.palette{display:flex;flex-wrap:wrap;gap:6px}
+.palette button{all:unset;cursor:pointer;font-family:var(--mono);font-size:.8rem;padding:5px 10px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);display:inline-flex;gap:6px;align-items:center}
+.palette button[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.palette button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.palette button i{font-style:normal;font-size:.68rem;opacity:.75}
+.sum{width:100%;border-collapse:collapse;font-size:.92rem}
+.sum td,.sum th{padding:5px 8px;border-top:1px solid var(--line);text-align:left}
+.sum th{font-family:var(--mono);font-size:.7rem;color:var(--muted);font-weight:600;border-top:0}
+.sum td.num{text-align:right;font-variant-numeric:tabular-nums}
+.warnline{font-family:var(--mono);font-size:.78rem;color:var(--bad)}
+.oct{display:flex;flex-direction:column;gap:6px;margin:0;padding:0;list-style:none}
+.oct label{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:10px;background:var(--surface);border:1px solid var(--line);cursor:pointer;font-size:.97rem}
+.oct input{accent-color:var(--accent);width:18px;height:18px;flex:none;margin-top:2px}
+.oct input:checked+span{color:var(--muted);text-decoration:line-through}
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)} .faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .a{padding:0 18px 16px;font-size:.98rem}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink)}
+.links a:hover{border-color:var(--accent)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.links .src::after{content:" ↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+</style>
+</head>
+<body data-slug="start-a-garden">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=skills">Life skills</a> / Start a garden</div>
+    <span class="eyebrow">Skills · Gardening</span>
+    <h1>How to Start a Vegetable Garden</h1>
+    <p class="lede">Fresh tomatoes, salad greens and herbs from your own backyard. Six short lessons cover where to put it, how to build it, what to plant, and why October is actually a great time to start.</p>
+    <div class="facts"><span>~15 min read</span><span>6 lessons</span><span>Bed planner</span><span>5-question quiz</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#g1">1 · Site</a><a href="#g2">2 · Bed or ground</a><a href="#g3">3 · Soil</a><a href="#g4">4 · What to plant</a><a href="#g5">5 · Watering</a><a href="#g6">6 · Fall prep</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="g1">
+    <div class="lesson-head"><span class="step">01</span><h2>Find the sunniest spot</h2></div>
+    <p>Sun is the one thing you can't add later. According to NC State Extension, <b>most vegetables need at least 8 hours of direct sun</b> a day. Leafy greens and root crops can get by with about 6. Tomatoes, peppers and squash do best with even more.</p>
+    <ul class="points">
+      <li><b>Watch the light for a day.</b> Check your spot every couple of hours and note when it's in full sun.</li>
+      <li><b>Close to water.</b> If you have to drag a hose across the yard, you'll water less.</li>
+      <li><b>Drains well.</b> Avoid low spots where puddles sit after rain.</li>
+      <li><b>Away from trees and big shrubs.</b> Their roots steal water and nutrients, and their shade grows each year.</li>
+      <li><b>Close to the house,</b> so you'll see it, weed it and pick from it.</li>
+    </ul>
+    <p class="callout"><span><b>Start small.</b> One 4 by 8 foot bed can grow a good share of the vegetables for one or two people. It's better to have a small garden that thrives than a big one that gets away from you.</span></p>
+  </section>
+
+  <section class="lesson" id="g2">
+    <div class="lesson-head"><span class="step">02</span><h2>Raised bed or in the ground?</h2></div>
+    <div class="tw"><table class="t">
+      <tr><th></th><th>Raised bed</th><th>In-ground</th></tr>
+      <tr><td><b>Best when</b></td><td>Soil is rocky, clay or poor; you want less bending</td><td>Soil is decent and drains well; you want lots of space</td></tr>
+      <tr><td><b>Cost</b></td><td>Lumber or a kit plus soil to fill it</td><td>Low: mostly compost and tools</td></tr>
+      <tr><td><b>Soil</b></td><td>You control it; warms up faster in spring</td><td>Needs digging and amending</td></tr>
+      <tr><td><b>Watering</b></td><td>Dries out faster; check more often</td><td>Holds moisture longer</td></tr>
+    </table></div>
+    <ul class="points">
+      <li><b>Keep beds no wider than 4 feet</b>, so you can reach the middle from both sides without stepping on the soil.</li>
+      <li>Make beds at least <b>6 to 12 inches deep</b>. Deeper is better for carrots and tomatoes.</li>
+      <li>Use untreated lumber, stone, or a metal kit. Leave paths about 2 to 3 feet wide between beds.</li>
+      <li>For an in-ground plot, remove sod, loosen the soil 8 to 12 inches deep, and mix in compost.</li>
+    </ul>
+  </section>
+
+  <section class="lesson" id="g3">
+    <div class="lesson-head"><span class="step">03</span><h2>Build good soil</h2></div>
+    <p>Healthy soil grows healthy plants. Two things matter most: <b>organic matter</b> and the right <b>pH</b>.</p>
+    <ol class="steps">
+      <li><b>Get a soil test.</b> Your county's cooperative extension office offers low-cost tests that tell you the pH and which nutrients you need, so you don't guess with fertilizer. Fall is a great time to test.</li>
+      <li><b>Add compost.</b> Spread 2 to 3 inches of compost and mix it into the top several inches each year.</li>
+      <li><b>Fill raised beds</b> with a mix of good topsoil and compost, not straight bagged potting soil (that's for containers).</li>
+      <li><b>Fertilize based on the test.</b> Most vegetable soils do best slightly acidic to neutral, around pH 6 to 7.</li>
+      <li><b>Don't work wet soil.</b> If a handful stays in a sticky ball, wait a few days.</li>
+    </ol>
+  </section>
+
+  <section class="lesson" id="g4">
+    <div class="lesson-head"><span class="step">04</span><h2>Decide what to plant, and when</h2></div>
+    <p>Grow what you like to eat. Then check two things for your area:</p>
+    <ul class="points">
+      <li><b>Your USDA Plant Hardiness Zone.</b> The USDA map (updated in 2023) splits the U.S. into zones by the average coldest winter temperature, 10°F per zone. It tells you which perennials, like asparagus or fruit trees, survive your winter. Enter your ZIP code at the USDA site to find yours.</li>
+      <li><b>Your average last spring frost and first fall frost dates.</b> These decide when to plant vegetables. Your local extension office publishes a planting calendar for your area.</li>
+    </ul>
+    <div class="grid2">
+      <div><span class="tagline">Cool-season</span><h3>Plant before the last frost, or in late summer</h3><p>Lettuce, spinach, kale, peas, radishes, carrots, broccoli, cabbage, onions, garlic.</p></div>
+      <div><span class="tagline">Warm-season</span><h3>Plant after all danger of frost</h3><p>Tomatoes, peppers, beans, cucumbers, squash, zucchini, melons, basil.</p></div>
+    </div>
+    <h3>Square-foot spacing</h3>
+    <p>Divide a bed into a grid of 1-foot squares. Each square holds 1, 4, 9 or 16 plants depending on how big the plant gets. Big sprawling plants take more than one square. Try it:</p>
+    <div class="try" id="planner">
+      <span class="try-h">Try it · garden bed planner</span>
+      <div class="row">
+        <label>Bed width (ft)<input type="number" id="bw" min="1" max="6" value="4"></label>
+        <label>Bed length (ft)<input type="number" id="bl" min="1" max="12" value="8"></label>
+        <button class="btn ghost" type="button" id="bStarter">Starter layout</button>
+        <button class="btn ghost" type="button" id="bClear">Clear</button>
+      </div>
+      <div class="warnline" id="bWarn"></div>
+      <div><div class="work" id="palL" style="margin-bottom:6px">1 · Pick a plant (number = plants per square)</div>
+        <div class="palette" id="pal" role="group" aria-labelledby="palL"></div></div>
+      <div class="work" id="bHelp">2 · Tap squares to plant. Tap again to clear.</div>
+      <div class="bed" id="bed" role="grid" aria-label="Garden bed grid"></div>
+      <div class="out" id="bOut"></div>
+      <table class="sum" id="bSum"></table>
+    </div>
+    <p class="callout"><span><b>Spacing source:</b> these counts follow the square-foot guide from NC State Extension. Seed packets give exact spacing for each variety, so check them too. Put tall plants and trellises on the <b>north</b> side so they don't shade the rest.</span></p>
+  </section>
+
+  <section class="lesson" id="g5">
+    <div class="lesson-head"><span class="step">05</span><h2>Water and mulch</h2></div>
+    <ul class="points">
+      <li><b>About 1 inch of water a week</b>, from rain plus watering combined. A rain gauge or a straight-sided can in the garden tells you how much fell.</li>
+      <li><b>Water deeply and less often</b>, not a little every day. Deep watering grows deep roots.</li>
+      <li><b>Water the soil, not the leaves</b>, in the morning. Wet leaves overnight invite disease. A soaker hose or drip line makes this easy.</li>
+      <li><b>Check with your finger:</b> if the soil is dry an inch or two down, it's time to water. Raised beds and seedlings need checking more often.</li>
+      <li><b>Mulch</b> with 1 to 2 inches of straw, shredded leaves or untreated grass clippings once plants are up. It holds moisture and blocks weeds.</li>
+    </ul>
+  </section>
+
+  <section class="lesson" id="g6">
+    <div class="lesson-head"><span class="step">06</span><h2>October: plant garlic and prep for spring</h2></div>
+    <p>Fall is the best time to <b>build</b> a new garden. Beds you make and feed now will be ready the moment spring arrives.</p>
+    <h3>Plant garlic</h3>
+    <ul class="points">
+      <li>Plant garlic in fall, about <b>4 to 6 weeks before the ground freezes</b>. In much of the Midwest and North, that means October to early November. In mild-winter areas, check your extension office's calendar.</li>
+      <li>Buy garlic from a garden center or seed company (grocery store garlic may be treated or not suited to your climate). Hardneck types are better for cold winters.</li>
+      <li>Separate the cloves and plant them <b>pointed end up, 1 to 2 inches deep and 4 to 5 inches apart</b>.</li>
+      <li>Cover the bed with <b>4 to 6 inches of weed-free straw</b> to protect it over winter. Pull it back in early spring when shoots appear. Harvest next summer when about half the leaves have turned yellow.</li>
+    </ul>
+    <h3>Sow a cover crop</h3>
+    <ul class="points">
+      <li>Cover crops protect bare soil over winter and add organic matter. <b>Winter (cereal) rye</b> can be planted the latest in fall; crimson clover and hairy vetch add nitrogen but need an earlier start.</li>
+      <li>University of Maryland Extension suggests sowing between mid-August and October 1, and <b>no later than mid-October</b>. If you've missed that window, mulch with leaves instead.</li>
+      <li>Oats are killed by the first hard freeze, so they're easy to manage. Cut down or turn under other cover crops in spring and wait about <b>2 weeks</b> before planting.</li>
+    </ul>
+    <h3>Prep beds for spring</h3>
+    <ul class="oct" id="octList">
+      <li><label><input type="checkbox"><span>Pull finished plants. Compost healthy ones; trash diseased ones.</span></label></li>
+      <li><label><input type="checkbox"><span>Send a soil sample to your extension office.</span></label></li>
+      <li><label><input type="checkbox"><span>Build or fill new raised beds.</span></label></li>
+      <li><label><input type="checkbox"><span>Spread 2 to 3 inches of compost on beds.</span></label></li>
+      <li><label><input type="checkbox"><span>Plant garlic before the ground freezes.</span></label></li>
+      <li><label><input type="checkbox"><span>Sow a cover crop, or cover bare soil with shredded leaves.</span></label></li>
+      <li><label><input type="checkbox"><span>Drain and store hoses before the first hard freeze.</span></label></li>
+      <li><label><input type="checkbox"><span>Clean and oil tools; write down what grew well this year.</span></label></li>
+    </ul>
+    <p class="work" id="octCount"></p>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>What are the easiest vegetables for beginners?</summary><div class="a"><p>Lettuce, radishes, bush beans, zucchini, cherry tomatoes, kale and herbs like basil are forgiving and fast. Start with a few you love to eat.</p></div></details>
+      <details><summary>Does my hardiness zone tell me when to plant tomatoes?</summary><div class="a"><p>Not directly. The zone is based on the coldest winter temperatures, which matters for perennials. For vegetables, use your average last spring frost date and your local extension planting calendar.</p></div></details>
+      <details><summary>Can I start a garden in the fall?</summary><div class="a"><p>Yes. Fall is ideal for building beds, testing soil, adding compost and planting garlic. In mild climates you can also grow cool-season crops like lettuce, spinach and kale through fall and winter.</p></div></details>
+      <details><summary>How deep should a raised bed be?</summary><div class="a"><p>At least 6 to 12 inches. If the bed sits on loosened soil, roots can grow down into it. Deeper beds help carrots and tomatoes.</p></div></details>
+      <details><summary>How much does a soil test cost?</summary><div class="a"><p>Prices vary by state, but many extension services charge a modest fee for a basic test. Contact your county extension office for a kit and instructions.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Trusted sources</h2>
+    <div class="links">
+      <a href="https://planthardiness.ars.usda.gov/" target="_blank" rel="noopener"><span class="src">USDA Agricultural Research Service</span><b>Plant Hardiness Zone Map (find your zone)</b></a>
+      <a href="https://content.ces.ncsu.edu/home-vegetable-gardening-a-quick-reference-guide" target="_blank" rel="noopener"><span class="src">NC State Extension</span><b>Home vegetable gardening quick reference</b></a>
+      <a href="https://extension.illinois.edu/sites/default/files/growing_garlic_infosheet.pdf" target="_blank" rel="noopener"><span class="src">University of Illinois Extension</span><b>Growing garlic (PDF)</b></a>
+      <a href="https://extension.umd.edu/resource/cover-crops-gardens" target="_blank" rel="noopener"><span class="src">University of Maryland Extension</span><b>Cover crops for gardens</b></a>
+      <a href="https://localfood.ces.ncsu.edu/wp-content/uploads/2020/11/Square-Foot-Seeds.pdf?fwd=no" target="_blank" rel="noopener"><span class="src">NC State Extension</span><b>Square-foot gardening guide (PDF)</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/leaderboard/">Leaderboard</a></nav></span><span>Planting dates vary by region. Your county cooperative extension office is the best source for local advice.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  /* Plants per square foot: NC State Extension square-foot guide. sq = squares one plant needs. */
+  const CROPS = [
+    {k:'tomato', n:'Tomato', e:'🍅', per:1, s:'warm'},
+    {k:'pepper', n:'Pepper', e:'🫑', per:1, s:'warm'},
+    {k:'broccoli', n:'Broccoli', e:'🥦', per:1, s:'cool'},
+    {k:'kale', n:'Kale', e:'🥬', per:2, s:'cool'},
+    {k:'cucumber', n:'Cucumber (trellis)', e:'🥒', per:2, s:'warm'},
+    {k:'lettuce', n:'Lettuce', e:'🥗', per:4, s:'cool'},
+    {k:'chard', n:'Swiss chard', e:'🌿', per:4, s:'cool'},
+    {k:'bean', n:'Bush bean', e:'🫘', per:9, s:'warm'},
+    {k:'spinach', n:'Spinach', e:'🍃', per:9, s:'cool'},
+    {k:'beet', n:'Beet', e:'🟣', per:9, s:'cool'},
+    {k:'onion', n:'Onion', e:'🧅', per:9, s:'cool'},
+    {k:'garlic', n:'Garlic (fall)', e:'🧄', per:9, s:'fall'},
+    {k:'pea', n:'Pea (trellis)', e:'🫛', per:8, s:'cool'},
+    {k:'carrot', n:'Carrot', e:'🥕', per:16, s:'cool'},
+    {k:'radish', n:'Radish', e:'🔴', per:16, s:'cool'},
+    {k:'zucchini', n:'Zucchini / squash', e:'🎃', per:0.5, s:'warm'},
+    {k:'basil', n:'Basil', e:'🌱', per:1, s:'warm'}
+  ];
+  const C = Object.fromEntries(CROPS.map(c => [c.k, c]));
+  let W = 4, L = 8, sel = 'tomato', grid = {};
+  const bed = document.getElementById('bed');
+  document.getElementById('pal').innerHTML = CROPS.map(c => `<button type="button" data-k="${c.k}" aria-pressed="${c.k === sel}">${c.e} ${c.n} <i>${c.per < 1 ? '1 per 2 sq' : c.per}</i></button>`).join('');
+  document.querySelectorAll('#pal button').forEach(b => b.addEventListener('click', () => {
+    sel = b.dataset.k; document.querySelectorAll('#pal button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  }));
+  const key = (r, c) => r + ',' + c;
+  function draw(){
+    bed.style.gridTemplateColumns = `repeat(${L}, minmax(0, 1fr))`;
+    bed.style.width = L <= 4 ? Math.min(100, L * 18) + '%' : '100%';
+    let h = '';
+    for (let r = 0; r < W; r++){
+      h += '<div role="row" style="display:contents">';
+      for (let c = 0; c < L; c++){
+        const k = grid[key(r, c)], crop = k && C[k];
+        const label = crop ? `${crop.n}, ${crop.per < 1 ? 'half a plant' : crop.per + ' plants'}` : 'Empty';
+        h += `<button type="button" role="gridcell" data-r="${r}" data-c="${c}" class="${crop && crop.per < 1 ? 'span2' : ''}" aria-label="Row ${r + 1}, column ${c + 1}: ${label}">${crop ? crop.e + `<small>${crop.per < 1 ? '½' : crop.per}</small>` : ''}</button>`;
+      }
+      h += '</div>';
+    }
+    bed.innerHTML = h;
+    bed.querySelectorAll('button').forEach(b => {
+      b.addEventListener('click', () => { const k = key(b.dataset.r, b.dataset.c); grid[k] = grid[k] === sel ? undefined : sel; if (!grid[k]) delete grid[k]; draw(); focusCell(+b.dataset.r, +b.dataset.c); });
+      b.addEventListener('keydown', e => {
+        const r = +b.dataset.r, c = +b.dataset.c, m = {ArrowUp:[-1,0], ArrowDown:[1,0], ArrowLeft:[0,-1], ArrowRight:[0,1]}[e.key];
+        if (m){ e.preventDefault(); focusCell(Math.max(0, Math.min(W - 1, r + m[0])), Math.max(0, Math.min(L - 1, c + m[1]))); }
+      });
+    });
+    summary();
+  }
+  function focusCell(r, c){ const b = bed.querySelector(`[data-r="${r}"][data-c="${c}"]`); if (b) b.focus(); }
+  function summary(){
+    const counts = {};
+    Object.values(grid).forEach(k => counts[k] = (counts[k] || 0) + 1);
+    const total = W * L, used = Object.keys(grid).length;
+    const rows = Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([k, sq]) => {
+      const c = C[k], plants = c.per < 1 ? Math.floor(sq * c.per) : sq * c.per;
+      const note = c.per < 1 ? (sq % 2 ? ' (needs 2 squares each: add 1 more)' : ' (2 squares each)') : '';
+      return `<tr><td>${c.e} ${c.n}${note}</td><td class="num">${sq}</td><td class="num">${plants}</td></tr>`;
+    }).join('');
+    document.getElementById('bSum').innerHTML = rows ? `<tr><th>Plant</th><th class="num">Squares</th><th class="num">Plants</th></tr>${rows}` : '';
+    const seasons = new Set(Object.values(grid).map(k => C[k].s));
+    let tip = '';
+    if (seasons.has('cool') && seasons.has('warm')) tip = ' Cool-season crops go in early spring; plant warm-season crops after your last frost.';
+    if (seasons.has('fall')) tip += ' Garlic goes in this fall and is harvested next summer.';
+    document.getElementById('bOut').innerHTML = `<b>${used}</b> of ${total} squares planted · ${total - used} empty.${tip}`;
+  }
+  function setSize(){
+    W = Math.max(1, Math.min(6, parseInt(document.getElementById('bw').value) || 1));
+    L = Math.max(1, Math.min(12, parseInt(document.getElementById('bl').value) || 1));
+    Object.keys(grid).forEach(k => { const [r, c] = k.split(',').map(Number); if (r >= W || c >= L) delete grid[k]; });
+    document.getElementById('bWarn').textContent = W > 4 ? 'Tip: beds wider than 4 feet are hard to reach across without stepping on the soil.' : '';
+    draw();
+  }
+  ['bw','bl'].forEach(id => document.getElementById(id).addEventListener('input', setSize));
+  document.getElementById('bClear').addEventListener('click', () => { grid = {}; draw(); });
+  document.getElementById('bStarter').addEventListener('click', () => {
+    grid = {};
+    const plan = ['tomato','tomato','pepper','basil','cucumber','bean','lettuce','lettuce','spinach','carrot','radish','onion','kale','chard','beet','zucchini','zucchini','pea','carrot','lettuce'];
+    let i = 0;
+    for (let r = 0; r < W; r++) for (let c = 0; c < L; c++){ grid[key(r, c)] = plan[i % plan.length]; i++; }
+    draw();
+  });
+  setSize();
+
+  /* October checklist (remembered on this device) */
+  const boxes = [...document.querySelectorAll('#octList input')], KEY = 'st-garden-oct';
+  let saved = []; try { saved = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch(e){}
+  boxes.forEach((b, i) => { b.checked = !!saved[i]; b.addEventListener('change', upd); });
+  function upd(){
+    const n = boxes.filter(b => b.checked).length;
+    document.getElementById('octCount').textContent = `${n} of ${boxes.length} fall tasks done${n === boxes.length ? '. Your garden is ready for spring.' : ''}`;
+    try { localStorage.setItem(KEY, JSON.stringify(boxes.map(b => b.checked))); } catch(e){}
+  }
+  upd();
+})();
+</script>
+</body>
+</html>

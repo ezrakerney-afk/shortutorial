@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Piano for Absolute Beginners · Shortutorial</title>
+<meta name="description" content="Start playing piano from zero: find middle C, name every key, hand position and finger numbers, read your first notes, play Ode to Joy, and learn the C, F and G chords on a playable on-screen piano.">
+<link rel="canonical" href="https://shortutorial.com/play-piano-basics/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Piano for Absolute Beginners · Shortutorial">
+<meta property="og:description" content="Start playing piano from zero: find middle C, name every key, hand position and finger numbers, read your first notes, play Ode to Joy, and learn the C, F and G chords on a playable on-screen piano.">
+<meta property="og:url" content="https://shortutorial.com/play-piano-basics/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+
+/* Piano */
+.piano{position:relative;display:flex;height:170px;user-select:none;-webkit-user-select:none;touch-action:none;border-radius:0 0 10px 10px;outline:none;padding-top:6px;background:#1d2421;border-radius:10px;padding:6px 4px 4px}
+.piano:focus-visible{box-shadow:0 0 0 3px var(--accent)}
+.piano .w{all:unset;box-sizing:border-box;flex:1;min-width:0;height:100%;background:#fbfbf8;border:1px solid #9aa39e;border-radius:0 0 6px 6px;margin:0 1px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;padding-bottom:6px;cursor:pointer;font-family:var(--mono);font-size:.68rem;color:#4a5550;position:relative;transition:background .06s}
+.piano .b{all:unset;box-sizing:border-box;position:absolute;top:6px;height:58%;background:#1a1f1d;border:1px solid #000;border-radius:0 0 5px 5px;z-index:2;cursor:pointer;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;padding-bottom:5px;font-family:var(--mono);font-size:.6rem;color:#c9d2cd}
+.piano .w:focus-visible,.piano .b:focus-visible{outline:2px solid var(--accent);outline-offset:-3px}
+.piano .w.down{background:#bfe6dd}
+.piano .b.down{background:#0f7a6c}
+.piano .w.hint{background:#ffe2b0;box-shadow:inset 0 -6px 0 #b86e00}
+.piano .b.hint{background:#b86e00}
+.piano .w.bad{background:#f6c9c4}
+.piano .w.mid::before{content:"";position:absolute;bottom:26px;width:6px;height:6px;border-radius:50%;background:#0f7a6c}
+.piano .k{display:block;font-size:.6rem;opacity:.7;margin-top:2px}
+.piano.nolabels .lbl{visibility:hidden}
+.piano.nokeys .k{display:none}
+@media (max-width:480px){.piano{height:140px}.piano .w{font-size:.58rem}.piano .b .lbl{display:none}}
+.seq{display:flex;flex-wrap:wrap;gap:6px}
+.seq span{font-family:var(--mono);font-size:.82rem;padding:4px 8px;border-radius:8px;border:1px solid var(--line);background:var(--surface);min-width:2.2em;text-align:center;line-height:1.2}
+.seq span small{display:block;font-size:.62rem;color:var(--muted)}
+.seq span.done{background:var(--good-bg);border-color:transparent;color:var(--good)}
+.seq span.now{background:var(--amber);border-color:var(--amber);color:#fff}
+.seq span.now small{color:#fff}
+.seq .bar{border:0;background:none;min-width:auto;padding:4px 0;color:var(--muted)}
+.try select{width:auto}
+.tog{display:flex !important;flex-direction:row !important;align-items:center;gap:6px !important;font-size:.8rem !important}
+#p2 .w.mid::before{display:none}
+.hands{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.hands{grid-template-columns:1fr}}
+.hands svg{width:100%;height:auto;max-width:260px;margin:0 auto;display:block}
+</style>
+</head>
+<body data-slug="play-piano-basics">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=music">Life skills</a> / Piano basics</div>
+    <span class="eyebrow">Life skills · Music</span>
+    <h1>Piano for Absolute Beginners</h1>
+    <p class="lede">Never touched a piano? Start here. In six short lessons you'll find your way around the keys, sit and hold your hands properly, read your first notes, play a real song and learn three chords that unlock hundreds more. Every example works on the piano right on this page.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~15 min</span><span class="badge">6 lessons</span><span class="badge">Playable piano</span><span class="badge">5-question quiz</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#pn1">1 · Middle C</a><a href="#pn2">2 · Note names</a><a href="#pn3">3 · Hands</a><a href="#pn4">4 · Reading</a><a href="#pn5">5 · First song</a><a href="#pn6">6 · Chords</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="pn1">
+    <div class="lesson-head"><span class="step">01</span><h2>Find middle C</h2></div>
+    <p>A full piano has <b>88 keys</b>: 52 white and 36 black. It looks overwhelming, but it's one small pattern repeated over and over.</p>
+    <p>Look at the black keys. They come in <b>groups of two</b> and <b>groups of three</b>. That pattern is your map.</p>
+    <ul class="points">
+      <li>The white key just <b>to the left of any group of two black keys</b> is a <b>C</b>.</li>
+      <li><b>Middle C</b> is the C closest to the middle of the keyboard. On most pianos and keyboards it's roughly under the brand name or the music stand.</li>
+      <li>On an 88-key piano it's the fourth C from the left, which is why it's also called <b>C4</b>.</li>
+    </ul>
+    <p>On a smaller keyboard (61 or 76 keys), just count the Cs from the left and use the one nearest the center.</p>
+    <div class="try"><span class="try-h">Try it · find every C</span>
+      <p style="margin:0">Middle C has a green dot. Tap it, then find the other Cs by looking for the groups of two black keys.</p>
+      <div class="piano" id="p1" tabindex="0" role="group" aria-label="Playable piano keyboard"></div>
+      <div class="row"><label class="tog"><input type="checkbox" id="p1Lbl" checked> Show note names</label><label class="tog"><input type="checkbox" id="p1Keys"> Show computer keys</label></div>
+      <div class="out" id="p1Out">Tap a key, or click the piano and type on your computer keyboard.</div>
+    </div>
+  </section>
+
+  <section class="lesson" id="pn2">
+    <div class="lesson-head"><span class="step">02</span><h2>Name every key</h2></div>
+    <p>White keys use the first seven letters of the alphabet: <b>C D E F G A B</b>, then back to C. From one C to the next is called an <b>octave</b>, and the higher C sounds like the same note, just higher.</p>
+    <ul class="points">
+      <li><b>D</b> sits between the two black keys. <b>F</b> is just left of the group of three. Use those as extra landmarks.</li>
+      <li>Black keys are <b>sharps (♯)</b> and <b>flats (♭)</b>. The black key just right of C is <b>C♯</b> (“C sharp”), and it's also <b>D♭</b> (“D flat”): one key, two names.</li>
+      <li>Moving to the very next key, black or white, is a <b>half step</b>. Two half steps make a <b>whole step</b>.</li>
+      <li>There's no black key between <b>E and F</b> or between <b>B and C</b>. Those pairs are already a half step apart.</li>
+    </ul>
+    <div class="try"><span class="try-h">Try it · name that key</span>
+      <p style="margin:0">A key lights up in orange. Press the matching letter on the piano or below. Names are hidden so you have to use the black-key landmarks.</p>
+      <div class="piano nolabels" id="p2" tabindex="0" role="group" aria-label="Note naming game keyboard"></div>
+      <div class="chipset" id="p2Btns"></div>
+      <div class="out" id="p2Out">Which white key is lit up?</div>
+      <div class="work" id="p2Sc"></div>
+    </div>
+  </section>
+
+  <section class="lesson" id="pn3">
+    <div class="lesson-head"><span class="step">03</span><h2>Sit right and number your fingers</h2></div>
+    <ul class="points">
+      <li><b>Sit</b> centered on middle C, far enough back that your elbows are a little in front of your body and roughly level with the keys.</li>
+      <li><b>Curve your fingers</b> as if you're holding a small ball or an orange. Play on the fleshy pads near the fingertips, not the flat of the finger.</li>
+      <li>Keep your <b>wrists level</b> and relaxed: not drooping, not arched up. Shoulders down.</li>
+    </ul>
+    <p>Piano music labels fingers with numbers, and it's the same on both hands: <b>thumb = 1</b>, index = 2, middle = 3, ring = 4, <b>pinky = 5</b>.</p>
+    <div class="hands">
+      <figure><svg viewBox="0 0 220 150" role="img" aria-label="Left hand: pinky is 5, thumb is 1"><g fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"><rect x="30" y="58" width="22" height="64" rx="11"/><rect x="58" y="34" width="22" height="88" rx="11"/><rect x="86" y="24" width="22" height="98" rx="11"/><rect x="114" y="34" width="22" height="88" rx="11"/><rect x="146" y="82" width="22" height="58" rx="11" transform="rotate(-35 157 111)"/><rect x="30" y="100" width="108" height="46" rx="18"/></g><g font-family="JetBrains Mono, monospace" font-weight="600" font-size="15" fill="var(--ink)" text-anchor="middle"><text x="41" y="80">5</text><text x="69" y="58">4</text><text x="97" y="48">3</text><text x="125" y="58">2</text><text x="170" y="104">1</text></g></svg><figcaption>Left hand (palm down)</figcaption></figure>
+      <figure><svg viewBox="0 0 220 150" role="img" aria-label="Right hand: thumb is 1, pinky is 5"><g fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"><rect x="168" y="58" width="22" height="64" rx="11"/><rect x="140" y="34" width="22" height="88" rx="11"/><rect x="112" y="24" width="22" height="98" rx="11"/><rect x="84" y="34" width="22" height="88" rx="11"/><rect x="52" y="82" width="22" height="58" rx="11" transform="rotate(35 63 111)"/><rect x="82" y="100" width="108" height="46" rx="18"/></g><g font-family="JetBrains Mono, monospace" font-weight="600" font-size="15" fill="var(--ink)" text-anchor="middle"><text x="179" y="80">5</text><text x="151" y="58">4</text><text x="123" y="48">3</text><text x="95" y="58">2</text><text x="50" y="104">1</text></g></svg><figcaption>Right hand (palm down)</figcaption></figure>
+    </div>
+    <h3>C position: your home base</h3>
+    <p>Put your <b>right thumb (1) on middle C</b>. Let fingers 2, 3, 4 and 5 rest on D, E, F and G, one finger per white key. For the left hand, put your <b>left pinky (5) on the C below middle C</b>, with fingers 4 to 1 on D, E, F and G. Many beginner songs never leave this position.</p>
+    <p class="callout"><span><b>Practice tip:</b> 10 to 15 minutes a day beats one long session a week. Play slowly enough that you don't make mistakes; speed comes on its own.</span></p>
+  </section>
+
+  <section class="lesson" id="pn4">
+    <div class="lesson-head"><span class="step">04</span><h2>Read your first five notes</h2></div>
+    <p>Sheet music for the right hand uses the <b>treble clef</b>. Here are the five notes of C position, exactly where your right-hand fingers sit:</p>
+    <figure><svg viewBox="0 0 340 140" role="img" aria-label="Treble staff with middle C, D, E, F and G" style="max-width:440px;width:100%;margin:0 auto;display:block" id="staffSvg"></svg><figcaption>Each step up the staff (line to space to line) is the next white key to the right.</figcaption></figure>
+    <ul class="points">
+      <li><b>Middle C</b> sits on its own short line (a <b>ledger line</b>) below the staff.</li>
+      <li><b>D</b> hangs just under the bottom line. <b>E</b> is on the bottom line, <b>F</b> in the first space and <b>G</b> on the second line.</li>
+      <li>Notes that go <b>up</b> the staff go <b>right</b> on the keyboard.</li>
+    </ul>
+    <p>Want to learn the rest of the staff, the bass clef and rhythm? Our <a href="../read-sheet-music/">How to Read Sheet Music</a> tutorial covers it with a note-naming game.</p>
+  </section>
+
+  <section class="lesson" id="pn5">
+    <div class="lesson-head"><span class="step">05</span><h2>Play your first song</h2></div>
+    <p><b>Ode to Joy</b> by Beethoven is the classic first piece because it uses only the five notes of right-hand C position. The small numbers are fingers:</p>
+    <div class="tw"><table class="t"><tr><th>Line</th><th>Notes (fingers)</th></tr>
+      <tr><td>1</td><td style="font-family:var(--mono);font-size:.88rem">E E F G · G F E D · C C D E · E. D D<br><span style="color:var(--muted)">3 3 4 5 · 5 4 3 2 · 1 1 2 3 · 3 &nbsp;2 2</span></td></tr>
+      <tr><td>2</td><td style="font-family:var(--mono);font-size:.88rem">E E F G · G F E D · C C D E · D. C C<br><span style="color:var(--muted)">3 3 4 5 · 5 4 3 2 · 1 1 2 3 · 2 &nbsp;1 1</span></td></tr>
+    </table></div>
+    <p>The dot after a note means hold it a little longer. Count a steady “1, 2, 3, 4” and play one note per count. Then try it below: the key to press next lights up orange.</p>
+    <div class="try"><span class="try-h">Try it · play along</span>
+      <div class="row"><label>Song<select id="songSel"><option value="ode">Ode to Joy</option><option value="mary">Mary Had a Little Lamb</option><option value="twinkle">Twinkle, Twinkle, Little Star</option></select></label>
+        <button class="btn ghost" id="songListen" type="button">▶ Listen first</button><button class="btn" id="songRestart" type="button">Restart</button></div>
+      <div class="seq" id="seq" aria-label="Notes in this song"></div>
+      <div class="piano" id="p3" tabindex="0" role="group" aria-label="Play-along keyboard"></div>
+      <div class="out" id="p3Out" aria-live="polite">Play the orange key.</div>
+    </div>
+  </section>
+
+  <section class="lesson" id="pn6">
+    <div class="lesson-head"><span class="step">06</span><h2>Your first three chords: C, F and G</h2></div>
+    <p>A <b>chord</b> is three or more notes played together. The simplest kind, a <b>triad</b>, is built by playing one key, skipping one white key, playing the next, skipping one, and playing the next.</p>
+    <div class="tw"><table class="t"><tr><th>Chord</th><th>Notes</th><th>Right-hand fingers</th></tr>
+      <tr><td><b>C major</b></td><td>C · E · G</td><td>1 · 3 · 5</td></tr>
+      <tr><td><b>F major</b></td><td>F · A · C</td><td>1 · 3 · 5</td></tr>
+      <tr><td><b>G major</b></td><td>G · B · D</td><td>1 · 3 · 5</td></tr>
+    </table></div>
+    <p>These three chords are the I, IV and V chords in the key of C. Together they can accompany a huge number of folk, pop, country and children's songs.</p>
+    <h3>The easy way: barely move your hand</h3>
+    <p>Jumping between chords is hard at first. Pianists rearrange the same notes so the hand hardly moves. Keep your thumb near middle C:</p>
+    <ul class="points">
+      <li><b>C:</b> C E G, fingers 1 3 5.</li>
+      <li><b>F:</b> C F A, fingers 1 4 5. Your thumb stays on C.</li>
+      <li><b>G:</b> B D G, fingers 1 2 5. Your thumb slides down to the B just below middle C.</li>
+    </ul>
+    <div class="try"><span class="try-h">Try it · chords</span>
+      <div class="row"><label class="tog"><input type="checkbox" id="easyCh" checked> Easy hand positions</label></div>
+      <div class="chipset" id="chBtns"><button type="button" data-c="C">C</button><button type="button" data-c="F">F</button><button type="button" data-c="G">G</button><button type="button" data-c="prog">Play C · F · G · C</button></div>
+      <div class="piano" id="p4" tabindex="0" role="group" aria-label="Chord keyboard"></div>
+      <div class="out" id="p4Out">Pick a chord to see and hear it.</div>
+    </div>
+    <p class="callout"><span><b>Next step:</b> play the chord with your right hand while your left hand plays just the chord's name note (C, F or G) low on the keyboard. That's how a lot of real accompaniment sounds.</span></p>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Do I need a real piano to start?</summary><div class="a"><p>No. A keyboard is fine for learning. If you're buying one, look for at least 61 full-size keys; 88 <b>weighted</b> or <b>hammer-action</b> keys feel most like a real piano and make switching later easier. A sustain pedal is a cheap, useful extra.</p></div></details>
+      <details><summary>How long until I can play a song?</summary><div class="a"><p>Many beginners can play a simple melody like Ode to Joy in the first day or two. Playing melody and chords together usually takes a few weeks of short daily practice.</p></div></details>
+      <details><summary>Why is middle C called C4?</summary><div class="a"><p>Notes are numbered by octave, counting from the bottom of the piano. The lowest C on an 88-key piano is C1, so middle C is the fourth C: C4. The A just above it, A4, is the 440 Hz note orchestras tune to.</p></div></details>
+      <details><summary>The on-screen piano is silent. What's wrong?</summary><div class="a"><p>Browsers only allow sound after you tap or click the page. Tap a key once. On iPhone, also check that the ring/silent switch isn't on silent, and that your volume is up.</p></div></details>
+      <details><summary>Should I learn by ear, apps, or with a teacher?</summary><div class="a"><p>All work. A teacher catches bad habits early, like flat fingers or tense wrists, that are hard to notice on your own. If you learn alone, film your hands now and then and compare with the hand-position tips above.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Trusted sources</h2>
+    <div class="links">
+      <a href="https://www.musictheory.net/lessons" target="_blank" rel="noopener"><span class="src">musictheory.net</span><b>Free lessons on the keyboard, staff and chords</b></a>
+      <a href="https://viva.pressbooks.pub/openmusictheory/" target="_blank" rel="noopener"><span class="src">Open Music Theory</span><b>Free college-level music theory textbook</b></a>
+      <a href="https://imslp.org/wiki/Symphony_No.9,_Op.125_(Beethoven,_Ludwig_van)" target="_blank" rel="noopener"><span class="src">IMSLP</span><b>Beethoven's Symphony No. 9 (source of Ode to Joy), public domain scores</b></a>
+      <a href="../read-sheet-music/"><span class="src">Shortutorial</span><b>How to Read Sheet Music</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/leaderboard/">Leaderboard</a></nav></span><span>Tip: click a piano, then play it with your computer keys (A to ' for white keys).</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  /* ---------- Sound (Web Audio) ---------- */
+  let ctx = null, master = null;
+  function audio(){
+    if (!ctx){
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return null;
+      ctx = new AC();
+      master = ctx.createGain(); master.gain.value = 0.5;
+      const comp = ctx.createDynamicsCompressor();
+      master.connect(comp); comp.connect(ctx.destination);
+    }
+    if (ctx.state === 'suspended') ctx.resume();
+    return ctx;
+  }
+  const freq = m => 440 * Math.pow(2, (m - 69) / 12);
+  function tone(midi, when, dur){
+    const c = audio(); if (!c) return;
+    const t = when || c.currentTime, d = dur || 1.6;
+    const g = c.createGain();
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(0.5, t + 0.008);
+    g.gain.exponentialRampToValueAtTime(0.18, t + 0.25);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + d);
+    g.connect(master);
+    [[1, 'triangle', 1], [2, 'sine', 0.35], [3, 'sine', 0.12]].forEach(([mult, type, amp]) => {
+      const o = c.createOscillator(), og = c.createGain();
+      o.type = type; o.frequency.value = freq(midi) * mult; og.gain.value = amp;
+      o.connect(og); og.connect(g); o.start(t); o.stop(t + d + 0.05);
+    });
+  }
+
+  /* ---------- Keyboard model ---------- */
+  const NAMES = ['C','C♯','D','D♯','E','F','F♯','G','G♯','A','A♯','B'];
+  const isBlack = m => [1,3,6,8,10].includes(m % 12);
+  const nameOf = m => NAMES[m % 12] + (Math.floor(m / 12) - 1);
+  const LOW = 57, HIGH = 79;             // A3 .. G5
+  const KEYMAP = {a:60,w:61,s:62,e:63,d:64,f:65,t:66,g:67,y:68,h:69,u:70,j:71,k:72,o:73,l:74,p:75,';':76,"'":77};
+  const KEYOF = {}; Object.entries(KEYMAP).forEach(([k, m]) => KEYOF[m] = k === ';' ? ';' : k === "'" ? "'" : k.toUpperCase());
+
+  const pianos = [];
+  function makePiano(el, onPlay){
+    const whites = [];
+    for (let m = LOW; m <= HIGH; m++) if (!isBlack(m)) whites.push(m);
+    const W = 100 / whites.length;
+    let html = '';
+    whites.forEach(m => {
+      html += `<button type="button" class="w${m === 60 ? ' mid' : ''}" data-m="${m}" aria-label="${nameOf(m).replace('♯',' sharp')}${m===60?' (middle C)':''}"><span class="lbl">${NAMES[m%12]}</span>${KEYOF[m] ? `<span class="k">${KEYOF[m]}</span>` : ''}</button>`;
+    });
+    for (let m = LOW; m <= HIGH; m++) if (isBlack(m)){
+      const leftWhites = whites.filter(w => w < m).length;
+      html += `<button type="button" class="b" data-m="${m}" aria-label="${nameOf(m).replace('♯',' sharp')}" style="left:calc(4px + (100% - 8px) * ${(leftWhites * W - W * 0.32) / 100});width:calc((100% - 8px) * ${W * 0.64 / 100})"><span class="lbl">${NAMES[m%12]}</span>${KEYOF[m] ? `<span class="k">${KEYOF[m]}</span>` : ''}</button>`;
+    }
+    el.innerHTML = html;
+    const keyEl = m => el.querySelector(`[data-m="${m}"]`);
+    const api = {
+      el,
+      press(m, silent){ const k = keyEl(m); if (k){ k.classList.add('down'); setTimeout(() => k.classList.remove('down'), 220); } if (!silent) tone(m); if (onPlay) onPlay(m); },
+      hint(ms){ el.querySelectorAll('.hint').forEach(k => k.classList.remove('hint')); (ms || []).forEach(m => { const k = keyEl(m); if (k) k.classList.add('hint'); }); },
+      flash(m, cls){ const k = keyEl(m); if (k){ k.classList.add(cls); setTimeout(() => k.classList.remove(cls), 300); } },
+      show(m, ms){ const k = keyEl(m); if (k){ k.classList.add('down'); setTimeout(() => k.classList.remove('down'), ms || 300); } }
+    };
+    let pointerPlayed = false;
+    el.addEventListener('pointerdown', e => {
+      const k = e.target.closest('[data-m]'); if (!k) return;
+      e.preventDefault(); el.focus({preventScroll: true});
+      pointerPlayed = true; api.press(+k.dataset.m);
+    });
+    el.addEventListener('click', e => {
+      const k = e.target.closest('[data-m]'); if (!k) return;
+      if (pointerPlayed){ pointerPlayed = false; return; }
+      api.press(+k.dataset.m);              // keyboard Enter/Space on a focused key
+    });
+    const held = new Set();
+    el.addEventListener('keydown', e => {
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+      const m = KEYMAP[e.key.toLowerCase()];
+      if (m === undefined) return;
+      e.preventDefault();
+      if (held.has(e.key)) return;
+      held.add(e.key); api.press(m);
+    });
+    el.addEventListener('keyup', e => held.delete(e.key));
+    el.addEventListener('blur', () => held.clear());
+    pianos.push(api);
+    return api;
+  }
+
+  /* ---------- Lesson 1: free play ---------- */
+  const p1 = makePiano($('#p1'), m => {
+    const n = nameOf(m), base = NAMES[m % 12];
+    let msg = `That's <b>${n.replace('♯','♯')}</b>`;
+    if (m === 60) msg += ', <b>middle C</b>. Your home base.';
+    else if (base === 'C') msg += `, another C, ${m < 60 ? 'one octave lower' : 'one octave higher'}. Notice the two black keys just to its right.`;
+    else if (base.includes('♯')) msg += ` (also called ${NAMES[(m + 1) % 12]}♭).`.replace('♯♭', '♭');
+    else msg += '.';
+    $('#p1Out').innerHTML = msg;
+  });
+  $('#p1Lbl').addEventListener('change', e => $('#p1').classList.toggle('nolabels', !e.target.checked));
+  $('#p1Keys').addEventListener('change', e => $('#p1').classList.toggle('nokeys', !e.target.checked));
+  $('#p1').classList.add('nokeys');
+
+  /* ---------- Lesson 2: name that key ---------- */
+  const letters = ['C','D','E','F','G','A','B'];
+  const whiteMs = []; for (let m = LOW; m <= HIGH; m++) if (!isBlack(m)) whiteMs.push(m);
+  let target = 60, right = 0, total = 0;
+  const p2 = makePiano($('#p2'), m => answer(NAMES[m % 12], m));
+  $('#p2').classList.add('nokeys');
+  function nextTarget(){ let t; do { t = whiteMs[Math.floor(Math.random() * whiteMs.length)]; } while (t === target); target = t; p2.hint([target]); }
+  function answer(letter, m){
+    if (letter.includes('♯')){ $('#p2Out').innerHTML = '<span class="no">That\'s a black key.</span> The lit key is white.'; return; }
+    total++;
+    const ans = NAMES[target % 12];
+    if (letter === ans){ right++; $('#p2Out').innerHTML = `<span class="ok">Yes, ${ans}!</span> Next one…`; }
+    else $('#p2Out').innerHTML = `<span class="no">That one was ${ans}.</span> ${ans === 'C' ? 'C is left of the two black keys.' : ans === 'F' ? 'F is left of the three black keys.' : ans === 'D' ? 'D is between the two black keys.' : 'Count up from the nearest C.'}`;
+    $('#p2Sc').textContent = `Score: ${right} / ${total}`;
+    nextTarget();
+  }
+  $('#p2Btns').innerHTML = letters.map(l => `<button type="button" data-l="${l}" style="min-width:34px;text-align:center">${l}</button>`).join('');
+  $('#p2Btns').querySelectorAll('button').forEach(b => b.addEventListener('click', () => { tone(target); answer(b.dataset.l); }));
+  nextTarget();
+
+  /* ---------- Staff figure ---------- */
+  (function(){
+    const lines = [44, 56, 68, 80, 92]; // F5 D5 B4 G4 E4 from top: bottom line E4 = 92
+    const yOf = step => 92 - (step - 2) * 6;  // step: 0=C4,1=D4,2=E4...
+    let s = lines.map(y => `<line x1="10" y1="${y}" x2="330" y2="${y}" stroke="var(--ink)" stroke-width="1.4"/>`).join('');
+    s += `<text x="14" y="100" font-size="66" fill="var(--ink)" font-family="serif">𝄞</text>`;
+    ['C','D','E','F','G'].forEach((n, i) => {
+      const x = 100 + i * 50, y = yOf(i);
+      if (i === 0) s += `<line x1="${x-16}" y1="104" x2="${x+16}" y2="104" stroke="var(--ink)" stroke-width="1.4"/>`;
+      s += `<ellipse cx="${x}" cy="${y}" rx="8.5" ry="6" transform="rotate(-20 ${x} ${y})" fill="var(--accent)"/>`;
+      s += `<line x1="${x+7.5}" y1="${y-2}" x2="${x+7.5}" y2="${y-38}" stroke="var(--accent)" stroke-width="1.8"/>`;
+      s += `<text x="${x}" y="130" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" font-weight="600" fill="var(--ink)">${n}</text>`;
+    });
+    $('#staffSvg').innerHTML = s;
+  })();
+
+  /* ---------- Lesson 5: play along ---------- */
+  const N = {C:60, D:62, E:64, F:65, G:67, A:69, B:71};
+  const SONGS = {
+    ode: { tempo: 0.5, notes: 'E3 E3 F4 G5 | G5 F4 E3 D2 | C1 C1 D2 E3 | E3:1.5 D2:.5 D2:2 | E3 E3 F4 G5 | G5 F4 E3 D2 | C1 C1 D2 E3 | D2:1.5 C1:.5 C1:2' },
+    mary: { tempo: 0.45, notes: 'E3 D2 C1 D2 | E3 E3 E3:2 | D2 D2 D2:2 | E3 G5 G5:2 | E3 D2 C1 D2 | E3 E3 E3 E3 | D2 D2 E3 D2 | C1:4' },
+    twinkle: { tempo: 0.5, notes: 'C1 C1 G4 G4 | A5 A5 G4:2 | F4 F4 E3 E3 | D2 D2 C1:2 | G4 G4 F4 F4 | E3 E3 D2:2 | G4 G4 F4 F4 | E3 E3 D2:2' }
+  };
+  function parse(str){
+    const out = [];
+    str.split(' ').forEach(tok => {
+      if (tok === '|'){ out.push({bar: true}); return; }
+      const [nf, len] = tok.split(':');
+      out.push({ n: nf[0], m: N[nf[0]], f: nf.slice(1), len: len ? parseFloat(len) : 1 });
+    });
+    return out;
+  }
+  let song = [], pos = 0, playing = false, timers = [];
+  const notesOnly = () => song.filter(x => !x.bar);
+  function renderSeq(){
+    let i = 0;
+    $('#seq').innerHTML = song.map(x => {
+      if (x.bar) return '<span class="bar" aria-hidden="true">|</span>';
+      const k = i++;
+      return `<span class="${k < pos ? 'done' : k === pos ? 'now' : ''}">${x.n}<small>${x.f}</small></span>`;
+    }).join('');
+    const ns = notesOnly();
+    p3.hint(pos < ns.length ? [ns[pos].m] : []);
+  }
+  function loadSong(){
+    stopListen();
+    song = parse(SONGS[$('#songSel').value].notes); pos = 0;
+    $('#p3Out').textContent = 'Play the orange key. Small numbers are the finger to use.';
+    renderSeq();
+  }
+  const p3 = makePiano($('#p3'), m => {
+    if (playing) return;
+    const ns = notesOnly();
+    if (pos >= ns.length) return;
+    if (m === ns[pos].m){
+      pos++;
+      if (pos >= ns.length){ $('#p3Out').innerHTML = '<span class="ok">You played the whole song!</span> Press Restart to go again, a little faster.'; }
+      else $('#p3Out').innerHTML = `<span class="ok">Good.</span> Next: <b>${ns[pos].n}</b> with finger ${ns[pos].f}.`;
+      renderSeq();
+    } else {
+      p3.flash(m, 'bad');
+      $('#p3Out').innerHTML = `<span class="no">That was ${nameOf(m)}.</span> Look for the orange key: <b>${ns[pos].n}</b>.`;
+    }
+  });
+  $('#p3').classList.add('nokeys');
+  function stopListen(){ timers.forEach(clearTimeout); timers = []; playing = false; $('#songListen').textContent = '▶ Listen first'; }
+  $('#songListen').addEventListener('click', () => {
+    if (playing){ stopListen(); renderSeq(); return; }
+    const c = audio(); if (!c){ $('#p3Out').textContent = 'Sound isn\'t supported in this browser.'; return; }
+    playing = true; $('#songListen').textContent = '■ Stop';
+    const beat = SONGS[$('#songSel').value].tempo;
+    let t = 0;
+    notesOnly().forEach((x, i) => {
+      timers.push(setTimeout(() => { tone(x.m, 0, Math.max(0.6, x.len * beat * 1.4)); p3.hint([]); p3.show(x.m, x.len * beat * 900); const spans = $('#seq').querySelectorAll('span:not(.bar)'); spans.forEach((s, k) => s.classList.toggle('now', k === i)); }, t * 1000));
+      t += x.len * beat;
+    });
+    timers.push(setTimeout(() => { stopListen(); renderSeq(); }, t * 1000 + 300));
+  });
+  $('#songRestart').addEventListener('click', loadSong);
+  $('#songSel').addEventListener('change', loadSong);
+  loadSong();
+
+  /* ---------- Lesson 6: chords ---------- */
+  const CH = { C: {std:[60,64,67], easy:[60,64,67], f:'1 3 5', fe:'1 3 5'}, F: {std:[65,69,72], easy:[60,65,69], f:'1 3 5', fe:'1 4 5'}, G: {std:[67,71,74], easy:[59,62,67], f:'1 3 5', fe:'1 2 5'} };
+  const p4 = makePiano($('#p4'), m => { $('#p4Out').innerHTML = `Single note: <b>${nameOf(m)}</b>. Pick a chord above to see its keys.`; });
+  $('#p4').classList.add('nokeys');
+  let chTimers = [];
+  function playChord(k, when){
+    const easy = $('#easyCh').checked, c = CH[k], ms = easy ? c.easy : c.std;
+    ms.forEach(m => tone(m, 0, 2));
+    tone(ms[0] - 12, 0, 2); // low root, like a left hand
+    p4.hint(ms);
+    $('#p4Out').innerHTML = `<b>${k} major</b>: ${ms.map(m => NAMES[m%12]).join(' · ')} &nbsp;<span style="font-family:var(--mono);font-size:.85rem;color:var(--muted)">fingers ${easy ? c.fe : c.f}</span>`;
+    $('#chBtns').querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.c === k));
+  }
+  $('#chBtns').querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+    chTimers.forEach(clearTimeout); chTimers = [];
+    if (!audio()){ $('#p4Out').textContent = 'Sound isn\'t supported in this browser.'; }
+    if (b.dataset.c === 'prog'){
+      ['C','F','G','C'].forEach((k, i) => chTimers.push(setTimeout(() => playChord(k), i * 1100)));
+      chTimers.push(setTimeout(() => $('#chBtns').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x.dataset.c === 'prog' ? 'false' : x.getAttribute('aria-pressed'))), 4500));
+      b.setAttribute('aria-pressed', 'true');
+    } else playChord(b.dataset.c);
+  }));
+  $('#easyCh').addEventListener('change', () => { const on = $('#chBtns').querySelector('button[aria-pressed="true"]:not([data-c="prog"])'); if (on) playChord(on.dataset.c); });
+})();
+</script>
+</body>
+</html>

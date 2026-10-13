@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Make Your First Website for Free · Shortutorial</title>
+<meta name="description" content="Build and publish your first website for free: plan it, write the HTML and CSS in a live editor, put it online with GitHub Pages, and connect your own domain name.">
+<link rel="canonical" href="https://shortutorial.com/make-a-website/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Make Your First Website for Free · Shortutorial">
+<meta property="og:description" content="Build and publish your first website for free: plan it, write the HTML and CSS in a live editor, put it online with GitHub Pages, and connect your own domain name.">
+<meta property="og:url" content="https://shortutorial.com/make-a-website/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink)}
+.links a:hover{border-color:var(--accent)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+/* Editor */
+.ed{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:760px){.ed{grid-template-columns:1fr}}
+.ed-tabs{display:flex;gap:4px;border-bottom:1px solid var(--line)}
+.ed-tabs button{all:unset;cursor:pointer;font-family:var(--mono);font-size:.8rem;font-weight:600;padding:7px 14px;border-radius:8px 8px 0 0;color:var(--muted);border:1px solid transparent;border-bottom:0;margin-bottom:-1px}
+.ed-tabs button[aria-selected="true"]{color:var(--accent);background:var(--surface);border-color:var(--line)}
+.ed-tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.ed textarea{display:block;width:100%;min-height:300px;resize:vertical;font-family:var(--mono);font-size:.82rem;line-height:1.55;padding:12px;border-radius:0 0 9px 9px;border:1.5px solid var(--line);border-top:0;background:var(--surface);color:var(--ink);tab-size:2;white-space:pre;overflow:auto}
+.ed textarea[hidden]{display:none}
+.ed textarea:focus{outline:none;border-color:var(--accent)}
+.ed iframe{width:100%;height:100%;min-height:340px;border:1.5px solid var(--line);border-radius:9px;background:#fff}
+.ed .pv-h{font-family:var(--mono);font-size:.74rem;color:var(--muted);margin-bottom:4px;display:flex;justify-content:space-between}
+.tree{font-family:var(--mono);font-size:.85rem;line-height:1.7;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px;white-space:pre;overflow-x:auto}
+.plan{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.plan>div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:4px}
+.plan b{font-family:var(--display)}
+.plan p{font-size:.92rem;color:var(--muted)}
+</style>
+</head>
+<body data-slug="make-a-website">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=programming">Programming</a> / Make a website</div>
+    <span class="eyebrow">Programming · Web</span>
+    <h1>Make Your First Website for Free</h1>
+    <p class="lede">No website builder, no monthly fee. In six lessons you'll plan a page, write it yourself in HTML and CSS, publish it on the internet for free, and learn how to give it your own web address.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~20 min</span><span class="badge">6 lessons</span><span class="badge">Live editor</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#w1">1 · Plan</a><a href="#w2">2 · HTML</a><a href="#w3">3 · CSS</a><a href="#w4">4 · Build it</a><a href="#w5">5 · Publish</a><a href="#w6">6 · Your domain</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="w1">
+    <div class="lesson-head"><span class="step">01</span><h2>Plan before you type</h2></div>
+    <p>Ten minutes of planning saves an hour of fiddling. Answer three questions on paper:</p>
+    <div class="plan">
+      <div><b>1. Who is it for?</b><p>Employers looking at your résumé? Customers of your lawn service? Family who want photos?</p></div>
+      <div><b>2. What should they do?</b><p>Call you, email you, read your story, see your work. One main action is best.</p></div>
+      <div><b>3. What goes on it?</b><p>A headline, a short intro, a few sections, a photo, and how to contact you.</p></div>
+    </div>
+    <p>A first site can be a <b>single page</b>. A website is really just a folder of files. Here's what yours will look like:</p>
+    <div class="tree">my-website/
+├── index.html    <span style="color:var(--muted)">← the home page (must be called index.html)</span>
+├── style.css     <span style="color:var(--muted)">← colors, fonts and layout</span>
+└── photo.jpg     <span style="color:var(--muted)">← any images you use</span></div>
+    <p class="callout"><span><b>Keep file names simple:</b> lowercase, no spaces. Use <code>about-me.html</code>, not <code>About Me.html</code>. Web addresses are picky about spaces and capital letters.</span></p>
+  </section>
+
+  <section class="lesson" id="w2">
+    <div class="lesson-head"><span class="step">02</span><h2>Write the HTML: your content</h2></div>
+    <p><b>HTML</b> marks up your content so the browser knows what's a heading, a paragraph, a link or an image. Every page starts with the same skeleton:</p>
+    <div class="code"><pre><code><span class="k">&lt;!doctype html&gt;</span>
+<span class="k">&lt;html</span> lang=<span class="s">"en"</span><span class="k">&gt;</span>
+<span class="k">&lt;head&gt;</span>
+  <span class="k">&lt;meta</span> charset=<span class="s">"utf-8"</span><span class="k">&gt;</span>
+  <span class="k">&lt;meta</span> name=<span class="s">"viewport"</span> content=<span class="s">"width=device-width, initial-scale=1"</span><span class="k">&gt;</span>
+  <span class="k">&lt;title&gt;</span>Maria Lopez · Garden Design<span class="k">&lt;/title&gt;</span>
+  <span class="k">&lt;link</span> rel=<span class="s">"stylesheet"</span> href=<span class="s">"style.css"</span><span class="k">&gt;</span>
+<span class="k">&lt;/head&gt;</span>
+<span class="k">&lt;body&gt;</span>
+  <span class="k">&lt;header&gt;</span>
+    <span class="k">&lt;h1&gt;</span>Maria Lopez<span class="k">&lt;/h1&gt;</span>
+    <span class="k">&lt;p&gt;</span>Garden design in Austin, Texas<span class="k">&lt;/p&gt;</span>
+  <span class="k">&lt;/header&gt;</span>
+  <span class="k">&lt;main&gt;</span>
+    <span class="k">&lt;section&gt;</span>
+      <span class="k">&lt;h2&gt;</span>What I do<span class="k">&lt;/h2&gt;</span>
+      <span class="k">&lt;p&gt;</span>Native, low-water gardens that look good all year.<span class="k">&lt;/p&gt;</span>
+      <span class="k">&lt;img</span> src=<span class="s">"photo.jpg"</span> alt=<span class="s">"A front yard planted with native grasses"</span><span class="k">&gt;</span>
+    <span class="k">&lt;/section&gt;</span>
+  <span class="k">&lt;/main&gt;</span>
+  <span class="k">&lt;footer&gt;</span>
+    <span class="k">&lt;a</span> href=<span class="s">"mailto:maria@example.com"</span><span class="k">&gt;</span>Email me<span class="k">&lt;/a&gt;</span>
+  <span class="k">&lt;/footer&gt;</span>
+<span class="k">&lt;/body&gt;</span>
+<span class="k">&lt;/html&gt;</span></code></pre></div>
+    <ul class="points">
+      <li><code>&lt;head&gt;</code> holds information <i>about</i> the page: its title on the browser tab, and the link to your stylesheet.</li>
+      <li>The <b>viewport</b> line makes the page fit phone screens. Always include it.</li>
+      <li><code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code> and <code>&lt;footer&gt;</code> group your content into meaningful parts. Screen readers and search engines use them.</li>
+      <li><code>alt</code> describes an image for people who can't see it.</li>
+    </ul>
+    <p>New to tags? Our <a href="../html-basics/">HTML in 10 minutes</a> lesson covers them one by one.</p>
+  </section>
+
+  <section class="lesson" id="w3">
+    <div class="lesson-head"><span class="step">03</span><h2>Style it with CSS: the look</h2></div>
+    <p><b>CSS</b> decides colors, fonts, spacing and layout. Each rule picks some elements with a <b>selector</b>, then sets <b>properties</b>:</p>
+    <div class="code"><pre><code><span class="k">body</span> {                       <span class="c">/* selector: which elements */</span>
+  font-family: system-ui, sans-serif;  <span class="c">/* property: value; */</span>
+  max-width: <span class="s">40rem</span>;            <span class="c">/* keep lines easy to read */</span>
+  margin: <span class="s">0 auto</span>;              <span class="c">/* center the page */</span>
+  padding: <span class="s">1rem</span>;
+  line-height: <span class="s">1.6</span>;
+  color: <span class="s">#222</span>;
+}
+<span class="k">h1</span> { color: <span class="s">#2f6b3a</span>; }
+<span class="k">img</span> { max-width: <span class="s">100%</span>; border-radius: <span class="s">8px</span>; }  <span class="c">/* never wider than the screen */</span>
+<span class="k">a</span> { color: <span class="s">#2f6b3a</span>; }</code></pre></div>
+    <ul class="points">
+      <li><b>Selectors:</b> a tag name like <code>h1</code>, a class like <code>.card</code> (matches <code>class="card"</code>), or an id like <code>#contact</code>.</li>
+      <li><b>Colors:</b> names (<code>teal</code>) or hex codes (<code>#2f6b3a</code>). Make sure text contrasts strongly with its background.</li>
+      <li><b>Spacing:</b> <code>padding</code> is space inside a box; <code>margin</code> is space outside it.</li>
+    </ul>
+    <p class="callout"><span><b>Phones first.</b> Many of your visitors will be on phones. <code>max-width: 100%</code> on images and the viewport line from lesson 2 go a long way. For bigger changes on wide screens, use a media query: <code>@media (min-width: 700px) { … }</code>.</span></p>
+  </section>
+
+  <section class="lesson" id="w4">
+    <div class="lesson-head"><span class="step">04</span><h2>Build it: live editor</h2></div>
+    <p>Pick a starter, then change the words, colors and sections. The preview updates as you type. When you like it, download the two files; they're ready to publish in lesson 5.</p>
+    <div class="try"><span class="try-h">Try it · live HTML &amp; CSS editor</span>
+      <div class="chipset" role="group" aria-label="Starter templates" id="tpls">
+        <button type="button" data-t="person" aria-pressed="true">Personal page</button><button type="button" data-t="biz" aria-pressed="false">Small business</button><button type="button" data-t="blank" aria-pressed="false">Blank</button>
+      </div>
+      <div class="ed">
+        <div>
+          <div class="ed-tabs" role="tablist" aria-label="Files"><button type="button" role="tab" id="tabH" aria-selected="true" aria-controls="edH">index.html</button><button type="button" role="tab" id="tabC" aria-selected="false" aria-controls="edC">style.css</button></div>
+          <textarea id="edH" role="tabpanel" aria-labelledby="tabH" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>
+          <textarea id="edC" role="tabpanel" aria-labelledby="tabC" spellcheck="false" autocapitalize="off" autocomplete="off" hidden></textarea>
+        </div>
+        <div style="display:flex;flex-direction:column">
+          <div class="pv-h"><span>Preview</span><span id="pvNote"></span></div>
+          <iframe id="pv" sandbox="" title="Preview of your website"></iframe>
+        </div>
+      </div>
+      <div class="row"><button class="btn" type="button" id="dlH">Download index.html</button><button class="btn ghost" type="button" id="dlC">Download style.css</button><button class="btn ghost" type="button" id="edReset">Reset</button></div>
+      <p class="work" id="edMsg">Your work is saved in this browser as you type.</p>
+    </div>
+  </section>
+
+  <section class="lesson" id="w5">
+    <div class="lesson-head"><span class="step">05</span><h2>Publish it free with GitHub Pages</h2></div>
+    <p><b>GitHub Pages</b> hosts simple websites made of HTML, CSS and images for free, on an address like <code>yourname.github.io</code>. You don't need to install anything; it all works in the browser.</p>
+    <ol class="steps">
+      <li>Create a free account at <a href="https://github.com/signup" target="_blank" rel="noopener">github.com</a>. Your username becomes part of your web address, so choose carefully.</li>
+      <li>Click <b>+</b> (top right) › <b>New repository</b>. Name it exactly <code>yourusername.github.io</code>, all lowercase. Leave it <b>Public</b> (the free plan needs this for Pages). Click <b>Create repository</b>.</li>
+      <li>On the new repository page, choose <b>Add file</b> › <b>Upload files</b> (or the “uploading an existing file” link). Drag in <code>index.html</code>, <code>style.css</code> and any images, then click <b>Commit changes</b>.</li>
+      <li>Go to the repository's <b>Settings</b> › <b>Pages</b>. Under <b>Build and deployment</b>, set <b>Source</b> to <b>Deploy from a branch</b>, pick the <b>main</b> branch and the <b>/ (root)</b> folder, and click <b>Save</b>.</li>
+      <li>Wait a few minutes (up to 10), then refresh the Pages settings and click <b>Visit site</b>. You're live at <code>https://yourusername.github.io</code>.</li>
+    </ol>
+    <p>To change your site later, open a file on GitHub, click the pencil icon to edit, and commit. Or upload a new version with the same name.</p>
+    <p class="callout warn"><span><b>Everything you publish is public.</b> Don't put your home address, phone number or anything private on the page unless you're happy for the whole internet to see it. GitHub Pages also isn't allowed for online stores or for collecting passwords or credit card numbers.</span></p>
+    <p><b>Other free options:</b> Netlify and Cloudflare Pages also host static sites free, and both let you drag and drop a folder or connect a GitHub repository. The HTML and CSS you wrote work on any of them.</p>
+  </section>
+
+  <section class="lesson" id="w6">
+    <div class="lesson-head"><span class="step">06</span><h2>Use your own domain name</h2></div>
+    <p>A <b>domain</b> like <code>marialopezgardens.com</code> looks more professional than <code>marialopez.github.io</code>. Domains aren't free: you rent them by the year from a <b>registrar</b> (a company that sells domains). Your hosting on GitHub Pages stays free.</p>
+    <ol class="steps">
+      <li><b>Buy the domain</b> from any registrar. Check the renewal price, not just the first-year deal.</li>
+      <li><b>Tell GitHub:</b> in your repository, go to <b>Settings</b> › <b>Pages</b> › <b>Custom domain</b>, type your domain and click <b>Save</b>. GitHub recommends verifying your domain in your account settings first, which stops anyone else claiming it.</li>
+      <li><b>Point the domain at GitHub</b> in your registrar's <b>DNS</b> settings (DNS is the internet's phone book):</li>
+    </ol>
+    <div class="tw"><table class="t"><tr><th>For</th><th>Record type</th><th>Value</th></tr>
+      <tr><td><code>www.yourdomain.com</code></td><td>CNAME</td><td><code>yourusername.github.io</code></td></tr>
+      <tr><td><code>yourdomain.com</code> (no www)</td><td>A (add four)</td><td><code>185.199.108.153</code><br><code>185.199.109.153</code><br><code>185.199.110.153</code><br><code>185.199.111.153</code></td></tr>
+    </table></div>
+    <ol class="steps" start="4">
+      <li><b>Wait.</b> DNS changes can take up to 24 hours to spread around the internet.</li>
+      <li><b>Turn on HTTPS:</b> back in <b>Settings</b> › <b>Pages</b>, tick <b>Enforce HTTPS</b> so visitors get the padlock. It can take a while to become available after the domain starts working.</li>
+    </ol>
+    <p class="callout"><span><b>Avoid wildcard records</b> like <code>*.yourdomain.com</code>. GitHub warns they make it easier for someone to take over your domain.</span></p>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Is GitHub Pages really free?</summary><div class="a"><p>Yes, for public repositories on a free GitHub account. Sites can be up to 1 GB, with a soft limit of 100 GB of traffic a month, which is plenty for a personal or small business site.</p></div></details>
+      <details><summary>Do I need to know how to code?</summary><div class="a"><p>Only the basics in this lesson. HTML and CSS aren't programming languages in the hard sense; they describe content and style. Start from a template and change it bit by bit.</p></div></details>
+      <details><summary>Can I add more pages?</summary><div class="a"><p>Yes. Make another file like <code>about.html</code>, copy the skeleton, and link to it with <code>&lt;a href="about.html"&gt;About&lt;/a&gt;</code>. It'll be at <code>yourusername.github.io/about.html</code>.</p></div></details>
+      <details><summary>My site shows a 404 error. What's wrong?</summary><div class="a"><p>Check that the home page is named exactly <code>index.html</code> (lowercase) and sits at the top of the repository, not inside a folder. Then wait a few minutes; publishing isn't instant.</p></div></details>
+      <details><summary>My page shows but has no styling.</summary><div class="a"><p>The <code>href</code> in your <code>&lt;link&gt;</code> tag must exactly match the CSS file name, including capital letters. <code>Style.css</code> and <code>style.css</code> are different files on the web.</p></div></details>
+      <details><summary>Should I use a website builder instead?</summary><div class="a"><p>Builders like Squarespace or Wix are quicker if you just need a site, but usually cost money each month for a custom domain. Writing it yourself is free, faster to load, and teaches you how the web works.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Official help</h2>
+    <div class="links">
+      <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site" target="_blank" rel="noopener"><span class="src">GitHub Docs</span><b>Creating a GitHub Pages site</b></a>
+      <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site" target="_blank" rel="noopener"><span class="src">GitHub Docs</span><b>Managing a custom domain for GitHub Pages</b></a>
+      <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits" target="_blank" rel="noopener"><span class="src">GitHub Docs</span><b>GitHub Pages limits</b></a>
+      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website" target="_blank" rel="noopener"><span class="src">MDN Web Docs</span><b>Your first website (Mozilla)</b></a>
+    </div>
+  </section>
+
+  <section id="cert" style="scroll-margin-top:80px"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/leaderboard/">Leaderboard</a></nav></span><span>GitHub Pages steps and limits checked against GitHub Docs, October 2026.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  const head = t => `<!doctype html>\n<html lang="en">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1">\n  <title>${t}</title>\n  <link rel="stylesheet" href="style.css">\n</head>\n`;
+  const T = {
+    person:{h: head('Sam Carter') + `<body>
+  <header>
+    <h1>Sam Carter</h1>
+    <p>Teacher, runner and amateur baker in Ohio.</p>
+  </header>
+  <main>
+    <section>
+      <h2>About me</h2>
+      <p>I teach 5th grade science and spend weekends on the trails.</p>
+    </section>
+    <section class="card">
+      <h2>Things I love</h2>
+      <ul>
+        <li>Sourdough bread</li>
+        <li>Trail running</li>
+        <li>Good science fiction</li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <a href="mailto:sam@example.com">Say hello</a>
+  </footer>
+</body>
+</html>`, c:`body {
+  font-family: system-ui, sans-serif;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+  line-height: 1.6;
+  color: #222;
+  background: #fdfaf4;
+}
+h1 {
+  color: #b5462e;
+  margin-bottom: 0;
+}
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+a {
+  color: #b5462e;
+  font-weight: bold;
+}`},
+    biz:{h: head('Green Thumb Lawn Care') + `<body>
+  <header class="hero">
+    <h1>Green Thumb Lawn Care</h1>
+    <p>Mowing, edging and leaf cleanup in Springfield.</p>
+    <a class="button" href="tel:+15555550123">Call (555) 555-0123</a>
+  </header>
+  <main>
+    <section>
+      <h2>Services</h2>
+      <div class="grid">
+        <div class="card"><h3>Weekly mowing</h3><p>From $35 a visit.</p></div>
+        <div class="card"><h3>Fall cleanup</h3><p>Leaves gone in a day.</p></div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>Open Monday to Saturday, 8am to 6pm.</p>
+  </footer>
+</body>
+</html>`, c:`body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  color: #1d2a1f;
+  line-height: 1.5;
+}
+.hero {
+  background: #2f6b3a;
+  color: white;
+  padding: 2rem 1.25rem;
+  text-align: center;
+}
+.button {
+  display: inline-block;
+  background: #ffd23f;
+  color: #1d2a1f;
+  padding: .7rem 1.2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+}
+main, footer {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+.card {
+  border: 2px solid #2f6b3a;
+  border-radius: 10px;
+  padding: .25rem 1rem;
+}`},
+    blank:{h: head('My website') + `<body>
+  <h1>Hello, world!</h1>
+  <p>This is my first website.</p>
+</body>
+</html>`, c:`body {
+  font-family: system-ui, sans-serif;
+  margin: 2rem;
+}`}
+  };
+  const eH = document.getElementById('edH'), eC = document.getElementById('edC'), pv = document.getElementById('pv');
+  const tH = document.getElementById('tabH'), tC = document.getElementById('tabC');
+  let tpl = 'person';
+  function store(k, v){ try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch(e){ return null; } }
+  function render(){
+    // Inline the stylesheet for the preview, since the sandboxed frame can't load style.css
+    let html = eH.value;
+    const css = '<style>' + eC.value.replace(/<\/style/gi, '<\\/style') + '</style>';
+    const linked = /<link[^>]*href=["']?style\.css["']?[^>]*>/i;
+    html = linked.test(html) ? html.replace(linked, css) : (/<\/head>/i.test(html) ? html.replace(/<\/head>/i, css + '</head>') : css + html);
+    pv.srcdoc = html;
+    document.getElementById('pvNote').textContent = linked.test(eH.value) ? 'style.css linked ✓' : 'add <link rel="stylesheet" href="style.css">';
+    store('st-site-h', eH.value); store('st-site-c', eC.value); store('st-site-t', tpl);
+  }
+  function load(t){
+    tpl = t; eH.value = T[t].h; eC.value = T[t].c;
+    document.querySelectorAll('#tpls button').forEach(b => b.setAttribute('aria-pressed', b.dataset.t === t));
+    render();
+  }
+  function tab(which){
+    const h = which === 'h';
+    tH.setAttribute('aria-selected', h); tC.setAttribute('aria-selected', !h);
+    eH.hidden = !h; eC.hidden = h;
+  }
+  tH.addEventListener('click', () => tab('h')); tC.addEventListener('click', () => tab('c'));
+  [tH, tC].forEach(b => b.addEventListener('keydown', e => { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft'){ const n = b === tH ? tC : tH; n.focus(); n.click(); } }));
+  document.querySelectorAll('#tpls button').forEach(b => b.addEventListener('click', () => {
+    if ((eH.value !== T[tpl].h || eC.value !== T[tpl].c) && !confirm('Replace your edits with this starter?')) return;
+    load(b.dataset.t);
+  }));
+  let timer; [eH, eC].forEach(el => el.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(render, 150); }));
+  // Tab key inserts two spaces; Escape then Tab moves focus out
+  let esc = false;
+  [eH, eC].forEach(el => el.addEventListener('keydown', e => {
+    if (e.key === 'Escape'){ esc = true; return; }
+    if (e.key === 'Tab' && !e.shiftKey && !esc){ e.preventDefault(); const s = el.selectionStart; el.setRangeText('  ', s, el.selectionEnd, 'end'); el.dispatchEvent(new Event('input')); }
+    esc = false;
+  }));
+  function dl(name, text, type){
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([text], {type}));
+    a.download = name; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    document.getElementById('edMsg').textContent = `Downloaded ${name}. Put both files in one folder, then publish them in lesson 5.`;
+  }
+  document.getElementById('dlH').addEventListener('click', () => dl('index.html', eH.value, 'text/html'));
+  document.getElementById('dlC').addEventListener('click', () => dl('style.css', eC.value, 'text/css'));
+  document.getElementById('edReset').addEventListener('click', () => { if (confirm('Start over with the starter template?')) load(tpl); });
+  const sH = store('st-site-h'), sC = store('st-site-c'), sT = store('st-site-t');
+  if (sH && sC){ tpl = T[sT] ? sT : 'person'; eH.value = sH; eC.value = sC; document.querySelectorAll('#tpls button').forEach(b => b.setAttribute('aria-pressed', b.dataset.t === tpl)); render(); }
+  else load('person');
+})();
+</script>
+</body>
+</html>

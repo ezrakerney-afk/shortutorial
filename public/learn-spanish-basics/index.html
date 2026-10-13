@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Learn Basic Spanish · Shortutorial</title>
+<meta name="description" content="Learn beginner Spanish: pronunciation, greetings, numbers 1 to 20, essential travel phrases, el and la, and ser vs estar, with flashcards you can flip, score and hear spoken aloud.">
+<link rel="canonical" href="https://shortutorial.com/learn-spanish-basics/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Learn Basic Spanish · Shortutorial">
+<meta property="og:description" content="Learn beginner Spanish: pronunciation, greetings, numbers 1 to 20, essential travel phrases, el and la, and ser vs estar, with flashcards you can flip, score and hear spoken aloud.">
+<meta property="og:url" content="https://shortutorial.com/learn-spanish-basics/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+/* FAQ and sources (same look as guide pages) */
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+
+/* Speak buttons */
+.say{all:unset;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--line);background:var(--surface);color:var(--accent);font-size:.7rem;vertical-align:middle;margin-left:6px;flex:none}
+.say:hover{border-color:var(--accent)}
+.say:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.say.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.es{font-family:var(--display);font-weight:600}
+.numgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.numgrid div{display:flex;align-items:center;justify-content:space-between;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+.numgrid .n{font-family:var(--mono);color:var(--amber);font-weight:600;min-width:1.6em}
+.numgrid .es{flex:1}
+
+/* Flashcards */
+.fc-card{all:unset;box-sizing:border-box;cursor:pointer;display:block;width:100%;perspective:900px;min-height:190px}
+.fc-card:focus-visible .fc-in{outline:2px solid var(--accent);outline-offset:3px}
+.fc-in{position:relative;width:100%;min-height:190px;transition:transform .45s;transform-style:preserve-3d;border-radius:14px}
+.fc-card.flipped .fc-in{transform:rotateY(180deg)}
+.fc-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:18px;text-align:center;border-radius:14px;background:var(--surface);border:1.5px solid var(--line)}
+.fc-face.back{transform:rotateY(180deg);border-color:var(--accent)}
+.fc-face .big{font-family:var(--display);font-weight:700;font-size:clamp(1.45rem,6vw,2rem);line-height:1.2;overflow-wrap:anywhere}
+.fc-face .hint{font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.fc-face .note{font-size:.92rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.fc-in{transition:none}}
+.fc-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.fc-meter{height:8px;border-radius:99px;background:var(--line);overflow:hidden;flex:1;min-width:120px}
+.fc-meter i{display:block;height:100%;background:var(--good);width:0;transition:width .3s}
+.fc-btns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.fc-btns .btn{justify-content:center;padding:9px 10px;font-size:.9rem}
+.btn.bad{background:var(--bad-bg);color:var(--bad)}
+.btn.goodb{background:var(--good-bg);color:var(--good)}
+.fc-stat{font-family:var(--mono);font-size:.8rem;color:var(--muted)}
+.vnote{font-family:var(--mono);font-size:.75rem;color:var(--muted)}
+.try select{width:auto;max-width:100%}
+</style>
+</head>
+<body data-slug="learn-spanish-basics">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=spanish">Life skills</a> / Learn Spanish basics</div>
+    <span class="eyebrow">Life skills · Languages</span>
+    <h1>Learn Basic Spanish</h1>
+    <p class="lede">Spanish is one of the easiest languages for English speakers to start. In six short lessons you'll learn to pronounce it, say hello, count to twenty, get by on a trip, and use the two words for “to be”.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~15 min</span><span class="badge">6 lessons</span><span class="badge">Flashcards with audio</span><span class="badge">5-question quiz</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#es1">1 · Sounds</a><a href="#es2">2 · Greetings</a><a href="#es3">3 · Numbers</a><a href="#es4">4 · Phrases</a><a href="#es5">5 · El & la</a><a href="#es6">6 · Ser & estar</a><a href="#cards">Flashcards</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="es1">
+    <div class="lesson-head"><span class="step">01</span><h2>Pronunciation: say what you see</h2></div>
+    <p>Good news: Spanish is spelled almost exactly how it sounds. Learn a handful of rules and you can read any word out loud, even if you don't know what it means.</p>
+    <h3>The five vowels never change</h3>
+    <p>English vowels change sound all the time (think “cat”, “car”, “cake”). Spanish vowels don't. Keep them short and crisp:</p>
+    <div class="tw"><table class="t"><tr><th>Letter</th><th>Sounds like</th><th>Example</th></tr>
+      <tr><td><b>a</b></td><td>“ah” in <i>father</i></td><td><span class="es">casa</span> (house)<button class="say" data-say="casa" aria-label="Listen: casa">▶</button></td></tr>
+      <tr><td><b>e</b></td><td>“eh” in <i>bet</i></td><td><span class="es">mesa</span> (table)<button class="say" data-say="mesa" aria-label="Listen: mesa">▶</button></td></tr>
+      <tr><td><b>i</b></td><td>“ee” in <i>see</i></td><td><span class="es">sí</span> (yes)<button class="say" data-say="sí" aria-label="Listen: sí">▶</button></td></tr>
+      <tr><td><b>o</b></td><td>“oh” in <i>go</i>, but shorter</td><td><span class="es">todo</span> (all)<button class="say" data-say="todo" aria-label="Listen: todo">▶</button></td></tr>
+      <tr><td><b>u</b></td><td>“oo” in <i>food</i></td><td><span class="es">uno</span> (one)<button class="say" data-say="uno" aria-label="Listen: uno">▶</button></td></tr>
+    </table></div>
+    <h3>Consonants that surprise English speakers</h3>
+    <ul class="points">
+      <li><b>h</b> is always silent: <span class="es">hola</span> is “OH-lah”.</li>
+      <li><b>j</b>, and <b>g</b> before e or i, sound like a breathy English “h”: <span class="es">jugo</span> (juice), <span class="es">gente</span> (people).</li>
+      <li><b>ñ</b> sounds like the “ny” in <i>canyon</i>: <span class="es">año</span> (year)<button class="say" data-say="año" aria-label="Listen: año">▶</button>.</li>
+      <li><b>ll</b> and <b>y</b> sound like the “y” in <i>yes</i> in most places: <span class="es">llamo</span>, <span class="es">yo</span>. (In parts of Argentina and Uruguay they sound more like “sh”.)</li>
+      <li><b>r</b> is a quick tap of the tongue, like the “tt” in American <i>butter</i>: <span class="es">pero</span> (but). <b>rr</b>, or an r at the start of a word, is rolled: <span class="es">perro</span> (dog)<button class="say" data-say="perro" aria-label="Listen: perro">▶</button>.</li>
+      <li><b>z</b>, and <b>c</b> before e or i, sound like “s” in Latin America and like “th” in most of Spain: <span class="es">gracias</span>. Both are correct.</li>
+      <li><b>qu</b> is a plain “k”: <span class="es">queso</span> (cheese) is “KEH-so”. <b>v</b> sounds almost the same as <b>b</b>.</li>
+    </ul>
+    <h3>Where to put the stress</h3>
+    <ul class="points">
+      <li>Word ends in a <b>vowel, n or s</b>? Stress the <b>second-to-last</b> syllable: <span class="es">CA-sa</span>, <span class="es">HA-blan</span>.</li>
+      <li>Ends in any other consonant? Stress the <b>last</b> syllable: <span class="es">ha-BLAR</span>, <span class="es">ciu-DAD</span>.</li>
+      <li>An <b>accent mark</b> overrides both rules: <span class="es">ca-FÉ</span>, <span class="es">te-LÉ-fo-no</span>.</li>
+    </ul>
+    <p class="callout"><span><b>Accents can change meaning.</b> <span class="es">Si</span> means “if”, <span class="es">sí</span> means “yes”. <span class="es">El</span> is “the”, <span class="es">él</span> is “he”.</span></p>
+  </section>
+
+  <section class="lesson" id="es2">
+    <div class="lesson-head"><span class="step">02</span><h2>Greetings and introductions</h2></div>
+    <div class="tw"><table class="t"><tr><th>Spanish</th><th>English</th><th>When to use it</th></tr>
+      <tr><td><span class="es">Hola</span><button class="say" data-say="Hola" aria-label="Listen: Hola">▶</button></td><td>Hi / Hello</td><td>Anytime, with anyone</td></tr>
+      <tr><td><span class="es">Buenos días</span><button class="say" data-say="Buenos días" aria-label="Listen: Buenos días">▶</button></td><td>Good morning</td><td>Until about lunchtime</td></tr>
+      <tr><td><span class="es">Buenas tardes</span><button class="say" data-say="Buenas tardes" aria-label="Listen: Buenas tardes">▶</button></td><td>Good afternoon</td><td>Afternoon until dark</td></tr>
+      <tr><td><span class="es">Buenas noches</span><button class="say" data-say="Buenas noches" aria-label="Listen: Buenas noches">▶</button></td><td>Good evening / Good night</td><td>Both hello and goodbye after dark</td></tr>
+      <tr><td><span class="es">¿Cómo estás?</span><button class="say" data-say="¿Cómo estás?" aria-label="Listen: ¿Cómo estás?">▶</button></td><td>How are you?</td><td>Friends, family, kids</td></tr>
+      <tr><td><span class="es">¿Cómo está usted?</span><button class="say" data-say="¿Cómo está usted?" aria-label="Listen: ¿Cómo está usted?">▶</button></td><td>How are you? (polite)</td><td>Strangers, older people, at work</td></tr>
+      <tr><td><span class="es">Bien, gracias. ¿Y tú?</span></td><td>Fine, thanks. And you?</td><td>The standard reply</td></tr>
+      <tr><td><span class="es">Me llamo…</span><button class="say" data-say="Me llamo Ana" aria-label="Listen: Me llamo Ana">▶</button></td><td>My name is…</td><td>Literally “I call myself…”</td></tr>
+      <tr><td><span class="es">¿Cómo te llamas?</span></td><td>What's your name?</td><td>Informal</td></tr>
+      <tr><td><span class="es">Mucho gusto</span><button class="say" data-say="Mucho gusto" aria-label="Listen: Mucho gusto">▶</button></td><td>Nice to meet you</td><td>After introductions</td></tr>
+      <tr><td><span class="es">Adiós</span> · <span class="es">Hasta luego</span></td><td>Goodbye · See you later</td><td><i>Hasta luego</i> is the everyday goodbye</td></tr>
+    </table></div>
+    <p><b>Tú or usted?</b> Spanish has two words for “you”. Use <b>tú</b> with friends, family, children and people your age in casual settings. Use <b>usted</b> to be polite: with strangers, older people, customers and bosses. If you're not sure, start with usted. People will tell you if they'd like you to switch.</p>
+    <p class="callout"><span><b>Spelling tip:</b> questions and exclamations open with an upside-down mark: <span class="es">¿Qué tal?</span> <span class="es">¡Hola!</span> It tells the reader early how to say the sentence.</span></p>
+  </section>
+
+  <section class="lesson" id="es3">
+    <div class="lesson-head"><span class="step">03</span><h2>Numbers 1 to 20</h2></div>
+    <p>Tap any number to hear it. Notice that 16 to 19 are built like “ten and six”: <span class="es">dieci-séis</span>.</p>
+    <div class="numgrid" id="nums"></div>
+    <ul class="points">
+      <li><b>Uno</b> shortens to <b>un</b> before a masculine noun and becomes <b>una</b> before a feminine one: <span class="es">un café</span>, <span class="es">una cerveza</span>.</li>
+      <li>Prices and phone numbers come up constantly. Practice by reading license plates or price tags out loud in Spanish.</li>
+    </ul>
+  </section>
+
+  <section class="lesson" id="es4">
+    <div class="lesson-head"><span class="step">04</span><h2>Essential phrases for getting by</h2></div>
+    <div class="tw"><table class="t"><tr><th>Spanish</th><th>English</th></tr>
+      <tr><td><span class="es">Por favor</span><button class="say" data-say="Por favor" aria-label="Listen: Por favor">▶</button></td><td>Please</td></tr>
+      <tr><td><span class="es">Gracias</span> · <span class="es">De nada</span></td><td>Thank you · You're welcome</td></tr>
+      <tr><td><span class="es">Perdón</span> · <span class="es">Disculpe</span></td><td>Sorry · Excuse me (to get attention)</td></tr>
+      <tr><td><span class="es">Lo siento</span></td><td>I'm sorry (an apology)</td></tr>
+      <tr><td><span class="es">No entiendo</span><button class="say" data-say="No entiendo" aria-label="Listen: No entiendo">▶</button></td><td>I don't understand</td></tr>
+      <tr><td><span class="es">¿Habla inglés?</span><button class="say" data-say="¿Habla inglés?" aria-label="Listen: ¿Habla inglés?">▶</button></td><td>Do you speak English? (polite)</td></tr>
+      <tr><td><span class="es">Más despacio, por favor</span><button class="say" data-say="Más despacio, por favor" aria-label="Listen: Más despacio, por favor">▶</button></td><td>More slowly, please</td></tr>
+      <tr><td><span class="es">¿Dónde está el baño?</span><button class="say" data-say="¿Dónde está el baño?" aria-label="Listen: ¿Dónde está el baño?">▶</button></td><td>Where is the bathroom?</td></tr>
+      <tr><td><span class="es">¿Cuánto cuesta?</span><button class="say" data-say="¿Cuánto cuesta?" aria-label="Listen: ¿Cuánto cuesta?">▶</button></td><td>How much does it cost?</td></tr>
+      <tr><td><span class="es">Quisiera…</span></td><td>I would like… (polite way to order)</td></tr>
+      <tr><td><span class="es">La cuenta, por favor</span><button class="say" data-say="La cuenta, por favor" aria-label="Listen: La cuenta, por favor">▶</button></td><td>The check, please</td></tr>
+      <tr><td><span class="es">¿Qué significa…?</span></td><td>What does … mean?</td></tr>
+    </table></div>
+    <div class="example"><div class="ex-h">Put it together · ordering a coffee</div><div class="ex-b">
+      <p><span class="es">Buenos días. Quisiera un café, por favor.</span> (Good morning. I'd like a coffee, please.)</p>
+      <p><span class="es">¿Cuánto cuesta?</span> … <span class="es">Gracias. ¡Hasta luego!</span></p>
+    </div></div>
+  </section>
+
+  <section class="lesson" id="es5">
+    <div class="lesson-head"><span class="step">05</span><h2>Masculine, feminine and the word “the”</h2></div>
+    <p>Every Spanish noun is either <b>masculine</b> or <b>feminine</b>. It's grammar, not meaning: a table (<span class="es">la mesa</span>) isn't female. The gender decides which word for “the” and “a” you use.</p>
+    <div class="tw"><table class="t"><tr><th></th><th>Masculine</th><th>Feminine</th></tr>
+      <tr><td><b>the</b> (one)</td><td><span class="es">el</span> libro</td><td><span class="es">la</span> casa</td></tr>
+      <tr><td><b>the</b> (more than one)</td><td><span class="es">los</span> libros</td><td><span class="es">las</span> casas</td></tr>
+      <tr><td><b>a / an</b></td><td><span class="es">un</span> libro</td><td><span class="es">una</span> casa</td></tr>
+      <tr><td><b>some</b></td><td><span class="es">unos</span> libros</td><td><span class="es">unas</span> casas</td></tr>
+    </table></div>
+    <ul class="points">
+      <li>Most nouns ending in <b>-o</b> are masculine; most ending in <b>-a</b> are feminine.</li>
+      <li>Words ending in <b>-ción</b>, <b>-sión</b> and <b>-dad</b> are feminine: <span class="es">la estación</span>, <span class="es">la ciudad</span>.</li>
+      <li>Common exceptions to memorize: <span class="es">el día</span> (day), <span class="es">el mapa</span>, <span class="es">el problema</span>, <span class="es">la mano</span> (hand).</li>
+      <li>To make a plural, add <b>-s</b> after a vowel and <b>-es</b> after a consonant: <span class="es">ciudad → ciudades</span>.</li>
+      <li>Adjectives usually come <b>after</b> the noun and match it: <span class="es">el gato negro</span>, <span class="es">la casa blanca</span>, <span class="es">las casas blancas</span>.</li>
+    </ul>
+    <p class="callout"><span><b>Learn nouns with their article.</b> Don't memorize “mesa”; memorize “<i>la</i> mesa”. Our flashcards do this for you.</span></p>
+  </section>
+
+  <section class="lesson" id="es6">
+    <div class="lesson-head"><span class="step">06</span><h2>Ser and estar: two ways to say “to be”</h2></div>
+    <p>English has one verb “to be”. Spanish has two. Roughly: <b>ser</b> is for what something <i>is</i>, and <b>estar</b> is for how or where something <i>is right now</i>.</p>
+    <div class="grid2">
+      <div><span class="tagline">Ser · identity</span><p style="color:var(--ink)">yo <b>soy</b> · tú <b>eres</b> · él/ella/usted <b>es</b> · nosotros <b>somos</b> · ellos/ustedes <b>son</b></p><p>Who or what you are, where you're from, jobs, descriptions, time and dates.</p><p><span class="es" style="color:var(--ink)">Soy de Texas.</span> I'm from Texas.<br><span class="es" style="color:var(--ink)">Ella es doctora.</span> She's a doctor.<br><span class="es" style="color:var(--ink)">Son las tres.</span> It's three o'clock.</p></div>
+      <div><span class="tagline">Estar · state and place</span><p style="color:var(--ink)">yo <b>estoy</b> · tú <b>estás</b> · él/ella/usted <b>está</b> · nosotros <b>estamos</b> · ellos/ustedes <b>están</b></p><p>Location, feelings, health, and temporary conditions.</p><p><span class="es" style="color:var(--ink)">Estoy cansado.</span> I'm tired.<br><span class="es" style="color:var(--ink)">¿Dónde está el hotel?</span> Where is the hotel?<br><span class="es" style="color:var(--ink)">La sopa está fría.</span> The soup is cold.</p></div>
+    </div>
+    <p>Some adjectives change meaning: <span class="es">Es aburrido</span> means “he's boring”, but <span class="es">Está aburrido</span> means “he's bored”.</p>
+    <p class="callout"><span><b>Memory trick:</b> “How you feel and where you are, always use the verb estar.” One catch: <i>events</i> use ser for location: <span class="es">La fiesta es en mi casa</span>.</span></p>
+    <p>You'll also see <b>vosotros</b> (you all, informal) in Spain: <span class="es">sois</span>, <span class="es">estáis</span>. Latin America uses <b>ustedes</b> for every “you all”, which is what most US Spanish speakers use too.</p>
+  </section>
+
+  <section class="lesson" id="cards">
+    <div class="lesson-head"><span class="step">✦</span><h2>Practice with flashcards</h2></div>
+    <p>Pick a deck, try to recall the answer, then flip. Be honest: cards you mark “Again” come back later in the round. Press <kbd>Space</kbd> to flip, <kbd>←</kbd> for again, <kbd>→</kbd> for got it, and <kbd>L</kbd> to listen.</p>
+    <div class="try" id="fc" tabindex="-1">
+      <span class="try-h">Try it · flashcards</span>
+      <div class="row">
+        <label>Deck<select id="fcDeck"><option value="all">Everything (50 cards)</option><option value="greet">Greetings</option><option value="num">Numbers 1–20</option><option value="phr">Essential phrases</option><option value="noun">Nouns with el / la</option><option value="be">Ser vs estar</option></select></label>
+        <label>Show first<select id="fcDir"><option value="es">Spanish</option><option value="en">English</option></select></label>
+        <label>Voice<select id="fcVoice"><option value="">Loading…</option></select></label>
+      </div>
+      <div class="fc-bar"><span class="fc-stat" id="fcStat">Card 1</span><div class="fc-meter" aria-hidden="true"><i id="fcMeter"></i></div></div>
+      <button class="fc-card" id="fcCard" type="button" aria-live="polite">
+        <span class="fc-in"><span class="fc-face front"><span class="hint" id="fcHintF">SPANISH</span><span class="big" id="fcFront"></span><span class="hint">tap or press Space to flip</span></span><span class="fc-face back"><span class="hint" id="fcHintB">ENGLISH</span><span class="big" id="fcBack"></span><span class="note" id="fcNote"></span></span></span>
+      </button>
+      <div class="fc-btns"><button class="btn bad" id="fcAgain" type="button">Again</button><button class="btn ghost" id="fcSay" type="button">▶ Listen</button><button class="btn goodb" id="fcGot" type="button">Got it</button></div>
+      <div class="out" id="fcOut" aria-live="polite"></div>
+      <div class="vnote" id="fcVnote"></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Should I learn Spain Spanish or Latin American Spanish?</summary><div class="a"><p>Learn whichever you'll use most. In the US, Mexican and other Latin American Spanish are by far the most common. The differences are mostly accent and some vocabulary, like the “th” sound for z and the <i>vosotros</i> form in Spain. Speakers from everywhere understand each other easily.</p></div></details>
+      <details><summary>How long does it take to learn Spanish?</summary><div class="a"><p>The US Foreign Service Institute puts Spanish in its easiest group (Category I) for English speakers, at about 30 weeks of full-time class (600 to 750 class hours) to reach professional working ability. You can handle greetings, ordering and directions after a few weeks of short daily practice.</p></div></details>
+      <details><summary>Why does the audio sound robotic, or not play at all?</summary><div class="a"><p>The audio uses the voices built into your device. Most phones and computers include at least one Spanish voice; some need you to download one in your system's language or speech settings. If no Spanish voice is installed, the page tells you, and you can still use the cards silently.</p></div></details>
+      <details><summary>What's the fastest way to remember vocabulary?</summary><div class="a"><p>Short, spaced reviews beat long cram sessions. Five to ten minutes a day with flashcards, saying each word out loud, works better than an hour once a week. Mark cards honestly so the hard ones come back.</p></div></details>
+      <details><summary>Do I need to learn verb conjugations right away?</summary><div class="a"><p>Not all of them. Learn <i>ser</i>, <i>estar</i>, <i>tener</i> (to have) and <i>querer</i> (to want) in the present tense first. With those and the phrases above you can say a lot.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Trusted sources</h2>
+    <div class="links">
+      <a href="https://dle.rae.es/" target="_blank" rel="noopener"><span class="src">Real Academia Española</span><b>Official Spanish dictionary (DLE)</b></a>
+      <a href="https://cvc.cervantes.es/" target="_blank" rel="noopener"><span class="src">Instituto Cervantes</span><b>Centro Virtual Cervantes: free learning resources</b></a>
+      <a href="https://www.state.gov/foreign-language-training/" target="_blank" rel="noopener"><span class="src">US Department of State</span><b>FSI language difficulty and training times</b></a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis" target="_blank" rel="noopener"><span class="src">MDN Web Docs</span><b>How the browser's speech voices work</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/leaderboard/">Leaderboard</a></nav></span><span>Audio uses your device's built-in voices, so accents vary by device.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  /* ---------- Speech ---------- */
+  const synth = window.speechSynthesis;
+  let voices = [], chosen = null;
+  const pref = ['es-MX', 'es-US', 'es-ES'];
+  function loadVoices(){
+    if (!synth) return;
+    voices = synth.getVoices().filter(v => /^es([-_]|$)/i.test(v.lang));
+    voices.sort((a, b) => {
+      const ia = pref.findIndex(p => a.lang.replace('_','-').startsWith(p)), ib = pref.findIndex(p => b.lang.replace('_','-').startsWith(p));
+      return (ia < 0 ? 9 : ia) - (ib < 0 ? 9 : ib);
+    });
+    const sel = $('#fcVoice');
+    let saved = null; try { saved = localStorage.getItem('es-voice'); } catch(e){}
+    if (!voices.length){
+      sel.innerHTML = '<option value="">No Spanish voice found</option>';
+      chosen = null;
+      $('#fcVnote').textContent = synth ? 'Your device has no Spanish voice installed, so audio may use a default voice or stay silent. Add one in your system speech or language settings.' : '';
+      return;
+    }
+    sel.innerHTML = voices.map((v, i) => `<option value="${i}">${v.name.replace(/</g,'')} (${v.lang})</option>`).join('');
+    const si = voices.findIndex(v => v.name === saved);
+    sel.value = String(si >= 0 ? si : 0);
+    chosen = voices[+sel.value];
+    $('#fcVnote').textContent = '';
+  }
+  if (synth){
+    loadVoices();
+    if ('onvoiceschanged' in synth) synth.addEventListener('voiceschanged', loadVoices);
+    setTimeout(loadVoices, 800);
+  } else {
+    $('#fcVoice').innerHTML = '<option value="">Audio not supported</option>';
+    $('#fcVoice').disabled = true;
+    $('#fcVnote').textContent = 'Your browser can\'t speak text aloud. The flashcards still work without sound.';
+  }
+  $('#fcVoice').addEventListener('change', e => { chosen = voices[+e.target.value] || null; try { localStorage.setItem('es-voice', chosen ? chosen.name : ''); } catch(err){} });
+
+  let speakingBtn = null;
+  function say(text, btn){
+    if (!synth) return false;
+    synth.cancel();
+    const u = new SpeechSynthesisUtterance(text.replace(/…/g, ''));
+    u.lang = chosen ? chosen.lang : 'es-MX';
+    if (chosen) u.voice = chosen;
+    u.rate = 0.85;
+    if (speakingBtn) speakingBtn.classList.remove('on');
+    if (btn){ btn.classList.add('on'); speakingBtn = btn; }
+    u.onend = u.onerror = () => { if (btn) btn.classList.remove('on'); };
+    synth.speak(u);
+    return true;
+  }
+  document.addEventListener('click', e => {
+    const b = e.target.closest('.say');
+    if (b){ e.preventDefault(); if (!say(b.dataset.say, b)) b.title = 'Audio not supported in this browser'; }
+  });
+
+  /* ---------- Numbers grid ---------- */
+  const NUMS = ['uno','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez','once','doce','trece','catorce','quince','dieciséis','diecisiete','dieciocho','diecinueve','veinte'];
+  $('#nums').innerHTML = NUMS.map((w, i) => `<div><span class="n">${i+1}</span><span class="es">${w}</span><button class="say" data-say="${w}" aria-label="Listen: ${w}">▶</button></div>`).join('');
+
+  /* ---------- Flashcards ---------- */
+  const D = {
+    greet: [['Hola','Hello / Hi'],['Buenos días','Good morning'],['Buenas tardes','Good afternoon'],['Buenas noches','Good evening / Good night'],['¿Cómo estás?','How are you? (informal)'],['¿Cómo está usted?','How are you? (polite)'],['Me llamo…','My name is…'],['Mucho gusto','Nice to meet you'],['Hasta luego','See you later'],['Adiós','Goodbye']],
+    num: NUMS.map((w, i) => [w, String(i+1)]),
+    phr: [['Por favor','Please'],['Gracias','Thank you'],['De nada','You\'re welcome'],['Disculpe','Excuse me'],['Lo siento','I\'m sorry'],['No entiendo','I don\'t understand'],['¿Habla inglés?','Do you speak English?'],['Más despacio, por favor','More slowly, please'],['¿Dónde está el baño?','Where is the bathroom?'],['¿Cuánto cuesta?','How much does it cost?'],['La cuenta, por favor','The check, please'],['Quisiera…','I would like…']],
+    noun: [['el día','the day','Masculine, even though it ends in -a'],['la mano','the hand','Feminine, even though it ends in -o'],['la ciudad','the city','-dad words are feminine'],['el problema','the problem','Masculine exception'],['la estación','the station','-ción words are feminine'],['el libro','the book',''],['la casa','the house','']],
+    be: [['Soy de Texas.','I\'m from Texas.','Ser: origin'],['Estoy cansado.','I\'m tired.','Estar: how you feel'],['Ella es doctora.','She\'s a doctor.','Ser: job'],['¿Dónde está el hotel?','Where is the hotel?','Estar: location'],['Son las tres.','It\'s three o\'clock.','Ser: time'],['La sopa está fría.','The soup is cold.','Estar: temporary state']]
+  };
+  // Count of the "all" deck (shown in the select) should match.
+  let queue = [], total = 0, known = 0, seen = 0, flipped = false, cur = null;
+  const card = $('#fcCard');
+  function shuffle(a){ for (let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+  function start(){
+    const k = $('#fcDeck').value;
+    const src = k === 'all' ? [].concat(D.greet, D.num.filter((_, i) => i % 2 === 0 || i > 14), D.phr, D.noun, D.be) : D[k];
+    queue = shuffle(src.map(c => ({es: c[0], en: c[1], note: c[2] || '', miss: 0})));
+    total = queue.length; known = 0; seen = 0;
+    $('#fcOut').innerHTML = '';
+    show();
+  }
+  function show(){
+    flipped = false; card.classList.remove('flipped');
+    $('#fcMeter').style.width = (total ? known / total * 100 : 0) + '%';
+    if (!queue.length){
+      cur = null;
+      $('#fcFront').textContent = '¡Muy bien!'; $('#fcBack').textContent = 'Deck complete';
+      $('#fcNote').textContent = '';
+      $('#fcStat').textContent = `${known} / ${total} learned`;
+      $('#fcOut').innerHTML = `Done! You needed <b>${seen}</b> flips for <b>${total}</b> cards. <button class="btn ghost small" id="fcRe" type="button">Shuffle and restart</button>`;
+      $('#fcRe').addEventListener('click', start);
+      return;
+    }
+    cur = queue[0];
+    const es = $('#fcDir').value === 'es';
+    $('#fcHintF').textContent = es ? 'SPANISH' : 'ENGLISH';
+    $('#fcHintB').textContent = es ? 'ENGLISH' : 'SPANISH';
+    $('#fcFront').textContent = es ? cur.es : cur.en;
+    $('#fcBack').textContent = es ? cur.en : cur.es;
+    $('#fcNote').textContent = cur.note;
+    $('#fcStat').textContent = `${known} / ${total} learned · ${queue.length} to go`;
+    card.setAttribute('aria-label', `Flashcard. ${es ? 'Spanish' : 'English'}: ${es ? cur.es : cur.en}. Press to flip.`);
+  }
+  function flip(){
+    if (!cur) return;
+    flipped = !flipped; card.classList.toggle('flipped', flipped);
+    if (flipped){ seen++; card.setAttribute('aria-label', `Answer: ${$('#fcBack').textContent}. ${cur.note}`); }
+    if (flipped && $('#fcDir').value === 'en') say(cur.es);
+  }
+  function grade(ok){
+    if (!cur) return;
+    if (!flipped){ flip(); return; }
+    queue.shift();
+    if (ok){ known++; $('#fcOut').innerHTML = '<span class="ok">Nice.</span>'; }
+    else { cur.miss++; queue.splice(Math.min(queue.length, 3), 0, cur); $('#fcOut').innerHTML = '<span class="no">No problem, it\'ll come back in a few cards.</span>'; }
+    show();
+  }
+  card.addEventListener('click', flip);
+  $('#fcAgain').addEventListener('click', () => grade(false));
+  $('#fcGot').addEventListener('click', () => grade(true));
+  $('#fcSay').addEventListener('click', e => { if (cur) { if (!say(cur.es, e.currentTarget)) $('#fcOut').textContent = 'Audio isn\'t available in this browser.'; } });
+  $('#fcDeck').addEventListener('change', start);
+  $('#fcDir').addEventListener('change', show);
+  $('#fc').addEventListener('keydown', e => {
+    if (e.target.tagName === 'SELECT' || e.altKey || e.ctrlKey || e.metaKey) return;
+    if (e.key === ' ' && e.target === card){ /* button handles it */ return; }
+    if (e.key === ' '){ e.preventDefault(); flip(); }
+    else if (e.key === 'ArrowLeft'){ e.preventDefault(); grade(false); }
+    else if (e.key === 'ArrowRight'){ e.preventDefault(); grade(true); }
+    else if (e.key === 'l' || e.key === 'L'){ if (cur) say(cur.es, $('#fcSay')); }
+  });
+  start();
+  const allCount = [].concat(D.greet, D.num.filter((_, i) => i % 2 === 0 || i > 14), D.phr, D.noun, D.be).length;
+  $('#fcDeck').options[0].textContent = `Everything (${allCount} cards)`;
+})();
+</script>
+</body>
+</html>

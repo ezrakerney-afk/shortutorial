@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Make French Press Coffee · Shortutorial</title>
+<meta name="description" content="Brew rich French press coffee: a 1:15 ratio, coarse grind, water just off the boil, a 4-minute steep and a slow press. Includes a coffee-to-water calculator and a step-by-step brew timer.">
+<link rel="canonical" href="https://shortutorial.com/french-press-coffee/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How to Make French Press Coffee · Shortutorial">
+<meta property="og:description" content="Brew rich French press coffee: a 1:15 ratio, coarse grind, water just off the boil, a 4-minute steep and a slow press. Includes a coffee-to-water calculator and a step-by-step brew timer.">
+<meta property="og:url" content="https://shortutorial.com/french-press-coffee/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+.kv{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:560px){.kv{grid-template-columns:1fr 1fr}}
+.kv div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
+.kv small{display:block;font-family:var(--mono);font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.kv b{font-family:var(--display);font-size:1.15rem;color:var(--accent)}
+.kv span{display:block;font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.try select{width:auto}
+.brew{display:flex;flex-direction:column;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.brew .clock{font-family:var(--mono);font-size:2.6rem;font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+.brew .now{font-family:var(--display);font-weight:600;font-size:1.1rem}
+.brew .bar{position:relative;height:10px;border-radius:99px;background:var(--line)}
+.brew .bar i{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:var(--accent);width:0}
+.brew .bar em{position:absolute;top:-3px;width:2px;height:16px;background:var(--amber)}
+.brew ol{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:4px;font-size:.95rem}
+.brew li{color:var(--muted)}
+.brew li.on{color:var(--ink);font-weight:600}
+.brew li.done{text-decoration:line-through}
+.brew li b{font-family:var(--mono);font-size:.82rem;color:var(--amber)}
+.grind{display:flex;gap:8px;flex-wrap:wrap}
+.grind div{flex:1 1 120px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:.92rem}
+.grind div.pick{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}
+.grind small{display:block;font-family:var(--mono);font-size:.7rem;color:var(--muted)}
+</style>
+</head>
+<body data-slug="french-press-coffee">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=skills">Life skills</a> / French press coffee</div>
+    <span class="eyebrow">Skills · Kitchen</span>
+    <h1>How to Make French Press Coffee</h1>
+    <p class="lede">A French press makes full-bodied coffee with no paper filters and no machine. Get four things right, the ratio, the grind, the water and the time, and every cup comes out the same.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~8 min read</span><span class="badge">4 lessons</span><span class="badge">Ratio calculator + brew timer</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#f1">1 · Ratio</a><a href="#f2">2 · Grind & water</a><a href="#f3">3 · Brew</a><a href="#f4">4 · Fix the taste</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="f1">
+    <div class="lesson-head"><span class="step">01</span><h2>The ratio: 1 to 15</h2></div>
+    <p>Brew ratio means grams of coffee to grams of water. A good place to start is <b>1:15</b>: 1 gram of coffee for every 15 grams (15 mL) of water. Water is handy because 1 mL weighs 1 gram.</p>
+    <div class="formula"><span class="v">coffee (g)</span> = <span class="v">water (g)</span> ÷ 15<small>stronger: divide by 12 or 13 · milder: divide by 16 or 17</small></div>
+    <div class="example"><div class="ex-h">Example · two 8 oz mugs</div><ol><li>2 × 8 oz = 16 fl oz ≈ 473 mL of water</li><li>473 ÷ 15 ≈ 32 g of coffee</li><li class="ans">About 32 g of coffee (6 to 7 level tablespoons)</li></ol></div>
+    <p class="callout"><span><b>Use a kitchen scale if you can.</b> Tablespoons are rough because beans and grinds vary in size. A scale makes your coffee taste the same every day.</span></p>
+    <div class="try" id="fc"><span class="try-h">Try it · brew ratio calculator</span>
+      <div class="row">
+        <label>How much<input type="number" id="fcAmt" value="2" min="0.25" step="0.25" inputmode="decimal"></label>
+        <label>Unit<select id="fcUnit">
+          <option value="mug">8 oz mugs</option>
+          <option value="oz">fl oz of water</option>
+          <option value="ml">mL of water</option>
+          <option value="g">grams of coffee</option>
+        </select></label>
+      </div>
+      <div class="chipset" id="fcStr" aria-label="Strength"><button type="button" data-r="12" aria-pressed="false">Strong 1:12</button><button type="button" data-r="15" aria-pressed="true">Classic 1:15</button><button type="button" data-r="17" aria-pressed="false">Mild 1:17</button></div>
+      <div class="kv" aria-live="polite">
+        <div><small>Coffee</small><b id="fcCoffee"></b><span id="fcTbsp"></span></div>
+        <div><small>Water</small><b id="fcWater"></b><span id="fcOz"></span></div>
+        <div><small>Bloom pour</small><b id="fcBloom"></b><span>first 30 sec</span></div>
+        <div><small>In your cup</small><b id="fcYield"></b><span>after grounds soak some up</span></div>
+      </div>
+      <div class="work" id="fcWork"></div>
+    </div>
+  </section>
+
+  <section class="lesson" id="f2">
+    <div class="lesson-head"><span class="step">02</span><h2>Coarse grind, water just off the boil</h2></div>
+    <p><b>Grind coarse</b>, like rock salt or coarse sea salt. The metal mesh filter lets fine particles through, so a fine grind makes muddy, bitter coffee and a press that's hard to push down.</p>
+    <div class="grind" aria-label="Grind sizes">
+      <div><small>Extra fine</small>Espresso, powder</div>
+      <div><small>Medium</small>Drip machines, sand</div>
+      <div class="pick"><small>Coarse ✓</small>French press, rock salt</div>
+    </div>
+    <p>Grind right before brewing if you can. A <b>burr grinder</b> gives an even grind. Blade grinders work, but pulse in short bursts and shake between them. Buying pre-ground? Ask the store to grind it for French press.</p>
+    <p><b>Water at about 200°F.</b> The ideal range is roughly 195 to 205°F (90 to 96°C). No thermometer? Bring water to a boil, then let it sit <b>about 30 seconds</b>. Boiling water can taste harsh; too cool tastes sour and weak. Start with fresh, cold, filtered water if your tap water tastes off.</p>
+    <p class="callout warn"><span><b>Careful with glass presses.</b> Hold the handle, not the glass, and press slowly with the lid on so hot coffee can't spray out. Warm a glass press with hot tap water first so it doesn't crack from a sudden temperature change.</span></p>
+  </section>
+
+  <section class="lesson" id="f3">
+    <div class="lesson-head"><span class="step">03</span><h2>Brew it: 4 minutes, start to press</h2></div>
+    <ol class="steps">
+      <li><b>Preheat.</b> Rinse the press with hot water, then pour it out.</li>
+      <li><b>Add coffee.</b> Add your coarse grounds and give the press a gentle shake to level them.</li>
+      <li><b>Bloom (0:00).</b> Start the timer and pour about twice as much water as coffee (for 32 g coffee, about 65 g water). Make sure all the grounds are wet. Fresh coffee bubbles as it releases gas.</li>
+      <li><b>Fill (0:30).</b> Pour in the rest of the water. Put the lid on with the plunger pulled all the way up, to hold the heat in.</li>
+      <li><b>Break the crust (1:00).</b> A crust of grounds floats on top. Stir it gently with a wooden or plastic spoon so the grounds sink, then put the lid back.</li>
+      <li><b>Press (4:00).</b> Push the plunger down slowly and steadily, about 20 to 30 seconds. If it's very hard to push, your grind is too fine.</li>
+      <li><b>Serve right away.</b> Pour all the coffee out, into cups or a carafe. Left on the grounds, it keeps brewing and turns bitter.</li>
+    </ol>
+    <div class="try" id="bt"><span class="try-h">Try it · 4-minute brew timer</span>
+      <div class="brew">
+        <div class="now" id="btNow" aria-live="assertive">Coffee and hot water ready? Press start as you begin to pour.</div>
+        <div class="clock" id="btClock" role="timer">4:00</div>
+        <div class="bar" aria-hidden="true"><i id="btBar"></i><em style="left:12.5%"></em><em style="left:25%"></em></div>
+        <ol id="btSteps"></ol>
+        <div class="row"><button class="btn" type="button" id="btGo">Start brewing</button><button class="btn ghost" type="button" id="btReset">Reset</button></div>
+      </div>
+      <p class="work">Bloom and pour amounts come from the calculator above.</p>
+    </div>
+  </section>
+
+  <section class="lesson" id="f4">
+    <div class="lesson-head"><span class="step">04</span><h2>Fix the taste</h2></div>
+    <p>Change <b>one thing at a time</b>, and keep the rest the same, so you know what helped.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Tastes</th><th>Likely cause</th><th>Try</th></tr>
+      <tr><td>Bitter, harsh, dry</td><td>Over-extracted: too fine, too long, or too hot</td><td>Grind coarser, press at 4 min, wait 30 sec after boiling</td></tr>
+      <tr><td>Sour, thin</td><td>Under-extracted: too coarse, too short, or too cool</td><td>Grind a bit finer, or steep 30 sec longer</td></tr>
+      <tr><td>Weak, watery</td><td>Not enough coffee</td><td>Use a stronger ratio, like 1:13</td></tr>
+      <tr><td>Muddy, gritty</td><td>Too many fines</td><td>Grind coarser; leave the last half-inch in the press</td></tr>
+      <tr><td>Stale, flat</td><td>Old beans</td><td>Buy smaller bags; store airtight, away from light and heat</td></tr>
+    </table></div>
+    <p class="callout"><span><b>Clean it every time.</b> Take the plunger apart now and then and wash the mesh screens. Old grounds and coffee oils trapped in the mesh make the next pot taste bitter. Scoop or strain grounds into the trash or compost, not down the sink.</span></p>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>How many scoops of coffee for a French press?</summary><div class="a"><p>Roughly 2 level tablespoons (about 10 g) per 5 to 6 oz of water at a 1:15 ratio. A standard coffee scoop is 2 tablespoons. Weigh it if you can: it's much more consistent.</p></div></details>
+      <details><summary>What do “3 cup” and “8 cup” mean on a French press?</summary><div class="a"><p>Press “cups” are small, about 4 oz each. A 3-cup press holds about 12 oz (350 mL), and an 8-cup press about 34 oz (1 liter). Don't fill past the metal band or the line near the spout.</p></div></details>
+      <details><summary>Can I steep longer for stronger coffee?</summary><div class="a"><p>Not really. Steeping longer adds bitterness faster than strength. For stronger coffee, use more coffee (a lower ratio like 1:12) and keep the 4 minutes.</p></div></details>
+      <details><summary>Is French press coffee bad for cholesterol?</summary><div class="a"><p>Unfiltered coffee contains compounds called diterpenes that can raise cholesterol. Harvard Health notes a cup of unfiltered coffee has far more of them than filtered coffee, and suggests saving it for occasional treats if your cholesterol is a concern. Ask your doctor if you're unsure.</p></div></details>
+      <details><summary>Can I make cold brew in a French press?</summary><div class="a"><p>Yes. Use coarse grounds and cold water, a stronger ratio (around 1:8), steep in the fridge 12 to 24 hours, then press. Dilute to taste.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://www.aboutcoffee.org/brewing/french-press-coffee/" target="_blank" rel="noopener"><span class="src">National Coffee Association</span><b>How to brew French press coffee</b></a>
+      <a href="https://www.health.harvard.edu/healthy-aging-and-longevity/whats-the-healthiest-way-to-brew-coffee" target="_blank" rel="noopener"><span class="src">Harvard Health Publishing</span><b>What's the healthiest way to brew coffee?</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/leaderboard/">Leaderboard</a></nav></span><span>Ratios are a starting point. Adjust to your beans and your taste.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  const ML_PER_OZ = 29.5735, G_PER_TBSP = 5; // rough: ~5 g per level tablespoon of ground coffee
+  let ratio = 15, coffee = 32, water = 473;
+  function calc(){
+    const a = parseFloat($('#fcAmt').value), u = $('#fcUnit').value;
+    if (!(a > 0)) { $('#fcWork').textContent = 'Enter an amount.'; return; }
+    if (u === 'g'){ coffee = a; water = a * ratio; }
+    else { water = u === 'mug' ? a * 8 * ML_PER_OZ : u === 'oz' ? a * ML_PER_OZ : a; coffee = water / ratio; }
+    $('#fcCoffee').textContent = fmt(coffee, 0) + ' g';
+    $('#fcTbsp').textContent = '≈ ' + fmt(coffee / G_PER_TBSP, 1) + ' Tbsp';
+    $('#fcWater').textContent = fmt(water, 0) + ' g';
+    $('#fcOz').textContent = '= ' + fmt(water, 0) + ' mL · ' + fmt(water / ML_PER_OZ, 1) + ' fl oz';
+    $('#fcBloom').textContent = fmt(coffee * 2, 0) + ' g';
+    const cup = Math.max(0, water - coffee * 2);
+    $('#fcYield').textContent = '~' + fmt(cup / ML_PER_OZ, 0) + ' fl oz';
+    let w = `${fmt(water, 0)} g water ÷ ${ratio} = ${fmt(coffee, 1)} g coffee`;
+    if (u === 'g') w = `${fmt(coffee, 0)} g coffee × ${ratio} = ${fmt(water, 0)} g water`;
+    if (water > 1000) w += '\nThat\'s more than a standard 8-cup (1 liter) press holds. Brew in two batches.';
+    else if (water > 350) w += '\nFits an 8-cup (34 oz) press. Too much for a 3-cup (12 oz) one.';
+    else w += '\nFits a 3-cup (12 oz) press or bigger.';
+    $('#fcWork').textContent = w;
+    if (!running) paintSteps();
+  }
+  document.querySelectorAll('#fcStr button').forEach(b => b.addEventListener('click', () => {
+    ratio = +b.dataset.r; document.querySelectorAll('#fcStr button').forEach(x => x.setAttribute('aria-pressed', x === b)); calc();
+  }));
+
+  /* Brew timer */
+  const TOTAL = 240;
+  const steps = () => [
+    {at:0,   t:'Bloom', d:`Pour ~${fmt(coffee*2,0)} g of water. Wet all the grounds.`},
+    {at:30,  t:'Fill', d:`Pour the rest, up to ${fmt(water,0)} g total. Lid on, plunger up.`},
+    {at:60,  t:'Break the crust', d:'Stir the floating grounds gently. Lid back on.'},
+    {at:240, t:'Press and serve', d:'Press slowly, then pour it all out right away.'}
+  ];
+  let running = false, start = 0, elapsed = 0, timer = null, cur = -1;
+  const mmss = s => Math.floor(s/60) + ':' + String(Math.floor(s%60)).padStart(2,'0');
+  function paintSteps(){
+    const S = steps();
+    $('#btSteps').innerHTML = S.map((s,i) => `<li class="${i === cur ? 'on' : i < cur ? 'done' : ''}"><b>${mmss(s.at)}</b> ${s.t}: ${s.d}</li>`).join('');
+  }
+  function beep(f){
+    try { const a = new (window.AudioContext || window.webkitAudioContext)(); const o = a.createOscillator(), g = a.createGain(); o.frequency.value = f || 760; o.connect(g); g.connect(a.destination); g.gain.setValueAtTime(.2, a.currentTime); g.gain.exponentialRampToValueAtTime(.001, a.currentTime + .4); o.start(); o.stop(a.currentTime + .4); } catch(e){}
+  }
+  function tick(){
+    elapsed = Math.min(TOTAL, (Date.now() - start) / 1000);
+    const S = steps();
+    let k = -1; S.forEach((s,i) => { if (elapsed >= s.at) k = i; });
+    if (k !== cur){ cur = k; paintSteps(); $('#btNow').textContent = S[k].t + ': ' + S[k].d; if (k > 0) beep(k === S.length - 1 ? 990 : 760); }
+    $('#btClock').textContent = mmss(Math.ceil(TOTAL - elapsed));
+    $('#btBar').style.width = (100 * elapsed / TOTAL) + '%';
+    if (elapsed >= TOTAL){ stop(); $('#btGo').textContent = 'Brew again'; }
+  }
+  function stop(){ running = false; clearInterval(timer); }
+  function reset(){ stop(); elapsed = 0; cur = -1; $('#btClock').textContent = '4:00'; $('#btBar').style.width = '0'; $('#btGo').textContent = 'Start brewing'; $('#btNow').textContent = 'Coffee and hot water ready? Press start as you begin to pour.'; paintSteps(); }
+  $('#btGo').addEventListener('click', () => {
+    if (running){ stop(); $('#btGo').textContent = 'Resume'; $('#btNow').textContent = 'Paused. ' + $('#btNow').textContent.replace(/^Paused\. /, ''); return; }
+    if (elapsed >= TOTAL) reset();
+    running = true; start = Date.now() - elapsed * 1000; $('#btGo').textContent = 'Pause';
+    timer = setInterval(tick, 200); tick();
+  });
+  $('#btReset').addEventListener('click', reset);
+  live($('#fc'), calc);
+  reset();
+})();
+</script>
+</body>
+</html>
