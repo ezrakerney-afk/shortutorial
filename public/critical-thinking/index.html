@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Critical Thinking: Spot Weak Arguments and Check Claims · Shortutorial</title>
+<meta name="description" content="Learn to separate claims from evidence, judge sources, check anything online with lateral reading and SIFT, and spot common logical fallacies and cognitive biases. Practice with a spot-the-fallacy game.">
+<link rel="canonical" href="https://shortutorial.com/critical-thinking/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Critical Thinking: Spot Weak Arguments and Check Claims · Shortutorial">
+<meta property="og:description" content="Learn to separate claims from evidence, judge sources, check anything online with lateral reading and SIFT, and spot common logical fallacies and cognitive biases. Practice with a spot-the-fallacy game.">
+<meta property="og:url" content="https://shortutorial.com/critical-thinking/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+.fg{display:flex;flex-direction:column;gap:12px}
+.fg-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+.fg-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;font-size:1.05rem;line-height:1.55}
+.fg-card q{quotes:"“" "”"}
+.fg-opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.fg-opts button{all:unset;box-sizing:border-box;cursor:pointer;padding:10px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);font-family:var(--display);font-weight:600;font-size:.95rem;text-align:center}
+.fg-opts button:hover:not([disabled]){border-color:var(--accent)}
+.fg-opts button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.fg-opts button[disabled]{cursor:default;opacity:.75}
+.fg-opts button.right{border-color:var(--good);background:var(--good-bg);color:var(--good);opacity:1}
+.fg-opts button.wrong{border-color:var(--bad);background:var(--bad-bg);color:var(--bad);opacity:1}
+.fg-fb{font-size:.98rem;min-height:1.2em}
+.fg-fb b{font-family:var(--display)}
+.fg-bar{height:6px;border-radius:99px;background:var(--line);overflow:hidden}
+.fg-bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.ck{display:flex;flex-direction:column;gap:8px}
+.ck label{flex-direction:row !important;align-items:flex-start;gap:10px !important;font-family:var(--body) !important;font-size:.98rem !important;color:var(--ink) !important;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer}
+.ck input{accent-color:var(--accent);width:18px;height:18px;margin-top:3px;flex:none}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"Critical Thinking Basics","item":"https://shortutorial.com/critical-thinking/"}]},{"@type":"Article","@id":"https://shortutorial.com/critical-thinking/#article","headline":"Critical Thinking Basics","description":"Learn to separate claims from evidence, judge sources, check anything online with lateral reading and SIFT, and spot common logical fallacies and cognitive biases. Practice with a spot-the-fallacy game.","url":"https://shortutorial.com/critical-thinking/","mainEntityOfPage":"https://shortutorial.com/critical-thinking/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Life skills","keywords":"critical thinking, logical fallacies, fake news, fact check, lateral reading, SIFT, cognitive bias, confirmation bias, misinformation, evaluate sources, straw man, ad hominem","timeRequired":"PT14M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is critical thinking the same as being negative?","acceptedAnswer":{"@type":"Answer","text":"No. It's about matching your confidence to the evidence. Sometimes that means believing something more strongly, not less. A good critical thinker can also say “that's a solid source” or “I was wrong.”"}},{"@type":"Question","name":"If an argument has a fallacy, is the conclusion false?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily. A fallacy means the argument doesn't prove its point. The conclusion could still be true for other reasons. Calling out a fallacy and then assuming the opposite is its own mistake (sometimes called the fallacy fallacy)."}},{"@type":"Question","name":"Can I trust Wikipedia?","acceptedAnswer":{"@type":"Answer","text":"It's a good starting point, especially for checking who runs a website or group. For important facts, follow the footnotes to the original sources it cites."}},{"@type":"Question","name":"How do I talk to someone who shared something false?","acceptedAnswer":{"@type":"Answer","text":"Be kind and private if you can. Ask questions (“Where did this come from?”) rather than lecturing, and share a better source. People rarely change their minds when they feel attacked."}},{"@type":"Question","name":"What about AI-generated images and text?","acceptedAnswer":{"@type":"Answer","text":"The same steps work: investigate the source, find other coverage and trace it to the original. Be extra careful with dramatic images that appear in only one place, and check whether reliable outlets have verified them."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="critical-thinking">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+<header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=skills">Life skills</a> / Critical thinking</div>
+    <span class="eyebrow">Skills · Thinking clearly</span>
+    <h1>Critical Thinking Basics</h1>
+    <p class="lede">Critical thinking is just asking good questions before you believe something. Learn to tell a claim from its evidence, size up a source, check things online the way fact-checkers do, and catch the tricks that weak arguments rely on.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~14 min read</span><span class="badge">5 lessons</span><span class="badge">Spot-the-fallacy game</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#c1">1 · Claims & evidence</a><a href="#c2">2 · Sources</a><a href="#c3">3 · Lateral reading</a><a href="#c4">4 · Fallacies</a><a href="#c5">5 · Biases</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="c1">
+    <div class="lesson-head"><span class="step">01</span><h2>Claims vs evidence</h2></div>
+    <p>A <b>claim</b> is something someone wants you to believe. <b>Evidence</b> is the reason you should believe it. Most arguments you see online are mostly claim, with very little evidence attached. Your first job is to pull the two apart.</p>
+    <div class="grid2">
+      <div><span class="tagline">Claim</span><h3>“This app makes kids smarter.”</h3><p>A statement. On its own it proves nothing, no matter how confident it sounds.</p></div>
+      <div><span class="tagline">Evidence</span><h3>“In a study of 400 kids...”</h3><p>Something you can check: data, a study, a document, a recording, a direct observation.</p></div>
+    </div>
+    <h3>Three kinds of claims</h3>
+    <ul class="points">
+      <li><b>Facts</b> can be checked. “The bridge opened in 1937.” You can look this up.</li>
+      <li><b>Opinions</b> are judgments. “That's the prettiest bridge in America.” Reasonable people can disagree, so look for the reasons behind it.</li>
+      <li><b>Predictions</b> are about the future. “Prices will drop next year.” Ask what the prediction is based on and how often this source has been right before.</li>
+    </ul>
+    <h3>Not all evidence is equal</h3>
+    <p>From weaker to stronger, roughly:</p>
+    <ol class="steps">
+      <li><b>Anecdote:</b> one person's story. Real, but it might be the exception.</li>
+      <li><b>Expert opinion:</b> useful if the expert works in that exact field.</li>
+      <li><b>Survey or observational data:</b> shows patterns, but not always causes.</li>
+      <li><b>Controlled experiment:</b> compares groups that differ in one thing.</li>
+      <li><b>Many studies reviewed together:</b> a systematic review or scientific consensus. The strongest footing we have.</li>
+    </ol>
+    <p class="callout"><span><b>Four questions to ask any claim:</b> What exactly is being claimed? What's the evidence? Who is saying it, and what do they gain? What would I expect to see if it were false?</span></p>
+    <p class="callout"><span><b>Big claims need big evidence.</b> “This tea cures cancer” needs far stronger proof than “this tea has caffeine.” The person making the claim has the job of proving it. It's not your job to disprove it.</span></p>
+  </section>
+
+  <section class="lesson" id="c2">
+    <div class="lesson-head"><span class="step">02</span><h2>Judge the source</h2></div>
+    <p>Before you weigh what's said, figure out <b>who is saying it</b>. A great-looking website, lots of followers, or a professional logo tells you nothing about accuracy.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Ask</th><th>Why it matters</th></tr>
+      <tr><td><b>Who made this?</b></td><td>A person, a news outlet, a company, an advocacy group? Can you find a real name?</td></tr>
+      <tr><td><b>Do they know this topic?</b></td><td>A doctor talking about medicine is different from a doctor talking about the economy.</td></tr>
+      <tr><td><b>What's their motive?</b></td><td>Are they selling something, pushing a cause, or trying to get clicks and shares?</td></tr>
+      <tr><td><b>Where did they get it?</b></td><td>Do they link to the original study, data or document? Or is it “sources say”?</td></tr>
+      <tr><td><b>When was it made?</b></td><td>Old news gets reshared as if it just happened. Check the date.</td></tr>
+    </table></div>
+    <h3>Primary vs secondary sources</h3>
+    <p>A <b>primary source</b> is the original: the study itself, the full video, the official report, the court filing. A <b>secondary source</b> describes it: a news article about the study, a post about the video. Secondary sources are fine, but details get lost or twisted with each retelling. When it matters, go to the original.</p>
+    <p class="callout warn"><span><b>Watch for screenshots.</b> A screenshot of a headline or post is easy to fake or crop. Search for the original before you share it.</span></p>
+  </section>
+
+  <section class="lesson" id="c3">
+    <div class="lesson-head"><span class="step">03</span><h2>Check a claim online with lateral reading</h2></div>
+    <p>Stanford researchers who watched professional fact-checkers work found they did something most people don't: they <b>left the page almost right away</b>. Instead of reading a site top to bottom to decide if it seems trustworthy, they opened new tabs and looked up what <b>other</b> sources say about it. That's called <b>lateral reading</b>, reading across, not down.</p>
+    <h3>The SIFT method</h3>
+    <p>Mike Caulfield, a digital literacy researcher, boiled this down to four moves:</p>
+    <ol class="steps">
+      <li><b>Stop.</b> Notice when something makes you feel strongly (angry, scared, smug). That's the moment to slow down, not share.</li>
+      <li><b>Investigate the source.</b> Open a new tab and search the name of the site, group or person. Add words like “funding” or “who runs.” A quick look at Wikipedia's article on an outlet is often a fine start.</li>
+      <li><b>Find better coverage.</b> Search the claim itself. Do trusted news outlets or fact-checking sites report the same thing? If only one site has the story, be careful.</li>
+      <li><b>Trace claims, quotes and media back to the original context.</b> Find the full study, the full speech, the first place the photo appeared. Quotes and clips are often cut to change their meaning.</li>
+    </ol>
+    <div class="example"><div class="ex-h">Example · “Scientists say chocolate helps you lose weight!”</div><ol><li>Stop: it's exciting news, and it's being shared a lot.</li><li>Investigate: the site sells diet products. Hmm.</li><li>Find better coverage: no major health outlet reports it.</li><li>Trace: the “study” had very few people and wasn't published in a reviewed journal.</li><li class="ans">Not convincing. Don't share it.</li></ol></div>
+    <p class="callout"><span><b>Photos and videos:</b> use a reverse image search (Google Lens, or TinEye) to see where else an image appeared and when. A “breaking news” photo that's actually from years ago is one of the most common tricks.</span></p>
+    <div class="try" id="ck"><span class="try-h">Try it · claim checklist</span>
+      <p>Found something you're unsure about? Tick each step as you do it.</p>
+      <div class="ck" id="ckList">
+        <label><input type="checkbox"> I noticed how this made me feel, and paused before sharing.</label>
+        <label><input type="checkbox"> I can say the claim in one plain sentence.</label>
+        <label><input type="checkbox"> I searched who is behind the source in a new tab.</label>
+        <label><input type="checkbox"> I found at least one other reliable source reporting it.</label>
+        <label><input type="checkbox"> I traced it to the original study, document, video or photo.</label>
+        <label><input type="checkbox"> I checked the date. It's not old news recycled.</label>
+        <label><input type="checkbox"> I looked for evidence that it's false, not just evidence that it's true.</label>
+      </div>
+      <div class="fg-bar"><i id="ckBar"></i></div>
+      <p class="out" id="ckOut" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <section class="lesson" id="c4">
+    <div class="lesson-head"><span class="step">04</span><h2>Common logical fallacies</h2></div>
+    <p>A <b>fallacy</b> is a flaw in reasoning. The conclusion might still happen to be true, but the argument doesn't prove it. Fallacies are persuasive because they feel like reasons. Once you can name them, they lose their power.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Fallacy</th><th>What it does</th></tr>
+      <tr><td><b>Ad hominem</b></td><td>Attacks the person instead of their argument.</td></tr>
+      <tr><td><b>Straw man</b></td><td>Twists someone's view into a weaker one, then knocks that down.</td></tr>
+      <tr><td><b>False dilemma</b></td><td>Offers only two options when there are more.</td></tr>
+      <tr><td><b>Slippery slope</b></td><td>Claims one step will lead to a chain of disasters, without showing why.</td></tr>
+      <tr><td><b>Bandwagon</b></td><td>“Everyone believes it, so it's true.”</td></tr>
+      <tr><td><b>Appeal to authority</b></td><td>Relies on someone famous or powerful who isn't an expert on this topic.</td></tr>
+      <tr><td><b>Post hoc</b></td><td>“B happened after A, so A caused B.”</td></tr>
+      <tr><td><b>Hasty generalization</b></td><td>Draws a big conclusion from a few cases.</td></tr>
+      <tr><td><b>Circular reasoning</b></td><td>Uses the conclusion as its own proof.</td></tr>
+      <tr><td><b>Red herring</b></td><td>Changes the subject to something that sounds related.</td></tr>
+      <tr><td><b>Appeal to emotion</b></td><td>Uses fear, guilt or pity in place of evidence.</td></tr>
+      <tr><td><b>Whataboutism</b> (tu quoque)</td><td>Dodges criticism by pointing to the critic's own faults.</td></tr>
+      <tr><td><b>Cherry picking</b></td><td>Shows only the data that helps and hides the rest.</td></tr>
+      <tr><td><b>Appeal to ignorance</b></td><td>“No one has proven it false, so it's true.”</td></tr>
+    </table></div>
+    <p class="callout"><span><b>Careful:</b> not every mention of an expert is a fallacy. Citing a climate scientist about climate is good evidence. It becomes a fallacy when the authority isn't an expert on the topic, or when “they said so” replaces the actual evidence.</span></p>
+    <div class="try" id="fg"><span class="try-h">Try it · spot the fallacy</span>
+      <div class="fg">
+        <div class="fg-top"><span id="fgNum">Example 1 of 14</span><span id="fgScore">Score: 0</span></div>
+        <div class="fg-bar"><i id="fgBar"></i></div>
+        <div class="fg-card" id="fgText"></div>
+        <div class="fg-opts" id="fgOpts" role="group" aria-label="Which fallacy is this?"></div>
+        <div class="fg-fb" id="fgFb" aria-live="polite"></div>
+        <div class="row"><button class="btn" type="button" id="fgNext" disabled>Next example</button><button class="btn ghost" type="button" id="fgRestart">Start over</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lesson" id="c5">
+    <div class="lesson-head"><span class="step">05</span><h2>Cognitive biases: the bugs in your own brain</h2></div>
+    <p>Fallacies are mistakes in an argument. <b>Cognitive biases</b> are mental shortcuts that push <b>everyone's</b> thinking in predictable directions, including yours. Smart people aren't immune. The fix is knowing where to look.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Bias</th><th>What happens</th><th>Counter-move</th></tr>
+      <tr><td><b>Confirmation bias</b></td><td>We notice and remember what fits what we already believe.</td><td>Search for the best case against your view.</td></tr>
+      <tr><td><b>Anchoring</b></td><td>The first number we see sticks, like a “was $199” price tag.</td><td>Form your own estimate before you look at theirs.</td></tr>
+      <tr><td><b>Availability</b></td><td>Vivid or recent events feel more common than they are.</td><td>Ask for the actual rate, not the memorable story.</td></tr>
+      <tr><td><b>Survivorship bias</b></td><td>We only see the winners. The dropouts who became billionaires, not the many who didn't.</td><td>Ask: who's missing from this picture?</td></tr>
+      <tr><td><b>Sunk cost</b></td><td>We keep going because of what we've already spent.</td><td>Decide based on what happens from here.</td></tr>
+      <tr><td><b>Overconfidence</b></td><td>We think we know more than we do.</td><td>Ask “how would I know if I'm wrong?”</td></tr>
+      <tr><td><b>In-group bias</b></td><td>We trust people on “our side” more.</td><td>Ask if you'd accept the same evidence from the other side.</td></tr>
+    </table></div>
+    <div class="example"><div class="ex-h">Example · survivorship bias</div><div class="ex-b"><p>“Old buildings were built better. Look how many from 1900 are still standing!” But you only see the ones that survived. The poorly built ones fell down or were torn down long ago.</p></div></div>
+    <p class="callout"><span><b>Make it a habit:</b> when you strongly agree with something, check it twice. That's exactly when your guard is down.</span></p>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Is critical thinking the same as being negative?</summary><div class="a"><p>No. It's about matching your confidence to the evidence. Sometimes that means believing something more strongly, not less. A good critical thinker can also say “that's a solid source” or “I was wrong.”</p></div></details>
+      <details><summary>If an argument has a fallacy, is the conclusion false?</summary><div class="a"><p>Not necessarily. A fallacy means the argument doesn't prove its point. The conclusion could still be true for other reasons. Calling out a fallacy and then assuming the opposite is its own mistake (sometimes called the fallacy fallacy).</p></div></details>
+      <details><summary>Can I trust Wikipedia?</summary><div class="a"><p>It's a good starting point, especially for checking who runs a website or group. For important facts, follow the footnotes to the original sources it cites.</p></div></details>
+      <details><summary>How do I talk to someone who shared something false?</summary><div class="a"><p>Be kind and private if you can. Ask questions (“Where did this come from?”) rather than lecturing, and share a better source. People rarely change their minds when they feel attacked.</p></div></details>
+      <details><summary>What about AI-generated images and text?</summary><div class="a"><p>The same steps work: investigate the source, find other coverage and trace it to the original. Be extra careful with dramatic images that appear in only one place, and check whether reliable outlets have verified them.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://purl.stanford.edu/yk133ht8603" target="_blank" rel="noopener"><span class="src">Stanford (Wineburg & McGrew)</span><b>Lateral reading and the nature of expertise</b></a>
+      <a href="https://hapgood.us/2019/06/19/sift-the-four-moves/" target="_blank" rel="noopener"><span class="src">Mike Caulfield</span><b>SIFT: the four moves</b></a>
+      <a href="https://pressbooks.uiowa.edu/ssresearchmethodscommunicationonline/chapter/evaluating-online-information-lateral-reading/" target="_blank" rel="noopener"><span class="src">University of Iowa</span><b>Evaluating online information: lateral reading</b></a>
+      <a href="https://www.tylervigen.com/spurious-correlations" target="_blank" rel="noopener"><span class="src">Tyler Vigen</span><b>Spurious correlations</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>Examples on this page are made up to teach the patterns. They are not about real people or products.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  /* Claim checklist */
+  const boxes = [...document.querySelectorAll('#ckList input')];
+  function ck(){
+    const n = boxes.filter(b => b.checked).length;
+    $('#ckBar').style.width = (100 * n / boxes.length) + '%';
+    $('#ckOut').textContent = n === boxes.length ? 'All 7 done. You checked this better than most people ever do.'
+      : n >= 4 ? n + ' of 7 done. Almost there.'
+      : n + ' of 7 done.';
+  }
+  boxes.forEach(b => b.addEventListener('change', ck)); ck();
+
+  /* Spot the fallacy */
+  const F = {
+    adh:  ['Ad hominem', 'It attacks the person, not the argument.'],
+    straw:['Straw man', 'It twists the other view into a weaker one that is easier to attack.'],
+    dil:  ['False dilemma', 'It pretends there are only two choices.'],
+    slope:['Slippery slope', 'It predicts a chain of disasters without showing each step would really happen.'],
+    band: ['Bandwagon', 'Popularity is not evidence that something is true or works.'],
+    auth: ['Appeal to authority', 'The person is famous, but not an expert on this topic.'],
+    post: ['Post hoc', 'Something happening first does not mean it caused what came after.'],
+    hasty:['Hasty generalization', 'A few cases are too small a sample for a big conclusion.'],
+    circ: ['Circular reasoning', 'The conclusion is used as its own proof.'],
+    red:  ['Red herring', 'It changes the subject instead of answering the point.'],
+    emo:  ['Appeal to emotion', 'It uses feelings (fear, guilt, love) in place of evidence.'],
+    tu:   ['Whataboutism', 'Pointing out the critic\'s faults does not answer the criticism.'],
+    cherry:['Cherry picking', 'It shows only the data that helps and leaves out the rest.'],
+    ign:  ['Appeal to ignorance', 'A lack of disproof is not proof.']
+  };
+  const Q = [
+    ['adh', 'Why should we listen to Dana\'s plan for the town budget? She can\'t even keep her own car clean.'],
+    ['straw', 'Sam: “We should sell fewer sugary drinks in the school vending machines.” Alex: “So Sam wants to ban every snack and control what kids eat.”'],
+    ['dil', 'Either you support building this new highway, or you don\'t care about jobs in our town.'],
+    ['slope', 'If we let students retake one test, soon they\'ll expect to retake every test, nobody will study, and diplomas will mean nothing.'],
+    ['band', 'Millions of people take this supplement every day, so it must work.'],
+    ['auth', 'A famous actor says this diet cures migraines, so it must be true.'],
+    ['post', 'I wore my lucky socks and our team won. The socks work.'],
+    ['hasty', 'I had two rude waiters on my trip to Chicago. People in Chicago are rude.'],
+    ['circ', 'This news site is trustworthy because it says it only publishes the truth.'],
+    ['red', 'Why worry about the factory\'s pollution? Think of all the great charity events the owner hosts.'],
+    ['emo', 'If you really loved your family, you\'d buy the premium security system today.'],
+    ['tu', '“You shouldn\'t text while driving.” “Oh really? I saw you do it last year!”'],
+    ['cherry', 'This stock shot up 40% in March! (The ad leaves out that it fell 60% over the whole year.)'],
+    ['ign', 'Nobody has ever proven that this haunted house has no ghosts, so it must be haunted.']
+  ];
+  const keys = Object.keys(F);
+  let order = [], i = 0, score = 0, done = false;
+  const shuffle = a => { for (let k = a.length - 1; k > 0; k--){ const j = Math.floor(Math.random() * (k + 1)); [a[k], a[j]] = [a[j], a[k]]; } return a; };
+  function start(){ order = shuffle(Q.map((_, k) => k)); i = 0; score = 0; show(); }
+  function show(){
+    done = false;
+    const [ans, text] = Q[order[i]];
+    $('#fgNum').textContent = 'Example ' + (i + 1) + ' of ' + Q.length;
+    $('#fgScore').textContent = 'Score: ' + score;
+    $('#fgBar').style.width = (100 * i / Q.length) + '%';
+    $('#fgText').textContent = text;
+    const opts = shuffle([ans, ...shuffle(keys.filter(k => k !== ans)).slice(0, 3)]);
+    const box = $('#fgOpts'); box.innerHTML = '';
+    opts.forEach(k => {
+      const b = document.createElement('button'); b.type = 'button'; b.textContent = F[k][0]; b.dataset.k = k;
+      b.addEventListener('click', () => pick(b, ans)); box.appendChild(b);
+    });
+    $('#fgFb').textContent = '';
+    $('#fgNext').disabled = true; $('#fgNext').textContent = i === Q.length - 1 ? 'See my score' : 'Next example';
+  }
+  function pick(b, ans){
+    if (done) return; done = true;
+    const ok = b.dataset.k === ans; if (ok) score++;
+    document.querySelectorAll('#fgOpts button').forEach(x => { x.disabled = true; if (x.dataset.k === ans) x.classList.add('right'); });
+    if (!ok) b.classList.add('wrong');
+    $('#fgFb').innerHTML = '<b>' + (ok ? 'Right: ' : 'Not quite. It\'s ') + F[ans][0] + '.</b> ' + F[ans][1];
+    $('#fgScore').textContent = 'Score: ' + score;
+    $('#fgNext').disabled = false; $('#fgNext').focus();
+  }
+  $('#fgNext').addEventListener('click', () => {
+    if (i < Q.length - 1){ i++; show(); return; }
+    $('#fgBar').style.width = '100%';
+    $('#fgText').textContent = 'You got ' + score + ' of ' + Q.length + '. ' + (score >= 12 ? 'Excellent. You\'re hard to fool.' : score >= 8 ? 'Nice work. Review the table above for the ones you missed.' : 'Good start. Read the table again, then play another round.');
+    $('#fgOpts').innerHTML = ''; $('#fgFb').textContent = ''; $('#fgNext').disabled = true;
+  });
+  $('#fgRestart').addEventListener('click', start);
+  start();
+})();
+</script>
+</body>
+</html>

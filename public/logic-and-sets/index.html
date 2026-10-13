@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Logic and Sets: Truth Tables and Venn Diagrams · Shortutorial</title>
+<meta name="description" content="An intro to discrete math. Learn AND, OR, NOT and if-then statements, build truth tables, then learn sets, union, intersection, complement and Venn diagrams. Includes a truth table generator and a clickable Venn diagram.">
+<link rel="canonical" href="https://shortutorial.com/logic-and-sets/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Logic and Sets: Truth Tables and Venn Diagrams · Shortutorial">
+<meta property="og:description" content="An intro to discrete math. Learn AND, OR, NOT and if-then statements, build truth tables, then learn sets, union, intersection, complement and Venn diagrams. Includes a truth table generator and a clickable Venn diagram.">
+<meta property="og:url" content="https://shortutorial.com/logic-and-sets/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+.sym{font-family:var(--mono);font-weight:600;color:var(--accent)}
+.tt-in{display:flex;gap:8px;flex-wrap:wrap;align-items:flex-end}
+.tt-in input[type=text]{flex:1 1 200px;width:auto !important;min-width:0}
+.keys{display:flex;flex-wrap:wrap;gap:6px}
+.keys button{all:unset;box-sizing:border-box;cursor:pointer;min-width:38px;text-align:center;font-family:var(--mono);font-size:.95rem;font-weight:600;padding:6px 10px;border-radius:8px;border:1.5px solid var(--line);background:var(--surface)}
+.keys button:hover{border-color:var(--accent)}
+.keys button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+table.tt{border-collapse:separate;border-spacing:0;background:var(--surface);border:1px solid var(--line);border-radius:10px;font-family:var(--mono);font-size:.88rem;min-width:100%}
+table.tt th,table.tt td{padding:6px 10px;text-align:center;border-top:1px solid var(--line);white-space:nowrap}
+table.tt th{background:var(--bg);color:var(--muted);font-weight:600;border-top:0}
+table.tt th.res,table.tt td.res{border-left:2px solid var(--accent)}
+table.tt td.T{color:var(--good);font-weight:600}
+table.tt td.F{color:var(--bad)}
+table.tt th.v,table.tt td.v{background:color-mix(in srgb,var(--accent-soft) 50%,transparent)}
+.verdict{font-family:var(--display);font-weight:600}
+.vn svg{width:100%;max-width:380px;height:auto;display:block;margin:0 auto;cursor:pointer;touch-action:manipulation}
+.vn .uni{fill:var(--surface);stroke:var(--line);stroke-width:1.5}
+.vn .rg{fill:var(--accent);opacity:.55}
+.vn .cir{fill:none;stroke:var(--ink);stroke-width:2}
+.vn text{font-family:var(--display);font-weight:700;font-size:18px;fill:var(--ink)}
+.vn text.u{font-family:var(--mono);font-size:12px;font-weight:400;fill:var(--muted)}
+.vn-chk{font-family:var(--display);font-weight:600}
+.try .btn[hidden]{display:none}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"Logic and Sets: An Intro to Discrete Math","item":"https://shortutorial.com/logic-and-sets/"}]},{"@type":"Article","@id":"https://shortutorial.com/logic-and-sets/#article","headline":"Logic and Sets: An Intro to Discrete Math","description":"An intro to discrete math. Learn AND, OR, NOT and if-then statements, build truth tables, then learn sets, union, intersection, complement and Venn diagrams. Includes a truth table generator and a clickable Venn diagram.","url":"https://shortutorial.com/logic-and-sets/","mainEntityOfPage":"https://shortutorial.com/logic-and-sets/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Math","keywords":"logic, truth tables, venn diagram, sets, union, intersection, discrete math, if then, contrapositive, de morgan, boolean logic, set notation","timeRequired":"PT15M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is discrete math?","acceptedAnswer":{"@type":"Answer","text":"Math about separate, countable things (whole numbers, true/false, sets, graphs) rather than smooth, continuous quantities. It's the foundation of computer science."}},{"@type":"Question","name":"Why is “if false, then anything” true?","acceptedAnswer":{"@type":"Answer","text":"Because the if-then statement only promises something when the “if” part happens. When it doesn't, the promise can't be broken, so we count it as true. Every other choice causes problems elsewhere in logic."}},{"@type":"Question","name":"Where do programmers use this?","acceptedAnswer":{"@type":"Answer","text":"Everywhere: if (age >= 18 && hasID) is an AND, search filters are unions and intersections, and database queries use exactly these set operations."}},{"@type":"Question","name":"Is a set the same as a list?","acceptedAnswer":{"@type":"Answer","text":"No. A list has an order and can repeat items. A set has no order and no duplicates."}},{"@type":"Question","name":"Is the empty set a subset of every set?","acceptedAnswer":{"@type":"Answer","text":"Yes. “Every element of ∅ is in A” is vacuously true, since ∅ has no elements to break the rule."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="logic-and-sets">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+<header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=math">Math</a> / Logic and sets</div>
+    <span class="eyebrow">Math · Discrete math</span>
+    <h1>Logic and Sets: An Intro to Discrete Math</h1>
+    <p class="lede">Logic is the math of true and false. Sets are the math of groups of things. Together they power computer code, database searches, legal contracts and every “if this, then that” you've ever written. Build truth tables, shade Venn diagrams, and see how the two ideas are really one.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~15 min read</span><span class="badge">5 lessons</span><span class="badge">Truth table generator + Venn diagram</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#l1">1 · AND, OR, NOT</a><a href="#l2">2 · If-then</a><a href="#l3">3 · Truth tables</a><a href="#l4">4 · Sets</a><a href="#l5">5 · Venn diagrams</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="l1">
+    <div class="lesson-head"><span class="step">01</span><h2>Statements and AND, OR, NOT</h2></div>
+    <p>In logic, a <b>statement</b> (or proposition) is a sentence that is either <b>true</b> or <b>false</b>, never both. “It is raining” is a statement. “Close the door” and “Is it raining?” are not. We use letters like <b>P</b> and <b>Q</b> to stand for statements.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Word</th><th>Symbol</th><th>True when...</th><th>Example</th></tr>
+      <tr><td><b>NOT</b></td><td class="sym">¬P</td><td>P is false</td><td>“It is not raining”</td></tr>
+      <tr><td><b>AND</b></td><td class="sym">P ∧ Q</td><td>both are true</td><td>“It's raining and it's cold”</td></tr>
+      <tr><td><b>OR</b></td><td class="sym">P ∨ Q</td><td>at least one is true</td><td>“It's raining or it's cold”</td></tr>
+    </table></div>
+    <p class="callout"><span><b>OR in math is inclusive.</b> “P or Q” is true if P is true, Q is true, <i>or both</i>. In everyday speech, “soup or salad” usually means just one. That's called <b>exclusive or</b> (XOR), and logicians write it separately.</span></p>
+    <div class="example"><div class="ex-h">Example · P = “7 is odd” (true), Q = “7 > 10” (false)</div><ol><li>¬Q: “7 is not greater than 10” → true</li><li>P ∧ Q: both must be true, Q is false → false</li><li class="ans">P ∨ Q: at least one is true → true</li></ol></div>
+  </section>
+
+  <section class="lesson" id="l2">
+    <div class="lesson-head"><span class="step">02</span><h2>If-then statements</h2></div>
+    <p>“If P, then Q” is written <span class="sym">P → Q</span>. P is the <b>hypothesis</b> and Q is the <b>conclusion</b>. It's a promise: whenever P happens, Q happens too. The only way to break the promise is P true and Q false.</p>
+    <div class="tw"><table class="t">
+      <tr><th>P</th><th>Q</th><th>P → Q</th><th>Think of it as...</th></tr>
+      <tr><td>T</td><td>T</td><td><b>T</b></td><td>Promise kept</td></tr>
+      <tr><td>T</td><td>F</td><td><b>F</b></td><td>Promise broken</td></tr>
+      <tr><td>F</td><td>T</td><td><b>T</b></td><td>Promise not tested</td></tr>
+      <tr><td>F</td><td>F</td><td><b>T</b></td><td>Promise not tested</td></tr>
+    </table></div>
+    <div class="example"><div class="ex-h">Example · “If you finish your homework, you can play outside”</div><div class="ex-b"><p>If you <i>don't</i> finish your homework, the promise says nothing about what happens. Playing outside or not, nobody lied. That's why the last two rows are true. Logicians call this <b>vacuously true</b>.</p></div></div>
+    <h3>Converse, inverse and contrapositive</h3>
+    <p>Start with <b>“If it's a dog, then it's a mammal”</b> (true).</p>
+    <div class="tw"><table class="t">
+      <tr><th>Name</th><th>Form</th><th>Example</th><th>Same meaning?</th></tr>
+      <tr><td>Original</td><td class="sym">P → Q</td><td>If dog, then mammal</td><td>✓ true</td></tr>
+      <tr><td>Converse</td><td class="sym">Q → P</td><td>If mammal, then dog</td><td>✗ (cats!)</td></tr>
+      <tr><td>Inverse</td><td class="sym">¬P → ¬Q</td><td>If not a dog, then not a mammal</td><td>✗</td></tr>
+      <tr><td>Contrapositive</td><td class="sym">¬Q → ¬P</td><td>If not a mammal, then not a dog</td><td>✓ always equivalent</td></tr>
+    </table></div>
+    <p class="callout"><span><b>A classic mistake:</b> assuming the converse. “All dogs are mammals” doesn't mean “all mammals are dogs.” This trips up arguments everywhere, from ads to court cases.</span></p>
+    <p><b>“If and only if”</b> (<span class="sym">P ↔ Q</span>) means both directions hold: P → Q and Q → P. It's true when P and Q have the same truth value. “A triangle is equilateral if and only if all its sides are equal.”</p>
+  </section>
+
+  <section class="lesson" id="l3">
+    <div class="lesson-head"><span class="step">03</span><h2>Build truth tables</h2></div>
+    <p>A <b>truth table</b> lists every possible combination of true and false for the letters, and works out the result for each. With <b>n</b> letters there are <b>2ⁿ</b> rows: 2 letters → 4 rows, 3 letters → 8 rows, 4 letters → 16 rows.</p>
+    <ol class="steps">
+      <li>List the letters as columns. Fill the first column half T, half F. Halve again for each next column.</li>
+      <li>Add a column for each smaller piece, working from the inside out (NOT first, then AND, then OR, then →).</li>
+      <li>The last column is the answer.</li>
+    </ol>
+    <ul class="points">
+      <li>A <b>tautology</b> is always true (every row T), like <span class="sym">P ∨ ¬P</span>.</li>
+      <li>A <b>contradiction</b> is always false, like <span class="sym">P ∧ ¬P</span>.</li>
+      <li>Two expressions are <b>equivalent</b> if their final columns match in every row. Test it with ↔: if the result is a tautology, they're equivalent.</li>
+    </ul>
+    <div class="formula">¬(P ∧ Q) ≡ ¬P ∨ ¬Q &nbsp;&nbsp; ¬(P ∨ Q) ≡ ¬P ∧ ¬Q<small>De Morgan's laws: “not both” means “at least one is not”</small></div>
+    <div class="try" id="tt"><span class="try-h">Try it · truth table generator</span>
+      <p>Type an expression using single letters (P, Q, R, S) and the buttons, or words: <code>and</code>, <code>or</code>, <code>not</code>, <code>-&gt;</code>, <code>&lt;-&gt;</code>.</p>
+      <div class="tt-in"><label style="flex:1 1 200px">Expression<input type="text" id="ttExpr" value="(P → Q) ∧ ¬Q" autocomplete="off" spellcheck="false" autocapitalize="characters"></label></div>
+      <div class="keys" id="ttKeys" aria-label="Insert symbol"><button type="button">P</button><button type="button">Q</button><button type="button">R</button><button type="button" aria-label="not">¬</button><button type="button" aria-label="and">∧</button><button type="button" aria-label="or">∨</button><button type="button" aria-label="implies">→</button><button type="button" aria-label="if and only if">↔</button><button type="button">(</button><button type="button">)</button><button type="button" data-k="del" aria-label="Delete last character">⌫</button><button type="button" data-k="clr">Clear</button></div>
+      <div class="chipset" id="ttPre" aria-label="Examples"><button type="button" aria-pressed="false">P ∧ Q</button><button type="button" aria-pressed="false">P → Q</button><button type="button" aria-pressed="false">¬Q → ¬P</button><button type="button" aria-pressed="false">¬(P ∧ Q) ↔ (¬P ∨ ¬Q)</button><button type="button" aria-pressed="false">P ∨ ¬P</button><button type="button" aria-pressed="false">(P → Q) ∧ (Q → R) → (P → R)</button></div>
+      <p class="verdict" id="ttVerdict" aria-live="polite"></p>
+      <div class="tw" id="ttOut"></div>
+    </div>
+  </section>
+
+  <section class="lesson" id="l4">
+    <div class="lesson-head"><span class="step">04</span><h2>Sets</h2></div>
+    <p>A <b>set</b> is a collection of distinct things, called <b>elements</b>. Order doesn't matter, and repeats don't count. We name sets with capital letters and list elements in curly braces.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Notation</th><th>Means</th><th>Example</th></tr>
+      <tr><td class="sym">{ }</td><td>a set (roster form)</td><td>A = {1, 2, 3, 4}</td></tr>
+      <tr><td class="sym">∈</td><td>is an element of</td><td>3 ∈ A</td></tr>
+      <tr><td class="sym">∉</td><td>is not an element of</td><td>7 ∉ A</td></tr>
+      <tr><td class="sym">⊆</td><td>is a subset of (every element is also in)</td><td>{1, 2} ⊆ A</td></tr>
+      <tr><td class="sym">∅</td><td>the empty set, no elements</td><td>{ }</td></tr>
+      <tr><td class="sym">U</td><td>the universal set: everything we're talking about</td><td>U = {1, 2, ..., 10}</td></tr>
+      <tr><td class="sym">|A|</td><td>cardinality: how many elements</td><td>|A| = 4</td></tr>
+    </table></div>
+    <p><b>Set-builder notation</b> describes a rule instead of a list: <span class="sym">{x | x is an even number}</span> reads “the set of all x such that x is an even number.” Useful when the set is huge or infinite.</p>
+    <p class="callout"><span><b>{1, 2, 2, 3} is the same set as {3, 1, 2}.</b> Duplicates and order don't matter. Its cardinality is 3.</span></p>
+  </section>
+
+  <section class="lesson" id="l5">
+    <div class="lesson-head"><span class="step">05</span><h2>Union, intersection and Venn diagrams</h2></div>
+    <p>Let U = {1, 2, ..., 8}, A = {1, 2, 3, 4} and B = {3, 4, 5, 6}.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Operation</th><th>Symbol</th><th>Means</th><th>Result</th><th>Logic twin</th></tr>
+      <tr><td><b>Union</b></td><td class="sym">A ∪ B</td><td>in A or B (or both)</td><td>{1, 2, 3, 4, 5, 6}</td><td class="sym">OR ∨</td></tr>
+      <tr><td><b>Intersection</b></td><td class="sym">A ∩ B</td><td>in both A and B</td><td>{3, 4}</td><td class="sym">AND ∧</td></tr>
+      <tr><td><b>Complement</b></td><td class="sym">A′</td><td>in U but not in A</td><td>{5, 6, 7, 8}</td><td class="sym">NOT ¬</td></tr>
+      <tr><td><b>Difference</b></td><td class="sym">A − B</td><td>in A but not in B</td><td>{1, 2}</td><td class="sym">A ∧ ¬B</td></tr>
+    </table></div>
+    <p>See the pattern? Union is OR, intersection is AND, complement is NOT. Even De Morgan's laws carry over: <span class="sym">(A ∪ B)′ = A′ ∩ B′</span>.</p>
+    <h3>Counting with two sets</h3>
+    <div class="formula">|A ∪ B| = |A| + |B| − |A ∩ B|<small>Subtract the overlap so you don't count it twice</small></div>
+    <div class="example"><div class="ex-h">Example · a class survey</div><ol><li>18 students play a sport, 12 play an instrument, 5 do both.</li><li>Students who do at least one: 18 + 12 − 5 = 25</li><li class="ans">With 30 in the class, 30 − 25 = 5 do neither.</li></ol></div>
+    <div class="try" id="vn"><span class="try-h">Try it · Venn diagram shader</span>
+      <div class="chipset" id="vnSets" aria-label="Number of sets"><button type="button" data-n="2" aria-pressed="true">2 sets</button><button type="button" data-n="3" aria-pressed="false">3 sets</button></div>
+      <div class="chipset" id="vnMode" aria-label="Mode"><button type="button" data-m="free" aria-pressed="true">Free shading</button><button type="button" data-m="chal" aria-pressed="false">Challenge</button></div>
+      <p class="out" id="vnTask" aria-live="polite"></p>
+      <div class="vn" id="vnSvg"></div>
+      <p class="work">Click a region in the diagram, or use these buttons:</p>
+      <div class="chipset" id="vnRegions" aria-label="Regions"></div>
+      <div class="row"><button class="btn" type="button" id="vnCheck">Check</button><button class="btn ghost" type="button" id="vnClear">Clear</button><button class="btn ghost" type="button" id="vnNew">New challenge</button></div>
+      <p class="vn-chk" id="vnOut" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>What is discrete math?</summary><div class="a"><p>Math about separate, countable things (whole numbers, true/false, sets, graphs) rather than smooth, continuous quantities. It's the foundation of computer science.</p></div></details>
+      <details><summary>Why is “if false, then anything” true?</summary><div class="a"><p>Because the if-then statement only promises something when the “if” part happens. When it doesn't, the promise can't be broken, so we count it as true. Every other choice causes problems elsewhere in logic.</p></div></details>
+      <details><summary>Where do programmers use this?</summary><div class="a"><p>Everywhere: <code>if (age &gt;= 18 &amp;&amp; hasID)</code> is an AND, search filters are unions and intersections, and database queries use exactly these set operations.</p></div></details>
+      <details><summary>Is a set the same as a list?</summary><div class="a"><p>No. A list has an order and can repeat items. A set has no order and no duplicates.</p></div></details>
+      <details><summary>Is the empty set a subset of every set?</summary><div class="a"><p>Yes. “Every element of ∅ is in A” is vacuously true, since ∅ has no elements to break the rule.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://openstax.org/books/contemporary-mathematics/pages/1-introduction" target="_blank" rel="noopener"><span class="src">OpenStax · Contemporary Mathematics</span><b>Chapter 1: Sets</b></a>
+      <a href="https://openstax.org/books/contemporary-mathematics/pages/2-introduction" target="_blank" rel="noopener"><span class="src">OpenStax · Contemporary Mathematics</span><b>Chapter 2: Logic</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>Symbols vary a little between textbooks (for example A′, Aᶜ or Ā for a complement). The ideas are the same.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  /* ---------- Truth table generator ---------- */
+  const SYM = {not:'¬', and:'∧', or:'∨', imp:'→', iff:'↔'};
+  function tokenize(s){
+    const out = []; let k = 0;
+    const two = {'->':'imp','=>':'imp','&&':'and','||':'or'}, three = {'<->':'iff','<=>':'iff'};
+    const one = {'¬':'not','~':'not','!':'not','∧':'and','&':'and','^':'and','∨':'or','|':'or','+':'or','→':'imp','↔':'iff','(':'(',')':')'};
+    const words = {and:'and', or:'or', not:'not', implies:'imp', iff:'iff'};
+    while (k < s.length){
+      const c = s[k];
+      if (/\s/.test(c)){ k++; continue; }
+      if (three[s.substr(k,3)]){ out.push({t:three[s.substr(k,3)]}); k += 3; continue; }
+      if (two[s.substr(k,2)]){ out.push({t:two[s.substr(k,2)]}); k += 2; continue; }
+      if (one[c]){ out.push({t:one[c]}); k++; continue; }
+      if (/[a-z]/i.test(c)){
+        let w = ''; while (k < s.length && /[a-z]/i.test(s[k])) w += s[k++];
+        const lw = w.toLowerCase();
+        if (words[lw]) out.push({t:words[lw]});
+        else if (w.length === 1) out.push({t:'var', v:w.toUpperCase()});
+        else throw new Error('“' + w + '” isn\'t a known word. Use single letters like P and Q for statements.');
+        continue;
+      }
+      throw new Error('I don\'t understand “' + c + '”.');
+    }
+    return out;
+  }
+  function parse(tokens){
+    let k = 0;
+    const peek = () => tokens[k] && tokens[k].t;
+    const need = t => { if (peek() !== t) throw new Error(t === ')' ? 'Missing a closing parenthesis.' : 'Something is missing.'); k++; };
+    function iff(){ let a = imp(); while (peek() === 'iff'){ k++; a = {op:'iff', a, b:imp()}; } return a; }
+    function imp(){ const a = or(); if (peek() === 'imp'){ k++; return {op:'imp', a, b:imp()}; } return a; }
+    function or(){ let a = and(); while (peek() === 'or'){ k++; a = {op:'or', a, b:and()}; } return a; }
+    function and(){ let a = not(); while (peek() === 'and'){ k++; a = {op:'and', a, b:not()}; } return a; }
+    function not(){ if (peek() === 'not'){ k++; return {op:'not', a:not()}; } return atom(); }
+    function atom(){
+      const t = tokens[k];
+      if (!t) throw new Error('The expression ends too early.');
+      if (t.t === 'var'){ k++; return {v:t.v}; }
+      if (t.t === '('){ k++; const e = iff(); need(')'); return e; }
+      throw new Error('Expected a letter or “(” but found “' + (SYM[t.t] || t.t) + '”.');
+    }
+    const e = iff();
+    if (k < tokens.length) throw new Error(tokens[k].t === ')' ? 'There\'s an extra closing parenthesis.' : 'Two pieces need an operator between them.');
+    return e;
+  }
+  function str(n, top){
+    if (n.v) return n.v;
+    if (n.op === 'not') return '¬' + str(n.a);
+    const s = str(n.a) + ' ' + SYM[n.op] + ' ' + str(n.b);
+    return top ? s : '(' + s + ')';
+  }
+  function evalN(n, env){
+    if (n.v) return env[n.v];
+    const a = evalN(n.a, env);
+    if (n.op === 'not') return !a;
+    const b = evalN(n.b, env);
+    return n.op === 'and' ? a && b : n.op === 'or' ? a || b : n.op === 'imp' ? (!a || b) : a === b;
+  }
+  function vars(n, set){ if (n.v) set.add(n.v); else { vars(n.a, set); if (n.b) vars(n.b, set); } return set; }
+  function subs(n, list, seen){
+    if (n.v) return list;
+    subs(n.a, list, seen); if (n.b) subs(n.b, list, seen);
+    const key = str(n, true); if (!seen.has(key)){ seen.add(key); list.push(n); }
+    return list;
+  }
+  const inp = $('#ttExpr');
+  function run(){
+    const out = $('#ttOut'), ver = $('#ttVerdict');
+    const src = inp.value.trim();
+    if (!src){ out.innerHTML = ''; ver.textContent = 'Type an expression to see its truth table.'; return; }
+    let tree;
+    try { tree = parse(tokenize(src)); } catch(e){ out.innerHTML = ''; ver.innerHTML = '<span class="no">' + e.message.replace(/</g,'&lt;') + '</span>'; return; }
+    const vs = [...vars(tree, new Set())].sort();
+    if (vs.length > 5){ out.innerHTML = ''; ver.innerHTML = '<span class="no">Use at most 5 letters (that\'s already 32 rows).</span>'; return; }
+    const cols = tree.v ? [tree] : subs(tree, [], new Set());
+    const rows = 1 << vs.length; let html = '<table class="tt"><tr>';
+    vs.forEach(v => html += '<th class="v">' + v + '</th>');
+    cols.forEach((c, k) => html += '<th' + (k === cols.length - 1 ? ' class="res"' : '') + '>' + str(c, true) + '</th>');
+    html += '</tr>';
+    let tCount = 0;
+    for (let r = 0; r < rows; r++){
+      const env = {}; vs.forEach((v, k) => env[v] = !((r >> (vs.length - 1 - k)) & 1));
+      html += '<tr>';
+      vs.forEach(v => html += '<td class="v ' + (env[v] ? 'T' : 'F') + '">' + (env[v] ? 'T' : 'F') + '</td>');
+      cols.forEach((c, k) => { const x = evalN(c, env); if (k === cols.length - 1 && x) tCount++; html += '<td class="' + (x ? 'T' : 'F') + (k === cols.length - 1 ? ' res' : '') + '">' + (x ? 'T' : 'F') + '</td>'; });
+      html += '</tr>';
+    }
+    out.innerHTML = html + '</table>';
+    const nice = str(tree, true);
+    ver.textContent = nice + ' · ' + rows + ' rows · ' + (tCount === rows ? 'Tautology: always true.' : tCount === 0 ? 'Contradiction: always false.' : 'True in ' + tCount + ' of ' + rows + ' rows.');
+  }
+  inp.addEventListener('input', run);
+  document.querySelectorAll('#ttKeys button').forEach(b => b.addEventListener('click', () => {
+    if (b.dataset.k === 'clr') inp.value = '';
+    else if (b.dataset.k === 'del') inp.value = inp.value.trimEnd().slice(0, -1).trimEnd();
+    else { const t = b.textContent; inp.value += (/[A-Z(]/.test(t) || t === '¬') && /[A-Z)]$/.test(inp.value.trim()) ? ' ' + t : (/[∧∨→↔]/.test(t) ? ' ' + t + ' ' : t); inp.value = inp.value.replace(/\s+/g, ' ').replace(/^\s/, ''); }
+    run(); inp.focus();
+  }));
+  document.querySelectorAll('#ttPre button').forEach(b => b.addEventListener('click', () => { inp.value = b.textContent; run(); }));
+  run();
+
+  /* ---------- Venn diagram ---------- */
+  const NS = 'http://www.w3.org/2000/svg';
+  const LAY = {
+    2: [{n:'A', x:115, y:120, r:80, lx:80, ly:120}, {n:'B', x:185, y:120, r:80, lx:220, ly:120}],
+    3: [{n:'A', x:115, y:95, r:68, lx:85, ly:80}, {n:'B', x:185, y:95, r:68, lx:215, ly:80}, {n:'C', x:150, y:158, r:68, lx:150, ly:200}]
+  };
+  const T2 = [
+    ['A ∪ B', (a,b) => a || b], ['A ∩ B', (a,b) => a && b], ['A − B', (a,b) => a && !b], ['B − A', (a,b) => b && !a],
+    ['(A ∪ B)′', (a,b) => !(a || b)], ['A′', (a,b) => !a], ['(A ∩ B)′', (a,b) => !(a && b)], ['A′ ∩ B', (a,b) => !a && b],
+    ['in exactly one of A or B', (a,b) => a !== b]
+  ];
+  const T3 = [
+    ['A ∩ B ∩ C', (a,b,c) => a && b && c], ['A ∪ B ∪ C', (a,b,c) => a || b || c], ['(A ∩ B) ∪ C', (a,b,c) => (a && b) || c],
+    ['A ∪ (B ∩ C)', (a,b,c) => a || (b && c)], ['A − (B ∪ C)', (a,b,c) => a && !b && !c], ['(A ∩ B) − C', (a,b,c) => a && b && !c],
+    ['(A ∪ B) ∩ C′', (a,b,c) => (a || b) && !c], ['(A ∪ B ∪ C)′', (a,b,c) => !a && !b && !c], ['A ∩ (B ∪ C)', (a,b,c) => a && (b || c)],
+    ['C − (A ∩ B)', (a,b,c) => c && !(a && b)]
+  ];
+  let n = 2, mode = 'free', sel = new Set(), target = null, lastT = -1;
+  const bit = (m, k) => !!(m & (1 << k));
+  function regionName(m){
+    if (m === 0) return 'Outside all';
+    const ins = LAY[n].filter((s, k) => bit(m, k)).map(s => s.n);
+    return ins.length === 1 ? ins[0] + ' only' : ins.length === n ? (n === 2 ? 'A and B' : 'A, B and C') : ins.join(' and ') + ' only';
+  }
+  function regionOf(x, y){
+    let m = 0; LAY[n].forEach((s, k) => { if ((x - s.x) ** 2 + (y - s.y) ** 2 <= s.r * s.r) m |= 1 << k; });
+    return m;
+  }
+  function draw(){
+    const L = LAY[n], R = 1 << n;
+    let s = '<svg viewBox="0 0 300 240" role="img" aria-label="Venn diagram with ' + n + ' sets"><defs>';
+    L.forEach((c, k) => { s += `<clipPath id="vc${k}"><circle cx="${c.x}" cy="${c.y}" r="${c.r}"/></clipPath>`; });
+    for (let m = 0; m < R; m++){
+      s += `<mask id="vm${m}"><rect x="0" y="0" width="300" height="240" fill="#fff"/>` + L.map((c, k) => bit(m, k) ? '' : `<circle cx="${c.x}" cy="${c.y}" r="${c.r}" fill="#000"/>`).join('') + '</mask>';
+    }
+    s += '</defs><rect class="uni" x="4" y="4" width="292" height="232" rx="10"/><text class="u" x="14" y="22">U</text>';
+    sel.forEach(m => {
+      let inner = `<rect class="rg" x="4" y="4" width="292" height="232" rx="10" mask="url(#vm${m})"/>`;
+      L.forEach((c, k) => { if (bit(m, k)) inner = `<g clip-path="url(#vc${k})">${inner}</g>`; });
+      s += inner;
+    });
+    L.forEach(c => { s += `<circle class="cir" cx="${c.x}" cy="${c.y}" r="${c.r}"/><text x="${c.lx}" y="${c.ly}" text-anchor="middle">${c.n}</text>`; });
+    s += '</svg>';
+    const box = $('#vnSvg'); box.innerHTML = s;
+    box.querySelector('svg').addEventListener('click', ev => {
+      const svg = ev.currentTarget, pt = svg.createSVGPoint(); pt.x = ev.clientX; pt.y = ev.clientY;
+      const p = pt.matrixTransform(svg.getScreenCTM().inverse());
+      if (p.x < 4 || p.x > 296 || p.y < 4 || p.y > 236) return;
+      toggle(regionOf(p.x, p.y));
+    });
+    const rb = $('#vnRegions'); rb.innerHTML = '';
+    const order = n === 2 ? [1, 3, 2, 0] : [1, 3, 2, 5, 7, 6, 4, 0];
+    order.forEach(m => { const b = document.createElement('button'); b.type = 'button'; b.textContent = regionName(m); b.setAttribute('aria-pressed', sel.has(m)); b.addEventListener('click', () => toggle(m)); rb.appendChild(b); });
+    describe();
+  }
+  function toggle(m){ if (sel.has(m)) sel.delete(m); else sel.add(m); $('#vnOut').textContent = ''; draw(); }
+  function matches(f){ for (let m = 0; m < (1 << n); m++){ if (!!f(bit(m,0), bit(m,1), bit(m,2)) !== sel.has(m)) return false; } return true; }
+  function describe(){
+    if (mode === 'chal'){ $('#vnTask').innerHTML = 'Shade <b>' + target[0] + '</b>'; return; }
+    if (!sel.size){ $('#vnTask').textContent = 'Click regions to shade them. I\'ll tell you what you\'ve made.'; return; }
+    const hit = (n === 2 ? T2 : T3).find(t => matches(t[1]));
+    const all = sel.size === (1 << n);
+    $('#vnTask').innerHTML = all ? 'You shaded everything: that\'s <b>U</b>.' : hit ? 'You shaded <b>' + hit[0] + '</b>.' : sel.size + ' region' + (sel.size > 1 ? 's' : '') + ' shaded.';
+  }
+  function newTarget(){
+    const list = n === 2 ? T2 : T3; let k;
+    do { k = Math.floor(Math.random() * list.length); } while (k === lastT && list.length > 1);
+    lastT = k; target = list[k]; sel = new Set(); $('#vnOut').textContent = ''; draw();
+  }
+  function setChips(id, b){ document.querySelectorAll('#' + id + ' button').forEach(x => x.setAttribute('aria-pressed', x === b)); }
+  document.querySelectorAll('#vnSets button').forEach(b => b.addEventListener('click', () => { setChips('vnSets', b); n = +b.dataset.n; sel = new Set(); lastT = -1; if (mode === 'chal') newTarget(); else draw(); }));
+  document.querySelectorAll('#vnMode button').forEach(b => b.addEventListener('click', () => {
+    setChips('vnMode', b); mode = b.dataset.m;
+    $('#vnCheck').hidden = $('#vnNew').hidden = mode !== 'chal';
+    if (mode === 'chal') newTarget(); else { sel = new Set(); $('#vnOut').textContent = ''; draw(); }
+  }));
+  $('#vnClear').addEventListener('click', () => { sel = new Set(); $('#vnOut').textContent = ''; draw(); });
+  $('#vnNew').addEventListener('click', newTarget);
+  $('#vnCheck').addEventListener('click', () => {
+    const ok = matches(target[1]), o = $('#vnOut');
+    o.className = 'vn-chk ' + (ok ? 'ok' : 'no');
+    o.textContent = ok ? 'Correct! Press “New challenge” for another.' : 'Not yet. Check each region: is it in ' + target[0] + '?';
+  });
+  $('#vnCheck').hidden = $('#vnNew').hidden = true;
+  draw();
+})();
+</script>
+</body>
+</html>

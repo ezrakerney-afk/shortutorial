@@ -1003,5 +1003,29 @@ window.TUTORIALS = [
     category: "Life skills",
     tags: ["us government", "civics", "constitution", "three branches", "checks and balances", "how a bill becomes law", "congress", "supreme court", "midterm elections", "electoral college", "veto", "federalism"],
     minutes: 15
+  },
+  {
+    slug: "critical-thinking",
+    title: "Critical Thinking Basics",
+    summary: "Separate claims from evidence, check sources, and spot fallacies and biases.",
+    category: "Life skills",
+    tags: ["critical thinking", "logical fallacies", "fake news", "fact check", "lateral reading", "SIFT", "cognitive bias", "confirmation bias", "misinformation", "evaluate sources", "straw man", "ad hominem"],
+    minutes: 14
+  },
+  {
+    slug: "logic-and-sets",
+    title: "Logic and Sets: An Intro to Discrete Math",
+    summary: "AND, OR, NOT, if-then, truth tables, sets, unions, intersections and Venn diagrams.",
+    category: "Math",
+    tags: ["logic", "truth tables", "venn diagram", "sets", "union", "intersection", "discrete math", "if then", "contrapositive", "de morgan", "boolean logic", "set notation"],
+    minutes: 15
+  },
+  {
+    slug: "read-charts-and-graphs",
+    title: "How to Read Charts and Spot Misleading Ones",
+    summary: "Read any chart, and catch truncated axes, bad averages and false causation.",
+    category: "Math",
+    tags: ["read charts", "graphs", "misleading graphs", "truncated y-axis", "data literacy", "correlation causation", "bar chart", "line chart", "pie chart", "per capita", "percentage points", "statistics"],
+    minutes: 14
   }
 ];

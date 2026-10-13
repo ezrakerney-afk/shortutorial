@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Read Charts and Spot Misleading Graphs · Shortutorial</title>
+<meta name="description" content="Read any bar, line, pie or scatter chart in five steps, then learn the tricks: truncated y-axes, stretched scales, counts vs rates, percent vs percentage points, mean vs median, and correlation vs causation. Interactive chart and quiz.">
+<link rel="canonical" href="https://shortutorial.com/read-charts-and-graphs/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How to Read Charts and Spot Misleading Graphs · Shortutorial">
+<meta property="og:description" content="Read any bar, line, pie or scatter chart in five steps, then learn the tricks: truncated y-axes, stretched scales, counts vs rates, percent vs percentage points, mean vs median, and correlation vs causation. Interactive chart and quiz.">
+<meta property="og:url" content="https://shortutorial.com/read-charts-and-graphs/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+.ch-box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px}
+.ch-box svg{width:100%;height:auto;display:block}
+.ch-box text{font-family:var(--mono);font-size:11px;fill:var(--muted)}
+.ch-box .ttl{font-family:var(--display);font-size:13px;font-weight:600;fill:var(--ink)}
+.ch-box .ax{stroke:var(--muted);stroke-width:1}
+.ch-box .gr{stroke:var(--line);stroke-width:1}
+.ch-box .bar{fill:var(--accent)}
+.ch-box .bar2{fill:var(--amber)}
+.ch-box .ln{fill:none;stroke:var(--accent);stroke-width:2.5}
+.ch-box .dot{fill:var(--accent)}
+.ch-box .brk{stroke:var(--bad);stroke-width:2;fill:none}
+.ch-read{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.ch-read div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
+.ch-read small{display:block;font-family:var(--mono);font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.ch-read b{font-family:var(--display);font-size:1.15rem;color:var(--accent)}
+.ch-read b.warn{color:var(--bad)}
+.wq-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+.wq-opts{display:flex;flex-direction:column;gap:8px}
+.wq-opts button{all:unset;box-sizing:border-box;cursor:pointer;padding:10px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);font-size:.98rem;line-height:1.4}
+.wq-opts button:hover:not([disabled]){border-color:var(--accent)}
+.wq-opts button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wq-opts button[disabled]{cursor:default;opacity:.75}
+.wq-opts button.right{border-color:var(--good);background:var(--good-bg);color:var(--good);opacity:1}
+.wq-opts button.wrong{border-color:var(--bad);background:var(--bad-bg);color:var(--bad);opacity:1}
+.wq-fb b{font-family:var(--display)}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"How to Read Charts and Spot Misleading Ones","item":"https://shortutorial.com/read-charts-and-graphs/"}]},{"@type":"Article","@id":"https://shortutorial.com/read-charts-and-graphs/#article","headline":"How to Read Charts and Spot Misleading Ones","description":"Read any bar, line, pie or scatter chart in five steps, then learn the tricks: truncated y-axes, stretched scales, counts vs rates, percent vs percentage points, mean vs median, and correlation vs causation. Interactive chart and quiz.","url":"https://shortutorial.com/read-charts-and-graphs/","mainEntityOfPage":"https://shortutorial.com/read-charts-and-graphs/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Math","keywords":"read charts, graphs, misleading graphs, truncated y-axis, data literacy, correlation causation, bar chart, line chart, pie chart, per capita, percentage points, statistics","timeRequired":"PT14M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does every chart have to start at zero?","acceptedAnswer":{"@type":"Answer","text":"Bar charts (and filled area charts) should, because you judge them by length. Line charts and scatter plots don't have to, since they show change and position. Just read the axis labels before judging how big a change is."}},{"@type":"Question","name":"What's the difference between the x-axis and y-axis?","acceptedAnswer":{"@type":"Answer","text":"The x-axis runs left to right along the bottom. It usually shows categories or time. The y-axis runs up the side and usually shows the amount being measured."}},{"@type":"Question","name":"Why do people use pie charts if they're criticized?","acceptedAnswer":{"@type":"Answer","text":"They're fine for showing a few parts of one whole, like a budget split into 3 or 4 pieces. They get hard to read with many slices or slices of similar size. A bar chart is usually clearer."}},{"@type":"Question","name":"What's a “per capita” number?","acceptedAnswer":{"@type":"Answer","text":"Per person. Divide the total by the population. It lets you compare places of different sizes fairly."}},{"@type":"Question","name":"How can I tell if a chart's data is trustworthy?","acceptedAnswer":{"@type":"Answer","text":"Look for a named source, like a government agency or a published study, and a date. Then check that the chart actually matches what the source says."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="read-charts-and-graphs">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+<header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=math">Math</a> / Read charts and graphs</div>
+    <span class="eyebrow">Math · Data literacy</span>
+    <h1>How to Read Charts and Spot Misleading Ones</h1>
+    <p class="lede">Charts are everywhere: the news, ads, work slides, your electric bill. Learn the five-step habit for reading any chart, then the handful of tricks that make honest numbers tell a dishonest story.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~14 min read</span><span class="badge">6 lessons</span><span class="badge">Axis playground + chart quiz</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#g1">1 · Read any chart</a><a href="#g2">2 · Axes & scales</a><a href="#g3">3 · Counts vs rates</a><a href="#g4">4 · Averages</a><a href="#g5">5 · Correlation</a><a href="#g6">6 · What's wrong?</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="g1">
+    <div class="lesson-head"><span class="step">01</span><h2>Read any chart in five steps</h2></div>
+    <p>Most people look at the shape first and decide what it means in a second. Slow down for ten seconds and go in this order instead:</p>
+    <ol class="steps">
+      <li><b>Title.</b> What is this chart claiming to show?</li>
+      <li><b>Axes and units.</b> What's along the bottom (x-axis) and up the side (y-axis)? Dollars, percent, thousands, per person?</li>
+      <li><b>Scale.</b> Where does the y-axis start? Are the steps even? Is anything missing?</li>
+      <li><b>Source and date.</b> Who made the data, and how old is it? No source is a red flag.</li>
+      <li><b>Then the pattern.</b> Now look at the shape: what's going up, down, biggest, smallest? Is the difference actually large?</li>
+    </ol>
+    <h3>Pick the right chart for the job</h3>
+    <div class="tw"><table class="t">
+      <tr><th>Chart</th><th>Best for</th><th>Watch out for</th></tr>
+      <tr><td><b>Bar</b></td><td>Comparing amounts across groups</td><td>Bars must start at zero</td></tr>
+      <tr><td><b>Line</b></td><td>Change over time</td><td>Uneven time gaps, zoomed axes</td></tr>
+      <tr><td><b>Pie</b></td><td>Parts of one whole (adds to 100%)</td><td>Too many slices, totals not 100%</td></tr>
+      <tr><td><b>Scatter</b></td><td>Whether two things move together</td><td>Assuming one causes the other</td></tr>
+      <tr><td><b>Table</b></td><td>Exact values</td><td>Hard to see trends</td></tr>
+    </table></div>
+  </section>
+
+  <section class="lesson" id="g2">
+    <div class="lesson-head"><span class="step">02</span><h2>Axes and scales: the biggest trick</h2></div>
+    <p>A <b>truncated y-axis</b> starts at some number above zero. That zooms in on the top of the bars, so tiny differences look huge. For <b>bar charts</b>, this is almost always misleading, because we judge bars by their length. A bar twice as tall should mean twice as much.</p>
+    <p><b>Line charts</b> are different. They show change, so it's often fine (even helpful) for the axis not to start at zero. Body temperature from 97°F to 104°F would be a flat line if the axis started at zero. Just read the numbers on the axis before you judge how big a change is.</p>
+    <div class="try" id="ax"><span class="try-h">Try it · same data, different story</span>
+      <p>A coffee shop sold 480, 495, 510 and 520 thousand cups over four years. Move the y-axis start and watch the “growth” change.</p>
+      <div class="chipset" id="axType" aria-label="Chart type"><button type="button" data-v="bar" aria-pressed="true">Bar chart</button><button type="button" data-v="line" aria-pressed="false">Line chart</button></div>
+      <div class="chipset" id="axShape" aria-label="Chart shape"><button type="button" data-v="norm" aria-pressed="true">Normal</button><button type="button" data-v="tall" aria-pressed="false">Stretched tall</button><button type="button" data-v="flat" aria-pressed="false">Squashed flat</button></div>
+      <label>Y-axis starts at: <span id="axMinV">0</span><input type="range" id="axMin" min="0" max="470" step="10" value="0" aria-label="Y-axis start"></label>
+      <div class="row"><button class="btn ghost" type="button" id="axZero">Start at zero</button><button class="btn ghost" type="button" id="axCut">Truncate to 470</button></div>
+      <div class="ch-box" id="axChart"></div>
+      <div class="ch-read" aria-live="polite">
+        <div><small>Real growth</small><b id="axReal">+8%</b></div>
+        <div><small>Last bar looks</small><b id="axLook">1.1× the first</b></div>
+      </div>
+      <p class="work" id="axNote"></p>
+    </div>
+    <h3>Other scale tricks</h3>
+    <ul class="points">
+      <li><b>Stretching or squashing</b> the chart makes the same line look steep or flat. Read the numbers, not the slope.</li>
+      <li><b>Uneven intervals:</b> years like 1990, 2000, 2020, 2021, 2022 spaced evenly make recent change look faster.</li>
+      <li><b>Two y-axes</b> (one on each side) can make any two lines look like they move together. The creator chose both scales.</li>
+      <li><b>Log scales</b> go up by multiples (1, 10, 100, 1,000). They're useful for things that grow fast, but a straight line on a log scale means steady <i>percentage</i> growth, not steady amounts.</li>
+      <li><b>Missing time:</b> a chart that starts at a low point or ends at a high point can hide the bigger picture. Ask what happened just before and after.</li>
+    </ul>
+  </section>
+
+  <section class="lesson" id="g3">
+    <div class="lesson-head"><span class="step">03</span><h2>Counts vs percentages and rates</h2></div>
+    <p>A <b>count</b> is a raw number: 900 car crashes. A <b>rate</b> divides by the size of the group: 30 crashes per 100,000 people. Big places almost always have bigger counts, just because more people live there. To compare fairly, use rates.</p>
+    <div class="example"><div class="ex-h">Example · which city has more bike theft?</div><ol><li>City A: 900 thefts, 3,000,000 people → 900 ÷ 3,000,000 = 30 per 100,000</li><li>City B: 300 thefts, 200,000 people → 300 ÷ 200,000 = 150 per 100,000</li><li class="ans">City B has fewer thefts but a rate five times higher.</li></ol></div>
+    <h3>Percent vs percentage points</h3>
+    <p>If a rate goes from <b>10% to 15%</b>, it rose <b>5 percentage points</b>. But it also rose <b>50 percent</b> (5 is half of 10). Both are true. Headlines pick whichever sounds more dramatic, so check which one you're reading.</p>
+    <h3>Relative vs absolute risk</h3>
+    <p>“Doubles your risk!” sounds scary. But if the risk goes from 1 in 10,000 to 2 in 10,000, the extra risk is just 1 in 10,000. Always ask: <b>out of how many?</b></p>
+    <p class="callout"><span><b>Small numbers, big percentages.</b> A town that goes from 2 cases to 6 has a “200% increase.” That's true, but it's also only 4 cases. Look for the actual counts behind any percentage.</span></p>
+    <p class="callout"><span><b>Percents that don't add up.</b> A pie chart must add to 100%. If a survey let people pick more than one answer, the total can be over 100%, and a pie chart is the wrong tool. Use bars.</span></p>
+  </section>
+
+  <section class="lesson" id="g4">
+    <div class="lesson-head"><span class="step">04</span><h2>Averages can hide the story</h2></div>
+    <p>“Average” usually means the <b>mean</b>: add everything up and divide by how many. The <b>median</b> is the middle value when you line them all up. When a few values are extreme, the mean gets pulled toward them and the median doesn't.</p>
+    <div class="example"><div class="ex-h">Example · five neighbors' yearly incomes</div><ol><li>$40k, $45k, $50k, $55k, $60k → mean $50k, median $50k</li><li>A billionaire moves in with $10 million a year.</li><li>New mean: about $1.7 million. New median: $52.5k.</li><li class="ans">The median still describes a typical neighbor. The mean doesn't describe anyone.</li></ol></div>
+    <ul class="points">
+      <li>Home prices and incomes are usually reported as <b>medians</b> for exactly this reason.</li>
+      <li>An average without the <b>spread</b> (range, or how much values vary) can hide a lot. A class average of 75 could be everyone at 75, or half at 100 and half at 50.</li>
+      <li>Want the full lesson? See <a href="../mean-median-mode/">mean, median and mode</a>.</li>
+    </ul>
+  </section>
+
+  <section class="lesson" id="g5">
+    <div class="lesson-head"><span class="step">05</span><h2>Correlation is not causation</h2></div>
+    <p>Two things are <b>correlated</b> when they tend to rise and fall together. That does not mean one causes the other. When you see a chart with two things moving together, consider these explanations first:</p>
+    <div class="tw"><table class="t">
+      <tr><th>Explanation</th><th>Example</th></tr>
+      <tr><td><b>A hidden third factor</b></td><td>Ice cream sales and sunburns rise together. Hot, sunny weather causes both.</td></tr>
+      <tr><td><b>Reverse cause</b></td><td>Towns with more firefighters have more fires? No, towns with more fires hire more firefighters.</td></tr>
+      <tr><td><b>Pure coincidence</b></td><td>With enough data, unrelated things line up by chance. Tyler Vigen's “Spurious Correlations” site collects many funny examples.</td></tr>
+      <tr><td><b>Real cause</b></td><td>Sometimes it is! But you need more evidence, like a controlled experiment.</td></tr>
+    </table></div>
+    <p class="callout"><span><b>How do scientists show cause?</b> The strongest way is a randomized experiment: randomly split people into groups, change one thing for one group, and compare. Random assignment spreads hidden factors evenly across the groups.</span></p>
+  </section>
+
+  <section class="lesson" id="g6">
+    <div class="lesson-head"><span class="step">06</span><h2>What's wrong with this chart?</h2></div>
+    <p>Put it all together. Each chart below has one main problem. Pick it, then read why.</p>
+    <div class="try" id="wq"><span class="try-h">Try it · chart detective</span>
+      <div class="wq-top"><span id="wqNum">Chart 1 of 7</span><span id="wqScore">Score: 0</span></div>
+      <div class="ch-box" id="wqChart"></div>
+      <div class="wq-opts" id="wqOpts" role="group" aria-label="What's the problem?"></div>
+      <div class="wq-fb" id="wqFb" aria-live="polite"></div>
+      <div class="row"><button class="btn" type="button" id="wqNext" disabled>Next chart</button><button class="btn ghost" type="button" id="wqRestart">Start over</button></div>
+    </div>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Does every chart have to start at zero?</summary><div class="a"><p>Bar charts (and filled area charts) should, because you judge them by length. Line charts and scatter plots don't have to, since they show change and position. Just read the axis labels before judging how big a change is.</p></div></details>
+      <details><summary>What's the difference between the x-axis and y-axis?</summary><div class="a"><p>The x-axis runs left to right along the bottom. It usually shows categories or time. The y-axis runs up the side and usually shows the amount being measured.</p></div></details>
+      <details><summary>Why do people use pie charts if they're criticized?</summary><div class="a"><p>They're fine for showing a few parts of one whole, like a budget split into 3 or 4 pieces. They get hard to read with many slices or slices of similar size. A bar chart is usually clearer.</p></div></details>
+      <details><summary>What's a “per capita” number?</summary><div class="a"><p>Per person. Divide the total by the population. It lets you compare places of different sizes fairly.</p></div></details>
+      <details><summary>How can I tell if a chart's data is trustworthy?</summary><div class="a"><p>Look for a named source, like a government agency or a published study, and a date. Then check that the chart actually matches what the source says.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://www.callingbullshit.org/tools/tools_misleading_axes.html" target="_blank" rel="noopener"><span class="src">Univ. of Washington · Calling Bullshit</span><b>Misleading axes on graphs</b></a>
+      <a href="https://www.ted.com/talks/lea_gaslowitz_how_to_spot_a_misleading_graph" target="_blank" rel="noopener"><span class="src">TED-Ed</span><b>How to spot a misleading graph</b></a>
+      <a href="https://www.tylervigen.com/spurious-correlations" target="_blank" rel="noopener"><span class="src">Tyler Vigen</span><b>Spurious correlations</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>All the charts and numbers on this page are made up to show how charts work and how they can mislead.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  /* Axis playground */
+  const D = [['2021',480],['2022',495],['2023',510],['2024',520]];
+  let type = 'bar', shape = 'norm';
+  function chips(id, set){
+    document.querySelectorAll('#' + id + ' button').forEach(b => b.addEventListener('click', () => {
+      document.querySelectorAll('#' + id + ' button').forEach(x => x.setAttribute('aria-pressed', x === b));
+      set(b.dataset.v); draw();
+    }));
+  }
+  chips('axType', v => type = v); chips('axShape', v => shape = v);
+  function draw(){
+    const min = +$('#axMin').value, max = 540;
+    $('#axMinV').textContent = min;
+    const W = 360, H = shape === 'tall' ? 300 : shape === 'flat' ? 130 : 210;
+    const L = 44, R = 12, T = 26, B = 26, pw = W - L - R, ph = H - T - B;
+    const y = v => T + ph * (1 - (v - min) / (max - min));
+    let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Coffee cups sold per year, y-axis starting at ${min}"><text class="ttl" x="${L}" y="16">Cups sold (thousands)</text>`;
+    const steps = 4;
+    for (let k = 0; k <= steps; k++){ const v = Math.round(min + (max - min) * k / steps); s += `<line class="gr" x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}"/><text x="${L-6}" y="${y(v)+4}" text-anchor="end">${v}</text>`; }
+    const bw = pw / D.length;
+    if (type === 'bar') D.forEach(([lab, v], k) => { s += `<rect class="bar" x="${L + k*bw + bw*.2}" y="${y(v)}" width="${bw*.6}" height="${Math.max(0, T + ph - y(v))}" rx="3"/>`; });
+    else s += `<polyline class="ln" points="${D.map(([l, v], k) => (L + k*bw + bw/2) + ',' + y(v)).join(' ')}"/>` + D.map(([l, v], k) => `<circle class="dot" cx="${L + k*bw + bw/2}" cy="${y(v)}" r="4"/>`).join('');
+    D.forEach(([lab], k) => { s += `<text x="${L + k*bw + bw/2}" y="${H-8}" text-anchor="middle">${lab}</text>`; });
+    s += `<line class="ax" x1="${L}" x2="${L}" y1="${T}" y2="${T+ph}"/><line class="ax" x1="${L}" x2="${W-R}" y1="${T+ph}" y2="${T+ph}"/>`;
+    if (min > 0) s += `<path class="brk" d="M${L-6},${T+ph-4} l6,-5 l6,5" />`;
+    s += '</svg>';
+    $('#axChart').innerHTML = s;
+    const real = (D[3][1] - D[0][1]) / D[0][1] * 100, look = (D[3][1] - min) / (D[0][1] - min);
+    $('#axReal').textContent = '+' + fmt(real, 1) + '%';
+    const lk = $('#axLook'); lk.textContent = fmt(look, 1) + '× the first'; lk.className = look > 1.5 ? 'warn' : '';
+    let note = min === 0 ? 'Axis starts at zero: bar lengths match the real amounts. Growth looks modest, because it is.' :
+      `Axis starts at ${min}. The ${type === 'bar' ? 'last bar is drawn ' + fmt(look, 1) + '× as tall' : 'line climbs much more steeply'}, but sales grew only ${fmt(real, 1)}%.`;
+    if (type === 'line' && min > 0) note += ' For a line chart that can be OK, as long as you read the axis labels.';
+    if (shape !== 'norm') note += ' Changing the chart\'s shape changes how steep it feels, too.';
+    $('#axNote').textContent = note;
+  }
+  $('#axMin').addEventListener('input', draw);
+  $('#axZero').addEventListener('click', () => { $('#axMin').value = 0; draw(); });
+  $('#axCut').addEventListener('click', () => { $('#axMin').value = 470; draw(); });
+  draw();
+
+  /* Chart detective */
+  function frame(title, inner, W, H){ return `<svg viewBox="0 0 ${W||360} ${H||200}" role="img" aria-label="${esc(title)}"><text class="ttl" x="10" y="16">${esc(title)}</text>${inner}</svg>`; }
+  function bars(title, data, min, max, ticks){
+    const L = 44, T = 28, ph = 140, pw = 300, bw = pw / data.length;
+    const y = v => T + ph * (1 - (v - min) / (max - min));
+    let s = '';
+    ticks.forEach(v => { s += `<line class="gr" x1="${L}" x2="${L+pw}" y1="${y(v)}" y2="${y(v)}"/><text x="${L-6}" y="${y(v)+4}" text-anchor="end">${v}</text>`; });
+    data.forEach(([lab, v], k) => { s += `<rect class="${k % 2 ? 'bar2' : 'bar'}" x="${L + k*bw + bw*.2}" y="${y(v)}" width="${bw*.6}" height="${T+ph-y(v)}" rx="3"/><text x="${L + k*bw + bw/2}" y="${T+ph+16}" text-anchor="middle">${esc(lab)}</text>`; });
+    return frame(title, s + `<line class="ax" x1="${L}" x2="${L}" y1="${T}" y2="${T+ph}"/>`, 360, 192);
+  }
+  function line(title, labels, vals, min, max, ticks){
+    const L = 44, T = 28, ph = 140, pw = 300, bw = pw / labels.length;
+    const y = v => T + ph * (1 - (v - min) / (max - min));
+    let s = '';
+    ticks.forEach(v => { s += `<line class="gr" x1="${L}" x2="${L+pw}" y1="${y(v)}" y2="${y(v)}"/><text x="${L-6}" y="${y(v)+4}" text-anchor="end">${v}</text>`; });
+    s += `<polyline class="ln" points="${vals.map((v, k) => (L + k*bw + bw/2) + ',' + y(v)).join(' ')}"/>`;
+    labels.forEach((lab, k) => { s += `<circle class="dot" cx="${L + k*bw + bw/2}" cy="${y(vals[k])}" r="3.5"/><text x="${L + k*bw + bw/2}" y="${T+ph+16}" text-anchor="middle">${esc(lab)}</text>`; });
+    return frame(title, s, 360, 192);
+  }
+  function pie(title, parts){
+    const cx = 110, cy = 110, r = 72; let a = -Math.PI / 2, s = '';
+    const total = parts.reduce((t, p) => t + p[1], 0);
+    const cls = ['bar', 'bar2', 'dot'];
+    parts.forEach(([lab, v], k) => {
+      const da = 2 * Math.PI * v / total, a2 = a + da;
+      s += `<path class="${cls[k % 3]}" style="opacity:${1 - k*.22}" d="M${cx},${cy} L${cx + r*Math.cos(a)},${cy + r*Math.sin(a)} A${r},${r} 0 ${da > Math.PI ? 1 : 0} 1 ${cx + r*Math.cos(a2)},${cy + r*Math.sin(a2)} Z"/>`;
+      s += `<text x="205" y="${76 + k*22}">${esc(lab)}: ${v}%</text>`;
+      a = a2;
+    });
+    return frame(title, s, 360, 196);
+  }
+  function scatter(title){
+    const L = 44, T = 28, ph = 140, pw = 300; let s = '';
+    const pts = [[12,8],[20,14],[28,22],[35,24],[42,33],[50,38],[58,40],[66,52],[74,55],[82,66],[90,70],[30,18],[60,48],[78,58]];
+    pts.forEach(([x, v]) => { s += `<circle class="dot" cx="${L + pw * x / 100}" cy="${T + ph * (1 - v / 80)}" r="4"/>`; });
+    s += `<line class="ax" x1="${L}" x2="${L}" y1="${T}" y2="${T+ph}"/><line class="ax" x1="${L}" x2="${L+pw}" y1="${T+ph}" y2="${T+ph}"/>`;
+    s += `<text x="${L + pw/2}" y="${T+ph+18}" text-anchor="middle">Ice cream sold per day →</text><text x="12" y="${T+ph/2}" transform="rotate(-90 12 ${T+ph/2})" text-anchor="middle">Sunburns →</text>`;
+    return frame(title, s, 360, 200);
+  }
+  const Q = [
+    { svg: () => bars('Satisfaction: our soda vs. theirs (%)', [['Ours', 55], ['Theirs', 52]], 50, 56, [50, 52, 54, 56]),
+      o: ['The y-axis starts at 50, so a 3-point gap looks huge', 'Bar charts can\'t compare two brands', 'The colors are different', 'It should be a pie chart'], a: 0,
+      e: 'Bars must start at zero. Here “Ours” looks about twice as tall, but 55 vs 52 is a tiny difference.' },
+    { svg: () => pie('Which devices do you use? (pick all that apply)', [['Phone', 60], ['Laptop', 45], ['Tablet', 25]]),
+      o: ['Phones should be a different color', 'There are too few slices', 'The answers add to 130%, so a pie chart is the wrong tool', 'Percentages can\'t be used in surveys'], a: 2,
+      e: 'People could pick more than one answer, so the parts aren\'t slices of one whole. A bar chart showing each percentage would be honest.' },
+    { svg: () => bars('Bike thefts last year', [['City A', 900], ['City B', 300]], 0, 1000, [0, 250, 500, 750, 1000]),
+      o: ['The axis should start at 300', 'It shows raw counts, but City A has 3 million people and City B has 200,000', 'Bike thefts can\'t be counted', 'The bars are too wide'], a: 1,
+      e: 'Per 100,000 people, City A has 30 thefts and City B has 150. Compare rates, not counts, when groups differ in size.' },
+    { svg: () => line('Members over time', ['1990', '2000', '2020', '2021', '2022', '2023'], [100, 120, 160, 200, 250, 300], 0, 320, [0, 100, 200, 300]),
+      o: ['Lines should never go up', 'The y-axis should start at 100', 'There are too many dots', 'The years are evenly spaced but the gaps are 10, 20, then 1 year'], a: 3,
+      e: 'Uneven time gaps drawn at equal spacing make early growth look slow and recent growth look explosive.' },
+    { svg: () => scatter('Headline: “Ice cream causes sunburns!”'),
+      o: ['A hidden third factor (hot, sunny days) likely drives both', 'There are too few points', 'Scatter plots can\'t show sunburns', 'The axes need numbers to be valid'], a: 0,
+      e: 'The two are correlated, but summer weather causes both. Correlation alone doesn\'t show cause.' },
+    { svg: () => line('Total app sign-ups (all time)', ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], [500, 900, 1200, 1400, 1500, 1550], 0, 1600, [0, 400, 800, 1200, 1600]),
+      o: ['The months are in the wrong order', 'It\'s a running total, which always rises, hiding that new sign-ups fell every month', 'Line charts need to start at 500', 'Apps can\'t be measured'], a: 1,
+      e: 'Monthly sign-ups went 500, 400, 300, 200, 100, 50. A cumulative chart can only go up, so it hides the decline.' },
+    { svg: () => bars('Home prices on Elm Street ($ thousands)', [['A', 250], ['B', 270], ['C', 260], ['D', 280], ['E', 2400]], 0, 2500, [0, 500, 1000, 1500, 2000, 2500]),
+      o: ['The axis doesn\'t start at zero', 'Houses can\'t be graphed', 'An ad says “average home: $692k”, but one mansion pulls the mean up; the median is $270k', 'There should be more houses'], a: 2,
+      e: 'The mean is pulled up by one extreme value. The median ($270k) describes a typical home much better.' }
+  ];
+  let order = [], i = 0, score = 0, done = false;
+  const shuffle = a => { for (let k = a.length - 1; k > 0; k--){ const j = Math.floor(Math.random() * (k + 1)); [a[k], a[j]] = [a[j], a[k]]; } return a; };
+  function start(){ order = Q.map((_, k) => k); i = 0; score = 0; show(); }
+  function show(){
+    done = false; const q = Q[order[i]];
+    $('#wqNum').textContent = 'Chart ' + (i + 1) + ' of ' + Q.length; $('#wqScore').textContent = 'Score: ' + score;
+    $('#wqChart').innerHTML = q.svg();
+    const box = $('#wqOpts'); box.innerHTML = '';
+    shuffle(q.o.map((t, k) => k)).forEach(k => {
+      const b = document.createElement('button'); b.type = 'button'; b.textContent = q.o[k]; b.dataset.k = k;
+      b.addEventListener('click', () => pick(b, q)); box.appendChild(b);
+    });
+    $('#wqFb').textContent = ''; $('#wqNext').disabled = true; $('#wqNext').textContent = i === Q.length - 1 ? 'See my score' : 'Next chart';
+  }
+  function pick(b, q){
+    if (done) return; done = true;
+    const ok = +b.dataset.k === q.a; if (ok) score++;
+    document.querySelectorAll('#wqOpts button').forEach(x => { x.disabled = true; if (+x.dataset.k === q.a) x.classList.add('right'); });
+    if (!ok) b.classList.add('wrong');
+    $('#wqFb').innerHTML = '<b>' + (ok ? 'Right.' : 'Not quite.') + '</b> ' + esc(q.e);
+    $('#wqScore').textContent = 'Score: ' + score; $('#wqNext').disabled = false; $('#wqNext').focus();
+  }
+  $('#wqNext').addEventListener('click', () => {
+    if (i < Q.length - 1){ i++; show(); return; }
+    $('#wqChart').innerHTML = '<p class="out" style="padding:10px">You spotted ' + score + ' of ' + Q.length + '. ' + (score >= 6 ? 'Sharp eyes. Charts won\'t fool you easily.' : 'Review the lessons above and try again.') + '</p>';
+    $('#wqOpts').innerHTML = ''; $('#wqFb').textContent = ''; $('#wqNext').disabled = true;
+  });
+  $('#wqRestart').addEventListener('click', start);
+  start();
+})();
+</script>
+</body>
+</html>

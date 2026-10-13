@@ -2765,5 +2765,71 @@ export default {
         o: ["Tuesday, November 3, 2026", "Monday, November 2, 2026", "Tuesday, November 10, 2026", "Tuesday, October 27, 2026"], a: 0,
         e: "Federal elections are on the Tuesday after the first Monday in November." }
     ]
+  },
+
+  "critical-thinking": {
+    title: "Critical Thinking Basics",
+    pass: 4,
+    questions: [
+      { q: "What is lateral reading?",
+        o: ["Reading a whole website carefully from top to bottom", "Leaving the page and opening new tabs to see what other sources say about it", "Reading only the headline and first paragraph", "Skimming the comments under an article"], a: 1,
+        e: "Fact-checkers leave the page quickly and read across other sources to judge it." },
+      { q: "\"I wore my lucky socks and our team won, so the socks work.\" Which fallacy is this?",
+        o: ["Straw man", "Bandwagon", "Post hoc", "Circular reasoning"], a: 2,
+        e: "Post hoc assumes that because B followed A, A caused B." },
+      { q: "What does the S in the SIFT method stand for?",
+        o: ["Stop", "Search", "Share", "Source"], a: 0,
+        e: "SIFT is Stop, Investigate the source, Find better coverage, Trace to the original context." },
+      { q: "You keep watching a bad movie because you already paid for the ticket. Which bias is that?",
+        o: ["Anchoring", "Availability", "Survivorship bias", "Sunk cost"], a: 3,
+        e: "Sunk cost is continuing because of what you've already spent, not what happens next." },
+      { q: "Which is the strongest kind of evidence?",
+        o: ["One person's story", "A celebrity endorsement", "Many studies reviewed together", "A post with lots of shares"], a: 2,
+        e: "A systematic review of many studies is stronger than an anecdote, and popularity is not evidence." }
+    ]
+  },
+
+  "logic-and-sets": {
+    title: "Logic and Sets: An Intro to Discrete Math",
+    pass: 4,
+    questions: [
+      { q: "When is P → Q false?",
+        o: ["When P is false and Q is true", "When both are false", "When P is true and Q is false", "When both are true"], a: 2,
+        e: "An if-then is only broken when the hypothesis is true and the conclusion is false." },
+      { q: "Which statement always has the same truth value as \"If P, then Q\"?",
+        o: ["If Q, then P", "If not Q, then not P", "If not P, then not Q", "P and Q"], a: 1,
+        e: "The contrapositive ¬Q → ¬P is always equivalent. The converse and inverse are not." },
+      { q: "How many rows does a truth table with 3 letters have?",
+        o: ["3", "6", "9", "8"], a: 3,
+        e: "2 to the power of 3 is 8." },
+      { q: "A = {1, 2, 3, 4} and B = {3, 4, 5, 6}. What is A ∩ B?",
+        o: ["{3, 4}", "{1, 2, 3, 4, 5, 6}", "{1, 2}", "{5, 6}"], a: 0,
+        e: "The intersection holds the elements in both sets." },
+      { q: "18 students play a sport, 12 play an instrument and 5 do both. How many do at least one?",
+        o: ["30", "25", "35", "23"], a: 1,
+        e: "|A ∪ B| = 18 + 12 − 5 = 25." }
+    ]
+  },
+
+  "read-charts-and-graphs": {
+    title: "How to Read Charts and Spot Misleading Ones",
+    pass: 4,
+    questions: [
+      { q: "Why is a bar chart with a y-axis starting at 50 usually misleading?",
+        o: ["Bars look smaller than they are", "We judge bars by length, so small differences look huge", "Bar charts must always be blue", "It hides the title"], a: 1,
+        e: "Bars should start at zero because their length should be proportional to the value." },
+      { q: "A rate goes from 10% to 15%. Which statement is correct?",
+        o: ["It rose 5 percent", "It rose 15 percentage points", "It rose 50 percent", "It doubled"], a: 2,
+        e: "It rose 5 percentage points, which is a 50% increase over 10%." },
+      { q: "City A has 900 thefts and 3 million people. City B has 300 thefts and 200,000 people. Which has the higher theft rate?",
+        o: ["City A", "They are the same", "You can't tell from this", "City B"], a: 3,
+        e: "City A: 30 per 100,000. City B: 150 per 100,000." },
+      { q: "Ice cream sales and sunburns rise together. What's the most likely explanation?",
+        o: ["Hot, sunny weather causes both", "Ice cream causes sunburns", "Sunburns make people buy ice cream", "It is impossible to explain"], a: 0,
+        e: "A hidden third factor, summer weather, drives both. Correlation isn't causation." },
+      { q: "One mansion on a street of modest homes makes which number misleading?",
+        o: ["The median", "The mean", "The count of homes", "The street name"], a: 1,
+        e: "Extreme values pull the mean; the median stays near the typical home." }
+    ]
   }
 };
