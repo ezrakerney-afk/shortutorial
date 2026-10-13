@@ -20,12 +20,15 @@
 <meta property="og:title" content="Fix a Printer That Says “Offline” (Windows &amp; Mac) · Shortutorial">
 <meta property="og:description" content="Printer showing offline even though it's on? Step-by-step fixes for Windows and Mac: clear the queue, restart the spooler, re-add the printer and stop it going offline again.">
 <meta property="og:url" content="https://shortutorial.com/printer-offline/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
 <link rel="stylesheet" href="../style.css">
 <link rel="stylesheet" href="../guide.css">
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"Fix a Printer That Says “Offline”","item":"https://shortutorial.com/printer-offline/"}]},{"@type":"Article","@id":"https://shortutorial.com/printer-offline/#article","headline":"Fix a Printer That Says “Offline”","description":"Printer showing offline even though it's on? Step-by-step fixes for Windows and Mac: clear the queue, restart the spooler, re-add the printer and stop it going offline again.","url":"https://shortutorial.com/printer-offline/","mainEntityOfPage":"https://shortutorial.com/printer-offline/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Computer help","keywords":"printer, print, offline, hp, canon, epson, brother, windows, mac","timeRequired":"PT10M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does my printer keep going offline?","acceptedAnswer":{"@type":"Answer","text":"Usually because its network address changes after the router restarts, so your computer looks in the wrong place. Other causes are deep sleep mode, weak Wi-Fi where the printer sits, and duplicate printer entries. The last fix covers how to stop it."}},{"@type":"Question","name":"It prints from my phone but says offline on my computer. Why?","acceptedAnswer":{"@type":"Answer","text":"The printer and network are fine; your computer has an outdated or duplicate entry for it. Remove every copy of the printer and add it again (step 5)."}},{"@type":"Question","name":"How do I find my printer's IP address?","acceptedAnswer":{"@type":"Answer","text":"Print a Network Configuration page from the printer's menu, or look in its Wi-Fi or Network settings on its screen. You can also find it in your router's list of connected devices."}},{"@type":"Question","name":"Do I need to install the manufacturer's software?","acceptedAnswer":{"@type":"Answer","text":"Usually not. Windows and macOS include drivers for most printers. The maker's app is useful for setup on a new network, troubleshooting, scanning and ink levels."}},{"@type":"Question","name":"Will reinstalling the printer delete anything?","acceptedAnswer":{"@type":"Answer","text":"No. It only removes the printer's entry and any waiting print jobs. Your documents are safe; just print them again afterward."}}]}]}</script><!-- /ld -->
 </head>
 <body data-slug="printer-offline">
 <div class="progress" id="progress"></div>
@@ -228,10 +231,11 @@ net start spooler</pre></div>
 </main>
 
 <footer class="sitefoot">
-  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/leaderboard/">Leaderboard</a></nav></span><span>Steps written for Windows 11 and recent macOS. Menu names may differ slightly on older versions.</span></div>
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>Steps written for Windows 11 and recent macOS. Menu names may differ slightly on older versions.</span></div>
 </footer>
 
 <script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
 <script src="../auth.js"></script>
 <script src="../guide.js"></script>
 <script src="../quiz.js"></script>

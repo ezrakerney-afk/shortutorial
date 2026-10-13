@@ -20,12 +20,15 @@
 <meta property="og:title" content="Fix 100% Disk Usage in Windows 11 · Shortutorial">
 <meta property="og:description" content="Windows 11 stuck at 100% disk usage and running slow? Find the cause in Task Manager and fix it: SysMain, Search indexing, updates, storage drivers and failing drives.">
 <meta property="og:url" content="https://shortutorial.com/disk-usage-100/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
 <link rel="stylesheet" href="../style.css">
 <link rel="stylesheet" href="../guide.css">
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"Fix 100% Disk Usage in Windows 11","item":"https://shortutorial.com/disk-usage-100/"}]},{"@type":"Article","@id":"https://shortutorial.com/disk-usage-100/#article","headline":"Fix 100% Disk Usage in Windows 11","description":"Windows 11 stuck at 100% disk usage and running slow? Find the cause in Task Manager and fix it: SysMain, Search indexing, updates, storage drivers and failing drives.","url":"https://shortutorial.com/disk-usage-100/","mainEntityOfPage":"https://shortutorial.com/disk-usage-100/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Computer help","keywords":"disk, 100%, slow, task manager, sysmain, hdd, ssd, windows","timeRequired":"PT15M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is 100% disk usage bad for my computer?","acceptedAnswer":{"@type":"Answer","text":"It won't damage anything by itself, but it makes everything painfully slow because programs have to wait for the drive. Constant 100% on a hard drive that's also making clicking noises can be a sign it's failing; check its health (step 6)."}},{"@type":"Question","name":"Is it safe to disable SysMain?","acceptedAnswer":{"@type":"Answer","text":"Yes. It's a speed-up feature, not something Windows needs to work. On computers with an SSD you may not notice any difference either way."}},{"@type":"Question","name":"Why did it start right after upgrading to Windows 11?","acceptedAnswer":{"@type":"Answer","text":"Upgrades trigger a lot of one-time background work: re-indexing files, installing follow-up updates and optimising apps. Give it a day. If it's still happening, outdated storage drivers from the old version of Windows are a common cause (step 5)."}},{"@type":"Question","name":"Will turning off hibernation fix it?","acceptedAnswer":{"@type":"Answer","text":"It helps some people, but mostly because it frees up several gigabytes of space. Run powercfg /hibernate off in Terminal (Admin) if your drive is also nearly full. Note this turns off hibernation and Fast Startup."}},{"@type":"Question","name":"Task Manager says 100% but nothing is listed using much. Why?","acceptedAnswer":{"@type":"Answer","text":"The work may be coming from Windows itself (listed as “System”) or from a failing drive that's slow to respond. Check the drive's health (step 6) and look at Resource Monitor's Disk tab for the files involved."}}]}]}</script><!-- /ld -->
 </head>
 <body data-slug="disk-usage-100">
 <div class="progress" id="progress"></div>
@@ -192,10 +195,11 @@
 </main>
 
 <footer class="sitefoot">
-  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/leaderboard/">Leaderboard</a></nav></span><span>Steps written for Windows 11. Menu names may differ slightly on Windows 10.</span></div>
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>Steps written for Windows 11. Menu names may differ slightly on Windows 10.</span></div>
 </footer>
 
 <script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
 <script src="../auth.js"></script>
 <script src="../guide.js"></script>
 <script src="../quiz.js"></script>

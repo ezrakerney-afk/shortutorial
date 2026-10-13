@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Learning Paths · Shortutorial</title>
+<meta name="description" content="Learning paths on Shortutorial: short tutorials in order, from money basics and coding to home repair, with progress tracking and free certifications.">
+<link rel="canonical" href="https://shortutorial.com/paths/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Learning Paths · Shortutorial">
+<meta property="og:description" content="Learning paths on Shortutorial: short tutorials in order, from money basics and coding to home repair, with progress tracking and free certifications.">
+<meta property="og:url" content="https://shortutorial.com/paths/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<style>
+.wrap{max-width:1040px;margin:0 auto;padding:48px 16px 0;display:flex;flex-direction:column;gap:28px}
+.hero{display:flex;flex-direction:column;gap:12px;max-width:640px}
+.hero h1{font-size:clamp(2.2rem,6.5vw,3.3rem);font-weight:700;letter-spacing:-.03em}
+.hero p{color:var(--muted);font-size:1.1rem}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.path{scroll-margin-top:84px;display:flex;flex-direction:column;gap:12px;padding:20px;background:var(--surface);border:1px solid var(--line);border-radius:16px}
+.path:target{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.path-top{display:flex;gap:12px;align-items:center}
+.path-ic{width:44px;height:44px;flex:none;border-radius:12px;display:grid;place-items:center;font-size:1.4rem;background:var(--accent-soft)}
+.path h2{font-size:1.2rem}
+.path .blurb{color:var(--muted);font-size:.96rem}
+.meter{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.meter i{display:block;height:100%;background:var(--accent);border-radius:99px;transition:width .3s}
+.pmeta{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.steps a{display:flex;gap:10px;align-items:flex-start;padding:6px 8px;border-radius:8px;color:var(--ink);text-decoration:none;font-size:.95rem;line-height:1.35}
+.steps a:hover{background:var(--bg)}
+.steps .n{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-size:.7rem;border:1.5px solid var(--line);color:var(--muted)}
+.steps .seen .n{border-color:var(--accent);color:var(--accent)}
+.steps .cert .n{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.path .btn{align-self:flex-start;margin-top:auto}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="hero">
+    <span class="eyebrow">Learning paths</span>
+    <h1>Learn a skill, one step at a time.</h1>
+    <p>Each path puts short tutorials in the right order. Work through them, pass the quizzes, and watch your progress fill up.</p>
+    <div class="legend"><span>○ not started</span><span style="color:var(--accent)">● opened</span><span>✓ certified (logged in)</span></div>
+  </header>
+  <div class="pgrid" id="paths"></div>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>Progress is saved on this device. Pass a quiz while logged in to earn certification points.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../paths.js"></script>
+<script>
+const ALL = window.TUTORIALS || [];
+const byS = Object.fromEntries(ALL.map(t => [t.slug, t]));
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let certs = new Set();
+function draw(){
+  const seen = window.pathVisited();
+  document.getElementById('paths').innerHTML = window.PATHS.map(p => {
+    const done = p.steps.filter(s => seen.has(s) || certs.has(s)).length;
+    const next = p.steps.find(s => !seen.has(s) && !certs.has(s));
+    const label = !done ? 'Start path' : next ? 'Continue' : 'Review';
+    return `<section class="path" id="${p.id}">
+      <div class="path-top"><span class="path-ic" aria-hidden="true">${p.icon}</span><div><h2>${esc(p.title)}</h2><p class="blurb">${esc(p.blurb)}</p></div></div>
+      <div class="meter" role="progressbar" aria-label="${esc(p.title)} progress" aria-valuemin="0" aria-valuemax="${p.steps.length}" aria-valuenow="${done}"><i style="width:${Math.round(done / p.steps.length * 100)}%"></i></div>
+      <div class="pmeta"><span>${done} of ${p.steps.length} done</span><span>~${p.steps.reduce((m, s) => m + (byS[s].minutes || 10), 0)} min total</span></div>
+      <ol class="steps">${p.steps.map((s, k) => `<li class="${certs.has(s) ? 'cert' : seen.has(s) ? 'seen' : ''}"><a href="../${s}/"><span class="n">${certs.has(s) ? '✓' : k + 1}</span><span>${esc(byS[s].title)}</span></a></li>`).join('')}</ol>
+      <a class="btn small" href="../${next || p.steps[0]}/">${label} →</a>
+    </section>`;
+  }).join('');
+  if (location.hash){ const el = document.querySelector(location.hash); if (el) el.scrollIntoView(); }
+}
+draw();
+fetch('/api/me', {credentials: 'same-origin'}).then(r => r.ok ? r.json() : null).then(m => { if (m && m.certs){ certs = new Set(m.certs); draw(); } }).catch(() => {});
+document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

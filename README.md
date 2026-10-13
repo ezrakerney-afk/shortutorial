@@ -16,6 +16,9 @@ public/                 → everything served on the website
   quiz.js               → certification quiz at the end of each tutorial
   leaderboard/          → world leaderboard
   <slug>/index.html     → one folder per tutorial
+  paths.js              → learning paths (ordered tracks of tutorials) + the path banner on tutorial pages
+  paths/                → learning paths page
+  favicon.ico, favicon.svg, icon-*.png → site icons (real files so Google can show them)
   sitemap.xml, robots.txt
 worker/
   index.js              → API: /api/signup, /api/login, /api/logout, /api/me, /api/quiz/<slug>, /api/leaderboard
@@ -29,8 +32,12 @@ wrangler.jsonc          → Cloudflare config
 1. Copy an existing tutorial folder in `public/` (e.g. `public/no-internet/`) to a new folder named after the URL you want, and change the content. Set `data-slug` on `<body>` to the folder name.
 2. Add an entry to `public/tutorials.js`.
 3. Add its quiz to `worker/quizzes.js` (keep a `<section class="block" id="cert"></section>` in the page so the quiz appears).
-4. Add the URL to `public/sitemap.xml`.
+4. Add the URL to `public/sitemap.xml`, and add the slug to a path in `public/paths.js` if one fits.
 5. Commit and push. The site updates in about a minute.
+
+## Page extras
+
+`scripts/enhance-pages.mjs` runs before every deploy. It keeps the favicon links, footer links, learning-path script and Google structured data (breadcrumbs, article info, FAQs) up to date on every page, so new tutorials get them automatically. Run it by hand with `node scripts/enhance-pages.mjs`.
 
 ## Local testing
 

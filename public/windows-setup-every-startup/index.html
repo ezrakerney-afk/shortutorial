@@ -20,12 +20,15 @@
 <meta property="og:title" content="Stop Windows 11 Setup Screens Appearing at Every Startup · Shortutorial">
 <meta property="og:description" content="Windows 11 keeps showing “Let&#x27;s finish setting up your device” or the privacy settings questions every time you start? Here&#x27;s how to make them stop for good.">
 <meta property="og:url" content="https://shortutorial.com/windows-setup-every-startup/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
 <link rel="stylesheet" href="../style.css">
 <link rel="stylesheet" href="../guide.css">
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"Stop Setup Screens Appearing Every Startup","item":"https://shortutorial.com/windows-setup-every-startup/"}]},{"@type":"Article","@id":"https://shortutorial.com/windows-setup-every-startup/#article","headline":"Stop Setup Screens Appearing Every Startup","description":"Windows 11 keeps showing “Let's finish setting up your device” or the privacy settings questions every time you start? Here's how to make them stop for good.","url":"https://shortutorial.com/windows-setup-every-startup/","mainEntityOfPage":"https://shortutorial.com/windows-setup-every-startup/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Computer help","keywords":"setup, privacy, startup, boot, lets finish setting up, oobe, windows","timeRequired":"PT10M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is “Let's finish setting up your device”?","acceptedAnswer":{"@type":"Answer","text":"Microsoft calls it the “second-chance out-of-box experience”. It reminds you about features you skipped during setup, like OneDrive backup, Microsoft 365 or linking your phone. It's meant to appear occasionally, not every time you start up."}},{"@type":"Question","name":"Why do the privacy questions appear after updates?","acceptedAnswer":{"@type":"Answer","text":"When an update adds or changes a privacy option, Windows asks you to review your choices. It should ask once per change. If it asks every startup, your answers aren't being saved; see steps 4–6."}},{"@type":"Question","name":"Is it safe to run those reg add commands?","acceptedAnswer":{"@type":"Answer","text":"Yes. They only turn off these two reminder screens. They don't change your privacy choices, stop updates or affect anything else, and you can reverse them."}},{"@type":"Question","name":"Does this mean my computer has a virus?","acceptedAnswer":{"@type":"Answer","text":"No. It's a Windows setting problem. Malware doesn't cause these screens."}},{"@type":"Question","name":"Will turning these off stop security updates?","acceptedAnswer":{"@type":"Answer","text":"No. Updates keep installing as normal."}}]}]}</script><!-- /ld -->
 </head>
 <body data-slug="windows-setup-every-startup">
 <div class="progress" id="progress"></div>
@@ -177,10 +180,11 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\OOBE" /v DisablePrivacyExperie
 </main>
 
 <footer class="sitefoot">
-  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/leaderboard/">Leaderboard</a></nav></span><span>Steps written for Windows 11. Menu names may differ slightly between versions.</span></div>
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>Steps written for Windows 11. Menu names may differ slightly between versions.</span></div>
 </footer>
 
 <script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
 <script src="../auth.js"></script>
 <script src="../guide.js"></script>
 <script src="../quiz.js"></script>

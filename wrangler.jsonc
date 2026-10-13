@@ -20,6 +20,6 @@
   // Workers AI powers the smart (meaning-based) search.
   "ai": { "binding": "AI" },
   // Rebuild the search catalog from public/tutorials.js before every deploy.
-  "build": { "command": "node scripts/build-catalog.mjs" },
+  "build": { "command": "node scripts/build-catalog.mjs && node scripts/enhance-pages.mjs" },
   "observability": { "enabled": true }
 }

@@ -20,7 +20,9 @@
 <meta property="og:title" content="Make Your First Website for Free · Shortutorial">
 <meta property="og:description" content="Build and publish your first website for free: plan it, write the HTML and CSS in a live editor, put it online with GitHub Pages, and connect your own domain name.">
 <meta property="og:url" content="https://shortutorial.com/make-a-website/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
@@ -60,6 +62,7 @@
 .plan b{font-family:var(--display)}
 .plan p{font-size:.92rem;color:var(--muted)}
 </style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"Make Your First Website for Free","item":"https://shortutorial.com/make-a-website/"}]},{"@type":"Article","@id":"https://shortutorial.com/make-a-website/#article","headline":"Make Your First Website for Free","description":"Build and publish your first website for free: plan it, write the HTML and CSS in a live editor, put it online with GitHub Pages, and connect your own domain name.","url":"https://shortutorial.com/make-a-website/","mainEntityOfPage":"https://shortutorial.com/make-a-website/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Programming","keywords":"make a website, free website, html, css, github pages, web hosting, custom domain, dns, beginner, learn to code, publish website","timeRequired":"PT20M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is GitHub Pages really free?","acceptedAnswer":{"@type":"Answer","text":"Yes, for public repositories on a free GitHub account. Sites can be up to 1 GB, with a soft limit of 100 GB of traffic a month, which is plenty for a personal or small business site."}},{"@type":"Question","name":"Do I need to know how to code?","acceptedAnswer":{"@type":"Answer","text":"Only the basics in this lesson. HTML and CSS aren't programming languages in the hard sense; they describe content and style. Start from a template and change it bit by bit."}},{"@type":"Question","name":"Can I add more pages?","acceptedAnswer":{"@type":"Answer","text":"Yes. Make another file like about.html , copy the skeleton, and link to it with \u003ca href=\"about.html\">About\u003c/a> . It'll be at yourusername.github.io/about.html ."}},{"@type":"Question","name":"My site shows a 404 error. What's wrong?","acceptedAnswer":{"@type":"Answer","text":"Check that the home page is named exactly index.html (lowercase) and sits at the top of the repository, not inside a folder. Then wait a few minutes; publishing isn't instant."}},{"@type":"Question","name":"My page shows but has no styling.","acceptedAnswer":{"@type":"Answer","text":"The href in your \u003clink> tag must exactly match the CSS file name, including capital letters. Style.css and style.css are different files on the web."}},{"@type":"Question","name":"Should I use a website builder instead?","acceptedAnswer":{"@type":"Answer","text":"Builders like Squarespace or Wix are quicker if you just need a site, but usually cost money each month for a custom domain. Writing it yourself is free, faster to load, and teaches you how the web works."}}]}]}</script><!-- /ld -->
 </head>
 <body data-slug="make-a-website">
 <div class="progress" id="progress"></div>
@@ -249,10 +252,11 @@
 </main>
 
 <footer class="sitefoot">
-  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/leaderboard/">Leaderboard</a></nav></span><span>GitHub Pages steps and limits checked against GitHub Docs, October 2026.</span></div>
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>GitHub Pages steps and limits checked against GitHub Docs, October 2026.</span></div>
 </footer>
 
 <script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
 <script src="../auth.js"></script>
 <script src="../lesson.js"></script>
 <script src="../quiz.js"></script>
