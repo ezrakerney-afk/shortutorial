@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Public Speaking Basics: Plan, Practice and Deliver a Talk · Shortutorial</title>
+<meta name="description" content="Plan a clear talk, open strong, practice smart, calm your nerves, use your voice, body and slides well, and handle Q&amp;A. Includes a talk outline builder and a practice timer with words-per-minute pacing cues.">
+<link rel="canonical" href="https://shortutorial.com/public-speaking/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Public Speaking Basics: Plan, Practice and Deliver a Talk · Shortutorial">
+<meta property="og:description" content="Plan a clear talk, open strong, practice smart, calm your nerves, use your voice, body and slides well, and handle Q&amp;A. Includes a talk outline builder and a practice timer with words-per-minute pacing cues.">
+<meta property="og:url" content="https://shortutorial.com/public-speaking/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+.ob{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.ob label.w{grid-column:1/-1}
+.try textarea,.ob input[type=text]{font:inherit;font-size:1rem;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:9px;padding:8px 10px;width:100%;box-sizing:border-box;outline:none;font-family:var(--body)}
+.try textarea{min-height:150px;resize:vertical;line-height:1.5}
+.try textarea:focus,.ob input[type=text]:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.ob-out{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;font-size:.96rem}
+.ob-out h4{font-family:var(--display);font-size:1.05rem}
+.ob-out .seg{display:grid;grid-template-columns:64px 1fr;gap:8px;border-top:1px solid var(--line);padding-top:8px}
+.ob-out .seg:first-of-type{border-top:0}
+.ob-out .t{font-family:var(--mono);font-size:.75rem;color:var(--amber);font-weight:600}
+.ob-out .miss{color:var(--muted);font-style:italic}
+.pt-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.pt-stats div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
+.pt-stats small{display:block;font-family:var(--mono);font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.pt-stats b{font-family:var(--display);font-size:1.15rem;color:var(--accent)}
+.pt{display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.pt .clock{font-family:var(--mono);font-size:clamp(1.6rem,8vw,2.4rem);font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+.pt .clock.over{color:var(--bad)}
+.pt .bar{height:10px;border-radius:99px;background:var(--line);overflow:hidden;position:relative}
+.pt .bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s linear}
+.pt .bar i.warn{background:var(--amber)} .pt .bar i.over{background:var(--bad)}
+.pt .cue{font-family:var(--display);font-weight:600;font-size:1.05rem}
+.pt .where{font-size:.95rem;color:var(--muted)}
+.pt .where q{color:var(--ink)}
+.marks{display:flex;flex-direction:column;gap:4px;font-size:.88rem}
+.marks div{display:grid;grid-template-columns:56px 1fr;gap:8px}
+.marks span{font-family:var(--mono);color:var(--amber);font-weight:600}
+.marks em{color:var(--muted);font-style:normal;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"Public Speaking Basics","item":"https://shortutorial.com/public-speaking/"}]},{"@type":"Article","@id":"https://shortutorial.com/public-speaking/#article","headline":"Public Speaking Basics","description":"Plan a clear talk, open strong, practice smart, calm your nerves, use your voice, body and slides well, and handle Q&A. Includes a talk outline builder and a practice timer with words-per-minute pacing cues.","url":"https://shortutorial.com/public-speaking/","mainEntityOfPage":"https://shortutorial.com/public-speaking/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Life skills","keywords":"public speaking, presentation, speech, stage fright, fear of public speaking, talk outline, words per minute, body language, slides, Q&A, toast, how to give a speech","timeRequired":"PT15M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many words is a 5-minute speech?","acceptedAnswer":{"@type":"Answer","text":"At a comfortable 130 to 150 words per minute, about 650 to 750 words. Leave room for pauses, laughs and slowing down for key points."}},{"@type":"Question","name":"Should I memorize my speech?","acceptedAnswer":{"@type":"Answer","text":"Memorize your opening and closing lines. For the middle, learn the order of your points and key examples, and use short notes. Word-for-word memorizing makes it easy to freeze if you lose one word."}},{"@type":"Question","name":"What do I do if my mind goes blank?","acceptedAnswer":{"@type":"Answer","text":"Pause, breathe, and glance at your notes. Repeating your last sentence often jogs your memory. The audience usually just thinks you're pausing for effect."}},{"@type":"Question","name":"How do I stop saying “um”?","acceptedAnswer":{"@type":"Answer","text":"Record yourself to see when it happens, usually between ideas. Practice replacing it with a short silent pause. Knowing your outline well also cuts fillers."}},{"@type":"Question","name":"How early should I arrive?","acceptedAnswer":{"@type":"Answer","text":"Early enough to check the room, the mic, the screen and your slides, and to calm down. For an important talk, 20 to 30 minutes is a good rule of thumb."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="public-speaking">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+<header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=skills">Life skills</a> / Public speaking</div>
+    <span class="eyebrow">Skills · Communication</span>
+    <h1>Public Speaking Basics</h1>
+    <p class="lede">Whether it's a class presentation, a work meeting, a wedding toast or a town hall, good speaking is mostly preparation. Learn how to build a clear talk, open and close strong, practice the smart way, calm your nerves, and handle questions.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~15 min read</span><span class="badge">6 lessons</span><span class="badge">Outline builder + practice timer</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#s1">1 · Audience & message</a><a href="#s2">2 · Structure</a><a href="#s3">3 · Open & close</a><a href="#s4">4 · Practice & nerves</a><a href="#s5">5 · Voice, body, slides</a><a href="#s6">6 · Q&A</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="s1">
+    <div class="lesson-head"><span class="step">01</span><h2>Start with your audience and one message</h2></div>
+    <p>Before you write a word, answer three questions:</p>
+    <ol class="steps">
+      <li><b>Who's listening?</b> What do they already know? What do they care about? A talk on the same topic sounds very different to kids, coworkers or a city council.</li>
+      <li><b>What's your goal?</b> To inform, persuade, teach, or celebrate? What should people think, feel or do afterward?</li>
+      <li><b>What's your one main message?</b> If the audience remembers only one sentence, what should it be?</li>
+    </ol>
+    <div class="example"><div class="ex-h">Example · main message</div><ol><li>Too broad: “I'll talk about recycling.”</li><li class="ans">Clear: “Our office can cut its trash in half by sorting recycling at each desk, starting Monday.”</li></ol></div>
+    <p class="callout"><span><b>Can't say it in one sentence?</b> Then you're not ready to write the talk yet. Everything else in the talk should support that sentence. If a fact or story doesn't, cut it, no matter how interesting it is.</span></p>
+  </section>
+
+  <section class="lesson" id="s2">
+    <div class="lesson-head"><span class="step">02</span><h2>Structure your talk</h2></div>
+    <p>Almost every good talk follows the same simple shape:</p>
+    <div class="tw"><table class="t">
+      <tr><th>Part</th><th>What it does</th><th>Share of time</th></tr>
+      <tr><td><b>Opening</b></td><td>Grab attention, say why it matters, preview your points</td><td>about 10–15%</td></tr>
+      <tr><td><b>Body</b></td><td>Usually 3 main points, each with an example, story or fact</td><td>about 75%</td></tr>
+      <tr><td><b>Close</b></td><td>Sum up, repeat the main message, tell them what to do</td><td>about 10%</td></tr>
+    </table></div>
+    <ul class="points">
+      <li><b>Three points</b> is a sweet spot. Listeners can hold three ideas easily; seven blur together.</li>
+      <li><b>Each point needs support:</b> a story, an example, a number, a picture. Stories are what people remember.</li>
+      <li><b>Use signposts:</b> “First... Second... The last thing...” and “So far we've seen X; now let's look at Y.” Listeners can't scroll back like readers can, so tell them where they are.</li>
+      <li><b>Use notes, not a script.</b> Bullet points of key words keep you sounding natural. Reading word for word usually sounds flat.</li>
+    </ul>
+    <div class="try" id="ob"><span class="try-h">Try it · talk outline builder</span>
+      <div class="ob">
+        <label>Talk length (minutes)<input type="number" id="obLen" min="1" max="60" value="5" inputmode="numeric"></label>
+        <label>Audience<input type="text" id="obAud" maxlength="80" placeholder="e.g. coworkers"></label>
+        <label class="w">Main message (one sentence)<input type="text" id="obMsg" maxlength="160" placeholder="What should they remember?"></label>
+        <label class="w">Opening hook<input type="text" id="obHook" maxlength="160" placeholder="A question, story or surprising fact"></label>
+        <label class="w">Point 1 + example<input type="text" id="obP1" maxlength="160"></label>
+        <label class="w">Point 2 + example<input type="text" id="obP2" maxlength="160"></label>
+        <label class="w">Point 3 + example<input type="text" id="obP3" maxlength="160"></label>
+        <label class="w">Close: what should they do?<input type="text" id="obClose" maxlength="160" placeholder="Your call to action"></label>
+      </div>
+      <div class="row"><button class="btn" type="button" id="obCopy">Copy outline</button><button class="btn ghost" type="button" id="obEx">Fill in an example</button><button class="btn ghost" type="button" id="obClear">Clear</button></div>
+      <div class="ob-out" id="obOut" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="lesson" id="s3">
+    <div class="lesson-head"><span class="step">03</span><h2>Open strong, close stronger</h2></div>
+    <p>People decide in the first minute whether to pay attention. Skip “Um, so, I'm going to talk about...” and start with a hook:</p>
+    <div class="tw"><table class="t">
+      <tr><th>Hook</th><th>Example</th></tr>
+      <tr><td><b>A question</b></td><td>“How many of you threw something away today that could have been recycled?”</td></tr>
+      <tr><td><b>A short story</b></td><td>“Last Tuesday I watched our janitor sort three bags of trash by hand.”</td></tr>
+      <tr><td><b>A surprising fact</b></td><td>A real, checked number that makes people sit up.</td></tr>
+      <tr><td><b>A picture or object</b></td><td>Hold up the thing you're talking about.</td></tr>
+    </table></div>
+    <p class="callout warn"><span><b>Don't open with an apology.</b> “Sorry, I'm not very good at this” tells the audience to expect a bad talk. They usually wouldn't have noticed anything was wrong.</span></p>
+    <h3>The close</h3>
+    <ul class="points">
+      <li><b>Signal it:</b> “To wrap up...” People perk up when they hear the end is near.</li>
+      <li><b>Repeat your main message</b> in one sentence.</li>
+      <li><b>Give a clear call to action:</b> one specific thing to do next.</li>
+      <li><b>End on purpose.</b> Say your last line, pause, smile, and say “Thank you.” Don't trail off with “...so, yeah, that's it.”</li>
+    </ul>
+    <p class="callout"><span><b>Taking questions?</b> Do Q&A <i>before</i> your final closing line, then finish with your close. That way the talk ends on your message, not on a random last question.</span></p>
+  </section>
+
+  <section class="lesson" id="s4">
+    <div class="lesson-head"><span class="step">04</span><h2>Practice and handle nerves</h2></div>
+    <h3>Practice the smart way</h3>
+    <ol class="steps">
+      <li><b>Say it out loud.</b> Reading it silently in your head doesn't count. Your mouth needs the practice.</li>
+      <li><b>Time it.</b> Most people speak somewhere around 120 to 160 words per minute when presenting, and nerves usually make you faster. Use the timer below.</li>
+      <li><b>Record yourself</b> on your phone. Watch once for words, once for body language. It's awkward, and it works.</li>
+      <li><b>Practice in front of someone.</b> Ask them: what was my main message? If they can't say it, make it clearer.</li>
+      <li><b>Know your first and last lines cold.</b> A smooth start calms you down; a clean finish leaves a good impression.</li>
+    </ol>
+    <div class="try" id="pt"><span class="try-h">Try it · practice timer and pacing</span>
+      <label>Paste your script or notes (optional, gives pacing cues)<textarea id="ptText" placeholder="Paste your talk here. Leave a blank line between sections."></textarea></label>
+      <div class="row">
+        <label>Target length (min)<input type="number" id="ptTarget" min="0.5" max="90" step="0.5" value="5" inputmode="decimal"></label>
+        <label style="flex:1 1 180px">Speaking pace: <span id="ptWpmV">140</span> words/min<input type="range" id="ptWpm" min="100" max="180" step="5" value="140"></label>
+      </div>
+      <div class="pt-stats" aria-live="polite">
+        <div><small>Words</small><b id="ptWords">0</b></div>
+        <div><small>Est. time</small><b id="ptEst">0:00</b></div>
+        <div><small>Fits target?</small><b id="ptFit">—</b></div>
+      </div>
+      <p class="work" id="ptAdvice"></p>
+      <div class="marks" id="ptMarks"></div>
+      <div class="pt">
+        <div class="clock" id="ptClock" role="timer" aria-live="off">0:00</div>
+        <div class="bar"><i id="ptBar"></i></div>
+        <div class="cue" id="ptCue" aria-live="assertive">Press start and begin speaking.</div>
+        <div class="where" id="ptWhere"></div>
+        <div class="row"><button class="btn" type="button" id="ptStart">Start</button><button class="btn ghost" type="button" id="ptDone">I finished</button><button class="btn ghost" type="button" id="ptReset">Reset</button></div>
+      </div>
+    </div>
+    <h3>Calm your nerves</h3>
+    <p>Almost everyone gets nervous before speaking. The goal isn't zero nerves; it's to keep them from running the show. Mayo Clinic suggests:</p>
+    <ul class="points">
+      <li><b>Know your topic and prepare</b> for likely questions.</li>
+      <li><b>Practice repeatedly,</b> ideally in front of people you trust.</li>
+      <li><b>Breathe slowly.</b> A few slow, deep breaths before you start and during the talk help.</li>
+      <li><b>Focus on your message, not yourself.</b> Audiences pay attention to the information and rarely notice nerves as much as you think.</li>
+      <li><b>Don't fear silence.</b> If you lose your place, pause. It feels long to you but lasts only seconds to them.</li>
+      <li><b>Picture it going well,</b> and afterward, be kind to yourself. Note what worked and one thing to improve.</li>
+    </ul>
+    <p class="callout"><span><b>Want regular practice?</b> Groups like Toastmasters meet in many towns and online, so you can practice in a friendly room. If fear of speaking is severe and limits your life, talk with a doctor or therapist; it's common and treatable.</span></p>
+  </section>
+
+  <section class="lesson" id="s5">
+    <div class="lesson-head"><span class="step">05</span><h2>Voice, body language and slides</h2></div>
+    <div class="grid2">
+      <div><span class="tagline">Voice</span><h3>Slow down and pause</h3><p>Speak a little slower than feels natural. Pause after important points to let them land. Speak to the back row. Vary your pitch so you don't sound like a robot. Replace “um” with a silent pause.</p></div>
+      <div><span class="tagline">Body</span><h3>Stand steady, look at people</h3><p>Plant your feet, shoulders relaxed. Let your hands move naturally, and keep them out of your pockets. Look at one person per sentence or thought, then move to someone else in another part of the room.</p></div>
+    </div>
+    <h3>Slides that help instead of distract</h3>
+    <ul class="points">
+      <li><b>One idea per slide.</b> A short headline that states the point.</li>
+      <li><b>Few words, big text.</b> If people are reading, they're not listening. A common target is no more than a few short lines.</li>
+      <li><b>Pictures and simple charts</b> beat bullet lists. Make text large enough for the back row, with strong contrast.</li>
+      <li><b>Don't read your slides aloud.</b> The slide shows; you explain.</li>
+      <li><b>Have a backup:</b> a copy on a USB drive or in your email, and be ready to give the talk without slides if the tech fails.</li>
+    </ul>
+    <p class="callout"><span><b>Online talks:</b> put the camera at eye level, look into the lens when making key points, use light in front of you (not behind), and test your mic and screen share before the meeting starts.</span></p>
+  </section>
+
+  <section class="lesson" id="s6">
+    <div class="lesson-head"><span class="step">06</span><h2>Handle Q&A with confidence</h2></div>
+    <ol class="steps">
+      <li><b>Prepare.</b> List the 5 questions you'd least like to get, and plan short answers.</li>
+      <li><b>Listen to the whole question.</b> Don't start answering halfway.</li>
+      <li><b>Repeat or rephrase it</b> so everyone hears it (and you get a moment to think): “The question is how much this will cost.”</li>
+      <li><b>Answer briefly,</b> to the whole room, then check: “Does that answer it?”</li>
+      <li><b>It's OK not to know.</b> “Good question. I don't know, but I'll find out and email you by Friday.” Then do it.</li>
+      <li><b>Stay calm with hostile questions.</b> Acknowledge the concern, answer the fair part, and offer to talk more afterward.</li>
+      <li><b>End with your close.</b> “One more question, then I'll wrap up.”</li>
+    </ol>
+    <p class="callout"><span><b>No questions?</b> Have one ready: “A question I often get is...” It breaks the ice, and others usually follow.</span></p>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>How many words is a 5-minute speech?</summary><div class="a"><p>At a comfortable 130 to 150 words per minute, about 650 to 750 words. Leave room for pauses, laughs and slowing down for key points.</p></div></details>
+      <details><summary>Should I memorize my speech?</summary><div class="a"><p>Memorize your opening and closing lines. For the middle, learn the order of your points and key examples, and use short notes. Word-for-word memorizing makes it easy to freeze if you lose one word.</p></div></details>
+      <details><summary>What do I do if my mind goes blank?</summary><div class="a"><p>Pause, breathe, and glance at your notes. Repeating your last sentence often jogs your memory. The audience usually just thinks you're pausing for effect.</p></div></details>
+      <details><summary>How do I stop saying “um”?</summary><div class="a"><p>Record yourself to see when it happens, usually between ideas. Practice replacing it with a short silent pause. Knowing your outline well also cuts fillers.</p></div></details>
+      <details><summary>How early should I arrive?</summary><div class="a"><p>Early enough to check the room, the mic, the screen and your slides, and to calm down. For an important talk, 20 to 30 minutes is a good rule of thumb.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://www.mayoclinic.org/diseases-conditions/specific-phobias/expert-answers/fear-of-public-speaking/faq-20058416" target="_blank" rel="noopener"><span class="src">Mayo Clinic</span><b>Fear of public speaking: how can I overcome it?</b></a>
+      <a href="https://www.toastmasters.org/resources/public-speaking-tips" target="_blank" rel="noopener"><span class="src">Toastmasters International</span><b>Public speaking tips</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>Your outline and script are saved only in this browser on this device.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  const load = (k, d) => { try { const v = JSON.parse(localStorage.getItem(k)); return v || d; } catch(e){ return d; } };
+  const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} };
+  const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  const mmss = s => { s = Math.max(0, Math.round(s)); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); };
+
+  /* ---------- Outline builder ---------- */
+  const F = ['obLen', 'obAud', 'obMsg', 'obHook', 'obP1', 'obP2', 'obP3', 'obClose'];
+  const EX = {obLen:'5', obAud:'coworkers at the monthly staff meeting', obMsg:'We can cut our office trash in half by sorting recycling at each desk.',
+    obHook:'Ask: “How many of you threw away paper today?” Then show one day\'s trash bag.',
+    obP1:'The problem: our 3 bins are by the kitchen, so most paper goes in desk trash cans.',
+    obP2:'The fix: a small recycling tray at every desk, emptied by the cleaning crew.',
+    obP3:'The proof: the 2nd floor tried it for a month and filled half as many trash bags.',
+    obClose:'Pick up your tray at the front desk and start Monday.'};
+  const saved = load('st-speak-outline', {});
+  F.forEach(id => { if (saved[id] !== undefined) $('#' + id).value = saved[id]; });
+  let outlineText = '';
+  function outline(){
+    const v = {}; F.forEach(id => v[id] = $('#' + id).value.trim());
+    const st = {}; F.forEach(id => st[id] = $('#' + id).value); save('st-speak-outline', st);
+    const len = Math.min(60, Math.max(1, +v.obLen || 5)) * 60;
+    const tOpen = len * 0.12, tClose = len * 0.10, tPt = (len - tOpen - tClose) / 3;
+    const segs = [
+      ['Opening', mmss(0), v.obHook, 'Hook: a question, story or fact', v.obMsg ? 'Main message: ' + v.obMsg : ''],
+      ['Point 1', mmss(tOpen), v.obP1, 'First point and its example', ''],
+      ['Point 2', mmss(tOpen + tPt), v.obP2, 'Second point and its example', ''],
+      ['Point 3', mmss(tOpen + 2 * tPt), v.obP3, 'Third point and its example', ''],
+      ['Close', mmss(len - tClose), v.obClose, 'Call to action', v.obMsg ? 'Repeat: ' + v.obMsg : ''],
+    ];
+    let h = `<h4>${esc(v.obMsg || 'Your talk')}</h4><p class="work">${mmss(len)} total${v.obAud ? ' · for ' + esc(v.obAud) : ''} · about ${Math.round(len / 60 * 130)}–${Math.round(len / 60 * 150)} words</p>`;
+    outlineText = (v.obMsg || 'My talk') + '\n' + mmss(len) + ' total' + (v.obAud ? ', for ' + v.obAud : '') + '\n\n';
+    segs.forEach(([name, at, val, hint, extra]) => {
+      h += `<div class="seg"><span class="t">${at}</span><div><b>${name}</b><br>${val ? esc(val) : '<span class="miss">' + hint + '</span>'}${extra ? '<br><span class="work">' + esc(extra) + '</span>' : ''}</div></div>`;
+      outlineText += `[${at}] ${name}: ${val || '(' + hint + ')'}\n` + (extra ? '        ' + extra + '\n' : '');
+    });
+    const missing = ['obMsg', 'obHook', 'obP1', 'obP2', 'obP3', 'obClose'].filter(id => !v[id]).length;
+    h += `<p class="work">${missing ? missing + ' part' + (missing > 1 ? 's' : '') + ' left to fill in.' : 'Outline complete. Now practice it out loud with the timer below.'}</p>`;
+    $('#obOut').innerHTML = h;
+  }
+  $('#obCopy').addEventListener('click', async () => {
+    const b = $('#obCopy');
+    try { await navigator.clipboard.writeText(outlineText); b.textContent = 'Copied'; } catch(e){ b.textContent = 'Copy failed'; }
+    setTimeout(() => b.textContent = 'Copy outline', 1600);
+  });
+  $('#obEx').addEventListener('click', () => { F.forEach(id => $('#' + id).value = EX[id]); outline(); });
+  $('#obClear').addEventListener('click', () => { F.forEach(id => $('#' + id).value = id === 'obLen' ? '5' : ''); outline(); });
+  live($('#ob'), outline);
+
+  /* ---------- Practice timer ---------- */
+  const ta = $('#ptText');
+  try { const s = localStorage.getItem('st-speak-script'); if (s) ta.value = s; } catch(e){}
+  let paras = [], words = 0;
+  function analyze(){
+    try { localStorage.setItem('st-speak-script', ta.value); } catch(e){}
+    const wpm = +$('#ptWpm').value, target = Math.max(0.5, +$('#ptTarget').value || 5);
+    $('#ptWpmV').textContent = wpm;
+    paras = ta.value.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean).map(p => ({text:p, w:(p.match(/\S+/g) || []).length}));
+    words = paras.reduce((t, p) => t + p.w, 0);
+    const est = words / wpm * 60, tgt = target * 60;
+    $('#ptWords').textContent = words.toLocaleString();
+    $('#ptEst').textContent = words ? mmss(est) : '—';
+    const fit = $('#ptFit'), adv = $('#ptAdvice');
+    if (!words){ fit.textContent = '—'; adv.textContent = 'No script? That\'s fine. The timer still gives you time cues.'; $('#ptMarks').innerHTML = ''; }
+    else {
+      const goal = Math.round(target * wpm), diff = words - goal;
+      if (Math.abs(diff) <= goal * 0.05){ fit.textContent = 'Yes'; adv.textContent = `About right. At ${wpm} words/min, ${target} min is roughly ${goal} words.`; }
+      else if (diff > 0){ fit.textContent = 'Too long'; adv.textContent = `Cut about ${diff} words (target is roughly ${goal}). Nerves make most people speed up, but don't count on it. Trim examples before you trim your main points.`; }
+      else { fit.textContent = 'Short'; adv.textContent = `You have room for about ${-diff} more words, or slow down and use more pauses.`; }
+      let acc = 0;
+      $('#ptMarks').innerHTML = paras.length > 1 ? paras.slice(0, 12).map((p, i) => { const at = acc / wpm * 60; acc += p.w; return `<div><span>${mmss(at)}</span><em>${i + 1}. ${esc(p.text.slice(0, 70))}</em></div>`; }).join('') : '';
+    }
+    paint();
+  }
+  ta.addEventListener('input', analyze);
+  ['ptWpm', 'ptTarget'].forEach(id => $('#' + id).addEventListener('input', analyze));
+
+  let running = false, startAt = 0, acc = 0, tick = null, cued = {};
+  const elapsed = () => acc + (running ? (Date.now() - startAt) / 1000 : 0);
+  function beep(n){
+    try { const a = new (window.AudioContext || window.webkitAudioContext)(); for (let k = 0; k < n; k++){ const o = a.createOscillator(), g = a.createGain(), t = a.currentTime + k * .3; o.frequency.value = 660; o.connect(g); g.connect(a.destination); g.gain.setValueAtTime(.15, t); g.gain.exponentialRampToValueAtTime(.001, t + .22); o.start(t); o.stop(t + .25); } } catch(e){}
+  }
+  function paint(){
+    const e = elapsed(), tgt = Math.max(0.5, +$('#ptTarget').value || 5) * 60, wpm = +$('#ptWpm').value;
+    const clock = $('#ptClock'), bar = $('#ptBar');
+    clock.textContent = (e > tgt ? '+' + mmss(e - tgt) : mmss(e)) + ' / ' + mmss(tgt);
+    clock.classList.toggle('over', e > tgt);
+    bar.style.width = Math.min(100, 100 * e / tgt) + '%';
+    bar.className = e > tgt ? 'over' : e > tgt - 60 || e > tgt * 0.85 ? 'warn' : '';
+    if (running || e > 0){
+      let cue = 'Opening: hook them, then say your main message.';
+      if (e > tgt) cue = 'Over time. Wrap up in one sentence.';
+      else if (e > tgt - Math.min(60, tgt * 0.15)) cue = 'Final stretch: start your close.';
+      else if (e > tgt * 0.5) cue = 'Past halfway. Keep moving through your points.';
+      else if (e > tgt * 0.12) cue = 'Body: one point at a time, with an example each.';
+      if (running) $('#ptCue').textContent = cue;
+      [['half', tgt * 0.5, 1], ['last', tgt - Math.min(60, tgt * 0.15), 2], ['time', tgt, 3]].forEach(([k, at, n]) => { if (running && e >= at && !cued[k]){ cued[k] = true; beep(n); } });
+      if (words){
+        const said = e / 60 * wpm;
+        let sum = 0, idx = paras.length - 1;
+        for (let i = 0; i < paras.length; i++){ if (said < sum + paras[i].w){ idx = i; break; } sum += paras[i].w; }
+        $('#ptWhere').innerHTML = said >= words ? 'At this pace you\'d be finished by now.' : `At ${wpm} words/min you should be around section ${idx + 1}: <q>${esc(paras[idx].text.slice(0, 60))}...</q>`;
+      } else $('#ptWhere').textContent = '';
+    }
+  }
+  function stop(){ if (running){ acc = elapsed(); running = false; clearInterval(tick); } }
+  $('#ptStart').addEventListener('click', () => {
+    const b = $('#ptStart');
+    if (running){ stop(); b.textContent = 'Resume'; $('#ptCue').textContent = 'Paused.'; paint(); return; }
+    running = true; startAt = Date.now(); b.textContent = 'Pause'; tick = setInterval(paint, 250); paint();
+  });
+  $('#ptDone').addEventListener('click', () => {
+    stop(); const e = acc; $('#ptStart').textContent = 'Start';
+    if (e < 5){ $('#ptCue').textContent = 'Start the timer and give your talk first.'; return; }
+    const tgt = Math.max(0.5, +$('#ptTarget').value || 5) * 60;
+    let msg = `You spoke for ${mmss(e)} (target ${mmss(tgt)}). `;
+    if (words){
+      const real = Math.round(words / (e / 60));
+      msg += `That's about ${real} words per minute. ` + (real > 170 ? 'Quite fast: slow down and add pauses.' : real < 110 ? 'On the slow side, or you added material. Check that you\'re not losing energy.' : 'A comfortable pace.');
+    } else msg += e > tgt * 1.05 ? 'A bit long: trim an example.' : e < tgt * 0.85 ? 'Short: you have room for one more example.' : 'Right on time.';
+    $('#ptCue').textContent = msg; $('#ptWhere').textContent = '';
+    acc = 0; cued = {};
+  });
+  $('#ptReset').addEventListener('click', () => { stop(); acc = 0; cued = {}; $('#ptStart').textContent = 'Start'; $('#ptCue').textContent = 'Press start and begin speaking.'; $('#ptWhere').textContent = ''; paint(); });
+  analyze();
+})();
+</script>
+</body>
+</html>

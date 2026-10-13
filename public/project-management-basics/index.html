@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Project Management Basics: Plan, Track and Finish · Shortutorial</title>
+<meta name="description" content="Learn project management basics: goals, scope, tasks, timelines, roles, risks, kanban vs Gantt, and how to write a status update. Includes a kanban board and a Gantt chart builder that save in your browser.">
+<link rel="canonical" href="https://shortutorial.com/project-management-basics/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Project Management Basics: Plan, Track and Finish · Shortutorial">
+<meta property="og:description" content="Learn project management basics: goals, scope, tasks, timelines, roles, risks, kanban vs Gantt, and how to write a status update. Includes a kanban board and a Gantt chart builder that save in your browser.">
+<meta property="og:url" content="https://shortutorial.com/project-management-basics/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+.kb-add{display:flex;gap:8px;flex-wrap:wrap;align-items:flex-end}
+.kb-add label{flex:1 1 180px}
+.kb-add input[type=text]{width:100% !important}
+.kb{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.kb-col{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.kb-col.over{border-color:var(--bad);box-shadow:0 0 0 2px var(--bad-bg)}
+.kb-col h3{font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);display:flex;justify-content:space-between;gap:6px}
+.kb-col.over h3{color:var(--bad)}
+.kb-card{background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:8px 10px;display:flex;flex-direction:column;gap:6px;font-size:.95rem;line-height:1.35;overflow-wrap:anywhere}
+.kb-card .ctl{display:flex;gap:4px;justify-content:flex-end}
+.kb-card .ctl button,.gt-x{all:unset;box-sizing:border-box;cursor:pointer;font-family:var(--mono);font-size:.85rem;min-width:30px;height:28px;display:inline-flex;align-items:center;justify-content:center;border-radius:7px;border:1px solid var(--line);background:var(--surface)}
+.kb-card .ctl button:hover,.gt-x:hover{border-color:var(--accent);color:var(--accent)}
+.kb-card .ctl button:focus-visible,.gt-x:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.kb-card .ctl button[disabled]{opacity:.3;cursor:default}
+.kb-empty{font-family:var(--mono);font-size:.75rem;color:var(--muted);text-align:center;padding:8px 0}
+.gt-rows{display:flex;flex-direction:column;gap:8px}
+.gt-row{display:flex;flex-wrap:wrap;gap:8px;align-items:flex-end;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+.gt-row .num{font-family:var(--mono);font-weight:600;color:var(--amber);align-self:center}
+.gt-row label.nm{flex:1 1 150px}
+.gt-row label.nm input{width:100% !important}
+.gt-row label.du input{width:70px !important}
+.gt-after{display:flex;flex-wrap:wrap;gap:4px;align-items:center;font-family:var(--mono);font-size:.72rem;color:var(--muted);flex-basis:100%}
+.gt-after button{all:unset;cursor:pointer;font-family:var(--mono);font-size:.78rem;padding:3px 8px;border-radius:99px;border:1.5px solid var(--line)}
+.gt-after button[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.gt-after button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.gt-chart{display:flex;flex-direction:column;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px}
+.gt-line{display:grid;grid-template-columns:minmax(80px,30%) 1fr;gap:8px;align-items:center;font-size:.85rem}
+.gt-line .lab{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gt-track{position:relative;height:22px;border-radius:6px;background:repeating-linear-gradient(90deg,transparent 0,transparent calc(var(--d) - 1px),var(--line) calc(var(--d) - 1px),var(--line) var(--d))}
+.gt-bar{position:absolute;top:2px;bottom:2px;border-radius:5px;background:var(--accent);opacity:.55;font-family:var(--mono);font-size:.68rem;color:var(--accent-ink);display:flex;align-items:center;padding:0 4px;overflow:hidden;white-space:nowrap}
+.gt-bar.crit{opacity:1;background:var(--amber)}
+.gt-legend{display:flex;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.gt-legend i{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-2px;margin-right:4px;background:var(--accent);opacity:.55}
+.gt-legend i.crit{background:var(--amber);opacity:1}
+.try input[type=date]{font:inherit;font-family:var(--mono);font-size:1rem;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:9px;padding:7px 10px;max-width:100%}
+.try label.chk{flex-direction:row;align-items:center;gap:8px}
+.try label.chk input{accent-color:var(--accent);width:18px;height:18px}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"Project Management Basics","item":"https://shortutorial.com/project-management-basics/"}]},{"@type":"Article","@id":"https://shortutorial.com/project-management-basics/#article","headline":"Project Management Basics","description":"Learn project management basics: goals, scope, tasks, timelines, roles, risks, kanban vs Gantt, and how to write a status update. Includes a kanban board and a Gantt chart builder that save in your browser.","url":"https://shortutorial.com/project-management-basics/","mainEntityOfPage":"https://shortutorial.com/project-management-basics/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Life skills","keywords":"project management, kanban, gantt chart, critical path, SMART goals, scope creep, RACI, risk register, status update, project plan, timeline, work breakdown structure","timeRequired":"PT15M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What's the difference between Agile and Waterfall?","acceptedAnswer":{"@type":"Answer","text":"Waterfall plans everything up front and works through phases in order, which suits fixed projects like construction. Agile delivers in short cycles and adjusts as it learns, which suits software and anything uncertain. Kanban is one Agile-friendly way to manage flow."}},{"@type":"Question","name":"Do I need special software?","acceptedAnswer":{"@type":"Answer","text":"No. Sticky notes on a wall make a great kanban board, and a spreadsheet can be a Gantt chart. Apps help when a team is spread out or the project is big."}},{"@type":"Question","name":"How do I handle scope creep?","acceptedAnswer":{"@type":"Answer","text":"Write down the scope at the start. When a new request comes in, ask what it will cost in time or money, or what it replaces. Then let the sponsor decide."}},{"@type":"Question","name":"Is project management a good career?","acceptedAnswer":{"@type":"Answer","text":"Many people grow into it from other jobs. Certifications like PMI's CAPM (entry level) and PMP (experienced) are well known, but you can start using these skills today on any project."}},{"@type":"Question","name":"How often should I send status updates?","acceptedAnswer":{"@type":"Answer","text":"Weekly is common for most projects. Use a regular day so people expect it, and send an extra note right away if something goes red."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="project-management-basics">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+<header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=skills">Life skills</a> / Project management basics</div>
+    <span class="eyebrow">Skills · Work and planning</span>
+    <h1>Project Management Basics</h1>
+    <p class="lede">Planning a wedding, moving house, launching a website or running a school fundraiser: they're all projects. Learn the simple tools professionals use to set a goal, break it into tasks, build a timeline, share the work, and finish on time.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~15 min read</span><span class="badge">6 lessons</span><span class="badge">Kanban board + Gantt builder</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#p1">1 · Goals</a><a href="#p2">2 · Scope & tasks</a><a href="#p3">3 · Timeline</a><a href="#p4">4 · Roles</a><a href="#p5">5 · Kanban</a><a href="#p6">6 · Risks & updates</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="p1">
+    <div class="lesson-head"><span class="step">01</span><h2>What a project is, and setting the goal</h2></div>
+    <p>A <b>project</b> is temporary work with a clear finish line that creates something specific. Making dinner every night is routine. Hosting Thanksgiving for 20 is a project. The Project Management Institute (PMI) describes project management as applying knowledge, skills, tools and techniques to project activities to meet the project's requirements. In plain English: <b>plan the work, then work the plan</b>.</p>
+    <h3>Write a SMART goal</h3>
+    <div class="tw"><table class="t">
+      <tr><th>Letter</th><th>Means</th><th>Ask</th></tr>
+      <tr><td><b>S</b></td><td>Specific</td><td>What exactly will be done?</td></tr>
+      <tr><td><b>M</b></td><td>Measurable</td><td>How will we know it's done?</td></tr>
+      <tr><td><b>A</b></td><td>Achievable</td><td>Can we really do it with what we have?</td></tr>
+      <tr><td><b>R</b></td><td>Relevant</td><td>Why does it matter?</td></tr>
+      <tr><td><b>T</b></td><td>Time-bound</td><td>By when?</td></tr>
+    </table></div>
+    <div class="example"><div class="ex-h">Example · vague vs SMART</div><ol><li>Vague: “Raise money for the band trip.”</li><li class="ans">SMART: “Raise $2,000 for the band's spring trip with a yard sale and bake sale by March 15.”</li></ol></div>
+    <h3>The triple constraint</h3>
+    <p>Every project balances three things: <b>scope</b> (what you'll deliver), <b>time</b> and <b>cost</b>. Change one and the others move. Want it sooner? You'll need more money or less scope. Quality sits in the middle and suffers when the three are out of balance.</p>
+  </section>
+
+  <section class="lesson" id="p2">
+    <div class="lesson-head"><span class="step">02</span><h2>Scope and tasks</h2></div>
+    <p><b>Scope</b> is the boundary of the project: what's in and what's out. Write it down. The most common way projects go wrong is <b>scope creep</b>: small “can we also...” requests that pile up until the deadline is impossible.</p>
+    <div class="grid2">
+      <div><span class="tagline">In scope</span><h3>Yard sale fundraiser</h3><p>Collect donations, price items, advertise locally, run the sale on one Saturday.</p></div>
+      <div><span class="tagline">Out of scope</span><h3>Not this time</h3><p>Online selling, a second sale day, renting a venue.</p></div>
+    </div>
+    <h3>Break it down</h3>
+    <p>Split the project into big chunks (deliverables), then split each chunk into tasks. Professionals call this a <b>work breakdown structure</b> (WBS). Keep going until each task is small enough that one person could do it in a day or a few days.</p>
+    <p>A good task has:</p>
+    <ul class="points">
+      <li><b>A verb:</b> “Print 50 flyers,” not “Flyers.”</li>
+      <li><b>One owner:</b> a single name, even if others help.</li>
+      <li><b>A done-when:</b> how you'll know it's finished.</li>
+      <li><b>An estimate:</b> how long it will take.</li>
+    </ul>
+    <p class="callout"><span><b>Estimates are usually too optimistic.</b> Break big tasks into smaller ones (small estimates are more accurate), compare to how long similar work took before, and add a buffer.</span></p>
+  </section>
+
+  <section class="lesson" id="p3">
+    <div class="lesson-head"><span class="step">03</span><h2>Build a timeline</h2></div>
+    <p>Some tasks can happen at the same time. Others have to wait. A <b>dependency</b> means one task can't start until another finishes: you can't price items until you've sorted them. A <b>milestone</b> is a key checkpoint with zero length, like “all items priced.”</p>
+    <p>A <b>Gantt chart</b> shows each task as a bar across a calendar, so you can see what overlaps and what's waiting. Engineer Henry Gantt popularized it in the early 1910s, and it's still a standard tool.</p>
+    <p>The <b>critical path</b> is the longest chain of dependent tasks. It sets the shortest possible length of the whole project. If any critical task slips by a day, the finish date slips by a day. Tasks off the critical path have some wiggle room, called <b>slack</b> or float.</p>
+    <div class="try" id="gt"><span class="try-h">Try it · timeline builder</span>
+      <p>Add tasks with how many days each takes, and tap the numbers of the tasks each one has to wait for. The critical path lights up.</p>
+      <div class="gt-rows" id="gtRows"></div>
+      <div class="row"><button class="btn" type="button" id="gtAdd">Add task</button><button class="btn ghost" type="button" id="gtReset">Load example</button></div>
+      <div class="row"><label>Start date (optional)<input type="date" id="gtStart"></label><label class="chk"><input type="checkbox" id="gtWk" checked> Skip weekends</label></div>
+      <p class="out" id="gtSum" aria-live="polite"></p>
+      <div class="gt-chart" id="gtChart"></div>
+      <div class="gt-legend"><span><i class="crit"></i>Critical path</span><span><i></i>Has slack</span></div>
+    </div>
+  </section>
+
+  <section class="lesson" id="p4">
+    <div class="lesson-head"><span class="step">04</span><h2>Roles: who does what</h2></div>
+    <ul class="points">
+      <li><b>Sponsor:</b> the person who wants the result and approves money and big decisions. For a school fundraiser, maybe the band director.</li>
+      <li><b>Project manager:</b> keeps the plan, tracks progress, clears roadblocks, and communicates. Doesn't have to do every task.</li>
+      <li><b>Team members:</b> do the tasks.</li>
+      <li><b>Stakeholders:</b> anyone affected or interested: neighbors, parents, the school office.</li>
+    </ul>
+    <h3>RACI: clear up who's responsible</h3>
+    <p>For each task, mark one role per person: <b>R</b>esponsible (does it), <b>A</b>ccountable (owns the result, only one person), <b>C</b>onsulted (asked before), <b>I</b>nformed (told after).</p>
+    <div class="tw"><table class="t">
+      <tr><th>Task</th><th>Maya</th><th>Jordan</th><th>Director</th></tr>
+      <tr><td>Advertise the sale</td><td>A</td><td>R</td><td>I</td></tr>
+      <tr><td>Set prices</td><td>R/A</td><td>C</td><td>C</td></tr>
+      <tr><td>Handle cash</td><td>R</td><td>I</td><td>A</td></tr>
+    </table></div>
+    <p class="callout"><span><b>If everyone owns it, nobody owns it.</b> Every task needs exactly one accountable person.</span></p>
+  </section>
+
+  <section class="lesson" id="p5">
+    <div class="lesson-head"><span class="step">05</span><h2>Kanban vs Gantt</h2></div>
+    <p>A <b>kanban board</b> shows work as cards moving through columns, usually <b>To do → Doing → Done</b>. It doesn't show dates. It shows <b>flow</b>: what's waiting, what's in progress, and where work is getting stuck. Teams often set a <b>WIP limit</b> (work in progress), a cap on how many cards can be in “Doing” at once, so people finish things before starting new ones.</p>
+    <div class="tw"><table class="t">
+      <tr><th></th><th>Gantt chart</th><th>Kanban board</th></tr>
+      <tr><td><b>Shows</b></td><td>When tasks happen and what depends on what</td><td>What stage each task is in</td></tr>
+      <tr><td><b>Best for</b></td><td>Fixed deadlines, events, construction, moves</td><td>Ongoing or changing work, small teams</td></tr>
+      <tr><td><b>Weak spot</b></td><td>Needs updating when plans change</td><td>Doesn't show the deadline</td></tr>
+    </table></div>
+    <p>Many people use both: a Gantt chart to plan the dates, and a kanban board to run the day-to-day.</p>
+    <div class="try" id="kb"><span class="try-h">Try it · kanban board</span>
+      <div class="kb-add"><label>New task<input type="text" id="kbText" maxlength="80" placeholder="e.g. Print 50 flyers"></label><button class="btn" type="button" id="kbAdd">Add</button></div>
+      <div class="row"><label>WIP limit for Doing<select id="kbWip"><option value="0">No limit</option><option value="2">2</option><option value="3" selected>3</option><option value="5">5</option></select></label><button class="btn ghost" type="button" id="kbClear">Clear Done</button><button class="btn ghost" type="button" id="kbSample">Load example</button></div>
+      <div class="kb" id="kbBoard"></div>
+      <p class="work" id="kbMsg" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <section class="lesson" id="p6">
+    <div class="lesson-head"><span class="step">06</span><h2>Risks and status updates</h2></div>
+    <h3>Plan for what could go wrong</h3>
+    <p>A <b>risk</b> is something that might happen and hurt the project. List them early in a simple <b>risk register</b>, score each one, and decide what you'll do.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Risk</th><th>Likely?</th><th>Impact</th><th>Response</th></tr>
+      <tr><td>Rain on sale day</td><td>Medium</td><td>High</td><td><b>Reduce:</b> borrow canopies, pick a rain date</td></tr>
+      <tr><td>Not enough donations</td><td>Low</td><td>High</td><td><b>Reduce:</b> ask early, post reminders</td></tr>
+      <tr><td>Cash box stolen</td><td>Low</td><td>Medium</td><td><b>Avoid:</b> accept card payments, keep little cash out</td></tr>
+      <tr><td>Some items don't sell</td><td>High</td><td>Low</td><td><b>Accept:</b> donate leftovers</td></tr>
+    </table></div>
+    <p>The four classic responses: <b>avoid</b> it (change the plan), <b>reduce</b> it (make it less likely or less bad), <b>transfer</b> it (insurance, a contract), or <b>accept</b> it (and have a backup plan).</p>
+    <h3>Write a status update people will read</h3>
+    <p>Send updates on a regular schedule, keep them short, and lead with the overall status. Many teams use a traffic light: <b>green</b> (on track), <b>yellow</b> (at risk), <b>red</b> (off track, needs help).</p>
+    <div class="example"><div class="ex-h">Example · weekly status, yard sale</div><div class="ex-b">
+      <p><b>Status: Yellow.</b> On track for March 15, but donations are behind.</p>
+      <p><b>Done this week:</b> permit approved, flyers printed, 40 items sorted.</p>
+      <p><b>Next week:</b> price everything, post on community boards.</p>
+      <p><b>Risks / help needed:</b> we have about half the items we hoped for. Can each family bring 5 more by Friday?</p>
+    </div></div>
+    <p class="callout"><span><b>Bad news early is good news.</b> Flag problems the moment you see them, while there's still time to fix them. Surprises at the deadline are what people remember.</span></p>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>What's the difference between Agile and Waterfall?</summary><div class="a"><p>Waterfall plans everything up front and works through phases in order, which suits fixed projects like construction. Agile delivers in short cycles and adjusts as it learns, which suits software and anything uncertain. Kanban is one Agile-friendly way to manage flow.</p></div></details>
+      <details><summary>Do I need special software?</summary><div class="a"><p>No. Sticky notes on a wall make a great kanban board, and a spreadsheet can be a Gantt chart. Apps help when a team is spread out or the project is big.</p></div></details>
+      <details><summary>How do I handle scope creep?</summary><div class="a"><p>Write down the scope at the start. When a new request comes in, ask what it will cost in time or money, or what it replaces. Then let the sponsor decide.</p></div></details>
+      <details><summary>Is project management a good career?</summary><div class="a"><p>Many people grow into it from other jobs. Certifications like PMI's CAPM (entry level) and PMP (experienced) are well known, but you can start using these skills today on any project.</p></div></details>
+      <details><summary>How often should I send status updates?</summary><div class="a"><p>Weekly is common for most projects. Use a regular day so people expect it, and send an extra note right away if something goes red.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://www.pmi.org/about/learn-about-pmi/what-is-project-management" target="_blank" rel="noopener"><span class="src">Project Management Institute</span><b>What is project management?</b></a>
+      <a href="https://www.atlassian.com/agile/kanban" target="_blank" rel="noopener"><span class="src">Atlassian</span><b>What is kanban?</b></a>
+      <a href="https://www.atlassian.com/agile/project-management/gantt-chart" target="_blank" rel="noopener"><span class="src">Atlassian</span><b>What is a Gantt chart?</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>Your kanban board and timeline are saved only in this browser on this device.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  const load = (k, d) => { try { const v = JSON.parse(localStorage.getItem(k)); return v || d; } catch(e){ return d; } };
+  const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} };
+  const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+
+  /* ---------- Kanban ---------- */
+  const COLS = ['To do', 'Doing', 'Done'];
+  const SAMPLE = [{t:'Get yard sale permit', c:2}, {t:'Sort donated items', c:1}, {t:'Make price stickers', c:1}, {t:'Design flyer', c:0}, {t:'Borrow 3 tables', c:0}, {t:'Ask neighbors for donations', c:2}];
+  let K = load('st-pm-kanban', null);
+  if (!K || !Array.isArray(K.cards)) K = {cards: SAMPLE.map(x => ({...x})), wip: 3};
+  $('#kbWip').value = String(K.wip || 0);
+  let focusAfter = null;
+  function drawKb(){
+    const wip = +$('#kbWip').value; K.wip = wip;
+    const board = $('#kbBoard'); board.innerHTML = '';
+    COLS.forEach((name, c) => {
+      const list = K.cards.map((x, i) => ({...x, i})).filter(x => x.c === c);
+      const over = c === 1 && wip && list.length > wip;
+      const col = document.createElement('div'); col.className = 'kb-col' + (over ? ' over' : '');
+      col.innerHTML = `<h3><span>${name}</span><span>${list.length}${c === 1 && wip ? ' / ' + wip : ''}</span></h3>`;
+      if (!list.length) col.insertAdjacentHTML('beforeend', '<div class="kb-empty">Nothing here</div>');
+      list.forEach(x => {
+        const card = document.createElement('div'); card.className = 'kb-card';
+        card.innerHTML = `<span>${esc(x.t)}</span><div class="ctl"><button type="button" data-a="l" ${c === 0 ? 'disabled' : ''} aria-label="Move ${esc(x.t)} to ${COLS[c-1] || ''}">←</button><button type="button" data-a="r" ${c === 2 ? 'disabled' : ''} aria-label="Move ${esc(x.t)} to ${COLS[c+1] || ''}">→</button><button type="button" data-a="x" aria-label="Delete ${esc(x.t)}">✕</button></div>`;
+        card.querySelectorAll('button').forEach(b => b.addEventListener('click', () => act(x.i, b.dataset.a)));
+        col.appendChild(card);
+      });
+      board.appendChild(col);
+    });
+    const doing = K.cards.filter(x => x.c === 1).length, done = K.cards.filter(x => x.c === 2).length;
+    $('#kbMsg').textContent = (wip && doing > wip ? `Over the WIP limit: ${doing} tasks in Doing. Finish one before starting another. ` : '') + `${done} of ${K.cards.length} tasks done.`;
+    save('st-pm-kanban', K);
+    if (focusAfter){ const b = board.querySelectorAll('.kb-card')[focusAfter.idx]; if (b){ const t = b.querySelector('button[data-a="' + focusAfter.a + '"]:not([disabled])') || b.querySelector('button:not([disabled])'); if (t) t.focus(); } focusAfter = null; }
+  }
+  function act(i, a){
+    const card = K.cards[i]; if (!card) return;
+    if (a === 'x'){ K.cards.splice(i, 1); drawKb(); return; }
+    card.c += a === 'r' ? 1 : -1;
+    K.cards.splice(i, 1); K.cards.push(card);
+    // focus the moved card's same button in its new spot
+    const order = []; COLS.forEach((_, c) => K.cards.forEach((x, j) => { if (x.c === c) order.push(j); }));
+    focusAfter = {idx: order.indexOf(K.cards.length - 1), a};
+    drawKb();
+  }
+  function addKb(){
+    const t = $('#kbText').value.trim(); if (!t) { $('#kbText').focus(); return; }
+    K.cards.push({t: t.slice(0, 80), c: 0}); $('#kbText').value = ''; drawKb(); $('#kbText').focus();
+  }
+  $('#kbAdd').addEventListener('click', addKb);
+  $('#kbText').addEventListener('keydown', e => { if (e.key === 'Enter') addKb(); });
+  $('#kbWip').addEventListener('change', drawKb);
+  $('#kbClear').addEventListener('click', () => { K.cards = K.cards.filter(x => x.c !== 2); drawKb(); });
+  $('#kbSample').addEventListener('click', () => { K.cards = SAMPLE.map(x => ({...x})); drawKb(); });
+  drawKb();
+
+  /* ---------- Gantt builder ---------- */
+  const GSAMPLE = [
+    {n:'Get permit', d:3, after:[]}, {n:'Collect donations', d:5, after:[]}, {n:'Sort items', d:2, after:[1]},
+    {n:'Price items', d:2, after:[2]}, {n:'Make & post flyers', d:3, after:[0]}, {n:'Sale day', d:1, after:[3, 4]}
+  ];
+  const clone = a => a.map(t => ({n:t.n, d:t.d, after:t.after.slice()}));
+  let G = load('st-pm-gantt', null);
+  if (!G || !Array.isArray(G.tasks)) G = {tasks: clone(GSAMPLE), start:'', wk:true};
+  $('#gtStart').value = G.start || ''; $('#gtWk').checked = G.wk !== false;
+  function rows(){
+    const box = $('#gtRows'); box.innerHTML = '';
+    G.tasks.forEach((t, i) => {
+      const r = document.createElement('div'); r.className = 'gt-row';
+      let after = '';
+      for (let j = 0; j < i; j++) after += `<button type="button" data-j="${j}" aria-pressed="${t.after.includes(j)}" aria-label="Task ${i+1} waits for task ${j+1}">${j+1}</button>`;
+      r.innerHTML = `<span class="num">${i+1}</span><label class="nm">Task<input type="text" maxlength="40" value="${esc(t.n)}"></label><label class="du">Days<input type="number" min="1" max="60" value="${t.d}" inputmode="numeric"></label><button type="button" class="gt-x" aria-label="Remove task ${i+1}">✕</button>` +
+        (i ? `<div class="gt-after">Waits for: ${after}</div>` : '');
+      const [nm, du] = r.querySelectorAll('input');
+      nm.addEventListener('input', () => { t.n = nm.value; chart(); });
+      du.addEventListener('input', () => { t.d = Math.max(1, Math.min(60, Math.round(+du.value) || 1)); chart(); });
+      r.querySelector('.gt-x').addEventListener('click', () => {
+        G.tasks.splice(i, 1);
+        G.tasks.forEach(x => { x.after = x.after.filter(j => j !== i).map(j => j > i ? j - 1 : j); });
+        rows(); chart();
+      });
+      r.querySelectorAll('.gt-after button').forEach(b => b.addEventListener('click', () => {
+        const j = +b.dataset.j, k = t.after.indexOf(j);
+        if (k >= 0) t.after.splice(k, 1); else t.after.push(j);
+        b.setAttribute('aria-pressed', k < 0); chart();
+      }));
+      box.appendChild(r);
+    });
+  }
+  function addDays(date, n, wk){
+    const d = new Date(date);
+    if (!wk){ d.setDate(d.getDate() + n); return d; }
+    while (n > 0){ d.setDate(d.getDate() + 1); if (d.getDay() % 6) n--; }
+    return d;
+  }
+  function chart(){
+    G.start = $('#gtStart').value; G.wk = $('#gtWk').checked; save('st-pm-gantt', G);
+    const T = G.tasks, box = $('#gtChart');
+    if (!T.length){ box.innerHTML = '<p class="work">Add a task to begin.</p>'; $('#gtSum').textContent = ''; return; }
+    const es = [], ef = [];
+    T.forEach((t, i) => { es[i] = t.after.reduce((m, j) => Math.max(m, ef[j] || 0), 0); ef[i] = es[i] + t.d; });
+    const total = Math.max(...ef);
+    // latest finish (backward pass) to find slack
+    const lf = T.map(() => total);
+    for (let i = T.length - 1; i >= 0; i--) T.forEach((t, k) => { if (t.after.includes(i)) lf[i] = Math.min(lf[i], lf[k] - t.d); });
+    const slack = T.map((t, i) => lf[i] - ef[i]);
+    let start = null;
+    if (G.start){ const p = G.start.split('-').map(Number); start = new Date(p[0], p[1] - 1, p[2]); if (isNaN(start.getTime()) || p.length !== 3) start = null; else if (G.wk) while (!(start.getDay() % 6)) start.setDate(start.getDate() + 1); }
+    const fmtD = d => d.toLocaleDateString(undefined, {month:'short', day:'numeric'});
+    const dayPct = 100 / total;
+    let h = '';
+    T.forEach((t, i) => {
+      const crit = slack[i] === 0;
+      const when = start ? fmtD(addDays(start, es[i], G.wk)) + '–' + fmtD(addDays(start, ef[i] - 1, G.wk)) : 'Day ' + (es[i] + 1) + (t.d > 1 ? '–' + ef[i] : '');
+      h += `<div class="gt-line"><span class="lab" title="${esc(t.n)}">${i+1}. ${esc(t.n || 'Untitled')}</span><div class="gt-track" style="--d:${dayPct}%"><div class="gt-bar${crit ? ' crit' : ''}" style="left:${es[i] * dayPct}%;width:${t.d * dayPct}%" title="${esc(when)}">${t.d}d</div></div></div>`;
+    });
+    box.innerHTML = h;
+    const critNames = T.map((t, i) => slack[i] === 0 ? i + 1 : null).filter(Boolean);
+    let s = `Total: ${total} ${G.wk ? 'workday' : 'day'}${total > 1 ? 's' : ''}. Critical path: tasks ${critNames.join(', ')}.`;
+    if (start) s += ` Finishes ${addDays(start, total - 1, G.wk).toLocaleDateString(undefined, {weekday:'short', month:'short', day:'numeric', year:'numeric'})}.`;
+    const loose = T.map((t, i) => slack[i] > 0 ? `task ${i+1} has ${slack[i]} day${slack[i] > 1 ? 's' : ''} of slack` : null).filter(Boolean);
+    if (loose.length) s += ' ' + loose.slice(0, 3).join(', ').replace(/^t/, 'T') + '.';
+    $('#gtSum').textContent = s;
+  }
+  $('#gtAdd').addEventListener('click', () => {
+    if (G.tasks.length >= 15){ $('#gtSum').textContent = 'That\'s 15 tasks. Group smaller ones together to keep the chart readable.'; return; }
+    G.tasks.push({n:'New task', d:2, after: G.tasks.length ? [G.tasks.length - 1] : []}); rows(); chart();
+    const ins = $('#gtRows').querySelectorAll('.gt-row'); const last = ins[ins.length - 1].querySelector('input'); last.focus(); last.select();
+  });
+  $('#gtReset').addEventListener('click', () => { G.tasks = clone(GSAMPLE); rows(); chart(); });
+  $('#gtStart').addEventListener('input', chart); $('#gtWk').addEventListener('change', chart);
+  rows(); chart();
+})();
+</script>
+</body>
+</html>

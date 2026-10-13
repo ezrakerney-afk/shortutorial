@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Write Good AI Prompts · Shortutorial</title>
+<meta name="description" content="Get better answers from ChatGPT, Claude and Gemini: give context, be specific, show an example, ask for a format, follow up, check the facts and keep private info out. With a prompt builder and checker.">
+<link rel="canonical" href="https://shortutorial.com/ai-prompting-basics/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How to Write Good AI Prompts · Shortutorial">
+<meta property="og:description" content="Get better answers from ChatGPT, Claude and Gemini: give context, be specific, show an example, ask for a format, follow up, check the facts and keep private info out. With a prompt builder and checker.">
+<meta property="og:url" content="https://shortutorial.com/ai-prompting-basics/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+/* prompt builder + checker */
+.pf{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.pf{grid-template-columns:1fr}}
+.pf label,.pf-wide{min-width:0}
+.pf label span{font-size:.68rem;opacity:.85}
+.try .pf input[type=text],.try .pf select,.try textarea{width:100%;box-sizing:border-box}
+.try textarea{font:inherit;font-family:var(--mono);font-size:.92rem;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:9px;padding:8px 10px;outline:none;resize:vertical;min-height:60px}
+.try textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.pf label:has(textarea){grid-column:1/-1}
+.try .pf-check{flex-direction:row;align-items:center;gap:8px;grid-column:1/-1;font-size:.8rem;color:var(--ink)}
+.pf-check input{width:18px;height:18px;accent-color:var(--accent)}
+.pbout{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;font-size:.98rem;white-space:pre-wrap;overflow-wrap:anywhere;min-height:60px}
+.pbout.empty{color:var(--muted);font-style:italic}
+.score{display:flex;align-items:center;gap:12px}
+.meter{flex:1;height:10px;border-radius:99px;background:var(--line);overflow:hidden}
+.meter i{display:block;height:100%;width:0;background:var(--accent);transition:width .25s}
+.score b{font-family:var(--display);font-size:1.15rem;color:var(--accent);flex:none}
+.checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.checks li{display:flex;gap:10px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:.95rem}
+.checks li::before{content:"○";font-family:var(--mono);color:var(--muted);flex:none;font-weight:700}
+.checks li.ok::before{content:"✓";color:var(--good)}
+.checks li.bad{border-color:var(--bad);background:var(--bad-bg)}
+.checks li.bad::before{content:"!";color:var(--bad)}
+.checks small{display:block;color:var(--muted);font-size:.85rem}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"How to Write Good AI Prompts","item":"https://shortutorial.com/ai-prompting-basics/"}]},{"@type":"Article","@id":"https://shortutorial.com/ai-prompting-basics/#article","headline":"How to Write Good AI Prompts","description":"Get better answers from ChatGPT, Claude and Gemini: give context, be specific, show an example, ask for a format, follow up, check the facts and keep private info out. With a prompt builder and checker.","url":"https://shortutorial.com/ai-prompting-basics/","mainEntityOfPage":"https://shortutorial.com/ai-prompting-basics/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Computer help","keywords":"ai prompts, chatgpt, claude, gemini, prompt engineering, ai chatbot, how to use ai, write better prompts, ai privacy, hallucination, artificial intelligence","timeRequired":"PT12M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need to say please and thank you?","acceptedAnswer":{"@type":"Answer","text":"It isn't required, and it won't hurt. What matters far more is clear instructions and good context. Writing the way you'd talk to a helpful person tends to produce clear prompts anyway."}},{"@type":"Question","name":"Are long prompts better than short ones?","acceptedAnswer":{"@type":"Answer","text":"Not automatically. A prompt should be as long as it needs to be. “What's the capital of Peru?” is perfect as is. A cover letter request needs your job, experience and the job posting. Add detail when the chatbot would otherwise have to guess."}},{"@type":"Question","name":"Does the same prompt work in ChatGPT, Claude and Gemini?","acceptedAnswer":{"@type":"Answer","text":"Yes. The same habits work in all of them. You may get different styles of answer, so if one result isn't what you want, follow up or try the prompt in another app."}},{"@type":"Question","name":"Why did I get a different answer when I asked again?","acceptedAnswer":{"@type":"Answer","text":"Chatbots add a little randomness when choosing words, so the same prompt can give different answers. That's handy for ideas. For facts, a different answer each time is a hint to double-check."}},{"@type":"Question","name":"What are “custom instructions”?","acceptedAnswer":{"@type":"Answer","text":"Many apps let you save background about yourself, like your job or how you like answers formatted, so you don't have to repeat it in every chat. ChatGPT calls this personalization or custom instructions, and Claude and Gemini have similar options. Don't save anything there you wouldn't type into a chat."}},{"@type":"Question","name":"Can I use AI to write things for school or work?","acceptedAnswer":{"@type":"Answer","text":"It depends on the rules where you are. Many schools and employers allow AI for brainstorming but not for final work, or require you to say when you used it. Check the policy, and always read and fact-check anything before you hand it in."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="ai-prompting-basics">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+<header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=computer">Computer help</a> / AI prompts</div>
+    <span class="eyebrow">Computer help · AI chatbots</span>
+    <h1>How to Write Good AI Prompts</h1>
+    <p class="lede">ChatGPT, Claude and Gemini give much better answers when you ask well. Learn the handful of habits that make the difference, build a strong prompt with the builder, and check your own prompts against a simple checklist.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~12 min read</span><span class="badge">6 lessons</span><span class="badge">Prompt builder + checker</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#p1">1 · Why it matters</a><a href="#p2">2 · Context</a><a href="#p3">3 · Examples & format</a><a href="#p4">4 · Builder</a><a href="#p5">5 · Follow up</a><a href="#p6">6 · Facts & privacy</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="p1">
+    <div class="lesson-head"><span class="step">01</span><h2>Why a good prompt matters</h2></div>
+    <p>A <b>prompt</b> is whatever you type into an AI chatbot. The chatbot can't see your screen, doesn't know who you are, and can't read your mind. All it has is your words. If you ask a vague question, it fills the gaps with a generic guess.</p>
+    <p>Think of it like asking a smart new coworker for help on their first day. They're quick and know a lot, but you still have to explain the job.</p>
+    <div class="grid2">
+      <div><span class="tagline">Vague</span><h3>“Write an email about the meeting.”</h3><p>Which meeting? To whom? Formal or casual? You'll get a bland template you have to rewrite.</p></div>
+      <div><span class="tagline">Clear</span><h3>“Write a short, friendly email to my team…”</h3><p>“…saying Thursday's 2 pm budget meeting moved to Friday at 10 am in Room B. Ask them to reply if they can't make it. Under 100 words.”</p></div>
+    </div>
+    <p class="callout"><span><b>The good news:</b> you don't need special tricks or “magic words.” The official guides from OpenAI, Anthropic and Google all say the same thing: be clear, be specific, and give the context a person would need.</span></p>
+  </section>
+
+  <section class="lesson" id="p2">
+    <div class="lesson-head"><span class="step">02</span><h2>Give it context and be specific</h2></div>
+    <p>Most great prompts answer the same few questions. You don't need all of them every time, but the more the answer matters, the more you should include.</p>
+    <ul class="points">
+      <li><b>Role or situation.</b> Who are you, or what should it act as? “I'm a first-time home buyer.” “Act as a patient math tutor.”</li>
+      <li><b>The task.</b> One clear verb: write, explain, summarize, compare, plan, fix, list.</li>
+      <li><b>Background.</b> The facts it can't know: your budget, your city, the deadline, what you already tried.</li>
+      <li><b>Audience.</b> Who will read the result? “For my 10-year-old.” “For my boss, who hates jargon.”</li>
+      <li><b>Limits.</b> Length, tone, what to avoid. “Under 150 words.” “No bullet points.” “Vegetarian.”</li>
+    </ul>
+    <div class="example"><div class="ex-h">Example · planning dinners</div><ol>
+      <li>Weak: “Give me dinner ideas.”</li>
+      <li>Better: “Give me 5 weeknight dinner ideas.”</li>
+      <li class="ans">Strong: “I cook for a family of four, including a picky 7-year-old. Give me 5 weeknight dinners that take under 30 minutes, use one pan, and cost less than $15. No seafood.”</li>
+    </ol></div>
+    <p class="callout"><span><b>Paste the material in.</b> If you want it to work on something, include it: the email you're replying to, the paragraph to shorten, the error message you see. Putting it between quote marks or under a line like “Text:” helps it tell your instructions apart from the material.</span></p>
+  </section>
+
+  <section class="lesson" id="p3">
+    <div class="lesson-head"><span class="step">03</span><h2>Show an example and ask for a format</h2></div>
+    <p><b>Examples beat descriptions.</b> If you want a certain style, show one. “Write it like this:” followed by a sample works better than a paragraph explaining the style. One or two examples are usually enough.</p>
+    <div class="example"><div class="ex-h">Example · product names</div><div class="ex-b">
+      <p>“Suggest 10 names for my dog-walking business. I like short, playful names like <i>Pawsome Walks</i> and <i>Leash Go</i>. Avoid puns about ‘ruff’.”</p>
+    </div></div>
+    <p><b>Ask for the shape you want.</b> Chatbots can answer as a table, a checklist, numbered steps, a short paragraph, an email, or even a spreadsheet-ready list. Say so up front:</p>
+    <div class="tw"><table class="t">
+      <tr><th>If you want…</th><th>Add this to your prompt</th></tr>
+      <tr><td>Something to compare</td><td>“Put it in a table with columns for price, pros and cons.”</td></tr>
+      <tr><td>Instructions to follow</td><td>“Give me numbered steps, one action per step.”</td></tr>
+      <tr><td>A quick answer</td><td>“Answer in 2 sentences, then stop.”</td></tr>
+      <tr><td>Something to paste</td><td>“Only give me the email text, no introduction.”</td></tr>
+      <tr><td>Simple language</td><td>“Explain it like I've never heard of it. No jargon.”</td></tr>
+    </table></div>
+    <p class="callout"><span><b>Tell it what to do, not only what not to do.</b> “Write in plain, everyday words” works better than “don't be too technical,” because it gives the chatbot a clear target.</span></p>
+  </section>
+
+  <section class="lesson" id="p4">
+    <div class="lesson-head"><span class="step">04</span><h2>Build a prompt, then check one</h2></div>
+    <p>Fill in what you know. Leave a box empty to skip it. The builder turns your answers into one clear prompt you can copy into any chatbot.</p>
+    <div class="try" id="pb"><span class="try-h">Try it · prompt builder</span>
+      <div class="chipset" id="pbEx" aria-label="Load an example"><button type="button" data-x="email" aria-pressed="false">Example: email</button><button type="button" data-x="trip" aria-pressed="false">Example: trip</button><button type="button" data-x="learn" aria-pressed="false">Example: learn a topic</button><button type="button" data-x="clear" aria-pressed="false">Clear</button></div>
+      <div class="pf">
+        <label>Role or situation <span>who you are, or who it should act as</span><input type="text" id="pbRole" placeholder="I'm a small bakery owner"></label>
+        <label>Task <span>what you want it to do</span><input type="text" id="pbTask" placeholder="Write a post announcing our new hours"></label>
+        <label>Background <span>facts it can't know</span><textarea id="pbCtx" rows="3" placeholder="Starting May 1 we open at 7 am instead of 8, closed Mondays"></textarea></label>
+        <label>Audience <span>who will read it</span><input type="text" id="pbAud" placeholder="Regular customers on Facebook"></label>
+        <label>Tone<select id="pbTone"><option value="">Any</option><option>friendly</option><option>professional</option><option>casual</option><option>warm and encouraging</option><option>short and direct</option><option>funny</option></select></label>
+        <label>Format<select id="pbFmt"><option value="">Any</option><option value="a short paragraph">Short paragraph</option><option value="a bulleted list">Bulleted list</option><option value="numbered steps">Numbered steps</option><option value="a table">Table</option><option value="an email with a subject line">Email with subject</option><option value="a social media post">Social media post</option></select></label>
+        <label>Length<input type="text" id="pbLen" placeholder="under 80 words"></label>
+        <label>Example of what you like <span>optional</span><textarea id="pbEg" rows="2" placeholder="Paste a sample you like the style of"></textarea></label>
+        <label>Avoid or must include<input type="text" id="pbLim" placeholder="No hashtags. Mention free coffee on opening day."></label>
+        <label class="pf-check"><input type="checkbox" id="pbAsk"> Ask me questions first if anything is unclear</label>
+      </div>
+      <div class="pbout" id="pbOut" aria-live="polite"></div>
+      <div class="row"><button class="btn" type="button" id="pbCopy">Copy prompt</button><button class="btn ghost" type="button" id="pbSend">Check this prompt below</button></div>
+    </div>
+
+    <div class="try" id="pc"><span class="try-h">Try it · prompt checker</span>
+      <label class="pf-wide">Paste any prompt<textarea id="pcIn" rows="4" placeholder="Paste or type a prompt here"></textarea></label>
+      <div class="score" aria-live="polite"><div class="meter"><i id="pcBar"></i></div><b id="pcScore">0 / 7</b></div>
+      <ul class="checks" id="pcList"></ul>
+      <p class="work">The checker looks for clues in your wording. It's a rough guide, not a grade: a short prompt can be perfect for a simple question.</p>
+    </div>
+  </section>
+
+  <section class="lesson" id="p5">
+    <div class="lesson-head"><span class="step">05</span><h2>Treat it like a conversation</h2></div>
+    <p>The first answer is a draft. The real skill is the follow-up. The chatbot remembers what you said earlier in the same chat, so you can steer it without starting over.</p>
+    <ul class="points">
+      <li><b>Say what to change.</b> “Shorter.” “Make the second paragraph friendlier.” “Swap the chicken recipe for something vegetarian.”</li>
+      <li><b>Say what was good.</b> “Keep the opening line, redo the rest.” This stops it from throwing away the parts you liked.</li>
+      <li><b>Let it ask you.</b> For bigger jobs, end with “Ask me any questions you need before you start.” It will often ask about things you forgot to mention.</li>
+      <li><b>Ask for options.</b> “Give me 3 different versions” is a fast way to find a direction you like.</li>
+      <li><b>Break big jobs into steps.</b> Outline first, then each section. You'll catch problems early.</li>
+      <li><b>Start a fresh chat</b> for a new topic, or when it keeps repeating a mistake. Old instructions in a long chat can pull answers off track.</li>
+    </ul>
+    <div class="example"><div class="ex-h">Example · a follow-up chain</div><ol>
+      <li>“Write a thank-you note to my neighbor for watering my plants while I was away.”</li>
+      <li>“Nice. Make it shorter and mention the tomatoes she saved.”</li>
+      <li>“Perfect. Now a version I can text instead of writing on a card.”</li>
+    </ol></div>
+  </section>
+
+  <section class="lesson" id="p6">
+    <div class="lesson-head"><span class="step">06</span><h2>Check the facts and protect your privacy</h2></div>
+    <h3>Chatbots can be confidently wrong</h3>
+    <p>AI chatbots can make up facts, dates, quotes, links and even book titles. OpenAI calls this <b>hallucination</b>, and says a chatbot can sound certain while being wrong. Treat answers as a first draft, especially for anything important.</p>
+    <ul class="points">
+      <li><b>Ask for sources</b>, then open the links yourself. Make sure the page exists and actually says what the chatbot claims.</li>
+      <li><b>Double-check numbers, dates, quotes and names.</b> These are the most common slip-ups.</li>
+      <li><b>Know its limits.</b> Without a web search tool, a chatbot only knows what it learned up to its training cutoff, so recent news, prices and rules may be out of date.</li>
+      <li><b>Health, legal, tax and money decisions:</b> use AI to understand the topic and prepare questions, then confirm with a doctor, lawyer, tax pro or the official source.</li>
+    </ul>
+    <h3>Keep private things out of the chat</h3>
+    <p>What you type is sent to the company's servers. Depending on your settings, it may be saved in your history and used to improve future models.</p>
+    <p class="callout warn"><span><b>Never paste:</b> passwords, PINs or security codes, your Social Security number, full bank or card numbers, medical records, other people's private details, or confidential work documents your employer hasn't approved. Swap in placeholders like “[my address]” or “Client A” instead.</span></p>
+    <div class="tw"><table class="t">
+      <tr><th>App</th><th>Stop chats being used for training</th></tr>
+      <tr><td>ChatGPT</td><td>Settings › <b>Data controls</b> › turn off “Improve the model for everyone.” Or use a <b>Temporary Chat</b>, which isn't saved to history or used for training.</td></tr>
+      <tr><td>Claude</td><td>Settings › <b>Privacy</b> › turn off “Help improve our AI models.”</td></tr>
+      <tr><td>Gemini</td><td>Settings &amp; help › <b>Activity</b> › turn off <b>Keep Activity</b>. Google still keeps chats up to 72 hours to run the service.</td></tr>
+    </table></div>
+    <p class="callout"><span><b>Work and school accounts</b> often have different rules set by your employer or school. Check their AI policy before using a chatbot with work files.</span></p>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Do I need to say please and thank you?</summary><div class="a"><p>It isn't required, and it won't hurt. What matters far more is clear instructions and good context. Writing the way you'd talk to a helpful person tends to produce clear prompts anyway.</p></div></details>
+      <details><summary>Are long prompts better than short ones?</summary><div class="a"><p>Not automatically. A prompt should be as long as it needs to be. “What's the capital of Peru?” is perfect as is. A cover letter request needs your job, experience and the job posting. Add detail when the chatbot would otherwise have to guess.</p></div></details>
+      <details><summary>Does the same prompt work in ChatGPT, Claude and Gemini?</summary><div class="a"><p>Yes. The same habits work in all of them. You may get different styles of answer, so if one result isn't what you want, follow up or try the prompt in another app.</p></div></details>
+      <details><summary>Why did I get a different answer when I asked again?</summary><div class="a"><p>Chatbots add a little randomness when choosing words, so the same prompt can give different answers. That's handy for ideas. For facts, a different answer each time is a hint to double-check.</p></div></details>
+      <details><summary>What are “custom instructions”?</summary><div class="a"><p>Many apps let you save background about yourself, like your job or how you like answers formatted, so you don't have to repeat it in every chat. ChatGPT calls this personalization or custom instructions, and Claude and Gemini have similar options. Don't save anything there you wouldn't type into a chat.</p></div></details>
+      <details><summary>Can I use AI to write things for school or work?</summary><div class="a"><p>It depends on the rules where you are. Many schools and employers allow AI for brainstorming but not for final work, or require you to say when you used it. Check the policy, and always read and fact-check anything before you hand it in.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt" target="_blank" rel="noopener"><span class="src">OpenAI Help</span><b>Prompt engineering best practices for ChatGPT</b></a>
+      <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/be-clear-and-direct" target="_blank" rel="noopener"><span class="src">Anthropic</span><b>Be clear and direct (prompting guide)</b></a>
+      <a href="https://help.openai.com/en/articles/8313428-does-chatgpt-tell-the-truth" target="_blank" rel="noopener"><span class="src">OpenAI Help</span><b>Does ChatGPT tell the truth?</b></a>
+      <a href="https://help.openai.com/en/articles/7730893-data-controls-faq" target="_blank" rel="noopener"><span class="src">OpenAI Help</span><b>Data controls in ChatGPT</b></a>
+      <a href="https://privacy.claude.com/en/articles/12109829-how-do-i-change-my-model-improvement-privacy-settings" target="_blank" rel="noopener"><span class="src">Anthropic Privacy</span><b>Change your model improvement setting</b></a>
+      <a href="https://support.google.com/gemini/answer/13278892?hl=en" target="_blank" rel="noopener"><span class="src">Google Gemini Help</span><b>Manage and delete your Gemini activity</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>AI apps change often. Settings names checked October 2026.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  const F = ['Role','Task','Ctx','Aud','Tone','Fmt','Len','Eg','Lim'];
+  const el = id => document.getElementById('pb' + id);
+  const EX = {
+    email: {Role:"I'm a team leader at a small insurance office", Task:"Write an email telling my team the Thursday meeting has moved", Ctx:"The 2 pm budget meeting on Thursday is now Friday at 10 am in Room B. Bring last month's numbers.", Aud:"My team of 8 coworkers", Tone:"friendly", Fmt:"an email with a subject line", Len:"under 100 words", Eg:"", Lim:"Ask them to reply only if they can't make it."},
+    trip: {Role:"Act as a travel planner for a family on a budget", Task:"Plan a 3-day trip to San Diego", Ctx:"Two adults and two kids, ages 6 and 9. We'll have a car. Budget is about $1,200 not counting the hotel. Going in July.", Aud:"", Tone:"", Fmt:"a table", Len:"one row per half day", Eg:"", Lim:"Include at least one free activity each day. No theme parks."},
+    learn: {Role:"Act as a patient tutor", Task:"Explain how a credit score works", Ctx:"I'm 22 and just got my first credit card. I don't know what affects my score.", Aud:"A complete beginner", Tone:"warm and encouraging", Fmt:"a bulleted list", Len:"about 200 words", Eg:"", Lim:"Use an everyday example. No jargon without explaining it."}
+  };
+  function clean(s){ return s.trim().replace(/[.\s]+$/, ''); }
+  function build(){
+    const v = {}; F.forEach(k => v[k] = clean(el(k).value));
+    const parts = [];
+    if (v.Role) parts.push(v.Role + '.');
+    if (v.Task) parts.push(v.Task + '.');
+    if (v.Ctx) parts.push('Background: ' + v.Ctx + '.');
+    if (v.Aud) parts.push('It is for: ' + v.Aud + '.');
+    const style = [];
+    if (v.Tone) style.push('a ' + v.Tone + ' tone');
+    if (v.Fmt) style.push('the format of ' + v.Fmt);
+    if (style.length) parts.push('Use ' + style.join(' and ') + '.');
+    if (v.Len) parts.push('Length: ' + v.Len + '.');
+    if (v.Lim) parts.push(v.Lim + '.');
+    if (v.Eg) parts.push('Here is an example of the style I like:\n"' + v.Eg + '"');
+    if (el('Ask').checked) parts.push('Before you start, ask me any questions you need to do this well.');
+    const out = el('Out');
+    if (!v.Task){ out.textContent = 'Start with the Task box: what do you want the chatbot to do?'; out.classList.add('empty'); return ''; }
+    const txt = parts.join(' ').replace(/\s\n/g, '\n').replace(/ (Here is an example)/, '\n\n$1').replace(/" (Before you start)/, '"\n\n$1');
+    out.textContent = txt; out.classList.remove('empty');
+    return txt;
+  }
+  F.concat(['Ask']).forEach(k => el(k).addEventListener('input', build));
+  el('Ask').addEventListener('change', build);
+  document.querySelectorAll('#pbEx button').forEach(b => b.addEventListener('click', () => {
+    const x = EX[b.dataset.x];
+    F.forEach(k => el(k).value = x ? (x[k] || '') : '');
+    el('Ask').checked = false;
+    document.querySelectorAll('#pbEx button').forEach(o => o.setAttribute('aria-pressed', o === b && !!x));
+    build();
+  }));
+  $('#pbCopy').addEventListener('click', async () => {
+    const t = build(), b = $('#pbCopy');
+    if (!t) return;
+    try { await navigator.clipboard.writeText(t); b.textContent = 'Copied'; }
+    catch(e){ b.textContent = 'Select the text to copy'; }
+    setTimeout(() => b.textContent = 'Copy prompt', 1600);
+  });
+  $('#pbSend').addEventListener('click', () => {
+    const t = build(); if (!t) return;
+    $('#pcIn').value = t; check();
+    $('#pc').scrollIntoView({behavior:'smooth', block:'start'}); $('#pcIn').focus({preventScroll:true});
+  });
+
+  /* Checker: rough heuristics */
+  const CHECKS = [
+    {n:'Clear task', tip:'Use an action word: write, explain, summarize, list, compare, plan, fix…',
+      t:s => /\b(write|explain|summari[sz]e|list|compare|plan|create|make|draft|give|suggest|help|fix|rewrite|translate|describe|teach|recommend|outline|edit|proofread|turn|convert|brainstorm|tell|show|find|calculate|review)\b/i.test(s)},
+    {n:'Enough detail', tip:'At least about 15 words, so there is something to go on.', t:s => words(s) >= 15},
+    {n:'Background or role', tip:'Say who you are or what situation you are in: "I\'m…", "my…", "act as…".',
+      t:s => /\b(i'?m|i am|i have|i work|i need|my|we|our|act as|you are|as a|pretend)\b/i.test(s)},
+    {n:'Audience', tip:'Who is it for? "for my boss", "for a 10-year-old", "for customers".',
+      t:s => /\b(for (my|a|an|the|our|people|kids|children|beginners|customers|someone)|audience|reader|readers|beginner|kid|year-old|year old|team|coworkers?|boss|students?|customers?)\b/i.test(s)},
+    {n:'Format', tip:'Ask for a shape: bullet points, steps, a table, an email, a paragraph.',
+      t:s => /\b(table|bullet|bulleted|list|steps|numbered|paragraphs?|email|outline|headings?|format|columns?|checklist|sentences?|post|letter|script|csv|summary)\b/i.test(s)},
+    {n:'Length or limits', tip:'Give a size or a rule: "under 100 words", "3 options", "no jargon".',
+      t:s => /\b\d+\b|\b(one|two|three|four|five|six|seven|eight|nine|ten)\b|\b(short|brief|under|at most|no more than|max|maximum|only|avoid|don'?t|do not|without|no)\b/i.test(s)},
+    {n:'Example or material', tip:'Paste the text to work on, or show a sample of what you want.',
+      t:s => /["“”']{1}[^"“”]{12,}["“”]|\b(for example|e\.g\.|such as|like this|here is|here's|below|text:|example)\b|:\s*\n/i.test(s)}
+  ];
+  function words(s){ return (s.trim().match(/\S+/g) || []).length; }
+  const SENS = [
+    {re:/\b\d{3}-\d{2}-\d{4}\b/, m:'This looks like a Social Security number. Remove it.'},
+    {re:/\b(?:\d[ -]?){13,16}\b/, m:'This looks like a card or account number. Remove it.'},
+    {re:/\b(password|passcode|pin|security code)\s*(is|:|=)\s*\S+/i, m:'This looks like a password or PIN. Never share those with a chatbot.'}
+  ];
+  function check(){
+    const s = $('#pcIn').value;
+    const list = $('#pcList'); list.innerHTML = '';
+    let score = 0;
+    CHECKS.forEach(c => {
+      const ok = s.trim() !== '' && c.t(s); if (ok) score++;
+      const li = document.createElement('li'); if (ok) li.className = 'ok';
+      li.innerHTML = '<span><b></b><small></small></span>';
+      li.querySelector('b').textContent = c.n;
+      li.querySelector('small').textContent = ok ? 'Looks good.' : c.tip;
+      list.appendChild(li);
+    });
+    SENS.forEach(x => { if (x.re.test(s)){
+      const li = document.createElement('li'); li.className = 'bad';
+      li.innerHTML = '<span><b>Private info</b><small></small></span>';
+      li.querySelector('small').textContent = x.m; list.prepend(li);
+    }});
+    $('#pcScore').textContent = score + ' / ' + CHECKS.length;
+    $('#pcBar').style.width = (100 * score / CHECKS.length) + '%';
+  }
+  $('#pcIn').addEventListener('input', check);
+  build(); check();
+})();
+</script>
+</body>
+</html>

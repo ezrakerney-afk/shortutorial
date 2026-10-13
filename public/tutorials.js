@@ -1059,5 +1059,29 @@ window.TUTORIALS = [
     category: "Programming",
     tags: ["pivot table", "excel", "google sheets", "pivottable", "spreadsheet", "summarize data", "sum", "count", "average", "data analysis", "refresh pivot table"],
     minutes: 15
+  },
+  {
+    slug: "ai-prompting-basics",
+    title: "How to Write Good AI Prompts",
+    summary: "Get better answers from ChatGPT, Claude and Gemini with clear, specific prompts.",
+    category: "Computer help",
+    tags: ["ai prompts", "chatgpt", "claude", "gemini", "prompt engineering", "ai chatbot", "how to use ai", "write better prompts", "ai privacy", "hallucination", "artificial intelligence"],
+    minutes: 12
+  },
+  {
+    slug: "project-management-basics",
+    title: "Project Management Basics",
+    summary: "Set goals, scope tasks, build a timeline, run a kanban board and manage risks.",
+    category: "Life skills",
+    tags: ["project management", "kanban", "gantt chart", "critical path", "SMART goals", "scope creep", "RACI", "risk register", "status update", "project plan", "timeline", "work breakdown structure"],
+    minutes: 15
+  },
+  {
+    slug: "public-speaking",
+    title: "Public Speaking Basics",
+    summary: "Plan a clear talk, open strong, practice, calm nerves and handle Q&A.",
+    category: "Life skills",
+    tags: ["public speaking", "presentation", "speech", "stage fright", "fear of public speaking", "talk outline", "words per minute", "body language", "slides", "Q&A", "toast", "how to give a speech"],
+    minutes: 15
   }
 ];

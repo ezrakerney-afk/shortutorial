@@ -2919,5 +2919,71 @@ export default {
         o: ["It updates automatically", "Delete it and make a new one", "Right-click it and choose Refresh (or PivotTable Analyze › Refresh)", "Press Ctrl+Z"], a: 2,
         e: "Excel pivot tables don't update on their own: use Refresh. Google Sheets pivot tables refresh automatically." }
     ]
+  },
+
+  "ai-prompting-basics": {
+    title: "How to Write Good AI Prompts",
+    pass: 4,
+    questions: [
+      { q: "Which prompt is most likely to get a useful answer?",
+        o: ["Dinner ideas", "Give me dinner ideas", "I cook for 4 including a picky 7-year-old. Give me 5 one-pan weeknight dinners under 30 minutes, no seafood.", "Dinner?"], a: 2,
+        e: "It gives context, the task, specifics and limits, so the chatbot doesn't have to guess." },
+      { q: "What's the best way to get a reply in a certain style?",
+        o: ["Show an example of the style you want", "Type in all capitals", "Use special magic words", "Ask the same question many times"], a: 0,
+        e: "Examples beat descriptions. One or two samples show the chatbot exactly what you mean." },
+      { q: "The first answer is close but too long. What should you do?",
+        o: ["Delete the app", "Follow up in the same chat: \"Shorter, and keep the opening line.\"", "Start over with a totally new prompt every time", "Accept it as is"], a: 1,
+        e: "The chatbot remembers the conversation, so a quick follow-up steers it without starting over." },
+      { q: "A chatbot gives you a quote and a link as its source. What should you do?",
+        o: ["Trust it, since it gave a link", "Ask it if it's sure", "Copy it into your report", "Open the link and check the page exists and says that"], a: 3,
+        e: "Chatbots can invent quotes and links (hallucinations). Always check sources yourself." },
+      { q: "Which of these is safe to paste into an AI chatbot?",
+        o: ["Your bank password", "Your Social Security number", "A paragraph from your own blog post you want shortened", "A coworker's medical records"], a: 2,
+        e: "Never share passwords, SSNs, account numbers or other people's private info. Your own public writing is fine." }
+    ]
+  },
+
+  "project-management-basics": {
+    title: "Project Management Basics",
+    pass: 4,
+    questions: [
+      { q: "What is the critical path?",
+        o: ["The most expensive task", "The longest chain of dependent tasks, which sets the shortest possible project length", "The first task on the list", "The tasks assigned to the project manager"], a: 1,
+        e: "If a critical task slips, the whole project's finish date slips." },
+      { q: "What does a WIP limit on a kanban board do?",
+        o: ["Caps how many cards can be in progress at once", "Sets the project deadline", "Limits the number of team members", "Hides finished tasks"], a: 0,
+        e: "Limiting work in progress helps people finish things before starting new ones." },
+      { q: "Which is the best way to write a task?",
+        o: ["Flyers", "Marketing stuff", "Someone should handle flyers", "Print 50 flyers (owner: Jordan, by Friday)"], a: 3,
+        e: "Good tasks start with a verb and have one owner and a clear finish." },
+      { q: "In RACI, how many people should be Accountable for a task?",
+        o: ["Everyone on the team", "Two, for backup", "Exactly one", "None"], a: 2,
+        e: "If everyone owns it, nobody owns it. One person is accountable." },
+      { q: "Small extra requests keep piling onto a project until the deadline is impossible. What is this called?",
+        o: ["Critical path", "Scope creep", "Slack", "A milestone"], a: 1,
+        e: "Scope creep is the unplanned growth of what a project has to deliver." }
+    ]
+  },
+
+  "public-speaking": {
+    title: "Public Speaking Basics",
+    pass: 4,
+    questions: [
+      { q: "What should you be able to do before writing the rest of your talk?",
+        o: ["Memorize every word", "Say your main message in one sentence", "Design all your slides", "Find a funny joke"], a: 1,
+        e: "Everything in the talk should support one clear main message." },
+      { q: "When is the best time to take questions?",
+        o: ["Before your final closing line, then finish with your close", "At the very start", "Never", "In the middle of your second point"], a: 0,
+        e: "Doing Q&A before your close lets the talk end on your message." },
+      { q: "About how many words fit in a 5-minute talk at 130 to 150 words per minute?",
+        o: ["200 to 300", "1,500 to 2,000", "650 to 750", "3,000"], a: 2,
+        e: "5 × 130 = 650 and 5 × 150 = 750." },
+      { q: "Which is a good opening?",
+        o: ["\"Sorry, I'm not very good at this.\"", "\"Um, so, I guess I'll start.\"", "Reading your title slide aloud", "A question, short story or surprising fact"], a: 3,
+        e: "A hook grabs attention. Apologizing tells people to expect a bad talk." },
+      { q: "Someone asks a question you can't answer. What's the best response?",
+        o: ["Make up an answer", "Ignore the question", "Say you don't know, and promise to find out and follow up", "End the talk immediately"], a: 2,
+        e: "It's OK not to know. Follow up later, and actually do it." }
+    ]
   }
 };
