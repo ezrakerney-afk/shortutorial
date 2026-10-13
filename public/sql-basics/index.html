@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SQL Basics: Ask Questions of Your Data · Shortutorial</title>
+<meta name="description" content="Learn SQL step by step: SELECT, WHERE, ORDER BY, LIMIT, COUNT, SUM, AVG, GROUP BY and the idea of a JOIN. Run real queries in a built-in playground with guided challenges.">
+<link rel="canonical" href="https://shortutorial.com/sql-basics/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="SQL Basics: Ask Questions of Your Data · Shortutorial">
+<meta property="og:description" content="Learn SQL step by step: SELECT, WHERE, ORDER BY, LIMIT, COUNT, SUM, AVG, GROUP BY and the idea of a JOIN. Run real queries in a built-in playground with guided challenges.">
+<meta property="og:url" content="https://shortutorial.com/sql-basics/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+table.t.sm{font-size:.86rem}
+table.t.sm th,table.t.sm td{padding:6px 10px}
+table.t td.n{text-align:right;font-variant-numeric:tabular-nums}
+.task{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:.97rem}
+.cr-l{font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.editor{width:100%;box-sizing:border-box;font-family:var(--mono);font-size:.9rem;line-height:1.55;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;resize:vertical;min-height:110px;outline:none}
+.editor:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.cr-res{font-family:var(--display);font-weight:600;font-size:1rem;min-height:1.4em}
+.cr-res.ok{color:var(--good)} .cr-res.no{color:var(--bad)}
+.cr-res small{display:block;font-family:var(--mono);font-weight:400;font-size:.8rem;color:var(--muted);margin-top:4px;white-space:pre-wrap}
+#sqOut{max-height:380px;overflow:auto}
+#sqOut td.null{color:var(--muted);font-style:italic}
+.ch-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-family:var(--display);border-top:1px solid var(--line);padding-top:12px}
+.ch-h span{font-family:var(--mono);font-size:.8rem;color:var(--muted)}
+.chipset button.done::after{content:" ✓";color:var(--good)}
+.chipset button[aria-pressed=true].done::after{color:inherit}
+.btn.tq{align-self:flex-start;padding:6px 14px;font-size:.88rem}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"SQL Basics: Ask Questions of Your Data","item":"https://shortutorial.com/sql-basics/"}]},{"@type":"Article","@id":"https://shortutorial.com/sql-basics/#article","headline":"SQL Basics: Ask Questions of Your Data","description":"Learn SQL step by step: SELECT, WHERE, ORDER BY, LIMIT, COUNT, SUM, AVG, GROUP BY and the idea of a JOIN. Run real queries in a built-in playground with guided challenges.","url":"https://shortutorial.com/sql-basics/","mainEntityOfPage":"https://shortutorial.com/sql-basics/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Programming","keywords":"sql, learn sql, database, select, where, group by, join, queries, mysql, postgresql, sqlite, data analysis","timeRequired":"PT20M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where can I practice SQL on my own computer?","acceptedAnswer":{"@type":"Answer","text":"SQLite is free, tiny and needs no server. A free app like DB Browser for SQLite lets you open a database file and run queries. For bigger projects, PostgreSQL and MySQL are both free."}},{"@type":"Question","name":"Can a SELECT query change my data?","acceptedAnswer":{"@type":"Answer","text":"No. SELECT only reads. Commands that change data are INSERT (add rows), UPDATE (change rows) and DELETE (remove rows). Be careful with those: an UPDATE or DELETE without a WHERE changes every row in the table."}},{"@type":"Question","name":"What's the difference between COUNT(*) and COUNT(column)?","acceptedAnswer":{"@type":"Answer","text":"COUNT(*) counts every row. COUNT(column) counts only rows where that column isn't empty ( NULL )."}},{"@type":"Question","name":"What does NULL mean?","acceptedAnswer":{"@type":"Answer","text":"NULL means “no value” or “unknown.” It isn't zero or an empty string. You can't test it with = ; use WHERE col IS NULL or IS NOT NULL instead."}},{"@type":"Question","name":"Is SQL a programming language?","acceptedAnswer":{"@type":"Answer","text":"It's a query language: you describe the result you want, and the database figures out how to get it. It's one of the most useful skills for data analysis, and it pairs well with spreadsheets and Python."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="sql-basics">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+<header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=programming">Programming</a> / SQL basics</div>
+    <span class="eyebrow">Programming · Databases</span>
+    <h1>SQL Basics: Ask Questions of Your Data</h1>
+    <p class="lede">SQL is how you ask a database for exactly the data you want. It reads almost like English, and the basics take an afternoon. Learn the core commands and run real queries in the playground on this page.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~20 min</span><span class="badge">6 lessons</span><span class="badge">Query playground + 9 challenges</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#s1">1 · Tables</a><a href="#s2">2 · SELECT</a><a href="#s3">3 · WHERE</a><a href="#s4">4 · ORDER BY</a><a href="#s5">5 · COUNT & GROUP BY</a><a href="#play">Playground</a><a href="#s6">6 · JOIN</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="s1">
+    <div class="lesson-head"><span class="step">01</span><h2>Tables, rows and columns</h2></div>
+    <p>A <b>database</b> stores data in <b>tables</b>, a lot like spreadsheet tabs. Each <b>column</b> holds one kind of fact (a name, an age), and each <b>row</b> is one record (one pet, one order, one customer).</p>
+    <p><b>SQL</b> (Structured Query Language, said “S-Q-L” or “sequel”) is the language you use to ask a database questions. The same basics work in MySQL, PostgreSQL, SQLite, Microsoft SQL Server and most others, with small differences in the advanced stuff.</p>
+    <p>All the examples here use this small table called <code>pets</code>, from an imaginary animal shelter:</p>
+    <div class="tw"><table class="t sm" id="petsTable"></table></div>
+    <p class="callout"><span><b>A query is a question.</b> You don't tell the database <i>how</i> to find the answer, only <i>what</i> you want. “Give me the names of all cats in Austin” becomes one line of SQL.</span></p>
+  </section>
+
+  <section class="lesson" id="s2">
+    <div class="lesson-head"><span class="step">02</span><h2>SELECT: pick your columns</h2></div>
+    <p>Every query starts with <code>SELECT</code> (which columns) and <code>FROM</code> (which table).</p>
+    <div class="code"><pre><code><span class="k">SELECT</span> name, species <span class="k">FROM</span> pets;</code></pre></div>
+    <button class="btn ghost small tq" type="button" data-q="SELECT name, species FROM pets;">Run it in the playground</button>
+    <ul class="points">
+      <li>List columns with commas between them. The result shows them in that order.</li>
+      <li><code>SELECT *</code> means “every column.” Handy for a quick look, but in real work, name the columns you need.</li>
+      <li>Keywords like <code>SELECT</code> aren't case-sensitive. Writing them in capitals is a common habit that makes queries easier to read.</li>
+      <li>End with a semicolon <code>;</code>. Many tools need it when you run several queries at once.</li>
+    </ul>
+    <p>You can rename a column in the result with <code>AS</code>: <code>SELECT name AS pet_name FROM pets;</code></p>
+  </section>
+
+  <section class="lesson" id="s3">
+    <div class="lesson-head"><span class="step">03</span><h2>WHERE: filter the rows</h2></div>
+    <p><code>WHERE</code> keeps only the rows that match a condition.</p>
+    <div class="code"><pre><code><span class="k">SELECT</span> name, age <span class="k">FROM</span> pets <span class="k">WHERE</span> species = <span class="s">'cat'</span>;</code></pre></div>
+    <button class="btn ghost small tq" type="button" data-q="SELECT name, age FROM pets WHERE species = 'cat';">Run it in the playground</button>
+    <div class="tw"><table class="t">
+      <tr><th>Write</th><th>Means</th></tr>
+      <tr><td><code>=</code></td><td>equals</td></tr>
+      <tr><td><code>&lt;&gt;</code> or <code>!=</code></td><td>not equal</td></tr>
+      <tr><td><code>&gt;</code> <code>&lt;</code> <code>&gt;=</code> <code>&lt;=</code></td><td>greater / less than</td></tr>
+      <tr><td><code>AND</code> / <code>OR</code></td><td>both must match / either can match</td></tr>
+      <tr><td><code>LIKE 'B%'</code></td><td>pattern: <code>%</code> = any letters, <code>_</code> = exactly one</td></tr>
+      <tr><td><code>NOT</code></td><td>flips a condition</td></tr>
+    </table></div>
+    <div class="code"><pre><code><span class="k">SELECT</span> name, species, age <span class="k">FROM</span> pets
+<span class="k">WHERE</span> city = <span class="s">'Austin'</span> <span class="k">AND</span> age &lt; 5;</code></pre></div>
+    <button class="btn ghost small tq" type="button" data-q="SELECT name, species, age FROM pets&#10;WHERE city = 'Austin' AND age < 5;">Run it in the playground</button>
+    <p class="callout warn"><span><b>Text goes in single quotes:</b> <code>'cat'</code>. Without quotes, SQL thinks <code>cat</code> is a column name. Numbers don't need quotes. Also, in many databases <code>'Cat'</code> and <code>'cat'</code> aren't equal, so match the capitals in your data.</span></p>
+    <p class="callout"><span><b>Mixing AND with OR?</b> <code>AND</code> is checked first, like multiplication before addition. Use parentheses to be clear: <code>WHERE (species = 'cat' OR species = 'dog') AND age &gt; 8</code>.</span></p>
+  </section>
+
+  <section class="lesson" id="s4">
+    <div class="lesson-head"><span class="step">04</span><h2>ORDER BY and LIMIT</h2></div>
+    <p>Rows come back in no guaranteed order unless you ask. <code>ORDER BY</code> sorts them: <code>ASC</code> is smallest first (the default), <code>DESC</code> is largest first. <code>LIMIT</code> keeps only the first few rows.</p>
+    <div class="code"><pre><code><span class="c">-- the 3 heaviest pets</span>
+<span class="k">SELECT</span> name, weight <span class="k">FROM</span> pets
+<span class="k">ORDER BY</span> weight <span class="k">DESC</span>
+<span class="k">LIMIT</span> 3;</code></pre></div>
+    <button class="btn ghost small tq" type="button" data-q="-- the 3 heaviest pets&#10;SELECT name, weight FROM pets&#10;ORDER BY weight DESC&#10;LIMIT 3;">Run it in the playground</button>
+    <ul class="points">
+      <li>Sort by more than one column with commas: <code>ORDER BY city, age DESC</code> sorts by city, then by age within each city.</li>
+      <li>The clauses must go in this order: <code>SELECT … FROM … WHERE … GROUP BY … ORDER BY … LIMIT</code>.</li>
+      <li>Lines starting with <code>--</code> are comments.</li>
+      <li>SQL Server uses <code>SELECT TOP 3 …</code> instead of <code>LIMIT 3</code>.</li>
+    </ul>
+  </section>
+
+  <section class="lesson" id="s5">
+    <div class="lesson-head"><span class="step">05</span><h2>COUNT, SUM, AVG and GROUP BY</h2></div>
+    <p><b>Aggregate functions</b> squash many rows into one number:</p>
+    <div class="tw"><table class="t">
+      <tr><th>Function</th><th>Gives you</th></tr>
+      <tr><td><code>COUNT(*)</code></td><td>how many rows</td></tr>
+      <tr><td><code>SUM(col)</code></td><td>the total</td></tr>
+      <tr><td><code>AVG(col)</code></td><td>the average</td></tr>
+      <tr><td><code>MIN(col)</code> / <code>MAX(col)</code></td><td>the smallest / largest</td></tr>
+    </table></div>
+    <div class="code"><pre><code><span class="k">SELECT COUNT</span>(*) <span class="k">FROM</span> pets <span class="k">WHERE</span> species = <span class="s">'dog'</span>;</code></pre></div>
+    <button class="btn ghost small tq" type="button" data-q="SELECT COUNT(*) FROM pets WHERE species = 'dog';">Run it in the playground</button>
+    <p><code>GROUP BY</code> splits the rows into groups first, then runs the function once per group. It's how you answer “how many per…” or “average for each…” questions.</p>
+    <div class="code"><pre><code><span class="k">SELECT</span> species, <span class="k">COUNT</span>(*) <span class="k">AS</span> how_many, <span class="k">AVG</span>(weight) <span class="k">AS</span> avg_weight
+<span class="k">FROM</span> pets
+<span class="k">GROUP BY</span> species
+<span class="k">ORDER BY</span> how_many <span class="k">DESC</span>;</code></pre></div>
+    <button class="btn ghost small tq" type="button" data-q="SELECT species, COUNT(*) AS how_many, AVG(weight) AS avg_weight&#10;FROM pets&#10;GROUP BY species&#10;ORDER BY how_many DESC;">Run it in the playground</button>
+    <p class="callout"><span><b>The GROUP BY rule:</b> every column in your <code>SELECT</code> must either be in the <code>GROUP BY</code> or be inside a function like <code>COUNT</code>. Otherwise the database doesn't know which row's value to show for the group. To filter groups after counting, real databases use <code>HAVING</code>, for example <code>HAVING COUNT(*) &gt; 2</code>.</span></p>
+  </section>
+
+  <section class="lesson" id="play">
+    <div class="lesson-head"><span class="step">▶</span><h2>The SQL playground</h2></div>
+    <p>Type a query about the <code>pets</code> table and press <b>Run</b> (or <kbd>Ctrl</kbd>+<kbd>Enter</kbd>). Then try the challenges. This playground understands <code>SELECT</code>, <code>FROM</code>, <code>WHERE</code> (with <code>AND</code>, <code>OR</code>, <code>NOT</code>, <code>LIKE</code> and parentheses), <code>GROUP BY</code>, <code>ORDER BY</code>, <code>LIMIT</code>, <code>AS</code> and <code>COUNT/SUM/AVG/MIN/MAX</code>.</p>
+    <div class="try" id="sq"><span class="try-h">Try it · SQL playground</span>
+      <div class="task" id="sqTask" aria-live="polite"></div>
+      <label class="cr-l" for="sqIn">Query</label>
+      <textarea id="sqIn" class="editor" rows="5" spellcheck="false" autocapitalize="off" autocomplete="off">SELECT name, species, age FROM pets WHERE age > 5 ORDER BY age DESC;</textarea>
+      <div class="row"><button class="btn" type="button" id="sqRun">Run ▶</button><button class="btn ghost" type="button" id="sqAll">Show whole table</button><button class="btn ghost" type="button" id="sqHint">Hint</button></div>
+      <div class="cr-res" id="sqMsg" aria-live="polite"></div>
+      <div class="tw" id="sqOut"></div>
+      <div class="ch-h"><b>Challenges</b> <span id="sqDone">0 / 9 solved</span></div>
+      <div class="chipset" id="sqCh" aria-label="Challenges"></div>
+    </div>
+  </section>
+
+  <section class="lesson" id="s6">
+    <div class="lesson-head"><span class="step">06</span><h2>The idea behind JOIN</h2></div>
+    <p>Real databases split data into several tables so nothing is stored twice. Say the shelter also has an <code>adopters</code> table, and each pet row stores an <code>adopter_id</code>:</p>
+    <div class="grid2">
+      <div><span class="tagline">pets (some columns)</span><div class="tw"><table class="t sm"><tr><th>name</th><th>adopter_id</th></tr><tr><td>Bella</td><td>1</td></tr><tr><td>Luna</td><td>2</td></tr><tr><td>Max</td><td>1</td></tr><tr><td>Milo</td><td></td></tr></table></div></div>
+      <div><span class="tagline">adopters</span><div class="tw"><table class="t sm"><tr><th>id</th><th>adopter</th></tr><tr><td>1</td><td>Jordan</td></tr><tr><td>2</td><td>Priya</td></tr><tr><td>3</td><td>Sam</td></tr></table></div></div>
+    </div>
+    <p>A <code>JOIN</code> lines up rows from two tables wherever a column matches, here <code>pets.adopter_id = adopters.id</code>:</p>
+    <div class="code"><pre><code><span class="k">SELECT</span> pets.name, adopters.adopter
+<span class="k">FROM</span> pets
+<span class="k">JOIN</span> adopters <span class="k">ON</span> pets.adopter_id = adopters.id;</code></pre></div>
+    <div class="example"><div class="ex-h">Result</div><div class="ex-b"><div class="tw"><table class="t sm"><tr><th>name</th><th>adopter</th></tr><tr><td>Bella</td><td>Jordan</td></tr><tr><td>Luna</td><td>Priya</td></tr><tr><td>Max</td><td>Jordan</td></tr></table></div></div></div>
+    <ul class="points">
+      <li>A plain <code>JOIN</code> (also called <code>INNER JOIN</code>) keeps only rows with a match on both sides. Milo has no adopter, and Sam hasn't adopted anyone, so neither appears.</li>
+      <li><code>LEFT JOIN</code> keeps <b>every</b> row from the first table, with empty values where there's no match. Use it for “all pets, and their adopter if they have one.”</li>
+      <li>Write <code>table.column</code> when both tables could have a column with the same name.</li>
+    </ul>
+    <p class="callout"><span><b>Why split tables?</b> If Jordan changes their phone number, you update one row in <code>adopters</code>, not every pet they've adopted. This idea is called <b>normalization</b>.</span></p>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Where can I practice SQL on my own computer?</summary><div class="a"><p><b>SQLite</b> is free, tiny and needs no server. A free app like DB Browser for SQLite lets you open a database file and run queries. For bigger projects, PostgreSQL and MySQL are both free.</p></div></details>
+      <details><summary>Can a SELECT query change my data?</summary><div class="a"><p>No. <code>SELECT</code> only reads. Commands that change data are <code>INSERT</code> (add rows), <code>UPDATE</code> (change rows) and <code>DELETE</code> (remove rows). Be careful with those: an <code>UPDATE</code> or <code>DELETE</code> without a <code>WHERE</code> changes every row in the table.</p></div></details>
+      <details><summary>What's the difference between COUNT(*) and COUNT(column)?</summary><div class="a"><p><code>COUNT(*)</code> counts every row. <code>COUNT(column)</code> counts only rows where that column isn't empty (<code>NULL</code>).</p></div></details>
+      <details><summary>What does NULL mean?</summary><div class="a"><p><code>NULL</code> means “no value” or “unknown.” It isn't zero or an empty string. You can't test it with <code>=</code>; use <code>WHERE col IS NULL</code> or <code>IS NOT NULL</code> instead.</p></div></details>
+      <details><summary>Is SQL a programming language?</summary><div class="a"><p>It's a query language: you describe the result you want, and the database figures out how to get it. It's one of the most useful skills for data analysis, and it pairs well with spreadsheets and Python.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://www.sqlite.org/lang_select.html" target="_blank" rel="noopener"><span class="src">SQLite</span><b>The SELECT statement</b></a>
+      <a href="https://www.postgresql.org/docs/current/tutorial-sql.html" target="_blank" rel="noopener"><span class="src">PostgreSQL docs</span><b>Tutorial: the SQL language</b></a>
+      <a href="https://www.postgresql.org/docs/current/tutorial-join.html" target="_blank" rel="noopener"><span class="src">PostgreSQL docs</span><b>Joins between tables</b></a>
+      <a href="https://learn.microsoft.com/en-us/sql/t-sql/queries/select-transact-sql" target="_blank" rel="noopener"><span class="src">Microsoft Learn</span><b>SELECT in SQL Server (T-SQL)</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>The playground runs a small, safe subset of SQL right in your browser.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  const COLS = ['id','name','species','age','weight','city'];
+  const NUMCOL = {id:1, age:1, weight:1};
+  const DATA = [
+    [1,'Bella','dog',4,52,'Austin'],[2,'Max','dog',7,70,'Denver'],[3,'Luna','cat',2,9,'Austin'],
+    [4,'Charlie','dog',1,25,'Boston'],[5,'Oliver','cat',9,12,'Denver'],[6,'Daisy','rabbit',3,4,'Boston'],
+    [7,'Milo','cat',5,11,'Austin'],[8,'Rocky','dog',11,80,'Austin'],[9,'Coco','bird',2,1,'Denver'],
+    [10,'Lucy','cat',12,8,'Boston'],[11,'Bear','dog',3,95,'Denver'],[12,'Pepper','rabbit',1,3,'Austin'],
+    [13,'Kiwi','bird',6,1,'Boston'],[14,'Nala','cat',4,10,'Denver']
+  ].map(r => Object.fromEntries(COLS.map((c, i) => [c, r[i]])));
+
+  class SqlError extends Error {}
+  const err = m => { throw new SqlError(m); };
+  const AGG = ['COUNT','SUM','AVG','MIN','MAX'];
+  const NOPE = {JOIN:'JOINs are explained in lesson 6, but this playground has only one table, so it can\'t run them.',
+    INSERT:'This playground only runs SELECT queries. It can\'t add rows.', UPDATE:'This playground only runs SELECT queries. It can\'t change data.',
+    DELETE:'This playground only runs SELECT queries. It can\'t delete rows.', DROP:'Nice try! This playground only runs SELECT queries.',
+    CREATE:'This playground only runs SELECT queries.', ALTER:'This playground only runs SELECT queries.',
+    HAVING:'HAVING is real SQL, but this playground doesn\'t support it. Try ORDER BY on your count instead.',
+    DISTINCT:'DISTINCT isn\'t supported here. Try GROUP BY on that column instead: it gives one row per value.',
+    IN:'IN isn\'t supported here. Use OR instead: species = \'cat\' OR species = \'dog\'.',
+    BETWEEN:'BETWEEN isn\'t supported here. Use age >= 2 AND age <= 5 instead.', UNION:'UNION isn\'t supported in this playground.',
+    OFFSET:'OFFSET isn\'t supported in this playground.', IS:'IS NULL isn\'t needed here: this table has no empty values.',
+    TOP:'TOP is SQL Server\'s version of LIMIT. Here, put LIMIT 3 at the end instead.', CASE:'CASE isn\'t supported in this playground.'};
+  const KW = new Set(['SELECT','FROM','WHERE','AND','OR','NOT','LIKE','GROUP','ORDER','BY','ASC','DESC','LIMIT','AS'].concat(AGG, Object.keys(NOPE)));
+
+  function lex(s){
+    const t = []; let i = 0;
+    while (i < s.length){
+      const c = s[i];
+      if (/\s/.test(c)){ i++; continue; }
+      if (c === '-' && s[i+1] === '-'){ while (i < s.length && s[i] !== '\n') i++; continue; }
+      if (c === "'"){
+        let j = i + 1, v = '';
+        for (;;){ if (j >= s.length) err('A text value is missing its closing quote \'.'); if (s[j] === "'"){ if (s[j+1] === "'"){ v += "'"; j += 2; continue; } break; } v += s[j++]; }
+        t.push({k:'str', v}); i = j + 1; continue;
+      }
+      if (c === '"' || c === '\u201c' || c === '\u201d' || c === '\u2018' || c === '\u2019') err('Use straight single quotes for text, like \'cat\'. Double or curly quotes don\'t work here.');
+      let m;
+      if ((m = /^\d+(\.\d+)?/.exec(s.slice(i)))){ t.push({k:'num', v:parseFloat(m[0])}); i += m[0].length; continue; }
+      if ((m = /^[A-Za-z_][A-Za-z0-9_]*/.exec(s.slice(i)))){
+        const up = m[0].toUpperCase();
+        t.push(KW.has(up) ? {k:'kw', v:up, raw:m[0]} : {k:'id', v:m[0].toLowerCase(), raw:m[0]}); i += m[0].length; continue;
+      }
+      if ((m = /^(<=|>=|<>|!=|=|<|>)/.exec(s.slice(i)))){ t.push({k:'op', v:m[0]}); i += m[0].length; continue; }
+      if ('(),*;.'.includes(c)){ t.push({k:c}); i++; continue; }
+      err('I don\'t understand the character "' + c + '".');
+    }
+    return t;
+  }
+
+  function parse(src){
+    const t = lex(src); let p = 0;
+    const peek = () => t[p], next = () => t[p++];
+    const isKw = v => t[p] && t[p].k === 'kw' && t[p].v === v;
+    const show = x => !x ? 'the end of the query' : x.k === 'str' ? "'" + x.v + "'" : x.k === 'num' ? String(x.v) : x.raw || x.v || x.k;
+    const expectKw = (v, why) => { if (!isKw(v)) err(why || ('Expected ' + v + ' but found ' + show(peek()) + '.')); p++; };
+    const noNope = () => { const x = peek(); if (x && x.k === 'kw' && NOPE[x.v]) err(NOPE[x.v]); };
+    const col = () => {
+      noNope(); const x = next();
+      if (!x) err('The query ended too soon. Expected a column name.');
+      if (x.k === 'kw') err('Expected a column name but found the keyword ' + x.v + '. Is there an extra comma, or something missing?');
+      if (x.k !== 'id') err('Expected a column name but found ' + show(x) + '.');
+      if (peek() && peek().k === '.') err('table.column names are for JOINs. Here, just write the column name, like name.');
+      if (!COLS.includes(x.v)) err('There is no column called "' + x.raw + '". The columns are: ' + COLS.join(', ') + '.');
+      return x.v;
+    };
+    if (!t.length) err('Type a query first, like SELECT * FROM pets;');
+    noNope();
+    if (!isKw('SELECT')) err('Queries here start with SELECT.');
+    p++;
+    noNope();
+    const items = [];
+    if (peek() && peek().k === '*'){ p++; items.push({star:true}); }
+    else for (;;){
+      noNope();
+      let it;
+      if (peek() && peek().k === 'kw' && AGG.includes(peek().v)){
+        const fn = next().v;
+        if (!peek() || peek().k !== '(') err(fn + ' needs parentheses, like ' + fn + '(' + (fn === 'COUNT' ? '*' : 'weight') + ').');
+        p++;
+        let arg;
+        if (peek() && peek().k === '*'){ if (fn !== 'COUNT') err(fn + '(*) doesn\'t make sense. Put a column inside, like ' + fn + '(weight).'); p++; arg = '*'; }
+        else { arg = col(); if (fn !== 'COUNT' && fn !== 'MIN' && fn !== 'MAX' && !NUMCOL[arg]) err(fn + ' needs a number column (id, age or weight), not ' + arg + '.'); }
+        if (!peek() || peek().k !== ')') err('Missing closing parenthesis ) after ' + fn + '(' + arg + '.');
+        p++;
+        it = {agg:fn, arg, label: fn + '(' + arg + ')'};
+      } else { const c = col(); it = {col:c, label:c}; }
+      if (isKw('AS')){ p++; const a = next(); if (!a || (a.k !== 'id' && a.k !== 'str')) err('AS needs a name after it, like AS total.'); it.label = a.k === 'str' ? a.v : a.raw; it.alias = true; }
+      items.push(it);
+      if (peek() && peek().k === ','){ p++; continue; }
+      break;
+    }
+    noNope();
+    if (peek() && (peek().k === 'id' || peek().k === 'kw' && AGG.includes(peek().v))) err('Missing a comma before "' + show(peek()) + '"?');
+    expectKw('FROM', peek() ? 'Expected FROM after the column list, but found ' + show(peek()) + '.' : 'Every query needs FROM, like ... FROM pets;');
+    const tb = next();
+    if (!tb || tb.k !== 'id') err('Name the table after FROM: FROM pets');
+    if (tb.v !== 'pets') err('There\'s no table called "' + tb.raw + '". This playground has one table: pets.');
+    noNope();
+    const q = {items, where:null, group:[], order:[], limit:null};
+    if (isKw('WHERE')){ p++; q.where = orExpr(); }
+    noNope();
+    if (isKw('GROUP')){ p++; expectKw('BY', 'Write GROUP BY, with BY after GROUP.'); for (;;){ q.group.push(col()); if (peek() && peek().k === ','){ p++; continue; } break; } }
+    noNope();
+    if (isKw('ORDER')){ p++; expectKw('BY', 'Write ORDER BY, with BY after ORDER.');
+      for (;;){
+        noNope(); let key;
+        const x = peek();
+        if (!x) err('ORDER BY needs a column after it.');
+        if (x.k === 'kw' && AGG.includes(x.v)){
+          const fn = next().v; if (!peek() || peek().k !== '(') err(fn + ' needs parentheses.'); p++;
+          let arg; if (peek() && peek().k === '*'){ p++; arg = '*'; } else arg = col();
+          if (!peek() || peek().k !== ')') err('Missing ) in ORDER BY.'); p++;
+          key = {label: fn + '(' + arg + ')'};
+        } else if (x.k === 'num'){ p++; key = {pos:x.v}; }
+        else if (x.k === 'id'){ p++; key = {name:x.v, raw:x.raw}; }
+        else if (x.k === 'str'){ p++; key = {name:x.v.toLowerCase(), raw:x.v}; }
+        else err('ORDER BY needs a column name, but found ' + show(x) + '.');
+        let desc = false;
+        if (isKw('DESC')){ p++; desc = true; } else if (isKw('ASC')) p++;
+        key.desc = desc; q.order.push(key);
+        if (peek() && peek().k === ','){ p++; continue; } break;
+      } }
+    noNope();
+    if (isKw('LIMIT')){ p++; const n = next(); if (!n || n.k !== 'num' || n.v % 1) err('LIMIT needs a whole number, like LIMIT 5.'); q.limit = n.v; }
+    if (peek() && peek().k === ';') p++;
+    if (peek()){
+      noNope();
+      const x = peek();
+      if (x.k === 'kw' && ['WHERE','GROUP','ORDER','LIMIT'].includes(x.v)) err(x.v + ' is in the wrong place. The order is SELECT, FROM, WHERE, GROUP BY, ORDER BY, LIMIT.');
+      if (x.k === 'kw' && x.v === 'SELECT') err('Run one query at a time.');
+      err('I didn\'t expect ' + show(x) + ' here.');
+    }
+    return q;
+
+    function orExpr(){ let l = andExpr(); while (isKw('OR')){ p++; const r = andExpr(), a = l; l = row => a(row) || r(row); } return l; }
+    function andExpr(){ let l = notExpr(); while (isKw('AND')){ p++; const r = notExpr(), a = l; l = row => a(row) && r(row); } return l; }
+    function notExpr(){ if (isKw('NOT')){ p++; const e = notExpr(); return row => !e(row); } return atom(); }
+    function value(){
+      const x = peek();
+      if (!x) err('The condition is missing a value at the end.');
+      if (x.k === 'num' || x.k === 'str'){ p++; return () => x.v; }
+      if (x.k === 'id'){
+        if (!COLS.includes(x.v)) err('There\'s no column called "' + x.raw + '". If you meant the text ' + x.raw + ', put it in single quotes: \'' + x.raw + '\'.');
+        p++; return row => row[x.v];
+      }
+      noNope(); err('Expected a value (a number, \'text\' or a column) but found ' + show(x) + '.');
+    }
+    function atom(){
+      if (peek() && peek().k === '('){ p++; const e = orExpr(); if (!peek() || peek().k !== ')') err('A parenthesis ( is never closed.'); p++; return e; }
+      if (peek() && peek().k === 'kw' && AGG.includes(peek().v)) err('You can\'t use ' + peek().v + ' inside WHERE. Real SQL uses HAVING for that, which this playground doesn\'t support.');
+      const L = value();
+      noNope();
+      if (isKw('NOT') && t[p+1] && t[p+1].k === 'kw' && t[p+1].v === 'LIKE'){ p += 2; const R = value(); return row => !like(L(row), R(row)); }
+      if (isKw('LIKE')){ p++; const R = value(); return row => like(L(row), R(row)); }
+      const o = next();
+      if (!o || o.k !== 'op'){ err('A condition needs a comparison like =, >, < or LIKE' + (o ? ', but found ' + show(o) : '') + '.'); }
+      if (o.v === '=' && peek() && peek().k === 'op' && peek().v === '=') err('SQL uses a single = to compare, not ==.');
+      const R = value();
+      return row => cmp(o.v, L(row), R(row));
+    }
+  }
+  function like(a, pat){
+    const re = new RegExp('^' + String(pat).replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/%/g, '.*').replace(/_/g, '.') + '$', 'i');
+    return re.test(String(a));
+  }
+  function cmp(op, a, b){
+    if (typeof a !== typeof b){ const na = Number(a), nb = Number(b); if (!isNaN(na) && !isNaN(nb)){ a = na; b = nb; } else { a = String(a); b = String(b); } }
+    switch (op){ case '=': return a === b; case '<>': case '!=': return a !== b; case '<': return a < b; case '>': return a > b; case '<=': return a <= b; case '>=': return a >= b; }
+  }
+  function aggregate(fn, arg, rows){
+    if (fn === 'COUNT') return arg === '*' ? rows.length : rows.filter(r => r[arg] != null).length;
+    const v = rows.map(r => r[arg]).filter(x => x != null);
+    if (!v.length) return null;
+    if (fn === 'SUM') return v.reduce((a, b) => a + b, 0);
+    if (fn === 'AVG') return v.reduce((a, b) => a + b, 0) / v.length;
+    const s = v.slice().sort((a, b) => typeof a === 'number' ? a - b : String(a).localeCompare(String(b)));
+    return fn === 'MIN' ? s[0] : s[s.length - 1];
+  }
+  function run(src){
+    const q = parse(src);
+    let rows = q.where ? DATA.filter(q.where) : DATA.slice();
+    let items = q.items;
+    if (items[0].star){
+      if (q.group.length) err('SELECT * can\'t be used with GROUP BY. List the grouped column and a function, like SELECT species, COUNT(*).');
+      items = COLS.map(c => ({col:c, label:c}));
+    }
+    const grouped = q.group.length || items.some(i => i.agg);
+    let out;
+    if (grouped){
+      items.forEach(i => { if (i.col && !q.group.includes(i.col)) err('"' + i.col + '" must be in GROUP BY, or used inside a function like COUNT or MAX. Otherwise SQL doesn\'t know which ' + i.col + ' to show for each group.'); });
+      const groups = new Map();
+      if (!q.group.length) groups.set('all', rows);
+      rows.forEach(r => { if (!q.group.length) return; const k = JSON.stringify(q.group.map(g => r[g])); if (!groups.has(k)) groups.set(k, []); groups.get(k).push(r); });
+      out = [...groups.values()].map(g => ({src:g[0] || {}, rows:g, vals: items.map(i => i.agg ? aggregate(i.agg, i.arg, g) : g[0][i.col])}));
+    } else out = rows.map(r => ({src:r, vals: items.map(i => r[i.col])}));
+    if (q.order.length){
+      const keyFns = q.order.map(k => {
+        let idx = -1;
+        if (k.pos){ idx = k.pos - 1; if (idx < 0 || idx >= items.length) err('ORDER BY ' + k.pos + ' refers to column number ' + k.pos + ', but there are only ' + items.length + '.'); }
+        else if (k.label){ idx = items.findIndex(i => i.agg && (i.agg + '(' + i.arg + ')') === k.label); }
+        else idx = items.findIndex(i => i.label.toLowerCase() === k.name || (i.col === k.name && !i.alias));
+        if (idx >= 0) return o => o.vals[idx];
+        if (k.label){ const m = /^(\w+)\((.+)\)$/.exec(k.label); if (!grouped) err('You can only sort by ' + k.label + ' in a query that groups rows.'); return o => aggregate(m[1], m[2], o.rows); }
+        if (COLS.includes(k.name)){ if (grouped && !q.group.includes(k.name)) err('You can\'t sort by ' + k.name + ' here, because it isn\'t in the GROUP BY or the SELECT list.'); return o => o.src[k.name]; }
+        err('ORDER BY: there\'s no column or name called "' + k.raw + '".');
+      });
+      out.sort((a, b) => { for (let i = 0; i < keyFns.length; i++){ let x = keyFns[i](a), y = keyFns[i](b); let c = x == null ? -1 : y == null ? 1 : typeof x === 'number' && typeof y === 'number' ? x - y : String(x).localeCompare(String(y)); if (x == null && y == null) c = 0; if (c) return q.order[i].desc ? -c : c; } return 0; });
+    }
+    if (q.limit != null) out = out.slice(0, q.limit);
+    return {cols: items.map(i => i.label), rows: out.map(o => o.vals), ordered: q.order.length > 0};
+  }
+
+  /* ---- UI ---- */
+  const cell = v => v == null ? 'NULL' : typeof v === 'number' ? String(Math.round(v * 100) / 100) : String(v);
+  function tableHTML(res){
+    const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+    return '<table class="t sm"><tr>' + res.cols.map(c => '<th>' + esc(c) + '</th>').join('') + '</tr>' +
+      res.rows.map(r => '<tr>' + r.map(v => '<td class="' + (v == null ? 'null' : typeof v === 'number' ? 'n' : '') + '">' + esc(cell(v)) + '</td>').join('') + '</tr>').join('') + '</table>';
+  }
+  $('#petsTable').outerHTML = tableHTML(run('SELECT * FROM pets')).replace('<table class="t sm">', '<table class="t sm" id="petsTable">');
+
+  const CH = [
+    {n:'1', t:'Show <b>every column</b> of every pet.', a:'SELECT * FROM pets;', h:'SELECT * means every column.'},
+    {n:'2', t:'Show just the <b>name and city</b> of every pet.', a:'SELECT name, city FROM pets;', h:'SELECT name, city FROM ...'},
+    {n:'3', t:'Show the <b>name and age</b> of every <b>cat</b>.', a:"SELECT name, age FROM pets WHERE species = 'cat';", h:"Add WHERE species = 'cat' (with single quotes)."},
+    {n:'4', t:'Show the <b>name</b> of pets that live in <b>Boston</b> and are <b>older than 2</b>.', a:"SELECT name FROM pets WHERE city = 'Boston' AND age > 2;", h:'Join two conditions with AND.'},
+    {n:'5', t:'Show the <b>name and age</b> of all pets, <b>oldest first</b>.', a:'SELECT name, age FROM pets ORDER BY age DESC;', h:'ORDER BY age DESC', okey:1},
+    {n:'6', t:'Show the <b>name and weight</b> of the <b>3 lightest</b> pets, lightest first.', a:'SELECT name, weight FROM pets ORDER BY weight LIMIT 3;', h:'ORDER BY weight (smallest first), then LIMIT 3.', okey:1},
+    {n:'7', t:'<b>How many dogs</b> are there? Return one number.', a:"SELECT COUNT(*) FROM pets WHERE species = 'dog';", h:'COUNT(*) with a WHERE.'},
+    {n:'8', t:'Show each <b>city</b> and <b>how many pets</b> live there.', a:'SELECT city, COUNT(*) FROM pets GROUP BY city;', h:'GROUP BY city, and COUNT(*) in the SELECT.'},
+    {n:'9', t:'Show each <b>species</b> and its <b>average weight</b>, heaviest average first.', a:'SELECT species, AVG(weight) FROM pets GROUP BY species ORDER BY AVG(weight) DESC;', h:'GROUP BY species, AVG(weight), then ORDER BY ... DESC.', okey:1}
+  ];
+  let cur = null; const solved = {};
+  const chips = $('#sqCh');
+  CH.forEach(c => {
+    const b = document.createElement('button'); b.type = 'button'; b.textContent = 'Challenge ' + c.n; b.dataset.n = c.n; b.setAttribute('aria-pressed', 'false');
+    b.addEventListener('click', () => pick(c)); chips.appendChild(b);
+  });
+  function pick(c){
+    cur = c;
+    chips.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.n === c.n));
+    $('#sqTask').innerHTML = '<b>Challenge ' + c.n + ':</b> ' + c.t;
+    msg('', ''); $('#sqHint').style.display = '';
+    $('#sqIn').focus();
+  }
+  function msg(cls, text, small){
+    const m = $('#sqMsg'); m.className = 'cr-res ' + cls; m.textContent = text;
+    if (small){ const s = document.createElement('small'); s.textContent = small; m.appendChild(s); }
+  }
+  const sig = r => r.map(cell).join('\u0001');
+  function same(a, b, okey){
+    if (a.cols.length !== b.cols.length || a.rows.length !== b.rows.length) return false;
+    const x = a.rows.map(sig).sort(), y = b.rows.map(sig).sort();
+    if (!x.every((v, i) => v === y[i])) return false;
+    // ordered challenges: the sorted column must come out in the same sequence (ties can be in any order)
+    if (okey != null) return a.rows.every((r, i) => cell(r[okey]) === cell(b.rows[i][okey]));
+    return true;
+  }
+  function exec(){
+    const src = $('#sqIn').value;
+    let res;
+    try { res = run(src); }
+    catch(e){
+      $('#sqOut').innerHTML = '';
+      if (e instanceof SqlError) msg('no', 'Error', e.message); else msg('no', 'Something went wrong', String(e.message || e));
+      return;
+    }
+    $('#sqOut').innerHTML = tableHTML(res);
+    const count = res.rows.length + ' row' + (res.rows.length === 1 ? '' : 's');
+    if (!cur){ msg('', count + '.'); return; }
+    const want = run(cur.a);
+    if (same(res, want, cur.okey)){
+      solved[cur.n] = true;
+      chips.querySelector('[data-n="' + cur.n + '"]').classList.add('done');
+      $('#sqDone').textContent = Object.keys(solved).length + ' / ' + CH.length + ' solved';
+      msg('ok', '✓ Challenge ' + cur.n + ' solved!', Object.keys(solved).length === CH.length ? 'All 9 done. You know the SQL basics!' : 'Pick another challenge below.');
+    } else {
+      let why = 'Expected ' + want.rows.length + ' row' + (want.rows.length === 1 ? '' : 's') + ' and ' + want.cols.length + ' column' + (want.cols.length === 1 ? '' : 's') + '; you got ' + res.rows.length + ' and ' + res.cols.length + '.';
+      if (want.cols.length === res.cols.length && want.rows.length === res.rows.length && cur.okey != null && same(res, want)) why = 'Right rows, wrong order. Check your ORDER BY.';
+      msg('no', count + ', but not the answer yet.', why);
+    }
+  }
+  $('#sqRun').addEventListener('click', exec);
+  $('#sqAll').addEventListener('click', () => { $('#sqIn').value = 'SELECT * FROM pets;'; exec(); });
+  $('#sqHint').addEventListener('click', () => { if (cur) msg('', 'Hint:', cur.h + '\nAnswer: ' + cur.a); });
+  $('#sqHint').style.display = 'none';
+  $('#sqTask').innerHTML = 'Free play: write any query. Pick a challenge below when you\'re ready.';
+  $('#sqIn').addEventListener('keydown', e => { if ((e.ctrlKey || e.metaKey) && e.key === 'Enter'){ e.preventDefault(); exec(); } });
+  document.querySelectorAll('.tq').forEach(b => b.addEventListener('click', () => {
+    cur = null; chips.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', 'false'));
+    $('#sqTask').innerHTML = 'Free play: write any query. Pick a challenge below when you\'re ready.'; $('#sqHint').style.display = 'none';
+    $('#sqIn').value = b.dataset.q; exec();
+    $('#play').scrollIntoView({behavior:'smooth', block:'start'});
+  }));
+  exec();
+})();
+</script>
+</body>
+</html>

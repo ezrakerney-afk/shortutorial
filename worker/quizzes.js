@@ -2831,5 +2831,71 @@ export default {
         o: ["The median", "The mean", "The count of homes", "The street name"], a: 1,
         e: "Extreme values pull the mean; the median stays near the typical home." }
     ]
+  },
+
+  "how-ai-works": {
+    title: "How AI Chatbots Actually Work",
+    pass: 4,
+    questions: [
+      { q: "At its core, what does a large language model do?",
+        o: ["Looks up answers in a database of facts", "Predicts the next piece of text, one token at a time", "Copies whole answers from websites", "Thinks and feels like a person"], a: 1,
+        e: "An LLM repeatedly guesses what comes next. A full answer is that step repeated many times." },
+      { q: "About how many English words are in 100 tokens?",
+        o: ["10", "25", "75", "400"], a: 2,
+        e: "OpenAI's rule of thumb: a token is about 4 characters, or about 3/4 of a word, so 100 tokens is roughly 75 words." },
+      { q: "What does turning the temperature up do?",
+        o: ["Makes the model faster", "Makes it always pick the single most likely word", "Gives less likely words a better chance, so output is more varied", "Updates its training data"], a: 2,
+        e: "Higher temperature adds randomness: more creative, less predictable, and more likely to go off track." },
+      { q: "What is a hallucination?",
+        o: ["A confident, fluent answer that is actually wrong or made up", "When the app crashes", "A picture the AI draws", "When the chatbot refuses to answer"], a: 0,
+        e: "Chatbots are trained to produce text that sounds right, and sometimes it isn't. Fake facts, quotes and links are common examples." },
+      { q: "Why might a chatbot not know about last week's news?",
+        o: ["It's turned off on weekends", "It forgets everything each night", "News is blocked by law", "Its training stopped at a cutoff date, and it may not have a web search tool"], a: 3,
+        e: "Models only know their training data up to a cutoff. Some apps add web search to look up recent information." }
+    ]
+  },
+
+  "javascript-basics": {
+    title: "JavaScript Basics: Your First Steps",
+    pass: 4,
+    questions: [
+      { q: "What does console.log(\"Hi\") do?",
+        o: ["Prints Hi to the console", "Shows a pop-up box", "Saves Hi to a file", "Deletes the console"], a: 0,
+        e: "console.log prints whatever is in the parentheses to the console." },
+      { q: "What is the result of \"5\" + 3 in JavaScript?",
+        o: ["8", "\"53\"", "An error", "15"], a: 1,
+        e: "Adding text and a number glues them together as text. Use Number(\"5\") first to do math." },
+      { q: "Which should you use to check if two values are equal?",
+        o: ["=", "=>", "===", "!=="], a: 2,
+        e: "= assigns a value. === compares without converting types, which avoids surprises." },
+      { q: "Given const fruits = [\"apple\", \"banana\", \"cherry\"], what is fruits[0]?",
+        o: ["\"banana\"", "undefined", "3", "\"apple\""], a: 3,
+        e: "Array positions (indexes) start at 0, so fruits[0] is the first item." },
+      { q: "What does document.querySelector(\"#title\") do?",
+        o: ["Creates a new heading", "Finds the element on the page with id=\"title\"", "Changes the page title in the browser tab", "Deletes the element"], a: 1,
+        e: "querySelector finds an element using a CSS selector. # means an id." }
+    ]
+  },
+
+  "sql-basics": {
+    title: "SQL Basics: Ask Questions of Your Data",
+    pass: 4,
+    questions: [
+      { q: "Which query shows only the name column from the pets table?",
+        o: ["SELECT name FROM pets;", "GET name IN pets;", "SELECT pets FROM name;", "FIND name FROM pets;"], a: 0,
+        e: "SELECT picks the columns, FROM names the table." },
+      { q: "How should you write a text value in a WHERE condition?",
+        o: ["WHERE species = cat", "WHERE species = (cat)", "WHERE species = 'cat'", "WHERE species == cat"], a: 2,
+        e: "Text goes in single quotes. Without them, SQL thinks cat is a column name." },
+      { q: "How do you get the 3 heaviest pets?",
+        o: ["SELECT name FROM pets LIMIT 3;", "SELECT name, weight FROM pets ORDER BY weight DESC LIMIT 3;", "SELECT name, weight FROM pets ORDER BY weight LIMIT 3;", "SELECT TOP weight FROM pets;"], a: 1,
+        e: "ORDER BY weight DESC puts the largest first, then LIMIT 3 keeps the first three." },
+      { q: "What does SELECT city, COUNT(*) FROM pets GROUP BY city; return?",
+        o: ["Every pet's city", "The total number of pets only", "An error", "One row per city with how many pets live there"], a: 3,
+        e: "GROUP BY splits the rows by city, then COUNT(*) counts each group." },
+      { q: "What does a plain JOIN (INNER JOIN) do?",
+        o: ["Combines rows from two tables where a column matches", "Deletes duplicate rows", "Adds a new column to a table", "Sorts two tables together"], a: 0,
+        e: "A JOIN lines up rows from two tables wherever the ON condition matches, keeping only rows with a match on both sides." }
+    ]
   }
 };

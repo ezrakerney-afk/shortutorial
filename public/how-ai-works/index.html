@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How AI Chatbots Actually Work · Shortutorial</title>
+<meta name="description" content="A plain-English look inside ChatGPT, Claude and Gemini: training, tokens, predicting the next word, temperature, and why chatbots sometimes make things up. Try a toy next-word predictor and a token splitter.">
+<link rel="canonical" href="https://shortutorial.com/how-ai-works/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How AI Chatbots Actually Work · Shortutorial">
+<meta property="og:description" content="A plain-English look inside ChatGPT, Claude and Gemini: training, tokens, predicting the next word, temperature, and why chatbots sometimes make things up. Try a toy next-word predictor and a token splitter.">
+<meta property="og:url" content="https://shortutorial.com/how-ai-works/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+.rc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:560px){.rc-grid{grid-template-columns:1fr 1fr}}
+.rc-grid div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
+.rc-grid small{display:block;font-family:var(--mono);font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.rc-grid b{font-family:var(--display);font-size:1.15rem;color:var(--accent)}
+.try .tk-l input[type=text]{width:100%;box-sizing:border-box}
+.tokens{display:flex;flex-wrap:wrap;gap:4px;font-family:var(--mono);font-size:.95rem;line-height:1.3;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px;min-height:48px}
+.tokens span{white-space:pre;padding:3px 4px;border-radius:5px;background:var(--accent-soft);color:var(--ink);border:1px solid transparent}
+.tokens span:nth-child(3n+2){background:color-mix(in srgb,var(--amber) 22%,var(--surface))}
+.tokens span:nth-child(3n){background:color-mix(in srgb,var(--good) 18%,var(--surface))}
+.tokens span i{font-style:normal;color:var(--muted)}
+.np-text{font-family:var(--display);font-size:1.3rem;font-weight:600;line-height:1.4;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0;overflow-wrap:anywhere}
+.np-text .new{color:var(--accent)}
+.np-text .cur{display:inline-block;width:.5em;height:1.05em;vertical-align:-2px;background:var(--accent);margin-left:3px;animation:blink 1s steps(1) infinite}
+.np-bars{display:flex;flex-direction:column;gap:6px}
+.np-bar{display:grid;grid-template-columns:minmax(64px,90px) 1fr 48px;gap:8px;align-items:center;font-family:var(--mono);font-size:.85rem}
+.np-bar .tr{height:16px;border-radius:99px;background:var(--line);overflow:hidden}
+.np-bar .tr i{display:block;height:100%;background:var(--accent);transition:width .25s}
+.np-bar .pc{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+.np-bar.hit .w{color:var(--accent);font-weight:700}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"How AI Chatbots Actually Work","item":"https://shortutorial.com/how-ai-works/"}]},{"@type":"Article","@id":"https://shortutorial.com/how-ai-works/#article","headline":"How AI Chatbots Actually Work","description":"A plain-English look inside ChatGPT, Claude and Gemini: training, tokens, predicting the next word, temperature, and why chatbots sometimes make things up. Try a toy next-word predictor and a token splitter.","url":"https://shortutorial.com/how-ai-works/","mainEntityOfPage":"https://shortutorial.com/how-ai-works/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Computer help","keywords":"how ai works, chatgpt, large language model, llm, tokens, hallucination, artificial intelligence, machine learning, ai explained, temperature, claude, gemini","timeRequired":"PT12M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the chatbot understand what it says?","acceptedAnswer":{"@type":"Answer","text":"Researchers still debate what “understand” means here. What's clear is that it doesn't experience anything or have beliefs the way people do. It produces text based on patterns it learned. Treat it like a capable tool, not a person or an oracle."}},{"@type":"Question","name":"Does it search the internet every time?","acceptedAnswer":{"@type":"Answer","text":"No. On its own, a model only knows its training data. Many chatbots can also run a web search when needed, and they usually show links when they do. If you see no sources, assume it's answering from memory."}},{"@type":"Question","name":"Is it learning from my chats right now?","acceptedAnswer":{"@type":"Answer","text":"Not in real time. The model doesn't change while you talk to it. But companies may save conversations and use them to train future models, depending on your settings. ChatGPT, Claude and Gemini all have a setting to opt out."}},{"@type":"Question","name":"Why does it say “I can't help with that”?","acceptedAnswer":{"@type":"Answer","text":"During fine-tuning, models are trained to decline some requests, like ones that could cause harm. Sometimes they're overly cautious. Rephrasing with more context about what you're actually trying to do often helps."}},{"@type":"Question","name":"What's the difference between AI, machine learning and an LLM?","acceptedAnswer":{"@type":"Answer","text":"AI is the broad goal of computers doing tasks that seem to need intelligence. Machine learning is one way to get there: learning patterns from data instead of following hand-written rules. An LLM is a kind of machine learning model trained on text, which powers today's chatbots."}},{"@type":"Question","name":"Can AI detectors tell if text was written by AI?","acceptedAnswer":{"@type":"Answer","text":"Not reliably. Detectors can flag human writing as AI and miss AI writing, so their results shouldn't be treated as proof."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="how-ai-works">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+<header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=computer">Computer help</a> / How AI works</div>
+    <span class="eyebrow">Computer help · How things work</span>
+    <h1>How AI Chatbots Actually Work</h1>
+    <p class="lede">ChatGPT, Claude and Gemini can feel like magic, or like a person. They're neither. Learn what's really going on, in plain English, and play with a tiny word predictor that works on the same basic idea.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~12 min read</span><span class="badge">5 lessons</span><span class="badge">Word predictor + token splitter</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#a1">1 · The big idea</a><a href="#a2">2 · Training</a><a href="#a3">3 · Tokens</a><a href="#a4">4 · Next word</a><a href="#a5">5 · Mistakes</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="a1">
+    <div class="lesson-head"><span class="step">01</span><h2>The big idea: a very good guesser</h2></div>
+    <p>An AI chatbot is built on a <b>large language model</b>, or <b>LLM</b>. Strip away the chat window and an LLM does one job: given some text, it guesses <b>what comes next</b>, one small piece at a time.</p>
+    <p>You already know a tiny version of this. Your phone keyboard suggests the next word as you type. An LLM is the same idea scaled up enormously: it has learned from a huge amount of text, so its guesses take in grammar, facts, style, and the whole conversation so far.</p>
+    <div class="example"><div class="ex-h">Example · finishing a sentence</div><ol>
+      <li>“Peanut butter and …” → almost certainly “jelly”</li>
+      <li>“The capital of France is …” → “Paris”</li>
+      <li class="ans">A whole answer is just this step repeated hundreds of times, each new word added to the text before guessing the next.</li>
+    </ol></div>
+    <p class="callout"><span><b>Why it feels smart:</b> to guess the next word well across billions of examples, the model has to pick up patterns about how the world works and how people explain things. That's why it can summarize, translate and reason through problems. But underneath, it's still predicting text, not looking up facts in a database.</span></p>
+  </section>
+
+  <section class="lesson" id="a2">
+    <div class="lesson-head"><span class="step">02</span><h2>How a chatbot is trained</h2></div>
+    <ol class="steps">
+      <li><b>Collect text.</b> Companies gather a massive amount of writing: public web pages, books, articles, code and more.</li>
+      <li><b>Pre-training.</b> The model reads that text and plays “guess the next word” billions of times. Each wrong guess slightly adjusts its inner settings, called <b>parameters</b>. Big models have billions of them. This step takes huge computer clusters, weeks or months, and a lot of electricity.</li>
+      <li><b>Fine-tuning.</b> A raw model just continues text. To turn it into a helpful assistant, it's trained further on example conversations and on feedback from people who rate which answers are better. This is where it learns to follow instructions, be polite, and refuse harmful requests.</li>
+      <li><b>Release.</b> After training, the model is mostly frozen. Using it (“inference”) doesn't teach it new things in real time.</li>
+    </ol>
+    <div class="grid2">
+      <div><span class="tagline">Knowledge cutoff</span><h3>It stops learning at a date</h3><p>The model only knows what was in its training text, up to a cutoff date. Ask about something newer and it may not know, or may guess.</p></div>
+      <div><span class="tagline">Tools</span><h3>Some chatbots can look things up</h3><p>Many apps add tools like web search. Then the chatbot reads current pages and writes an answer from them, often with links you can check.</p></div>
+    </div>
+    <p class="callout"><span><b>Memory is a feature, not the model.</b> Within one chat, the model sees the earlier messages because the app sends the whole conversation each time. Features that “remember” you between chats work by saving notes and adding them to the conversation, not by retraining the model.</span></p>
+  </section>
+
+  <section class="lesson" id="a3">
+    <div class="lesson-head"><span class="step">03</span><h2>Tokens: how AI reads text</h2></div>
+    <p>Models don't read letters or whole words. They split text into <b>tokens</b>: common words, pieces of words, spaces and punctuation. Each token becomes a number the model can do math on.</p>
+    <p>OpenAI's rule of thumb for English: one token is about <b>4 characters</b>, or about <b>¾ of a word</b>. So 100 tokens is roughly 75 words. Other languages can use more tokens for the same idea.</p>
+    <div class="try" id="tk"><span class="try-h">Try it · token splitter</span>
+      <label class="tk-l">Type anything<input type="text" id="tkIn" value="Unbelievably, the chatbot couldn't count the r's in strawberry!" autocomplete="off" spellcheck="false"></label>
+      <div class="tokens" id="tkOut" aria-live="polite"></div>
+      <div class="rc-grid"><div><small>Characters</small><b id="tkC">0</b></div><div><small>Words</small><b id="tkW">0</b></div><div><small>Toy tokens</small><b id="tkT">0</b></div><div><small>Rule of thumb</small><b id="tkR">0</b></div></div>
+      <p class="work">This is a simplified splitter that breaks off common word parts like “un-”, “-ly” and “-ing”. Real tokenizers learn their pieces from data, so their exact splits differ, but the idea is the same.</p>
+    </div>
+    <p class="callout"><span><b>Why chatbots fumble letter-counting:</b> a word like “strawberry” may reach the model as one or two tokens, not ten letters. It never “sees” the individual r's, so questions about spelling, letter counts or rhymes can trip it up.</span></p>
+    <p><b>Context window.</b> A model can only pay attention to a limited number of tokens at once: your messages, its replies and any files you add. In a very long chat, the earliest parts may fall out of view or get less attention. Starting a fresh chat often helps.</p>
+  </section>
+
+  <section class="lesson" id="a4">
+    <div class="lesson-head"><span class="step">04</span><h2>Predicting the next word</h2></div>
+    <p>For every step, the model gives each possible next token a <b>probability</b>. “Peanut butter and” might give “jelly” 85%, “chocolate” 6%, “bananas” 4%, and tiny chances to thousands of others.</p>
+    <p>Then the app <b>picks</b> one. Always taking the top choice makes text dull and repetitive, so chatbots usually add a little randomness. A setting called <b>temperature</b> controls how much:</p>
+    <ul class="points">
+      <li><b>Low temperature</b>: sticks to the most likely words. Predictable, focused, sometimes repetitive.</li>
+      <li><b>High temperature</b>: gives unlikely words a better chance. More surprising and creative, but more likely to go off the rails.</li>
+    </ul>
+    <div class="try" id="np"><span class="try-h">Try it · toy next-word predictor</span>
+      <p class="np-text" id="npText" aria-live="polite"></p>
+      <p class="work" id="npLast" aria-live="polite"></p>
+      <div class="np-bars" id="npBars"></div>
+      <label>Temperature: <b id="npTv">1.0</b><input type="range" id="npTemp" min="0.1" max="2" step="0.1" value="1" aria-describedby="npTd"></label>
+      <p class="work" id="npTd">Drag left for safe, predictable picks. Drag right to give rare words more of a chance.</p>
+      <div class="row"><button class="btn" type="button" id="npPick">Pick next word</button><button class="btn ghost" type="button" id="npTop">Take top word</button><button class="btn ghost" type="button" id="npAuto">Write 8 words</button><button class="btn ghost" type="button" id="npReset">Start over</button></div>
+      <div class="chipset" id="npStart" aria-label="Starting text"><button type="button" data-s="the cat" aria-pressed="true">The cat…</button><button type="button" data-s="i love" aria-pressed="false">I love…</button><button type="button" data-s="the weather" aria-pressed="false">The weather…</button></div>
+      <p class="work">This toy looks only at the last word and knows a small table of word pairs. A real model weighs the whole conversation using billions of parameters, but it still ends with a list of probabilities like these.</p>
+    </div>
+    <p class="callout"><span><b>Same question, different answer?</b> That's the randomness at work. It's great for brainstorming. For facts, if two tries disagree, that's a sign to check a trusted source.</span></p>
+  </section>
+
+  <section class="lesson" id="a5">
+    <div class="lesson-head"><span class="step">05</span><h2>Why chatbots make mistakes</h2></div>
+    <p>A chatbot is trained to produce text that <b>sounds right</b>. Most of the time, sounding right and being right line up. When they don't, you get a confident, fluent, wrong answer. This is called a <b>hallucination</b>.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Mistake</th><th>Why it happens</th><th>What to do</th></tr>
+      <tr><td>Made-up facts, quotes or links</td><td>It predicts what a citation or quote would look like, and may invent one that fits</td><td>Click every link. Search for quotes yourself.</td></tr>
+      <tr><td>Outdated info</td><td>Training stopped at a cutoff date</td><td>Ask it to search the web, or check an official site</td></tr>
+      <tr><td>Math slips</td><td>It predicts digits as text instead of calculating</td><td>Use a calculator, or ask it to use a code or calculator tool if it has one</td></tr>
+      <tr><td>Agrees with you too easily</td><td>Trained to be helpful, it can follow a wrong premise in your question</td><td>Ask neutrally: “Is this true?” not “Why is this true?”</td></tr>
+      <tr><td>Bias or one-sided answers</td><td>It learned from human writing, which has biases</td><td>Ask for other viewpoints and check sources</td></tr>
+    </table></div>
+    <p class="callout warn"><span><b>Don't rely on a chatbot alone</b> for medical, legal, tax or financial decisions. It's useful for understanding a topic and preparing questions, then confirm with a professional or the official source.</span></p>
+    <h3>What it's great at</h3>
+    <ul class="points">
+      <li>Drafting and rewriting: emails, letters, summaries, outlines.</li>
+      <li>Explaining things in simpler words, again and again, without getting tired of you.</li>
+      <li>Brainstorming lists of ideas, names or options.</li>
+      <li>Working with text you give it: summarizing a long document, pulling out key points, translating.</li>
+    </ul>
+    <p>The common thread: tasks where <b>you</b> can easily check the result. Want to get more out of it? Read <a href="../ai-prompting-basics/">How to Write Good AI Prompts</a>.</p>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Does the chatbot understand what it says?</summary><div class="a"><p>Researchers still debate what “understand” means here. What's clear is that it doesn't experience anything or have beliefs the way people do. It produces text based on patterns it learned. Treat it like a capable tool, not a person or an oracle.</p></div></details>
+      <details><summary>Does it search the internet every time?</summary><div class="a"><p>No. On its own, a model only knows its training data. Many chatbots can also run a web search when needed, and they usually show links when they do. If you see no sources, assume it's answering from memory.</p></div></details>
+      <details><summary>Is it learning from my chats right now?</summary><div class="a"><p>Not in real time. The model doesn't change while you talk to it. But companies may save conversations and use them to train future models, depending on your settings. ChatGPT, Claude and Gemini all have a setting to opt out.</p></div></details>
+      <details><summary>Why does it say “I can't help with that”?</summary><div class="a"><p>During fine-tuning, models are trained to decline some requests, like ones that could cause harm. Sometimes they're overly cautious. Rephrasing with more context about what you're actually trying to do often helps.</p></div></details>
+      <details><summary>What's the difference between AI, machine learning and an LLM?</summary><div class="a"><p><b>AI</b> is the broad goal of computers doing tasks that seem to need intelligence. <b>Machine learning</b> is one way to get there: learning patterns from data instead of following hand-written rules. An <b>LLM</b> is a kind of machine learning model trained on text, which powers today's chatbots.</p></div></details>
+      <details><summary>Can AI detectors tell if text was written by AI?</summary><div class="a"><p>Not reliably. Detectors can flag human writing as AI and miss AI writing, so their results shouldn't be treated as proof.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://help.openai.com/en/articles/8313428-does-chatgpt-tell-the-truth" target="_blank" rel="noopener"><span class="src">OpenAI Help</span><b>Does ChatGPT tell the truth?</b></a>
+      <a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them" target="_blank" rel="noopener"><span class="src">OpenAI Help</span><b>Understanding and counting tokens</b></a>
+      <a href="https://help.openai.com/en/articles/7730893-data-controls-faq" target="_blank" rel="noopener"><span class="src">OpenAI Help</span><b>Data controls in ChatGPT</b></a>
+      <a href="https://privacy.claude.com/en/articles/12109829-how-do-i-change-my-model-improvement-privacy-settings" target="_blank" rel="noopener"><span class="src">Anthropic Privacy</span><b>Model improvement privacy settings</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>The demos here are tiny toys. Real models are billions of times bigger, but the idea is the same.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  /* ---- token splitter (toy) ---- */
+  const PRE = ['un','re','dis','pre','over','under','inter'];
+  const SUF = ['ingly','ably','ness','ment','tion','sion','able','ible','ing','ful','less','est','ly','ed','er'];
+  const COMMON = new Set('the a an and or but to of in on at for with is are was were be been it this that you i we they he she my your our not have has had do does did can could would should will just like about what when where who how why there their them then than so if as by from up out all one some more very really good great time people because'.split(' '));
+  function chunk(s){
+    if (s.length <= 7) return [s];
+    const n = Math.ceil(s.length / 5), size = Math.ceil(s.length / n), out = [];
+    for (let i = 0; i < s.length; i += size) out.push(s.slice(i, i + size));
+    return out;
+  }
+  function splitWord(w){
+    const lw = w.toLowerCase();
+    if (w.length <= 5 || COMMON.has(lw)) return [w];
+    let pre = '', suf = '', stem = w;
+    for (const p of PRE) if (lw.startsWith(p) && w.length - p.length >= 4){ pre = w.slice(0, p.length); stem = w.slice(p.length); break; }
+    const ls = stem.toLowerCase();
+    for (const s of SUF) if (ls.endsWith(s) && stem.length - s.length >= 3){ suf = stem.slice(-s.length); stem = stem.slice(0, -s.length); break; }
+    return [pre].concat(chunk(stem), [suf]).filter(Boolean);
+  }
+  function tokenize(text){
+    const parts = text.match(/ ?[A-Za-z]+|'(?:s|t|re|ve|ll|d|m)\b| ?\d{1,3}| ?[^\sA-Za-z\d]|\s+/g) || [];
+    const toks = [];
+    parts.forEach(p => {
+      const m = p.match(/^( ?)([A-Za-z]+)$/);
+      if (m){ const pieces = splitWord(m[2]); pieces[0] = m[1] + pieces[0]; toks.push(...pieces); }
+      else toks.push(p);
+    });
+    return toks;
+  }
+  function tk(){
+    const t = $('#tkIn').value, toks = tokenize(t), out = $('#tkOut');
+    out.innerHTML = '';
+    toks.forEach(x => {
+      const s = document.createElement('span');
+      const lead = x.match(/^\s+/);
+      if (lead){ const i = document.createElement('i'); i.textContent = '·'.repeat(lead[0].length); s.appendChild(i); s.appendChild(document.createTextNode(x.slice(lead[0].length))); }
+      else s.textContent = x;
+      out.appendChild(s);
+    });
+    if (!toks.length) out.textContent = 'Type something above.';
+    $('#tkC').textContent = t.length;
+    $('#tkW').textContent = (t.trim().match(/\S+/g) || []).length;
+    $('#tkT').textContent = toks.length;
+    $('#tkR').textContent = '~' + Math.ceil(t.length / 4);
+  }
+  $('#tkIn').addEventListener('input', tk); tk();
+
+  /* ---- toy next-word predictor ---- */
+  const T = {
+    '.': {the:50, i:30, it:20},
+    the: {cat:30, dog:25, weather:15, sun:10, park:8, best:7, moon:5},
+    a: {nap:25, walk:20, dog:15, sandwich:12, cat:10, song:10, mystery:8},
+    cat: {sat:35, is:25, chased:15, loves:15, sneezed:5, sang:5},
+    dog: {barked:30, is:20, chased:20, loves:20, danced:5},
+    sat: {on:70, quietly:20, down:10},
+    on: {the:75, a:25},
+    is: {happy:30, sleeping:25, very:25, outside:15, purple:5},
+    very: {happy:40, sleepy:30, hungry:25, loud:5},
+    happy: {'.':60, and:30, today:10},
+    sleeping: {'.':50, on:30, quietly:20},
+    quietly: {'.':60, and:40},
+    chased: {the:60, a:40},
+    loves: {the:35, a:25, pizza:20, music:15, rain:5},
+    i: {love:45, think:25, am:20, sang:10},
+    love: {the:35, pizza:25, music:20, you:15, rain:5},
+    pizza: {'.':60, and:30, today:10},
+    music: {'.':55, and:35, today:10},
+    you: {'.':70, and:30},
+    think: {the:50, it:35, a:15},
+    it: {is:60, will:30, sang:10},
+    will: {rain:50, be:40, dance:10},
+    dance: {'.':60, today:25, and:15},
+    rain: {'.':50, today:30, and:20},
+    be: {sunny:55, happy:35, purple:10},
+    sunny: {'.':60, today:30, and:10},
+    today: {'.':85, and:15},
+    weather: {is:55, will:40, sang:5},
+    sun: {is:60, will:30, sang:10},
+    park: {is:40, '.':40, and:20},
+    best: {day:50, dog:30, pizza:20},
+    day: {'.':60, is:25, and:15},
+    and: {the:35, a:25, i:25, it:15},
+    am: {happy:40, hungry:30, very:30},
+    hungry: {'.':50, and:40, today:10},
+    outside: {'.':60, today:25, and:15},
+    walk: {'.':40, on:30, and:30},
+    nap: {'.':50, on:30, today:20},
+    sandwich: {'.':50, and:50},
+    song: {'.':60, and:40},
+    mystery: {'.':100},
+    down: {'.':50, and:50},
+    barked: {'.':50, loudly:30, and:20},
+    loudly: {'.':70, and:30},
+    sneezed: {'.':70, and:30},
+    sang: {'.':50, loudly:30, and:20},
+    danced: {'.':60, and:40},
+    sleepy: {'.':60, and:40},
+    loud: {'.':100},
+    purple: {'.':70, and:30},
+    moon: {is:50, '.':30, sang:20}
+  };
+  let words = [], fresh = 0, start = 'the cat';
+  const temp = $('#npTemp');
+  function probs(){
+    const last = words[words.length - 1] || '.';
+    const row = T[last] || T['.'];
+    const t = parseFloat(temp.value);
+    const ent = Object.entries(row).map(([w, c]) => [w, Math.pow(c, 1 / t)]);
+    const sum = ent.reduce((a, e) => a + e[1], 0);
+    return ent.map(([w, v]) => [w, v / sum]).sort((a, b) => b[1] - a[1]);
+  }
+  function render(hit){
+    const box = $('#npText'); box.innerHTML = '';
+    let cap = true;
+    words.forEach((w, k) => {
+      const s = document.createElement('span');
+      let txt = w === 'i' ? 'I' : (cap ? w[0].toUpperCase() + w.slice(1) : w);
+      if (w === '.') { s.textContent = '.'; cap = true; }
+      else { s.textContent = (k ? ' ' : '') + txt; cap = false; }
+      if (k >= words.length - fresh) s.className = 'new';
+      box.appendChild(s);
+    });
+    const c = document.createElement('span'); c.className = 'cur'; c.setAttribute('aria-hidden', 'true'); box.appendChild(c);
+    const bars = $('#npBars'); bars.innerHTML = '';
+    probs().forEach(([w, p]) => {
+      const d = document.createElement('div'); d.className = 'np-bar' + (w === hit ? ' hit' : '');
+      d.innerHTML = '<span class="w"></span><span class="tr"><i></i></span><span class="pc"></span>';
+      d.querySelector('.w').textContent = w === '.' ? '. (end)' : (w === 'i' ? 'I' : w);
+      d.querySelector('i').style.width = (p * 100).toFixed(1) + '%';
+      d.querySelector('.pc').textContent = (p * 100 < 1 ? '<1' : Math.round(p * 100)) + '%';
+      bars.appendChild(d);
+    });
+    $('#npTv').textContent = parseFloat(temp.value).toFixed(1);
+    const full = words.length >= 60;
+    ['#npPick', '#npTop', '#npAuto'].forEach(id => $(id).disabled = full);
+  }
+  function add(greedy){
+    const p = probs(); let w = p[0][0];
+    if (!greedy){ let r = Math.random(); for (const [x, q] of p){ r -= q; if (r <= 0){ w = x; break; } } }
+    words.push(w); return w;
+  }
+  function reset(){ words = start.split(' '); fresh = 0; render(); $('#npLast').textContent = 'The bars show the odds for the next word after "' + words[words.length-1] + '".'; }
+  $('#npPick').addEventListener('click', () => { fresh = 1; const prev = probs(); const w = add(false); renderHit(w, prev); });
+  $('#npTop').addEventListener('click', () => { fresh = 1; const prev = probs(); const w = add(true); renderHit(w, prev); });
+  $('#npAuto').addEventListener('click', () => { for (let i = 0; i < 8 && words.length < 60; i++) add(false); fresh = 8; render(); $('#npLast').textContent = 'Added up to 8 words, each picked at random using the odds and the temperature.'; });
+  $('#npReset').addEventListener('click', reset);
+  function renderHit(w, prev){
+    render();
+    const q = prev.find(e => e[0] === w), rank = prev.findIndex(e => e[0] === w) + 1;
+    $('#npLast').textContent = 'Picked "' + (w === '.' ? '.' : w) + '", which had a ' + Math.round(q[1] * 100) + '% chance (choice #' + rank + ' of ' + prev.length + '). The bars now show the odds for the next word.';
+  }
+  temp.addEventListener('input', () => render());
+  document.querySelectorAll('#npStart button').forEach(b => b.addEventListener('click', () => {
+    start = b.dataset.s;
+    document.querySelectorAll('#npStart button').forEach(o => o.setAttribute('aria-pressed', o === b));
+    reset();
+  }));
+  reset();
+})();
+</script>
+</body>
+</html>

@@ -1027,5 +1027,29 @@ window.TUTORIALS = [
     category: "Math",
     tags: ["read charts", "graphs", "misleading graphs", "truncated y-axis", "data literacy", "correlation causation", "bar chart", "line chart", "pie chart", "per capita", "percentage points", "statistics"],
     minutes: 14
+  },
+  {
+    slug: "how-ai-works",
+    title: "How AI Chatbots Actually Work",
+    summary: "Training, tokens and next-word prediction: what's really inside ChatGPT and Claude.",
+    category: "Computer help",
+    tags: ["how ai works", "chatgpt", "large language model", "llm", "tokens", "hallucination", "artificial intelligence", "machine learning", "ai explained", "temperature", "claude", "gemini"],
+    minutes: 12
+  },
+  {
+    slug: "javascript-basics",
+    title: "JavaScript Basics: Your First Steps",
+    summary: "Variables, if/else, loops, functions and the DOM, with a live code runner.",
+    category: "Programming",
+    tags: ["javascript", "js", "learn javascript", "coding for beginners", "programming", "variables", "loops", "functions", "dom", "web development", "console.log"],
+    minutes: 20
+  },
+  {
+    slug: "sql-basics",
+    title: "SQL Basics: Ask Questions of Your Data",
+    summary: "SELECT, WHERE, ORDER BY, GROUP BY and JOIN, with a live query playground.",
+    category: "Programming",
+    tags: ["sql", "learn sql", "database", "select", "where", "group by", "join", "queries", "mysql", "postgresql", "sqlite", "data analysis"],
+    minutes: 20
   }
 ];

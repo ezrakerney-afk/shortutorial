@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JavaScript Basics: Your First Steps · Shortutorial</title>
+<meta name="description" content="Learn JavaScript from zero: console.log, variables, types, if/else, loops, arrays, functions and changing a web page with the DOM. Run real code in the browser with built-in exercises.">
+<link rel="canonical" href="https://shortutorial.com/javascript-basics/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="JavaScript Basics: Your First Steps · Shortutorial">
+<meta property="og:description" content="Learn JavaScript from zero: console.log, variables, types, if/else, loops, arrays, functions and changing a web page with the DOM. Run real code in the browser with built-in exercises.">
+<meta property="og:url" content="https://shortutorial.com/javascript-basics/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+/* code runner */
+.task{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:.97rem}
+.task b{font-family:var(--display)}
+.cr-l{font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.editor{width:100%;box-sizing:border-box;font-family:var(--mono);font-size:.88rem;line-height:1.55;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;resize:vertical;min-height:180px;tab-size:2;white-space:pre;overflow-x:auto;outline:none}
+.editor:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.cr-out{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.cr-h{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:6px 12px;border-bottom:1px solid var(--line);background:var(--bg)}
+#crOut{border:0;border-radius:0;background:var(--term-bg);color:var(--term-fg);min-height:70px;max-height:260px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere}
+#crOut .e{color:var(--term-red)} #crOut .w{color:#e6c07b} #crOut .d{color:var(--term-dim)}
+.cr-frame iframe{display:block;width:100%;height:150px;border:0;background:#fff}
+.cr-res{font-family:var(--display);font-weight:600;font-size:1.05rem;min-height:1.4em}
+.cr-res.ok{color:var(--good)} .cr-res.no{color:var(--bad)}
+.cr-res small{display:block;font-family:var(--mono);font-weight:400;font-size:.8rem;color:var(--muted);white-space:pre-wrap;margin-top:4px}
+.chipset button.done::after{content:" ✓";color:var(--good)}
+.chipset button[aria-pressed=true].done::after{color:inherit}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"JavaScript Basics: Your First Steps","item":"https://shortutorial.com/javascript-basics/"}]},{"@type":"Article","@id":"https://shortutorial.com/javascript-basics/#article","headline":"JavaScript Basics: Your First Steps","description":"Learn JavaScript from zero: console.log, variables, types, if/else, loops, arrays, functions and changing a web page with the DOM. Run real code in the browser with built-in exercises.","url":"https://shortutorial.com/javascript-basics/","mainEntityOfPage":"https://shortutorial.com/javascript-basics/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Programming","keywords":"javascript, js, learn javascript, coding for beginners, programming, variables, loops, functions, dom, web development, console.log","timeRequired":"PT20M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is JavaScript the same as Java?","acceptedAnswer":{"@type":"Answer","text":"No. They're different languages with a confusingly similar name. JavaScript runs in web browsers (and on servers with tools like Node.js). Java is mostly used for apps, Android and big business systems."}},{"@type":"Question","name":"Should I use let, const or var?","acceptedAnswer":{"@type":"Answer","text":"Use const by default and let when you need to change the value. var is the older way. It still works, but it has quirks, so most modern code avoids it."}},{"@type":"Question","name":"What do I need to start writing JavaScript?","acceptedAnswer":{"@type":"Answer","text":"Just a web browser and a text editor. A free code editor like Visual Studio Code makes it easier with colors and auto-complete. Save an HTML file with a \u003cscript> tag, open it in your browser, and check the console for output and errors."}},{"@type":"Question","name":"My code doesn't work. How do I find the problem?","acceptedAnswer":{"@type":"Answer","text":"Read the error message: it usually names the problem and the line. Common causes are a typo in a name (JavaScript is case-sensitive, so Name and name are different), a missing bracket or quote, or using a variable before creating it. Add console.log() lines to see what your values really are."}},{"@type":"Question","name":"What should I learn after the basics?","acceptedAnswer":{"@type":"Answer","text":"Objects, more array methods ( map , filter , find ), handling form input and events, then fetching data from the web with fetch() . Building small projects, like a tip calculator or a to-do list, is the fastest way to learn."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="javascript-basics">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+<header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=programming">Programming</a> / JavaScript basics</div>
+    <span class="eyebrow">Programming · JavaScript</span>
+    <h1>JavaScript Basics: Your First Steps</h1>
+    <p class="lede">JavaScript is the language of the web. It runs in every browser, so you can start right now with nothing to install. Learn the core ideas and run real code in the editor on this page, with exercises that check your answer.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~20 min</span><span class="badge">6 lessons</span><span class="badge">Live code runner + exercises</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#j1">1 · Hello</a><a href="#j2">2 · Variables</a><a href="#j3">3 · If/else</a><a href="#j4">4 · Loops & arrays</a><a href="#j5">5 · Functions</a><a href="#j6">6 · The page</a><a href="#run">Code runner</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="j1">
+    <div class="lesson-head"><span class="step">01</span><h2>Hello, console</h2></div>
+    <p>A program is a list of instructions the computer runs from top to bottom. The first instruction most people learn is <code>console.log()</code>. It prints whatever you put inside the parentheses to the <b>console</b>, a text area for messages from your code.</p>
+    <div class="code"><pre><code>console.log(<span class="s">"Hello, world!"</span>);
+console.log(<span class="s">"I am learning JavaScript"</span>);
+console.log(2 + 3);   <span class="c">// prints 5</span></code></pre></div>
+    <ul class="points">
+      <li>Text goes in quotes: <code>"like this"</code> or <code>'like this'</code>. Numbers don't.</li>
+      <li>Lines usually end with a semicolon <code>;</code>. JavaScript often works without them, but using them is a good habit.</li>
+      <li>Anything after <code>//</code> is a <b>comment</b>: a note for humans that the computer ignores.</li>
+    </ul>
+    <p class="callout"><span><b>Where else can I run JavaScript?</b> In Chrome, Edge or Firefox on a computer, press <kbd>F12</kbd> (or <kbd>Cmd</kbd>+<kbd>Option</kbd>+<kbd>J</kbd> in Chrome on a Mac) and click the <b>Console</b> tab. Type code and press <kbd>Enter</kbd>. Or just use the <a href="#run">code runner</a> on this page.</span></p>
+  </section>
+
+  <section class="lesson" id="j2">
+    <div class="lesson-head"><span class="step">02</span><h2>Variables and types</h2></div>
+    <p>A <b>variable</b> is a named box that holds a value. Create one with <code>let</code> if the value will change, or <code>const</code> if it won't.</p>
+    <div class="code"><pre><code><span class="k">const</span> name = <span class="s">"Sam"</span>;      <span class="c">// text (a string)</span>
+<span class="k">let</span> age = 30;            <span class="c">// a number</span>
+<span class="k">let</span> isMember = true;     <span class="c">// a boolean: true or false</span>
+
+age = age + 1;           <span class="c">// let can change</span>
+console.log(name, age);  <span class="c">// Sam 31</span>
+console.log(`Hi ${name}, next year you'll be ${age + 1}`);</code></pre></div>
+    <div class="tw"><table class="t">
+      <tr><th>Type</th><th>Example</th><th>Use it for</th></tr>
+      <tr><td>String</td><td><code>"hello"</code></td><td>Text</td></tr>
+      <tr><td>Number</td><td><code>42</code>, <code>3.5</code></td><td>Math, counts, prices</td></tr>
+      <tr><td>Boolean</td><td><code>true</code>, <code>false</code></td><td>Yes or no answers</td></tr>
+      <tr><td>Array</td><td><code>[1, 2, 3]</code></td><td>A list of values (lesson 4)</td></tr>
+      <tr><td>Object</td><td><code>{ name: "Sam" }</code></td><td>Labeled values that belong together</td></tr>
+      <tr><td>undefined / null</td><td><code>undefined</code></td><td>“No value yet” / “empty on purpose”</td></tr>
+    </table></div>
+    <p>The backtick string <code>`Hi ${name}`</code> is a <b>template literal</b>. Anything inside <code>${ }</code> gets filled in. You can check a value's type with <code>typeof</code>: <code>typeof 42</code> gives <code>"number"</code>.</p>
+    <p class="callout warn"><span><b>Watch out:</b> <code>"5" + 3</code> gives <code>"53"</code>, not 8. When you add text and a number, JavaScript glues them together as text. Turn text into a number first with <code>Number("5")</code>.</span></p>
+  </section>
+
+  <section class="lesson" id="j3">
+    <div class="lesson-head"><span class="step">03</span><h2>Making decisions with if/else</h2></div>
+    <p>An <code>if</code> statement runs code only when a condition is true. Add <code>else if</code> and <code>else</code> for other cases.</p>
+    <div class="code"><pre><code><span class="k">const</span> temp = 72;
+
+<span class="k">if</span> (temp &gt; 85) {
+  console.log(<span class="s">"Hot! Drink water."</span>);
+} <span class="k">else if</span> (temp &gt;= 60) {
+  console.log(<span class="s">"Nice day."</span>);
+} <span class="k">else</span> {
+  console.log(<span class="s">"Bring a jacket."</span>);
+}</code></pre></div>
+    <div class="tw"><table class="t">
+      <tr><th>Operator</th><th>Means</th><th>Example (true)</th></tr>
+      <tr><td><code>===</code></td><td>is equal to</td><td><code>5 === 5</code></td></tr>
+      <tr><td><code>!==</code></td><td>is not equal to</td><td><code>5 !== 4</code></td></tr>
+      <tr><td><code>&gt;</code> <code>&lt;</code></td><td>greater / less than</td><td><code>9 &gt; 2</code></td></tr>
+      <tr><td><code>&gt;=</code> <code>&lt;=</code></td><td>or equal</td><td><code>5 &gt;= 5</code></td></tr>
+      <tr><td><code>&amp;&amp;</code></td><td>and (both true)</td><td><code>age &gt; 12 &amp;&amp; age &lt; 20</code></td></tr>
+      <tr><td><code>||</code></td><td>or (either true)</td><td><code>day === "Sat" || day === "Sun"</code></td></tr>
+      <tr><td><code>!</code></td><td>not</td><td><code>!false</code></td></tr>
+    </table></div>
+    <p class="callout"><span><b>Use three equals signs.</b> <code>=</code> puts a value in a variable. <code>===</code> compares two values. There's also <code>==</code>, which converts types first (so <code>"5" == 5</code> is true). Most style guides recommend <code>===</code> to avoid surprises.</span></p>
+  </section>
+
+  <section class="lesson" id="j4">
+    <div class="lesson-head"><span class="step">04</span><h2>Arrays and loops</h2></div>
+    <p>An <b>array</b> is a list in square brackets. Each item has a position number called an <b>index</b>, and counting starts at <b>0</b>.</p>
+    <div class="code"><pre><code><span class="k">const</span> fruits = [<span class="s">"apple"</span>, <span class="s">"banana"</span>, <span class="s">"cherry"</span>];
+console.log(fruits[0]);      <span class="c">// apple</span>
+console.log(fruits.length);  <span class="c">// 3</span>
+fruits.push(<span class="s">"date"</span>);          <span class="c">// add to the end</span></code></pre></div>
+    <p>A <b>loop</b> repeats code. The classic <code>for</code> loop counts; <code>for...of</code> walks through every item in an array.</p>
+    <div class="code"><pre><code><span class="c">// count from 1 to 5</span>
+<span class="k">for</span> (<span class="k">let</span> i = 1; i &lt;= 5; i++) {
+  console.log(i);
+}
+
+<span class="c">// every item in a list</span>
+<span class="k">for</span> (<span class="k">const</span> fruit <span class="k">of</span> fruits) {
+  console.log(<span class="s">"I like "</span> + fruit);
+}</code></pre></div>
+    <p>The <code>for</code> loop has three parts: <b>start</b> (<code>let i = 1</code>), <b>keep going while</b> (<code>i &lt;= 5</code>), and <b>after each round</b> (<code>i++</code>, which adds 1). There's also <code>while (condition) { … }</code>, which repeats as long as the condition stays true.</p>
+    <p class="callout warn"><span><b>Infinite loops:</b> if the condition never becomes false, the loop never stops and the page freezes. Make sure something inside the loop moves it toward the end.</span></p>
+  </section>
+
+  <section class="lesson" id="j5">
+    <div class="lesson-head"><span class="step">05</span><h2>Functions</h2></div>
+    <p>A <b>function</b> is a reusable recipe. You give it inputs (called <b>parameters</b>), it does some work, and it can hand back a result with <code>return</code>.</p>
+    <div class="code"><pre><code><span class="k">function</span> addTax(price, rate) {
+  <span class="k">return</span> price * (1 + rate);
+}
+
+console.log(addTax(20, 0.08));   <span class="c">// 21.6</span>
+console.log(addTax(100, 0.05));  <span class="c">// 105</span>
+
+<span class="c">// the same thing as an "arrow function"</span>
+<span class="k">const</span> double = (n) =&gt; n * 2;
+console.log(double(7));          <span class="c">// 14</span></code></pre></div>
+    <ul class="points">
+      <li>Defining a function doesn't run it. You <b>call</b> it with its name and parentheses: <code>addTax(20, 0.08)</code>.</li>
+      <li><code>return</code> sends a value back and ends the function. Without it, the function returns <code>undefined</code>.</li>
+      <li>Arrays have handy built-in functions: <code>[1,2,3].map(n =&gt; n * 2)</code> gives <code>[2,4,6]</code>, and <code>[5,12,8].filter(n =&gt; n &gt; 6)</code> gives <code>[12,8]</code>.</li>
+    </ul>
+  </section>
+
+  <section class="lesson" id="j6">
+    <div class="lesson-head"><span class="step">06</span><h2>Changing the web page (the DOM)</h2></div>
+    <p>In a browser, JavaScript can read and change the page. The browser turns your HTML into a tree of objects called the <b>DOM</b> (Document Object Model), and <code>document</code> is your way in.</p>
+    <div class="code"><pre><code><span class="c">&lt;!-- HTML --&gt;</span>
+&lt;h1 id="title"&gt;Hello&lt;/h1&gt;
+&lt;button id="btn"&gt;Click me&lt;/button&gt;
+
+<span class="c">// JavaScript</span>
+<span class="k">const</span> title = document.querySelector(<span class="s">"#title"</span>);
+<span class="k">const</span> btn = document.querySelector(<span class="s">"#btn"</span>);
+
+btn.addEventListener(<span class="s">"click"</span>, () =&gt; {
+  title.textContent = <span class="s">"You clicked!"</span>;
+  title.style.color = <span class="s">"tomato"</span>;
+});</code></pre></div>
+    <ul class="points">
+      <li><code>document.querySelector("#id")</code> finds an element using a CSS selector: <code>#</code> for an id, <code>.</code> for a class.</li>
+      <li><code>.textContent</code> reads or changes the text inside it. <code>.style</code> changes its CSS.</li>
+      <li><code>addEventListener("click", function)</code> runs your function each time something happens, like a click or a key press.</li>
+    </ul>
+    <p>To use JavaScript in your own page, put it in a file like <code>script.js</code> and add <code>&lt;script src="script.js"&gt;&lt;/script&gt;</code> just before <code>&lt;/body&gt;</code>. New to HTML? Start with <a href="../html-basics/">HTML basics</a>.</p>
+  </section>
+
+  <section class="lesson" id="run">
+    <div class="lesson-head"><span class="step">▶</span><h2>Code runner and exercises</h2></div>
+    <p>Pick an exercise, write your code, and press <b>Run</b> (or <kbd>Ctrl</kbd>+<kbd>Enter</kbd>). Your <code>console.log</code> output appears below and is checked automatically. The <b>mini page</b> has an <code>#title</code>, a <code>#btn</code> button and an empty <code>#out</code> paragraph you can change with DOM code.</p>
+    <div class="try" id="cr"><span class="try-h">Try it · JavaScript code runner</span>
+      <div class="chipset" id="crEx" aria-label="Exercises"></div>
+      <div class="task" id="crTask" aria-live="polite"></div>
+      <label class="cr-l" for="crCode">Your code</label>
+      <textarea id="crCode" class="editor" rows="10" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="crTask"></textarea>
+      <div class="row"><button class="btn" type="button" id="crRun">Run ▶</button><button class="btn ghost" type="button" id="crReset">Reset code</button><button class="btn ghost" type="button" id="crHint">Show a solution</button></div>
+      <div class="cr-out"><div class="cr-h">Console</div><pre id="crOut" aria-live="polite"></pre></div>
+      <div class="cr-res" id="crRes" aria-live="polite"></div>
+      <div class="cr-out"><div class="cr-h">Mini page</div><div id="crFrame" class="cr-frame"></div></div>
+      <p class="work">Your code runs in a locked-down sandbox frame, so it can't touch the rest of this site. If it runs longer than 3 seconds, it's stopped.</p>
+    </div>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Is JavaScript the same as Java?</summary><div class="a"><p>No. They're different languages with a confusingly similar name. JavaScript runs in web browsers (and on servers with tools like Node.js). Java is mostly used for apps, Android and big business systems.</p></div></details>
+      <details><summary>Should I use let, const or var?</summary><div class="a"><p>Use <code>const</code> by default and <code>let</code> when you need to change the value. <code>var</code> is the older way. It still works, but it has quirks, so most modern code avoids it.</p></div></details>
+      <details><summary>What do I need to start writing JavaScript?</summary><div class="a"><p>Just a web browser and a text editor. A free code editor like Visual Studio Code makes it easier with colors and auto-complete. Save an HTML file with a <code>&lt;script&gt;</code> tag, open it in your browser, and check the console for output and errors.</p></div></details>
+      <details><summary>My code doesn't work. How do I find the problem?</summary><div class="a"><p>Read the error message: it usually names the problem and the line. Common causes are a typo in a name (JavaScript is case-sensitive, so <code>Name</code> and <code>name</code> are different), a missing bracket or quote, or using a variable before creating it. Add <code>console.log()</code> lines to see what your values really are.</p></div></details>
+      <details><summary>What should I learn after the basics?</summary><div class="a"><p>Objects, more array methods (<code>map</code>, <code>filter</code>, <code>find</code>), handling form input and events, then fetching data from the web with <code>fetch()</code>. Building small projects, like a tip calculator or a to-do list, is the fastest way to learn.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting" target="_blank" rel="noopener"><span class="src">MDN Web Docs</span><b>Dynamic scripting with JavaScript</b></a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank" rel="noopener"><span class="src">MDN Web Docs</span><b>JavaScript Guide</b></a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction" target="_blank" rel="noopener"><span class="src">MDN Web Docs</span><b>Introduction to the DOM</b></a>
+      <a href="https://javascript.info/" target="_blank" rel="noopener"><span class="src">javascript.info</span><b>The Modern JavaScript Tutorial</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>Code you run here stays in your browser. Nothing is sent anywhere.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  const EX = [
+    {id:'hello', n:'1 · Hello', task:'Print <b>Hello, world!</b> to the console.',
+      code:'// Print Hello, world! using console.log\n', sol:'console.log("Hello, world!");', want:['Hello, world!']},
+    {id:'vars', n:'2 · Variables', task:'Print <b>Ana is 29</b>, then add 1 to <code>age</code> and print <b>Ana is 30</b>. Use the variables, not typed numbers.',
+      code:'const name = "Ana";\nlet age = 29;\n\n// print the first line here\n\n// add 1 to age, then print again\n', sol:'const name = "Ana";\nlet age = 29;\nconsole.log(`${name} is ${age}`);\nage = age + 1;\nconsole.log(`${name} is ${age}`);', want:['Ana is 29','Ana is 30']},
+    {id:'if', n:'3 · If/else', task:'If <code>score</code> is 70 or more, print <b>Pass</b>. Otherwise print <b>Try again</b>.',
+      code:'const score = 82;\n\n// write your if/else here\n', sol:'const score = 82;\nif (score >= 70) {\n  console.log("Pass");\n} else {\n  console.log("Try again");\n}', want:['Pass']},
+    {id:'loop', n:'4 · Loop', task:'Use a <code>for</code> loop to print the numbers <b>1 to 5</b>, one per line.',
+      code:'// for (let i = ...; i <= ...; i++) { ... }\n', sol:'for (let i = 1; i <= 5; i++) {\n  console.log(i);\n}', want:['1','2','3','4','5']},
+    {id:'sum', n:'5 · Array total', task:'Add up every price in the array with a loop and print the total (<b>20</b>).',
+      code:'const prices = [4, 10, 6];\nlet total = 0;\n\n// loop over prices and add each one to total\n\nconsole.log(total);\n', sol:'const prices = [4, 10, 6];\nlet total = 0;\nfor (const p of prices) {\n  total = total + p;\n}\nconsole.log(total);', want:['20']},
+    {id:'fn', n:'6 · Function', task:'Write a function <code>double(n)</code> that <b>returns</b> n times 2. The last line prints <b>42</b>.',
+      code:'function double(n) {\n  // return something here\n}\n\nconsole.log(double(21));\n', sol:'function double(n) {\n  return n * 2;\n}\n\nconsole.log(double(21));', want:['42']},
+    {id:'fizz', n:'7 · FizzBuzz', task:'Print 1 to 15, but print <b>Fizz</b> for multiples of 3, <b>Buzz</b> for multiples of 5, and <b>FizzBuzz</b> for both. Hint: <code>i % 3 === 0</code> means “divides evenly by 3.”',
+      code:'for (let i = 1; i <= 15; i++) {\n  // check 15 first, then 3, then 5\n  console.log(i);\n}\n', sol:'for (let i = 1; i <= 15; i++) {\n  if (i % 15 === 0) console.log("FizzBuzz");\n  else if (i % 3 === 0) console.log("Fizz");\n  else if (i % 5 === 0) console.log("Buzz");\n  else console.log(i);\n}',
+      want:['1','2','Fizz','4','Buzz','Fizz','7','8','Fizz','Buzz','11','Fizz','13','14','FizzBuzz']},
+    {id:'dom', n:'8 · The page', task:'Change the mini page title to <b>JavaScript rocks</b>. Bonus: make the button put <b>Clicked!</b> in <code>#out</code>, then click it.',
+      code:'const title = document.querySelector("#title");\nconst btn = document.querySelector("#btn");\nconst out = document.querySelector("#out");\n\n// change title.textContent here\n\n// btn.addEventListener("click", () => { ... });\n',
+      sol:'const title = document.querySelector("#title");\nconst btn = document.querySelector("#btn");\nconst out = document.querySelector("#out");\n\ntitle.textContent = "JavaScript rocks";\n\nbtn.addEventListener("click", () => {\n  out.textContent = "Clicked!";\n});', dom:'JavaScript rocks'},
+    {id:'free', n:'Free play', task:'Anything goes. Try the examples from the lessons above.',
+      code:'// Write any JavaScript you like\nconst fruits = ["apple", "banana", "cherry"];\nfor (const f of fruits) {\n  console.log(`I like ${f}`);\n}\nconsole.log(fruits.map(f => f.toUpperCase()));\n', sol:null}
+  ];
+  const FRAME = '<!doctype html><html><head><meta charset="utf-8"><style>body{font-family:system-ui,-apple-system,sans-serif;margin:12px;color:#1c1c1c;background:#fff}h1{font-size:1.35rem;margin:0 0 8px}button{font:inherit;padding:6px 14px;cursor:pointer}p{margin:8px 0 0}</style></head><body><h1 id="title">Hello</h1><button id="btn">Click me</button><p id="out"></p><script>(function(){'
+    + 'var send=function(t,d){parent.postMessage({__jsr:1,type:t,data:d},"*")};'
+    + 'var fmt=function(v){if(typeof v==="string")return v;if(v===null||typeof v!=="object"&&typeof v!=="function")return String(v);if(typeof v==="function")return "[Function "+(v.name||"anonymous")+"]";try{return JSON.stringify(v)}catch(e){return String(v)}};'
+    + '["log","info","warn","error"].forEach(function(k){console[k]=function(){send(k==="info"?"log":k,Array.prototype.map.call(arguments,fmt).join(" "))}});'
+    + 'window.alert=function(m){send("log","[alert] "+fmt(m))};'
+    + 'window.onerror=function(m,s,l,c,e){send("error",e&&e.name?e.name+": "+e.message:String(m));return true};'
+    + 'var snap=function(){return {title:document.getElementById("title")?document.getElementById("title").textContent:"",out:document.getElementById("out")?document.getElementById("out").textContent:""}};'
+    + 'window.addEventListener("message",function(ev){if(ev.source!==parent||!ev.data||ev.data.__jsr!==1)return;try{(0,eval)(ev.data.code)}catch(e){send("error",(e&&e.name?e.name+": "+e.message:String(e)))}send("done",snap())});'
+    + 'document.addEventListener("click",function(){setTimeout(function(){send("snap",snap())},0)});'
+    + 'send("ready")})();<\/script></body></html>';
+
+  /* Add a guard to every loop so a never-ending loop throws an error instead of freezing the page. */
+  const GUARD = 'var __s=0,__n=0;function __lg(){if(!__s){__s=Date.now();setTimeout(function(){__s=0},0)}if(++__n%500===0&&Date.now()-__s>2000)throw new Error("Stopped a loop that ran for more than 2 seconds. Does its condition ever become false?");return false}\n';
+  function instrument(src){
+    let o = '', i = 0; const n = src.length, idc = /[A-Za-z0-9_$]/;
+    while (i < n){
+      const c = src[i];
+      if (c === '/' && src[i+1] === '/'){ const j = src.indexOf('\n', i); const e = j < 0 ? n : j; o += src.slice(i, e); i = e; continue; }
+      if (c === '/' && src[i+1] === '*'){ const j = src.indexOf('*/', i + 2); const e = j < 0 ? n : j + 2; o += src.slice(i, e); i = e; continue; }
+      if (c === '"' || c === "'" || c === '`'){
+        let j = i + 1; while (j < n && src[j] !== c){ if (src[j] === '\\') j++; j++; }
+        o += src.slice(i, j + 1); i = j + 1; continue;
+      }
+      const m = /^(for|while|do)\b/.exec(src.slice(i, i + 6));
+      if (m && (i === 0 || !idc.test(src[i-1]))){
+        const kw = m[1]; o += kw; i += kw.length;
+        if (kw === 'do'){ o += ' if(__lg())break;else '; continue; }
+        let k = i; while (k < n && /\s/.test(src[k])) k++;
+        if (src[k] !== '('){ continue; }
+        let depth = 0, j = k;
+        for (; j < n; j++){ const ch = src[j]; if (ch === '(') depth++; else if (ch === ')'){ depth--; if (!depth) break; } else if (ch === '"' || ch === "'" || ch === '`'){ j++; while (j < n && src[j] !== ch){ if (src[j] === '\\') j++; j++; } } }
+        o += src.slice(i, j + 1); i = j + 1;
+        let t = i; while (t < n && /\s/.test(src[t])) t++;
+        if (t < n && src[t] !== ';') o += ' if(__lg())break;else ';
+        continue;
+      }
+      o += c; i++;
+    }
+    return GUARD + o;
+  }
+
+  const codeEl = $('#crCode'), out = $('#crOut'), res = $('#crRes');
+  const saved = {}, solved = {};
+  let cur = EX[0], frame = null, logs = [], timer = null, finished = false;
+
+  const chips = $('#crEx');
+  EX.forEach(x => {
+    const b = document.createElement('button'); b.type = 'button'; b.textContent = x.n; b.dataset.id = x.id;
+    b.setAttribute('aria-pressed', x === cur);
+    b.addEventListener('click', () => choose(x));
+    chips.appendChild(b);
+  });
+  function choose(x){
+    saved[cur.id] = codeEl.value;
+    cur = x;
+    chips.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.id === x.id));
+    $('#crTask').innerHTML = x.task;
+    codeEl.value = saved[x.id] != null ? saved[x.id] : x.code;
+    $('#crHint').style.display = (!x.sol) ? 'none' : '';
+    out.textContent = ''; res.textContent = ''; res.className = 'cr-res';
+    makeFrame(false);
+  }
+  function line(text, cls){
+    const s = document.createElement('span'); if (cls) s.className = cls;
+    s.textContent = text + '\n'; out.appendChild(s); out.scrollTop = out.scrollHeight;
+  }
+  function makeFrame(run){
+    if (frame) frame.remove();
+    clearTimeout(timer);
+    frame = document.createElement('iframe');
+    frame.setAttribute('sandbox', 'allow-scripts');
+    frame.setAttribute('title', 'Mini page where your code runs');
+    frame.srcdoc = FRAME;
+    frame.dataset.run = run ? '1' : '';
+    $('#crFrame').appendChild(frame);
+  }
+  function run(){
+    out.textContent = ''; res.textContent = ''; res.className = 'cr-res';
+    logs = []; finished = false;
+    makeFrame(true);
+    timer = setTimeout(() => {
+      if (finished) return;
+      frame.remove(); frame = null;
+      line('Stopped: your code ran longer than 3 seconds. Is there a loop that never ends?', 'e');
+      verdict(false, 'Stopped before it finished.');
+    }, 3000);
+  }
+  window.addEventListener('message', ev => {
+    if (!frame || ev.source !== frame.contentWindow || !ev.data || ev.data.__jsr !== 1) return;
+    const {type, data} = ev.data;
+    if (type === 'ready'){ if (frame.dataset.run) frame.contentWindow.postMessage({__jsr:1, code: instrument(codeEl.value)}, '*'); return; }
+    if (type === 'log'){ logs.push(String(data)); line(String(data)); return; }
+    if (type === 'warn'){ line(String(data), 'w'); return; }
+    if (type === 'error'){ logs.push('\u0000err'); line(String(data), 'e'); if (finished) return; return; }
+    if (type === 'done'){ finished = true; clearTimeout(timer); if (!out.textContent) line('(no output)', 'd'); grade(data); return; }
+    if (type === 'snap' && cur.dom && data && data.out === 'Clicked!' && data.title === cur.dom){ verdict(true, 'Title changed and the button works. Nice!'); }
+  });
+  function verdict(ok, msg){
+    res.className = 'cr-res ' + (ok ? 'ok' : 'no');
+    res.textContent = (ok ? '✓ ' : '✗ ') + msg.split('\n')[0];
+    const rest = msg.split('\n').slice(1).join('\n');
+    if (rest){ const sm = document.createElement('small'); sm.textContent = rest; res.appendChild(sm); }
+    if (ok){ solved[cur.id] = true; const b = chips.querySelector(`[data-id="${cur.id}"]`); if (b) b.classList.add('done'); }
+  }
+  function grade(snap){
+    if (logs.includes('\u0000err')){ verdict(false, 'There was an error. Read the red message above: it names the problem.'); return; }
+    if (cur.dom){
+      if (snap && snap.title === cur.dom) verdict(true, 'Title changed!' + (snap.out === 'Clicked!' ? ' And the button works.' : '\nBonus: make the button work, then click it in the mini page.'));
+      else verdict(false, 'The title says "' + (snap ? snap.title : '') + '". Set title.textContent to "JavaScript rocks".');
+      return;
+    }
+    if (!cur.want){ res.className = 'cr-res'; res.textContent = 'Ran without errors.'; return; }
+    const got = logs.map(s => s.trim());
+    const ok = got.length === cur.want.length && got.every((g, i) => g === cur.want[i]);
+    if (ok) verdict(true, 'Correct! Output matches exactly.');
+    else {
+      let i = 0; while (i < cur.want.length && got[i] === cur.want[i]) i++;
+      const exp = cur.want[i] === undefined ? '(nothing more)' : cur.want[i];
+      const g = got[i] === undefined ? '(nothing)' : got[i];
+      verdict(false, 'Not quite yet.\nLine ' + (i + 1) + ': expected "' + exp + '" but got "' + g + '". Check spelling, spaces and capitals.');
+    }
+  }
+  $('#crRun').addEventListener('click', run);
+  $('#crReset').addEventListener('click', () => { codeEl.value = cur.code; saved[cur.id] = cur.code; res.textContent = ''; out.textContent = ''; });
+  $('#crHint').addEventListener('click', () => { if (cur.sol){ codeEl.value = cur.sol; codeEl.focus(); } });
+  codeEl.addEventListener('keydown', e => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter'){ e.preventDefault(); run(); }
+  });
+  choose(EX[0]);
+})();
+</script>
+</body>
+</html>
