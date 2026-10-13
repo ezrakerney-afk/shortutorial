@@ -53,6 +53,7 @@ main{background:radial-gradient(ellipse 70% 420px at 50% 0,color-mix(in srgb,var
 .list-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--line)}
 .list-head h2{font-size:1.25rem}
 .count{font-family:var(--mono);font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.count a{color:var(--accent);text-decoration:none}
 .count.thinking::after{content:" · searching by meaning…";opacity:.8}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
 .card{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:10px;padding:20px 20px 18px;background:var(--surface);border:1px solid var(--line);border-radius:14px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s,box-shadow .15s}
@@ -86,7 +87,7 @@ mark{background:var(--accent-soft);color:inherit;border-radius:3px;padding:0 2px
 .empty{text-align:center;padding:48px 16px;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:14px;background:var(--surface);border:1px dashed var(--line);border-radius:14px}
 .empty b{color:var(--ink);font-family:var(--display);font-size:1.2rem}
 </style>
-<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://shortutorial.com/#site","name":"Shortutorial","url":"https://shortutorial.com/","publisher":{"@id":"https://shortutorial.com/#org"},"potentialAction":{"@type":"SearchAction","target":"https://shortutorial.com/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"}]}</script><!-- /ld -->
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://shortutorial.com/#site","name":"Shortutorial","url":"https://shortutorial.com/","publisher":{"@id":"https://shortutorial.com/#org"},"potentialAction":{"@type":"SearchAction","target":"https://shortutorial.com/search/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"}]}</script><!-- /ld -->
 </head>
 <body>
 
@@ -101,11 +102,11 @@ mark{background:var(--accent-soft);color:inherit;border-radius:3px;padding:0 2px
   <section class="hero">
     <h1>A tutorial for <em>almost anything</em>.</h1>
     <p class="lede">Short, step-by-step tutorials that fix everyday problems and teach new skills in minutes. Finish one, pass the quiz, and earn a certification for the leaderboard.</p>
-    <form class="search" role="search" onsubmit="event.preventDefault();openFirst()">
+    <form class="search" role="search" action="search/" method="get">
       <label class="field">
         <span class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search tutorials</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        <input id="q" type="search" placeholder="Describe a problem or a topic…" autocomplete="off" spellcheck="false">
+        <input id="q" name="q" type="search" enterkeyhint="search" placeholder="Describe a problem or a topic…" autocomplete="off" spellcheck="false">
         <kbd>/</kbd>
       </label>
       <button type="button" class="btn" data-random>
@@ -134,6 +135,7 @@ mark{background:var(--accent-soft);color:inherit;border-radius:3px;padding:0 2px
 
 <script src="tutorials.js"></script>
 <script src="paths.js"></script>
+<script src="search-engine.js"></script>
 <script src="auth.js"></script>
 <script>
 const ALL = window.TUTORIALS || [];
@@ -152,123 +154,15 @@ document.getElementById('chips').addEventListener('click', e => {
 });
 
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-/* ---------- smart search ----------
-   1. Instant, on-device: ignores filler words, matches word forms ("printing" ~ "printer"),
-      forgives typos ("wifii", "pasword") and knows common synonyms ("laptop" ~ "computer").
-   2. Then the server's AI search ranks by meaning ("bugs in my kitchen" → fruit flies). */
-const STOP = new Set('a an the and or but to of for in on at by with from up my me i im i\'m you your it its is are was be been do does did doing can cant can\'t could how what why when where which who whats there this that these those not no wont won\'t dont don\'t doesnt doesn\'t isnt isn\'t keep keeps keeping get getting got make way ways best good easy easily help need want should will just really very some any all into about out after before without vs work works working worked stop stopped stopping fix fixed fixing problem problems issue issues anymore suddenly keep thing stuff'.split(' '));
-const SYN = [
- 'computer pc laptop desktop windows mac macbook notebook',
- 'phone iphone android cell mobile smartphone pixel samsung',
- 'wifi internet network router online connection wireless connected',
- 'slow lag laggy sluggish speed faster freeze frozen hang',
- 'bug pest fly insect gnat',
- 'money budget cash saving spending finance expense',
- 'password login signin sign account locked',
- 'print printer printing',
- 'battery charge charging power',
- 'screen display monitor',
- 'sound audio speaker volume hear mic microphone',
- 'math algebra equation number arithmetic',
- 'code coding program programming developer software',
- 'storage space disk full memory',
- 'backup restore copy',
- 'scam phishing fraud hack hacked virus malware security safe',
- 'toilet plumbing drain clog sink pipe',
- 'tv television stream streaming watch',
- 'football nfl sport',
- 'weather storm tornado hurricane flood',
- 'vote election ballot voter',
- 'clock daylight dst',
- 'tie necktie knot',
- 'keyboard typing type key',
- 'voicemail greeting',
- 'wall drywall hole patch',
- 'credit debt loan interest',
- 'email mail gmail outlook inbox'
-].map(g => g.split(' '));
-const norm = s => String(s).toLowerCase().replace(/wi-?fi/g, 'wifi').replace(/[’']/g, "'").replace(/[^a-z0-9' +%-]/g, ' ');
-const stem = w => w.replace(/'s$/, '').replace(/(ing|ers|er|ed|es|s)$/, m => w.length - m.length >= 3 ? '' : m);
-const tokens = s => norm(s).split(/[\s-]+/).filter(Boolean);
-const keyWords = q => tokens(q).filter(w => w.length > 1 && !STOP.has(w));
-const SYNMAP = new Map(); SYN.forEach(g => g.forEach(w => SYNMAP.set(stem(w), g.map(stem))));
-function lev(a, b, max){
-  if (Math.abs(a.length - b.length) > max) return max + 1;
-  let prev = Array.from({length: b.length + 1}, (_, i) => i);
-  for (let i = 1; i <= a.length; i++){
-    const cur = [i]; let low = i;
-    for (let j = 1; j <= b.length; j++){
-      cur[j] = Math.min(prev[j] + 1, cur[j-1] + 1, prev[j-1] + (a[i-1] === b[j-1] ? 0 : 1));
-      low = Math.min(low, cur[j]);
-    }
-    if (low > max) return max + 1;
-    prev = cur;
-  }
-  return prev[b.length];
-}
-// Index: every word of each tutorial, weighted by where it appears.
-const INDEX = ALL.map(t => {
-  const m = new Map();
-  const add = (text, w) => tokens(text).forEach(x => { const k = stem(x); if (k.length > 1 && !STOP.has(x)) m.set(k, Math.max(m.get(k) || 0, w)); });
-  add(t.summary, 1); add(t.category, 1); add((t.tags || []).join(' '), 2); add(t.title, 3);
-  return { t, m };
-});
-function wordScore(q, m, strict){
-  const s = stem(q); let best = 0;
-  for (const [k, w] of m){
-    let v = 0;
-    if (k === s) v = 1;
-    else if (s.length >= 3 && k.startsWith(s)) v = 0.8;            // still typing
-    else if (strict) v = 0;
-    else if (s.length >= 5 && lev(s, k, s.length >= 7 ? 2 : 1) <= (s.length >= 7 ? 2 : 1)) v = 0.7; // typo
-    else if (SYNMAP.has(s) && SYNMAP.get(s).includes(k)) v = 0.5;   // synonym
-    if (v * w > best) best = v * w;
-  }
-  return best;
-}
+/* Search logic lives in search-engine.js (shared with the /search/ results page). */
+const SS = window.SiteSearch;
+const highlight = SS.highlight;
 let SEM = { q: '', scores: null };
 function search(q){
-  const pool = cat ? INDEX.filter(x => x.t.category === cat) : INDEX;
-  const ws = keyWords(q);
-  if (!q.trim()) return pool.map(x => x.t);
-  if (!ws.length) return pool.map(x => x.t);
-  const useWs = ws;
+  const pool = cat ? ALL.filter(t => t.category === cat) : ALL;
   const sem = SEM.q === q.trim().toLowerCase() ? SEM.scores : null;
-  const out = [];
-  for (const { t, m } of pool){
-    const parts = useWs.map(w => wordScore(w, m, sem && sem.none && useWs.length > 1));
-    const hits = parts.filter(v => v > 0).length;
-    let kw = hits ? parts.reduce((a, b) => a + b, 0) / (3 * useWs.length) + hits / useWs.length : 0;
-    const sm = sem ? (sem.get(t.slug) || 0) : 0;
-    if (kw > 0 && hits < Math.ceil(useWs.length / 2) && sm === 0 && sem) kw *= 0.5; // weak word match, AI disagrees
-    const score = kw + 1.6 * sm;
-    if (score > 0.25) out.push({ t, score });
-  }
-  out.sort((a, b) => b.score - a.score);
-  const best = out.length ? out[0].score : 0;
-  return out.filter(r => r.score >= best * 0.35).map(r => r.t);
+  return SS.rank(q, pool, sem).map(r => r.t);
 }
-// Turn the server's AI scores into 0–1 relevance. "score" is the reranker (how well the tutorial
-// answers the search); "sim" is meaning similarity. If the reranker finds nothing relevant, trust the words alone.
-function aiScores(list){
-  const map = new Map();
-  const rTop = Math.max(0, ...list.map(r => r.score || 0));
-  const sTop = Math.max(0, ...list.map(r => r.sim || 0));
-  if (rTop >= 0.01){                       // reranker found something: blend both signals
-    for (const r of list){
-      const ss = Math.min(1, Math.max(0, ((r.sim || 0) - (sTop - 0.08)) / 0.08));
-      const v = 0.65 * (r.score || 0) / rTop + 0.35 * ss;
-      if (v >= 0.3) map.set(r.slug, v);
-    }
-  } else if (sTop >= 0.58){                // reranker unsure, but meaning is close: keep the nearest few
-    for (const r of list){
-      const v = ((r.sim || 0) - (sTop - 0.04)) / 0.04;
-      if (v >= 0.3) map.set(r.slug, Math.min(1, v));
-    }
-  } else map.none = true;                  // nothing on the site is about this
-  return map;
-}
-const SEARCH_V = 3;
 let semTimer = 0, semCtl = null;
 function askAI(q){
   clearTimeout(semTimer); if (semCtl) semCtl.abort();
@@ -277,31 +171,18 @@ function askAI(q){
   semTimer = setTimeout(() => {
     semCtl = new AbortController();
     document.getElementById('count').classList.add('thinking');
-    fetch('/api/search?q=' + encodeURIComponent(key) + '&v=' + SEARCH_V, { signal: semCtl.signal })
-      .then(r => r.ok ? r.json() : null)
-      .then(d => {
-        if (!d || !d.results) return;
-        SEM = { q: key, scores: aiScores(d.results) };
-        if (input.value.trim().toLowerCase() === key) render();
-      })
-      .catch(() => {})
-      .finally(() => document.getElementById('count').classList.remove('thinking'));
+    SS.fetchAI(key, semCtl.signal).then(m => {
+      if (!m) return;
+      SEM = { q: key, scores: m };
+      if (input.value.trim().toLowerCase() === key) render();
+    }).finally(() => document.getElementById('count').classList.remove('thinking'));
   }, 280);
 }
-function highlight(text, q){
-  let out = esc(text);
-  keyWords(q).filter(w => w.length > 2).forEach(w => {
-    const re = new RegExp('\\b(' + stem(w).replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + '\\w*)', 'ig');
-    out = out.replace(/(<[^>]*>)|([^<]+)/g, (m, tag, txt) => tag || txt.replace(re, '<mark>$1</mark>'));
-  });
-  return out;
-}
-
 function render(){
   const q = input.value.trim();
   shown = search(q);
   document.getElementById('listTitle').textContent = q ? 'Results' : (cat || 'All tutorials');
-  document.getElementById('count').textContent = `${shown.length} ${shown.length === 1 ? 'tutorial' : 'tutorials'}`;
+  document.getElementById('count').innerHTML = `${shown.length} ${shown.length === 1 ? 'tutorial' : 'tutorials'}` + (q ? ` · <a href="search/?q=${encodeURIComponent(q)}">Full results with paths →</a>` : '');
   if (!shown.length){
     results.innerHTML = `<div class="empty"><b>No tutorial for “${esc(q)}” yet.</b><span>Try describing the problem in a few words, or explore something new.</span><button class="btn ghost small" data-random>Show me a random one</button></div>`;
     return;
@@ -327,7 +208,6 @@ function goRandom(){
   const t = ALL[Math.floor(Math.random() * ALL.length)];
   location.href = t.slug + '/';
 }
-function openFirst(){ if (shown.length) location.href = shown[0].slug + '/'; }
 
 document.addEventListener('click', e => { if (e.target.closest('[data-random]')) goRandom(); });
 input.addEventListener('input', () => {

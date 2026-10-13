@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Search · Shortutorial</title>
+<meta name="description" content="Search Shortutorial's free tutorials and learning paths.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://shortutorial.com/search/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<style>
+.wrap{max-width:1040px;margin:0 auto;padding:36px 16px 0;display:flex;flex-direction:column;gap:30px}
+.search{display:flex;gap:10px}
+.field{position:relative;flex:1;display:block}
+.field svg{position:absolute;left:18px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--muted);pointer-events:none}
+.field input{width:100%;font:inherit;font-family:var(--display);font-size:1.1rem;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:13px 18px 13px 48px;outline:none;transition:border-color .15s,box-shadow .15s}
+.field input::placeholder{color:var(--muted)}
+.field input:focus{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.search .btn{flex:none;padding:0 22px}
+.head h1{font-size:clamp(1.6rem,5vw,2.3rem);font-weight:700;letter-spacing:-.02em;overflow-wrap:anywhere}
+.head p{color:var(--muted);font-family:var(--mono);font-size:.82rem;margin-top:6px}
+.head p.thinking::after{content:" · searching by meaning…";opacity:.8}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.sec-head h2{font-size:1.25rem}
+.sec-head span,.sec-head a{font-family:var(--mono);font-size:.8rem;color:var(--muted)}
+.sec-head a{color:var(--accent);text-decoration:none}
+.prow{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.pcard{display:flex;flex-direction:column;gap:10px;padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-radius:16px;text-decoration:none;color:var(--ink);box-shadow:0 4px 0 var(--line);transition:transform .12s,border-color .12s}
+.pcard:hover{transform:translateY(-2px);border-color:var(--accent)}
+.pcard .top{display:flex;gap:12px;align-items:center}
+.pcard .pi{width:44px;height:44px;flex:none;border-radius:12px;display:grid;place-items:center;font-size:1.35rem;background:var(--accent-soft)}
+.pcard b{font-family:var(--display);font-size:1.08rem;display:block}
+.pcard small{font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.pcard p{color:var(--muted);font-size:.93rem}
+.pcard .hits{display:flex;flex-wrap:wrap;gap:6px}
+.pcard .hits span{font-family:var(--mono);font-size:.72rem;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--ink);max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rows{display:flex;flex-direction:column;gap:10px;list-style:none;margin:0;padding:0}
+.row{position:relative;display:grid;grid-template-columns:34px 1fr auto;gap:4px 14px;align-items:center;padding:14px 16px 14px 14px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--cat,var(--accent));border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.row:hover{transform:translateX(2px);border-color:color-mix(in srgb,var(--cat,var(--accent)) 60%,var(--line));border-left-color:var(--cat,var(--accent))}
+.row .n{grid-row:span 2;font-family:var(--mono);font-size:.85rem;color:var(--muted);text-align:center}
+.row h3{font-size:1.1rem}
+.row p{grid-column:2;color:var(--muted);font-size:.95rem}
+.row .side{grid-row:span 2;grid-column:3;display:flex;flex-direction:column;align-items:flex-end;gap:6px;font-family:var(--mono);font-size:.75rem;color:var(--muted);white-space:nowrap}
+.row .side .eyebrow{color:var(--cat,var(--accent))}
+.row .bar{width:64px;height:5px;border-radius:3px;background:var(--line);overflow:hidden}
+.row .bar i{display:block;height:100%;background:var(--cat,var(--accent))}
+mark{background:var(--accent-soft);color:inherit;border-radius:3px;padding:0 2px}
+.empty{text-align:center;padding:40px 16px;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:14px;background:var(--surface);border:1px dashed var(--line);border-radius:14px}
+.empty b{color:var(--ink);font-family:var(--display);font-size:1.2rem}
+[hidden]{display:none!important}
+@media (max-width:520px){.search{flex-direction:column}.search .btn{justify-content:center;padding:12px 22px}.prow{grid-template-columns:none}
+  .row{grid-template-columns:1fr;padding:14px}.row .n{display:none}.row p{grid-column:1}.row .side{grid-row:auto;grid-column:1;flex-direction:row;align-items:center;justify-content:space-between}}
+</style>
+</head>
+<body>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <form class="search" role="search" action="./" method="get">
+    <label class="field">
+      <span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search tutorials</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" name="q" type="search" enterkeyhint="search" placeholder="Describe a problem or a topic…" autocomplete="off" spellcheck="false">
+    </label>
+    <button class="btn" type="submit">Search</button>
+  </form>
+
+  <header class="head" aria-live="polite">
+    <h1 id="title">Search</h1>
+    <p id="sub"></p>
+  </header>
+
+  <section id="pathsSec" aria-labelledby="pathsTitle" hidden>
+    <div class="sec-head"><h2 id="pathsTitle">Learning paths</h2><a href="../paths/">All paths →</a></div>
+    <div class="prow" id="paths"></div>
+  </section>
+
+  <section id="lessonsSec" aria-labelledby="lessonsTitle">
+    <div class="sec-head"><h2 id="lessonsTitle">Lessons by relevance</h2><span id="count"></span></div>
+    <div id="lessons"></div>
+  </section>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>Can't find it? New tutorials are added regularly.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../search-engine.js"></script>
+<script src="../auth.js"></script>
+<script>
+const SS = window.SiteSearch, esc = SS.esc, ALL = window.TUTORIALS || [];
+const BY = Object.fromEntries(ALL.map(t => [t.slug, t]));
+const input = document.getElementById('q');
+const q = (new URLSearchParams(location.search).get('q') || '').trim();
+input.value = q;
+let SEM = null, thinking = false;
+
+function render(){
+  const res = q && SS.keyWords(q).length ? SS.rank(q, ALL, SEM) : [];
+  const paths = SS.rankPaths(q, res).filter((r, i, a) => r.score >= a[0].score * 0.35).slice(0, 3);
+  const top = res.length ? res[0].score || 1 : 1;
+  document.title = q ? `“${q}” · Search · Shortutorial` : 'Search · Shortutorial';
+  document.getElementById('title').textContent = q ? `Results for “${q}”` : 'Search tutorials';
+  const sub = document.getElementById('sub');
+  sub.textContent = q ? `${paths.length} ${paths.length === 1 ? 'learning path' : 'learning paths'} · ${res.length} ${res.length === 1 ? 'lesson' : 'lessons'}` : `Search ${ALL.length} free tutorials and learning paths.`;
+  sub.classList.toggle('thinking', thinking);
+
+  const seen = window.pathVisited ? window.pathVisited() : new Set();
+  document.getElementById('pathsSec').hidden = !paths.length;
+  document.getElementById('paths').innerHTML = paths.map(({ p, hits }) => {
+    const d = p.steps.filter(s => seen.has(s)).length;
+    return `<a class="pcard" href="../paths/#${esc(p.id)}">
+      <span class="top"><span class="pi" aria-hidden="true">${p.icon}</span><span><b>${esc(p.title)}</b><small>${p.steps.length} lessons${d ? ` · ${d} done` : ''}${hits.length ? ` · ${hits.length} matching` : ''}</small></span></span>
+      <p>${esc(p.blurb)}</p>
+      ${hits.length ? `<span class="hits">${hits.slice(0, 3).map(s => `<span>${esc(BY[s].title)}</span>`).join('')}</span>` : ''}
+    </a>`;
+  }).join('');
+
+  document.getElementById('count').textContent = res.length ? `${res.length} found` : '';
+  const box = document.getElementById('lessons');
+  if (!q){ box.innerHTML = `<div class="empty"><b>What do you want to learn?</b><span>Type a problem or a topic above, like “wifi keeps dropping” or “start investing”.</span><button class="btn ghost small" data-random>Show me a random one</button></div>`; return; }
+  if (!res.length){
+    box.innerHTML = thinking ? '' : `<div class="empty"><b>No tutorial for “${esc(q)}” yet.</b><span>Try describing it in a few different words, or explore something new.</span><button class="btn ghost small" data-random>Show me a random one</button></div>`;
+    return;
+  }
+  box.innerHTML = '<ol class="rows">' + res.map(({ t, score }, i) => `<li>
+    <a class="row" href="../${esc(t.slug)}/" data-cat="${esc(t.category || '')}">
+      <span class="n">${i + 1}</span>
+      <h3>${SS.highlight(t.title, q)}</h3>
+      <span class="side"><span class="eyebrow">${esc(t.category || 'Tutorial')}</span><span>${t.minutes ? '~' + t.minutes + ' min' : ''}</span><span class="bar" title="Relevance"><i style="width:${Math.max(12, Math.round(100 * score / top))}%"></i></span></span>
+      <p>${SS.highlight(t.summary, q)}</p>
+    </a></li>`).join('') + '</ol>';
+}
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('[data-random]') || !ALL.length) return;
+  location.href = '../' + ALL[Math.floor(Math.random() * ALL.length)].slug + '/';
+});
+document.getElementById('yr').textContent = new Date().getFullYear();
+if (q){
+  thinking = true;
+  SS.fetchAI(q).then(m => { if (m) SEM = m; }).catch(() => {}).finally(() => { thinking = false; render(); });
+} else input.focus();
+render();
+</script>
+</body>
+</html>

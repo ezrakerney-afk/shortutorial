@@ -28,7 +28,7 @@ const meta = (html, re) => { const m = html.match(re); return m ? text(m[1]) : "
 function ldFor(html, slug) {
   if (!slug) {
     return [{ "@type": "WebSite", "@id": SITE + "/#site", name: "Shortutorial", url: SITE + "/", publisher: { "@id": SITE + "/#org" },
-      potentialAction: { "@type": "SearchAction", target: SITE + "/?q={search_term_string}", "query-input": "required name=search_term_string" } }, ORG];
+      potentialAction: { "@type": "SearchAction", target: SITE + "/search/?q={search_term_string}", "query-input": "required name=search_term_string" } }, ORG];
   }
   const t = BY[slug];
   const url = `${SITE}/${slug}/`;
