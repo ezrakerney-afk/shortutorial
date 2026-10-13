@@ -835,5 +835,29 @@ window.TUTORIALS = [
     category: "Online safety",
     tags: ["delete instagram", "deactivate instagram", "instagram account", "accounts center", "download instagram data", "close instagram", "remove instagram", "instagram privacy", "threads", "meta"],
     minutes: 10
+  },
+  {
+    slug: "learn-spanish-basics",
+    title: "Learn Basic Spanish",
+    summary: "Pronunciation, greetings, numbers 1–20, key phrases, and ser vs estar, with audio.",
+    category: "Life skills",
+    tags: ["spanish", "learn spanish", "spanish for beginners", "spanish phrases", "spanish numbers", "greetings", "ser vs estar", "pronunciation", "flashcards", "travel spanish", "language"],
+    minutes: 15
+  },
+  {
+    slug: "play-piano-basics",
+    title: "Piano for Absolute Beginners",
+    summary: "Find middle C, hand position, your first song and the C, F and G chords.",
+    category: "Life skills",
+    tags: ["piano", "learn piano", "keyboard", "middle c", "piano for beginners", "piano chords", "finger numbers", "ode to joy", "music", "play piano", "notes"],
+    minutes: 15
+  },
+  {
+    slug: "start-a-business",
+    title: "How to Start a Small Business in the US",
+    summary: "Test your idea, pick a structure, get a free EIN, register, and handle money and taxes",
+    category: "Money",
+    tags: ["start a business", "small business", "llc", "sole proprietorship", "ein", "business plan", "break-even", "business license", "register business", "self-employment tax", "sba"],
+    minutes: 20
   }
 ];

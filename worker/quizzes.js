@@ -2303,5 +2303,71 @@ export default {
         o: ["Once a day", "Once a week", "Once a year", "Only once ever"], a: 1,
         e: "Instagram only lets you deactivate once a week." }
     ]
+  },
+
+  "learn-spanish-basics": {
+    title: "Learn Basic Spanish",
+    pass: 4,
+    questions: [
+      { q: "How is the letter h pronounced in Spanish words like “hola”?",
+        o: ["Like an English h", "It's silent", "Like a j", "Like a ch"], a: 1,
+        e: "The Spanish h is always silent, so hola sounds like “OH-lah”." },
+      { q: "Which number is “quince”?",
+        o: ["5", "50", "15", "14"], a: 2,
+        e: "Quince is 15. Catorce is 14, cinco is 5." },
+      { q: "Which word for “the” goes with “día” (day)?",
+        o: ["la", "las", "los", "el"], a: 3,
+        e: "Día is a common exception: it ends in -a but is masculine, so it's el día." },
+      { q: "You want to say “I'm tired.” Which is correct?",
+        o: ["Estoy cansado.", "Soy cansado.", "Es cansado.", "Son cansado."], a: 0,
+        e: "Feelings and temporary states use estar: estoy cansado." },
+      { q: "Who should you usually address with “usted” instead of “tú”?",
+        o: ["Your best friend", "A stranger or an older person", "A young child", "Your little brother"], a: 1,
+        e: "Usted is the polite “you” for strangers, older people, customers and bosses." }
+    ]
+  },
+
+  "play-piano-basics": {
+    title: "Piano for Absolute Beginners",
+    pass: 4,
+    questions: [
+      { q: "How do you find a C on the piano?",
+        o: ["The white key just left of a group of two black keys", "The white key just right of a group of three black keys", "Any black key", "The key in the exact center"], a: 0,
+        e: "C is the white key just to the left of any group of two black keys." },
+      { q: "In piano fingering, which finger is number 1?",
+        o: ["The pinky", "The index finger", "The thumb", "The middle finger"], a: 2,
+        e: "Both hands use the same numbers: thumb is 1 and pinky is 5." },
+      { q: "Which notes make a C major chord?",
+        o: ["C, D, E", "C, F, A", "G, B, D", "C, E, G"], a: 3,
+        e: "A triad skips every other white key: C, E and G." },
+      { q: "In C position, where does your right thumb go?",
+        o: ["On middle C", "On G", "On the lowest C", "On F"], a: 0,
+        e: "Right thumb on middle C, with fingers 2 to 5 on D, E, F and G." },
+      { q: "Which pair of white keys has no black key between them?",
+        o: ["C and D", "E and F", "F and G", "G and A"], a: 1,
+        e: "There's no black key between E and F (or between B and C)." }
+    ]
+  },
+
+  "start-a-business": {
+    title: "How to Start a Small Business in the US",
+    pass: 4,
+    questions: [
+      { q: "How much does the IRS charge for an EIN?",
+        o: ["$50", "$300", "Nothing, it's free", "It depends on your state"], a: 2,
+        e: "EINs are free from the IRS. Beware of websites that charge for one." },
+      { q: "Your fixed costs are $900 a month and each sale brings in $18 after its own costs. How many sales a month do you need to break even?",
+        o: ["18", "50", "90", "900"], a: 1,
+        e: "$900 ÷ $18 = 50 sales a month." },
+      { q: "Which structure is created automatically, with no state filing, when you start selling on your own?",
+        o: ["Sole proprietorship", "C corporation", "LLC", "S corporation"], a: 0,
+        e: "If you start doing business by yourself, you're a sole proprietor automatically." },
+      { q: "What's the main advantage of an LLC over a sole proprietorship?",
+        o: ["No taxes at all", "You never need a bank account", "It can sell stock on the stock market", "It usually protects your personal assets from business debts"], a: 3,
+        e: "An LLC generally keeps personal assets separate from business debts and lawsuits." },
+      { q: "What is the self-employment tax rate?",
+        o: ["7.65%", "10%", "15.3%", "25%"], a: 2,
+        e: "Self-employment tax is 15.3%: 12.4% Social Security plus 2.9% Medicare, owed if net earnings are $400 or more." }
+    ]
   }
 };
