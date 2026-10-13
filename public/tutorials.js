@@ -643,5 +643,29 @@ window.TUTORIALS = [
     category: "Programming",
     tags: ["java", "terminal", "eclipse", "ui", "coding"],
     minutes: 10
+  },
+  {
+    slug: "change-a-tire",
+    title: "How to Change a Flat Tire",
+    summary: "Swap on your spare safely: wedges, lug nuts, jacking and the star pattern.",
+    category: "Home & tech",
+    tags: ["flat tire", "change tire", "spare tire", "donut", "lug nuts", "jack", "car", "roadside", "star pattern", "puncture"],
+    minutes: 15
+  },
+  {
+    slug: "check-tire-pressure",
+    title: "How to Check and Fill Tire Pressure",
+    summary: "Find your PSI, check cold, fill right and understand the TPMS light.",
+    category: "Home & tech",
+    tags: ["tire pressure", "psi", "tpms", "tire light", "air", "gauge", "cold weather", "car maintenance", "inflate tires", "bar", "kpa"],
+    minutes: 10
+  },
+  {
+    slug: "paint-a-room",
+    title: "How to Paint a Room",
+    summary: "Prep, prime, cut in, roll and clean up, plus a paint calculator.",
+    category: "Home & tech",
+    tags: ["paint", "painting", "paint a room", "walls", "primer", "roller", "cut in", "how much paint", "paint calculator", "diy", "decorating"],
+    minutes: 15
   }
 ];

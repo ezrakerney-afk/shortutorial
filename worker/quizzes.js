@@ -1775,5 +1775,71 @@ export default {
         o: ["Reads a whole line after Enter", "Waits for a single key press and returns it", "Reads a character from a file", "Prints a character"], a: 1,
         e: "It returns an InputChar as soon as one key is pressed. That's what makes games and menus feel responsive." }
     ]
+  },
+
+  "change-a-tire": {
+    title: "How to Change a Flat Tire",
+    pass: 4,
+    questions: [
+      { q: "When should you loosen the lug nuts?",
+        o: ["After the car is fully jacked up", "Before jacking, while the tire is still on the ground", "After removing the hubcap and jacking halfway", "Only once the spare is ready on the ground"], a: 1,
+        e: "With the tire on the ground, the car's weight stops the wheel spinning while you turn the wrench." },
+      { q: "Your flat is on the front left. Where does the wheel wedge go?",
+        o: ["Front left", "Front right", "Rear right", "Rear left"], a: 2,
+        e: "Wedge the tire diagonally opposite the flat." },
+      { q: "Why tighten lug nuts in a star (criss-cross) pattern?",
+        o: ["It pulls the wheel on evenly", "It's faster", "It stops the jack slipping", "It's needed only for donut spares"], a: 0,
+        e: "Going across the wheel, not around it, seats the wheel evenly against the hub." },
+      { q: "What speed does AAA say not to exceed on a donut spare?",
+        o: ["35 mph", "65 mph", "No limit if it's inflated", "50 mph"], a: 3,
+        e: "AAA says to stay under 50 mph; also follow the limit printed on your spare." },
+      { q: "Where should you place the jack?",
+        o: ["Under the bumper", "Under the oil pan", "On the car's jack point on the frame next to the flat", "Under the middle of the car"], a: 2,
+        e: "Use the reinforced jack point on the frame next to the flat, shown in your owner's manual." }
+    ]
+  },
+
+  "check-tire-pressure": {
+    title: "How to Check and Fill Tire Pressure",
+    pass: 4,
+    questions: [
+      { q: "Where do you find the pressure your tires should be filled to?",
+        o: ["The max number on the tire sidewall", "The air machine's default setting", "Always 32 PSI", "The label on the driver's door edge or the owner's manual"], a: 3,
+        e: "Use the car maker's cold pressure on the door-jamb label, not the sidewall maximum." },
+      { q: "What does checking “cold” mean?",
+        o: ["The car hasn't been driven for at least three hours", "Checking only in winter", "Checking with the AC on", "Waiting 10 minutes after driving"], a: 0,
+        e: "NHTSA defines cold as not driven for at least three hours." },
+      { q: "About how much does pressure drop when it gets 30°F colder?",
+        o: ["About 1 PSI", "About 3 PSI", "About 10 PSI", "It doesn't change"], a: 1,
+        e: "The rule of thumb is about 1 PSI per 10°F." },
+      { q: "The tire pressure light flashes for about a minute, then stays on. What does that mean?",
+        o: ["One tire is slightly high", "All tires are perfect", "The system itself has a fault", "The spare is flat"], a: 2,
+        e: "Flashing then steady means a TPMS malfunction; have it checked." },
+      { q: "How often does NHTSA recommend checking tire pressure?",
+        o: ["Once a year", "At least once a month, including the spare", "Only when the light comes on", "Every oil change"], a: 1,
+        e: "Check all tires, including the spare, at least monthly." }
+    ]
+  },
+
+  "paint-a-room": {
+    title: "How to Paint a Room",
+    pass: 4,
+    questions: [
+      { q: "About how much wall does one gallon of interior paint cover per coat?",
+        o: ["50 to 100 sq ft", "1,000 sq ft", "250 to 400 sq ft", "It depends only on the color"], a: 2,
+        e: "Most cans list about 250 to 400 sq ft per gallon, depending on the wall." },
+      { q: "In what order should you paint a room?",
+        o: ["Ceiling, walls, trim", "Trim, walls, ceiling", "Walls, ceiling, trim", "Any order"], a: 0,
+        e: "Work top down so drips land on unpainted surfaces." },
+      { q: "When do you need a separate primer coat?",
+        o: ["Always, on every wall", "Never with latex paint", "Only on ceilings", "On new drywall, stains or a big color change"], a: 3,
+        e: "Bare drywall, stains, big color changes and glossy surfaces need primer." },
+      { q: "Why roll a W pattern and keep a wet edge?",
+        o: ["To use less paint", "To spread paint evenly and avoid lap marks", "To dry faster", "To skip cutting in"], a: 1,
+        e: "The W spreads paint evenly; overlapping wet paint prevents lap marks." },
+      { q: "Your house was built in 1965. What should you do before sanding old paint?",
+        o: ["Test for lead and follow lead-safe practices", "Nothing special", "Just open a window", "Use a heat gun to remove it"], a: 0,
+        e: "Homes built before 1978 may have lead paint; sanding creates dangerous dust." }
+    ]
   }
 };

@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Change a Flat Tire · Shortutorial</title>
+<meta name="description" content="Got a flat? Change it safely with your spare: where to stop, wedging the wheels, loosening lug nuts before jacking, the star pattern, and spare-tire speed limits.">
+<link rel="canonical" href="https://shortutorial.com/change-a-tire/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How to Change a Flat Tire · Shortutorial">
+<meta property="og:description" content="Got a flat? Change it safely with your spare: where to stop, wedging the wheels, loosening lug nuts before jacking, the star pattern, and spare-tire speed limits.">
+<meta property="og:url" content="https://shortutorial.com/change-a-tire/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../guide.css">
+<style>
+/* Try-it widgets on this page (same look as lesson pages) */
+.try{border:1.5px dashed var(--accent);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:14px;background:color-mix(in srgb,var(--accent-soft) 45%,var(--surface));min-width:0}
+.try .try-h{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.74rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.try .try-h::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.try .row{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end}
+.try label{display:flex;flex-direction:column;gap:4px;font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.try input[type=number],.try input[type=text],.try input[type=date],.try select{font:inherit;font-family:var(--mono);font-size:1rem;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:9px;padding:8px 10px;width:120px;outline:none}
+.try select{width:auto;min-width:120px;max-width:100%}
+.try input:focus,.try select:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.try .out{font-family:var(--display);font-size:1.15rem;font-weight:600;line-height:1.45}
+.try .out b{color:var(--accent)}
+.try .work{font-family:var(--mono);font-size:.85rem;color:var(--muted);line-height:1.6;white-space:pre-wrap}
+.try .btn{padding:8px 16px;font-size:.92rem}
+.try .sub{font-size:.92rem;color:var(--muted)}
+.chipset{display:flex;flex-wrap:wrap;gap:8px}
+.chipset button{all:unset;cursor:pointer;font-family:var(--mono);font-size:.85rem;padding:6px 12px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink)}
+.chipset button[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.chipset button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.chip-lbl{font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+
+#lugSvg .rim{fill:var(--surface);stroke:var(--line);stroke-width:3}
+#lugSvg .hub{fill:var(--bg);stroke:var(--line);stroke-width:2}
+#lugSvg .nut{fill:var(--bg);stroke:var(--muted);stroke-width:2;transition:fill .2s}
+#lugSvg .nut.on{fill:var(--accent);stroke:var(--accent)}
+#lugSvg .nut.now{stroke:var(--amber);stroke-width:4}
+#lugSvg text{font-family:var(--mono);font-size:13px;font-weight:600;fill:var(--ink)}
+#lugSvg .nut.on + text{fill:var(--accent-ink)}
+#lugSvg .path{fill:none;stroke:var(--amber);stroke-width:2.5;stroke-dasharray:5 4}
+.ckbar{height:10px;border-radius:999px;background:var(--surface);border:1px solid var(--line);overflow:hidden}
+.ckbar i{display:block;height:100%;width:0;background:var(--good);transition:width .25s}
+ul.ck{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.try ul.ck li label{flex-direction:row;font-family:var(--body);color:var(--ink);display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border-radius:10px;background:var(--surface);border:1px solid var(--line);cursor:pointer;font-size:.98rem;line-height:1.4}
+ul.ck li input{width:20px;height:20px;flex:none;margin:1px 0 0;accent-color:var(--good)}
+ul.ck li input:checked + span{color:var(--muted);text-decoration:line-through}
+ul.ck .grp{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);font-weight:600;padding:8px 2px 0}
+</style>
+</head>
+<body data-slug="change-a-tire">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=home">Home &amp; tech</a> / Change a flat tire</div>
+    <span class="eyebrow">Everyday · Cars</span>
+    <h1>How to Change a Flat Tire</h1>
+    <p class="lede">A flat on the side of the road is stressful, but swapping on the spare takes about 20 minutes with the tools already in your trunk. Safety comes first, then one rule matters most: loosen the lug nuts <b>before</b> you jack up the car.</p>
+    <div class="badges"><span class="badge level">Step by step</span><span class="badge">~20 min</span><span class="badge">Medium</span></div>
+  </header>
+
+  <section class="block">
+    <div class="first">
+      <span class="eyebrow">Safety first · 1 minute</span>
+      <h3>Get somewhere safe before you touch a tool</h3>
+      <ul class="list">
+        <li>Turn on your <b>hazard lights</b>, slow down gently, and pull well off the road. A parking lot or side street is safest. On a highway, take the next exit if you can, even on a flat.</li>
+        <li>Pick <b>flat, solid ground</b> on a straight stretch where other drivers can see you. Never jack a car on a slope or soft dirt.</li>
+        <li>If you're on a narrow shoulder with traffic rushing past, stay buckled in with hazards on and call roadside assistance or 911 instead.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">KIT</span>What you need</h2>
+    <p>Most cars keep these under the trunk floor or in a side panel. Your owner's manual shows where, and where the jack points are.</p>
+    <div class="habits">
+      <div><h3>Spare tire</h3><p>Usually a small “donut” temporary spare. Some newer cars have no spare, just a sealant and inflator kit instead.</p></div>
+      <div><h3>Jack and lug wrench</h3><p>The wrench often doubles as the jack handle. If your wheels have a locking nut, you'll also need the <b>wheel-lock key</b>.</p></div>
+      <div><h3>Wheel wedges</h3><p>Stop the car rolling. No wedges? A large rock or a block of wood works.</p></div>
+      <div><h3>Nice to have</h3><p>Flashlight, gloves, a reflective vest or triangles, and a small board to put under the jack on soft ground.</p></div>
+    </div>
+  </section>
+
+  <section class="block" id="fixes">
+    <h2 class="sec"><span class="n">HOW</span>Change the tire</h2>
+    <div class="steps-head"><p>Follow the steps in order.</p><button class="linkbtn" id="expandAll">Show all steps</button></div>
+    <div class="steps" data-q="Step done?" data-yes="Spare's on, all done" data-no="Next step →">
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Secure the car</span><span class="fix-time">2 min</span></button>
+        <div class="fix-body">
+          <ol class="list">
+            <li>Put the car in <b>Park</b> (a manual in reverse or first gear), set the <b>parking brake</b>, turn off the engine and keep the hazards on.</li>
+            <li>Get everyone out of the car and well away from traffic.</li>
+            <li>Place a <b>wheel wedge</b> against the tire diagonally opposite the flat. Flat on the front left? Wedge the rear right. Wedge both sides of that tire if you have two.</li>
+            <li>If you carry reflective triangles or cones, set one well behind the car (AAA suggests about 100 feet).</li>
+          </ol>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Loosen the lug nuts while the tire is on the ground</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <ol class="list">
+            <li>Pry off the hubcap or wheel cover if there is one (the flat end of the lug wrench works). Put it upside down nearby to hold the nuts later.</li>
+            <li>Fit the wrench on each nut and turn <b>counterclockwise</b> about a quarter to half a turn. Just break them loose; don't take them off yet.</li>
+            <li>Stuck? Position the wrench so the handle points sideways and press down with your foot or body weight. Never jump on it.</li>
+          </ol>
+          <div class="note"><span><b>Why now?</b> With the tire on the ground, the car's weight stops the wheel spinning while you push. Once it's in the air, the wheel just turns.</span></div>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Jack up the car</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <ol class="list">
+            <li>Find the <b>jack point</b> next to the flat: a reinforced metal spot on the frame, often marked with a notch or arrow under the door sill. Your manual shows it.</li>
+            <li>Set the jack on solid ground (a board helps on soft ground) and raise it until it touches the jack point, then check it's lined up.</li>
+            <li>Raise the car until the flat tire is about 6 inches off the ground. You need a little more room for the inflated spare than the flat.</li>
+          </ol>
+          <div class="note warn"><span><b>Never put any part of your body under the car</b> while it's on a jack. A roadside jack is only for lifting, not for holding a car up while you work under it.</span></div>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Take off the flat</span><span class="fix-time">2 min</span></button>
+        <div class="fix-body">
+          <ol class="list">
+            <li>Unscrew the lug nuts the rest of the way by hand and put them in the upturned hubcap or a pocket.</li>
+            <li>Grip the tire at the sides and pull it straight toward you. It's heavier than it looks.</li>
+            <li>Lay it flat on its side next to you so it can't roll into traffic.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Put on the spare and hand-tighten in a star pattern</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <ol class="list">
+            <li>Line up the holes in the spare with the wheel studs and push it on, valve stem facing out.</li>
+            <li>Screw each lug nut on by hand, with the tapered or rounded side facing the wheel.</li>
+            <li>Snug them with the wrench in a <b>star (criss-cross) pattern</b>: tighten one nut, then the one across from it, rather than going around in a circle. This pulls the wheel on evenly. The diagram below shows the order for 4, 5 and 6 nuts.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Lower the car and tighten fully</span><span class="fix-time">3 min</span></button>
+        <div class="fix-body">
+          <ol class="list">
+            <li>Lower the jack until the spare touches the ground and takes some weight.</li>
+            <li>Tighten every nut firmly with the wrench, again in the star pattern. Go around twice.</li>
+            <li>Lower the car fully and remove the jack. If you have a torque wrench, tighten to the value in your owner's manual.</li>
+          </ol>
+          <div class="note"><span><b>Check them again soon.</b> Lug nuts can settle after a wheel is mounted. Continental advises re-torquing after the first 50 km (about 30 miles), so ask the tire shop to check them, or recheck them yourself with the wrench.</span></div>
+        </div>
+      </div>
+      <div class="fix">
+        <button class="fix-top"><span class="fix-n"></span><span class="fix-t">Pack up and drive gently to a tire shop</span><span class="fix-time">5 min</span></button>
+        <div class="fix-body">
+          <ul class="list">
+            <li>Put the flat, jack, wrench and wedges back in the car. Release the parking brake.</li>
+            <li>Check the spare's pressure as soon as you can. Many temporary spares need about <b>60 PSI</b>; the exact number is on the spare's sidewall or your door-jamb label.</li>
+            <li>A donut spare is for <b>short distances at reduced speed</b>. AAA says not to drive over <b>50 mph</b> on one; follow the limit printed on your spare. Head straight to a tire shop to repair or replace the flat.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="solved-banner" role="status"><span style="font-size:1.6rem">🛞</span><div><b>Spare's on. Nice work.</b><p>Drive gently, stay under the spare's speed limit, and get the flat fixed or replaced soon.</p></div></div>
+    <div class="stuck" role="status"><b>Can't finish safely?</b><p>A seized lug nut, a missing wheel-lock key, a jack that won't sit right, or a spot that just feels unsafe are all good reasons to stop. Call roadside assistance; it's what it's for.</p><div><button class="btn ghost small" data-restart>Start over</button></div></div>
+  </section>
+
+  <section class="block" id="star">
+    <h2 class="sec"><span class="n">TRY</span>Lug nut star pattern</h2>
+    <p>Count the lug nuts on your wheel, pick the number, then step through the order. The line shows how the wrench crosses the wheel each time.</p>
+    <div class="try">
+      <span class="try-h">Try it · tightening order</span>
+      <div class="chipset" id="lugSet" role="group" aria-label="Number of lug nuts"><button data-n="4" aria-pressed="false">4 nuts</button><button data-n="5" aria-pressed="true">5 nuts</button><button data-n="6" aria-pressed="false">6 nuts</button></div>
+      <svg id="lugSvg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="Wheel diagram showing lug nut tightening order" style="margin:0 auto"></svg>
+      <div class="row" style="justify-content:center"><button class="btn small" id="lugNext">Next nut</button><button class="btn small ghost" id="lugAll">Show full order</button><button class="btn small ghost" id="lugReset">Reset</button></div>
+      <div class="out" id="lugOut" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="block" id="checklist">
+    <h2 class="sec"><span class="n">LIST</span>Roadside checklist</h2>
+    <p>Open this on your phone at the roadside and tick things off as you go. Your ticks are saved on this device.</p>
+    <div class="try">
+      <span class="try-h">Try it · tire change checklist</span>
+      <div class="ckbar" aria-hidden="true"><i id="ckFill"></i></div>
+      <div class="out" id="ckOut" aria-live="polite"></div>
+      <ul class="ck" id="ckList"></ul>
+      <div class="row"><button class="btn small ghost" id="ckReset">Clear all ticks</button></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Which way do lug nuts turn?</summary><div class="a"><p>On almost every car: counterclockwise (left) to loosen, clockwise (right) to tighten. “Lefty loosey, righty tighty.”</p></div></details>
+      <details><summary>How far and fast can I drive on a donut spare?</summary><div class="a"><p>Only as far as you need to reach a tire shop. AAA's guidance is to stay under 50 mph. The speed limit for your spare is printed on its sidewall or on a label nearby, so check it.</p></div></details>
+      <details><summary>My car doesn't have a spare. What now?</summary><div class="a"><p>Many newer cars carry a tire sealant and inflator kit instead. It can get you to a shop for small punctures in the tread, but not for a torn sidewall or a blowout. If the kit can't help, call roadside assistance.</p></div></details>
+      <details><summary>What if a lug nut won't budge?</summary><div class="a"><p>Make sure the car is on the ground and you're turning counterclockwise. Put the wrench handle horizontal and use your body weight steadily. If it still won't move, stop and call for help rather than risking a slip.</p></div></details>
+      <details><summary>Should I check my spare when nothing is wrong?</summary><div class="a"><p>Yes. NHTSA says to check the pressure of all tires, including the spare, at least once a month. Spares age even when unused because they seldom get replaced.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Official help</h2>
+    <div class="links">
+      <a href="https://www.nhtsa.gov/equipment/tires" target="_blank" rel="noopener"><span class="src">NHTSA</span><b>Tires: safety, pressure, spares and blowouts</b></a>
+      <a href="https://ww2.aaa.com/autorepair/articles/how-to-change-a-tire-in-11-easy-steps" target="_blank" rel="noopener"><span class="src">AAA</span><b>How to change a tire in 11 easy steps</b></a>
+      <a href="https://www.continental-tires.com/ca/en/b2c/tire-knowledge/retorquing-wheels.html" target="_blank" rel="noopener"><span class="src">Continental Tire</span><b>Retorquing wheels after mounting</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Related fixes</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/leaderboard/">Leaderboard</a></nav></span><span>Always follow your vehicle's owner's manual. If the spot feels unsafe, stay in the car and call roadside assistance.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../guide.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+
+(function(){
+  /* Star pattern diagram */
+  const ORD = {4:[0,2,1,3], 5:[0,2,4,1,3], 6:[0,3,4,1,2,5]};
+  const svg = document.getElementById('lugSvg'), out = document.getElementById('lugOut');
+  let n = 5, shown = 0;
+  const NS = 'http://www.w3.org/2000/svg';
+  function pos(i){ const a = -Math.PI/2 + i*2*Math.PI/n; return [120 + 70*Math.cos(a), 120 + 70*Math.sin(a)]; }
+  function draw(){
+    const ord = ORD[n];
+    let s = '<circle class="rim" cx="120" cy="120" r="112"/><circle class="hub" cx="120" cy="120" r="30"/>';
+    if (shown > 1){ s += '<polyline class="path" points="' + ord.slice(0, shown).map(i => pos(i).join(',')).join(' ') + '"/>'; }
+    for (let i = 0; i < n; i++){
+      const [x, y] = pos(i), k = ord.indexOf(i), on = k < shown;
+      s += `<circle class="nut${on ? ' on' : ''}${k === shown - 1 ? ' now' : ''}" cx="${x}" cy="${y}" r="17"/><text x="${x}" y="${y + 4.5}" text-anchor="middle">${on ? k + 1 : ''}</text>`;
+    }
+    svg.innerHTML = s;
+    if (shown === 0) out.textContent = `${n} lug nuts. Press “Next nut” to see which one to tighten first.`;
+    else if (shown < n) out.innerHTML = `Tighten nut <b>${shown}</b> of ${n}. ${shown === 1 ? 'Start with any nut.' : 'Next, go across the wheel, not to the neighbor.'}`;
+    else out.innerHTML = `Done: <b>all ${n} nuts</b> in a ${n === 4 ? 'criss-cross' : 'star'} pattern. Repeat the same order once more for the final tightening.`;
+  }
+  document.querySelectorAll('#lugSet button').forEach(b => b.addEventListener('click', () => {
+    n = +b.dataset.n; shown = 0;
+    document.querySelectorAll('#lugSet button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    draw();
+  }));
+  document.getElementById('lugNext').addEventListener('click', () => { shown = shown >= n ? 1 : shown + 1; draw(); });
+  document.getElementById('lugAll').addEventListener('click', () => { shown = n; draw(); });
+  document.getElementById('lugReset').addEventListener('click', () => { shown = 0; draw(); });
+  draw();
+
+  /* Checklist */
+  const items = [
+    ['Safety', 'Hazard lights on'], ['Safety', 'Pulled well off the road on flat, solid ground'], ['Safety', 'In Park, parking brake on, engine off'],
+    ['Safety', 'Passengers out and away from traffic'], ['Safety', 'Wheel wedge behind the diagonally opposite tire'],
+    ['Change', 'Spare, jack, lug wrench (and wheel-lock key) out'], ['Change', 'Hubcap off, lug nuts loosened a half turn on the ground'],
+    ['Change', 'Jack on the jack point, flat raised about 6 in'], ['Change', 'Lug nuts off, flat removed and laid flat'],
+    ['Change', 'Spare on, nuts hand-tight in a star pattern'], ['Change', 'Car lowered, nuts fully tightened in a star pattern'],
+    ['After', 'Tools, flat and wedges packed away'], ['After', 'Spare pressure checked'], ['After', 'Driving under the spare speed limit to a tire shop'],
+    ['After', 'Lug nuts rechecked after about 30 miles']
+  ];
+  const KEY = 'st-tire-check';
+  let saved = [];
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch(e){ saved = []; }
+  const list = document.getElementById('ckList');
+  let last = '';
+  list.innerHTML = items.map(([g, t], i) => {
+    const head = g !== last ? `<li class="grp" aria-hidden="true">${g}</li>` : ''; last = g;
+    return head + `<li><label><input type="checkbox" data-i="${i}"${saved.includes(i) ? ' checked' : ''}><span>${t}</span></label></li>`;
+  }).join('');
+  function update(){
+    const boxes = [...list.querySelectorAll('input')], done = boxes.filter(b => b.checked).map(b => +b.dataset.i);
+    try { localStorage.setItem(KEY, JSON.stringify(done)); } catch(e){}
+    document.getElementById('ckFill').style.width = (done.length / items.length * 100) + '%';
+    document.getElementById('ckOut').innerHTML = done.length === items.length ? '<b>All done.</b> Drive safely.' : `<b>${done.length}</b> of ${items.length} done`;
+  }
+  list.addEventListener('change', update);
+  document.getElementById('ckReset').addEventListener('click', () => { list.querySelectorAll('input').forEach(b => b.checked = false); update(); });
+  update();
+})();
+
+</script>
+</body>
+</html>
