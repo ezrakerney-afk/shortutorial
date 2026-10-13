@@ -28,28 +28,51 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
 <link rel="stylesheet" href="../style.css">
 <style>
-.wrap{max-width:1040px;margin:0 auto;padding:48px 16px 0;display:flex;flex-direction:column;gap:28px}
-.hero{display:flex;flex-direction:column;gap:12px;max-width:640px}
-.hero h1{font-size:clamp(2.2rem,6.5vw,3.3rem);font-weight:700;letter-spacing:-.03em}
-.hero p{color:var(--muted);font-size:1.1rem}
-.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
-.path{scroll-margin-top:84px;display:flex;flex-direction:column;gap:12px;padding:20px;background:var(--surface);border:1px solid var(--line);border-radius:16px}
-.path:target{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
-.path-top{display:flex;gap:12px;align-items:center}
-.path-ic{width:44px;height:44px;flex:none;border-radius:12px;display:grid;place-items:center;font-size:1.4rem;background:var(--accent-soft)}
-.path h2{font-size:1.2rem}
-.path .blurb{color:var(--muted);font-size:.96rem}
-.meter{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
-.meter i{display:block;height:100%;background:var(--accent);border-radius:99px;transition:width .3s}
-.pmeta{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.78rem;color:var(--muted)}
-.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
-.steps a{display:flex;gap:10px;align-items:flex-start;padding:6px 8px;border-radius:8px;color:var(--ink);text-decoration:none;font-size:.95rem;line-height:1.35}
-.steps a:hover{background:var(--bg)}
-.steps .n{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-size:.7rem;border:1.5px solid var(--line);color:var(--muted)}
-.steps .seen .n{border-color:var(--accent);color:var(--accent)}
-.steps .cert .n{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.path .btn{align-self:flex-start;margin-top:auto}
-.legend{display:flex;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+.wrap{--on-uc:#fff;max-width:760px;margin:0 auto;padding:40px 16px 0;display:flex;flex-direction:column;gap:22px}
+.hero{display:flex;flex-direction:column;gap:10px}
+.hero h1{font-size:clamp(2rem,6vw,3rem);font-weight:700;letter-spacing:-.03em}
+.hero p{color:var(--muted);font-size:1.05rem}
+.picker{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:4px 16px 8px}
+.picker::-webkit-scrollbar{display:none}
+.picker button{all:unset;flex:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);font-family:var(--display);font-weight:600;font-size:.92rem;white-space:nowrap}
+.picker button:hover{border-color:var(--accent)}
+.picker button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.picker button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.picker small{font-family:var(--mono);font-size:.72rem;opacity:.75}
+.phead{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding:18px 20px;border-radius:18px;background:var(--surface);border:1px solid var(--line)}
+.phead .pi{width:56px;height:56px;flex:none;border-radius:16px;display:grid;place-items:center;font-size:1.8rem;background:var(--accent-soft)}
+.phead .pt{flex:1;min-width:200px;display:flex;flex-direction:column;gap:6px}
+.phead h2{font-size:1.4rem}
+.phead p{color:var(--muted);font-size:.95rem}
+.meter{height:10px;border-radius:99px;background:var(--line);overflow:hidden}
+.meter i{display:block;height:100%;background:var(--accent);border-radius:99px;transition:width .4s}
+.pmeta{font-family:var(--mono);font-size:.76rem;color:var(--muted)}
+.unit{display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:6px}
+.ubanner{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-radius:16px;background:var(--uc);color:var(--on-uc)}
+.ubanner b{font-family:var(--display);font-size:1.15rem;display:block}
+.ubanner span{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;opacity:.9}
+.ubanner .uc{font-family:var(--mono);font-size:.8rem;background:rgba(255,255,255,.18);border-radius:99px;padding:4px 10px;white-space:nowrap;text-transform:none;letter-spacing:0}
+.trail{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;padding:22px 0 8px;width:100%}
+.node{position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;color:var(--ink);transform:translateX(var(--x,0));width:190px}
+.dot{width:74px;height:74px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:1.5rem;background:var(--line);color:var(--muted);box-shadow:0 6px 0 color-mix(in srgb,var(--line) 70%,#000 30%);transition:transform .12s}
+.node:hover .dot{transform:translateY(-2px)}
+.node:active .dot{transform:translateY(4px);box-shadow:0 2px 0 color-mix(in srgb,var(--line) 70%,#000 30%)}
+.node.seen .dot{background:var(--uc);color:var(--on-uc);box-shadow:0 6px 0 color-mix(in srgb,var(--uc) 70%,#000 30%)}
+.node.cert .dot{background:var(--amber);color:var(--on-uc);box-shadow:0 6px 0 color-mix(in srgb,var(--amber) 70%,#000 30%)}
+.node.now .dot{background:var(--uc);color:var(--on-uc);box-shadow:0 6px 0 color-mix(in srgb,var(--uc) 70%,#000 30%),0 0 0 8px color-mix(in srgb,var(--uc) 25%,transparent)}
+.node .lbl{text-align:center;font-family:var(--display);font-weight:600;font-size:.92rem;line-height:1.25}
+.node .mins{display:block;font-family:var(--mono);font-weight:400;font-size:.72rem;color:var(--muted);margin-top:2px}
+.bubble{position:absolute;top:-34px;padding:6px 12px;border-radius:10px;background:var(--surface);border:2px solid var(--uc);color:var(--uc);font-family:var(--display);font-weight:700;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;animation:bob 1.6s ease-in-out infinite}
+.bubble::after{content:"";position:absolute;left:50%;bottom:-7px;width:10px;height:10px;background:var(--surface);border-right:2px solid var(--uc);border-bottom:2px solid var(--uc);transform:translateX(-50%) rotate(45deg)}
+@keyframes bob{50%{transform:translateY(-5px)}}
+.finish{display:flex;flex-direction:column;align-items:center;gap:8px;padding:10px 0 4px;color:var(--muted);font-family:var(--mono);font-size:.8rem}
+.finish .dot{width:84px;height:84px;font-size:2rem}
+.finish.won .dot{background:var(--amber);color:var(--on-uc)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:.76rem;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .wrap{--on-uc:#0b1412}}
+:root[data-theme="dark"] .wrap{--on-uc:#0b1412}
+.node.now{margin-top:30px}
 </style>
 </head>
 <body>
@@ -64,11 +87,12 @@
 <main class="wrap">
   <header class="hero">
     <span class="eyebrow">Learning paths</span>
-    <h1>Learn a skill, one step at a time.</h1>
-    <p>Each path puts short tutorials in the right order. Work through them, pass the quizzes, and watch your progress fill up.</p>
-    <div class="legend"><span>○ not started</span><span style="color:var(--accent)">● opened</span><span>✓ certified (logged in)</span></div>
+    <h1>Learn a skill, step by step.</h1>
+    <p>Pick a path and work down it. Lessons are grouped into units that start easy and build up, so each one prepares you for the next.</p>
   </header>
-  <div class="pgrid" id="paths"></div>
+  <div class="picker" id="picker" role="group" aria-label="Choose a path"></div>
+  <div id="path"></div>
+  <div class="legend"><span><i style="background:var(--line)"></i>Not started</span><span><i style="background:var(--accent)"></i>Opened</span><span><i style="background:var(--amber)"></i>Quiz passed (logged in)</span></div>
 </main>
 
 <footer class="sitefoot">
@@ -82,23 +106,54 @@
 const ALL = window.TUTORIALS || [];
 const byS = Object.fromEntries(ALL.map(t => [t.slug, t]));
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const UNIT_COLORS = ['var(--c-math)', 'var(--c-computer)', 'var(--c-phone)', 'var(--c-code)', 'var(--c-home)'];
+const LEVELS = ['Beginner', 'Intermediate', 'Advanced', 'Expert'];
+const WAVE = [0, 46, 70, 46, 0, -46, -70, -46];
+const PATHS = window.PATHS || [];
 let certs = new Set();
+let cur = (location.hash.slice(1) && PATHS.find(p => p.id === location.hash.slice(1))) ? location.hash.slice(1) : (PATHS[0] || {}).id;
+const isDone = (s, seen) => seen.has(s) || certs.has(s);
+
 function draw(){
   const seen = window.pathVisited();
-  document.getElementById('paths').innerHTML = window.PATHS.map(p => {
-    const done = p.steps.filter(s => seen.has(s) || certs.has(s)).length;
-    const next = p.steps.find(s => !seen.has(s) && !certs.has(s));
-    const label = !done ? 'Start path' : next ? 'Continue' : 'Review';
-    return `<section class="path" id="${p.id}">
-      <div class="path-top"><span class="path-ic" aria-hidden="true">${p.icon}</span><div><h2>${esc(p.title)}</h2><p class="blurb">${esc(p.blurb)}</p></div></div>
-      <div class="meter" role="progressbar" aria-label="${esc(p.title)} progress" aria-valuemin="0" aria-valuemax="${p.steps.length}" aria-valuenow="${done}"><i style="width:${Math.round(done / p.steps.length * 100)}%"></i></div>
-      <div class="pmeta"><span>${done} of ${p.steps.length} done</span><span>~${p.steps.reduce((m, s) => m + (byS[s].minutes || 10), 0)} min total</span></div>
-      <ol class="steps">${p.steps.map((s, k) => `<li class="${certs.has(s) ? 'cert' : seen.has(s) ? 'seen' : ''}"><a href="../${s}/"><span class="n">${certs.has(s) ? '✓' : k + 1}</span><span>${esc(byS[s].title)}</span></a></li>`).join('')}</ol>
-      <a class="btn small" href="../${next || p.steps[0]}/">${label} →</a>
-    </section>`;
+  document.getElementById('picker').innerHTML = PATHS.map(p => {
+    const d = p.steps.filter(s => isDone(s, seen)).length;
+    return `<button data-id="${p.id}" aria-pressed="${p.id === cur}"><span aria-hidden="true">${p.icon}</span>${esc(p.title)}<small>${d}/${p.steps.length}</small></button>`;
   }).join('');
-  if (location.hash){ const el = document.querySelector(location.hash); if (el) el.scrollIntoView(); }
+  const p = PATHS.find(x => x.id === cur); if (!p) return;
+  const done = p.steps.filter(s => isDone(s, seen)).length;
+  const next = p.steps.find(s => !isDone(s, seen));
+  let k = 0;
+  const units = p.units.map((u, ui) => {
+    const ud = u.steps.filter(s => isDone(s, seen)).length;
+    const nodes = u.steps.map(s => {
+      const t = byS[s], x = WAVE[k++ % WAVE.length];
+      const cls = certs.has(s) ? 'cert' : seen.has(s) ? 'seen' : s === next ? 'now' : '';
+      const mark = certs.has(s) ? '★' : seen.has(s) ? '✓' : k;
+      return `<a class="node ${cls}" href="../${s}/" style="--x:${x}px" aria-label="${esc(t.title)}${cls === 'cert' ? ', quiz passed' : cls === 'seen' ? ', opened' : ''}">
+        ${s === next ? `<span class="bubble">${done ? 'Continue' : 'Start'}</span>` : ''}
+        <span class="dot" aria-hidden="true">${mark}</span>
+        <span class="lbl">${esc(t.title)}<span class="mins">~${t.minutes || 10} min</span></span></a>`;
+    }).join('');
+    return `<section class="unit" style="--uc:${UNIT_COLORS[ui % UNIT_COLORS.length]}">
+      <div class="ubanner"><div><span>Unit ${ui + 1} · ${LEVELS[Math.min(ui, LEVELS.length - 1)]}</span><b>${esc(u.title)}</b></div><span class="uc">${ud}/${u.steps.length}</span></div>
+      <div class="trail">${nodes}</div></section>`;
+  }).join('');
+  const won = done === p.steps.length;
+  document.getElementById('path').innerHTML = `
+    <div class="phead"><span class="pi" aria-hidden="true">${p.icon}</span><div class="pt"><h2>${esc(p.title)}</h2><p>${esc(p.blurb)}</p>
+      <div class="meter" role="progressbar" aria-label="Path progress" aria-valuemin="0" aria-valuemax="${p.steps.length}" aria-valuenow="${done}"><i style="width:${Math.round(done / p.steps.length * 100)}%"></i></div>
+      <span class="pmeta">${done} of ${p.steps.length} lessons · ${p.units.length} units · ~${p.steps.reduce((m, s) => m + (byS[s].minutes || 10), 0)} min</span></div>
+      <a class="btn" href="../${next || p.steps[0]}/">${won ? 'Review' : done ? 'Continue' : 'Start'} →</a></div>
+    ${units}
+    <div class="finish ${won ? 'won' : ''}" style="--uc:var(--amber)"><span class="dot" aria-hidden="true">🏆</span>${won ? 'Path complete. Nice work!' : 'Finish every lesson to complete the path'}</div>`;
 }
+document.getElementById('picker').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  cur = b.dataset.id; history.replaceState(null, '', '#' + cur); draw();
+  b.scrollIntoView({block: 'nearest', inline: 'center'});
+});
+addEventListener('hashchange', () => { const h = location.hash.slice(1); if (PATHS.some(p => p.id === h)){ cur = h; draw(); } });
 draw();
 fetch('/api/me', {credentials: 'same-origin'}).then(r => r.ok ? r.json() : null).then(m => { if (m && m.certs){ certs = new Set(m.certs); draw(); } }).catch(() => {});
 document.getElementById('yr').textContent = new Date().getFullYear();

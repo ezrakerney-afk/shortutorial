@@ -1,52 +1,55 @@
 /*
-  Learning paths: ordered tracks of tutorials.
-  To add a path, add an entry below. Slugs that don't exist yet in tutorials.js are skipped,
+  Learning paths: tracks of tutorials, grouped into units from easiest to hardest.
+  To add a path, add an entry below. Each unit is ["Unit name", [slugs in order]]. Slugs that don't exist yet in tutorials.js are skipped,
   so a path can list a tutorial before it's published.
   On a tutorial page this script also shows a "Part of a learning path" banner and remembers the visit.
 */
 window.PATHS = [
   { id: "money", title: "Money basics", icon: "💵",
     blurb: "Budget, borrow wisely, understand taxes and start investing.",
-    steps: ["budget-50-30-20", "track-expenses-automatically", "credit-scores", "how-loans-work", "compound-interest", "investing-basics", "tax-brackets-explained", "retirement-accounts"] },
+    units: [["Everyday money", ["budget-50-30-20", "track-expenses-automatically", "write-a-check"]], ["Borrowing and credit", ["credit-scores", "how-loans-work", "compound-interest"]], ["Growing your money", ["investing-basics", "tax-brackets-explained", "retirement-accounts", "negotiate-salary"]]] },
   { id: "code", title: "Learn to code", icon: "💻",
     blurb: "From how computers count to building and publishing your own site.",
-    steps: ["binary-numbers", "how-the-internet-works", "html-basics", "make-a-website", "javascript-basics", "python-first-steps", "git-basics", "sql-basics"] },
+    units: [["How computers work", ["binary-numbers", "how-the-internet-works"]], ["Build web pages", ["html-basics", "make-a-website", "javascript-basics"]], ["Real programming", ["python-first-steps", "git-basics", "sql-basics"]]] },
   { id: "ai", title: "AI essentials", icon: "🤖",
     blurb: "Understand AI chatbots, use them well and judge what they tell you.",
-    steps: ["how-ai-works", "ai-prompting-basics", "critical-thinking", "read-charts-and-graphs"] },
+    units: [["Understand AI", ["how-ai-works", "ai-prompting-basics"]], ["Think clearly", ["critical-thinking", "read-charts-and-graphs", "logic-and-sets"]]] },
   { id: "safety", title: "Stay safe online", icon: "🔒",
     blurb: "Spot scams, lock down your accounts and browse privately.",
-    steps: ["spot-scam-messages", "strong-passwords", "two-factor-authentication", "stop-browser-popups", "block-spam-calls", "how-vpns-work", "clear-cache"] },
+    units: [["Spot the danger", ["spot-scam-messages", "stop-browser-popups", "block-spam-calls"]], ["Lock it down", ["strong-passwords", "two-factor-authentication"]], ["Privacy pro", ["clear-cache", "how-vpns-work"]]] },
   { id: "job", title: "Get job ready", icon: "💼",
     blurb: "The everyday work skills employers look for, start to finish.",
-    steps: ["touch-typing", "write-professional-email", "spreadsheet-formulas", "excel-pivot-tables", "project-management-basics", "public-speaking", "write-cover-letter", "negotiate-salary"] },
+    units: [["Core skills", ["touch-typing", "write-professional-email", "spreadsheet-formulas"]], ["Work smarter", ["excel-pivot-tables", "project-management-basics", "use-zoom"]], ["Land the job", ["write-cover-letter", "public-speaking", "negotiate-salary"]]] },
   { id: "math", title: "Math refresher", icon: "➗",
     blurb: "Rebuild your math from negative numbers to probability.",
-    steps: ["negative-numbers", "fractions", "percentages", "ratios-and-proportions", "order-of-operations", "exponents-scientific-notation", "solve-for-x", "pythagorean-theorem", "mean-median-mode", "probability-basics", "logic-and-sets"] },
+    units: [["Number sense", ["negative-numbers", "fractions", "percentages", "ratios-and-proportions"]], ["Algebra basics", ["order-of-operations", "exponents-scientific-notation", "solve-for-x"]], ["Shapes and data", ["area-and-volume", "pythagorean-theorem", "mean-median-mode", "probability-basics", "logic-and-sets"]]] },
   { id: "pc", title: "Computer fix-it kit", icon: "🛠️",
     blurb: "The fixes every computer owner needs sooner or later.",
-    steps: ["no-internet", "slow-computer", "free-up-disk-space", "printer-offline", "no-sound", "bluetooth-headphones", "take-screenshot", "back-up-computer"] },
+    units: [["Quick wins", ["take-screenshot", "no-sound", "bluetooth-headphones"]], ["Common fixes", ["no-internet", "printer-offline", "free-up-disk-space"]], ["Keep it healthy", ["slow-computer", "back-up-computer"]]] },
   { id: "home", title: "Home repair basics", icon: "🏠",
     blurb: "Small repairs you can do yourself instead of calling someone.",
-    steps: ["fix-running-toilet", "unclog-drain", "outlet-not-working", "fix-stripped-screw-hole", "repair-drywall", "paint-a-room", "change-furnace-filter"] },
+    units: [["First fixes", ["fix-stripped-screw-hole", "change-furnace-filter", "unclog-drain"]], ["Plumbing and power", ["fix-running-toilet", "outlet-not-working"]], ["Bigger projects", ["repair-drywall", "paint-a-room"]]] },
   { id: "car", title: "Car basics", icon: "🚗",
     blurb: "Handle the common roadside problems with confidence.",
-    steps: ["check-tire-pressure", "change-a-tire", "jump-start-car"] },
+    units: [["Car basics", ["check-tire-pressure", "change-a-tire", "jump-start-car"]]] },
   { id: "kitchen", title: "Kitchen basics", icon: "🍳",
     blurb: "Cook the staples well and keep the kitchen clean.",
-    steps: ["cook-rice", "cook-chicken", "french-press-coffee", "clean-microwave", "get-rid-of-fruit-flies"] },
+    units: [["Kitchen staples", ["french-press-coffee", "cook-rice", "cook-chicken"]], ["Keep it clean", ["clean-microwave", "get-rid-of-fruit-flies"]]] },
   { id: "mind", title: "Big ideas", icon: "🧠",
     blurb: "Philosophy, clear thinking and how society works.",
-    steps: ["philosophy-basics", "stoicism-basics", "critical-thinking", "how-the-economy-works", "us-government-basics"] },
+    units: [["Think", ["critical-thinking", "philosophy-basics", "stoicism-basics"]], ["Society", ["how-the-economy-works", "us-government-basics"]]] },
   { id: "creative", title: "Creative skills", icon: "🎨",
     blurb: "Draw, take better photos, edit video and make music.",
-    steps: ["drawing-basics", "photography-basics", "video-editing-basics", "play-piano-basics", "read-sheet-music"] }
+    units: [["Start creating", ["drawing-basics", "photography-basics"]], ["Music", ["play-piano-basics", "read-sheet-music"]], ["Make videos", ["video-editing-basics"]]] }
 ];
 
 (function(){
   const all = window.TUTORIALS || [];
   const known = new Set(all.map(t => t.slug));
-  window.PATHS.forEach(p => p.steps = p.steps.filter(s => known.has(s)));
+  window.PATHS.forEach(p => {
+    p.units = p.units.map(([title, steps]) => ({ title, steps: steps.filter(s => known.has(s)) })).filter(u => u.steps.length);
+    p.steps = p.units.flatMap(u => u.steps);
+  });
   window.PATHS = window.PATHS.filter(p => p.steps.length >= 3);
 
   const KEY = 'st-visited';
