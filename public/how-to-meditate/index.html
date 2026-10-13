@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Meditate for Beginners · Shortutorial</title>
+<meta name="description" content="A simple, no-nonsense guide to meditating: how to sit, how to focus on your breath, what to do when your mind wanders, a body scan, and how to build a short daily habit. Includes a guided timer with paced breathing and bells.">
+<link rel="canonical" href="https://shortutorial.com/how-to-meditate/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How to Meditate for Beginners · Shortutorial">
+<meta property="og:description" content="A simple, no-nonsense guide to meditating: how to sit, how to focus on your breath, what to do when your mind wanders, a body scan, and how to build a short daily habit. Includes a guided timer with paced breathing and bells.">
+<meta property="og:url" content="https://shortutorial.com/how-to-meditate/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+/* meditation timer */
+.mt-stage{display:flex;flex-direction:column;align-items:center;gap:12px;padding:18px 8px;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.orb-wrap{width:min(240px,70vw);aspect-ratio:1;display:grid;place-items:center;position:relative}
+.orb-ring{position:absolute;inset:0;border-radius:50%;border:2px dashed var(--line)}
+.orb{width:100%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 40% 35%,color-mix(in srgb,var(--accent) 35%,var(--surface)),var(--accent));transform:scale(.45);will-change:transform;box-shadow:0 0 40px -6px color-mix(in srgb,var(--accent) 60%,transparent)}
+.orb-cue{position:absolute;font-family:var(--display);font-weight:700;font-size:1.25rem;color:var(--accent-ink);text-align:center;pointer-events:none}
+.mt-clock{font-family:var(--mono);font-size:2.2rem;font-weight:600;font-variant-numeric:tabular-nums;line-height:1}
+.mt-sub{font-family:var(--mono);font-size:.78rem;color:var(--muted);text-align:center}
+.mt-bar{width:100%;height:6px;border-radius:99px;background:var(--line);overflow:hidden}
+.mt-bar i{display:block;height:100%;width:0;background:var(--accent)}
+.streak{display:flex;gap:6px;flex-wrap:wrap}
+.streak span{width:30px;height:30px;border-radius:8px;border:1px solid var(--line);display:grid;place-items:center;font-family:var(--mono);font-size:.68rem;color:var(--muted);background:var(--surface)}
+.streak span.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"How to Meditate","item":"https://shortutorial.com/how-to-meditate/"}]},{"@type":"Article","@id":"https://shortutorial.com/how-to-meditate/#article","headline":"How to Meditate","description":"A simple, no-nonsense guide to meditating: how to sit, how to focus on your breath, what to do when your mind wanders, a body scan, and how to build a short daily habit. Includes a guided timer with paced breathing and bells.","url":"https://shortutorial.com/how-to-meditate/","mainEntityOfPage":"https://shortutorial.com/how-to-meditate/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Life skills","keywords":"meditation, how to meditate, mindfulness, meditation for beginners, breathing exercise, box breathing, body scan, meditation timer, calm down, stress relief, guided meditation","timeRequired":"PT10M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long should a beginner meditate?","acceptedAnswer":{"@type":"Answer","text":"Start with 2 to 5 minutes. Consistency matters more than length. Many people settle into 10 to 20 minutes once it's a habit."}},{"@type":"Question","name":"Am I doing it wrong if my mind keeps wandering?","acceptedAnswer":{"@type":"Answer","text":"No. Everyone's mind wanders. Each time you notice and come back, you're doing the practice."}},{"@type":"Question","name":"Is it OK to meditate lying down?","acceptedAnswer":{"@type":"Answer","text":"Yes, especially for a body scan. You're just more likely to fall asleep. That's fine at bedtime."}},{"@type":"Question","name":"What's the best time of day?","acceptedAnswer":{"@type":"Answer","text":"Whenever you'll actually do it. Morning is popular because it's before the day gets busy, but any regular time works."}},{"@type":"Question","name":"Do I need an app?","acceptedAnswer":{"@type":"Answer","text":"No. A timer is enough. Guided recordings can help at first; many libraries and health systems offer free ones."}},{"@type":"Question","name":"Can meditation replace therapy or medication?","acceptedAnswer":{"@type":"Answer","text":"No. It can be a helpful addition, but don't use it to replace care from a health professional. Talk with your provider about how it fits with your treatment."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="how-to-meditate">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=health">Life skills</a> / How to meditate</div>
+    <span class="eyebrow">Life skills · Wellbeing</span>
+    <h1>How to Meditate</h1>
+    <p class="lede">Meditation is simpler than it sounds: sit, pay attention to something like your breath, notice when your mind wanders, and come back. Learn the basics in a few minutes, then use the guided timer to practice.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~10 min read</span><span class="badge">5 lessons</span><span class="badge">Guided timer + breathing pacer</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#m1">1 · What it is</a><a href="#m2">2 · Posture</a><a href="#m3">3 · Breath & timer</a><a href="#m4">4 · Wandering mind</a><a href="#m5">5 · Body scan & habit</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="m1">
+    <div class="lesson-head"><span class="step">01</span><h2>What meditation is (and isn't)</h2></div>
+    <p>Meditation is a set of practices for training attention. The kind most beginners start with is <b>mindfulness</b>: paying attention to the present moment, on purpose, without judging it. According to the National Center for Complementary and Integrative Health (NCCIH), many types of meditation share a few things: a quiet place, a comfortable posture, a focus of attention, and an open attitude toward distractions.</p>
+    <ul class="points">
+      <li><b>It isn't emptying your mind.</b> Thoughts will keep coming. The practice is noticing them and returning to your focus.</li>
+      <li><b>It isn't about feeling blissed out.</b> Some sessions feel calm, some feel restless. Both count.</li>
+      <li><b>It doesn't need special gear, beliefs or a cushion.</b> A chair and a few minutes are enough.</li>
+    </ul>
+    <p>Research summarized by NCCIH suggests meditation and mindfulness practices may help with things like stress, anxiety, depression symptoms, sleep and blood pressure, though results vary and many studies are small.</p>
+    <p class="callout warn"><span><b>Safety:</b> NCCIH says meditation is generally considered low risk for healthy people, but some people report unpleasant experiences, such as more anxiety. If you have a mental health condition or a history of trauma, talk with your health care provider, and don't use meditation to replace medical care or put off seeing a professional. If a practice makes you feel worse, stop, open your eyes, and try a shorter or different approach.</span></p>
+  </section>
+
+  <section class="lesson" id="m2">
+    <div class="lesson-head"><span class="step">02</span><h2>How to sit</h2></div>
+    <p>Aim for a posture that's <b>relaxed but alert</b>. You want to be comfortable enough to stay still, but upright enough not to doze off.</p>
+    <ol class="steps">
+      <li><b>Seat:</b> a chair with your feet flat on the floor is great. You can also sit on a cushion with legs crossed, kneel on a cushion, or lie down if sitting hurts.</li>
+      <li><b>Back:</b> sit tall but not stiff, as if a string were gently lifting the top of your head. Lean off the chair back if you can.</li>
+      <li><b>Hands:</b> rest them on your thighs or in your lap, whatever feels easy.</li>
+      <li><b>Shoulders and jaw:</b> let them drop and soften. Most of us hold tension here.</li>
+      <li><b>Eyes:</b> close them, or keep them half-open with a soft gaze at the floor a few feet ahead.</li>
+    </ol>
+    <p class="callout"><span><b>Physical limits are fine.</b> If you have pain or an injury, adjust. Lying down, leaning against a wall, or even walking slowly all work.</span></p>
+  </section>
+
+  <section class="lesson" id="m3">
+    <div class="lesson-head"><span class="step">03</span><h2>Focus on the breath</h2></div>
+    <p>The breath is a handy anchor because it's always with you. You don't need to control it. Just feel it.</p>
+    <ol class="steps">
+      <li>Take two or three slower breaths to settle, then let your breathing go back to normal.</li>
+      <li>Pick one spot where you feel the breath most clearly: the air at your nostrils, your chest rising, or your belly expanding.</li>
+      <li>Rest your attention there. Feel each in-breath and each out-breath.</li>
+      <li>If it helps, silently count: “one” on the out-breath, up to ten, then start over.</li>
+    </ol>
+    <p>Some people like <b>paced breathing</b> to start, especially when stressed. A slightly longer out-breath tends to feel calming. Use the pacer below, or turn it off and simply notice your natural breath.</p>
+    <div class="try" id="mt"><span class="try-h">Try it · guided meditation timer</span>
+      <div class="row">
+        <label>Length<select id="mtLen"><option value="60">1 min</option><option value="180">3 min</option><option value="300" selected>5 min</option><option value="600">10 min</option><option value="900">15 min</option><option value="1200">20 min</option></select></label>
+        <label>Breathing guide<select id="mtPat" style="width:auto;max-width:100%">
+          <option value="4,0,6,0">Calm: in 4, out 6</option>
+          <option value="4,4,4,4">Box: in 4, hold 4, out 4, hold 4</option>
+          <option value="5,0,5,0">Even: in 5, out 5</option>
+          <option value="none">Off (natural breath)</option>
+        </select></label>
+        <label>Interval bell<select id="mtInt"><option value="0">None</option><option value="60">Every 1 min</option><option value="120">Every 2 min</option><option value="300">Every 5 min</option></select></label>
+      </div>
+      <div class="mt-stage">
+        <div class="orb-wrap" aria-hidden="true"><div class="orb-ring"></div><div class="orb" id="mtOrb"></div><div class="orb-cue" id="mtCue"></div></div>
+        <div class="mt-sub" id="mtPhase" aria-live="polite">Press Start, then settle in.</div>
+        <div class="mt-clock" id="mtClock" role="timer">5:00</div>
+        <div class="mt-bar"><i id="mtBar"></i></div>
+      </div>
+      <div class="row"><button type="button" class="btn" id="mtStart">Start</button><button type="button" class="btn ghost" id="mtReset">Reset</button><button type="button" class="btn ghost" id="mtTest">Test bell</button>
+        <label style="flex-direction:row;align-items:center;gap:8px"><input type="checkbox" id="mtSound" checked> Sound</label></div>
+      <div class="work" id="mtMsg" aria-live="polite"></div>
+      <div><span class="mt-sub" style="text-align:left;display:block;margin-bottom:6px">Your last 7 days on this device</span><div class="streak" id="mtStreak"></div></div>
+    </div>
+    <p class="callout"><span><b>Feeling dizzy or short of breath?</b> Stop the pacer and breathe normally. The guide is optional; noticing your natural breath is the core practice.</span></p>
+  </section>
+
+  <section class="lesson" id="m4">
+    <div class="lesson-head"><span class="step">04</span><h2>When your mind wanders</h2></div>
+    <p>It will. Probably within seconds. This isn't failure; <b>noticing that you wandered and coming back is the actual exercise</b>, like a single rep at the gym.</p>
+    <ol class="steps">
+      <li><b>Notice:</b> “Oh, I'm planning dinner.”</li>
+      <li><b>Label it</b> gently, if you like, with one word: “planning,” “worrying,” “remembering,” “itch.”</li>
+      <li><b>Return:</b> bring your attention back to the breath. No scolding.</li>
+      <li><b>Repeat</b> as many times as needed. A hundred times in ten minutes is completely normal.</li>
+    </ol>
+    <div class="example"><div class="ex-h">Example · a typical minute</div><ol><li>Breath in, breath out… “Did I reply to that email?”</li><li>Notice: “thinking.” Back to the breath.</li><li>Breath in… knee itches. Notice the itch without scratching for a moment. Back to the breath.</li><li class="ans">Two reps of attention training. That's a good minute.</li></ol></div>
+    <ul class="points">
+      <li><b>Sleepy?</b> Sit up straighter, open your eyes a little, or meditate earlier in the day.</li>
+      <li><b>Restless?</b> Try counting breaths, or do a shorter session.</li>
+      <li><b>Strong emotions?</b> You can open your eyes, feel your feet on the floor, and come back later. You don't have to push through.</li>
+    </ul>
+  </section>
+
+  <section class="lesson" id="m5">
+    <div class="lesson-head"><span class="step">05</span><h2>Body scan and a daily habit</h2></div>
+    <h3>A simple body scan</h3>
+    <p>A body scan moves your attention slowly through the body, noticing sensations without trying to change them. It's a good option when the breath feels boring or you're winding down for bed.</p>
+    <ol class="steps">
+      <li>Lie down or sit comfortably. Take a few easy breaths.</li>
+      <li>Bring attention to your <b>toes</b>. Notice warmth, coolness, tingling, pressure, or nothing at all. All are fine.</li>
+      <li>Move slowly up: <b>feet, ankles, calves, knees, thighs, hips</b>.</li>
+      <li>Then <b>belly, chest, back, shoulders, arms, hands</b>.</li>
+      <li>Finish with <b>neck, jaw, face and the top of the head</b>.</li>
+      <li>End by noticing the whole body breathing at once.</li>
+    </ol>
+    <p>Spend about 20 to 60 seconds on each area. Set the timer above to 10 minutes with a 1-minute bell to know when to move on.</p>
+    <h3>Make it a habit</h3>
+    <ul class="points">
+      <li><b>Start tiny:</b> 2 to 5 minutes a day beats 30 minutes once a week.</li>
+      <li><b>Anchor it</b> to something you already do: after brushing your teeth, after your morning coffee, before you open your laptop.</li>
+      <li><b>Same place each day</b> helps it become automatic.</li>
+      <li><b>Missed a day?</b> Just start again. Don't try to make it up.</li>
+      <li>After a couple of weeks, add a few minutes if you want to.</li>
+    </ul>
+    <p class="callout"><span><b>Mini practice anywhere:</b> take three slow breaths before you start the car, answer a hard email, or walk into a meeting. Feel your feet. That counts too.</span></p>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>How long should a beginner meditate?</summary><div class="a"><p>Start with 2 to 5 minutes. Consistency matters more than length. Many people settle into 10 to 20 minutes once it's a habit.</p></div></details>
+      <details><summary>Am I doing it wrong if my mind keeps wandering?</summary><div class="a"><p>No. Everyone's mind wanders. Each time you notice and come back, you're doing the practice.</p></div></details>
+      <details><summary>Is it OK to meditate lying down?</summary><div class="a"><p>Yes, especially for a body scan. You're just more likely to fall asleep. That's fine at bedtime.</p></div></details>
+      <details><summary>What's the best time of day?</summary><div class="a"><p>Whenever you'll actually do it. Morning is popular because it's before the day gets busy, but any regular time works.</p></div></details>
+      <details><summary>Do I need an app?</summary><div class="a"><p>No. A timer is enough. Guided recordings can help at first; many libraries and health systems offer free ones.</p></div></details>
+      <details><summary>Can meditation replace therapy or medication?</summary><div class="a"><p>No. It can be a helpful addition, but don't use it to replace care from a health professional. Talk with your provider about how it fits with your treatment.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://www.nccih.nih.gov/health/meditation-and-mindfulness-what-you-need-to-know" target="_blank" rel="noopener"><span class="src">NIH · NCCIH</span><b>Meditation and mindfulness: what you need to know</b></a>
+      <a href="https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety" target="_blank" rel="noopener"><span class="src">NIH · NCCIH</span><b>Meditation and mindfulness: effectiveness and safety</b></a>
+      <a href="https://988lifeline.org/" target="_blank" rel="noopener"><span class="src">988 Lifeline</span><b>Call or text 988 if you're in crisis</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>For general wellbeing, not medical advice. In a crisis, call or text 988.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let ac = null;
+  function audio(){ if (!ac){ try { ac = new (window.AudioContext || window.webkitAudioContext)(); } catch(e){ return null; } } if (ac.state === 'suspended') ac.resume(); return ac; }
+  function bell(times){
+    if (!$('#mtSound').checked) return;
+    const a = audio(); if (!a) return;
+    for (let k = 0; k < (times || 1); k++){
+      const t0 = a.currentTime + k * 1.6;
+      // singing-bowl-ish: a few inharmonic partials with long decay
+      [[528, .22], [1056 * 1.01, .08], [1584 * 1.02, .05], [2640, .02]].forEach(([f, v]) => {
+        const o = a.createOscillator(), g = a.createGain();
+        o.type = 'sine'; o.frequency.value = f;
+        g.gain.setValueAtTime(0.0001, t0); g.gain.exponentialRampToValueAtTime(v, t0 + 0.02); g.gain.exponentialRampToValueAtTime(0.0001, t0 + 4.5);
+        o.connect(g); g.connect(a.destination); o.start(t0); o.stop(t0 + 4.6);
+      });
+    }
+  }
+  const orb = $('#mtOrb'), cue = $('#mtCue');
+  let total = 300, elapsed = 0, running = false, lastT = 0, raf = 0, nextBell = 0, wake = null;
+  const mmss = s => Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0');
+  function pattern(){ const v = $('#mtPat').value; return v === 'none' ? null : v.split(',').map(Number); }
+  function breath(t){
+    const p = pattern();
+    if (!p){ return {scale: .62, label: '', phase: 'Notice your natural breath'}; }
+    const cyc = p.reduce((a, b) => a + b, 0), x = t % cyc;
+    const names = ['Breathe in', 'Hold', 'Breathe out', 'Hold'];
+    let acc = 0;
+    for (let i = 0; i < 4; i++){
+      if (p[i] === 0) continue;
+      if (x < acc + p[i]){
+        const f = (x - acc) / p[i], ease = .5 - .5 * Math.cos(Math.PI * f);
+        let s = i === 0 ? .45 + .55 * ease : i === 1 ? 1 : i === 2 ? 1 - .55 * ease : .45;
+        return {scale: s, label: names[i], left: Math.ceil(p[i] - (x - acc)), phase: names[i]};
+      }
+      acc += p[i];
+    }
+    return {scale: .45, label: '', phase: ''};
+  }
+  function paint(){
+    const b = breath(elapsed);
+    const sc = reduce ? .55 + (b.scale - .45) * .25 : b.scale;
+    orb.style.transform = `scale(${sc.toFixed(3)})`;
+    cue.textContent = running && b.label ? b.label.replace('Breathe ', '') + (b.left ? ' ' + b.left : '') : '';
+    $('#mtClock').textContent = mmss(Math.max(0, Math.ceil(total - elapsed)));
+    $('#mtBar').style.width = (100 * Math.min(1, elapsed / total)) + '%';
+  }
+  let lastPhase = '';
+  function frame(now){
+    if (!running) return;
+    elapsed += (now - lastT) / 1000; lastT = now;
+    const iv = +$('#mtInt').value;
+    if (iv && elapsed >= nextBell && elapsed < total - 1){ bell(1); nextBell += iv; }
+    const b = breath(elapsed);
+    if (b.phase !== lastPhase){ $('#mtPhase').textContent = b.phase; lastPhase = b.phase; }
+    if (elapsed >= total){ finish(); return; }
+    paint(); raf = requestAnimationFrame(frame);
+  }
+  async function lock(){ try { if ('wakeLock' in navigator) wake = await navigator.wakeLock.request('screen'); } catch(e){ wake = null; } }
+  function unlock(){ try { if (wake) wake.release(); } catch(e){} wake = null; }
+  function start(){
+    audio();
+    if (elapsed === 0){ bell(1); const iv = +$('#mtInt').value; nextBell = iv || Infinity; $('#mtMsg').textContent = 'Settle in. When your mind wanders, gently come back.'; }
+    running = true; lastT = performance.now(); $('#mtStart').textContent = 'Pause'; lock();
+    raf = requestAnimationFrame(frame);
+  }
+  function pause(){ running = false; cancelAnimationFrame(raf); $('#mtStart').textContent = 'Resume'; $('#mtPhase').textContent = 'Paused'; lastPhase = ''; unlock(); paint(); }
+  function reset(){ running = false; cancelAnimationFrame(raf); unlock(); total = +$('#mtLen').value; elapsed = 0; lastPhase = ''; $('#mtStart').textContent = 'Start'; $('#mtPhase').textContent = 'Press Start, then settle in.'; $('#mtMsg').textContent = ''; paint(); }
+  function finish(){
+    running = false; cancelAnimationFrame(raf); unlock(); elapsed = total; paint(); cue.textContent = '';
+    bell(3); $('#mtStart').textContent = 'Start again'; $('#mtPhase').textContent = 'Session complete';
+    $('#mtMsg').textContent = 'Nice work. Take a moment before you get up. Notice how you feel.';
+    logDay(); streak();
+    elapsed = 0;
+  }
+  $('#mtStart').addEventListener('click', () => {
+    if (running) pause();
+    else { if ($('#mtStart').textContent === 'Start again') reset(); start(); }
+  });
+  $('#mtReset').addEventListener('click', reset);
+  $('#mtTest').addEventListener('click', () => { const s = $('#mtSound').checked; $('#mtSound').checked = true; bell(1); $('#mtSound').checked = s; });
+  $('#mtLen').addEventListener('change', () => { if (!running) reset(); else total = +$('#mtLen').value; });
+  $('#mtPat').addEventListener('change', () => { if (!running) paint(); });
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && running){ lastT = performance.now() - 0; lock(); } });
+
+  /* Per-device streak (local only) */
+  const KEY = 'st-meditate-days';
+  const dayKey = d => d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+  function getDays(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch(e){ return []; } }
+  function logDay(){ try { const d = getDays(), k = dayKey(new Date()); if (!d.includes(k)){ d.push(k); localStorage.setItem(KEY, JSON.stringify(d.slice(-60))); } } catch(e){} }
+  function streak(){
+    const d = getDays(), out = [], W = ['Su','Mo','Tu','We','Th','Fr','Sa'];
+    for (let i = 6; i >= 0; i--){ const x = new Date(); x.setDate(x.getDate() - i); const on = d.includes(dayKey(x)); out.push(`<span class="${on ? 'on' : ''}" title="${x.toDateString()}${on ? ': meditated' : ''}">${W[x.getDay()]}</span>`); }
+    $('#mtStreak').innerHTML = out.join('');
+  }
+  streak(); reset();
+})();
+</script>
+</body>
+</html>

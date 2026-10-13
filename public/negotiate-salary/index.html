@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Negotiate Your Salary (With Scripts) · Shortutorial</title>
+<meta name="description" content="Negotiate a job offer with confidence: research pay ranges with BLS data, pick the right timing, anchor your counteroffer, use word-for-word email and phone scripts, handle pushback, and negotiate benefits beyond pay. Includes a counteroffer calculator.">
+<link rel="canonical" href="https://shortutorial.com/negotiate-salary/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How to Negotiate Your Salary (With Scripts) · Shortutorial">
+<meta property="og:description" content="Negotiate a job offer with confidence: research pay ranges with BLS data, pick the right timing, anchor your counteroffer, use word-for-word email and phone scripts, handle pushback, and negotiate benefits beyond pay. Includes a counteroffer calculator.">
+<meta property="og:url" content="https://shortutorial.com/negotiate-salary/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+/* calculator */
+.nc-in{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.nc-in label{min-width:0}
+.nc-in input[type=number],.nc-in input[type=text]{width:100% !important;box-sizing:border-box}
+.nc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.nc-grid div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
+.nc-grid small{display:block;font-family:var(--mono);font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.nc-grid b{font-family:var(--display);font-size:1.15rem;color:var(--accent)}
+.range{position:relative;height:56px;margin:4px 6px 0}
+.range .bar{position:absolute;left:0;right:0;top:22px;height:10px;border-radius:99px;background:linear-gradient(90deg,var(--line),var(--accent-soft) 30%,var(--accent-soft) 70%,var(--line))}
+.range .band{position:absolute;top:22px;height:10px;background:var(--accent);opacity:.35;border-radius:99px}
+.range .pin{position:absolute;top:0;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;font-family:var(--mono);font-size:.66rem;color:var(--muted);white-space:nowrap}
+.range .pin i{width:3px;height:22px;background:currentColor;border-radius:2px;margin-top:14px}
+.range .pin.o{color:var(--amber)} .range .pin.c{color:var(--accent)}
+.range .pin span{position:absolute;top:0}
+.range .pin.c span{top:auto;bottom:-16px}
+.script{position:relative}
+.script pre{white-space:pre-wrap;font-size:.84rem}
+.perks{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:6px 12px}
+.perks label{flex-direction:row !important;align-items:center;gap:8px !important;font-family:var(--body) !important;font-size:.95rem !important;color:var(--ink) !important}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"How to Negotiate Your Salary","item":"https://shortutorial.com/negotiate-salary/"}]},{"@type":"Article","@id":"https://shortutorial.com/negotiate-salary/#article","headline":"How to Negotiate Your Salary","description":"Negotiate a job offer with confidence: research pay ranges with BLS data, pick the right timing, anchor your counteroffer, use word-for-word email and phone scripts, handle pushback, and negotiate benefits beyond pay. Includes a counteroffer calculator.","url":"https://shortutorial.com/negotiate-salary/","mainEntityOfPage":"https://shortutorial.com/negotiate-salary/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Money","keywords":"negotiate salary, salary negotiation, job offer, counteroffer, ask for a raise, salary expectations, bls wages, pay range, negotiation script, signing bonus, benefits","timeRequired":"PT13M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is it rude to negotiate a job offer?","acceptedAnswer":{"@type":"Answer","text":"No. Most employers expect it, and many leave room in the first offer. Being polite, specific and grateful keeps it professional."}},{"@type":"Question","name":"How much higher should I counter?","acceptedAnswer":{"@type":"Answer","text":"There's no single rule. Base it on your research: a counter somewhere above your target but within or near the top of the market range for your experience. Many first offers have room for a 5 to 10% increase, but that depends on the employer."}},{"@type":"Question","name":"Should I negotiate by email or phone?","acceptedAnswer":{"@type":"Answer","text":"Either works. Email lets you think and keep a record. Phone builds rapport and lets you hear their reaction. Many people talk by phone, then confirm the details by email."}},{"@type":"Question","name":"Can I negotiate an hourly job?","acceptedAnswer":{"@type":"Answer","text":"Often, yes, especially if you have experience or certifications. To compare with yearly salaries, a full-time year is about 2,080 hours (40 hours × 52 weeks)."}},{"@type":"Question","name":"What if the posted range is lower than my target?","acceptedAnswer":{"@type":"Answer","text":"Ask whether there's flexibility for your experience, or negotiate the other parts of the package. If the gap is big, it may not be the right job."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="negotiate-salary">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=money">Money</a> / Negotiate your salary</div>
+    <span class="eyebrow">Money · Career</span>
+    <h1>How to Negotiate Your Salary</h1>
+    <p class="lede">A few polite sentences can raise your pay for years, because future raises build on your starting number. Learn how to find a fair range, when to bring it up, how to make a counteroffer, and exactly what to say.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~13 min read</span><span class="badge">6 lessons</span><span class="badge">Counteroffer calculator + scripts</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#n1">1 · Research</a><a href="#n2">2 · Timing</a><a href="#n3">3 · Anchoring</a><a href="#n4">4 · Calculator & scripts</a><a href="#n5">5 · Pushback</a><a href="#n6">6 · Beyond pay</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="n1">
+    <div class="lesson-head"><span class="step">01</span><h2>Research your market range</h2></div>
+    <p>Negotiation is much easier when you can point to real numbers. Your goal is a <b>range</b> for this job, in this area, at your level of experience.</p>
+    <h3>Start with free government data</h3>
+    <ul class="points">
+      <li><b>BLS Occupational Outlook Handbook (OOH):</b> search your job to see national <b>median pay</b>, typical education, and job outlook.</li>
+      <li><b>BLS Occupational Employment and Wage Statistics (OEWS):</b> pay by state and metro area, with <b>percentiles</b> (10th, 25th, median, 75th, 90th). The latest release, published in May 2026, covers May 2025 wages.</li>
+      <li><b>CareerOneStop</b> (sponsored by the U.S. Department of Labor) has a salary finder that uses the same data with a friendlier search by city.</li>
+    </ul>
+    <div class="example"><div class="ex-h">Example · reading percentiles</div><ol><li>OEWS shows a role in your metro with a 25th percentile of $58,000, median $68,000 and 75th of $81,000.</li><li>New to the field? Aim around the 25th to median. Several years of experience and strong results? Median to 75th.</li><li class="ans">Your market range: about $58,000 to $81,000, and your target sits where your experience fits.</li></ol></div>
+    <h3>Then sharpen it</h3>
+    <ul class="points">
+      <li><b>The job posting.</b> A growing number of states and cities require employers to list a pay range in job ads. If one is posted, that's the company's own range.</li>
+      <li><b>Salary sites</b> (Glassdoor, Indeed, LinkedIn, Levels.fyi for tech) show company-specific numbers, though they're self-reported.</li>
+      <li><b>People.</b> Ask recruiters, mentors, and people in the role what's fair. Many are happy to share a range.</li>
+    </ul>
+    <p class="callout"><span><b>Know three numbers before any call:</b> your <b>target</b> (what you'll ask for), your <b>happy number</b> (what you'd accept gladly), and your <b>walk-away</b> (below this, you'd decline or keep looking).</span></p>
+  </section>
+
+  <section class="lesson" id="n2">
+    <div class="lesson-head"><span class="step">02</span><h2>Timing: when to talk numbers</h2></div>
+    <ul class="points">
+      <li><b>Best time:</b> after you have an offer, before you accept. They've decided they want you, and nothing is signed.</li>
+      <li><b>Don't accept on the spot.</b> Thank them, sound excited, and ask for the offer in writing and a day or two to review. That's normal.</li>
+      <li><b>Early “What are your salary expectations?”</b> If you can, turn it back or give a well-researched range.</li>
+      <li><b>Salary history:</b> many states and cities ban employers from asking about your past pay. Either way, you can focus on the value of <i>this</i> role instead.</li>
+    </ul>
+    <div class="example"><div class="ex-h">Script · when asked early about expectations</div><div class="ex-b"><p>“I'm focused on finding the right fit, and I'm confident we can agree on something fair. What's the budgeted range for this role?”</p><p>If they push: “Based on my research for this role in [city], I'm looking in the range of $X to $Y, depending on the full package.”</p></div></div>
+    <p class="callout"><span><b>Range tip:</b> put your real target at the <b>bottom</b> of the range you say out loud. If you say “$70k to $80k,” expect offers near $70k.</span></p>
+  </section>
+
+  <section class="lesson" id="n3">
+    <div class="lesson-head"><span class="step">03</span><h2>Anchoring and making your counter</h2></div>
+    <p>The first number put on the table tends to pull the final number toward it. That's called <b>anchoring</b>. Once there's an offer, your <b>counter</b> is your anchor, so make it ambitious but defensible.</p>
+    <ol class="steps">
+      <li><b>Lead with enthusiasm.</b> “I'm really excited about this role.” You want them to feel you're coming, just at the right number.</li>
+      <li><b>Give a specific number</b> a bit above your target. Expect them to meet you partway. A precise number like $76,500 can signal you've done your homework.</li>
+      <li><b>Back it up</b> with one or two reasons: market data, your specific experience, a skill they said they need, a competing offer.</li>
+      <li><b>Then stop talking.</b> Let them respond. Silence feels awkward but it's normal.</li>
+      <li><b>Get the final offer in writing</b> before you resign from your current job.</li>
+    </ol>
+    <p class="callout warn"><span><b>Stay honest.</b> Don't invent a competing offer or inflate your current pay. It can get the offer pulled, and it's easy to check. Your research and your value are enough.</span></p>
+  </section>
+
+  <section class="lesson" id="n4">
+    <div class="lesson-head"><span class="step">04</span><h2>Counteroffer calculator and scripts</h2></div>
+    <p>Enter the offer and the market range from your research. The calculator suggests a counter, shows where it lands in the range, and writes a script you can edit.</p>
+    <div class="try" id="nc"><span class="try-h">Try it · counteroffer calculator</span>
+      <div class="nc-in">
+        <label>Offer (yearly $)<input type="number" id="ncOffer" value="65000" min="0" step="500" inputmode="numeric"></label>
+        <label>Market low ($)<input type="number" id="ncLow" value="58000" min="0" step="500" inputmode="numeric"></label>
+        <label>Market median ($)<input type="number" id="ncMed" value="68000" min="0" step="500" inputmode="numeric"></label>
+        <label>Market high ($)<input type="number" id="ncHigh" value="81000" min="0" step="500" inputmode="numeric"></label>
+        <label>Your target ($)<input type="number" id="ncTarget" value="72000" min="0" step="500" inputmode="numeric"></label>
+        <label>Job title<input type="text" id="ncRole" value="Marketing Coordinator" maxlength="60"></label>
+        <label>Company<input type="text" id="ncCo" value="the company" maxlength="60"></label>
+        <label>Your name<input type="text" id="ncName" value="" placeholder="Your name" maxlength="40"></label>
+      </div>
+      <div class="chipset" id="ncLev" aria-label="Your leverage"><button type="button" data-l="0" aria-pressed="false">New to the field</button><button type="button" data-l="1" aria-pressed="true">Solid experience</button><button type="button" data-l="2" aria-pressed="false">Strong fit or other offer</button></div>
+      <div class="range" id="ncRange" aria-hidden="true"></div>
+      <div class="nc-grid" aria-live="polite">
+        <div><small>Suggested counter</small><b id="ncCounter">—</b></div>
+        <div><small>Likely landing zone</small><b id="ncLand">—</b></div>
+        <div><small>Raise vs offer</small><b id="ncPct">—</b></div>
+        <div><small>Over 5 years*</small><b id="nc5">—</b></div>
+      </div>
+      <div class="work" id="ncWork"></div>
+      <h3 style="margin:4px 0 0">If salary is capped, ask for…</h3>
+      <div class="perks" id="ncPerks">
+        <label><input type="checkbox" value="a signing bonus"> Signing bonus</label>
+        <label><input type="checkbox" value="additional PTO"> Extra PTO</label>
+        <label><input type="checkbox" value="remote or hybrid flexibility"> Remote / hybrid</label>
+        <label><input type="checkbox" value="a compensation review at six months"> 6-month review</label>
+        <label><input type="checkbox" value="a professional development budget"> Training budget</label>
+        <label><input type="checkbox" value="relocation support"> Relocation</label>
+      </div>
+      <div class="chipset" id="ncMode" aria-label="Script type"><button type="button" data-m="email" aria-pressed="true">Email script</button><button type="button" data-m="phone" aria-pressed="false">Phone script</button></div>
+      <div class="script code"><pre id="ncScript"></pre></div>
+      <p class="work" style="margin:0">*Extra pay vs the original offer over 5 years, assuming the same 3% raise each year either way. Copy the script, then make it sound like you.</p>
+    </div>
+  </section>
+
+  <section class="lesson" id="n5">
+    <div class="lesson-head"><span class="step">05</span><h2>Handling pushback and counteroffers</h2></div>
+    <div class="tw"><table class="t">
+      <tr><th>They say</th><th>You can say</th></tr>
+      <tr><td>“That's above our budget.”</td><td>“I understand. Is there flexibility anywhere in the package, like a signing bonus or a review at six months?”</td></tr>
+      <tr><td>“This is our final offer.”</td><td>“Thanks for checking. Could we put a compensation review at six months in writing?” Then decide based on your walk-away number.</td></tr>
+      <tr><td>“We can meet you partway.”</td><td>“I appreciate that. If we can get to $X, I'm ready to sign today.” (Only if you are.)</td></tr>
+      <tr><td>“We need an answer today.”</td><td>“I'm very interested. I'd like to review the full offer in writing; can I get back to you by [day]?”</td></tr>
+    </table></div>
+    <h3>Competing offers</h3>
+    <p>If you have a real offer elsewhere, you can mention it plainly: “I have another offer at $X, but this role is my first choice. Is there any way to close the gap?” Only say it if it's true, and only if you'd actually take the other job.</p>
+    <h3>When your current employer counters</h3>
+    <p>If you resign and your boss offers more to stay, think about <b>why</b> you were leaving. If it was only money, a counteroffer might fix it. If it was the work, the manager, or growth, more pay usually doesn't change that.</p>
+    <h3>Asking for a raise at your current job</h3>
+    <ul class="points">
+      <li>Time it near reviews or after a clear win. Book a meeting; don't ambush your boss.</li>
+      <li>Bring a short list of results (numbers if you can) and your market research.</li>
+      <li>Ask for a specific amount. If the answer is “not now,” ask what you'd need to show, and when to revisit it.</li>
+    </ul>
+    <p class="callout"><span><b>Will they pull the offer?</b> It's rare when you're polite and reasonable. The usual worst case is “this is the best we can do.” Keep the tone warm and collaborative: you're solving a problem together.</span></p>
+  </section>
+
+  <section class="lesson" id="n6">
+    <div class="lesson-head"><span class="step">06</span><h2>Benefits beyond pay</h2></div>
+    <p>Total compensation is more than salary. Compare the whole package, and negotiate the parts that matter to you.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Item</th><th>Why it matters</th></tr>
+      <tr><td>Retirement match</td><td>A 401(k) match of 4% on $70,000 is $2,800 a year of extra money, if you contribute enough to get it.</td></tr>
+      <tr><td>Health insurance</td><td>Premiums and deductibles can differ by thousands per year between employers.</td></tr>
+      <tr><td>Signing bonus</td><td>Easier for companies to approve than higher salary. Ask if you'd lose a bonus by leaving your current job.</td></tr>
+      <tr><td>Paid time off</td><td>Extra vacation days are often negotiable, especially for experienced hires.</td></tr>
+      <tr><td>Remote or flexible work</td><td>Can save commuting time and costs.</td></tr>
+      <tr><td>Title and start date</td><td>A better title helps future negotiations. A later start date can give you a break between jobs.</td></tr>
+      <tr><td>Equity or stock</td><td>Ask how many shares, the vesting schedule, and what they're worth now. Startup equity may end up worth nothing.</td></tr>
+      <tr><td>Training and tuition</td><td>Courses, certifications and conferences build your future pay.</td></tr>
+    </table></div>
+    <p class="callout"><span><b>Bundle your asks.</b> Bring up everything at once rather than one item at a time, so you don't seem to keep coming back for more.</span></p>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Is it rude to negotiate a job offer?</summary><div class="a"><p>No. Most employers expect it, and many leave room in the first offer. Being polite, specific and grateful keeps it professional.</p></div></details>
+      <details><summary>How much higher should I counter?</summary><div class="a"><p>There's no single rule. Base it on your research: a counter somewhere above your target but within or near the top of the market range for your experience. Many first offers have room for a 5 to 10% increase, but that depends on the employer.</p></div></details>
+      <details><summary>Should I negotiate by email or phone?</summary><div class="a"><p>Either works. Email lets you think and keep a record. Phone builds rapport and lets you hear their reaction. Many people talk by phone, then confirm the details by email.</p></div></details>
+      <details><summary>Can I negotiate an hourly job?</summary><div class="a"><p>Often, yes, especially if you have experience or certifications. To compare with yearly salaries, a full-time year is about 2,080 hours (40 hours × 52 weeks).</p></div></details>
+      <details><summary>What if the posted range is lower than my target?</summary><div class="a"><p>Ask whether there's flexibility for your experience, or negotiate the other parts of the package. If the gap is big, it may not be the right job.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://www.bls.gov/ooh/" target="_blank" rel="noopener"><span class="src">U.S. BLS</span><b>Occupational Outlook Handbook (median pay by job)</b></a>
+      <a href="https://www.bls.gov/oes/" target="_blank" rel="noopener"><span class="src">U.S. BLS</span><b>Occupational Employment and Wage Statistics (pay by area)</b></a>
+      <a href="https://www.careeronestop.org/Toolkit/Wages/find-salary.aspx" target="_blank" rel="noopener"><span class="src">CareerOneStop · U.S. DOL</span><b>Salary finder by job and location</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>General guidance, not legal or career advice. Example numbers are made up; use real data for your job and area.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  let lev = 1, mode = 'email';
+  const money = n => '$' + Math.round(n).toLocaleString('en-US');
+  const r500 = n => Math.round(n / 500) * 500;
+  const num = id => parseFloat($(id).value);
+  function calc(){
+    const offer = num('#ncOffer'), low = num('#ncLow'), med = num('#ncMed'), high = num('#ncHigh');
+    let target = num('#ncTarget');
+    if (![offer, low, med, high].every(v => v > 0)){ $('#ncCounter').textContent = '—'; $('#ncWork').textContent = 'Enter the offer and a market low, median and high.'; $('#ncScript').textContent = ''; return; }
+    const notes = [];
+    if (!(low <= med && med <= high)) notes.push('Check your range: low ≤ median ≤ high.');
+    if (!(target > 0)) target = med;
+    // Where leverage says you belong in the market
+    const fair = [ (low + med) / 2, med + (high - med) * 0.35, med + (high - med) * 0.75 ][lev];
+    const goal = Math.max(target, fair);
+    // Counter a little above the goal, since they'll likely meet you partway
+    let counter = goal + (goal - offer) * 0.25;
+    counter = Math.max(counter, offer * 1.05);
+    if (counter > high * 1.05) { counter = Math.max(high * 1.05, offer * 1.05); notes.push('Your target is above the top of your range. Make sure your experience backs it up, or expect to land lower.'); }
+    counter = r500(counter);
+    if (counter % 1000 === 0) counter += 500; // precise-sounding anchor
+    const land = [r500((offer + counter) / 2), counter];
+    const pct = (counter / offer - 1) * 100;
+    let five = 0; for (let y = 0; y < 5; y++) five += (land[0] - offer) * Math.pow(1.03, y);
+    $('#ncCounter').textContent = money(counter);
+    $('#ncLand').textContent = money(land[0]) + '–' + money(land[1]);
+    $('#ncPct').textContent = '+' + fmt(pct, 1) + '%';
+    $('#nc5').textContent = (five > 0 ? '+' : '') + money(five);
+    if (offer >= high) notes.push('The offer is already at or above the top of your range. Push gently on salary (about 5%) and focus on bonus, PTO or flexibility.');
+    else if (offer >= goal) notes.push('The offer already meets your goal. A modest counter is still reasonable, or negotiate perks.');
+    else notes.push(`Offer is ${money(goal - offer)} below where your research says you fit (${money(r500(goal))}).`);
+    notes.push(`Walk-away check: decide now the lowest number you'd accept. Many people set it near ${money(r500(Math.max(offer, Math.min(goal, (offer + goal) / 2))))}.`);
+    $('#ncWork').textContent = notes.join('\n');
+    drawRange(offer, low, med, high, counter, land);
+    script(offer, counter, med);
+  }
+  function drawRange(offer, low, med, high, counter, land){
+    const lo = Math.min(low, offer) * 0.95, hi = Math.max(high, counter) * 1.03;
+    const x = v => (100 * (v - lo) / (hi - lo)).toFixed(2) + '%';
+    $('#ncRange').innerHTML = `<div class="bar"></div><div class="band" style="left:${x(low)};width:calc(${x(high)} - ${x(low)})"></div>
+      <div class="pin" style="left:${x(low)}"><span>low</span><i></i></div>
+      <div class="pin" style="left:${x(med)}"><span>median</span><i></i></div>
+      <div class="pin" style="left:${x(high)}"><span>high</span><i></i></div>
+      <div class="pin o" style="left:${x(offer)}"><i></i><span style="top:auto;bottom:-16px">offer</span></div>
+      <div class="pin c" style="left:${x(counter)}"><i></i><span>counter</span></div>`;
+  }
+  function perks(){ return [...document.querySelectorAll('#ncPerks input:checked')].map(i => i.value); }
+  function list(a){ return a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' and ' + a[a.length - 1]; }
+  function script(offer, counter, med){
+    const role = $('#ncRole').value.trim() || 'this role', co = $('#ncCo').value.trim() || 'the company', name = $('#ncName').value.trim() || '[Your name]';
+    const p = perks();
+    const why = lev === 2 ? 'Given my experience and how closely my background matches what the team needs' : lev === 1 ? 'Based on my experience and research on pay for similar roles in this area' : 'Based on my research on pay for similar roles in this area';
+    const pLine = p.length ? `\n\nIf there's limited room on base salary, I'd also be glad to talk about ${list(p)}.` : '';
+    const pPhone = p.length ? `\n[If they say salary is capped]\n"I understand. Would there be flexibility on ${list(p)}?"` : `\n[If they say salary is capped]\n"I understand. Is there flexibility elsewhere, like a signing bonus or a review at six months?"`;
+    if (mode === 'email'){
+      $('#ncScript').textContent =
+`Subject: ${role} offer
+
+Hi [Hiring manager's name],
+
+Thank you so much for the offer for the ${role} position. I'm excited about the work and about joining ${co}.
+
+${why}, I was hoping for a base salary of ${money(counter)}. I believe that reflects the value I'll bring, especially [one specific strength or result].${pLine}
+
+I'm eager to make this work. Would you be open to discussing it?
+
+Thank you again,
+${name}`;
+    } else {
+      $('#ncScript').textContent =
+`"Thanks again for the offer. I'm really excited about the ${role} role and the team at ${co}."
+
+"I've looked at the market for this position, and ${why.charAt(0).toLowerCase() + why.slice(1)}, I was hoping we could get the base salary to ${money(counter)}."
+
+[Pause. Let them respond.]
+
+[If they ask why]
+"In my last role I [specific result]. I can bring that here from day one."
+${pPhone}
+
+[If they meet you partway]
+"I appreciate that. Could you send the updated offer in writing so I can review it?"`;
+    }
+  }
+  document.querySelectorAll('#ncLev button').forEach(b => b.addEventListener('click', () => { lev = +b.dataset.l; document.querySelectorAll('#ncLev button').forEach(x => x.setAttribute('aria-pressed', x === b)); calc(); }));
+  document.querySelectorAll('#ncMode button').forEach(b => b.addEventListener('click', () => { mode = b.dataset.m; document.querySelectorAll('#ncMode button').forEach(x => x.setAttribute('aria-pressed', x === b)); calc(); }));
+  document.querySelectorAll('#ncPerks input').forEach(i => i.addEventListener('change', calc));
+  live($('#nc'), calc);
+})();
+</script>
+</body>
+</html>

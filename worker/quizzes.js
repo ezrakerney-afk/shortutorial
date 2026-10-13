@@ -2501,5 +2501,71 @@ export default {
         o: ["Always 60 fps", "Always 24 fps", "The same rate you filmed at", "As low as possible"], a: 2,
         e: "Exporting at the recorded frame rate avoids stutter." }
     ]
+  },
+
+  "how-to-meditate": {
+    title: "How to Meditate",
+    pass: 4,
+    questions: [
+      { q: "Your mind wanders 20 times in 5 minutes. What does that mean?",
+        o: ["You're doing it wrong", "You should stop meditating", "You should meditate longer to empty your mind", "It's normal; noticing and coming back is the practice"], a: 3,
+        e: "Noticing and returning is the core exercise, like a rep at the gym." },
+      { q: "What's a good posture for meditation?",
+        o: ["Relaxed but alert, like sitting tall in a chair", "Slumped back on a couch", "Rigid and tense", "Standing on one leg"], a: 0,
+        e: "Upright enough to stay alert, relaxed enough to be still." },
+      { q: "How long should a beginner start with?",
+        o: ["At least an hour", "2 to 5 minutes a day", "Only once a month", "30 minutes or it doesn't count"], a: 1,
+        e: "Short daily sessions beat long occasional ones." },
+      { q: "What do you do in a body scan?",
+        o: ["Hold your breath as long as possible", "Tense every muscle at once", "Slowly move attention through the body, noticing sensations", "Count to 100 quickly"], a: 2,
+        e: "A body scan moves attention region by region without trying to change anything." },
+      { q: "What does NCCIH say about meditation and medical care?",
+        o: ["It replaces medication", "Don't use it to replace care or delay seeing a provider", "It cures anxiety for everyone", "It has been proven risk-free for everyone"], a: 1,
+        e: "Meditation can help, but shouldn't replace conventional care." }
+    ]
+  },
+
+  "investing-basics": {
+    title: "Investing for Beginners",
+    pass: 4,
+    questions: [
+      { q: "What is an index fund?",
+        o: ["A fund where a manager picks stocks to beat the market", "A fund that simply copies a market index like the S&P 500", "A savings account that pays a fixed interest rate", "A loan to the government"], a: 1,
+        e: "An index fund tracks an index instead of picking winners, which keeps costs low." },
+      { q: "Why does diversification lower risk?",
+        o: ["It guarantees you can't lose money", "It makes your account FDIC insured", "One company failing has a small effect when you own many", "It lets you sell at the top of the market"], a: 2,
+        e: "Spread across many companies, one going to zero barely dents your total." },
+      { q: "Which of these should usually come before investing in stocks?",
+        o: ["Buying a new car", "Paying off a 25% interest credit card", "Picking individual stocks", "Waiting for the market to drop"], a: 1,
+        e: "Paying off high-interest debt is a guaranteed return that investing can't reliably beat." },
+      { q: "$100,000 grows for 20 years at a 4% return. About how much more do you end with paying 0.25% in yearly fees instead of 1%?",
+        o: ["About $28,000", "About $750", "About $2,800", "Nothing, fees don't compound"], a: 0,
+        e: "About $209,000 versus $181,000. Fees also cost the growth that money would have earned." },
+      { q: "What is dollar-cost averaging?",
+        o: ["Buying only when prices are low", "Converting your money to dollars", "Investing the same amount on a regular schedule", "Selling a little every month"], a: 2,
+        e: "A fixed amount on a schedule buys more shares when prices are low and fewer when high." }
+    ]
+  },
+
+  "negotiate-salary": {
+    title: "How to Negotiate Your Salary",
+    pass: 4,
+    questions: [
+      { q: "When is usually the best time to negotiate pay?",
+        o: ["Before your first interview", "After you have an offer, before you accept", "After you've started the job", "Never, it's rude"], a: 1,
+        e: "Once they've decided they want you and before you sign, you have the most leverage." },
+      { q: "Which free government source shows pay percentiles by state and metro area?",
+        o: ["BLS Occupational Employment and Wage Statistics (OEWS)", "The IRS", "Social Security", "The Census Bureau's population clock"], a: 0,
+        e: "OEWS shows 10th through 90th percentile wages by area." },
+      { q: "You say a range of '$70k to $80k.' Where will offers usually land?",
+        o: ["Near $80k", "Above $80k", "Near $70k, the bottom", "Exactly $75k"], a: 2,
+        e: "Employers tend to hear the bottom of a range, so put your target there." },
+      { q: "The company says salary is capped. What's a good next move?",
+        o: ["Accept immediately", "Withdraw from the process", "Invent a competing offer", "Ask about a signing bonus, extra PTO, or a six-month review"], a: 3,
+        e: "Other parts of the package are often more flexible than base pay." },
+      { q: "What is 'anchoring'?",
+        o: ["The first number on the table pulls the final number toward it", "Refusing to move from your number", "Asking for a long-term contract", "Negotiating only benefits"], a: 0,
+        e: "The first number sets the reference point for the rest of the negotiation." }
+    ]
   }
 };

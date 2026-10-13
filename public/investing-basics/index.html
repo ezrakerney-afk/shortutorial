@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Investing for Beginners: Stocks, Bonds, Index Funds and Fees · Shortutorial</title>
+<meta name="description" content="Learn investing from zero: stocks, bonds, funds and index funds, diversification, risk and time horizon, fees, and dollar-cost averaging. Includes a growth simulator that shows what fees cost you over time.">
+<link rel="canonical" href="https://shortutorial.com/investing-basics/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Investing for Beginners: Stocks, Bonds, Index Funds and Fees · Shortutorial">
+<meta property="og:description" content="Learn investing from zero: stocks, bonds, funds and index funds, diversification, risk and time horizon, fees, and dollar-cost averaging. Includes a growth simulator that shows what fees cost you over time.">
+<meta property="og:url" content="https://shortutorial.com/investing-basics/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+/* growth simulator */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.kpis div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
+.kpis small{display:block;font-family:var(--mono);font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.kpis b{font-family:var(--display);font-size:1.15rem;color:var(--accent);overflow-wrap:anywhere}
+.kpis .lose b{color:var(--bad)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-2px;margin-right:5px}
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px}
+.chart text{font-family:var(--mono);font-size:9px;fill:var(--muted)}
+/* diversification demo */
+.dv{display:grid;grid-template-columns:repeat(auto-fill,minmax(36px,1fr));gap:4px}
+.dv span{height:30px;border-radius:5px;background:var(--accent-soft);border:1px solid var(--line)}
+.dv span.hit{background:var(--bad);border-color:var(--bad)}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"Investing for Beginners","item":"https://shortutorial.com/investing-basics/"}]},{"@type":"Article","@id":"https://shortutorial.com/investing-basics/#article","headline":"Investing for Beginners","description":"Learn investing from zero: stocks, bonds, funds and index funds, diversification, risk and time horizon, fees, and dollar-cost averaging. Includes a growth simulator that shows what fees cost you over time.","url":"https://shortutorial.com/investing-basics/","mainEntityOfPage":"https://shortutorial.com/investing-basics/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Money","keywords":"investing for beginners, how to invest, stocks, bonds, index funds, etf, mutual funds, diversification, expense ratio, dollar cost averaging, asset allocation, stock market","timeRequired":"PT14M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much money do I need to start?","acceptedAnswer":{"@type":"Answer","text":"Very little. Many brokerages have no account minimum and let you buy fractional shares, so you can start an index fund with a few dollars. Starting small and early beats waiting for a big lump sum."}},{"@type":"Question","name":"Is an ETF better than a mutual fund?","acceptedAnswer":{"@type":"Answer","text":"Neither is always better. What matters most is what the fund holds and what it costs. A low-cost index mutual fund and a low-cost index ETF that track the same index will behave almost the same."}},{"@type":"Question","name":"Should I wait for the market to drop before I buy?","acceptedAnswer":{"@type":"Answer","text":"Nobody can reliably predict short-term moves. Waiting often means missing gains. Investing a fixed amount on a regular schedule (dollar-cost averaging) avoids the guessing."}},{"@type":"Question","name":"What happens if the market crashes?","acceptedAnswer":{"@type":"Answer","text":"Your balance will drop, sometimes a lot. If you don't need the money soon and you stay invested, you give it time to recover. Selling in a panic locks in the loss."}},{"@type":"Question","name":"What's the difference between a stock and a fund?","acceptedAnswer":{"@type":"Answer","text":"A stock is one company. A fund holds many stocks (and sometimes bonds), so one company's bad news has a much smaller effect on you."}},{"@type":"Question","name":"Do I pay tax on investments?","acceptedAnswer":{"@type":"Answer","text":"In a regular brokerage account, you can owe tax on dividends, interest and gains when you sell. Retirement accounts like 401(k)s and IRAs either delay that tax or remove it. See Retirement Accounts Explained ."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="investing-basics">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=money">Money</a> / Investing basics</div>
+    <span class="eyebrow">Money · Investing</span>
+    <h1>Investing for Beginners</h1>
+    <p class="lede">What stocks, bonds and index funds actually are, why spreading your money out lowers risk, and why a 1% fee can quietly eat a big slice of your future. Then try the simulator to see it with your own numbers.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~14 min read</span><span class="badge">6 lessons</span><span class="badge">Growth + fee simulator</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#i1">1 · Before you start</a><a href="#i2">2 · Stocks & bonds</a><a href="#i3">3 · Funds</a><a href="#i4">4 · Risk & time</a><a href="#i5">5 · Fees</a><a href="#i6">6 · Getting started</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="i1">
+    <div class="lesson-head"><span class="step">01</span><h2>Before you invest</h2></div>
+    <p><b>Saving</b> is putting money somewhere safe, like a savings account, where it won't shrink. <b>Investing</b> is buying things that can grow in value, like pieces of companies. Investing usually grows faster over many years, but the value goes up and down along the way, and you can lose money.</p>
+    <p>Growth comes from <b>compounding</b>: your gains start earning gains of their own. That's why starting early matters so much. If compounding is new to you, read <a href="../compound-interest/">Compound Interest Explained</a> first. It takes about 8 minutes.</p>
+    <h3>Get these in place first</h3>
+    <ol class="steps">
+      <li><b>An emergency fund.</b> Keep a few months of basic expenses in a savings account. Then a surprise bill won't force you to sell investments when prices are down.</li>
+      <li><b>Pay off high-interest debt.</b> Paying off a credit card that charges 25% is a guaranteed 25% “return.” No investment reliably beats that.</li>
+      <li><b>Grab any free employer match.</b> If your job matches 401(k) contributions, put in at least enough to get the full match. See <a href="../retirement-accounts/">Retirement Accounts Explained</a>.</li>
+      <li><b>Know when you need the money.</b> Money you'll need within a few years (a car, a down payment) generally shouldn't be in stocks.</li>
+    </ol>
+    <p class="callout"><span><b>Investments aren't insured like bank deposits.</b> FDIC insurance covers bank accounts, not stocks, bonds or mutual funds, even if you buy them at a bank. Their value can fall.</span></p>
+  </section>
+
+  <section class="lesson" id="i2">
+    <div class="lesson-head"><span class="step">02</span><h2>Stocks, bonds and cash</h2></div>
+    <p>Almost every investment is built from three basic building blocks, called <b>asset classes</b>. They behave differently, which is exactly why people mix them.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Asset</th><th>What you own</th><th>How you make money</th><th>Risk</th></tr>
+      <tr><td><b>Stocks</b> (shares, equities)</td><td>A small piece of a company</td><td>The share price rises; some pay dividends</td><td>Highest. Can drop 30% or more in a bad year.</td></tr>
+      <tr><td><b>Bonds</b></td><td>A loan to a company or government</td><td>Regular interest, then your money back at the end</td><td>Medium to low. Prices move when interest rates change.</td></tr>
+      <tr><td><b>Cash</b> (savings, money market, CDs)</td><td>A deposit or very short-term loan</td><td>Interest</td><td>Lowest, but may not keep up with inflation.</td></tr>
+    </table></div>
+    <p>The basic trade-off: <b>higher possible returns come with bigger swings</b>. Over long periods, stocks have grown much more than bonds or cash, but they have also had years where they fell hard. Past returns don't guarantee future ones.</p>
+    <div class="grid2">
+      <div><span class="tagline">Example · a stock</span><h3>You buy 1 share at $100</h3><p>The company grows and the share is worth $130 a few years later. If you sell, you made $30. If it falls to $70 and you sell, you lost $30.</p></div>
+      <div><span class="tagline">Example · a bond</span><h3>You lend $1,000 for 5 years at 4%</h3><p>You get $40 a year in interest, then your $1,000 back. The risk is the borrower failing to pay, or rates rising so your bond is worth less if you sell early.</p></div>
+    </div>
+  </section>
+
+  <section class="lesson" id="i3">
+    <div class="lesson-head"><span class="step">03</span><h2>Funds and index funds</h2></div>
+    <p>Picking individual stocks is hard, even for professionals. A <b>fund</b> pools money from many people and buys lots of investments at once. With one purchase, you own a tiny slice of hundreds or thousands of companies.</p>
+    <ul class="points">
+      <li><b>Mutual fund:</b> you buy or sell directly from the fund company, at a price set once a day after the market closes.</li>
+      <li><b>ETF</b> (exchange-traded fund): trades like a stock, at any time the market is open. Many have very low fees.</li>
+      <li><b>Index fund:</b> a mutual fund or ETF that simply copies a market <b>index</b>, like the S&amp;P 500 (about 500 large US companies) or a “total stock market” index. No one is trying to pick winners, so costs are usually very low.</li>
+      <li><b>Actively managed fund:</b> a manager picks investments trying to beat the market. These usually charge more, and many don't beat their index after fees.</li>
+      <li><b>Target-date fund:</b> an all-in-one fund with a year in the name (like 2060). It holds a mix of stocks and bonds and slowly gets more conservative as that year approaches.</li>
+    </ul>
+    <p class="callout"><span><b>Why so many beginners pick index funds:</b> instant diversification, low fees, and nothing to research or trade. The SEC's investor bulletin on index funds is a good plain-English read (link in Sources).</span></p>
+  </section>
+
+  <section class="lesson" id="i4">
+    <div class="lesson-head"><span class="step">04</span><h2>Risk, diversification and time horizon</h2></div>
+    <p><b>Diversification</b> means not putting all your eggs in one basket. If you own one company and it fails, you could lose everything. If you own 500 and one fails, you barely notice.</p>
+    <div class="try" id="dvTry"><span class="try-h">Try it · one bad company</span>
+      <p>Pick how many companies you own, then press the button to have one of them go to zero.</p>
+      <div class="chipset" id="dvN" aria-label="Number of companies"><button type="button" data-n="1" aria-pressed="false">1 company</button><button type="button" data-n="5" aria-pressed="false">5</button><button type="button" data-n="20" aria-pressed="true">20</button><button type="button" data-n="100" aria-pressed="false">100</button></div>
+      <div class="dv" id="dvGrid" aria-hidden="true"></div>
+      <div class="row"><button class="btn" type="button" id="dvGo">One company goes bust</button></div>
+      <p class="out" id="dvOut" aria-live="polite"></p>
+    </div>
+    <h3>Asset allocation: your mix</h3>
+    <p>Your <b>asset allocation</b> is how you split your money between stocks, bonds and cash. More stocks means more growth potential and bigger drops. More bonds and cash means a smoother ride and slower growth. Two things set the right mix for you:</p>
+    <ul class="points">
+      <li><b>Time horizon:</b> how long until you need the money. With 30 years to go, you have time to recover from a crash. With 2 years to go, you don't.</li>
+      <li><b>Risk tolerance:</b> how much of a drop you can stomach without panicking and selling. Selling after a crash turns a temporary drop into a permanent loss.</li>
+    </ul>
+    <p><b>Rebalancing</b> means bringing your mix back to your plan now and then, for example once a year. If stocks grew from 80% to 90% of your money, you sell a little stock and buy bonds to get back to 80%.</p>
+    <p class="callout warn"><span><b>Downturns are normal.</b> Markets have fallen sharply many times and later recovered, but there's no guarantee of when. Only invest money you can leave alone through a bad year or two.</span></p>
+  </section>
+
+  <section class="lesson" id="i5">
+    <div class="lesson-head"><span class="step">05</span><h2>Fees: the cost you can control</h2></div>
+    <p>You can't control what the market does. You can control what you pay. Fees come out every year whether your investments go up or down, and they also cost you all the growth that money would have earned.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Fee</th><th>What it is</th></tr>
+      <tr><td><b>Expense ratio</b></td><td>A yearly % of your money that a fund charges to run. Broad index funds are often well under 0.2%. Some active funds charge 1% or more.</td></tr>
+      <tr><td><b>Advisory fee</b></td><td>What a financial advisor or managed account charges, often around 1% of your balance a year, on top of fund fees.</td></tr>
+      <tr><td><b>Sales load</b></td><td>A commission some mutual funds charge when you buy or sell, such as 5% of what you invest.</td></tr>
+      <tr><td><b>Trading and account fees</b></td><td>Per-trade commissions or yearly account fees. Many big brokers now charge $0 for stock and ETF trades.</td></tr>
+    </table></div>
+    <div class="example"><div class="ex-h">Example · $100,000 for 20 years at a 4% yearly return</div><ol><li>0.25% yearly fees: grows at 3.75% → about $209,000</li><li>1.00% yearly fees: grows at 3.00% → about $181,000</li><li class="ans">The higher fee costs about $28,000</li></ol></div>
+    <div class="try" id="sim"><span class="try-h">Try it · growth and fee simulator</span>
+      <div class="row">
+        <label>Start with ($)<input type="number" id="sStart" value="1000" min="0" step="100" inputmode="decimal"></label>
+        <label>Add each month ($)<input type="number" id="sMonth" value="200" min="0" step="25" inputmode="decimal"></label>
+        <label>Years<input type="number" id="sYears" value="30" min="1" max="60" step="1" inputmode="numeric"></label>
+        <label>Return per year (%)<input type="number" id="sRet" value="7" min="-10" max="20" step="0.5" inputmode="decimal"></label>
+      </div>
+      <div class="row">
+        <label>Fee A, low-cost (%)<input type="number" id="sFeeA" value="0.05" min="0" max="5" step="0.05" inputmode="decimal"></label>
+        <label>Fee B, compare (%)<input type="number" id="sFeeB" value="1" min="0" max="5" step="0.05" inputmode="decimal"></label>
+      </div>
+      <div class="chipset" id="sPreset" aria-label="Quick picks for fee B"><button type="button" data-f="0.5" aria-pressed="false">B = 0.5%</button><button type="button" data-f="1" aria-pressed="true">B = 1% (typical advisor)</button><button type="button" data-f="1.5" aria-pressed="false">B = 1.5%</button><button type="button" data-f="2" aria-pressed="false">B = 2% (fund + advisor)</button></div>
+      <div class="kpis" aria-live="polite">
+        <div><small>You put in</small><b id="kIn">—</b></div>
+        <div><small>Ends with fee A</small><b id="kA">—</b></div>
+        <div><small>Ends with fee B</small><b id="kB">—</b></div>
+        <div class="lose"><small>Fee B costs you</small><b id="kDiff">—</b></div>
+      </div>
+      <div class="chart"><svg id="sSvg" viewBox="0 0 340 190" role="img" aria-label="Chart of your balance over time with fee A and fee B, and the money you put in"></svg></div>
+      <div class="legend"><span><i style="background:var(--accent)"></i>Fee A</span><span><i style="background:var(--bad)"></i>Fee B</span><span><i style="background:var(--line)"></i>Money you put in</span></div>
+      <div class="work" id="sWork"></div>
+    </div>
+    <p class="callout"><span><b>About the return you type in:</b> nobody knows future returns. Many planners use something like 5% to 7% a year for a stock-heavy mix to stay on the cautious side. The simulator uses a steady return; real markets jump around.</span></p>
+  </section>
+
+  <section class="lesson" id="i6">
+    <div class="lesson-head"><span class="step">06</span><h2>Getting started and dollar-cost averaging</h2></div>
+    <h3>Where to invest</h3>
+    <ul class="points">
+      <li><b>Workplace 401(k) or 403(b):</b> money comes straight from your paycheck, often with a match. Pick a target-date or index fund from the plan's menu.</li>
+      <li><b>IRA</b> (traditional or Roth): a retirement account you open yourself at a brokerage. Tax breaks, yearly limits.</li>
+      <li><b>Regular brokerage account:</b> no limits and no tax breaks, and you can take money out anytime. Good for goals before retirement.</li>
+    </ul>
+    <h3>Dollar-cost averaging</h3>
+    <p><b>Dollar-cost averaging</b> means investing the same amount on a regular schedule, like $200 every payday, no matter what the market is doing. When prices are low, your $200 buys more shares. When prices are high, it buys fewer. It takes the guesswork and emotion out of timing.</p>
+    <div class="example"><div class="ex-h">Example · $100 a month for 3 months</div><ol><li>Month 1: price $10 → 10 shares</li><li>Month 2: price $5 → 20 shares</li><li>Month 3: price $10 → 10 shares</li><li class="ans">$300 bought 40 shares, an average of $7.50 each</li></ol></div>
+    <p>A 401(k) does this automatically every paycheck. Dollar-cost averaging doesn't guarantee a profit or protect you in a falling market, but it builds a steady habit.</p>
+    <h3>A simple first plan</h3>
+    <ol class="steps">
+      <li>Build your emergency fund and pay down high-interest debt.</li>
+      <li>Contribute enough to your 401(k) to get the full match.</li>
+      <li>Choose one low-cost, diversified fund, such as a target-date index fund or a total market index fund.</li>
+      <li>Set up an automatic monthly contribution.</li>
+      <li>Check once or twice a year, rebalance if needed, and otherwise leave it alone.</li>
+    </ol>
+    <p class="callout warn"><span><b>Watch for red flags:</b> “guaranteed” high returns, pressure to act now, or tips from strangers on social media. Before trusting an advisor, look them up for free on the SEC's Investor.gov or FINRA BrokerCheck. See also <a href="../spot-scam-messages/">How to Spot a Scam</a>.</span></p>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>How much money do I need to start?</summary><div class="a"><p>Very little. Many brokerages have no account minimum and let you buy fractional shares, so you can start an index fund with a few dollars. Starting small and early beats waiting for a big lump sum.</p></div></details>
+      <details><summary>Is an ETF better than a mutual fund?</summary><div class="a"><p>Neither is always better. What matters most is what the fund holds and what it costs. A low-cost index mutual fund and a low-cost index ETF that track the same index will behave almost the same.</p></div></details>
+      <details><summary>Should I wait for the market to drop before I buy?</summary><div class="a"><p>Nobody can reliably predict short-term moves. Waiting often means missing gains. Investing a fixed amount on a regular schedule (dollar-cost averaging) avoids the guessing.</p></div></details>
+      <details><summary>What happens if the market crashes?</summary><div class="a"><p>Your balance will drop, sometimes a lot. If you don't need the money soon and you stay invested, you give it time to recover. Selling in a panic locks in the loss.</p></div></details>
+      <details><summary>What's the difference between a stock and a fund?</summary><div class="a"><p>A stock is one company. A fund holds many stocks (and sometimes bonds), so one company's bad news has a much smaller effect on you.</p></div></details>
+      <details><summary>Do I pay tax on investments?</summary><div class="a"><p>In a regular brokerage account, you can owe tax on dividends, interest and gains when you sell. Retirement accounts like 401(k)s and IRAs either delay that tax or remove it. See <a href="../retirement-accounts/">Retirement Accounts Explained</a>.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://www.investor.gov/introduction-investing/getting-started/asset-allocation" target="_blank" rel="noopener"><span class="src">SEC · Investor.gov</span><b>Asset allocation and diversification</b></a>
+      <a href="https://investor.gov/additional-resources/news-alerts/alerts-bulletins/investor-bulletin-index-funds" target="_blank" rel="noopener"><span class="src">SEC · Investor.gov</span><b>Investor bulletin: index funds</b></a>
+      <a href="https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/updated" target="_blank" rel="noopener"><span class="src">SEC · Investor.gov</span><b>How fees and expenses affect your portfolio</b></a>
+      <a href="https://www.investor.gov/introduction-investing/investing-basics/glossary/dollar-cost-averaging" target="_blank" rel="noopener"><span class="src">SEC · Investor.gov</span><b>Dollar-cost averaging</b></a>
+      <a href="https://www.investor.gov/introduction-investing/getting-started/understanding-fees" target="_blank" rel="noopener"><span class="src">SEC · Investor.gov</span><b>Understanding fees</b></a>
+      <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener"><span class="src">FINRA</span><b>BrokerCheck: look up a broker or advisor</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>Educational only, not financial advice. Investing involves risk, including loss of money.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  const money = n => isFinite(n) ? '$' + Math.round(n).toLocaleString('en-US') : '—';
+
+  /* Diversification demo */
+  let dvN = 20;
+  function dvDraw(hit){
+    $('#dvGrid').innerHTML = Array.from({length: dvN}, (_, i) => `<span class="${i === hit ? 'hit' : ''}"></span>`).join('');
+  }
+  document.querySelectorAll('#dvN button').forEach(b => b.addEventListener('click', () => {
+    dvN = +b.dataset.n;
+    document.querySelectorAll('#dvN button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    dvDraw(-1); $('#dvOut').textContent = '';
+  }));
+  $('#dvGo').addEventListener('click', () => {
+    const hit = Math.floor(Math.random() * dvN);
+    dvDraw(hit);
+    const lost = 10000 / dvN;
+    $('#dvOut').innerHTML = dvN === 1
+      ? `You had $10,000 in one company. It went to zero: <b>you lost all $10,000</b>.`
+      : `You had $10,000 split across ${dvN} companies. One went to zero: you lost <b>${money(lost)}</b> (${fmt(100 / dvN, 1)}%) and kept ${money(10000 - lost)}.`;
+  });
+  dvDraw(-1);
+
+  /* Growth and fee simulator */
+  function grow(start, monthly, years, ret, fee){
+    const m = Math.pow(1 + (ret - fee) / 100, 1 / 12) - 1;
+    let b = start; const pts = [b];
+    for (let mo = 1; mo <= years * 12; mo++){ b = (b + monthly) * (1 + m); if (mo % 12 === 0) pts.push(b); }
+    return pts;
+  }
+  function num(id, lo, hi, def){ let v = parseFloat($(id).value); if (!isFinite(v)) v = def; return Math.min(hi, Math.max(lo, v)); }
+  function calc(){
+    const start = num('#sStart', 0, 1e9, 0), monthly = num('#sMonth', 0, 1e7, 0), years = Math.round(num('#sYears', 1, 60, 30));
+    const ret = num('#sRet', -10, 20, 7), fA = num('#sFeeA', 0, 5, 0), fB = num('#sFeeB', 0, 5, 1);
+    const A = grow(start, monthly, years, ret, fA), B = grow(start, monthly, years, ret, fB);
+    const put = A.map((_, y) => start + monthly * 12 * y);
+    const endA = A[years], endB = B[years];
+    $('#kIn').textContent = money(put[years]);
+    $('#kA').textContent = money(endA);
+    $('#kB').textContent = money(endB);
+    const diff = endA - endB;
+    $('#kDiff').textContent = diff >= 0 ? money(diff) : '−$' + money(-diff).slice(1) + ' (B is cheaper)';
+    const share = endA > 0 ? 100 * diff / endA : 0;
+    $('#sWork').textContent = `${years} years at ${fmt(ret, 2)}% a year.\nFee A: grows at ${fmt(ret - fA, 2)}% after fees. Fee B: grows at ${fmt(ret - fB, 2)}% after fees.\n` +
+      (diff > 0 ? `A fee difference of ${fmt(fB - fA, 2)} points a year ends up costing about ${fmt(share, 0)}% of your final balance.` : 'Lower fees win: whichever fee is smaller ends with more.');
+    draw(A, B, put, years);
+  }
+  function draw(A, B, put, years){
+    const W = 340, H = 190, L = 44, R = 8, T = 10, Bt = 22;
+    const max = Math.max(1, ...A, ...B, ...put);
+    const x = i => L + (W - L - R) * i / years, y = v => T + (H - T - Bt) * (1 - Math.max(0, v) / max);
+    const line = arr => arr.map((v, i) => (i ? 'L' : 'M') + x(i).toFixed(1) + ' ' + y(v).toFixed(1)).join('');
+    const area = line(put) + `L${x(years).toFixed(1)} ${y(0)}L${x(0)} ${y(0)}Z`;
+    let grid = '';
+    for (let k = 0; k <= 4; k++){
+      const v = max * k / 4, yy = y(v).toFixed(1);
+      const lab = v === 0 ? '$0' : v >= 1e6 ? '$' + fmt(v / 1e6, 1) + 'M' : '$' + fmt(v / 1e3, 0) + 'k';
+      grid += `<line x1="${L}" x2="${W - R}" y1="${yy}" y2="${yy}" stroke="var(--line)" stroke-width="1"/><text x="${L - 4}" y="${+yy + 3}" text-anchor="end">${lab}</text>`;
+    }
+    grid += `<text x="${L}" y="${H - 6}">Year 0</text><text x="${W - R}" y="${H - 6}" text-anchor="end">Year ${years}</text>`;
+    $('#sSvg').innerHTML = grid + `<path d="${area}" fill="var(--line)" opacity=".7"/>` +
+      `<path d="${line(B)}" fill="none" stroke="var(--bad)" stroke-width="2.5"/>` +
+      `<path d="${line(A)}" fill="none" stroke="var(--accent)" stroke-width="2.5"/>`;
+  }
+  document.querySelectorAll('#sPreset button').forEach(b => b.addEventListener('click', () => {
+    $('#sFeeB').value = b.dataset.f;
+    document.querySelectorAll('#sPreset button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    calc();
+  }));
+  $('#sFeeB').addEventListener('input', () => document.querySelectorAll('#sPreset button').forEach(x => x.setAttribute('aria-pressed', x.dataset.f === $('#sFeeB').value)));
+  live($('#sim'), calc);
+})();
+</script>
+</body>
+</html>

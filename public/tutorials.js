@@ -907,5 +907,29 @@ window.TUTORIALS = [
     category: "Computer help",
     tags: ["video editing", "edit videos", "timeline", "j cut", "l cut", "b-roll", "capcut", "davinci resolve", "imovie", "clipchamp", "export settings", "tiktok video size"],
     minutes: 13
+  },
+  {
+    slug: "how-to-meditate",
+    title: "How to Meditate",
+    summary: "Posture, breath focus, the wandering mind, body scan and a daily habit, with a timer",
+    category: "Life skills",
+    tags: ["meditation", "how to meditate", "mindfulness", "meditation for beginners", "breathing exercise", "box breathing", "body scan", "meditation timer", "calm down", "stress relief", "guided meditation"],
+    minutes: 10
+  },
+  {
+    slug: "investing-basics",
+    title: "Investing for Beginners",
+    summary: "Stocks, bonds, index funds, diversification, risk and fees, with a fee simulator.",
+    category: "Money",
+    tags: ["investing for beginners", "how to invest", "stocks", "bonds", "index funds", "etf", "mutual funds", "diversification", "expense ratio", "dollar cost averaging", "asset allocation", "stock market"],
+    minutes: 14
+  },
+  {
+    slug: "negotiate-salary",
+    title: "How to Negotiate Your Salary",
+    summary: "Research pay with BLS data, counter with confidence, and use proven scripts",
+    category: "Money",
+    tags: ["negotiate salary", "salary negotiation", "job offer", "counteroffer", "ask for a raise", "salary expectations", "bls wages", "pay range", "negotiation script", "signing bonus", "benefits"],
+    minutes: 13
   }
 ];
