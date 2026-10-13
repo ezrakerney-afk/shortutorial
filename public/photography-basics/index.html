@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Photography Basics: Exposure, Composition and Light · Shortutorial</title>
+<meta name="description" content="Learn photography basics: the exposure triangle (aperture, shutter speed, ISO), composition with the rule of thirds and leading lines, how to use light, and phone camera tips. Try the exposure simulator.">
+<link rel="canonical" href="https://shortutorial.com/photography-basics/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Photography Basics: Exposure, Composition and Light · Shortutorial">
+<meta property="og:description" content="Learn photography basics: the exposure triangle (aperture, shutter speed, ISO), composition with the rule of thirds and leading lines, how to use light, and phone camera tips. Try the exposure simulator.">
+<meta property="og:url" content="https://shortutorial.com/photography-basics/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+/* exposure simulator */
+.viewer{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#000;aspect-ratio:3/2;width:100%}
+.viewer svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.viewer .noise{mix-blend-mode:screen;pointer-events:none}
+.viewer .grid{pointer-events:none}
+.ctl{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.ctl label{min-width:0}
+.ctl output{font-family:var(--display);font-size:1.1rem;font-weight:600;color:var(--ink)}
+.meter{display:flex;flex-direction:column;gap:6px}
+.meter .scale{position:relative;height:10px;border-radius:99px;background:linear-gradient(90deg,#111 0%,#666 50%,#eee 100%);border:1px solid var(--line)}
+.meter .scale i{position:absolute;top:-5px;width:4px;height:18px;margin-left:-2px;background:var(--accent);border-radius:2px;transition:left .2s}
+.meter .scale::after{content:"";position:absolute;left:50%;top:-3px;width:2px;height:14px;background:var(--amber);margin-left:-1px}
+.meter small{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.7rem;color:var(--muted)}
+.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:560px){.tri{grid-template-columns:1fr}}
+.tri div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.tri b{font-family:var(--display)}
+.tri span{font-size:.92rem;color:var(--muted)}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"Photography Basics","item":"https://shortutorial.com/photography-basics/"}]},{"@type":"Article","@id":"https://shortutorial.com/photography-basics/#article","headline":"Photography Basics","description":"Learn photography basics: the exposure triangle (aperture, shutter speed, ISO), composition with the rule of thirds and leading lines, how to use light, and phone camera tips. Try the exposure simulator.","url":"https://shortutorial.com/photography-basics/","mainEntityOfPage":"https://shortutorial.com/photography-basics/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Life skills","keywords":"photography, exposure triangle, aperture, shutter speed, iso, rule of thirds, composition, leading lines, golden hour, phone camera tips, take better photos","timeRequired":"PT14M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need an expensive camera to take good photos?","acceptedAnswer":{"@type":"Answer","text":"No. Composition and light matter far more than gear. Modern phones are excellent in good light. A dedicated camera mostly helps with fast action, low light, and real background blur."}},{"@type":"Question","name":"What mode should a beginner use on a camera?","acceptedAnswer":{"@type":"Answer","text":"Try aperture priority (A or Av). You choose the f-stop and the camera picks the shutter speed. Turn on auto ISO and keep an eye on the shutter speed so it doesn't get too slow."}},{"@type":"Question","name":"Why are my photos blurry?","acceptedAnswer":{"@type":"Answer","text":"Either the subject moved (shutter too slow), the camera moved (shaky hands), or focus landed on the wrong spot. Use a faster shutter speed, brace yourself, and tap or point the focus on your subject."}},{"@type":"Question","name":"Why are my photos grainy?","acceptedAnswer":{"@type":"Answer","text":"High ISO in dim light. Add light (move to a window, turn on lamps), use a wider aperture, or steady the camera so you can use a slower shutter and lower ISO."}},{"@type":"Question","name":"Should I shoot RAW?","acceptedAnswer":{"@type":"Answer","text":"RAW files keep more detail for editing, especially in highlights and shadows, but they're bigger and need editing. JPEG or HEIC is fine while you're learning."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="photography-basics">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=photo">Life skills</a> / Photography basics</div>
+    <span class="eyebrow">Life skills · Photography</span>
+    <h1>Photography Basics</h1>
+    <p class="lede">Take sharper, brighter, better-looking photos with any camera, even your phone. Learn how exposure works, play with a live exposure simulator, then learn the composition and lighting habits that make the biggest difference.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~14 min read</span><span class="badge">6 lessons</span><span class="badge">Exposure simulator + thirds grid</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#p1">1 · Exposure</a><a href="#p2">2 · The triangle</a><a href="#p3">3 · Simulator</a><a href="#p4">4 · Composition</a><a href="#p5">5 · Light</a><a href="#p6">6 · Phone tips</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="p1">
+    <div class="lesson-head"><span class="step">01</span><h2>What exposure means</h2></div>
+    <p>A photo is just light recorded by a sensor. <b>Exposure</b> is how much light the sensor collects. Too little and the photo is dark and muddy (<b>underexposed</b>). Too much and bright areas turn pure white with no detail (<b>overexposed</b>, or “blown out”).</p>
+    <p>Photographers measure light in <b>stops</b>. One stop more means <b>twice</b> as much light. One stop less means <b>half</b>. Every camera setting below moves exposure in stops, which is why they can trade off against each other.</p>
+    <ul class="points">
+      <li><b>Auto mode</b> picks all the settings for you. It's fine most of the time.</li>
+      <li><b>Learning the settings</b> lets you choose <i>how</i> the photo looks: a blurry background, a frozen splash, or a silky waterfall.</li>
+      <li>Your camera's <b>light meter</b> aims for a medium brightness. That's why snow often looks gray and a black cat looks washed out. You may need to nudge exposure up for bright scenes and down for dark ones.</li>
+    </ul>
+    <p class="callout"><span><b>Rule of thumb:</b> it's easier to brighten a slightly dark photo later than to recover a blown-out sky. When in doubt, protect the highlights.</span></p>
+  </section>
+
+  <section class="lesson" id="p2">
+    <div class="lesson-head"><span class="step">02</span><h2>The exposure triangle</h2></div>
+    <p>Three settings control exposure. Each one also changes something else about the picture. That side effect is how you choose between them.</p>
+    <div class="tri">
+      <div><b>Aperture (f-stop)</b><span>The size of the hole in the lens. Controls light <i>and</i> how much is in focus front to back (depth of field).</span></div>
+      <div><b>Shutter speed</b><span>How long the sensor sees light. Controls light <i>and</i> motion: freeze it or blur it.</span></div>
+      <div><b>ISO</b><span>How much the signal is amplified. Brightens the photo <i>but</i> adds grain (noise).</span></div>
+    </div>
+    <h3>Aperture</h3>
+    <p>Written as <b>f/1.8, f/2.8, f/4, f/5.6, f/8, f/11, f/16</b>. The numbers feel backwards: a <b>small</b> f-number is a <b>big</b> opening. Each step in that list is one stop.</p>
+    <ul class="points">
+      <li><b>f/1.8 to f/2.8:</b> lots of light, blurry background. Great for portraits and low light.</li>
+      <li><b>f/8 to f/11:</b> less light, most of the scene sharp. Great for landscapes and groups.</li>
+    </ul>
+    <h3>Shutter speed</h3>
+    <p>Written in seconds: <b>1/1000, 1/500, 1/250, 1/125, 1/60, 1/30</b>. Each halving or doubling is one stop.</p>
+    <ul class="points">
+      <li><b>1/500 or faster:</b> freezes sports, kids and pets.</li>
+      <li><b>1/60 to 1/125:</b> everyday handheld shots of still people.</li>
+      <li><b>Slower than about 1/60:</b> risk of blur from shaky hands. Brace yourself, or use a tripod.</li>
+      <li><b>Seconds long:</b> on a tripod, turns waterfalls silky and car lights into streaks.</li>
+    </ul>
+    <h3>ISO</h3>
+    <p>Usually <b>100 to 6400</b> and up. Doubling the ISO is one stop brighter. Use the <b>lowest ISO</b> that still lets you get a fast enough shutter speed. Raise it in dim light rather than getting a blurry photo; a little grain is better than a smeared one.</p>
+    <div class="example"><div class="ex-h">Example · trading stops</div><ol><li>Start: f/8, 1/125 s, ISO 100. Exposure looks right.</li><li>Want a blurry background? Open to f/4. That's 2 stops more light.</li><li>Balance it: shutter 2 stops faster, 1/125 → 1/250 → 1/500.</li><li class="ans">f/4, 1/500 s, ISO 100: same brightness, softer background.</li></ol></div>
+  </section>
+
+  <section class="lesson" id="p3">
+    <div class="lesson-head"><span class="step">03</span><h2>Try the exposure simulator</h2></div>
+    <p>Pick a lighting situation, then move the three sliders. Watch the brightness, the runner's motion blur, the background blur, and the grain. Try to get the meter to the middle with a sharp runner.</p>
+    <div class="try" id="ex"><span class="try-h">Try it · exposure simulator</span>
+      <div class="chipset" id="exScene" aria-label="Lighting"><button type="button" data-ev="15" aria-pressed="true">Sunny day</button><button type="button" data-ev="12" aria-pressed="false">Cloudy / shade</button><button type="button" data-ev="9" aria-pressed="false">Bright indoors</button><button type="button" data-ev="5" aria-pressed="false">Night street</button></div>
+      <div class="viewer" id="exView">
+        <svg id="exScn" viewBox="0 0 300 200" role="img" aria-label="Simulated photo of a runner in a park">
+          <defs>
+            <filter id="fBg" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur id="fBgB" stdDeviation="0"/></filter>
+            <filter id="fMo" x="-30%" y="-10%" width="160%" height="120%"><feGaussianBlur id="fMoB" stdDeviation="0 0"/></filter>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6fb3e8"/><stop offset="1" stop-color="#cfe7f7"/></linearGradient>
+          </defs>
+          <g filter="url(#fBg)">
+            <rect width="300" height="200" fill="url(#sky)"/>
+            <circle cx="250" cy="38" r="16" fill="#fff4c2"/>
+            <path d="M0 120 Q60 80 120 115 T240 105 T300 110 V200 H0Z" fill="#7aa05a"/>
+            <path d="M0 140 Q80 115 160 138 T300 130 V200 H0Z" fill="#5d8a43"/>
+            <g fill="#3d6b2c"><circle cx="40" cy="108" r="18"/><circle cx="62" cy="114" r="14"/><circle cx="210" cy="100" r="20"/><circle cx="232" cy="108" r="13"/></g>
+            <g fill="#6b4b2a"><rect x="48" y="118" width="4" height="22"/><rect x="218" y="112" width="5" height="26"/></g>
+            <rect x="0" y="168" width="300" height="32" fill="#c9b48a"/>
+          </g>
+          <g filter="url(#fMo)">
+            <g transform="translate(150 118)">
+              <circle cx="0" cy="-26" r="8" fill="#e0a77a"/>
+              <path d="M-7 -17 L7 -17 L9 10 L-9 10Z" fill="#d23c3c"/>
+              <path d="M-7 -14 L-20 -2 M7 -14 L19 -24" stroke="#e0a77a" stroke-width="4" stroke-linecap="round"/>
+              <path d="M-5 10 L-16 30 L-26 34 M5 10 L12 30 L22 30" stroke="#253a6b" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </g>
+        </svg>
+        <svg class="noise" id="exNoise" viewBox="0 0 300 200" aria-hidden="true" preserveAspectRatio="none">
+          <filter id="fN"><feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="1" seed="3"/><feColorMatrix type="saturate" values="0.2"/></filter>
+          <rect width="300" height="200" filter="url(#fN)" opacity="0" id="exNoiseR"/>
+        </svg>
+        <svg class="grid" id="exGrid" viewBox="0 0 300 200" aria-hidden="true" preserveAspectRatio="none" style="display:none">
+          <g stroke="#fff" stroke-opacity=".8" stroke-width="1"><line x1="100" y1="0" x2="100" y2="200"/><line x1="200" y1="0" x2="200" y2="200"/><line x1="0" y1="66.7" x2="300" y2="66.7"/><line x1="0" y1="133.3" x2="300" y2="133.3"/></g>
+          <g fill="none" stroke="#ffd34d" stroke-width="2"><circle cx="100" cy="66.7" r="5"/><circle cx="200" cy="66.7" r="5"/><circle cx="100" cy="133.3" r="5"/><circle cx="200" cy="133.3" r="5"/></g>
+        </svg>
+      </div>
+      <div class="meter"><div class="scale"><i id="exNeedle" style="left:50%"></i></div><small><span>−3 dark</span><span>just right</span><span>+3 bright</span></small></div>
+      <div class="ctl">
+        <label>Aperture <output id="oA">f/5.6</output><input type="range" id="sA" min="0" max="6" step="1" value="3" aria-describedby="oA"></label>
+        <label>Shutter speed <output id="oS">1/1000 s</output><input type="range" id="sS" min="0" max="10" step="1" value="1" aria-describedby="oS"></label>
+        <label>ISO <output id="oI">100</output><input type="range" id="sI" min="0" max="6" step="1" value="0" aria-describedby="oI"></label>
+      </div>
+      <div class="row">
+        <button type="button" class="btn ghost" id="exAuto">Fix with ISO (auto ISO)</button>
+        <label style="flex-direction:row;align-items:center;gap:8px"><input type="checkbox" id="exGridT"> Show rule-of-thirds grid</label>
+      </div>
+      <div class="out" id="exOut" aria-live="polite"></div>
+      <div class="work" id="exWork"></div>
+    </div>
+    <p class="callout"><span><b>Things to try:</b> On “Night street,” set 1/30 s and watch the runner smear. Now raise ISO instead and see the grain appear. That's the trade-off every night photo makes.</span></p>
+  </section>
+
+  <section class="lesson" id="p4">
+    <div class="lesson-head"><span class="step">04</span><h2>Composition: where things go</h2></div>
+    <p>Composition is how you arrange things in the frame. A few simple habits make photos look intentional instead of accidental.</p>
+    <h3>Rule of thirds</h3>
+    <p>Imagine the frame split by two lines across and two lines down, like a tic-tac-toe board. Put your subject on one of the lines, or where two meet, instead of dead center. Put the horizon on the top or bottom line, not through the middle. Leave space in front of a person's face or a moving subject, so they have somewhere to look or go.</p>
+    <div class="try" id="rt"><span class="try-h">Try it · place the subject</span>
+      <p style="margin:0">Move the runner around the frame. The grid shows where the strong points are.</p>
+      <div class="chipset" id="rtPos" aria-label="Runner position"><button type="button" data-x="100" aria-pressed="false">Left third</button><button type="button" data-x="150" aria-pressed="true">Center</button><button type="button" data-x="200" aria-pressed="false">Right third</button></div>
+      <div class="chipset" id="rtDir" aria-label="Runner faces"><button type="button" data-d="1" aria-pressed="true">Running right</button><button type="button" data-d="-1" aria-pressed="false">Running left</button></div>
+      <div class="chipset" id="rtHz" aria-label="Horizon"><button type="button" data-h="133" aria-pressed="false">Horizon low</button><button type="button" data-h="100" aria-pressed="true">Horizon middle</button><button type="button" data-h="67" aria-pressed="false">Horizon high</button></div>
+      <svg id="rtSvg" viewBox="0 0 300 200" role="img" aria-label="Composition practice frame" style="border-radius:10px;border:1px solid var(--line)">
+        <rect width="300" height="200" fill="#8cc4ec"/>
+        <rect id="rtGround" x="0" y="100" width="300" height="100" fill="#6a9a4c"/>
+        <g id="rtRunner" transform="translate(150 118)">
+          <g id="rtFlip">
+            <circle cx="0" cy="-26" r="8" fill="#e0a77a"/>
+            <path d="M-7 -17 L7 -17 L9 10 L-9 10Z" fill="#d23c3c"/>
+            <path d="M-7 -14 L-20 -2 M7 -14 L19 -24" stroke="#e0a77a" stroke-width="4" stroke-linecap="round"/>
+            <path d="M-5 10 L-16 30 L-26 34 M5 10 L12 30 L22 30" stroke="#253a6b" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+        </g>
+        <g stroke="#fff" stroke-opacity=".85" stroke-dasharray="4 3"><line x1="100" y1="0" x2="100" y2="200"/><line x1="200" y1="0" x2="200" y2="200"/><line x1="0" y1="66.7" x2="300" y2="66.7"/><line x1="0" y1="133.3" x2="300" y2="133.3"/></g>
+      </svg>
+      <div class="out" id="rtOut" aria-live="polite"></div>
+    </div>
+    <h3>Leading lines</h3>
+    <p>Roads, fences, rivers, railings and shorelines pull the viewer's eye through the picture. Stand so a line starts near a bottom corner and runs toward your subject. Diagonal lines feel more energetic than straight horizontal ones.</p>
+    <h3>More composition habits</h3>
+    <ul class="points">
+      <li><b>Fill the frame.</b> Step closer. Most beginner photos have the subject too small.</li>
+      <li><b>Check the edges.</b> Before you press the shutter, look around the border for trash cans, half-people and poles growing out of heads.</li>
+      <li><b>Simple background.</b> Move a few steps so the background is plain: sky, a wall, distant trees.</li>
+      <li><b>Framing.</b> Shoot through a doorway, window or branches to put a natural frame around the subject.</li>
+      <li><b>Change height.</b> Get down to eye level with kids and pets. Shoot from low for drama, from above for food.</li>
+      <li><b>Keep it level.</b> A tilted horizon is the quickest way to make a nice photo look off.</li>
+    </ul>
+    <p class="callout"><span><b>Rules are starting points.</b> Centered works great for symmetry (a doorway, a reflection) and for bold, simple subjects. Break the rule on purpose, not by accident.</span></p>
+  </section>
+
+  <section class="lesson" id="p5">
+    <div class="lesson-head"><span class="step">05</span><h2>Light matters most</h2></div>
+    <p>The same subject can look flat or stunning depending on the light. Pay attention to three things: how much light there is, its <b>direction</b>, and whether it's <b>hard</b> or <b>soft</b>.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Light</th><th>Looks like</th><th>Good for</th></tr>
+      <tr><td>Golden hour (about the hour after sunrise and before sunset)</td><td>Warm, low, long shadows</td><td>Portraits, landscapes, almost anything</td></tr>
+      <tr><td>Midday sun</td><td>Hard, harsh shadows, squinting</td><td>Bold colors, architecture. Move people into shade.</td></tr>
+      <tr><td>Overcast day or open shade</td><td>Soft, even, flattering</td><td>Portraits, flowers, food</td></tr>
+      <tr><td>Window light</td><td>Soft and directional</td><td>Indoor portraits, food, products</td></tr>
+      <tr><td>Blue hour (just after sunset)</td><td>Deep blue sky, glowing city lights</td><td>Cityscapes on a tripod</td></tr>
+    </table></div>
+    <ul class="points">
+      <li><b>Front light</b> (sun behind you) is safe but flat.</li>
+      <li><b>Side light</b> shows texture and shape. Turn your subject toward a window at a slight angle.</li>
+      <li><b>Back light</b> (sun behind the subject) gives a glowing outline but can make faces dark. Tap the face to expose for it, or use fill flash.</li>
+      <li><b>Built-in flash</b> straight on looks harsh. Use it outdoors to fill shadows, and turn it off indoors when you can use window light instead.</li>
+    </ul>
+    <p class="callout warn"><span><b>Never look at or point the camera at the sun through an optical viewfinder or long lens.</b> It can damage your eyes and the camera sensor.</span></p>
+  </section>
+
+  <section class="lesson" id="p6">
+    <div class="lesson-head"><span class="step">06</span><h2>Phone camera tips</h2></div>
+    <p>Your phone handles exposure automatically, but you can still steer it. These work on iPhone and Android, though menu names vary.</p>
+    <ol class="steps">
+      <li><b>Wipe the lens.</b> Pocket smudges cause most hazy, glowy phone photos. Use a soft cloth.</li>
+      <li><b>Turn on the grid.</b> iPhone: Settings &gt; Camera &gt; Grid. On Android, look for “Grid lines” in the camera app's settings. Use it for the rule of thirds and level horizons.</li>
+      <li><b>Tap to focus, slide to brighten.</b> Tap your subject to set focus and exposure, then drag the brightness control (the sun icon on iPhone, a slider on most Android phones) up or down. Press and hold to lock it.</li>
+      <li><b>Use the lenses, not pinch zoom.</b> Tap 0.5×, 1×, 2× or higher if your phone has those lenses. Pinching between them crops the image and loses detail. Better yet, walk closer.</li>
+      <li><b>Hold still.</b> Tuck your elbows in, breathe out, and tap gently. In low light, Night mode keeps the shutter open for a few seconds, so hold steady until it finishes or lean on something.</li>
+      <li><b>Try Portrait mode</b> for people and pets. It fakes the blurry background of a wide aperture.</li>
+      <li><b>Take a burst</b> for action (hold the shutter or swipe it, depending on your phone) and keep the sharpest one.</li>
+      <li><b>Edit lightly.</b> Straighten, crop, and adjust brightness first. Heavy filters date quickly.</li>
+    </ol>
+    <h3>A 7-day practice plan</h3>
+    <ul class="points">
+      <li><b>Day 1:</b> 20 photos with the grid on, subject on a third every time.</li>
+      <li><b>Day 2:</b> Find 5 leading lines in your neighborhood.</li>
+      <li><b>Day 3:</b> Same object by a window at 3 different angles.</li>
+      <li><b>Day 4:</b> Golden hour walk.</li>
+      <li><b>Day 5:</b> Freeze motion: a pet, a kid, water from a faucet.</li>
+      <li><b>Day 6:</b> Low light without flash. Brace the phone.</li>
+      <li><b>Day 7:</b> Pick your 5 best and ask why they work.</li>
+    </ul>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Do I need an expensive camera to take good photos?</summary><div class="a"><p>No. Composition and light matter far more than gear. Modern phones are excellent in good light. A dedicated camera mostly helps with fast action, low light, and real background blur.</p></div></details>
+      <details><summary>What mode should a beginner use on a camera?</summary><div class="a"><p>Try <b>aperture priority</b> (A or Av). You choose the f-stop and the camera picks the shutter speed. Turn on auto ISO and keep an eye on the shutter speed so it doesn't get too slow.</p></div></details>
+      <details><summary>Why are my photos blurry?</summary><div class="a"><p>Either the subject moved (shutter too slow), the camera moved (shaky hands), or focus landed on the wrong spot. Use a faster shutter speed, brace yourself, and tap or point the focus on your subject.</p></div></details>
+      <details><summary>Why are my photos grainy?</summary><div class="a"><p>High ISO in dim light. Add light (move to a window, turn on lamps), use a wider aperture, or steady the camera so you can use a slower shutter and lower ISO.</p></div></details>
+      <details><summary>Should I shoot RAW?</summary><div class="a"><p>RAW files keep more detail for editing, especially in highlights and shadows, but they're bigger and need editing. JPEG or HEIC is fine while you're learning.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://www.nikonusa.com/en/learn-and-explore/a/tips-and-techniques/a-basic-look-at-the-basics-of-exposure.html" target="_blank" rel="noopener"><span class="src">Nikon</span><b>A basic look at the basics of exposure</b></a>
+      <a href="https://support.apple.com/guide/iphone/adjust-the-camera-focus-and-exposure-iph3dc593597/ios" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>Adjust iPhone camera focus and exposure</b></a>
+      <a href="https://support.apple.com/guide/iphone/use-camera-settings-iphb362b394e/ios" target="_blank" rel="noopener"><span class="src">Apple Support</span><b>iPhone camera settings (grid, level)</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>The simulator is a simplified model. Real cameras and phones vary.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  /* Exposure simulator */
+  const AP = [1.8, 2.8, 4, 5.6, 8, 11, 16];
+  const SH = [1/2000, 1/1000, 1/500, 1/250, 1/125, 1/60, 1/30, 1/15, 1/8, 1/4, 1/2];
+  const SHL = ['1/2000','1/1000','1/500','1/250','1/125','1/60','1/30','1/15','1/8','1/4','1/2'];
+  const ISO = [100, 200, 400, 800, 1600, 3200, 6400];
+  let sceneEV = 15;
+  const sA = $('#sA'), sS = $('#sS'), sI = $('#sI');
+  function camEV(){ // EV the settings "expect" at ISO 100
+    const N = AP[sA.value], t = SH[sS.value], iso = ISO[sI.value];
+    return Math.log2(N * N / t) - Math.log2(iso / 100);
+  }
+  function render(){
+    const N = AP[sA.value], t = SH[sS.value], iso = ISO[sI.value];
+    $('#oA').textContent = 'f/' + N;
+    $('#oS').textContent = SHL[sS.value] + ' s';
+    $('#oI').textContent = iso;
+    const off = Math.max(-5, Math.min(5, sceneEV - camEV())); // + = too bright
+    const bright = Math.pow(2, off * 0.6);
+    $('#exScn').style.filter = `brightness(${bright.toFixed(3)})` + (off > 1 ? ` contrast(${(1 - Math.min(off, 4) * 0.08).toFixed(2)})` : '');
+    $('#exNeedle').style.left = (50 + Math.max(-3, Math.min(3, off)) / 3 * 48) + '%';
+    // motion blur: runner moves ~ 240 px/s in scene units
+    const mb = Math.min(14, 240 * t);
+    $('#fMoB').setAttribute('stdDeviation', mb.toFixed(2) + ' 0');
+    // background blur: wider aperture => more blur
+    const bb = Math.max(0, (8 / N) - 0.6);
+    $('#fBgB').setAttribute('stdDeviation', bb.toFixed(2));
+    // noise: grows with ISO
+    const nz = Math.max(0, (Math.log2(iso / 100)) * 0.07);
+    $('#exNoiseR').setAttribute('opacity', nz.toFixed(2));
+    const s = Math.abs(off) < 0.5 ? 'about right' : (off > 0 ? 'too bright' : 'too dark');
+    const so = off >= 0 ? '+' + off.toFixed(1) : off.toFixed(1);
+    $('#exOut').innerHTML = `Exposure: <b>${so} stops</b>, ${s}.`;
+    const notes = [];
+    if (t >= 1/60) notes.push(`Shutter ${SHL[sS.value]} s is slow: the runner blurs, and handheld shots may shake.`);
+    else if (t <= 1/500) notes.push(`Shutter ${SHL[sS.value]} s freezes the runner.`);
+    if (N <= 2.8) notes.push(`f/${N} is wide open: soft, blurry background.`);
+    else if (N >= 11) notes.push(`f/${N}: almost everything sharp, but little light gets in.`);
+    if (iso >= 1600) notes.push(`ISO ${iso}: visible grain.`);
+    if (off > 2.5) notes.push('Bright areas would be blown out to pure white.');
+    if (off < -2.5) notes.push('Shadows would be nearly black.');
+    $('#exWork').textContent = notes.join('\n');
+  }
+  [sA, sS, sI].forEach(el => el.addEventListener('input', render));
+  document.querySelectorAll('#exScene button').forEach(b => b.addEventListener('click', () => {
+    sceneEV = +b.dataset.ev;
+    document.querySelectorAll('#exScene button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    render();
+  }));
+  $('#exAuto').addEventListener('click', () => {
+    // pick the ISO that gets closest to correct exposure
+    let best = 0, bd = 99;
+    ISO.forEach((v, i) => { sI.value = i; const d = Math.abs(sceneEV - camEV()); if (d < bd - 1e-9){ bd = d; best = i; } });
+    sI.value = best; render();
+    if (bd > 0.5) $('#exWork').textContent += '\nEven ISO alone can’t fix this one. Change the aperture or shutter speed too.';
+  });
+  $('#exGridT').addEventListener('change', e => { $('#exGrid').style.display = e.target.checked ? '' : 'none'; });
+  render();
+
+  /* Rule of thirds placement */
+  let rx = 150, rd = 1, rh = 100;
+  function rt(){
+    const ry = rh + 18;
+    $('#rtRunner').setAttribute('transform', `translate(${rx} ${ry})`);
+    $('#rtFlip').setAttribute('transform', `scale(${rd} 1)`);
+    $('#rtGround').setAttribute('y', rh);
+    $('#rtGround').setAttribute('height', 200 - rh);
+    const msg = [];
+    if (rx === 150) msg.push('Centered subject: fine for symmetry, but often feels static.');
+    else {
+      const space = (rx < 150 && rd === 1) || (rx > 150 && rd === -1);
+      msg.push(space ? 'Nice: the runner sits on a third with room to run into.' : 'On a third, but running out of the frame. Flip the direction or switch sides to give them room.');
+    }
+    msg.push(rh === 100 ? 'Horizon cuts the photo in half. Try moving it to a third.' : (rh > 100 ? 'Low horizon: the sky gets the spotlight.' : 'High horizon: the ground gets the spotlight.'));
+    $('#rtOut').innerHTML = msg.join(' ');
+  }
+  function chips(sel, fn){ document.querySelectorAll(sel + ' button').forEach(b => b.addEventListener('click', () => { document.querySelectorAll(sel + ' button').forEach(x => x.setAttribute('aria-pressed', x === b)); fn(b); rt(); })); }
+  chips('#rtPos', b => rx = +b.dataset.x);
+  chips('#rtDir', b => rd = +b.dataset.d);
+  chips('#rtHz', b => rh = +b.dataset.h);
+  rt();
+})();
+</script>
+</body>
+</html>

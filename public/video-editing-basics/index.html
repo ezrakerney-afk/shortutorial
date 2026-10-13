@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Video Editing Basics for Beginners · Shortutorial</title>
+<meta name="description" content="Learn video editing basics: clips and the timeline, cuts, J and L cuts, b-roll, audio levels, color, and the right export settings for YouTube, TikTok and Reels. Plus free editors like CapCut, DaVinci Resolve, iMovie and Clipchamp.">
+<link rel="canonical" href="https://shortutorial.com/video-editing-basics/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Video Editing Basics for Beginners · Shortutorial">
+<meta property="og:description" content="Learn video editing basics: clips and the timeline, cuts, J and L cuts, b-roll, audio levels, color, and the right export settings for YouTube, TikTok and Reels. Plus free editors like CapCut, DaVinci Resolve, iMovie and Clipchamp.">
+<meta property="og:url" content="https://shortutorial.com/video-editing-basics/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+/* timeline */
+.tl-track{display:flex;height:46px;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--bg)}
+.tl-track span{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.7rem;color:#fff;min-width:0;overflow:hidden;white-space:nowrap;border-right:2px solid var(--surface);transition:flex-grow .2s}
+.tl-ruler{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.68rem;color:var(--muted)}
+.clips{display:flex;flex-direction:column;gap:8px;margin:0;padding:0;list-style:none}
+.clips li{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--c);border-radius:10px;padding:10px 12px}
+.clips .nm{font-family:var(--display);font-weight:600;flex:1 1 140px;min-width:0}
+.clips .nm small{display:block;font-family:var(--mono);font-weight:400;font-size:.72rem;color:var(--muted)}
+.clips label{flex-direction:row !important;align-items:center;gap:6px !important}
+.clips input[type=number]{width:64px !important;padding:5px 6px !important;font-size:.9rem !important}
+.clips .ib{display:flex;gap:4px}
+.ib button{font-family:var(--mono);font-size:.85rem;min-width:34px;height:32px;border-radius:8px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.ib button:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+.ib button:disabled{opacity:.35;cursor:default}
+.ib button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.spec div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
+.spec small{display:block;font-family:var(--mono);font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.spec b{font-family:var(--display);font-size:1.05rem;color:var(--accent)}
+.jl{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.jl figure{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px}
+.jl svg text{font-family:var(--mono);font-size:10px;fill:currentColor}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"Video Editing Basics","item":"https://shortutorial.com/video-editing-basics/"}]},{"@type":"Article","@id":"https://shortutorial.com/video-editing-basics/#article","headline":"Video Editing Basics","description":"Learn video editing basics: clips and the timeline, cuts, J and L cuts, b-roll, audio levels, color, and the right export settings for YouTube, TikTok and Reels. Plus free editors like CapCut, DaVinci Resolve, iMovie and Clipchamp.","url":"https://shortutorial.com/video-editing-basics/","mainEntityOfPage":"https://shortutorial.com/video-editing-basics/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Computer help","keywords":"video editing, edit videos, timeline, j cut, l cut, b-roll, capcut, davinci resolve, imovie, clipchamp, export settings, tiktok video size","timeRequired":"PT13M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What's the best free video editor for beginners?","acceptedAnswer":{"@type":"Answer","text":"Use what's already on your device: iMovie on Apple, Clipchamp on Windows, CapCut for quick phone videos. Move to DaVinci Resolve when you want more control."}},{"@type":"Question","name":"Why is my exported video blurry?","acceptedAnswer":{"@type":"Answer","text":"Usually the export resolution or quality was set too low, or the project size didn't match the footage. Export at 1080p or your footage's size with a high quality setting. Platforms also take a while to process HD after upload."}},{"@type":"Question","name":"Why is my video out of sync?","acceptedAnswer":{"@type":"Answer","text":"Variable frame rate phone footage can drift. Many editors have a setting to convert or “optimize” clips. Also check that you didn't slip an audio clip while trimming."}},{"@type":"Question","name":"How long should my video be?","acceptedAnswer":{"@type":"Answer","text":"As short as it can be while still telling the story. Cut anything that doesn't add something new. Short-form platforms favor under a minute; YouTube Shorts allow up to 3 minutes."}},{"@type":"Question","name":"Does editing need a powerful computer?","acceptedAnswer":{"@type":"Answer","text":"Phone and browser editors work on modest hardware. DaVinci Resolve wants a good graphics card and plenty of memory. Using lower-resolution “proxy” files keeps editing smooth on slower machines."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="video-editing-basics">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=computer">Computer help</a> / Video editing basics</div>
+    <span class="eyebrow">Computer help · Video</span>
+    <h1>Video Editing Basics</h1>
+    <p class="lede">Turn a pile of clips into a video people actually watch. Learn the timeline, clean cuts, J and L cuts, b-roll, sound and color, then get the right export settings for wherever you're posting.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~13 min read</span><span class="badge">6 lessons</span><span class="badge">Mock timeline + export helper</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#v1">1 · Free editors</a><a href="#v2">2 · The timeline</a><a href="#v3">3 · Cuts</a><a href="#v4">4 · B-roll</a><a href="#v5">5 · Sound & color</a><a href="#v6">6 · Export</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="v1">
+    <div class="lesson-head"><span class="step">01</span><h2>Pick a free editor</h2></div>
+    <p>Every editor uses the same ideas: you import clips, arrange them on a timeline, trim them, add sound and text, then export. Learn one well and the rest feel familiar. These are free to start as of October 2026:</p>
+    <div class="tw"><table class="t">
+      <tr><th>Editor</th><th>Runs on</th><th>Good for</th><th>Catch</th></tr>
+      <tr><td><b>iMovie</b></td><td>Mac, iPhone, iPad</td><td>Simple family videos, trailers</td><td>Apple devices only; limited control</td></tr>
+      <tr><td><b>Clipchamp</b></td><td>Windows (built into Windows 11), web</td><td>Quick edits, captions, templates</td><td>Free plan exports up to 1080p; some stock and features need a paid plan</td></tr>
+      <tr><td><b>CapCut</b></td><td>Phone, desktop, web</td><td>Short vertical videos, auto captions, effects</td><td>Many effects, templates and AI tools need a paid Pro plan</td></tr>
+      <tr><td><b>DaVinci Resolve</b></td><td>Windows, Mac, Linux</td><td>Serious editing, color and audio</td><td>Steeper learning curve; needs a decent computer. The free version handles up to 4K Ultra HD at 60 fps. Studio costs $295.</td></tr>
+    </table></div>
+    <p class="callout"><span><b>Free plans change.</b> Before you sink hours into a project, export a short test to check the resolution and whether a watermark is added.</span></p>
+  </section>
+
+  <section class="lesson" id="v2">
+    <div class="lesson-head"><span class="step">02</span><h2>Clips and the timeline</h2></div>
+    <p>A <b>clip</b> is one piece of video or audio. The <b>timeline</b> is the strip where you line clips up from left to right, in the order they'll play. The <b>playhead</b> is the line that shows where you are.</p>
+    <ul class="points">
+      <li><b>Tracks</b> stack on top of each other. Video on a higher track covers the one below (that's how b-roll and titles work). Audio tracks all play together.</li>
+      <li><b>Trim</b> means shortening a clip by moving its start (in point) or end (out point). The original file isn't changed; editing is non-destructive.</li>
+      <li><b>Split</b> (or “blade”) cuts a clip in two at the playhead so you can delete the middle.</li>
+      <li><b>Ripple delete</b> removes a piece and slides everything after it left so there's no gap.</li>
+    </ul>
+    <div class="try" id="tl"><span class="try-h">Try it · mock timeline</span>
+      <p style="margin:0">Trim each clip's start and end, reorder them, or remove one. Aim for a tight 30 to 60 second video.</p>
+      <div class="tl-track" id="tlTrack" aria-hidden="true"></div>
+      <div class="tl-ruler"><span>0:00</span><span id="tlEnd">0:00</span></div>
+      <ol class="clips" id="tlList"></ol>
+      <div class="row"><button type="button" class="btn ghost" id="tlReset">Reset clips</button>
+        <label>Goal<select id="tlGoal"><option value="60">Under 60 s (Reels, TikTok, Shorts)</option><option value="180">Under 3 min</option><option value="600">Under 10 min</option></select></label></div>
+      <div class="out" id="tlOut" aria-live="polite"></div>
+      <div class="work" id="tlWork"></div>
+    </div>
+  </section>
+
+  <section class="lesson" id="v3">
+    <div class="lesson-head"><span class="step">03</span><h2>Cuts that feel smooth</h2></div>
+    <p>Most of editing is deciding where to cut. Good cuts are invisible: the viewer just follows the story.</p>
+    <ul class="points">
+      <li><b>Cut the boring parts.</b> Trim the “um, okay, so” at the start and the reach for the camera at the end. Start on the action.</li>
+      <li><b>Jump cuts</b> remove pauses from someone talking to the camera. The image jumps a little, but it keeps the pace up. Common on YouTube and TikTok.</li>
+      <li><b>Cut on action.</b> If someone sits down, cut in the middle of the movement to the next angle. The motion hides the cut.</li>
+      <li><b>Use simple cuts.</b> A plain cut is right 95% of the time. Save fades for the very start, the very end, or a big change of time or place. Skip star wipes.</li>
+    </ul>
+    <h3>J cuts and L cuts</h3>
+    <p>These split the audio and video so they change at different times. They make conversations and scene changes feel natural.</p>
+    <div class="jl">
+      <figure>
+        <svg viewBox="0 0 200 70" role="img" aria-label="J cut: audio of clip B starts before its video"><text x="0" y="12">VIDEO</text><rect x="40" y="2" width="90" height="16" rx="3" fill="#2f6fd0"/><rect x="130" y="2" width="70" height="16" rx="3" fill="#b86e00"/><text x="0" y="44">AUDIO</text><rect x="40" y="34" width="60" height="16" rx="3" fill="#2f6fd0"/><rect x="100" y="34" width="100" height="16" rx="3" fill="#b86e00"/><text x="76" y="66">B's sound leads in</text></svg>
+        <figcaption><b>J cut:</b> you hear the next clip before you see it.</figcaption>
+      </figure>
+      <figure>
+        <svg viewBox="0 0 200 70" role="img" aria-label="L cut: audio of clip A continues after its video ends"><text x="0" y="12">VIDEO</text><rect x="40" y="2" width="60" height="16" rx="3" fill="#2f6fd0"/><rect x="100" y="2" width="100" height="16" rx="3" fill="#b86e00"/><text x="0" y="44">AUDIO</text><rect x="40" y="34" width="100" height="16" rx="3" fill="#2f6fd0"/><rect x="140" y="34" width="60" height="16" rx="3" fill="#b86e00"/><text x="70" y="66">A's sound carries on</text></svg>
+        <figcaption><b>L cut:</b> the sound keeps going after the picture changes.</figcaption>
+      </figure>
+    </div>
+    <div class="example"><div class="ex-h">Example · a J cut into a beach scene</div><ol><li>Clip A: you packing the car. Clip B: waves at the beach.</li><li>Drag B's audio (the waves) to start 2 seconds before B's video.</li><li class="ans">Viewers hear the ocean while still watching the car, then the beach appears.</li></ol></div>
+    <p>In most editors you <b>detach</b> or <b>unlink</b> the audio from the clip first (right-click the clip), then trim the audio and video ends separately.</p>
+  </section>
+
+  <section class="lesson" id="v4">
+    <div class="lesson-head"><span class="step">04</span><h2>B-roll and text</h2></div>
+    <p><b>A-roll</b> is the main footage: someone talking, the main event. <b>B-roll</b> is the extra footage you lay on top to show what they're talking about: hands at work, the view, close-ups, the sign on the door.</p>
+    <ul class="points">
+      <li>Put b-roll on the track <b>above</b> the A-roll. The talking audio keeps playing underneath.</li>
+      <li>Use it to <b>hide jump cuts</b>, show instead of tell, and change the picture every few seconds.</li>
+      <li>Shoot more b-roll than you think. Five-second shots of everything are gold in the edit.</li>
+      <li>Keep b-roll shots short, usually 2 to 5 seconds each.</li>
+    </ul>
+    <h3>Titles and captions</h3>
+    <ul class="points">
+      <li><b>Add captions.</b> Many people watch with sound off, and captions help viewers who are deaf or hard of hearing. Most editors can auto-generate them; always proofread names and numbers.</li>
+      <li><b>Keep text on screen long enough</b> to read twice. Use high contrast, and keep it away from the edges, where apps put buttons.</li>
+    </ul>
+    <p class="callout warn"><span><b>Music and footage need rights.</b> Popular songs can get your video muted or blocked. Use the editor's licensed library, the platform's own audio library, or music you have permission to use.</span></p>
+  </section>
+
+  <section class="lesson" id="v5">
+    <div class="lesson-head"><span class="step">05</span><h2>Sound and color</h2></div>
+    <p>Viewers forgive shaky video, but not bad sound. Fix audio first.</p>
+    <h3>Audio levels</h3>
+    <ul class="points">
+      <li>Watch the <b>audio meter</b>. Keep voices peaking around <b>−12 to −6 dB</b>. If the meter hits <b>0 dB</b> and turns red, the sound clips and distorts.</li>
+      <li><b>Music under talking</b> should be much quieter than the voice, roughly −20 dB or lower. Lower it (“duck” it) whenever someone speaks.</li>
+      <li>Add short <b>audio fades</b> (a few frames) at the start and end of clips to avoid clicks and pops.</li>
+      <li>Use noise reduction gently. Too much makes voices sound underwater.</li>
+      <li>Listen on headphones <i>and</i> a phone speaker before you export.</li>
+    </ul>
+    <h3>Color</h3>
+    <ol class="steps">
+      <li><b>Correct first:</b> fix exposure (brightness), contrast and white balance so whites look white and skin looks natural.</li>
+      <li><b>Match shots:</b> clips filmed in the same scene should look the same, so cuts don't jump in color.</li>
+      <li><b>Grade last:</b> add a look (warm, cool, moody) once everything matches. Keep it subtle, and watch skin tones.</li>
+    </ol>
+  </section>
+
+  <section class="lesson" id="v6">
+    <div class="lesson-head"><span class="step">06</span><h2>Export settings</h2></div>
+    <p><b>Exporting</b> (or “rendering”) turns your timeline into one video file. The main settings:</p>
+    <ul class="points">
+      <li><b>Aspect ratio:</b> the shape. 16:9 is wide (YouTube, TV). 9:16 is tall (phones). Set this <i>before</i> you start editing.</li>
+      <li><b>Resolution:</b> the size in pixels. 1080p (1920×1080) is the safe standard. Don't export larger than your footage.</li>
+      <li><b>Frame rate:</b> frames per second. Export at the <b>same rate you filmed</b> (often 24, 30 or 60).</li>
+      <li><b>Format:</b> MP4 with H.264 video and AAC audio works almost everywhere.</li>
+      <li><b>Bitrate/quality:</b> higher is sharper but bigger. “High” or “Recommended” is usually right.</li>
+    </ul>
+    <div class="try" id="xp"><span class="try-h">Try it · export settings helper</span>
+      <div class="row">
+        <label>Where will it go?<select id="xpPlat" style="width:auto;max-width:100%">
+          <option value="yt">YouTube (regular video)</option>
+          <option value="shorts">YouTube Shorts</option>
+          <option value="tt">TikTok</option>
+          <option value="reels">Instagram Reels</option>
+          <option value="igfeed">Instagram or Facebook feed post</option>
+          <option value="email">Text or email to family</option>
+          <option value="tv">Play on a TV / archive</option>
+        </select></label>
+        <label>Filmed at<select id="xpFps"><option value="24">24 fps</option><option value="30" selected>30 fps</option><option value="60">60 fps</option></select></label>
+      </div>
+      <div class="spec" aria-live="polite">
+        <div><small>Aspect ratio</small><b id="xpAR"></b></div>
+        <div><small>Resolution</small><b id="xpRes"></b></div>
+        <div><small>Frame rate</small><b id="xpFr"></b></div>
+        <div><small>Format</small><b id="xpFmt"></b></div>
+      </div>
+      <div class="work" id="xpWork"></div>
+    </div>
+    <p class="callout"><span><b>Check before you post:</b> watch the exported file all the way through. Look for black gaps, missing audio and typos in captions.</span></p>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>What's the best free video editor for beginners?</summary><div class="a"><p>Use what's already on your device: iMovie on Apple, Clipchamp on Windows, CapCut for quick phone videos. Move to DaVinci Resolve when you want more control.</p></div></details>
+      <details><summary>Why is my exported video blurry?</summary><div class="a"><p>Usually the export resolution or quality was set too low, or the project size didn't match the footage. Export at 1080p or your footage's size with a high quality setting. Platforms also take a while to process HD after upload.</p></div></details>
+      <details><summary>Why is my video out of sync?</summary><div class="a"><p>Variable frame rate phone footage can drift. Many editors have a setting to convert or “optimize” clips. Also check that you didn't slip an audio clip while trimming.</p></div></details>
+      <details><summary>How long should my video be?</summary><div class="a"><p>As short as it can be while still telling the story. Cut anything that doesn't add something new. Short-form platforms favor under a minute; YouTube Shorts allow up to 3 minutes.</p></div></details>
+      <details><summary>Does editing need a powerful computer?</summary><div class="a"><p>Phone and browser editors work on modest hardware. DaVinci Resolve wants a good graphics card and plenty of memory. Using lower-resolution “proxy” files keeps editing smooth on slower machines.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://support.google.com/youtube/answer/1722171" target="_blank" rel="noopener"><span class="src">YouTube Help</span><b>Recommended upload encoding settings</b></a>
+      <a href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank" rel="noopener"><span class="src">Blackmagic Design</span><b>DaVinci Resolve (free and Studio)</b></a>
+      <a href="https://www.apple.com/imovie/" target="_blank" rel="noopener"><span class="src">Apple</span><b>iMovie</b></a>
+      <a href="https://clipchamp.com/en/pricing/" target="_blank" rel="noopener"><span class="src">Microsoft Clipchamp</span><b>Plans and pricing</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>App plans and platform specs change. Checked October 2026.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  /* Mock timeline */
+  const START = [
+    {n:'Intro: talking to camera', len:24, c:'#2f6fd0'},
+    {n:'B-roll: hands at work', len:12, c:'#b86e00'},
+    {n:'Main demo', len:45, c:'#1e7d3a'},
+    {n:'Blooper', len:8, c:'#b3261e'},
+    {n:'Outro: say goodbye', len:15, c:'#7a4fd6'}
+  ];
+  let clips;
+  const list = $('#tlList');
+  const mmss = s => Math.floor(s / 60) + ':' + String(Math.round(s % 60)).padStart(2, '0');
+  function reset(){ clips = START.map(c => ({...c, inP:0, outP:c.len})); draw(); }
+  const dur = c => Math.max(0, c.outP - c.inP);
+  function draw(){
+    list.innerHTML = clips.map((c, i) => `<li style="--c:${c.c}">
+      <span class="nm">${i + 1}. ${c.n}<small>source ${c.len}s · uses ${fmt(dur(c), 1)}s</small></span>
+      <label>In<input type="number" min="0" max="${c.len}" step="0.5" value="${c.inP}" data-i="${i}" data-k="inP" aria-label="${c.n} start, seconds"></label>
+      <label>Out<input type="number" min="0" max="${c.len}" step="0.5" value="${c.outP}" data-i="${i}" data-k="outP" aria-label="${c.n} end, seconds"></label>
+      <span class="ib"><button type="button" data-a="up" data-i="${i}" aria-label="Move ${c.n} earlier" ${i === 0 ? 'disabled' : ''}>↑</button><button type="button" data-a="down" data-i="${i}" aria-label="Move ${c.n} later" ${i === clips.length - 1 ? 'disabled' : ''}>↓</button><button type="button" data-a="del" data-i="${i}" aria-label="Delete ${c.n}">✕</button></span>
+    </li>`).join('');
+    sum();
+  }
+  function sum(){
+    const total = clips.reduce((a, c) => a + dur(c), 0);
+    $('#tlTrack').innerHTML = clips.map(c => `<span style="flex-grow:${dur(c)};background:${c.c}" title="${c.n}">${dur(c) >= 6 ? fmt(dur(c), 1) + 's' : ''}</span>`).join('') || '<span style="flex-grow:1;color:var(--muted)">empty</span>';
+    $('#tlEnd').textContent = mmss(total);
+    const goal = +$('#tlGoal').value;
+    const ok = total > 0 && total <= goal;
+    $('#tlOut').innerHTML = `Total length: <b>${mmss(total)}</b> (${fmt(total, 1)} s) <span class="${ok ? 'ok' : 'no'}">${ok ? '✓ fits your goal' : total ? '✗ over by ' + fmt(total - goal, 1) + ' s' : ''}</span>`;
+    const tips = [];
+    if (clips.length && clips[0].n.startsWith('Intro') && clips[0].inP < 3) tips.push('Tip: trim the first few seconds of the intro. Start on the action, not the “hi everyone.”');
+    if (clips.some(c => c.n === 'Blooper') && clips[clips.length - 1].n !== 'Blooper') tips.push('The blooper breaks the flow in the middle. Delete it or move it after the outro as a bonus.');
+    const b = clips.findIndex(c => c.n.startsWith('B-roll'));
+    if (b === 0) tips.push('Starting on b-roll can work as a hook, but viewers may not know what they are watching yet.');
+    if (clips.some(c => dur(c) === 0)) tips.push('A clip trimmed to 0 seconds should just be deleted.');
+    if (!tips.length && ok) tips.push('Nice and tight. Now add captions and check the audio levels.');
+    $('#tlWork').textContent = tips.join('\n');
+  }
+  list.addEventListener('input', e => {
+    const t = e.target; if (!t.dataset.k) return;
+    const c = clips[+t.dataset.i];
+    let v = parseFloat(t.value); if (!isFinite(v)) return;
+    v = Math.max(0, Math.min(c.len, v));
+    if (t.dataset.k === 'inP') c.inP = Math.min(v, c.outP); else c.outP = Math.max(v, c.inP);
+    const sm = t.closest('li').querySelector('small'); sm.textContent = `source ${c.len}s · uses ${fmt(dur(c), 1)}s`;
+    sum();
+  });
+  list.addEventListener('change', e => { const t = e.target; if (t.dataset.k) t.value = clips[+t.dataset.i][t.dataset.k]; });
+  list.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    const i = +b.dataset.i, a = b.dataset.a;
+    let focusSel = null;
+    if (a === 'up' && i > 0){ [clips[i - 1], clips[i]] = [clips[i], clips[i - 1]]; focusSel = `button[data-a="up"][data-i="${i - 1}"]`; }
+    if (a === 'down' && i < clips.length - 1){ [clips[i + 1], clips[i]] = [clips[i], clips[i + 1]]; focusSel = `button[data-a="down"][data-i="${i + 1}"]`; }
+    if (a === 'del'){ clips.splice(i, 1); }
+    draw();
+    const f = focusSel && list.querySelector(focusSel);
+    if (f && !f.disabled) f.focus(); else if (focusSel) { const any = list.querySelector(`button[data-i="${a === 'up' ? i - 1 : i + 1}"]`); if (any) any.focus(); }
+  });
+  $('#tlGoal').addEventListener('input', sum);
+  $('#tlReset').addEventListener('click', reset);
+  reset();
+
+  /* Export helper */
+  const P = {
+    yt:    {ar:'16:9 (wide)', res:'1920×1080 (1080p), or 3840×2160 if filmed in 4K', fmt:'MP4 · H.264 + AAC', note:'YouTube recommends uploading at the frame rate you recorded. Higher resolution uploads get higher quality streams.'},
+    shorts:{ar:'9:16 (tall)', res:'1080×1920', fmt:'MP4 · H.264 + AAC', note:'Shorts can be up to 3 minutes. Keep text in the middle; buttons cover the right side and bottom.'},
+    tt:    {ar:'9:16 (tall)', res:'1080×1920', fmt:'MP4 · H.264 + AAC', note:'Keep captions and faces away from the bottom and right edges, where the app puts its buttons.'},
+    reels: {ar:'9:16 (tall)', res:'1080×1920', fmt:'MP4 · H.264 + AAC', note:'The grid preview crops Reels toward the center, so keep the main subject there.'},
+    igfeed:{ar:'4:5 (portrait) or 1:1 (square)', res:'1080×1350 or 1080×1080', fmt:'MP4 · H.264 + AAC', note:'Portrait 4:5 takes up more of the screen in the feed than square or wide.'},
+    email: {ar:'Same as you filmed', res:'1280×720 (720p) to keep the file small', fmt:'MP4 · H.264 + AAC', note:'Big files often won’t attach to email (many services cap attachments around 20 to 25 MB). Share a link from cloud storage instead for longer videos.'},
+    tv:    {ar:'16:9 (wide)', res:'1920×1080, or 3840×2160 for a 4K TV', fmt:'MP4 · H.264 (or H.265) + AAC', note:'For an archive, export at the highest quality and keep your original clips too.'}
+  };
+  function xp(){
+    const p = P[$('#xpPlat').value], f = +$('#xpFps').value;
+    $('#xpAR').textContent = p.ar; $('#xpRes').textContent = p.res;
+    $('#xpFr').textContent = f + ' fps (same as filmed)';
+    $('#xpFmt').textContent = p.fmt;
+    $('#xpWork').textContent = p.note + (f === 60 && $('#xpPlat').value === 'email' ? '\nDropping to 30 fps also shrinks the file, but only if you don’t need smooth slow motion.' : '');
+  }
+  live($('#xp'), xp);
+})();
+</script>
+</body>
+</html>

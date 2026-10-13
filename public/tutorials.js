@@ -883,5 +883,29 @@ window.TUTORIALS = [
     category: "Life skills",
     tags: ["cover letter", "job application", "resume", "career", "hiring manager", "writing", "job search", "cover letter template", "cover letter example", "apply for a job"],
     minutes: 12
+  },
+  {
+    slug: "drawing-basics",
+    title: "Learn to Draw: The Basics",
+    summary: "Lines, shapes, perspective, proportions, shading and gesture, with a drawing pad",
+    category: "Life skills",
+    tags: ["learn to draw", "drawing for beginners", "how to draw", "perspective drawing", "draw a cube", "shading", "value scale", "proportions", "gesture drawing", "sketching", "drawing practice"],
+    minutes: 14
+  },
+  {
+    slug: "photography-basics",
+    title: "Photography Basics",
+    summary: "Exposure triangle, rule of thirds, light and phone camera tips, with a simulator",
+    category: "Life skills",
+    tags: ["photography", "exposure triangle", "aperture", "shutter speed", "iso", "rule of thirds", "composition", "leading lines", "golden hour", "phone camera tips", "take better photos"],
+    minutes: 14
+  },
+  {
+    slug: "video-editing-basics",
+    title: "Video Editing Basics",
+    summary: "Cuts, J and L cuts, b-roll, audio, color and export settings, with a mock timeline",
+    category: "Computer help",
+    tags: ["video editing", "edit videos", "timeline", "j cut", "l cut", "b-roll", "capcut", "davinci resolve", "imovie", "clipchamp", "export settings", "tiktok video size"],
+    minutes: 13
   }
 ];

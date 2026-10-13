@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Learn to Draw: Drawing Basics for Beginners · Shortutorial</title>
+<meta name="description" content="Learn to draw from scratch: confident lines and basic shapes, perspective, proportions, shading and values, gesture drawing, and a daily practice routine. Practice right in the browser with a drawing pad and guided exercises.">
+<link rel="canonical" href="https://shortutorial.com/drawing-basics/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Learn to Draw: Drawing Basics for Beginners · Shortutorial">
+<meta property="og:description" content="Learn to draw from scratch: confident lines and basic shapes, perspective, proportions, shading and values, gesture drawing, and a daily practice routine. Practice right in the browser with a drawing pad and guided exercises.">
+<meta property="og:url" content="https://shortutorial.com/drawing-basics/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+/* drawing pad */
+.pad{position:relative;width:100%;aspect-ratio:4/3;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.pad canvas,.pad svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.pad canvas{touch-action:none;cursor:crosshair}
+.pad svg{pointer-events:none}
+.guide-step{font-size:.98rem;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.guide-step b{font-family:var(--display)}
+/* value scale */
+.vs{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+.vs button{aspect-ratio:1;border-radius:8px;border:2px solid var(--line);cursor:pointer;padding:0;min-width:0}
+.vs button[aria-pressed=true]{outline:3px solid var(--accent);outline-offset:2px}
+.vs button:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.vsl{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.7rem;color:var(--muted)}
+.shade{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;align-items:center}
+.shade ul{margin:0;padding-left:1.1em;font-size:.95rem;display:flex;flex-direction:column;gap:4px}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"Learn to Draw: The Basics","item":"https://shortutorial.com/drawing-basics/"}]},{"@type":"Article","@id":"https://shortutorial.com/drawing-basics/#article","headline":"Learn to Draw: The Basics","description":"Learn to draw from scratch: confident lines and basic shapes, perspective, proportions, shading and values, gesture drawing, and a daily practice routine. Practice right in the browser with a drawing pad and guided exercises.","url":"https://shortutorial.com/drawing-basics/","mainEntityOfPage":"https://shortutorial.com/drawing-basics/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Life skills","keywords":"learn to draw, drawing for beginners, how to draw, perspective drawing, draw a cube, shading, value scale, proportions, gesture drawing, sketching, drawing practice","timeRequired":"PT14M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can anyone learn to draw?","acceptedAnswer":{"@type":"Answer","text":"Yes. Drawing realistically is mostly learned observation and practice. Most people who say they “can't draw” simply stopped practicing as kids."}},{"@type":"Question","name":"Should I trace?","acceptedAnswer":{"@type":"Answer","text":"Tracing can help you feel how shapes are built, but don't rely on it. Drawing from life trains your eye in a way tracing doesn't."}},{"@type":"Question","name":"What should I draw first?","acceptedAnswer":{"@type":"Answer","text":"Simple objects at home: a mug, a book, an apple, a shoe. They hold still and use the basic shapes from lesson 2."}},{"@type":"Question","name":"Paper or tablet?","acceptedAnswer":{"@type":"Answer","text":"Either works. Paper is cheap and great for building control. Tablets add undo and layers, which is convenient but can make you lean on undo instead of looking more carefully."}},{"@type":"Question","name":"How long until I get better?","acceptedAnswer":{"@type":"Answer","text":"Most people notice clear progress within a few weeks of short daily practice, especially in line confidence and proportions."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="drawing-basics">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=art">Life skills</a> / Learn to draw</div>
+    <span class="eyebrow">Life skills · Art</span>
+    <h1>Learn to Draw: The Basics</h1>
+    <p class="lede">Drawing is a skill, not a gift. It's learning to see shapes, angles and light, then training your hand to put them down. Start with lines, build up to a shaded cube, and practice on the drawing pad right here.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~14 min read</span><span class="badge">6 lessons</span><span class="badge">Drawing pad + value scale trainer</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#d1">1 · Lines</a><a href="#d2">2 · Shapes</a><a href="#d3">3 · Perspective</a><a href="#d4">4 · Proportions</a><a href="#d5">5 · Shading</a><a href="#d6">6 · Gesture & practice</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="d1">
+    <div class="lesson-head"><span class="step">01</span><h2>Confident lines</h2></div>
+    <p>You only need paper and a pencil. A regular <b>HB or #2 pencil</b> is fine. If you want more, add a soft <b>2B or 4B</b> for darks and a kneaded eraser, which lifts graphite without smearing.</p>
+    <ul class="points">
+      <li><b>Draw from your shoulder and elbow</b>, not just your wrist, for long lines. Wrist and fingers are for small details.</li>
+      <li><b>Ghost the line first.</b> Hover over the paper and move through the stroke two or three times, then lower the pencil and draw it in one smooth pass.</li>
+      <li><b>Look at where you're going</b>, not at the pencil tip. Your hand follows your eyes.</li>
+      <li><b>Start light.</b> Sketch with light pressure so wrong lines are easy to ignore or erase. Darken the right ones at the end.</li>
+      <li><b>One stroke beats ten hairy ones.</b> Short, scratchy strokes look unsure. A confident line that's slightly off looks better than a wobbly accurate one.</li>
+    </ul>
+    <h3>Warm-up drill (5 minutes)</h3>
+    <ol class="steps">
+      <li>Put two dots on the page. Connect them with one straight stroke. Repeat 20 times with different angles and lengths.</li>
+      <li>Draw rows of circles and ovals in one motion each. Go around 2 or 3 times lightly.</li>
+      <li>Draw long, smooth S-curves across the page.</li>
+    </ol>
+  </section>
+
+  <section class="lesson" id="d2">
+    <div class="lesson-head"><span class="step">02</span><h2>See the simple shapes</h2></div>
+    <p>Almost everything can be built from a few basic forms: <b>boxes, cylinders, spheres and cones</b>. A mug is a cylinder. A car is a stack of boxes. A head starts as a sphere. Artists call this <b>construction</b>: rough out the big simple shapes first, then refine.</p>
+    <ul class="points">
+      <li><b>Big to small.</b> Block in the overall shape before any details like eyes, buttons or leaves.</li>
+      <li><b>Draw through.</b> Sketch the hidden back edges lightly, as if the object were glass. It keeps shapes solid and symmetrical.</li>
+      <li><b>Negative space.</b> Look at the shapes <i>between</i> things, like the gap between a chair's legs. They're easier to see accurately than the object itself.</li>
+      <li><b>Draw what you see, not what you know.</b> Your brain says a table top is a rectangle. From where you sit, it's probably a slanted shape.</li>
+    </ul>
+    <div class="try" id="dp"><span class="try-h">Try it · drawing pad</span>
+      <div class="row">
+        <label>Exercise<select id="dpEx" style="width:auto;max-width:100%">
+          <option value="free">Free draw</option>
+          <option value="lines">Straight lines dot to dot</option>
+          <option value="ellipse">Circles and ellipses</option>
+          <option value="cube1">Cube in 1-point perspective</option>
+          <option value="cube2">Cube in 2-point perspective</option>
+          <option value="sphere">Shade a sphere</option>
+        </select></label>
+        <label style="flex-direction:row;align-items:center;gap:8px"><input type="checkbox" id="dpGuide" checked> Show guides</label>
+      </div>
+      <div class="chipset" id="dpTool" aria-label="Tool"><button type="button" data-t="pencil" aria-pressed="true">Pencil</button><button type="button" data-t="shade" aria-pressed="false">Soft shading</button><button type="button" data-t="eraser" aria-pressed="false">Eraser</button></div>
+      <div class="chipset" id="dpSize" aria-label="Brush size"><button type="button" data-s="2" aria-pressed="false">Fine</button><button type="button" data-s="4" aria-pressed="true">Medium</button><button type="button" data-s="10" aria-pressed="false">Thick</button><button type="button" data-s="24" aria-pressed="false">Huge</button></div>
+      <div class="pad"><canvas id="dpC" width="800" height="600" aria-label="Drawing area. Draw with a mouse, finger or stylus."></canvas><svg id="dpG" viewBox="0 0 800 600" aria-hidden="true"></svg></div>
+      <div class="guide-step" id="dpStep" aria-live="polite"></div>
+      <div class="row"><button type="button" class="btn ghost" id="dpPrev">Previous step</button><button type="button" class="btn" id="dpNext">Next step</button></div>
+      <div class="row"><button type="button" class="btn ghost" id="dpUndo">Undo</button><button type="button" class="btn ghost" id="dpClear">Clear</button><button type="button" class="btn ghost" id="dpSave">Download PNG</button></div>
+    </div>
+    <p class="callout"><span><b>Finger or mouse drawing is hard.</b> That's fine. The pad is for practicing the steps. Do the same exercise on paper afterward.</span></p>
+  </section>
+
+  <section class="lesson" id="d3">
+    <div class="lesson-head"><span class="step">03</span><h2>Perspective in plain English</h2></div>
+    <p>Things look smaller the farther away they are, and parallel lines going away from you seem to meet. Perspective drawing is a system for faking that on flat paper.</p>
+    <ul class="points">
+      <li><b>Horizon line:</b> a level line at <i>your eye height</i>. Look straight ahead; that's where it is.</li>
+      <li><b>Vanishing point:</b> a dot on the horizon where parallel lines going away from you meet. Think of railroad tracks.</li>
+      <li><b>One-point perspective:</b> you face the object straight on. Front edges stay flat and square; edges going away all head to one point. Good for roads, hallways and rooms.</li>
+      <li><b>Two-point perspective:</b> you look at a corner. There are two vanishing points, one far left and one far right. Vertical lines stay straight up and down. Good for buildings and boxes.</li>
+      <li>Objects <b>above</b> the horizon show their bottom. Objects <b>below</b> it show their top.</li>
+    </ul>
+    <figure>
+      <svg viewBox="0 0 440 200" role="img" aria-label="One-point perspective: a box below the horizon with depth lines going to a single vanishing point" style="color:var(--ink)">
+        <line x1="10" y1="60" x2="430" y2="60" stroke="var(--amber)" stroke-width="2"/>
+        <circle cx="220" cy="60" r="5" fill="var(--amber)"/>
+        <text x="228" y="52" font-family="monospace" font-size="12" fill="currentColor">vanishing point</text>
+        <text x="12" y="52" font-family="monospace" font-size="12" fill="currentColor">horizon (eye level)</text>
+        <g stroke="currentColor" stroke-opacity=".35" stroke-dasharray="4 4"><line x1="90" y1="120" x2="220" y2="60"/><line x1="190" y1="120" x2="220" y2="60"/><line x1="90" y1="190" x2="220" y2="60"/><line x1="190" y1="190" x2="220" y2="60"/></g>
+        <g fill="none" stroke="var(--accent)" stroke-width="2.5"><rect x="90" y="120" width="100" height="70"/><polyline points="90,120 129,102 168,102 190,120"/></g>
+      </svg>
+      <figcaption>Front face is a flat rectangle. Depth edges run back to one point.</figcaption>
+    </figure>
+    <p>Use the <b>cube</b> exercises in the drawing pad above. A cube is the most useful thing you'll ever practice: once you can draw a box from any angle, you can draw a house, a phone, a book or a car.</p>
+  </section>
+
+  <section class="lesson" id="d4">
+    <div class="lesson-head"><span class="step">04</span><h2>Proportions: measure, don't guess</h2></div>
+    <p>Proportion is how big parts are compared to each other. Beginners usually draw what feels important bigger, like eyes and hands. Measuring keeps you honest.</p>
+    <h3>Sighting with your pencil</h3>
+    <ol class="steps">
+      <li>Hold your pencil at arm's length, elbow locked, one eye closed.</li>
+      <li>Line the pencil tip up with the top of something (say, a bottle's cap) and slide your thumb down to its bottom. That's your unit.</li>
+      <li>Keeping your arm locked, compare: “The bottle is 3 caps tall.” “The table is 2 bottles wide.”</li>
+      <li>Hold the pencil level or plumb to check angles: “That edge tilts about like a clock hand at 2 o'clock.”</li>
+    </ol>
+    <h3>Handy human proportions</h3>
+    <ul class="points">
+      <li>An adult is about <b>7 to 8 heads tall</b>. A young child is closer to 4 or 5.</li>
+      <li>The <b>eyes sit about halfway</b> down the head, not near the top. This is the most common beginner mistake.</li>
+      <li>The space between the eyes is about <b>one eye wide</b>.</li>
+      <li>The bottom of the nose is about halfway between the eyes and the chin; the mouth is about a third of the way from nose to chin.</li>
+      <li>Arms hang so the wrists reach about the hips.</li>
+    </ul>
+    <p class="callout"><span><b>Real people vary.</b> These are averages to check your drawing against, not rules. Measure the actual person when you can.</span></p>
+  </section>
+
+  <section class="lesson" id="d5">
+    <div class="lesson-head"><span class="step">05</span><h2>Shading and values</h2></div>
+    <p><b>Value</b> means how light or dark something is, ignoring color. Values make a flat circle look like a ball. Pick one light source and keep it consistent.</p>
+    <div class="shade">
+      <svg viewBox="0 0 200 160" role="img" aria-label="Shaded sphere showing highlight, light, core shadow, reflected light and cast shadow">
+        <defs><radialGradient id="sph" cx="35%" cy="32%" r="75%"><stop offset="0" stop-color="#fafafa"/><stop offset=".35" stop-color="#bdbdbd"/><stop offset=".72" stop-color="#3a3a3a"/><stop offset=".86" stop-color="#2a2a2a"/><stop offset="1" stop-color="#6a6a6a"/></radialGradient></defs>
+        <ellipse cx="118" cy="138" rx="70" ry="12" fill="#3a3a3a" opacity=".55"/>
+        <circle cx="90" cy="80" r="56" fill="url(#sph)"/>
+      </svg>
+      <ul>
+        <li><b>Highlight:</b> brightest spot, facing the light.</li>
+        <li><b>Light tones:</b> the lit side.</li>
+        <li><b>Core shadow:</b> the darkest band, where the form turns away.</li>
+        <li><b>Reflected light:</b> a slightly lighter edge from light bouncing off the table.</li>
+        <li><b>Cast shadow:</b> the shadow on the ground, darkest right under the object.</li>
+      </ul>
+    </div>
+    <h3>Ways to shade</h3>
+    <ul class="points">
+      <li><b>Hatching:</b> parallel lines. Closer together = darker.</li>
+      <li><b>Cross-hatching:</b> layers of hatching in different directions for deeper darks.</li>
+      <li><b>Smooth shading:</b> the side of the pencil in small overlapping circles or strokes. Build up layers instead of pressing hard.</li>
+      <li><b>Squint</b> at your subject. It blurs details and shows you the big light and dark shapes.</li>
+    </ul>
+    <p>A <b>value scale</b> is a row of boxes from white to black in even steps. Drawing one teaches your hand to control pressure. Try ordering these by eye first:</p>
+    <div class="try" id="vs"><span class="try-h">Try it · value scale trainer</span>
+      <p style="margin:0">Put the seven grays in order from lightest (left) to darkest (right). Select one box, then another, to swap them.</p>
+      <div class="vs" id="vsRow"></div>
+      <div class="vsl"><span>lightest</span><span>darkest</span></div>
+      <div class="row"><button type="button" class="btn" id="vsCheck">Check my order</button><button type="button" class="btn ghost" id="vsNew">Shuffle again</button><button type="button" class="btn ghost" id="vsHard">Harder (closer grays)</button></div>
+      <div class="out" id="vsOut" aria-live="polite"></div>
+    </div>
+    <p>Now do it on paper: draw seven boxes in a row, leave the first white, press as dark as you can in the last, and fill the middle five in even steps.</p>
+  </section>
+
+  <section class="lesson" id="d6">
+    <div class="lesson-head"><span class="step">06</span><h2>Gesture and a practice routine</h2></div>
+    <p><b>Gesture drawing</b> means capturing the movement and pose of a figure in a few quick lines, often in 30 seconds to 2 minutes. It's not meant to be neat. Start with one curved “line of action” for the spine, then add the head, the tilt of the shoulders and hips, and the limbs as simple lines.</p>
+    <ul class="points">
+      <li>Draw people in a café, pets sleeping, or use free timed pose sites and photos.</li>
+      <li>Keep it loose. If you're drawing fingers, you're going too slow.</li>
+      <li>Short time limits force you to see the big shape first, which helps every other kind of drawing.</li>
+    </ul>
+    <h3>A 20-minute daily routine</h3>
+    <div class="tw"><table class="t">
+      <tr><th>Time</th><th>Do this</th></tr>
+      <tr><td>5 min</td><td>Warm-up: straight lines, circles, ellipses</td></tr>
+      <tr><td>5 min</td><td>Boxes and cylinders from different angles</td></tr>
+      <tr><td>5 min</td><td>Gesture: 5 one-minute poses</td></tr>
+      <tr><td>5 min</td><td>Draw one real object near you, then shade it with one light source</td></tr>
+    </table></div>
+    <p class="callout"><span><b>Keep everything.</b> Date your pages. In a month, compare the first page with the latest. Daily short practice beats a long session once a week.</span></p>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Can anyone learn to draw?</summary><div class="a"><p>Yes. Drawing realistically is mostly learned observation and practice. Most people who say they “can't draw” simply stopped practicing as kids.</p></div></details>
+      <details><summary>Should I trace?</summary><div class="a"><p>Tracing can help you feel how shapes are built, but don't rely on it. Drawing from life trains your eye in a way tracing doesn't.</p></div></details>
+      <details><summary>What should I draw first?</summary><div class="a"><p>Simple objects at home: a mug, a book, an apple, a shoe. They hold still and use the basic shapes from lesson 2.</p></div></details>
+      <details><summary>Paper or tablet?</summary><div class="a"><p>Either works. Paper is cheap and great for building control. Tablets add undo and layers, which is convenient but can make you lean on undo instead of looking more carefully.</p></div></details>
+      <details><summary>How long until I get better?</summary><div class="a"><p>Most people notice clear progress within a few weeks of short daily practice, especially in line confidence and proportions.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://drawabox.com/" target="_blank" rel="noopener"><span class="src">Drawabox</span><b>Free lessons on lines, boxes and construction</b></a>
+      <a href="https://www.khanacademy.org/humanities/art-history-basics" target="_blank" rel="noopener"><span class="src">Khan Academy</span><b>Art history basics (elements of art)</b></a>
+      <a href="https://www.nga.gov/learn/teachers.html" target="_blank" rel="noopener"><span class="src">National Gallery of Art</span><b>Learning resources</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>Your drawings stay in your browser. Nothing is uploaded.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  /* ---------- Drawing pad ---------- */
+  const cv = $('#dpC'), ctx = cv.getContext('2d'), G = $('#dpG');
+  let tool = 'pencil', size = 4, drawing = false, last = null, history = [];
+  function blank(){ ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, cv.width, cv.height); }
+  blank();
+  function snap(){ try { history.push(ctx.getImageData(0, 0, cv.width, cv.height)); if (history.length > 25) history.shift(); } catch(e){} }
+  function pos(e){ const r = cv.getBoundingClientRect(); return {x:(e.clientX - r.left) * cv.width / r.width, y:(e.clientY - r.top) * cv.height / r.height}; }
+  function stroke(a, b){
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    if (tool === 'eraser'){ ctx.globalAlpha = 1; ctx.strokeStyle = '#ffffff'; ctx.lineWidth = size * 2.5; }
+    else if (tool === 'shade'){ ctx.globalAlpha = 0.08; ctx.strokeStyle = '#222'; ctx.lineWidth = size * 3; }
+    else { ctx.globalAlpha = 1; ctx.strokeStyle = '#222'; ctx.lineWidth = size; }
+    ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x + 0.01, b.y); ctx.stroke(); ctx.globalAlpha = 1;
+  }
+  cv.addEventListener('pointerdown', e => { e.preventDefault(); snap(); drawing = true; last = pos(e); try { cv.setPointerCapture(e.pointerId); } catch(_){} stroke(last, last); });
+  cv.addEventListener('pointermove', e => { if (!drawing) return; const p = pos(e); stroke(last, p); last = p; });
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach(t => cv.addEventListener(t, () => { drawing = false; last = null; }));
+  function chips(sel, fn){ document.querySelectorAll(sel + ' button').forEach(b => b.addEventListener('click', () => { document.querySelectorAll(sel + ' button').forEach(x => x.setAttribute('aria-pressed', x === b)); fn(b); })); }
+  chips('#dpTool', b => tool = b.dataset.t);
+  chips('#dpSize', b => size = +b.dataset.s);
+  $('#dpUndo').addEventListener('click', () => { const h = history.pop(); if (h) ctx.putImageData(h, 0, 0); });
+  $('#dpClear').addEventListener('click', () => { snap(); blank(); });
+  $('#dpSave').addEventListener('click', () => {
+    const a = document.createElement('a'); a.download = 'my-drawing.png'; a.href = cv.toDataURL('image/png');
+    document.body.appendChild(a); a.click(); a.remove();
+  });
+
+  /* Guided exercises: each step = text + svg guide markup */
+  const L = (x1, y1, x2, y2, dash) => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#0f7a6c" stroke-width="2" ${dash ? 'stroke-dasharray="8 8" stroke-opacity=".6"' : 'stroke-opacity=".35"'}/>`;
+  const D = (x, y, c) => `<circle cx="${x}" cy="${y}" r="7" fill="${c || '#b86e00'}"/>`;
+  const HZ = 170, VP = [400, 170], VL = [40, 200], VR = [760, 200];
+  const EX = {
+    free: [['<b>Free draw.</b> Draw anything. Try a mug or a piece of fruit near you, using the simple shapes from this lesson.', '']],
+    lines: [
+      ['<b>Step 1.</b> Ghost the stroke from the top dot to the bottom dot two or three times, then draw it in one pass.', D(120,80)+D(320,260)+D(480,90)+D(700,250)+D(150,420)+D(650,450)],
+      ['<b>Step 2.</b> Now connect every pair of dots. Watch the target dot, not your pencil.', D(120,80)+D(320,260)+D(480,90)+D(700,250)+D(150,420)+D(650,450)+L(120,80,320,260,1)],
+      ['<b>Step 3.</b> Clear the pad and try again. Are the lines straighter and smoother?', D(120,80)+D(320,260)+D(480,90)+D(700,250)+D(150,420)+D(650,450)]
+    ],
+    ellipse: [
+      ['<b>Step 1.</b> Trace around each guide 2 or 3 times lightly in one continuous motion, using your whole arm.', '<g fill="none" stroke="#0f7a6c" stroke-opacity=".35" stroke-width="2"><circle cx="200" cy="200" r="110"/><ellipse cx="560" cy="200" rx="140" ry="60"/><ellipse cx="400" cy="460" rx="200" ry="40"/></g>'],
+      ['<b>Step 2.</b> Turn the guides off and draw them freehand. Ellipses are circles seen at an angle: the flatter, the more “edge on.”', '']
+    ],
+    cube1: [
+      ['<b>Step 1.</b> The orange line is the horizon at your eye level, with one vanishing point. Draw a square below it (the front of the cube).', L(0,HZ,800,HZ)+D(...VP)+'<rect x="300" y="330" width="200" height="200" fill="none" stroke="#0f7a6c" stroke-dasharray="8 8" stroke-opacity=".6" stroke-width="2"/>'],
+      ['<b>Step 2.</b> From the top two corners, draw light lines to the vanishing point. (The bottom corners are hidden behind the front.)', L(0,HZ,800,HZ)+D(...VP)+L(300,330,400,170,1)+L(500,330,400,170,1)],
+      ['<b>Step 3.</b> Decide how deep the cube is. Draw a horizontal line between the two depth lines to close the top face.', L(0,HZ,800,HZ)+D(...VP)+L(300,330,400,170,1)+L(500,330,400,170,1)+L(345,258,455,258,1)],
+      ['<b>Step 4.</b> Darken the cube edges. Erase or ignore the guide lines. Shade the top lightest and the front a middle value if the light is above.', L(0,HZ,800,HZ)+D(...VP)]
+    ],
+    cube2: [
+      ['<b>Step 1.</b> Two vanishing points on the horizon, far apart. Draw one vertical line below the horizon. That’s the nearest corner of the cube.', L(0,HZ+30,800,HZ+30)+D(...VL)+D(...VR)+L(400,300,400,500,1)],
+      ['<b>Step 2.</b> From the top and bottom of that line, draw light lines to BOTH vanishing points.', L(0,HZ+30,800,HZ+30)+D(...VL)+D(...VR)+L(400,300,400,500,1)+L(400,300,40,200,1)+L(400,500,40,200,1)+L(400,300,760,200,1)+L(400,500,760,200,1)],
+      ['<b>Step 3.</b> Draw two more vertical lines, one on each side, to set the cube’s width. Keep verticals truly vertical.', L(0,HZ+30,800,HZ+30)+D(...VL)+D(...VR)+L(400,300,400,500,1)+L(400,300,40,200,1)+L(400,500,40,200,1)+L(400,300,760,200,1)+L(400,500,760,200,1)+L(250,258,250,375,1)+L(560,256,560,367,1)],
+      ['<b>Step 4.</b> From the top of each side line, draw to the OPPOSITE vanishing point. Where they cross is the back corner of the top face.', L(0,HZ+30,800,HZ+30)+D(...VL)+D(...VR)+L(400,300,400,500,1)+L(400,300,40,200,1)+L(400,500,40,200,1)+L(400,300,760,200,1)+L(400,500,760,200,1)+L(250,258,250,375,1)+L(560,256,560,367,1)+L(250,258,760,200,1)+L(560,256,40,200,1)],
+      ['<b>Step 5.</b> Darken the outside edges. Shade the two side faces different values so the cube looks solid.', L(0,HZ+30,800,HZ+30)+D(...VL)+D(...VR)]
+    ],
+    sphere: [
+      ['<b>Step 1.</b> Light comes from the top left (orange dot). Draw a circle, and a flat oval below and to the right for the cast shadow.', D(110,90)+'<g fill="none" stroke="#0f7a6c" stroke-opacity=".4" stroke-width="2" stroke-dasharray="8 8"><circle cx="380" cy="300" r="150"/><ellipse cx="460" cy="470" rx="190" ry="34"/></g>'],
+      ['<b>Step 2.</b> Use Soft shading. Fill the shadow side (bottom right) in a curved band, following the ball’s form. Leave the highlight area white.', D(110,90)+'<g fill="none" stroke="#0f7a6c" stroke-opacity=".4" stroke-width="2" stroke-dasharray="8 8"><circle cx="380" cy="300" r="150"/><ellipse cx="460" cy="470" rx="190" ry="34"/><path d="M270 400 A150 150 0 0 0 520 230"/><circle cx="320" cy="240" r="22"/></g>'],
+      ['<b>Step 3.</b> Build darker layers for the core shadow, but keep a slightly lighter rim at the very edge (reflected light). Make the cast shadow darkest right under the ball.', D(110,90)]
+    ]
+  };
+  let ex = 'free', st = 0;
+  function guide(){
+    const steps = EX[ex], s = steps[st];
+    $('#dpStep').innerHTML = s[0] + (steps.length > 1 ? ` <span style="color:var(--muted);font-family:var(--mono);font-size:.8rem">(${st + 1}/${steps.length})</span>` : '');
+    G.innerHTML = $('#dpGuide').checked ? s[1] : '';
+    $('#dpPrev').disabled = st === 0; $('#dpNext').disabled = st >= steps.length - 1;
+  }
+  $('#dpEx').addEventListener('change', e => { ex = e.target.value; st = 0; guide(); });
+  $('#dpGuide').addEventListener('change', guide);
+  $('#dpPrev').addEventListener('click', () => { if (st > 0){ st--; guide(); } });
+  $('#dpNext').addEventListener('click', () => { if (st < EX[ex].length - 1){ st++; guide(); } });
+  guide();
+
+  /* ---------- Value scale trainer ---------- */
+  let order = [], sel = -1, hard = false;
+  const row = $('#vsRow');
+  function shades(){
+    // 7 even steps; harder = narrower range in the middle
+    const lo = hard ? 70 : 250, hi = hard ? 190 : 10;
+    return Array.from({length: 7}, (_, i) => Math.round(lo + (hi - lo) * i / 6));
+  }
+  function deal(){
+    const s = shades();
+    do { order = s.slice().sort(() => Math.random() - 0.5); } while (order.every((v, i) => v === s[i]));
+    sel = -1; paint(); $('#vsOut').textContent = '';
+  }
+  function paint(){
+    row.innerHTML = order.map((v, i) => `<button type="button" style="background:rgb(${v},${v},${v})" aria-pressed="${i === sel}" aria-label="Gray box ${i + 1}, brightness ${Math.round(v / 2.55)} percent" data-i="${i}"></button>`).join('');
+  }
+  row.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    const i = +b.dataset.i;
+    if (sel < 0){ sel = i; paint(); }
+    else { if (sel !== i){ [order[sel], order[i]] = [order[i], order[sel]]; } sel = -1; paint(); }
+    const nb = row.querySelector(`button[data-i="${i}"]`); if (nb) nb.focus();
+  });
+  $('#vsCheck').addEventListener('click', () => {
+    let right = 0; const s = order.slice().sort((a, b) => b - a);
+    order.forEach((v, i) => { if (v === s[i]) right++; });
+    $('#vsOut').innerHTML = right === 7 ? '<span class="ok">✓ Perfect value scale!</span> Squinting helps on the harder version.' : `<span class="no">${right} of 7</span> in the right spot. Squint and compare neighbors two at a time.`;
+  });
+  $('#vsNew').addEventListener('click', deal);
+  $('#vsHard').addEventListener('click', () => { hard = !hard; $('#vsHard').textContent = hard ? 'Easier (full range)' : 'Harder (closer grays)'; deal(); });
+  deal();
+})();
+</script>
+</body>
+</html>

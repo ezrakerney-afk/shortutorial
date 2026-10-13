@@ -2435,5 +2435,71 @@ export default {
         o: ["A photo of the printed letter", "PDF, unless the employer asks for Word", "A plain .zip file", "Whatever your word processor saves by default"], a: 1,
         e: "A PDF keeps your formatting intact. Use Word only if asked." }
     ]
+  },
+
+  "drawing-basics": {
+    title: "Learn to Draw: The Basics",
+    pass: 4,
+    questions: [
+      { q: "What does 'ghosting' a line mean?",
+        o: ["Erasing it lightly", "Moving through the stroke in the air before drawing it", "Drawing with a white pencil", "Tracing over a photo"], a: 1,
+        e: "Ghosting rehearses the motion so the real stroke is smooth." },
+      { q: "In perspective drawing, where is the horizon line?",
+        o: ["At the top of the page", "At the bottom of the page", "At your eye level", "Wherever the object is"], a: 2,
+        e: "The horizon line is at the viewer's eye height." },
+      { q: "In two-point perspective, how are vertical lines drawn?",
+        o: ["Straight up and down", "Toward the left vanishing point", "Toward the right vanishing point", "Curved"], a: 0,
+        e: "Verticals stay vertical; the two sets of horizontal edges go to the two vanishing points." },
+      { q: "Where do the eyes usually sit on a head?",
+        o: ["Near the top third", "About halfway down", "Near the chin", "Right at the hairline"], a: 1,
+        e: "Eyes are about halfway down the head, a common beginner mistake." },
+      { q: "What is the 'core shadow' on a shaded sphere?",
+        o: ["The brightest spot", "The shadow on the table", "The darkest band where the form turns away from the light", "The light bouncing back from the table"], a: 2,
+        e: "The core shadow is where the surface turns away from the light." }
+    ]
+  },
+
+  "photography-basics": {
+    title: "Photography Basics",
+    pass: 4,
+    questions: [
+      { q: "Which f-stop lets in the MOST light and gives the blurriest background?",
+        o: ["f/16", "f/8", "f/1.8", "f/11"], a: 2,
+        e: "A small f-number means a big opening: more light and shallower depth of field." },
+      { q: "Your photo of a running dog is blurry. Which change helps most?",
+        o: ["A faster shutter speed like 1/500 s", "A slower shutter speed like 1/15 s", "A smaller aperture like f/16", "Lower ISO with nothing else changed"], a: 0,
+        e: "Fast shutter speeds freeze motion." },
+      { q: "What is the main downside of raising ISO?",
+        o: ["The background gets blurrier", "More grain (noise)", "Moving subjects blur", "Colors turn black and white"], a: 1,
+        e: "ISO amplifies the signal, which adds noise." },
+      { q: "With the rule of thirds, where should you usually put the horizon?",
+        o: ["Exactly through the middle", "At the very bottom edge", "Tilted for drama", "On the top or bottom third line"], a: 3,
+        e: "Putting the horizon on a third line avoids cutting the photo in half." },
+      { q: "On a phone, what's better than pinch-zooming?",
+        o: ["Turning on digital zoom", "Using the phone's built-in lenses or walking closer", "Using flash", "Taking a screenshot and cropping"], a: 1,
+        e: "Pinch zoom crops and loses detail; use real lenses or get closer." }
+    ]
+  },
+
+  "video-editing-basics": {
+    title: "Video Editing Basics",
+    pass: 4,
+    questions: [
+      { q: "What is a J cut?",
+        o: ["The video of the next clip starts before its audio", "The audio of the next clip starts before you see it", "A cut shaped like a letter J", "A fade to black"], a: 1,
+        e: "In a J cut you hear the next clip before you see it." },
+      { q: "What is b-roll?",
+        o: ["The main footage of someone talking", "Extra footage laid over the main footage to show what's being discussed", "A blooper reel", "Background music"], a: 1,
+        e: "B-roll covers A-roll to show, not tell, and hide jump cuts." },
+      { q: "Your voice meter keeps hitting 0 dB and turning red. What's happening?",
+        o: ["The audio is clipping and distorting", "The audio is perfect", "The music is too quiet", "Nothing, red is normal"], a: 0,
+        e: "Peaks at 0 dB clip. Aim for about -12 to -6 dB." },
+      { q: "What aspect ratio fits TikTok, Reels and YouTube Shorts?",
+        o: ["16:9", "1:1", "4:3", "9:16"], a: 3,
+        e: "Tall vertical video is 9:16, usually 1080x1920." },
+      { q: "What frame rate should you usually export at?",
+        o: ["Always 60 fps", "Always 24 fps", "The same rate you filmed at", "As low as possible"], a: 2,
+        e: "Exporting at the recorded frame rate avoids stutter." }
+    ]
   }
 };
