@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Carve a Pumpkin (and Make It Last) · Shortutorial</title>
+<meta name="description" content="Carve a jack-o'-lantern step by step: pick a good pumpkin, cut the lid from the back, scoop, transfer a pattern, carve safely, make it last until Halloween, and roast the seeds. With a face designer and a how-long-will-it-last estimator.">
+<link rel="canonical" href="https://shortutorial.com/carve-a-pumpkin/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How to Carve a Pumpkin (and Make It Last) · Shortutorial">
+<meta property="og:description" content="Carve a jack-o'-lantern step by step: pick a good pumpkin, cut the lid from the back, scoop, transfer a pattern, carve safely, make it last until Halloween, and roast the seeds. With a face designer and a how-long-will-it-last estimator.">
+<meta property="og:url" content="https://shortutorial.com/carve-a-pumpkin/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+/* Face designer + estimator (page-specific) */
+.pk-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:620px){.pk-wrap{grid-template-columns:1fr}}
+.pk-svg{width:100%;max-width:320px;margin:0 auto;display:block}
+.pk-ctl{display:flex;flex-direction:column;gap:12px;min-width:0}
+.pk-ctl .lbl{font-family:var(--mono);font-size:.74rem;color:var(--muted);margin-bottom:6px}
+.pk-svg .skin{fill:#e8892b} .pk-svg .rib{fill:none;stroke:#b8611a;stroke-width:3;opacity:.7}
+.pk-svg .stem{fill:#5e7a2e} .pk-svg .cut{fill:#3b2410;transition:fill .3s}
+.pk-svg.lit .cut{fill:#ffd36b} .pk-svg.lit .glow{opacity:.55}
+.pk-svg .glow{opacity:0;transition:opacity .3s}
+.est .lbl{font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.est .row{gap:12px}
+.est select{width:auto;max-width:100%}
+.est-bar{position:relative;height:30px;border-radius:8px;background:var(--surface);border:1px solid var(--line);overflow:hidden}
+.est-bar i{position:absolute;top:0;bottom:0;left:0;background:var(--accent-soft);border-right:3px solid var(--accent)}
+.est-bar b{position:absolute;top:0;bottom:0;width:2px;background:var(--amber)}
+.est-bar span{position:absolute;top:5px;font-family:var(--mono);font-size:.7rem;color:var(--muted);white-space:nowrap}
+.checks{display:flex;flex-direction:column;gap:6px}
+.checks label{flex-direction:row;align-items:center;gap:8px;font-family:var(--body);font-size:.95rem;color:var(--ink)}
+.checks input{accent-color:var(--accent);width:18px;height:18px}
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)} .faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .a{padding:0 18px 16px;font-size:.98rem}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink)}
+.links a:hover{border-color:var(--accent)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.links .src::after{content:" ↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+</style>
+</head>
+<body data-slug="carve-a-pumpkin">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=skills">Life skills</a> / Carve a pumpkin</div>
+    <span class="eyebrow">Skills · Halloween</span>
+    <h1>How to Carve a Pumpkin</h1>
+    <p class="lede">From picking the pumpkin to roasting the seeds. Design your face, carve it safely, and time it so your jack-o'-lantern still looks good on Halloween night, <b>Saturday, October 31, 2026</b>.</p>
+    <div class="facts"><span>~15 min read</span><span>6 lessons</span><span>Face designer + lifespan estimator</span><span>5-question quiz</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#pk1">1 · Pick</a><a href="#pk2">2 · Lid &amp; scoop</a><a href="#pk3">3 · Design &amp; carve</a><a href="#pk4">4 · Make it last</a><a href="#pk5">5 · Kids &amp; safety</a><a href="#pk6">6 · Roast seeds</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="pk1">
+    <div class="lesson-head"><span class="step">01</span><h2>Pick a good pumpkin</h2></div>
+    <p>A good carving pumpkin is fresh, firm and stands up on its own. At the patch or store, check:</p>
+    <ul class="points">
+      <li><b>A sturdy green stem</b> at least 1 to 2 inches long. Never carry a pumpkin by the stem; it can snap off, and the pumpkin rots faster without it.</li>
+      <li><b>A flat bottom</b> so it won't roll.</li>
+      <li><b>No soft spots, cuts or holes.</b> Those are where rot starts.</li>
+      <li><b>The thumbnail test:</b> press a nail into the skin. If it scratches easily, the pumpkin isn't fully mature and won't keep well.</li>
+      <li><b>Lighter orange</b> pumpkins are easier to carve because the skin is softer, but they don't last as long as dark ones.</li>
+    </ul>
+    <p>Before you carve, <b>wash the outside</b> with warm water and let it dry. That removes dirt and some of the mold spores that cause rot. Store uncarved pumpkins somewhere cool and out of direct sun.</p>
+    <p class="callout"><span><b>Timing:</b> an uncarved pumpkin keeps much longer than a carved one. Buy early if you like, but carve no more than a few days to a week before Halloween. The estimator in lesson 4 helps you pick the day.</span></p>
+  </section>
+
+  <section class="lesson" id="pk2">
+    <div class="lesson-head"><span class="step">02</span><h2>Cut the lid and scoop it out</h2></div>
+    <p>You'll need a <b>serrated pumpkin saw</b> from a carving kit (safer and easier to control than a kitchen knife), a large metal spoon or scoop, a bowl for seeds, and newspaper or a plastic tablecloth.</p>
+    <div class="grid2">
+      <div><span class="tagline">Best for most</span><h3>Lid in the back</h3><p>Cut a circle on the back, angled toward the center. The top and stem stay whole, the cut is hidden, and heat from the light escapes through the hole.</p></div>
+      <div><span class="tagline">Easiest lighting</span><h3>Lid on the bottom</h3><p>Cut out the bottom instead. Set the pumpkin straight down over an LED light, with no reaching in. It also sits flat.</p></div>
+    </div>
+    <ol class="steps">
+      <li>Draw your lid line with a marker. Make it at least 5 to 6 inches across so your hand fits.</li>
+      <li>Saw with short, gentle up-and-down strokes, angling the blade toward the middle so a top lid won't fall in. Cut a small notch so it goes back the same way.</li>
+      <li>Scoop out seeds and strings. Save the seeds in a bowl for lesson 6.</li>
+      <li>Scrape the wall where you'll carve the face until it's about <b>1 inch thick</b>. Thinner walls are easier to cut and let more light through.</li>
+      <li>Scrape out every last bit of stringy pulp. Leftover pulp is where mold grows first.</li>
+    </ol>
+  </section>
+
+  <section class="lesson" id="pk3">
+    <div class="lesson-head"><span class="step">03</span><h2>Design the face and carve it</h2></div>
+    <p>Start with a simple design: big shapes are easier to carve and glow brighter. Play with a face below, then print it as your pattern.</p>
+    <div class="try" id="pkTool">
+      <span class="try-h">Try it · face designer</span>
+      <div class="pk-wrap">
+        <svg class="pk-svg" id="pk" viewBox="0 0 300 290" role="img" aria-label="Your jack-o'-lantern design">
+          <defs><radialGradient id="pkGlow" cx="50%" cy="55%" r="50%"><stop offset="0" stop-color="#ffd36b"/><stop offset="1" stop-color="#ffd36b" stop-opacity="0"/></radialGradient></defs>
+          <ellipse class="glow" cx="150" cy="170" rx="150" ry="120" fill="url(#pkGlow)"/>
+          <path class="stem" d="M140 52 C138 34 146 18 160 12 L166 20 C156 28 154 40 158 54 Z"/>
+          <ellipse class="skin" cx="150" cy="170" rx="138" ry="112"/>
+          <path class="rib" d="M150 60 C120 100 120 240 150 282 M150 60 C180 100 180 240 150 282 M100 66 C60 110 62 230 102 276 M200 66 C240 110 238 230 198 276"/>
+          <g id="pkEyes"></g><g id="pkNose"></g><g id="pkMouth"></g>
+        </svg>
+        <div class="pk-ctl">
+          <div><div class="lbl" id="eL">Eyes</div><div class="chipset" data-part="eyes" role="group" aria-labelledby="eL"><button type="button" data-v="tri" aria-pressed="true">Triangle</button><button type="button" data-v="round">Round</button><button type="button" data-v="angry">Angry</button><button type="button" data-v="cat">Cat</button><button type="button" data-v="star">Star</button></div></div>
+          <div><div class="lbl" id="nL">Nose</div><div class="chipset" data-part="nose" role="group" aria-labelledby="nL"><button type="button" data-v="tri" aria-pressed="true">Triangle</button><button type="button" data-v="heart">Heart</button><button type="button" data-v="round">Round</button><button type="button" data-v="none">None</button></div></div>
+          <div><div class="lbl" id="mL">Mouth</div><div class="chipset" data-part="mouth" role="group" aria-labelledby="mL"><button type="button" data-v="grin" aria-pressed="true">Grin</button><button type="button" data-v="teeth">Toothy</button><button type="button" data-v="zigzag">Zigzag</button><button type="button" data-v="oh">Surprised</button><button type="button" data-v="smirk">Smirk</button></div></div>
+          <div class="row"><button class="btn ghost" type="button" id="pkLight" aria-pressed="false">💡 Light it up</button><button class="btn ghost" type="button" id="pkRand">🎲 Random</button><button class="btn" type="button" id="pkPrint">Print pattern</button></div>
+          <div class="work" id="pkTip"></div>
+        </div>
+      </div>
+    </div>
+    <h3>Transfer the pattern</h3>
+    <ol class="steps">
+      <li>Print your pattern (or draw one) at the size you want. Cut slits around the edges so the paper bends to the pumpkin's curve.</li>
+      <li>Tape it to the scraped side of the pumpkin.</li>
+      <li>With a <b>poker tool</b> (in most kits) or a pushpin, poke holes along every line about 1/8 inch apart, through the paper and into the skin.</li>
+      <li>Peel off the paper. Rub a little flour over the holes to make the dots easier to see.</li>
+    </ol>
+    <h3>Carve it</h3>
+    <ol class="steps">
+      <li><b>Carve the small details first</b>, then larger shapes. Cutting big holes first weakens the wall.</li>
+      <li>Hold the saw like a pencil and use <b>gentle sawing strokes</b>, straight in, at a right angle to the surface. Don't force or twist the blade.</li>
+      <li>Keep your other hand flat on the pumpkin, <b>away from the blade's path</b>.</li>
+      <li>Push cut pieces out from the inside with your finger instead of prying them.</li>
+      <li>Work from the center of the design outward.</li>
+    </ol>
+    <p class="callout"><span><b>Tip:</b> leave at least half an inch of pumpkin between cutouts, or the thin bridges will snap.</span></p>
+  </section>
+
+  <section class="lesson" id="pk4">
+    <div class="lesson-head"><span class="step">04</span><h2>Make it last until Halloween</h2></div>
+    <p>Once you cut a pumpkin open, mold and bacteria move in. University of Illinois Extension says a carved pumpkin lasts about <b>7 to 10 days, depending on the weather</b>, and in warm or wet weather it can start to shrivel and rot in just a few days. You can slow that down:</p>
+    <ul class="points">
+      <li><b>Clean first:</b> wash the outside before carving and use clean tools.</li>
+      <li><b>Scrape out all the pulp</b>: less pulp means fewer places for mold.</li>
+      <li><b>Disinfect:</b> university extension services suggest spraying or dipping the carved pumpkin in a <b>10% bleach solution</b> (1 part bleach to 9 parts water). Let it dry, and keep it away from kids and pets while wet.</li>
+      <li><b>Seal the cuts:</b> rub petroleum jelly on all cut surfaces to lock in moisture and slow drying.</li>
+      <li><b>Keep it cool:</b> about 50 to 60°F is ideal. Shade it from afternoon sun, bring it in or move it to a cool garage on warm days, and protect it from freezing nights; thawed pumpkins rot fast.</li>
+      <li><b>Use an LED light, not a candle:</b> a flame cooks the inside and shortens its life.</li>
+    </ul>
+    <div class="try est" id="estTool">
+      <span class="try-h">Try it · how long will it last?</span>
+      <div class="row">
+        <label>Carving day<select id="esCarve"></select></label>
+        <label>Typical daytime weather<select id="esTemp"><option value="cold">Cold (below 50°F)</option><option value="cool" selected>Cool (50 to 60°F)</option><option value="mild">Mild (60 to 70°F)</option><option value="warm">Warm (above 70°F)</option></select></label>
+      </div>
+      <div class="row">
+        <label>Where it sits<select id="esSpot"><option value="shade" selected>Porch, in shade</option><option value="sun">In direct sun</option><option value="inside">Indoors, heated room</option></select></label>
+        <label>Light<select id="esLight"><option value="led" selected>LED or battery light</option><option value="candle">Real candle</option></select></label>
+      </div>
+      <div class="checks">
+        <label><input type="checkbox" id="esBleach"> Sprayed with a 10% bleach solution</label>
+        <label><input type="checkbox" id="esJelly"> Petroleum jelly on the cut edges</label>
+        <label><input type="checkbox" id="esFreeze"> Nights below freezing are expected</label>
+      </div>
+      <div class="out" id="esOut"></div>
+      <div class="est-bar" id="esBar" aria-hidden="true"></div>
+      <div class="work" style="font-size:.74rem">Shaded bar = how long it should look good, starting on carving day. Orange line = Halloween.</div>
+      <div class="work" id="esWork"></div>
+    </div>
+    <p class="callout"><span><b>A rough guide.</b> The estimator starts from the extension's 7 to 10 days and adjusts for heat, sun, flame and treatment. Real pumpkins vary; check yours daily and toss it once it gets soft or moldy.</span></p>
+  </section>
+
+  <section class="lesson" id="pk5">
+    <div class="lesson-head"><span class="step">05</span><h2>Carving with kids, safely</h2></div>
+    <p>Knife cuts are a common Halloween injury. The American Academy of Pediatrics recommends:</p>
+    <ul class="points">
+      <li><b>Small children decorate, adults cut.</b> Kids can draw the face with markers and scoop out the seeds and pulp (they usually love this part).</li>
+      <li>Older kids can use a <b>small carving-kit saw</b> with an adult right there. Those saws are less likely to slip and cut deeply than kitchen knives.</li>
+      <li>Carve on a dry, steady table with good light, and wipe up slippery pulp from the table and floor.</li>
+      <li>Use a <b>battery-powered candle, flashlight or glow stick</b> instead of a flame. If you use a real candle, a votive in a holder is safest; never leave it unattended, and keep lit pumpkins off steps and paths where costumes can brush them.</li>
+    </ul>
+    <p class="callout warn"><span><b>No carving? No problem.</b> For toddlers, paint the pumpkin or use stickers and push-in decorating kits. An uncarved pumpkin lasts much longer, too.</span></p>
+  </section>
+
+  <section class="lesson" id="pk6">
+    <div class="lesson-head"><span class="step">06</span><h2>Roast the seeds</h2></div>
+    <div class="example"><div class="ex-h">Recipe · University of Illinois Extension</div><ol>
+      <li>Heat the oven to <b>350°F</b>.</li>
+      <li>Pick out about 2 cups of seeds and pull off as much string as you can. Toss any that are cut.</li>
+      <li>Optional but recommended: boil them in 1 quart of water with 2 tablespoons of salt for 10 minutes. It helps them roast evenly. Drain and pat dry.</li>
+      <li>Toss with 1 tablespoon of olive or canola oil (and about 1/2 teaspoon of salt or spices if you skipped boiling).</li>
+      <li>Spread in a single layer on a baking sheet. Roast <b>15 to 25 minutes</b>, stirring every 5 minutes, until golden brown.</li>
+      <li class="ans">Cool, then store in an airtight container.</li></ol></div>
+    <p>Try seasoning with cinnamon sugar, garlic powder, chili powder or cumin.</p>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>When should I carve for Halloween 2026?</summary><div class="a"><p>Halloween is Saturday, October 31, 2026. In cool weather, carving around October 24 to 28 usually works. In a warm climate, carve just 1 to 3 days before. Use the estimator in lesson 4.</p></div></details>
+      <details><summary>Can I eat my jack-o'-lantern?</summary><div class="a"><p>Big carving pumpkins are stringy and watery, and a carved pumpkin that has sat out is not safe to eat. Use small "pie" or "sugar" pumpkins for cooking. The seeds from a freshly carved pumpkin are fine to roast.</p></div></details>
+      <details><summary>My pumpkin is shriveling. Can I save it?</summary><div class="a"><p>If it's just dried out and not moldy, soak it face down in a tub of cold water for an hour or so, then dry it well. Once it's soft, slimy or moldy, compost it.</p></div></details>
+      <details><summary>Should the lid go on top, back or bottom?</summary><div class="a"><p>The back keeps the top and stem looking perfect and hides the cut. The bottom makes lighting easy. A top lid is classic, but it can slip inside as the pumpkin shrinks.</p></div></details>
+      <details><summary>What do I do with it after Halloween?</summary><div class="a"><p>Compost it, or check whether your town collects pumpkins for composting. Remove candles, wax and any decorations first.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Trusted sources</h2>
+    <div class="links">
+      <a href="https://extension.illinois.edu/news-releases/how-pick-perfect-pumpkin" target="_blank" rel="noopener"><span class="src">University of Illinois Extension</span><b>How to pick the perfect pumpkin</b></a>
+      <a href="https://extension.usu.edu/news_sections/home_family_and_food/jack-o-lanterns" target="_blank" rel="noopener"><span class="src">Utah State University Extension</span><b>Keep your jack-o'-lantern from rotting</b></a>
+      <a href="https://extension.sdstate.edu/pumpkin-carving-preservation" target="_blank" rel="noopener"><span class="src">South Dakota State University Extension</span><b>Pumpkin carving preservation</b></a>
+      <a href="https://www.healthychildren.org/English/safety-prevention/all-around/Pages/Halloween-Safety-Tips.aspx" target="_blank" rel="noopener"><span class="src">American Academy of Pediatrics</span><b>Halloween safety tips</b></a>
+      <a href="https://extension.illinois.edu/lmw/recipes/roasted-pumpkin-seeds" target="_blank" rel="noopener"><span class="src">University of Illinois Extension</span><b>Roasted pumpkin seeds recipe</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/leaderboard/">Leaderboard</a></nav></span><span>Adults should do the cutting. Use LED lights instead of candles, and never leave a lit candle unattended.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  /* ---------- Face designer ---------- */
+  const P = {
+    eyes: {
+      tri:   '<path class="cut" d="M80 150 L120 150 L100 112 Z"/><path class="cut" d="M180 150 L220 150 L200 112 Z"/>',
+      round: '<circle class="cut" cx="100" cy="132" r="20"/><circle class="cut" cx="200" cy="132" r="20"/>',
+      angry: '<path class="cut" d="M74 118 L126 136 L118 156 L82 150 Z"/><path class="cut" d="M226 118 L174 136 L182 156 L218 150 Z"/>',
+      cat:   '<path class="cut" d="M76 138 Q100 104 124 138 Q100 160 76 138 Z"/><path class="cut" d="M176 138 Q200 104 224 138 Q200 160 176 138 Z"/>',
+      star:  '<path class="cut" d="M100 108 L106 124 L123 125 L110 136 L114 153 L100 144 L86 153 L90 136 L77 125 L94 124 Z"/><path class="cut" d="M200 108 L206 124 L223 125 L210 136 L214 153 L200 144 L186 153 L190 136 L177 125 L194 124 Z"/>'
+    },
+    nose: {
+      tri:   '<path class="cut" d="M138 190 L162 190 L150 166 Z"/>',
+      heart: '<path class="cut" d="M150 194 L134 178 Q130 166 141 165 Q148 165 150 172 Q152 165 159 165 Q170 166 166 178 Z"/>',
+      round: '<circle class="cut" cx="150" cy="180" r="11"/>',
+      none:  ''
+    },
+    mouth: {
+      grin:   '<path class="cut" d="M80 212 Q150 270 220 212 Q150 244 80 212 Z"/>',
+      teeth:  '<path class="cut" d="M78 208 Q150 276 222 208 L200 222 L190 210 L176 228 L164 214 L150 232 L136 214 L124 228 L110 210 L100 222 Z"/>',
+      zigzag: '<path class="cut" d="M84 214 L104 230 L124 214 L150 232 L176 214 L196 230 L216 214 L216 232 L196 250 L176 236 L150 254 L124 236 L104 250 L84 232 Z"/>',
+      oh:     '<ellipse class="cut" cx="150" cy="230" rx="22" ry="26"/>',
+      smirk:  '<path class="cut" d="M96 226 Q150 244 214 202 Q206 230 180 242 Q140 256 96 226 Z"/>'
+    }
+  };
+  const TIPS = {
+    star: 'Star eyes have sharp points: cut each point as a separate small V.',
+    teeth: 'Leave the teeth at least half an inch wide so they don’t snap off.',
+    zigzag: 'Saw the zigzags one straight line at a time, pulling the saw out at each corner.',
+    heart: 'Cut the two curves of the heart first, then the point.',
+    cat: 'For curves, turn the pumpkin rather than twisting the saw.'
+  };
+  const pick = {eyes:'tri', nose:'tri', mouth:'grin'};
+  const svg = document.getElementById('pk');
+  function drawFace(){
+    ['eyes','nose','mouth'].forEach(k => document.getElementById('pk' + k[0].toUpperCase() + k.slice(1)).innerHTML = P[k][pick[k]]);
+    document.querySelectorAll('#pkTool .chipset').forEach(set => set.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.v === pick[set.dataset.part])));
+    const tip = TIPS[pick.eyes] || TIPS[pick.mouth] || TIPS[pick.nose] || 'Simple shapes like these are great for a first pumpkin. Carve the nose first, then eyes, then mouth.';
+    document.getElementById('pkTip').textContent = 'Carving tip: ' + tip;
+  }
+  document.querySelectorAll('#pkTool .chipset').forEach(set => set.querySelectorAll('button').forEach(b => b.addEventListener('click', () => { pick[set.dataset.part] = b.dataset.v; drawFace(); })));
+  document.getElementById('pkLight').addEventListener('click', e => { const on = svg.classList.toggle('lit'); e.currentTarget.setAttribute('aria-pressed', on); e.currentTarget.textContent = on ? '🌙 Lights off' : '💡 Light it up'; });
+  document.getElementById('pkRand').addEventListener('click', () => { for (const k in P){ const o = Object.keys(P[k]); pick[k] = o[Math.floor(Math.random() * o.length)]; } drawFace(); });
+  document.getElementById('pkPrint').addEventListener('click', () => {
+    const face = ['eyes','nose','mouth'].map(k => P[k][pick[k]]).join('').replace(/class="cut"/g, 'fill="#000"');
+    const w = window.open('', '_blank');
+    if (!w) return;
+    w.document.write(`<!doctype html><title>Pumpkin pattern</title><style>body{font-family:sans-serif;text-align:center;margin:24px}svg{width:90%;max-width:700px}</style><p>Tape to the pumpkin, poke along every line, then carve the black shapes.</p><svg viewBox="0 0 300 290"><ellipse cx="150" cy="170" rx="138" ry="112" fill="none" stroke="#999" stroke-dasharray="6 6"/>${face}</svg><script>setTimeout(()=>print(),300)<\/script>`);
+    w.document.close();
+  });
+  drawFace();
+
+  /* ---------- Lifespan estimator ---------- */
+  const HALLOWEEN = new Date(2026, 9, 31);
+  const sel = document.getElementById('esCarve');
+  const DAY = 864e5;
+  const opts = [];
+  for (let d = 14; d >= 0; d--){
+    const dt = new Date(HALLOWEEN.getTime() - d * DAY);
+    opts.push(`<option value="${d}"${d === 4 ? ' selected' : ''}>${dt.toLocaleDateString('en-US', {weekday:'short', month:'short', day:'numeric'})}${d === 0 ? ' (Halloween)' : ` (${d} day${d > 1 ? 's' : ''} before)`}</option>`);
+  }
+  sel.innerHTML = opts.join('');
+  const ids = ['esCarve','esTemp','esSpot','esLight','esBleach','esJelly','esFreeze'];
+  function est(){
+    const g = id => document.getElementById(id);
+    const before = +g('esCarve').value;
+    let lo = 7, hi = 10; const why = ['Start: 7–10 days (Illinois Extension)'];
+    const adj = (n, m) => { lo += n; hi += n; why.push(m); };
+    ({cold:()=>adj(1,'Cold days: +1'), cool:()=>{}, mild:()=>adj(-2,'Mild days: −2'), warm:()=>adj(-4,'Warm days: −4')})[g('esTemp').value]();
+    if (g('esSpot').value === 'sun') adj(-2, 'Direct sun: −2');
+    if (g('esSpot').value === 'inside') adj(-3, 'Heated room: −3');
+    if (g('esLight').value === 'candle') adj(-1, 'Candle heat: −1');
+    if (g('esBleach').checked) adj(1, 'Bleach spray: +1');
+    if (g('esJelly').checked) adj(1, 'Petroleum jelly: +1');
+    if (g('esFreeze').checked) adj(-2, 'Freeze and thaw: −2');
+    lo = Math.max(1, lo); hi = Math.max(lo + 1, Math.min(14, hi));
+    const need = before;
+    let verdict;
+    if (lo >= need + 1) verdict = `<b>It should still look good on Halloween.</b>`;
+    else if (hi >= need + 1) verdict = `<b>Cutting it close.</b> It may be soft by Halloween night. Carve a day or two later, or keep it cooler.`;
+    else verdict = `<b>Too early.</b> It will likely rot before Halloween. Carve closer to October 31.`;
+    g('esOut').innerHTML = `Expect about <b>${lo}–${hi} days</b> of good looks. ${verdict}`;
+    g('esWork').textContent = why.join(' · ');
+    const span = 16, pct = v => Math.min(100, v / span * 100);
+    g('esBar').innerHTML = `<i style="width:${pct(hi)}%"></i><b style="left:calc(${pct(need)}% - 1px)" title="Halloween"></b><span style="${pct(need) > 65 ? `right:calc(${100 - pct(need)}% + 6px)` : `left:calc(${pct(need)}% + 6px)`}">🎃 Oct 31</span>`;
+  }
+  ids.forEach(id => document.getElementById(id).addEventListener('input', est));
+  ids.forEach(id => document.getElementById(id).addEventListener('change', est));
+  est();
+})();
+</script>
+</body>
+</html>

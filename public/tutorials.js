@@ -739,5 +739,29 @@ window.TUTORIALS = [
     category: "Computer help",
     tags: ["zoom", "video call", "join meeting", "meeting id", "mute", "share screen", "zoom workplace", "host meeting", "no audio", "webcam", "online meeting"],
     minutes: 12
+  },
+  {
+    slug: "carve-a-pumpkin",
+    title: "How to Carve a Pumpkin",
+    summary: "Pick, scoop, design, carve safely, make it last until Halloween, and roast the seeds.",
+    category: "Life skills",
+    tags: ["carve pumpkin", "jack-o-lantern", "halloween", "pumpkin carving", "pumpkin pattern", "pumpkin seeds", "roast pumpkin seeds", "make pumpkin last", "kids", "october"],
+    minutes: 12
+  },
+  {
+    slug: "make-a-website",
+    title: "Make Your First Website for Free",
+    summary: "Plan, write HTML and CSS, publish free on GitHub Pages and add your own domain.",
+    category: "Programming",
+    tags: ["make a website", "free website", "html", "css", "github pages", "web hosting", "custom domain", "dns", "beginner", "learn to code", "publish website"],
+    minutes: 20
+  },
+  {
+    slug: "start-a-garden",
+    title: "How to Start a Vegetable Garden",
+    summary: "Site, soil, raised beds, what to plant, watering, and fall garlic and cover crops.",
+    category: "Life skills",
+    tags: ["vegetable garden", "start a garden", "raised bed", "square foot gardening", "hardiness zone", "plant garlic", "cover crops", "soil test", "fall garden", "gardening for beginners", "october"],
+    minutes: 12
   }
 ];

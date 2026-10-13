@@ -2039,5 +2039,71 @@ export default {
         o: ["Ctrl + M", "Alt + A", "Alt + F4", "Windows + M"], a: 1,
         e: "Alt + A mutes and unmutes on Windows. On a Mac it's Command + Shift + A." }
     ]
+  },
+
+  "carve-a-pumpkin": {
+    title: "How to Carve a Pumpkin",
+    pass: 4,
+    questions: [
+      { q: "Why cut the lid from the back of the pumpkin?",
+        o: ["It makes the pumpkin heavier", "It's the only way to remove seeds", "It keeps the top and stem intact and hides the cut", "It makes the pumpkin glow orange"], a: 2,
+        e: "A back lid keeps the stem and top looking good, and heat escapes through it." },
+      { q: "About how long does a carved pumpkin last, according to University of Illinois Extension?",
+        o: ["7 to 10 days, depending on weather", "1 day", "About 2 months", "A full year"], a: 0,
+        e: "Carved pumpkins last about 7 to 10 days depending on weather, less when it's warm." },
+      { q: "When carving a design, what should you cut first?",
+        o: ["The biggest shape", "The lid last", "It doesn't matter", "The small details"], a: 3,
+        e: "Cutting big holes first weakens the wall, so do small details first." },
+      { q: "What do pediatricians recommend for small children?",
+        o: ["Let them carve with a kitchen knife", "Let them draw the face and scoop; adults do the cutting", "Keep them away from pumpkins entirely", "Give them the candle to hold"], a: 1,
+        e: "Small kids decorate and scoop; adults handle cutting." },
+      { q: "Which light makes a jack-o'-lantern last longer?",
+        o: ["A real candle", "A battery LED light", "A gas lantern", "Sunlight through the lid"], a: 1,
+        e: "A flame cooks the inside and speeds rot; LED lights don't." }
+    ]
+  },
+
+  "make-a-website": {
+    title: "Make Your First Website for Free",
+    pass: 4,
+    questions: [
+      { q: "What must your home page file be called?",
+        o: ["home.html", "main.html", "index.html", "Website.html"], a: 2,
+        e: "Web servers, including GitHub Pages, look for index.html as the home page." },
+      { q: "What's the job of CSS?",
+        o: ["It controls colors, fonts, spacing and layout", "It stores your content", "It registers your domain", "It hosts your site"], a: 0,
+        e: "HTML holds the content; CSS decides how it looks." },
+      { q: "For a free GitHub Pages user site, what should the repository be named?",
+        o: ["website", "my-site.com", "index", "yourusername.github.io"], a: 3,
+        e: "A user site's repository must be named yourusername.github.io, in lowercase." },
+      { q: "Which DNS record points www.yourdomain.com at GitHub Pages?",
+        o: ["An MX record to github.com", "A CNAME record to yourusername.github.io", "A TXT record saying 'pages'", "No record is needed"], a: 1,
+        e: "A www subdomain uses a CNAME record pointing to yourusername.github.io." },
+      { q: "Your page appears online but has no styling. What's the likely cause?",
+        o: ["GitHub Pages doesn't support CSS", "The domain hasn't been bought", "The link tag's href doesn't exactly match the CSS file name", "Images are too big"], a: 2,
+        e: "File names are case-sensitive on the web, so Style.css and style.css are different files." }
+    ]
+  },
+
+  "start-a-garden": {
+    title: "How to Start a Vegetable Garden",
+    pass: 4,
+    questions: [
+      { q: "How much direct sun do most vegetables need, according to NC State Extension?",
+        o: ["About 2 hours", "Only morning shade", "Sun doesn't matter if you water", "At least 8 hours"], a: 3,
+        e: "Most vegetables need at least 8 hours; leafy and root crops can manage with about 6." },
+      { q: "Why keep a raised bed no wider than about 4 feet?",
+        o: ["Lumber only comes in 4-foot lengths", "So you can reach the middle without stepping on the soil", "Wider beds don't get sun", "It's required by the USDA"], a: 1,
+        e: "You should be able to reach the center from either side without compacting the soil." },
+      { q: "What does your USDA Plant Hardiness Zone tell you?",
+        o: ["Your average coldest winter temperature, which matters for perennials", "The exact day to plant tomatoes", "How much rain you get", "Your soil pH"], a: 0,
+        e: "Zones are based on average extreme winter lows; use frost dates for vegetable timing." },
+      { q: "About how much water do vegetables need each week?",
+        o: ["About 1 gallon per plant per hour", "None once they sprout", "About 1 inch, from rain and watering combined", "6 inches"], a: 2,
+        e: "About 1 inch per week, applied deeply and to the soil." },
+      { q: "When should you plant garlic in fall?",
+        o: ["Right after the first spring frost", "About 4 to 6 weeks before the ground freezes", "In midsummer", "Only after the ground is frozen solid"], a: 1,
+        e: "Plant cloves 4 to 6 weeks before the ground freezes, pointed end up." }
+    ]
   }
 };
