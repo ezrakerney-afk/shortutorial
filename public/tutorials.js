@@ -859,5 +859,29 @@ window.TUTORIALS = [
     category: "Money",
     tags: ["start a business", "small business", "llc", "sole proprietorship", "ein", "business plan", "break-even", "business license", "register business", "self-employment tax", "sba"],
     minutes: 20
+  },
+  {
+    slug: "find-cheap-flights",
+    title: "How to Find Cheap Flights",
+    summary: "Flexible dates, Google Flights, when to book, true costs, and your refund rights.",
+    category: "Life skills",
+    tags: ["cheap flights", "airfare", "google flights", "when to book flights", "thanksgiving flights", "christmas flights", "24 hour rule", "flight refund", "basic economy", "bag fees", "travel"],
+    minutes: 12
+  },
+  {
+    slug: "stop-procrastinating",
+    title: "How to Stop Procrastinating",
+    summary: "Why we put things off and what research says helps, with a Pomodoro timer.",
+    category: "Life skills",
+    tags: ["procrastination", "stop procrastinating", "productivity", "pomodoro", "focus", "motivation", "time management", "study tips", "to do list", "habits", "self compassion"],
+    minutes: 12
+  },
+  {
+    slug: "write-cover-letter",
+    title: "How to Write a Cover Letter",
+    summary: "Structure, a strong opening, tailoring and formatting, plus a letter builder.",
+    category: "Life skills",
+    tags: ["cover letter", "job application", "resume", "career", "hiring manager", "writing", "job search", "cover letter template", "cover letter example", "apply for a job"],
+    minutes: 12
   }
 ];

@@ -2369,5 +2369,71 @@ export default {
         o: ["7.65%", "10%", "15.3%", "25%"], a: 2,
         e: "Self-employment tax is 15.3%: 12.4% Social Security plus 2.9% Medicare, owed if net earnings are $400 or more." }
     ]
+  },
+
+  "find-cheap-flights": {
+    title: "How to Find Cheap Flights",
+    pass: 4,
+    questions: [
+      { q: "Under the DOT 24-hour rule, when must an airline let you cancel without penalty (or hold the fare)?",
+        o: ["Any time before departure", "Within 24 hours of booking, if you booked at least 7 days before departure", "Only for first-class tickets", "Within 7 days of booking"], a: 1,
+        e: "The rule applies to reservations made at least one week before departure." },
+      { q: "What does the Google Flights date grid show?",
+        o: ["Seat maps", "Airport security wait times", "Baggage fees", "Prices for different departure and return date combinations"], a: 3,
+        e: "Click Dates to compare fares across date combinations." },
+      { q: "Why can the cheapest fare end up costing more than a pricier one?",
+        o: ["Bag, seat and other fees can add up", "Cheap fares are always fake", "Google adds a booking fee", "Prices are in different currencies"], a: 0,
+        e: "Compare the true total, including carry-on, checked bag and seat fees." },
+      { q: "Does searching in incognito mode reliably lower airfares?",
+        o: ["Yes, always by about 10%", "Only on Tuesdays", "There's no good evidence it does", "Yes, but only for international flights"], a: 2,
+        e: "Fares change because seats sell and airlines adjust to demand, not because of your cookies." },
+      { q: "Your domestic flight is rescheduled to arrive 4 hours later and you decline the new flight. What are you entitled to?",
+        o: ["Only a travel credit", "A refund to your original form of payment", "Cash compensation for the delay", "Nothing"], a: 1,
+        e: "A change of 3+ hours on a domestic trip is significant, so you can get a refund. There's no federal cash compensation for delays." }
+    ]
+  },
+
+  "stop-procrastinating": {
+    title: "How to Stop Procrastinating",
+    pass: 4,
+    questions: [
+      { q: "According to research, what mainly drives procrastination?",
+        o: ["Laziness", "Poor math skills", "Avoiding unpleasant feelings the task brings up", "Having too much free time"], a: 2,
+        e: "Procrastination is mostly short-term mood repair: avoiding the task makes a bad feeling go away for now." },
+      { q: "In the standard Pomodoro Technique, how long is one focus session?",
+        o: ["25 minutes", "10 minutes", "60 minutes", "90 minutes"], a: 0,
+        e: "Work for 25 minutes, take a short break, and a longer break after four." },
+      { q: "Which is an implementation intention (if-then plan)?",
+        o: ["“I'll exercise more.”", "“When I get home from work, I'll put on my running shoes.”", "“I should really study.”", "“Someday I'll clean the garage.”"], a: 1,
+        e: "It names exactly when and what you'll do, which makes starting automatic." },
+      { q: "What did students who forgave themselves for procrastinating do before their next exams?",
+        o: ["Procrastinated more", "Dropped the class", "Stopped studying", "Procrastinated less"], a: 3,
+        e: "In Wohl, Pychyl and Bennett's 2010 study, self-forgiveness led to less procrastination next time." },
+      { q: "Which change makes distractions harder to reach?",
+        o: ["Keeping your phone face up next to you", "Opening every app you might need", "Putting your phone in another room", "Working only when you feel motivated"], a: 2,
+        e: "Changing your surroundings beats relying on willpower." }
+    ]
+  },
+
+  "write-cover-letter": {
+    title: "How to Write a Cover Letter",
+    pass: 4,
+    questions: [
+      { q: "How long should a typical cover letter be?",
+        o: ["Two to three pages", "One page or less", "As long as your resume", "Exactly 100 words"], a: 1,
+        e: "Keep it to one page, usually 250 to 400 words." },
+      { q: "Which opening is strongest?",
+        o: ["“My name is Jane and I am writing to apply.”", "“To Whom It May Concern, I want this job.”", "A specific result or reason you fit the role", "A list of your hobbies"], a: 2,
+        e: "Lead with what makes you a fit, like a relevant result, not throat-clearing." },
+      { q: "What's the best way to match your letter to a job posting?",
+        o: ["Pick 2 or 3 key requirements and give proof for each", "Copy your whole resume into the letter", "Use the same letter for every job", "Talk about what the job will do for you"], a: 0,
+        e: "Find the top requirements and back each with a specific example, ideally with a number." },
+      { q: "You can't find the hiring manager's name. What greeting should you use?",
+        o: ["To Whom It May Concern", "Hey there", "Dear Sir", "Dear Hiring Manager"], a: 3,
+        e: "“Dear Hiring Manager” is fine; “To Whom It May Concern” feels dated." },
+      { q: "What file format is usually best for sending a cover letter?",
+        o: ["A photo of the printed letter", "PDF, unless the employer asks for Word", "A plain .zip file", "Whatever your word processor saves by default"], a: 1,
+        e: "A PDF keeps your formatting intact. Use Word only if asked." }
+    ]
   }
 };

@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Find Cheap Flights · Shortutorial</title>
+<meta name="description" content="Find cheap flights: be flexible, use Google Flights' date grid and price tracking, book in the right window (including Thanksgiving and Christmas 2026), compare true costs with bag and seat fees, and know your 24-hour and refund rights.">
+<link rel="canonical" href="https://shortutorial.com/find-cheap-flights/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How to Find Cheap Flights · Shortutorial">
+<meta property="og:description" content="Find cheap flights: be flexible, use Google Flights' date grid and price tracking, book in the right window (including Thanksgiving and Christmas 2026), compare true costs with bag and seat fees, and know your 24-hour and refund rights.">
+<meta property="og:url" content="https://shortutorial.com/find-cheap-flights/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6c'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ES/%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+
+.try input[type=date]{font:inherit;font-family:var(--mono);font-size:1rem;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:9px;padding:7px 10px;outline:none;color-scheme:light dark}
+.try select{width:auto;max-width:100%}
+/* Booking window timeline */
+.tl{position:relative;height:54px;margin:6px 4px 0}
+.tl .track{position:absolute;left:0;right:0;top:22px;height:10px;border-radius:99px;background:var(--line)}
+.tl .win{position:absolute;top:22px;height:10px;border-radius:99px;background:var(--good)}
+.tl .mk{position:absolute;top:10px;width:2px;height:34px;background:var(--ink);transform:translateX(-1px)}
+.tl .mk span{position:absolute;top:-14px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:.68rem;white-space:nowrap;color:var(--ink)}
+.tl .mk.best{background:var(--good)}
+.tl .mk.best span{top:auto;bottom:-16px;color:var(--good)}
+.tl .mk.today{background:var(--amber)}
+.tl .mk.today span{color:var(--amber)}
+.tl-ends{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.68rem;color:var(--muted);margin-top:10px}
+.verdict{padding:12px 14px;border-radius:10px;border-left:4px solid var(--accent);background:var(--surface);font-size:1rem}
+.verdict.good{border-left-color:var(--good)} .verdict.warn{border-left-color:var(--amber)} .verdict.bad{border-left-color:var(--bad)}
+.verdict b{font-family:var(--display)}
+/* Fare calculator */
+.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:640px){.opts{grid-template-columns:1fr}}
+.opt{background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.opt.win{border-color:var(--good);box-shadow:0 0 0 3px var(--good-bg)}
+.opt input[type=text]{width:100% !important;box-sizing:border-box;font-family:var(--display) !important;font-weight:600}
+.opt .f{display:grid;grid-template-columns:1fr 92px;align-items:center;gap:8px;font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.opt .f input{width:100% !important;box-sizing:border-box;padding:6px 8px !important;font-size:.92rem !important}
+.opt .tot{font-family:var(--display);font-size:1.35rem;font-weight:700;border-top:1px solid var(--line);padding-top:8px;display:flex;justify-content:space-between;align-items:baseline}
+.opt .tot small{font-family:var(--mono);font-size:.7rem;font-weight:400;color:var(--muted)}
+.opt .bk{font-family:var(--mono);font-size:.72rem;color:var(--muted);line-height:1.5}
+.opt .tag{font-family:var(--mono);font-size:.68rem;font-weight:600;color:var(--good);text-transform:uppercase;letter-spacing:.08em;min-height:1em}
+.needs{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:flex-end}
+.tog{display:flex !important;flex-direction:row !important;align-items:center;gap:6px !important}
+.try input[type=number].sm{width:80px}
+</style>
+</head>
+<body data-slug="find-cheap-flights">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=travel">Life skills</a> / Find cheap flights</div>
+    <span class="eyebrow">Life skills · Travel</span>
+    <h1>How to Find Cheap Flights</h1>
+    <p class="lede">Holiday travel season is here, and the cheapest fares go first. Five short lessons show how to search like a pro, book at the right time, spot hidden fees, and use your rights if plans change.</p>
+    <div class="badges"><span class="badge level">Practical</span><span class="badge">~12 min</span><span class="badge">5 lessons</span><span class="badge">Booking-window helper</span><span class="badge">Fare calculator</span><span class="badge">5-question quiz</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#fl1">1 · Flexibility</a><a href="#fl2">2 · Google Flights</a><a href="#fl3">3 · When to book</a><a href="#fl4">4 · True cost</a><a href="#fl5">5 · Myths & rights</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="fl1">
+    <div class="lesson-head"><span class="step">01</span><h2>Be flexible: the biggest money saver</h2></div>
+    <p>The single best way to pay less is to let the price choose some of the details. Each kind of flexibility opens up cheaper options:</p>
+    <ul class="points">
+      <li><b>Dates:</b> moving your trip by a day or two can change the fare a lot. Google's 2026 analysis of its flight data found that leaving on a <b>Monday</b> and returning on a <b>Tuesday or Wednesday</b> saved about 14% versus weekend flights.</li>
+      <li><b>Airports:</b> check every airport within driving distance, at both ends. A cheaper fare from a farther airport can still win, even after gas and parking.</li>
+      <li><b>Stops:</b> the same Google data found nonstop flights cost about 20% more on average than ones with a connection. Decide if the time saved is worth it.</li>
+      <li><b>Destination:</b> if you just want a getaway, Google Flights' <b>Explore</b> map shows prices to many places from your airport at once.</li>
+      <li><b>Time of day:</b> early-morning and late-night flights are often cheaper, and early flights are less likely to be delayed.</li>
+    </ul>
+    <p class="callout"><span><b>Holidays:</b> the day you fly matters even more. Flying on the holiday itself, like Thanksgiving Day or Christmas Day, is often much cheaper than the busy days just before it.</span></p>
+  </section>
+
+  <section class="lesson" id="fl2">
+    <div class="lesson-head"><span class="step">02</span><h2>Search smarter with Google Flights</h2></div>
+    <p><a href="https://www.google.com/travel/flights" target="_blank" rel="noopener">Google Flights</a> is free, fast and shows most airlines in one place. It doesn't sell tickets; it sends you to the airline or a travel site to book. Here's how to use its best features:</p>
+    <ol class="steps">
+      <li><b>Search your route</b> with your rough dates. Set stops, bags and the number of travelers at the top so prices are realistic.</li>
+      <li><b>Open the date grid.</b> Click <b>Dates</b> to see a grid of prices for different departure and return combinations. Cheaper cells are highlighted.</li>
+      <li><b>Open the price graph.</b> Click <b>Price graph</b> to see fares by week or month when your dates are flexible.</li>
+      <li><b>Check nearby airports.</b> Add more than one airport in the From and To boxes, or look at the airport suggestions under the results.</li>
+      <li><b>Compare the Best and Cheapest tabs.</b> <b>Cheapest</b> adds lower-priced options, including tickets from online travel agencies and trips where you may have to <b>re-check your own bags</b> between flights. Read the details before you choose one.</li>
+      <li><b>Turn on Track prices.</b> Google emails you when the price drops significantly or is likely to rise. Choose <b>Any dates</b> to track the cheapest fare for the route across a month.</li>
+      <li><b>Read the price insight.</b> Results often say whether prices are low, typical or high right now compared with past prices on that route.</li>
+    </ol>
+    <p class="callout"><span><b>Book direct when you can.</b> Once you find the flight, booking on the airline's own site usually makes changes, refunds and rebooking during delays much easier than going through a third party.</span></p>
+  </section>
+
+  <section class="lesson" id="fl3">
+    <div class="lesson-head"><span class="step">03</span><h2>When to book</h2></div>
+    <p>There's no magic day, but there are sweet spots. Google Flights looked at five years of its data for its <a href="https://blog.google/products-and-platforms/products/search/holiday-travel-trends-2026/" target="_blank" rel="noopener">2026 travel trends report</a>. On average, the lowest prices showed up this many days before departure:</p>
+    <div class="tw"><table class="t"><tr><th>Trip</th><th class="num">Lowest, on average</th><th class="num">Low-price range</th></tr>
+      <tr><td>Thanksgiving</td><td class="num">34 days out</td><td class="num">21–57 days</td></tr>
+      <tr><td>Christmas</td><td class="num">56 days out</td><td class="num">33–67 days</td></tr>
+      <tr><td>Domestic (US)</td><td class="num">39 days out</td><td class="num">22–57 days</td></tr>
+      <tr><td>Mexico &amp; Caribbean</td><td class="num">43 days out</td><td class="num">24–69 days</td></tr>
+      <tr><td>Europe</td><td class="num">90 days out</td><td class="num">49+ days</td></tr>
+      <tr><td>International (all)</td><td class="num">89 days out</td><td class="num">50–133 days</td></tr>
+      <tr><td>Spring break</td><td class="num">50 days out</td><td class="num">29–64 days</td></tr>
+      <tr><td>Summer (July–Aug)</td><td class="num">21 days out</td><td class="num">20–47 days</td></tr>
+    </table></div>
+    <ul class="points">
+      <li><b>Thanksgiving 2026 is Thursday, November 26.</b> Google says the cheapest Thanksgiving fares usually appear in October; 34 days out is about October 23 this year. Start tracking prices now.</li>
+      <li><b>Christmas 2026 is Friday, December 25.</b> The best Christmas deals usually show up between late October and mid-November.</li>
+      <li>For international trips, Google found prices barely dip inside the window, so <b>book as soon as you see a fare you're happy with</b>.</li>
+      <li>The <b>day of the week you buy</b> hardly matters: Google found booking on a Wednesday saved only about 1.4% compared with Sunday.</li>
+      <li>Prices usually <b>climb in the last two to three weeks</b> before departure, especially for holidays.</li>
+    </ul>
+    <div class="try"><span class="try-h">Try it · booking-window helper</span>
+      <div class="row">
+        <label>Departure date<input type="date" id="bwDate"></label>
+        <label>Where to?<select id="bwType"><option value="dom">Within the US</option><option value="mex">Mexico or Caribbean</option><option value="eur">Europe</option><option value="intl">Other international</option></select></label>
+        <label>Holiday or season<select id="bwHol"><option value="auto">Detect from date</option><option value="none">None</option><option value="thx">Thanksgiving</option><option value="xmas">Christmas / New Year</option><option value="spring">Spring break</option><option value="summer">Summer</option></select></label>
+      </div>
+      <div id="bwOut" aria-live="polite"></div>
+    </div>
+    <p class="work" style="font-family:var(--mono);font-size:.8rem;color:var(--muted)">These are averages, not guarantees. A single route can behave differently, which is why price tracking for your exact trip is the best signal.</p>
+  </section>
+
+  <section class="lesson" id="fl4">
+    <div class="lesson-head"><span class="step">04</span><h2>Compare the true cost, not the headline fare</h2></div>
+    <p>The cheapest fare in the search results often isn't the cheapest trip. Bags, seats and fare rules can add up fast.</p>
+    <h3>Basic economy: what you give up</h3>
+    <p>Most big US airlines sell a stripped-down <b>basic economy</b> fare. Rules vary by airline, but commonly:</p>
+    <ul class="points">
+      <li><b>No seat choice</b> (or only for a fee), so families and groups may be split up.</li>
+      <li><b>Last to board</b>, so overhead bin space may be gone.</li>
+      <li><b>No changes</b> and often no credit if you cancel after the 24-hour window.</li>
+      <li>On some airlines and routes, <b>no full-size carry-on bag</b>, only a small personal item.</li>
+      <li>Fewer frequent-flyer miles and no upgrades.</li>
+    </ul>
+    <p><b>Budget airlines</b> work the same way across the board: a low fare, then a fee for nearly everything, including carry-on bags and printing a boarding pass at the airport. Always check the airline's fee page before booking.</p>
+    <div class="try"><span class="try-h">Try it · true-cost calculator</span>
+      <div class="needs">
+        <label>Travelers<input type="number" class="sm" id="fcN" min="1" max="12" value="2"></label>
+        <label>Trip<select id="fcLegs"><option value="2">Round trip</option><option value="1">One way</option></select></label>
+        <label>Checked bags each<select id="fcBags"><option value="0">0</option><option value="1" selected>1</option><option value="2">2</option></select></label>
+        <label class="tog"><input type="checkbox" id="fcCarry" checked> Need a carry-on</label>
+        <label class="tog"><input type="checkbox" id="fcSeat" checked> Want to pick seats</label>
+      </div>
+      <div class="opts" id="opts"></div>
+      <div class="out" id="fcOut" aria-live="polite"></div>
+      <p class="work">Enter fees per person, per flight direction. Fares are per person for the whole trip. The example numbers are made up; use the real ones from each airline's site.</p>
+    </div>
+  </section>
+
+  <section class="lesson" id="fl5">
+    <div class="lesson-head"><span class="step">05</span><h2>Myths, and your rights after you book</h2></div>
+    <h3>The incognito myth</h3>
+    <p>A popular tip says airlines raise prices when you search the same flight again, so you should use incognito mode or clear cookies. There's no good evidence this is how airline pricing works. Fares change because cheaper seats sell out and airlines adjust prices to demand, often many times a day. Searching in a private window does no harm, but comparing sites and tracking prices does far more.</p>
+    <h3>The 24-hour rule (US flights)</h3>
+    <p>Under US Department of Transportation rules (<a href="https://www.ecfr.gov/current/title-14/chapter-II/subchapter-A/part-259/section-259.5" target="_blank" rel="noopener">14 CFR 259.5</a>), when you book with an airline <b>at least 7 days before departure</b>, the airline must either:</p>
+    <ul class="points">
+      <li>let you <b>cancel within 24 hours</b> of booking for a full refund with no penalty, <b>or</b></li>
+      <li>let you <b>hold the reservation at the quoted fare for 24 hours</b> without paying.</li>
+    </ul>
+    <p>Most US airlines offer the free 24-hour cancellation. It covers flights to, from and within the US. If you book through a travel agency or booking site, check its own policy, since the rule is aimed at airlines.</p>
+    <p class="callout"><span><b>Use it:</b> if you see a good holiday fare, book it. Keep watching for 24 hours; if the same trip drops, cancel and rebook at the lower price.</span></p>
+    <h3>Refunds when the airline changes or cancels your flight</h3>
+    <p>DOT rules that took full effect in 2024 say you're entitled to a <b>refund to your original form of payment</b>, not just a travel credit, if the airline <b>cancels</b> your flight or makes a <b>significant change</b> and you choose not to travel or not to accept the alternative it offers. A significant change includes:</p>
+    <ul class="points">
+      <li>Departing <b>3 or more hours</b> earlier or arriving 3 or more hours later on a domestic trip (<b>6 hours</b> for international).</li>
+      <li>A different departure or arrival airport, or more connections than you booked.</li>
+      <li>Being moved to a lower class of service.</li>
+    </ul>
+    <p>Refunds are due within <b>7 business days</b> for credit card purchases and <b>20 calendar days</b> for other payments. If a checked bag is <b>significantly delayed</b> (more than 12 hours after a domestic flight arrives, with a mishandled-bag report filed), you can get the bag fee back, and you get refunds for paid extras like Wi-Fi or seat upgrades you didn't receive.</p>
+    <p class="callout warn"><span><b>No cash for delays.</b> There's no federal rule requiring US airlines to pay compensation for a delay. The DOT withdrew a proposal for one in November 2025. What you get for a delay (meals, hotels, rebooking) depends on each airline's own promises, listed on the <a href="https://www.transportation.gov/airconsumer/airline-cancellation-delay-dashboard" target="_blank" rel="noopener">DOT Airline Cancellation and Delay Dashboard</a>.</span></p>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Is Tuesday the cheapest day to buy a ticket?</summary><div class="a"><p>It's mostly a myth now. Google's data shows the day you <i>buy</i> barely matters (about 1.4% between the best and worst days). The days you <i>fly</i> matter much more: midweek flights are usually cheaper.</p></div></details>
+      <details><summary>Do prices drop at the last minute?</summary><div class="a"><p>Rarely. Airlines usually raise prices in the final weeks because last-minute travelers tend to be business travelers who will pay more. Waiting is a gamble that usually loses, especially around holidays.</p></div></details>
+      <details><summary>What if the price drops after I book?</summary><div class="a"><p>Within 24 hours (and booked 7+ days out), cancel and rebook. After that, some airlines give a travel credit for the difference on standard economy and higher fares if you change to the same flight; basic economy usually can't be changed. Check your airline's policy.</p></div></details>
+      <details><summary>Are third-party booking sites safe?</summary><div class="a"><p>Well-known ones are, and they sometimes have lower prices. The trade-off is that changes and refunds during disruptions go through the site, not the airline, which can be slower. Avoid sites you've never heard of that show prices far below everyone else.</p></div></details>
+      <details><summary>My flight was canceled. Do I have to accept a travel credit?</summary><div class="a"><p>No. If the airline cancels or significantly changes your flight and you decline the alternative, you're entitled to a refund of the ticket and any unused extras, to your original payment method. You can file a complaint with the DOT if an airline refuses.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Official sources</h2>
+    <div class="links">
+      <a href="https://www.transportation.gov/airconsumer/refunds" target="_blank" rel="noopener"><span class="src">US Dept. of Transportation</span><b>Airline refunds: your rights</b></a>
+      <a href="https://www.ecfr.gov/current/title-14/chapter-II/subchapter-A/part-259/section-259.5" target="_blank" rel="noopener"><span class="src">eCFR · 14 CFR 259.5</span><b>Customer service plans, including the 24-hour hold or cancel rule</b></a>
+      <a href="https://www.federalregister.gov/documents/2024/04/26/2024-07177/refunds-and-other-consumer-protections" target="_blank" rel="noopener"><span class="src">Federal Register</span><b>Refunds and Other Consumer Protections (2024 final rule)</b></a>
+      <a href="https://www.transportation.gov/airconsumer/airline-cancellation-delay-dashboard" target="_blank" rel="noopener"><span class="src">US Dept. of Transportation</span><b>Airline Cancellation and Delay Dashboard</b></a>
+      <a href="https://blog.google/products-and-platforms/products/search/holiday-travel-trends-2026/" target="_blank" rel="noopener"><span class="src">Google</span><b>2026 holiday travel trends and booking windows</b></a>
+      <a href="https://support.google.com/travel/answer/6235879?hl=en" target="_blank" rel="noopener"><span class="src">Google Flights Help</span><b>Track flights and prices</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/leaderboard/">Leaderboard</a></nav></span><span>Booking windows are averages from Google's 2026 data. Rules checked October 2026; the DOT has the final word.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  /* ---------- Booking-window helper ---------- */
+  // Google Flights 2026 averages: [best, rangeLow, rangeHigh] in days before departure.
+  const W = {
+    dom:   {name: 'domestic trips', w: [39, 22, 57]},
+    mex:   {name: 'Mexico and the Caribbean', w: [43, 24, 69]},
+    eur:   {name: 'Europe', w: [90, 49, 133], open: true},
+    intl:  {name: 'international trips', w: [89, 50, 133], open: true},
+    thx:   {name: 'Thanksgiving trips', w: [34, 21, 57]},
+    xmas:  {name: 'Christmas trips', w: [56, 33, 67]},
+    spring:{name: 'spring break trips', w: [50, 29, 64]},
+    summer:{name: 'summer trips', w: [21, 20, 47]}
+  };
+  const DAY = 86400000;
+  const today = () => { const d = new Date(); d.setHours(0,0,0,0); return d; };
+  const iso = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+  const nice = d => d.toLocaleDateString('en-US', {weekday: 'short', month: 'short', day: 'numeric'});
+  const thanksgiving = y => { const d = new Date(y, 10, 1); const off = (4 - d.getDay() + 7) % 7; return new Date(y, 10, 1 + off + 21); };
+  function detect(d){
+    const y = d.getFullYear(), tg = thanksgiving(y), m = d.getMonth(), day = d.getDate();
+    if (Math.abs(d - tg) <= 6 * DAY) return 'thx';
+    if ((m === 11 && day >= 15) || (m === 0 && day <= 4)) return 'xmas';
+    if (m === 2 || (m === 3 && day <= 20)) return 'spring';
+    if (m === 6 || m === 7) return 'summer';
+    return 'none';
+  }
+  const d0 = new Date(today().getTime() + 44 * DAY);
+  // Default to the Wednesday before Thanksgiving if it's still ahead, otherwise ~6 weeks out.
+  const tgNext = (() => { let t = thanksgiving(today().getFullYear()); if (t - today() < 8 * DAY) t = thanksgiving(today().getFullYear() + 1); return new Date(t.getTime() - DAY); })();
+  $('#bwDate').value = iso(tgNext - today() < 200 * DAY ? tgNext : d0);
+  $('#bwDate').min = iso(today());
+
+  function bw(){
+    const out = $('#bwOut');
+    const v = $('#bwDate').value;
+    if (!v){ out.innerHTML = '<div class="verdict">Pick your departure date.</div>'; return; }
+    const [Y, M, D] = v.split('-').map(Number);
+    const trip = new Date(Y, M - 1, D);
+    const daysOut = Math.round((trip - today()) / DAY);
+    if (daysOut < 0){ out.innerHTML = '<div class="verdict bad">That date is in the past. Pick a future departure date.</div>'; return; }
+    const type = $('#bwType').value;
+    let hol = $('#bwHol').value;
+    const detected = hol === 'auto' ? detect(trip) : null;
+    if (hol === 'auto') hol = detected;
+    // Holiday windows come from mostly domestic data, so only override for US and nearby trips.
+    let key = type;
+    if (hol !== 'none' && (type === 'dom' || type === 'mex')) key = hol;
+    const P = W[key], [best, lo, hi] = P.w;
+    const winStart = new Date(trip - hi * DAY), winEnd = new Date(trip - lo * DAY), bestDay = new Date(trip - best * DAY);
+
+    let cls, head, tip;
+    if (daysOut > hi){
+      cls = 'warn';
+      head = P.open ? `You're early, and that's fine for ${P.name}.` : `You're early. The usual low for ${P.name} starts around ${nice(winStart)}.`;
+      tip = P.open ? 'Google found prices for long-haul trips barely dip inside the window, so if you see a fare you like, book it. Otherwise turn on price tracking.' : 'Turn on Google Flights price tracking now. Book earlier only if you see a fare you\'re happy with or need specific flights.';
+    } else if (daysOut >= lo){
+      cls = 'good';
+      head = `You're in the sweet spot for ${P.name}.`;
+      tip = daysOut > best ? `Prices have historically been lowest around ${nice(bestDay)} (${best} days out), but the difference is usually small. Book when you see a good fare.` : 'Prices usually start climbing soon. Book when you see a fare you\'re happy with.';
+    } else if (daysOut >= 7){
+      cls = 'bad';
+      head = `Book soon: you're past the usual low for ${P.name}.`;
+      tip = 'Fares tend to rise in the final weeks. Compare nearby airports and dates, then book. You can still use the 24-hour free-cancellation rule.';
+    } else {
+      cls = 'bad';
+      head = 'Book now. Departure is less than a week away.';
+      tip = 'The DOT 24-hour hold-or-cancel rule only applies to bookings made at least 7 days before departure, so check the fare rules before you buy.';
+    }
+    if (daysOut >= 7 && daysOut - 1 < 7) tip += ' Note: to keep your 24-hour cancellation right, book at least 7 days before departure.';
+
+    // Timeline: from max(hi+15, daysOut) days out to 0.
+    const span = Math.max(hi + 15, daysOut + 5);
+    const pos = days => (1 - days / span) * 100;
+    const holName = {thx: 'Thanksgiving', xmas: 'Christmas / New Year', spring: 'Spring break', summer: 'Summer'};
+    const note = detected && detected !== 'none' ? `<span style="font-family:var(--mono);font-size:.78rem;color:var(--muted)">Detected: ${holName[detected]} travel${key !== detected ? ' (holiday data is for US trips, so using the ' + P.name + ' window)' : ''}.</span>` : '';
+    out.innerHTML = `
+      <div class="out">${daysOut} days until departure. Sweet spot: <b>${nice(winStart)} – ${nice(winEnd)}</b></div>
+      ${note}
+      <div class="tl" role="img" aria-label="Timeline: booking window from ${nice(winStart)} to ${nice(winEnd)}; today is ${daysOut} days before departure.">
+        <div class="track"></div>
+        <div class="win" style="left:${pos(hi)}%;width:${pos(lo) - pos(hi)}%"></div>
+        <div class="mk best" style="left:${pos(best)}%"><span>lowest avg</span></div>
+        <div class="mk today" style="left:${Math.min(99.5, Math.max(0.5, pos(daysOut)))}%"><span>today</span></div>
+      </div>
+      <div class="tl-ends"><span>${span} days out</span><span>departure ${nice(trip)}</span></div>
+      <div class="verdict ${cls}"><b>${head}</b> ${tip}</div>`;
+  }
+  ['#bwDate','#bwType','#bwHol'].forEach(s => $(s).addEventListener('input', bw));
+  ['#bwDate','#bwType','#bwHol'].forEach(s => $(s).addEventListener('change', bw));
+  bw();
+
+  /* ---------- True-cost calculator ---------- */
+  const OPTS = [
+    {name: 'Basic economy', fare: 168, carry: 0, b1: 40, b2: 50, seat: 25, extra: 0},
+    {name: 'Main cabin', fare: 228, carry: 0, b1: 40, b2: 50, seat: 0, extra: 0},
+    {name: 'Budget airline', fare: 98, carry: 65, b1: 55, b2: 70, seat: 22, extra: 30}
+  ];
+  const FIELDS = [['fare','Fare per person'],['carry','Carry-on fee'],['b1','1st checked bag'],['b2','2nd checked bag'],['seat','Seat selection'],['extra','Other (whole trip)']];
+  $('#opts').innerHTML = OPTS.map((o, i) => `<div class="opt" data-i="${i}">
+      <span class="tag" id="tag${i}"></span>
+      <label>Option ${'ABC'[i]}<input type="text" data-k="name" value="${o.name}" aria-label="Option ${'ABC'[i]} name"></label>
+      ${FIELDS.map(([k, l]) => `<label class="f">${l}<input type="number" min="0" step="1" data-k="${k}" value="${o[k]}" aria-label="Option ${'ABC'[i]}: ${l}"></label>`).join('')}
+      <div class="tot"><small>True total</small><span id="tot${i}">$0</span></div>
+      <div class="bk" id="bk${i}"></div></div>`).join('');
+  const money = n => '$' + Math.round(n).toLocaleString('en-US');
+  function calc(){
+    const N = Math.max(1, Math.min(12, Math.round(+$('#fcN').value) || 1));
+    const legs = +$('#fcLegs').value, bags = +$('#fcBags').value, carry = $('#fcCarry').checked, seat = $('#fcSeat').checked;
+    const res = [...document.querySelectorAll('.opt')].map((el, i) => {
+      const g = k => Math.max(0, parseFloat(el.querySelector(`[data-k="${k}"]`).value) || 0);
+      const fare = g('fare') * N;
+      const carryC = carry ? g('carry') * legs * N : 0;
+      const bagC = ((bags >= 1 ? g('b1') : 0) + (bags >= 2 ? g('b2') : 0)) * legs * N;
+      const seatC = seat ? g('seat') * legs * N : 0;
+      const extra = g('extra');
+      const total = fare + carryC + bagC + seatC + extra;
+      $('#tot' + i).textContent = money(total);
+      $('#bk' + i).innerHTML = `Fares ${money(fare)} · Bags ${money(carryC + bagC)} · Seats ${money(seatC)}${extra ? ' · Other ' + money(extra) : ''}<br>Fees add ${fare ? Math.round((total - fare) / fare * 100) : 0}% to the fare`;
+      return {i, total, fare, name: el.querySelector('[data-k="name"]').value.trim() || 'Option ' + 'ABC'[i]};
+    });
+    const byTotal = [...res].sort((a, b) => a.total - b.total), byFare = [...res].sort((a, b) => a.fare - b.fare);
+    document.querySelectorAll('.opt').forEach((el, i) => { el.classList.toggle('win', i === byTotal[0].i); $('#tag' + i).textContent = i === byTotal[0].i ? 'Cheapest overall' : ''; });
+    const w = byTotal[0], c = byFare[0];
+    const who = N === 1 ? 'you' : `${N} travelers`;
+    $('#fcOut').innerHTML = w.i === c.i
+      ? `<b>${w.name.replace(/</g,'&lt;')}</b> is cheapest for ${who}, at ${money(w.total)}, ${money(byTotal[1].total - w.total)} less than the next option.`
+      : `The lowest fare is <b>${c.name.replace(/</g,'&lt;')}</b>, but after fees <b>${w.name.replace(/</g,'&lt;')}</b> is cheaper for ${who}, by ${money(res[c.i].total - w.total)}.`;
+  }
+  document.querySelector('#fl4 .try').addEventListener('input', calc);
+  document.querySelector('#fl4 .try').addEventListener('change', calc);
+  calc();
+})();
+</script>
+</body>
+</html>
