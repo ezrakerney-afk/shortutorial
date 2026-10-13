@@ -955,5 +955,29 @@ window.TUTORIALS = [
     category: "Money",
     tags: ["tax brackets", "2026 tax brackets", "marginal tax rate", "effective tax rate", "standard deduction", "federal income tax", "taxable income", "raise higher bracket", "irs", "income tax calculator"],
     minutes: 12
+  },
+  {
+    slug: "how-vpns-work",
+    title: "How VPNs Work",
+    summary: "What a VPN hides and doesn't, when it helps, and free VPN risks, with a visualizer.",
+    category: "Online safety",
+    tags: ["vpn", "what is a vpn", "do i need a vpn", "free vpn", "public wifi", "vpn privacy", "https", "isp tracking", "vpn travel", "choose a vpn", "ip address"],
+    minutes: 11
+  },
+  {
+    slug: "philosophy-basics",
+    title: "Philosophy Basics: The Big Questions, Explained",
+    summary: "Branches, key thinkers, ethics theories and famous thought experiments, made simple",
+    category: "Life skills",
+    tags: ["philosophy", "ethics", "trolley problem", "ship of theseus", "brain in a vat", "socrates", "plato", "aristotle", "kant", "utilitarianism", "logic", "epistemology"],
+    minutes: 15
+  },
+  {
+    slug: "stoicism-basics",
+    title: "Stoicism for Everyday Life: A Beginner's Guide",
+    summary: "Dichotomy of control, the four virtues and daily Stoic habits, with a worry sorter",
+    category: "Life skills",
+    tags: ["stoicism", "stoic", "marcus aurelius", "epictetus", "seneca", "meditations", "dichotomy of control", "journaling", "negative visualization", "philosophy", "anxiety", "mindset"],
+    minutes: 12
   }
 ];

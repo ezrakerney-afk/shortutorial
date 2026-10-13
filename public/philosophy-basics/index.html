@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Philosophy Basics: The Big Questions, Explained · Shortutorial</title>
+<meta name="description" content="A plain-English intro to philosophy: what it is, the five main branches, key thinkers from Socrates and Confucius to Kant and Mill, and famous thought experiments like the trolley problem, the ship of Theseus and the brain in a vat. Includes an ethics explorer.">
+<link rel="canonical" href="https://shortutorial.com/philosophy-basics/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Philosophy Basics: The Big Questions, Explained · Shortutorial">
+<meta property="og:description" content="A plain-English intro to philosophy: what it is, the five main branches, key thinkers from Socrates and Confucius to Kant and Mill, and famous thought experiments like the trolley problem, the ship of Theseus and the brain in a vat. Includes an ethics explorer.">
+<meta property="og:url" content="https://shortutorial.com/philosophy-basics/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+.thinkers{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.thinkers div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.thinkers b{font-family:var(--display);font-size:1.02rem}
+.thinkers small{font-family:var(--mono);font-size:.7rem;color:var(--muted)}
+.thinkers p{font-size:.92rem;color:var(--muted)}
+.ex-q{font-family:var(--display);font-weight:600;font-size:1.08rem;line-height:1.4}
+.ex-opts{display:flex;flex-direction:column;gap:8px}
+.ex-opts button{all:unset;box-sizing:border-box;cursor:pointer;padding:11px 14px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);font-size:.97rem;line-height:1.4}
+.ex-opts button:hover{border-color:var(--accent)}
+.ex-opts button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.ex-opts button[aria-pressed=true]{border-color:var(--accent);background:var(--accent-soft)}
+.ex-exp{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:12px 14px;font-size:.95rem}
+.ex-meta{font-family:var(--mono);font-size:.75rem;color:var(--muted);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.bars{display:flex;flex-direction:column;gap:10px}
+.bars .b{display:grid;grid-template-columns:minmax(90px,130px) 1fr 44px;gap:10px;align-items:center;font-family:var(--mono);font-size:.8rem}
+.bars .track{height:12px;border-radius:99px;background:var(--line);overflow:hidden}
+.bars .track i{display:block;height:100%;background:var(--accent);width:0;transition:width .4s}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"Philosophy Basics: The Big Questions, Explained","item":"https://shortutorial.com/philosophy-basics/"}]},{"@type":"Article","@id":"https://shortutorial.com/philosophy-basics/#article","headline":"Philosophy Basics: The Big Questions, Explained","description":"A plain-English intro to philosophy: what it is, the five main branches, key thinkers from Socrates and Confucius to Kant and Mill, and famous thought experiments like the trolley problem, the ship of Theseus and the brain in a vat. Includes an ethics explorer.","url":"https://shortutorial.com/philosophy-basics/","mainEntityOfPage":"https://shortutorial.com/philosophy-basics/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Life skills","keywords":"philosophy, ethics, trolley problem, ship of theseus, brain in a vat, socrates, plato, aristotle, kant, utilitarianism, logic, epistemology","timeRequired":"PT15M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is philosophy just opinion?","acceptedAnswer":{"@type":"Answer","text":"No. Everyone can have a view, but philosophy asks you to give reasons, define terms and answer objections. Some arguments are much stronger than others, even when a question stays open."}},{"@type":"Question","name":"What's the difference between philosophy and science?","acceptedAnswer":{"@type":"Answer","text":"Science answers questions by observation and experiment. Philosophy works on questions experiments can't settle alone, like what makes evidence good or what we owe each other. Science itself grew out of “natural philosophy.”"}},{"@type":"Question","name":"Which ethical theory is correct?","acceptedAnswer":{"@type":"Answer","text":"There is no consensus. Philosophers still defend all three theories, plus newer ones. Many people use them as different lenses on the same problem."}},{"@type":"Question","name":"Where should a beginner start reading?","acceptedAnswer":{"@type":"Answer","text":"Plato's short dialogues about Socrates (like the Apology ) are readable and free online. For overviews, the Stanford Encyclopedia of Philosophy has free, expert-written entries on nearly every topic."}},{"@type":"Question","name":"Is the trolley problem used in real life?","acceptedAnswer":{"@type":"Answer","text":"Versions of it come up in debates about medical triage, public policy and how self-driving cars should be programmed, though real cases are messier than the thought experiment."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="philosophy-basics">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=skills">Life skills</a> / Philosophy basics</div>
+    <span class="eyebrow">Skills · Big ideas</span>
+    <h1>Philosophy Basics</h1>
+    <p class="lede">What is real? How do we know anything? What should we do? Get a friendly tour of the big questions, the people who asked them, and the thought experiments still argued about today. Then test your own instincts in the ethics explorer.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~15 min read</span><span class="badge">6 lessons</span><span class="badge">Ethics explorer</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#p1">1 · What it is</a><a href="#p2">2 · Branches</a><a href="#p3">3 · Thinkers</a><a href="#p4">4 · Ethics theories</a><a href="#p5">5 · Thought experiments</a><a href="#p6">6 · Explorer</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="p1">
+    <div class="lesson-head"><span class="step">01</span><h2>What philosophy actually is</h2></div>
+    <p>The word comes from Greek: <b>philo</b> (love) + <b>sophia</b> (wisdom). Philosophy is the careful study of basic questions that science and everyday life rest on but don't answer by themselves. Questions like: What makes an action right? What counts as knowledge? Do we have free will?</p>
+    <p>Philosophers don't settle these by experiment. They use <b>arguments</b>: reasons (called <b>premises</b>) that are supposed to support a <b>conclusion</b>. Then other philosophers look for weak spots.</p>
+    <div class="example"><div class="ex-h">Example · a classic argument</div><ol><li>All humans are mortal. <i>(premise)</i></li><li>Socrates is a human. <i>(premise)</i></li><li class="ans">So Socrates is mortal. <i>(conclusion)</i></li></ol></div>
+    <ul class="points">
+      <li><b>Valid</b> means the conclusion follows: if the premises were true, the conclusion would have to be true.</li>
+      <li><b>Sound</b> means valid <i>and</i> the premises really are true. An argument can be valid but unsound: “All cats can fly. Tom is a cat. So Tom can fly.”</li>
+    </ul>
+    <p class="callout"><span><b>Think like a philosopher.</b> Define your words. Ask “how do you know?” Look for counterexamples. And state the other side's view so well they'd agree with your summary before you argue against it.</span></p>
+  </section>
+
+  <section class="lesson" id="p2">
+    <div class="lesson-head"><span class="step">02</span><h2>The five main branches</h2></div>
+    <p>Philosophy has many fields, but most intro courses start with these five.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Branch</th><th>Big question</th><th>Example puzzle</th></tr>
+      <tr><td><b>Ethics</b></td><td>How should we live? What is right and wrong?</td><td>Is it ever OK to lie?</td></tr>
+      <tr><td><b>Epistemology</b></td><td>What is knowledge, and how do we get it?</td><td>Can you be sure you're not dreaming?</td></tr>
+      <tr><td><b>Metaphysics</b></td><td>What is reality made of? What exists?</td><td>Is your mind the same thing as your brain?</td></tr>
+      <tr><td><b>Logic</b></td><td>What makes reasoning good or bad?</td><td>Why is “everyone does it, so it's fine” a weak argument?</td></tr>
+      <tr><td><b>Political philosophy</b></td><td>What makes government legitimate? What is justice?</td><td>Why should anyone obey the law?</td></tr>
+    </table></div>
+    <p>Other branches include <b>aesthetics</b> (beauty and art), <b>philosophy of mind</b>, <b>philosophy of science</b> and <b>philosophy of religion</b>.</p>
+  </section>
+
+  <section class="lesson" id="p3">
+    <div class="lesson-head"><span class="step">03</span><h2>Seven thinkers to know</h2></div>
+    <p>A very short list from a very long history. Each one changed the questions people ask.</p>
+    <div class="thinkers">
+      <div><b>Confucius</b><small>551–479 BCE · China</small><p>Taught that a good society grows from personal virtue, respect in relationships, and ritual. His ideas shaped East Asian ethics for centuries.</p></div>
+      <div><b>Socrates</b><small>c. 470–399 BCE · Athens</small><p>Wrote nothing. Questioned people until their confident beliefs fell apart (the <b>Socratic method</b>). “The unexamined life is not worth living.”</p></div>
+      <div><b>Plato</b><small>c. 428–348 BCE · Athens</small><p>Socrates' student. Wrote dialogues. Argued for a world of perfect <b>Forms</b> behind what we see. Told the Allegory of the Cave.</p></div>
+      <div><b>Aristotle</b><small>384–322 BCE · Greece</small><p>Plato's student. Founded formal logic and wrote on almost everything. His ethics centers on character and living well (<i>eudaimonia</i>).</p></div>
+      <div><b>René Descartes</b><small>1596–1650 · France</small><p>Doubted everything he could, and found one thing he couldn't: “I think, therefore I am.” A father of modern philosophy.</p></div>
+      <div><b>Immanuel Kant</b><small>1724–1804 · Prussia</small><p>Argued morality comes from reason and duty. Treat people as ends in themselves, never merely as tools.</p></div>
+      <div><b>John Stuart Mill</b><small>1806–1873 · England</small><p>Defended <b>utilitarianism</b> (do what brings the most happiness) and individual liberty in <i>On Liberty</i>.</p></div>
+    </div>
+    <p class="callout"><span><b>This list is a starting point, not a ranking.</b> Philosophy also has deep traditions in India, the Islamic world, Africa and elsewhere, plus many later voices. The Stanford Encyclopedia of Philosophy in the sources is a free, reliable place to keep going.</span></p>
+  </section>
+
+  <section class="lesson" id="p4">
+    <div class="lesson-head"><span class="step">04</span><h2>Three ways to think about right and wrong</h2></div>
+    <p>Most debates in ethics use three big theories. Each grabs something true, and each has famous problems.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Theory</th><th>Core idea</th><th>Linked to</th><th>Common objection</th></tr>
+      <tr><td><b>Utilitarianism</b> (a kind of consequentialism)</td><td>The right act brings about the best overall results, like the most well-being.</td><td>Bentham, Mill</td><td>Could justify harming a few people if it helps many.</td></tr>
+      <tr><td><b>Deontology</b> (duty ethics)</td><td>Some acts are right or wrong in themselves. Keep promises, don't lie, respect rights, whatever the results.</td><td>Kant</td><td>Rules can clash, and following one can lead to disaster.</td></tr>
+      <tr><td><b>Virtue ethics</b></td><td>Ask what a person of good character (honest, brave, fair, kind) would do, and become that person.</td><td>Aristotle, Confucius</td><td>Can be vague about exactly what to do in a hard case.</td></tr>
+    </table></div>
+    <div class="example"><div class="ex-h">Example · should you tell a friend their business idea is bad?</div><div class="ex-b">
+      <p><b>Utilitarian:</b> What will make things go best overall? Honest feedback now may save them money and pain later.</p>
+      <p><b>Deontologist:</b> You have a duty not to deceive. Be truthful, though you don't have to be harsh.</p>
+      <p><b>Virtue ethicist:</b> What would an honest <i>and</i> kind friend do? Find the tactful truth.</p>
+    </div></div>
+    <p>Notice they often agree on the answer. They differ on <b>why</b>, and that matters in the hard cases.</p>
+  </section>
+
+  <section class="lesson" id="p5">
+    <div class="lesson-head"><span class="step">05</span><h2>Famous thought experiments</h2></div>
+    <p>A <b>thought experiment</b> is an imagined scenario that isolates one question so we can test our ideas. Here are three classics.</p>
+    <h3>The trolley problem (ethics)</h3>
+    <p>A runaway trolley will kill five people on the track. You can pull a lever to send it onto a side track, where it will kill one person. Do you pull it? Philosopher Philippa Foot raised a version of this in 1967, and Judith Jarvis Thomson added the <b>footbridge</b> twist: you could stop the trolley only by pushing a large person off a bridge into its path. The numbers are the same, yet most people say pulling the lever is OK and pushing is not. Why? That gap is the real puzzle.</p>
+    <h3>The ship of Theseus (metaphysics)</h3>
+    <p>The ancient writer Plutarch described the Athenians keeping the hero Theseus's ship, replacing rotten planks one by one. Once every plank has been replaced, is it the same ship? Thomas Hobbes later added: what if someone collected all the old planks and rebuilt them? Which one is the real ship? The puzzle is about <b>identity over time</b>, including yours: your body's cells are replaced too.</p>
+    <h3>The brain in a vat (epistemology)</h3>
+    <p>Imagine a scientist keeps a brain alive in a vat and feeds it signals that feel exactly like a normal life. How could you prove you aren't that brain? This is a modern version of Descartes' “evil demon” doubt, discussed by Hilary Putnam in 1981. It asks what, if anything, we can know for certain about the outside world.</p>
+    <p class="callout"><span><b>The point isn't to “win.”</b> A good thought experiment shows you which principles you actually hold, and where they conflict.</span></p>
+  </section>
+
+  <section class="lesson" id="p6">
+    <div class="lesson-head"><span class="step">06</span><h2>Ethics explorer: which theory do you lean toward?</h2></div>
+    <p>Answer six dilemmas with your honest gut reaction. Each answer is scored for how well it fits each theory, with an explanation. There are no wrong answers, and most people turn out to be a mix.</p>
+    <div class="try" id="ex"><span class="try-h">Try it · thought-experiment explorer</span>
+      <div class="ex-meta"><span id="exNum">Dilemma 1 of 6</span><span id="exTitle"></span></div>
+      <p class="ex-q" id="exQ"></p>
+      <div class="ex-opts" id="exOpts" role="group" aria-label="Your answer"></div>
+      <div class="ex-exp" id="exExp" hidden aria-live="polite"></div>
+      <div class="row"><button class="btn ghost" type="button" id="exBack">Back</button><button class="btn" type="button" id="exNext" disabled>Next</button><button class="btn ghost" type="button" id="exRestart">Start over</button></div>
+      <div id="exRes" hidden>
+        <p class="out" id="exLean"></p>
+        <div class="bars" id="exBars"></div>
+        <p class="work" id="exNote"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Is philosophy just opinion?</summary><div class="a"><p>No. Everyone can have a view, but philosophy asks you to give reasons, define terms and answer objections. Some arguments are much stronger than others, even when a question stays open.</p></div></details>
+      <details><summary>What's the difference between philosophy and science?</summary><div class="a"><p>Science answers questions by observation and experiment. Philosophy works on questions experiments can't settle alone, like what makes evidence good or what we owe each other. Science itself grew out of “natural philosophy.”</p></div></details>
+      <details><summary>Which ethical theory is correct?</summary><div class="a"><p>There is no consensus. Philosophers still defend all three theories, plus newer ones. Many people use them as different lenses on the same problem.</p></div></details>
+      <details><summary>Where should a beginner start reading?</summary><div class="a"><p>Plato's short dialogues about Socrates (like the <i>Apology</i>) are readable and free online. For overviews, the Stanford Encyclopedia of Philosophy has free, expert-written entries on nearly every topic.</p></div></details>
+      <details><summary>Is the trolley problem used in real life?</summary><div class="a"><p>Versions of it come up in debates about medical triage, public policy and how self-driving cars should be programmed, though real cases are messier than the thought experiment.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://plato.stanford.edu/entries/consequentialism/" target="_blank" rel="noopener"><span class="src">Stanford Encyclopedia of Philosophy</span><b>Consequentialism</b></a>
+      <a href="https://plato.stanford.edu/entries/ethics-deontological/" target="_blank" rel="noopener"><span class="src">Stanford Encyclopedia of Philosophy</span><b>Deontological ethics</b></a>
+      <a href="https://plato.stanford.edu/entries/ethics-virtue/" target="_blank" rel="noopener"><span class="src">Stanford Encyclopedia of Philosophy</span><b>Virtue ethics</b></a>
+      <a href="https://plato.stanford.edu/entries/socrates/" target="_blank" rel="noopener"><span class="src">Stanford Encyclopedia of Philosophy</span><b>Socrates</b></a>
+      <a href="https://plato.stanford.edu/entries/confucius/" target="_blank" rel="noopener"><span class="src">Stanford Encyclopedia of Philosophy</span><b>Confucius</b></a>
+      <a href="https://plato.stanford.edu/entries/thought-experiment/" target="_blank" rel="noopener"><span class="src">Stanford Encyclopedia of Philosophy</span><b>Thought experiments</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>Philosophy has few final answers. This page sums up big ideas briefly and fairly; the sources go deeper.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  // u = utilitarian, d = deontological, v = virtue (0-2 each)
+  const S = [
+    {t:'The trolley', q:'A runaway trolley will kill five people. You can pull a lever to switch it to a side track, where it will kill one person instead. What do you do?', o:[
+      {a:'Pull the lever. Five lives outweigh one.', s:{u:2,d:0,v:1}, e:'Classic utilitarian reasoning: choose the outcome with the least harm. Many deontologists also allow this, since you redirect a threat rather than use someone as a tool.'},
+      {a:"Don't pull it. I won't be the one who kills someone.", s:{u:0,d:2,v:1}, e:'This fits the deontological idea that doing harm is worse than allowing it. You refuse to make yourself the cause of a death.'},
+      {a:'Pull it, but I would feel the weight of it and try to help the one person.', s:{u:1,d:0,v:2}, e:'Virtue ethics cares about the agent too: a good person acts, but with compassion and regret, not cold arithmetic.'}]},
+    {t:'The footbridge', q:'Same trolley. This time the only way to stop it is to push a large stranger off a footbridge into its path. One dies, five are saved. Do you push?', o:[
+      {a:'Yes. The numbers are the same as the lever case.', s:{u:2,d:0,v:0}, e:'Consistent utilitarian answer: if outcomes are what matter, the method should not change the verdict.'},
+      {a:'No. Using a person as a tool to stop the trolley is wrong.', s:{u:0,d:2,v:1}, e:"This echoes Kant: never treat a person merely as a means. Pushing uses the stranger's body as a trolley brake."},
+      {a:"No. A decent person just doesn't do that.", s:{u:0,d:1,v:2}, e:'Virtue ethics trusts the reaction of good character. Being someone who would push a stranger to his death is itself a problem.'}]},
+    {t:'The murderer at the door', q:'A friend is hiding in your house. Someone knocks, clearly planning to hurt them, and asks if your friend is inside. Do you lie?', o:[
+      {a:'Lie. Saving a life matters far more than honesty here.', s:{u:2,d:0,v:1}, e:'Utilitarians weigh outcomes: a lie that saves a life is clearly worth it.'},
+      {a:"Don't lie. Refuse to answer or stall, but don't say something false.", s:{u:0,d:2,v:0}, e:'Kant famously discussed this case and held that lying is always wrong. Many modern deontologists disagree with him here, but avoiding a direct lie fits strict duty ethics.'},
+      {a:'Lie, because a loyal, brave friend protects the people who trust them.', s:{u:1,d:0,v:2}, e:'Virtue ethics frames this through loyalty and courage. Honesty is a virtue, but practical wisdom tells you it does not require helping a killer.'}]},
+    {t:'The surgeon', q:'A surgeon has five patients who will die without organ transplants. A healthy visitor is a perfect match for all five. Should the surgeon secretly sacrifice the visitor?', o:[
+      {a:'No. It violates the rights of an innocent person.', s:{u:0,d:2,v:1}, e:'Rights and duties come first in deontology. This case is often used as an objection to simple utilitarianism.'},
+      {a:'No. If doctors did this, nobody would trust hospitals, and things would be far worse.', s:{u:2,d:0,v:0}, e:'This is a rule-utilitarian reply: judge rules by their overall results. A rule allowing secret sacrifice would cause huge harm.'},
+      {a:'No. A good doctor heals and protects patients. That is the whole point of the role.', s:{u:0,d:1,v:2}, e:'Virtue ethics looks at the character a role demands. A surgeon who kills a visitor has abandoned what a good doctor is.'}]},
+    {t:'The broken promise', q:"You promised to help a friend move today. On the way, you see a chance to volunteer for a few hours somewhere you'd help many more people. What do you do?", o:[
+      {a:'Keep the promise. I gave my word.', s:{u:0,d:2,v:1}, e:'Deontology treats promises as binding duties, not just tools for good results.'},
+      {a:'Volunteer. More people benefit.', s:{u:2,d:0,v:0}, e:'A straightforward utilitarian answer, though utilitarians would also count your friend\'s disappointment and lost trust.'},
+      {a:'Call my friend, explain, and work out what a fair, caring person would do.', s:{u:1,d:0,v:2}, e:'Virtue ethics leans on practical wisdom: weigh loyalty, generosity and honesty in this particular situation.'}]},
+    {t:'The found wallet', q:"You find a wallet with $300 and an ID. Nobody would ever know if you kept the cash. What do you do?", o:[
+      {a:"Return all of it. It isn't mine.", s:{u:0,d:2,v:1}, e:"This is a duty-based answer: respect the owner's property, whatever you could get away with."},
+      {a:"Return it, because I want to be an honest person even when no one's watching.", s:{u:0,d:1,v:2}, e:'Virtue ethics: honesty is a trait you build by practicing it, especially when nobody would know.'},
+      {a:'Return it. Losing $300 probably hurts the owner more than it helps me.', s:{u:2,d:0,v:0}, e:'A utilitarian comparison of outcomes. Same action, different reason.'}]}
+  ];
+  let i = 0; const pick = new Array(S.length).fill(-1);
+  const names = {u:'Utilitarian', d:'Deontological', v:'Virtue ethics'};
+  function show(){
+    const sc = S[i];
+    $('#exNum').textContent = 'Dilemma ' + (i+1) + ' of ' + S.length;
+    $('#exTitle').textContent = sc.t;
+    $('#exQ').textContent = sc.q;
+    const box = $('#exOpts'); box.innerHTML = '';
+    sc.o.forEach((o, k) => {
+      const b = document.createElement('button'); b.type = 'button'; b.textContent = o.a;
+      b.setAttribute('aria-pressed', pick[i] === k);
+      b.addEventListener('click', () => { pick[i] = k; show(); });
+      box.appendChild(b);
+    });
+    const exp = $('#exExp');
+    if (pick[i] >= 0){ const o = sc.o[pick[i]]; exp.hidden = false; exp.textContent = o.e + '  (Fits: ' + Object.keys(o.s).filter(k => o.s[k] === 2).map(k => names[k]).join(', ') + ')'; }
+    else exp.hidden = true;
+    $('#exNext').disabled = pick[i] < 0;
+    $('#exNext').textContent = i === S.length - 1 ? 'See my results' : 'Next';
+    $('#exBack').disabled = i === 0;
+  }
+  function results(){
+    const t = {u:0,d:0,v:0};
+    pick.forEach((p, k) => { if (p >= 0){ const s = S[k].o[p].s; for (const x in t) t[x] += s[x]; } });
+    const max = S.length * 2, order = Object.keys(t).sort((a,b) => t[b]-t[a]);
+    $('#exRes').hidden = false;
+    $('#exBars').innerHTML = order.map(k => `<div class="b"><span>${names[k]}</span><span class="track"><i style="width:${Math.round(100*t[k]/max)}%"></i></span><span>${Math.round(100*t[k]/max)}%</span></div>`).join('');
+    const top = order[0], close = t[order[0]] - t[order[1]] <= 1;
+    $('#exLean').innerHTML = close ? `You're a <b>mix</b>, leaning a little toward <b>${names[top]}</b> and <b>${names[order[1]]}</b>.` : `You lean toward <b>${names[top]}</b>.`;
+    const blurb = {u:'You tend to judge actions by their results: what helps the most people and harms the fewest.', d:'You tend to hold firm rules and rights that should not be broken, even for good results.', v:'You tend to ask what a good, wise person would do, and care about character as well as actions.'};
+    $('#exNote').textContent = blurb[top] + '\nThis is a fun sorting tool, not a test. Real philosophers mix these ideas too. Change any answer with Back to see how the scores move.';
+    $('#exRes').scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+  $('#exNext').addEventListener('click', () => { if (i < S.length - 1){ i++; show(); } else results(); });
+  $('#exBack').addEventListener('click', () => { if (i > 0){ i--; show(); } });
+  $('#exRestart').addEventListener('click', () => { pick.fill(-1); i = 0; $('#exRes').hidden = true; show(); });
+  show();
+})();
+</script>
+</body>
+</html>

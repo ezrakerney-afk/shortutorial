@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How VPNs Work: What a VPN Hides and What It Doesn't · Shortutorial</title>
+<meta name="description" content="What a VPN actually does, when it's worth using (public Wi-Fi, travel), what it can't hide, how to choose one, and the risks of free VPNs. Includes an interactive view of who can see what with a VPN and HTTPS on or off.">
+<link rel="canonical" href="https://shortutorial.com/how-vpns-work/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How VPNs Work: What a VPN Hides and What It Doesn't · Shortutorial">
+<meta property="og:description" content="What a VPN actually does, when it's worth using (public Wi-Fi, travel), what it can't hide, how to choose one, and the risks of free VPNs. Includes an interactive view of who can see what with a VPN and HTTPS on or off.">
+<meta property="og:url" content="https://shortutorial.com/how-vpns-work/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+/* tunnel diagram */
+.flow{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;font-family:var(--mono);font-size:.74rem}
+.flow .node{padding:7px 10px;border-radius:9px;border:1.5px solid var(--line);background:var(--surface);text-align:center;min-width:64px}
+.flow .node.vpn{border-color:var(--accent);color:var(--accent);font-weight:600}
+.flow .arrow{color:var(--muted)}
+.flow .arrow.lock{color:var(--accent);font-weight:600}
+/* who-sees-what */
+.toggles{display:flex;flex-wrap:wrap;gap:10px}
+.sw{display:flex;align-items:center;gap:10px;cursor:pointer;font-family:var(--display);font-weight:600;padding:8px 12px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface)}
+.sw input{appearance:none;-webkit-appearance:none;width:38px;height:22px;border-radius:99px;background:var(--line);position:relative;cursor:pointer;flex:none;margin:0;transition:background .15s}
+.sw input::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:var(--surface);transition:left .15s}
+.sw input:checked{background:var(--accent)}
+.sw input:checked::after{left:19px}
+.sw input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.path{display:flex;flex-wrap:wrap;align-items:center;gap:4px;font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.path b{color:var(--ink);font-weight:600}
+.path .enc{color:var(--accent)}
+.path .plain{color:var(--bad)}
+.who{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.who .card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:8px;min-width:0;transition:opacity .2s}
+.who .card.off{opacity:.45}
+.who h3{font-size:1rem}
+.who .sub{font-family:var(--mono);font-size:.7rem;color:var(--muted)}
+.who ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:.88rem}
+.who li{display:flex;gap:8px;align-items:flex-start;line-height:1.35}
+.who li::before{flex:none;font-family:var(--mono);font-weight:700;width:1.1em;text-align:center}
+.who li.y::before{content:"●";color:var(--bad)}
+.who li.n::before{content:"○";color:var(--good)}
+.who li.m::before{content:"◐";color:var(--amber)}
+.who li.n{color:var(--muted)}
+.key{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.key .y{color:var(--bad)} .key .n{color:var(--good)} .key .m{color:var(--amber)}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"How VPNs Work","item":"https://shortutorial.com/how-vpns-work/"}]},{"@type":"Article","@id":"https://shortutorial.com/how-vpns-work/#article","headline":"How VPNs Work","description":"What a VPN actually does, when it's worth using (public Wi-Fi, travel), what it can't hide, how to choose one, and the risks of free VPNs. Includes an interactive view of who can see what with a VPN and HTTPS on or off.","url":"https://shortutorial.com/how-vpns-work/","mainEntityOfPage":"https://shortutorial.com/how-vpns-work/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Online safety","keywords":"vpn, what is a vpn, do i need a vpn, free vpn, public wifi, vpn privacy, https, isp tracking, vpn travel, choose a vpn, ip address","timeRequired":"PT11M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need a VPN at home?","acceptedAnswer":{"@type":"Answer","text":"For security, usually not, as long as your home Wi-Fi has a strong password and you use HTTPS sites. A VPN at home mainly hides which sites you visit from your ISP, and shows them to the VPN company instead."}},{"@type":"Question","name":"Is public Wi-Fi safe without a VPN?","acceptedAnswer":{"@type":"Answer","text":"The FTC says it's usually safe today because most sites use encryption. Stick to HTTPS sites, don't ignore browser security warnings, and use a VPN or your phone's cellular data if you want the network owner to see less."}},{"@type":"Question","name":"Does a VPN slow down my internet?","acceptedAnswer":{"@type":"Answer","text":"A little, because traffic takes a detour through the VPN server. Picking a server close to you usually keeps the slowdown small."}},{"@type":"Question","name":"Can my employer or school see my browsing if I use a VPN?","acceptedAnswer":{"@type":"Answer","text":"On their network, they'd see that you're using a VPN, not the sites. But if it's their device, they may have monitoring software on it that sees everything regardless. And their rules may forbid VPNs."}},{"@type":"Question","name":"Is a VPN the same as private or incognito browsing?","acceptedAnswer":{"@type":"Answer","text":"No. Incognito mode only stops your own browser from saving history and cookies after you close it. It doesn't hide anything from the network, your ISP or websites."}},{"@type":"Question","name":"Can the police or a court get my VPN data?","acceptedAnswer":{"@type":"Answer","text":"A VPN company has to follow the laws where it operates. If it keeps logs, they can be requested. That's why an independently audited no-logs policy matters."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="how-vpns-work">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=safety">Online safety</a> / How VPNs work</div>
+    <span class="eyebrow">Online safety · Privacy</span>
+    <h1>How VPNs Work</h1>
+    <p class="lede">VPN ads promise total privacy and security. The truth is narrower: a VPN moves who can see your traffic from one company to another. Learn what it really hides, when it's worth it, and how to avoid the risky ones. Flip the switches to see who can see what.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~11 min read</span><span class="badge">5 lessons</span><span class="badge">Who-sees-what visualizer</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#v1">1 · What a VPN does</a><a href="#v2">2 · Who sees what</a><a href="#v3">3 · When it helps</a><a href="#v4">4 · What it can't do</a><a href="#v5">5 · Choosing one</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="v1">
+    <div class="lesson-head"><span class="step">01</span><h2>What a VPN actually does</h2></div>
+    <p>Normally your phone or computer sends traffic through the Wi-Fi network you're on, then your internet provider (ISP), then out to the website. If you're new to how that works, see <a href="../how-the-internet-works/">How the Internet Works</a>.</p>
+    <p>A <b>VPN</b> (virtual private network) app creates an <b>encrypted tunnel</b> from your device to a server run by the VPN company. All your traffic goes through the tunnel first, then out to the internet from the VPN's server.</p>
+    <figure>
+      <div class="flow" aria-label="Your device, encrypted tunnel through Wi-Fi and ISP, to the VPN server, then out to the website">
+        <span class="node">Your device</span><span class="arrow lock">═🔒═▶</span><span class="node">Wi-Fi + ISP</span><span class="arrow lock">═🔒═▶</span><span class="node vpn">VPN server</span><span class="arrow">──▶</span><span class="node">Website</span>
+      </div>
+      <figcaption>Inside the tunnel, the Wi-Fi and ISP see only scrambled data going to the VPN</figcaption>
+    </figure>
+    <p>Two things change:</p>
+    <ul class="points">
+      <li><b>The local network and your ISP can't see which sites you visit</b>, only that you're connected to a VPN.</li>
+      <li><b>Websites see the VPN server's IP address</b> instead of yours, so they can't tell your rough location from it.</li>
+    </ul>
+    <p class="callout"><span><b>The catch:</b> the VPN company can now see what your ISP used to see. You're not removing the middleman, you're choosing a different one. So the VPN you pick matters a lot.</span></p>
+  </section>
+
+  <section class="lesson" id="v2">
+    <div class="lesson-head"><span class="step">02</span><h2>HTTPS already protects a lot</h2></div>
+    <p>Most websites now use <b>HTTPS</b> (the padlock in the address bar). HTTPS encrypts everything between your browser and the site: the pages you read, what you type, your passwords and card numbers. The FTC notes that because encryption is now so widespread, using public Wi-Fi is usually safe.</p>
+    <p>What HTTPS doesn't hide is <b>which site</b> you're connecting to (like example.com) and your IP address. That's the gap a VPN fills. Flip the switches below to see the difference.</p>
+    <div class="try" id="ws"><span class="try-h">Try it · who can see what</span>
+      <div class="toggles">
+        <label class="sw"><input type="checkbox" id="wsVpn" role="switch"> VPN</label>
+        <label class="sw"><input type="checkbox" id="wsHttps" role="switch" checked> HTTPS (padlock)</label>
+      </div>
+      <div class="path" id="wsPath" aria-hidden="true"></div>
+      <div class="key"><span class="y">● can see</span><span class="m">◐ can partly see</span><span class="n">○ can't see</span></div>
+      <div class="who" id="wsWho" aria-live="polite"></div>
+      <p class="out" id="wsSum"></p>
+    </div>
+    <p class="callout"><span><b>A little more nuance:</b> some browsers and devices can encrypt the website lookups (DNS) too, which hides a bit more from the Wi-Fi owner and ISP even without a VPN. And the website always sees what you do on it, with or without a VPN.</span></p>
+  </section>
+
+  <section class="lesson" id="v3">
+    <div class="lesson-head"><span class="step">03</span><h2>When a VPN is useful</h2></div>
+    <ul class="points">
+      <li><b>Public or untrusted Wi-Fi:</b> at a coffee shop, airport or hotel, a VPN keeps the network owner (or anyone running a fake hotspot with a similar name) from seeing which sites you visit. The FTC has long pointed to VPN apps as a way to shield information sent over public, open Wi-Fi.</li>
+      <li><b>Travel:</b> hotel and foreign networks are run by people you don't know. A VPN adds a layer of privacy. Some services, like your bank, may flag logins from unusual locations, so pick a server in your home country.</li>
+      <li><b>Privacy from your ISP:</b> your internet provider can see which sites you connect to. A VPN hides that from them (and shows it to the VPN instead).</li>
+      <li><b>Work:</b> employers use VPNs so staff can reach private company systems from home. That's a different job from a consumer privacy VPN, and you should only use it the way your employer allows.</li>
+      <li><b>Changing your apparent location:</b> people use VPNs to see content for another region. Many streaming services' terms forbid this and they often block VPN addresses.</li>
+    </ul>
+    <p class="callout warn"><span><b>VPN laws vary.</b> VPNs are legal in the US, but some countries restrict or ban them. Check before you travel, and never use a VPN to do something that's illegal without one.</span></p>
+  </section>
+
+  <section class="lesson" id="v4">
+    <div class="lesson-head"><span class="step">04</span><h2>What a VPN can't do</h2></div>
+    <div class="tw"><table class="t">
+      <tr><th>Myth</th><th>Reality</th></tr>
+      <tr><td>“A VPN makes me anonymous.”</td><td>The VPN knows who you are (it has your payment and your real IP). If you sign in to a site, the site knows it's you.</td></tr>
+      <tr><td>“A VPN stops tracking.”</td><td>Cookies, ad trackers, your browser's fingerprint and logged-in accounts still track you. Use your browser's privacy settings for that.</td></tr>
+      <tr><td>“A VPN protects me from hackers.”</td><td>It doesn't stop phishing, scam sites, malware you download, or weak and reused passwords.</td></tr>
+      <tr><td>“A VPN keeps my data from the website.”</td><td>The website gets everything you type into it, as always.</td></tr>
+      <tr><td>“Any VPN is better than none.”</td><td>A shady VPN can see your traffic and may log or sell it. That can be worse than no VPN at all.</td></tr>
+    </table></div>
+    <p><b>CISA</b>, the US cybersecurity agency, makes the same point in its mobile security guidance for people at high risk of being targeted: it advises against personal VPNs, because they shift risk from your ISP to the VPN provider, and many providers have questionable security and privacy policies.</p>
+    <p>Things that protect you more than a VPN for everyday safety: keeping devices updated, <a href="../strong-passwords/">strong, unique passwords</a>, <a href="../two-factor-authentication/">two-factor authentication</a>, and <a href="../spot-scam-messages/">spotting scams</a>.</p>
+  </section>
+
+  <section class="lesson" id="v5">
+    <div class="lesson-head"><span class="step">05</span><h2>Choosing a VPN, and why free ones are risky</h2></div>
+    <h3>The FTC's checklist before you install</h3>
+    <ol class="steps">
+      <li><b>Research the app and company</b> before downloading. Look for independent reviews and who actually runs it.</li>
+      <li><b>Check the permissions</b> it asks for. A VPN doesn't need your contacts or photos.</li>
+      <li><b>Make sure it actually encrypts your traffic.</b> Some apps marketed as VPNs don't.</li>
+      <li><b>Find out whether it shares your data with third parties</b>, like advertisers. Read the privacy policy.</li>
+    </ol>
+    <h3>What else to look for</h3>
+    <ul class="points">
+      <li><b>A no-logs policy that's been independently audited</b>, not just promised.</li>
+      <li><b>Modern protocols</b> such as WireGuard, OpenVPN or IKEv2.</li>
+      <li><b>A kill switch</b> that blocks internet if the VPN drops, so traffic doesn't leak outside the tunnel.</li>
+      <li><b>A clear business model.</b> If you're not paying, ask how the company makes money.</li>
+    </ul>
+    <p class="callout warn"><span><b>Free VPN risks:</b> running servers costs money. Free VPNs may pay for it by showing ads, tracking what you do, selling data, or limiting speed and data. Some fake “VPN” apps contain malware. If you need a VPN, a reputable paid one, or one included with a security product or service you already trust, is usually safer.</span></p>
+    <h3>Set it up and test it</h3>
+    <ol class="steps">
+      <li>Download the app from the official app store or the company's own website.</li>
+      <li>Sign in, turn on the kill switch, and set it to connect automatically on untrusted Wi-Fi if it offers that.</li>
+      <li>Connect, then search “what is my IP” in your browser. The location shown should be the VPN server's, not yours.</li>
+      <li>Remember to keep checking for the padlock. The VPN doesn't replace HTTPS.</li>
+    </ol>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Do I need a VPN at home?</summary><div class="a"><p>For security, usually not, as long as your home Wi-Fi has a strong password and you use HTTPS sites. A VPN at home mainly hides which sites you visit from your ISP, and shows them to the VPN company instead.</p></div></details>
+      <details><summary>Is public Wi-Fi safe without a VPN?</summary><div class="a"><p>The FTC says it's usually safe today because most sites use encryption. Stick to HTTPS sites, don't ignore browser security warnings, and use a VPN or your phone's cellular data if you want the network owner to see less.</p></div></details>
+      <details><summary>Does a VPN slow down my internet?</summary><div class="a"><p>A little, because traffic takes a detour through the VPN server. Picking a server close to you usually keeps the slowdown small.</p></div></details>
+      <details><summary>Can my employer or school see my browsing if I use a VPN?</summary><div class="a"><p>On their network, they'd see that you're using a VPN, not the sites. But if it's their device, they may have monitoring software on it that sees everything regardless. And their rules may forbid VPNs.</p></div></details>
+      <details><summary>Is a VPN the same as private or incognito browsing?</summary><div class="a"><p>No. Incognito mode only stops your own browser from saving history and cookies after you close it. It doesn't hide anything from the network, your ISP or websites.</p></div></details>
+      <details><summary>Can the police or a court get my VPN data?</summary><div class="a"><p>A VPN company has to follow the laws where it operates. If it keeps logs, they can be requested. That's why an independently audited no-logs policy matters.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://consumer.ftc.gov/articles/are-public-wi-fi-networks-safe-what-you-need-know" target="_blank" rel="noopener"><span class="src">FTC Consumer Advice</span><b>Are public Wi-Fi networks safe?</b></a>
+      <a href="https://www.ftc.gov/news-events/news/press-releases/2018/02/ftc-provides-tips-using-vpn-apps" target="_blank" rel="noopener"><span class="src">FTC</span><b>Tips for using VPN apps</b></a>
+      <a href="https://www.cisa.gov/sites/default/files/2024-12/guidance-mobile-communications-best-practices.pdf" target="_blank" rel="noopener"><span class="src">CISA</span><b>Mobile communications best practice guidance (PDF)</b></a>
+      <a href="https://www.cisa.gov/sites/default/files/publications/Wireless-Security.pdf" target="_blank" rel="noopener"><span class="src">CISA</span><b>Using wireless technology securely (PDF)</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>A simplified view of who can see your traffic. Shortutorial doesn't recommend or earn money from any VPN.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  // y = can see, m = partly, n = can't see
+  const ROWS = [
+    {k: 'ip',    t: 'Your device and real IP address'},
+    {k: 'site',  t: 'Which sites you visit (like example.com)'},
+    {k: 'page',  t: 'Exact pages, messages, passwords'},
+    {k: 'vpn',   t: "That you're using a VPN"},
+    {k: 'when',  t: 'When you’re online and how much data'}
+  ];
+  function who(vpn, https){
+    const local = {
+      ip: 'y',
+      site: vpn ? 'n' : 'y',
+      page: vpn ? 'n' : (https ? 'n' : 'y'),
+      vpn: vpn ? 'y' : 'n',
+      when: 'y'
+    };
+    return [
+      {n: 'Wi-Fi owner', s: 'Coffee shop, hotel, airport', on: true, v: local},
+      {n: 'Internet provider', s: 'Your ISP or mobile carrier', on: true, v: local},
+      {n: 'VPN provider', s: vpn ? 'The VPN company' : 'Not in use', on: vpn,
+        v: vpn ? {ip: 'y', site: 'y', page: https ? 'n' : 'y', vpn: 'y', when: 'y'} : {ip: 'n', site: 'n', page: 'n', vpn: 'n', when: 'n'}},
+      {n: 'The website', s: 'The site you visit', on: true,
+        v: {ip: vpn ? 'n' : 'y', site: 'y', page: 'y', vpn: vpn ? 'm' : 'n', when: 'm'}}
+    ];
+  }
+  const word = {y: 'Sees', m: 'Partly', n: "Can't see"};
+  function draw(){
+    const vpn = $('#wsVpn').checked, https = $('#wsHttps').checked;
+    const lock = https ? '<span class="enc">🔒 encrypted</span>' : '<span class="plain">readable</span>';
+    $('#wsPath').innerHTML = vpn
+      ? `<b>You</b> → <span class="enc">VPN tunnel 🔒</span> → <b>Wi-Fi</b> → <b>ISP</b> → <b>VPN server</b> → ${lock} → <b>Website</b>`
+      : `<b>You</b> → ${lock} → <b>Wi-Fi</b> → <b>ISP</b> → <b>Website</b>`;
+    $('#wsWho').innerHTML = who(vpn, https).map(c =>
+      `<div class="card${c.on ? '' : ' off'}"><div><h3>${c.n}</h3><div class="sub">${c.s}</div></div><ul>` +
+      ROWS.map(r => `<li class="${c.v[r.k]}"><span><span class="sr">${word[c.v[r.k]]}: </span>${r.t}</span></li>`).join('') +
+      `</ul></div>`).join('');
+    let s;
+    if (!vpn && https) s = 'Typical browsing today. Your content is encrypted, but the Wi-Fi owner and your ISP can see which sites you visit, and websites see your IP address.';
+    else if (!vpn && !https) s = '<b>Risky.</b> Without HTTPS, anyone on the path can read the pages and anything you type, including passwords. Don\'t enter personal info on a site without the padlock.';
+    else if (vpn && https) s = 'Best of both. The Wi-Fi owner and ISP only see that you use a VPN. The VPN provider sees which sites you visit, but not the content. You\'re trusting the VPN company now.';
+    else s = 'The tunnel hides everything from the Wi-Fi and ISP, but the VPN provider, and anyone between its server and the website, can read the unencrypted page. Still look for the padlock.';
+    $('#wsSum').innerHTML = s;
+  }
+  ['#wsVpn', '#wsHttps'].forEach(id => $(id).addEventListener('change', draw));
+  draw();
+})();
+</script>
+</body>
+</html>

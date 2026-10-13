@@ -2633,5 +2633,71 @@ export default {
         o: ["The credit", "The deduction", "They're always the same", "Neither affects your tax"], a: 0,
         e: "A credit cuts your tax bill dollar for dollar; a deduction only lowers taxable income." }
     ]
+  },
+
+  "how-vpns-work": {
+    title: "How VPNs Work",
+    pass: 4,
+    questions: [
+      { q: "With a VPN on, what can your internet provider (ISP) see?",
+        o: ["Every page you read", "That you're connected to a VPN, but not which sites you visit", "Your passwords", "Nothing at all, not even that you're online"], a: 1,
+        e: "The ISP sees encrypted traffic going to the VPN server." },
+      { q: "Who can see which sites you visit when the VPN is on?",
+        o: ["The VPN provider", "Only your Wi-Fi owner", "Nobody", "Only your ISP"], a: 0,
+        e: "A VPN moves that view from your ISP to the VPN company." },
+      { q: "What does HTTPS (the padlock) protect, with or without a VPN?",
+        o: ["Which site you're visiting", "Your IP address", "The pages you read and what you type", "Cookies and ad tracking"], a: 2,
+        e: "HTTPS encrypts the content between your browser and the site." },
+      { q: "Which of these can a VPN NOT protect you from?",
+        o: ["The coffee shop Wi-Fi seeing which sites you visit", "Your ISP seeing which sites you visit", "Websites seeing your real IP address", "Phishing sites and trackers when you log in"], a: 3,
+        e: "A VPN doesn't stop scams, malware, cookies or a site knowing it's you when you sign in." },
+      { q: "What's a common risk of free VPNs?",
+        o: ["They're always illegal", "They may pay for themselves by tracking you or selling your data", "They make HTTPS stop working", "They delete your passwords"], a: 1,
+        e: "Running servers costs money. If you're not paying, ask how the company makes money." }
+    ]
+  },
+
+  "philosophy-basics": {
+    title: "Philosophy Basics: The Big Questions, Explained",
+    pass: 4,
+    questions: [
+      { q: "Which branch of philosophy studies what knowledge is and how we get it?",
+        o: ["Metaphysics", "Epistemology", "Aesthetics", "Political philosophy"], a: 1,
+        e: "Epistemology is the study of knowledge, like whether you can be sure you're not dreaming." },
+      { q: "What makes an argument sound?",
+        o: ["It has at least three premises", "It persuades most people", "It is valid and its premises are actually true", "Its conclusion is surprising"], a: 2,
+        e: "Valid means the conclusion follows; sound means valid plus true premises." },
+      { q: "Which theory judges an action mainly by its results, such as the most overall well-being?",
+        o: ["Utilitarianism", "Deontology", "Virtue ethics", "Skepticism"], a: 0,
+        e: "Utilitarianism, defended by Mill, is a form of consequentialism." },
+      { q: "Who argued we should never treat people merely as a means to an end?",
+        o: ["Aristotle", "John Stuart Mill", "Confucius", "Immanuel Kant"], a: 3,
+        e: "This idea is central to Kant's duty-based ethics." },
+      { q: "The ship of Theseus thought experiment is mainly about:",
+        o: ["Whether lying is ever acceptable", "Identity over time", "How governments get their power", "Whether the outside world exists"], a: 1,
+        e: "If every plank is replaced, is it the same ship? It's a puzzle about identity over time." }
+    ]
+  },
+
+  "stoicism-basics": {
+    title: "Stoicism for Everyday Life: A Beginner's Guide",
+    pass: 4,
+    questions: [
+      { q: "Who founded Stoicism in Athens around 300 BCE?",
+        o: ["Marcus Aurelius", "Seneca", "Zeno of Citium", "Epictetus"], a: 2,
+        e: "Zeno taught at the Stoa Poikile, the painted porch, which gave the school its name." },
+      { q: "According to the dichotomy of control, which of these is up to you?",
+        o: ["How you respond when someone is rude", "What your coworkers think of you", "The weather tomorrow", "Whether you get the promotion"], a: 0,
+        e: "Your judgments, choices and actions are in your control; other people's opinions and outcomes are not." },
+      { q: "Which is NOT one of the four Stoic virtues?",
+        o: ["Wisdom", "Courage", "Wealth", "Temperance"], a: 2,
+        e: "The four are wisdom, courage, justice and temperance. Wealth is a 'preferred indifferent'." },
+      { q: "What is negative visualization (premeditatio malorum)?",
+        o: ["Ignoring bad news", "Briefly imagining losing something to reduce shock and build gratitude", "Writing down everything you dislike", "Refusing to plan ahead"], a: 1,
+        e: "Kept brief and ending on gratitude, it prepares you and helps you appreciate what you have." },
+      { q: "Which Stoic wrote the private notebook now called Meditations?",
+        o: ["Epictetus", "Seneca", "Zeno", "Marcus Aurelius"], a: 3,
+        e: "Marcus Aurelius, a Roman emperor, wrote it for himself, not for publication." }
+    ]
   }
 };
