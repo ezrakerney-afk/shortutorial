@@ -16,7 +16,9 @@ vm.runInNewContext(readFileSync(new URL("tutorials.js", PUB), "utf8"), ctx);
 const BY = Object.fromEntries(ctx.window.TUTORIALS.map(t => [t.slug, t]));
 
 const ICONS = '<link rel="icon" href="/favicon.ico" sizes="48x48">\n<link rel="icon" href="/favicon.svg" type="image/svg+xml">\n<link rel="apple-touch-icon" href="/apple-touch-icon.png">';
-const FOOT_NAV = '<nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav>';
+const PRIV = new URL("privacy/index.html", PUB);
+const hasPrivacy = existsSync(PRIV) && !readFileSync(PRIV, "utf8").includes("{{CONTACT}}");
+const FOOT_NAV = '<nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a>' + (hasPrivacy ? '<a href="/privacy/">Privacy</a>' : '') + '</nav>';
 const ORG = { "@type": "Organization", "@id": SITE + "/#org", name: "Shortutorial", url: SITE + "/", logo: SITE + "/icon-512.png" };
 
 const text = h => h.replace(/<[^>]+>/g, " ").replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">")
@@ -52,6 +54,7 @@ const pages = ["index.html", "404.html", ...readdirSync(PUB, { withFileTypes: tr
 for (const p of pages) {
   const file = new URL(p, PUB);
   let h = readFileSync(file, "utf8"), before = h;
+  if (h.includes("{{CONTACT}}")) continue; // unfinished page
   const slugAttr = (h.match(/<body[^>]*data-slug="([^"]+)"/) || [])[1];
   if (slugAttr && !BY[slugAttr]) continue; // a page still being written, not in tutorials.js yet
   h = h.replace(/<link rel="icon" href="data:[^"]*">/, ICONS);
