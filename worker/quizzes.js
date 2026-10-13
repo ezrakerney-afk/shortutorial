@@ -2897,5 +2897,27 @@ export default {
         o: ["Combines rows from two tables where a column matches", "Deletes duplicate rows", "Adds a new column to a table", "Sorts two tables together"], a: 0,
         e: "A JOIN lines up rows from two tables wherever the ON condition matches, keeping only rows with a match on both sides." }
     ]
+  },
+
+  "excel-pivot-tables": {
+    title: "Pivot Tables in Excel and Google Sheets",
+    pass: 4,
+    questions: [
+      { q: "What does a pivot table do?",
+        o: ["Rotates your spreadsheet sideways", "Deletes duplicate rows from your data", "Groups matching rows and summarizes them, like total sales per region", "Sorts a column alphabetically"], a: 2,
+        e: "It groups rows by a field and summarizes them with sum, count, average and more, without changing the source data." },
+      { q: "Which data layout works best for a pivot table?",
+        o: ["One header row and one record per row, with no blank rows", "Months side by side as columns with totals at the bottom", "Merged cells for each region", "Several header rows"], a: 0,
+        e: "Pivot tables need a simple list: one header row, one record per row, no blanks, subtotals or merged cells." },
+      { q: "Where do you start a pivot table in Excel?",
+        o: ["Data › Sort", "Insert › PivotTable", "Home › Format as Pivot", "File › New Pivot"], a: 1,
+        e: "Select your data, then Insert › PivotTable. In Google Sheets it's Insert › Pivot table." },
+      { q: "Your pivot table shows Count of Sales instead of Sum. Why might that be?",
+        o: ["Excel always counts first", "The pivot table is filtered", "The sheet is protected", "The Sales column has text or blank cells"], a: 3,
+        e: "Excel defaults to Count when a column contains text or blanks. Clean the data or change it to Sum in Value Field Settings." },
+      { q: "You changed the source data in Excel. How do you update the pivot table?",
+        o: ["It updates automatically", "Delete it and make a new one", "Right-click it and choose Refresh (or PivotTable Analyze › Refresh)", "Press Ctrl+Z"], a: 2,
+        e: "Excel pivot tables don't update on their own: use Refresh. Google Sheets pivot tables refresh automatically." }
+    ]
   }
 };

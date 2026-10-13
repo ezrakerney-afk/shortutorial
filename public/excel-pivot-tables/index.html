@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pivot Tables in Excel and Google Sheets · Shortutorial</title>
+<meta name="description" content="Turn a long list into a clear summary: set up your data, build a pivot table in Excel or Google Sheets, use rows, columns and values, sum, count or average, filter and refresh. Try a live pivot builder.">
+<link rel="canonical" href="https://shortutorial.com/excel-pivot-tables/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Pivot Tables in Excel and Google Sheets · Shortutorial">
+<meta property="og:description" content="Turn a long list into a clear summary: set up your data, build a pivot table in Excel or Google Sheets, use rows, columns and values, sum, count or average, filter and refresh. Try a live pivot builder.">
+<meta property="og:url" content="https://shortutorial.com/excel-pivot-tables/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+[data-show]{display:flex;flex-direction:column;gap:14px}
+[data-show][hidden]{display:none}
+.pv-ctl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media (max-width:560px){.pv-ctl{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.try .pv-ctl select{width:100%;box-sizing:border-box;font-size:.92rem}
+.try .pv-check{flex-direction:row;align-items:center;gap:8px;font-size:.8rem;color:var(--ink)}
+.pv-check input{width:18px;height:18px;accent-color:var(--accent)}
+.pv-areas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+@media (max-width:560px){.pv-areas{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.pv-areas span{background:var(--surface);border:1px dashed var(--line);border-radius:8px;padding:6px 10px;min-width:0}
+.pv-areas small{display:block;font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.pv-areas b{font-family:var(--display);font-size:.9rem;overflow-wrap:anywhere}
+table.pv{font-size:.9rem}
+table.pv th,table.pv td{padding:7px 10px;white-space:nowrap}
+table.pv td.n,table.pv th.n{text-align:right;font-variant-numeric:tabular-nums}
+table.pv tr.gt td,table.pv td.gt{font-weight:700;background:var(--accent-soft)}
+table.pv td.rl{font-family:var(--display);font-weight:600}
+.raw summary{cursor:pointer;font-family:var(--mono);font-size:.8rem;color:var(--accent)}
+.raw .tw{margin-top:10px;max-height:300px;overflow:auto}
+.raw table.t{font-size:.82rem}
+.raw table.t th,.raw table.t td{padding:5px 9px}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"Pivot Tables in Excel and Google Sheets","item":"https://shortutorial.com/excel-pivot-tables/"}]},{"@type":"Article","@id":"https://shortutorial.com/excel-pivot-tables/#article","headline":"Pivot Tables in Excel and Google Sheets","description":"Turn a long list into a clear summary: set up your data, build a pivot table in Excel or Google Sheets, use rows, columns and values, sum, count or average, filter and refresh. Try a live pivot builder.","url":"https://shortutorial.com/excel-pivot-tables/","mainEntityOfPage":"https://shortutorial.com/excel-pivot-tables/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Programming","keywords":"pivot table, excel, google sheets, pivottable, spreadsheet, summarize data, sum, count, average, data analysis, refresh pivot table","timeRequired":"PT15M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What's the difference between a pivot table and SUMIF formulas?","acceptedAnswer":{"@type":"Answer","text":"Both can total by category. A pivot table builds the whole summary for you, finds every category automatically, and lets you rearrange it with clicks. Formulas like SUMIF are better when you need a fixed layout or want the result to update instantly in Excel without refreshing. See spreadsheet formulas ."}},{"@type":"Question","name":"Can I make a chart from a pivot table?","acceptedAnswer":{"@type":"Answer","text":"Yes. In Excel, click in the pivot table and choose PivotTable Analyze › PivotChart . In Google Sheets, select the pivot table cells and use Insert › Chart ."}},{"@type":"Question","name":"Can I type over numbers in a pivot table?","acceptedAnswer":{"@type":"Answer","text":"No. Pivot table numbers are calculated. Change the source data instead, then refresh. If you need a static copy, copy the pivot table and use Paste Special › Values somewhere else."}},{"@type":"Question","name":"Do pivot tables work in Excel on a Mac or on the web?","acceptedAnswer":{"@type":"Answer","text":"Yes. Excel for Mac and Excel for the web both have Insert › PivotTable . Some advanced options are only in the Windows desktop version, but the basics are the same."}},{"@type":"Question","name":"Why can't I add a calculated column in my source and see it?","acceptedAnswer":{"@type":"Answer","text":"A new column only shows up in the field list after a refresh, and only if it's inside the pivot table's data range. A Table in Excel includes new columns automatically."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="excel-pivot-tables">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+<header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=spreadsheet">Programming</a> / Pivot tables</div>
+    <span class="eyebrow">Skills · Excel and Google Sheets</span>
+    <h1>Pivot Tables in Excel and Google Sheets</h1>
+    <p class="lede">A pivot table turns hundreds of rows into a neat summary, like total sales by region and month, in a few clicks and with no formulas. Learn how to set up your data, build one in Excel or Google Sheets, and practice with the live pivot builder.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~15 min read</span><span class="badge">6 lessons</span><span class="badge">Live pivot builder</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#v1">1 · What it does</a><a href="#v2">2 · Set up data</a><a href="#v3">3 · Create one</a><a href="#v4">4 · Rows & values</a><a href="#v5">5 · Filter & refresh</a><a href="#v6">6 · Fixes</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="v1">
+    <div class="lesson-head"><span class="step">01</span><h2>What a pivot table does</h2></div>
+    <p>Say you have a sheet with every sale your shop made: date, region, salesperson, product, units and dollars. Hundreds of rows. Your boss asks: <b>“What were total sales in each region?”</b></p>
+    <p>A pivot table answers that in seconds. It <b>groups</b> matching rows together and <b>summarizes</b> them with a sum, count or average. Then you can “pivot”: drag a different field in and instantly see sales by product, by month, or by salesperson.</p>
+    <div class="grid2">
+      <div><span class="tagline">Your data</span><h3>One row per sale</h3><p>East, Coffee, $180<br>West, Coffee, $225<br>East, Tea, $64<br>South, Tea, $80<br>…and many more</p></div>
+      <div><span class="tagline">Pivot table</span><h3>One row per region</h3><p>East: $1,159<br>South: $654<br>West: $1,035<br>Grand total: $2,848</p></div>
+    </div>
+    <p class="callout"><span><b>Your original data is safe.</b> A pivot table is a separate summary that reads from your data. Changing or deleting the pivot table never changes the rows it came from.</span></p>
+  </section>
+
+  <section class="lesson" id="v2">
+    <div class="lesson-head"><span class="step">02</span><h2>Set up your data first</h2></div>
+    <p>Pivot tables are picky about layout. Most problems come from messy source data, so spend a minute on this:</p>
+    <ol class="steps">
+      <li><b>One header row</b> at the top, with a short, unique name for every column (Date, Region, Rep, Product, Units, Sales).</li>
+      <li><b>One record per row.</b> Each sale gets its own row. Don't put months side by side as columns.</li>
+      <li><b>No blank rows or columns</b> in the middle of the data, and no totals or subtotal rows mixed in.</li>
+      <li><b>One kind of data per column.</b> Numbers in number columns, with no text like “N/A” or “$” typed in as text, and real dates in date columns.</li>
+      <li><b>No merged cells.</b> Unmerge them and fill in the value on every row.</li>
+    </ol>
+    <div class="grid2">
+      <div><span class="tagline">Works</span><h3>Long and simple</h3><p>Month | Region | Product | Sales<br>Jan | East | Coffee | 180<br>Jan | East | Tea | 64</p></div>
+      <div><span class="tagline">Causes trouble</span><h3>Already a summary</h3><p>Region | Jan | Feb | Mar<br>East | 328 | 330 | 501<br>(Months as columns: pivot tables can't group these well.)</p></div>
+    </div>
+    <p class="callout"><span><b>Excel tip: make it a Table first.</b> Click in your data and press <kbd>Ctrl</kbd>+<kbd>T</kbd> (<kbd>Cmd</kbd>+<kbd>T</kbd> on a Mac). When you add new rows to a Table, a pivot table built from it picks them up on the next refresh, so you never have to change the range.</span></p>
+  </section>
+
+  <section class="lesson" id="v3">
+    <div class="lesson-head"><span class="step">03</span><h2>Create a pivot table</h2></div>
+    <div class="chipset" id="appSw" aria-label="Choose your app"><button type="button" data-app="excel" aria-pressed="true">Excel</button><button type="button" data-app="sheets" aria-pressed="false">Google Sheets</button></div>
+    <div data-show="excel">
+      <ol class="steps">
+        <li>Click any cell inside your data (or select the whole range or Table).</li>
+        <li>Go to <b>Insert › PivotTable</b>.</li>
+        <li>Check the range shown is right. Choose <b>New Worksheet</b> (easiest) or <b>Existing Worksheet</b>, then click <b>OK</b>.</li>
+        <li>An empty pivot table appears with the <b>PivotTable Fields</b> pane on the right. The top lists your column headers. The bottom has four areas: <b>Filters</b>, <b>Columns</b>, <b>Rows</b> and <b>Values</b>.</li>
+        <li>Check a field's box or drag it into an area. For “sales by region”: drag <b>Region</b> to Rows and <b>Sales</b> to Values.</li>
+      </ol>
+      <p class="callout"><span><b>Pane disappeared?</b> It only shows when a cell inside the pivot table is selected. Click inside the pivot table, or right-click it and choose <b>Show Field List</b>. Excel can also suggest layouts: <b>Insert › Recommended PivotTables</b>.</span></p>
+    </div>
+    <div data-show="sheets" hidden>
+      <ol class="steps">
+        <li>Select the cells with your data, including the header row. Every column needs a header.</li>
+        <li>In the menu, click <b>Insert › Pivot table</b>.</li>
+        <li>Choose <b>New sheet</b> (easiest) or <b>Existing sheet</b>, then click <b>Create</b>.</li>
+        <li>The <b>Pivot table editor</b> opens on the right with sections for <b>Rows</b>, <b>Columns</b>, <b>Values</b> and <b>Filters</b>.</li>
+        <li>Click <b>Add</b> next to a section and pick a field. For “sales by region”: Add <b>Region</b> under Rows and <b>Sales</b> under Values.</li>
+      </ol>
+      <p class="callout"><span><b>Editor disappeared?</b> Click any cell in the pivot table and an <b>Edit</b> button appears next to it. Google Sheets also shows <b>Suggested</b> pivot tables at the top of the editor.</span></p>
+    </div>
+  </section>
+
+  <section class="lesson" id="v4">
+    <div class="lesson-head"><span class="step">04</span><h2>Rows, columns, values and “summarize by”</h2></div>
+    <div class="tw"><table class="t">
+      <tr><th>Area</th><th>What it does</th><th>Example</th></tr>
+      <tr><td><b>Rows</b></td><td>One row in the pivot for each unique value</td><td>East, South, West</td></tr>
+      <tr><td><b>Columns</b></td><td>One column for each unique value, making a grid</td><td>Jan, Feb, Mar across the top</td></tr>
+      <tr><td><b>Values</b></td><td>The numbers you summarize</td><td>Sum of Sales</td></tr>
+      <tr><td><b>Filters</b></td><td>Limit the whole pivot to certain records</td><td>Only Coffee</td></tr>
+    </table></div>
+    <p><b>Summarize by</b> decides the math. <b>Sum</b> adds up, <b>Count</b> counts how many rows, <b>Average</b> gives the mean, and <b>Max</b>/<b>Min</b> find the largest and smallest. In Excel, click the value field in the Values area and choose <b>Value Field Settings</b> (or right-click a number and use <b>Summarize Values By</b>). In Google Sheets, use the <b>Summarize by</b> dropdown under the value.</p>
+    <div class="try" id="pv"><span class="try-h">Try it · pivot table builder</span>
+      <p class="work">24 rows of coffee shop sales: Month, Region, Rep, Product, Units and Sales. Pick the fields and watch the summary change.</p>
+      <div class="pv-ctl">
+        <label>Rows<select id="pvRows"></select></label>
+        <label>Columns<select id="pvCols"></select></label>
+        <label>Values<select id="pvVal"><option value="Sales">Sales ($)</option><option value="Units">Units</option></select></label>
+        <label>Summarize by<select id="pvAgg"><option>Sum</option><option>Count</option><option>Average</option><option>Max</option><option>Min</option></select></label>
+        <label>Filter field<select id="pvFf"></select></label>
+        <label>Filter value<select id="pvFv" disabled><option value="">(All)</option></select></label>
+      </div>
+      <label class="pv-check"><input type="checkbox" id="pvPct"> Show values as % of grand total</label>
+      <div class="pv-areas" aria-hidden="true"><span><small>Filters</small><b id="pvAF">none</b></span><span><small>Columns</small><b id="pvAC">none</b></span><span><small>Rows</small><b id="pvAR"></b></span><span><small>Values</small><b id="pvAV"></b></span></div>
+      <div class="tw" id="pvOut" aria-live="polite"></div>
+      <p class="work" id="pvNote"></p>
+      <div class="chipset" id="pvQ" aria-label="Questions to try"><button type="button" data-q="Region|none|Sales|Sum">Total sales by region</button><button type="button" data-q="Product|Month|Units|Sum">Units by product and month</button><button type="button" data-q="Rep|none|Sales|Count">How many sales per rep</button><button type="button" data-q="Product|none|Sales|Average">Average sale by product</button></div>
+      <details class="raw"><summary>See the 24 rows of source data</summary><div class="tw" id="pvRaw"></div></details>
+    </div>
+    <p class="callout"><span><b>Grand totals are calculated from the raw rows,</b> not from the numbers above them. So for Average, the grand total is the average of all the sales, which isn't the same as averaging the regional averages. Try it in the builder.</span></p>
+  </section>
+
+  <section class="lesson" id="v5">
+    <div class="lesson-head"><span class="step">05</span><h2>Filter, sort and refresh</h2></div>
+    <h3>Filter and sort</h3>
+    <ul class="points">
+      <li><b>Filters area:</b> drag a field like Product into Filters (Excel) or click <b>Add</b> next to Filters (Google Sheets), then pick which values to show.</li>
+      <li><b>Row and column filters:</b> in Excel, click the dropdown arrow on the Row Labels or Column Labels header to tick values on and off, or sort.</li>
+      <li><b>Sort by the numbers:</b> in Excel, right-click a value and choose <b>Sort › Sort Largest to Smallest</b>. In Google Sheets, under Rows use <b>Order</b> and <b>Sort by</b> to sort by a value such as SUM of Sales.</li>
+      <li><b>Slicers (Excel):</b> big clickable filter buttons. Click in the pivot table, then <b>PivotTable Analyze › Insert Slicer</b>. Great for dashboards.</li>
+    </ul>
+    <h3>Refresh when the data changes</h3>
+    <div class="grid2">
+      <div><span class="tagline">Excel</span><h3>Doesn't update by itself</h3><p>After you change the source data, right-click the pivot table and choose <b>Refresh</b>, or go to <b>PivotTable Analyze › Refresh</b> (<kbd>Alt</kbd>+<kbd>F5</kbd>). Use the arrow under Refresh for <b>Refresh All</b>. To refresh every time the file opens: <b>PivotTable Analyze › Options › Data</b> tab › <b>Refresh data when opening the file</b>.</p></div>
+      <div><span class="tagline">Google Sheets</span><h3>Updates automatically</h3><p>The pivot table refreshes whenever the source cells change. If you add rows <b>below</b> the original range, open the editor and check the data range at the top includes them.</p></div>
+    </div>
+    <p class="callout warn"><span><b>New rows missing in Excel?</b> If your source isn't a Table, rows added below the old range aren't included, even after Refresh. Fix it with <b>PivotTable Analyze › Change Data Source</b>, or convert your data to a Table (<kbd>Ctrl</kbd>+<kbd>T</kbd>) so it grows automatically.</span></p>
+  </section>
+
+  <section class="lesson" id="v6">
+    <div class="lesson-head"><span class="step">06</span><h2>Common problems and fixes</h2></div>
+    <div class="tw"><table class="t">
+      <tr><th>Problem</th><th>Why</th><th>Fix</th></tr>
+      <tr><td>Shows “Count of Sales” instead of Sum</td><td>Excel uses Count when the column has text or blank cells</td><td>Fix the text or blanks in the source, or change it to Sum in Value Field Settings</td></tr>
+      <tr><td>A row says “(blank)”</td><td>Empty cells in that field, often a blank row inside your range</td><td>Fill in or delete the blank rows, then refresh</td></tr>
+      <tr><td>Same item listed twice (“East” and “East ”)</td><td>Typos or extra spaces in the data</td><td>Clean the source data (Find and Replace, or TRIM), then refresh</td></tr>
+      <tr><td>Dates turned into Years, Quarters, Months</td><td>Excel groups dates automatically</td><td>Right-click a date and choose <b>Group</b> or <b>Ungroup</b></td></tr>
+      <tr><td>Numbers look wrong</td><td>Wrong summary type, a filter is on, or it wasn't refreshed</td><td>Check Summarize by, clear filters, refresh</td></tr>
+    </table></div>
+    <p class="callout"><span><b>Check any number:</b> in Excel, double-click a value in the pivot table. Excel opens a new sheet listing exactly the rows that make up that number.</span></p>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>What's the difference between a pivot table and SUMIF formulas?</summary><div class="a"><p>Both can total by category. A pivot table builds the whole summary for you, finds every category automatically, and lets you rearrange it with clicks. Formulas like SUMIF are better when you need a fixed layout or want the result to update instantly in Excel without refreshing. See <a href="../spreadsheet-formulas/">spreadsheet formulas</a>.</p></div></details>
+      <details><summary>Can I make a chart from a pivot table?</summary><div class="a"><p>Yes. In Excel, click in the pivot table and choose <b>PivotTable Analyze › PivotChart</b>. In Google Sheets, select the pivot table cells and use <b>Insert › Chart</b>.</p></div></details>
+      <details><summary>Can I type over numbers in a pivot table?</summary><div class="a"><p>No. Pivot table numbers are calculated. Change the source data instead, then refresh. If you need a static copy, copy the pivot table and use Paste Special › Values somewhere else.</p></div></details>
+      <details><summary>Do pivot tables work in Excel on a Mac or on the web?</summary><div class="a"><p>Yes. Excel for Mac and Excel for the web both have <b>Insert › PivotTable</b>. Some advanced options are only in the Windows desktop version, but the basics are the same.</p></div></details>
+      <details><summary>Why can't I add a calculated column in my source and see it?</summary><div class="a"><p>A new column only shows up in the field list after a refresh, and only if it's inside the pivot table's data range. A Table in Excel includes new columns automatically.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://support.microsoft.com/office/18fb0032-b01a-4c99-9a5f-7ab09edde05a" target="_blank" rel="noopener"><span class="src">Microsoft Support</span><b>Create a PivotTable to analyze worksheet data</b></a>
+      <a href="https://support.microsoft.com/en-us/excel/refresh-pivottable-data" target="_blank" rel="noopener"><span class="src">Microsoft Support</span><b>Refresh PivotTable data</b></a>
+      <a href="https://support.google.com/docs/answer/1272900" target="_blank" rel="noopener"><span class="src">Google Docs Editors Help</span><b>Create and use pivot tables</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>Menu names checked against Microsoft 365 Excel and Google Sheets, October 2026.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script>
+(function(){
+  /* Excel / Google Sheets switch */
+  document.querySelectorAll('#appSw button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('#appSw button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    document.querySelectorAll('[data-show]').forEach(d => d.hidden = d.dataset.show !== b.dataset.app);
+  }));
+
+  /* Sample data: coffee $15, tea $8, mugs $12 */
+  const F = ['Month','Region','Rep','Product','Units','Sales'];
+  const RAW = [
+    ['Jan','East','Ana','Coffee',12],['Jan','East','Ana','Tea',8],['Jan','West','Ben','Coffee',15],['Jan','West','Ben','Mugs',5],
+    ['Jan','South','Cara','Tea',10],['Jan','South','Dev','Coffee',9],['Jan','East','Dev','Mugs',7],['Jan','West','Cara','Tea',6],
+    ['Feb','East','Ana','Coffee',14],['Feb','East','Ana','Mugs',4],['Feb','West','Ben','Tea',11],['Feb','West','Ben','Coffee',10],
+    ['Feb','South','Cara','Coffee',13],['Feb','South','Dev','Mugs',6],['Feb','East','Dev','Tea',9],['Feb','West','Cara','Coffee',8],
+    ['Mar','East','Ana','Tea',12],['Mar','East','Ana','Coffee',16],['Mar','West','Ben','Mugs',9],['Mar','West','Ben','Coffee',12],
+    ['Mar','South','Cara','Mugs',5],['Mar','South','Dev','Tea',14],['Mar','East','Dev','Coffee',11],['Mar','West','Cara','Tea',7]
+  ];
+  const PRICE = {Coffee:15, Tea:8, Mugs:12};
+  const DATA = RAW.map(r => ({Month:r[0], Region:r[1], Rep:r[2], Product:r[3], Units:r[4], Sales:r[4] * PRICE[r[3]]}));
+  const CAT = ['Region','Product','Month','Rep'];
+  const ORDER = {Month:['Jan','Feb','Mar']};
+  const uniq = f => { const s = [...new Set(DATA.map(d => d[f]))]; return ORDER[f] ? ORDER[f].filter(x => s.includes(x)) : s.sort(); };
+
+  const rowsSel = $('#pvRows'), colsSel = $('#pvCols'), ffSel = $('#pvFf'), fvSel = $('#pvFv');
+  const opt = (sel, v, t) => { const o = document.createElement('option'); o.value = v; o.textContent = t || v; sel.appendChild(o); };
+  CAT.forEach(f => opt(rowsSel, f));
+  opt(colsSel, 'none', '(none)'); CAT.forEach(f => opt(colsSel, f));
+  opt(ffSel, 'none', '(none)'); CAT.forEach(f => opt(ffSel, f));
+
+  function agg(kind, vals){
+    if (kind === 'Count') return vals.length;
+    if (!vals.length) return null;
+    if (kind === 'Sum') return vals.reduce((a, b) => a + b, 0);
+    if (kind === 'Average') return vals.reduce((a, b) => a + b, 0) / vals.length;
+    if (kind === 'Max') return Math.max(...vals);
+    return Math.min(...vals);
+  }
+  function fillFilterValues(){
+    const f = ffSel.value, keep = fvSel.value;
+    fvSel.innerHTML = ''; opt(fvSel, '', '(All)');
+    if (f === 'none'){ fvSel.disabled = true; return; }
+    fvSel.disabled = false; uniq(f).forEach(v => opt(fvSel, v));
+    if ([...fvSel.options].some(o => o.value === keep)) fvSel.value = keep;
+  }
+  function draw(){
+    let R = rowsSel.value, C = colsSel.value;
+    const V = $('#pvVal').value, A = $('#pvAgg').value, pct = $('#pvPct').checked;
+    if (C === R) C = 'none';
+    const ff = ffSel.value, fv = fvSel.value;
+    const rows = DATA.filter(d => ff === 'none' || !fv || d[ff] === fv);
+    const rKeys = [...new Set(rows.map(d => d[R]))], cKeys = C === 'none' ? [] : [...new Set(rows.map(d => d[C]))];
+    const rk = ORDER[R] ? ORDER[R].filter(x => rKeys.includes(x)) : rKeys.sort();
+    const ck = C === 'none' ? [] : (ORDER[C] ? ORDER[C].filter(x => cKeys.includes(x)) : cKeys.sort());
+    const val = sub => agg(A, sub.map(d => d[V]));
+    const grand = val(rows);
+    const isMoney = V === 'Sales' && A !== 'Count';
+    const show = v => {
+      if (v == null) return '';
+      if (pct) return grand ? (100 * v / grand).toFixed(1) + '%' : '';
+      const n = Math.round(v * 100) / 100;
+      return (isMoney ? '$' : '') + n.toLocaleString('en-US', {minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2});
+    };
+    const label = A + ' of ' + V;
+    const esc = s => String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+    let h = '<table class="t pv"><tr><th>' + esc(R) + (C !== 'none' ? ' ↓ ' + esc(C) + ' →' : '') + '</th>';
+    ck.forEach(c => h += '<th class="n">' + esc(c) + '</th>');
+    h += '<th class="n">' + (C !== 'none' ? 'Grand total' : esc(label)) + '</th></tr>';
+    rk.forEach(r => {
+      const sub = rows.filter(d => d[R] === r);
+      h += '<tr><td class="rl">' + esc(r) + '</td>';
+      ck.forEach(c => h += '<td class="n">' + show(val(sub.filter(d => d[C] === c))) + '</td>');
+      h += '<td class="n gt">' + show(val(sub)) + '</td></tr>';
+    });
+    h += '<tr class="gt"><td>Grand total</td>';
+    ck.forEach(c => h += '<td class="n">' + show(val(rows.filter(d => d[C] === c))) + '</td>');
+    h += '<td class="n">' + show(grand) + '</td></tr></table>';
+    $('#pvOut').innerHTML = rows.length ? h : '<p class="work">No rows match the filter.</p>';
+    $('#pvAR').textContent = R; $('#pvAC').textContent = C === 'none' ? 'none' : C;
+    $('#pvAV').textContent = label + (pct ? ' (% of total)' : '');
+    $('#pvAF').textContent = ff === 'none' ? 'none' : ff + ' = ' + (fv || 'All');
+    const notes = {
+      Sum: 'Sum adds up every ' + V.toLowerCase() + ' value in each group.',
+      Count: 'Count tells you how many rows (sales) are in each group. It ignores the actual amounts.',
+      Average: 'Average = sum ÷ count for each group. The grand total is the average of all ' + rows.length + ' matching rows, not the average of the averages.',
+      Max: 'Max shows the single biggest sale in each group.',
+      Min: 'Min shows the single smallest sale in each group.'
+    };
+    $('#pvNote').textContent = notes[A] + (pct && A !== 'Sum' && A !== 'Count' ? ' (Percent of total makes the most sense with Sum or Count.)' : '') + ' Using ' + rows.length + ' of ' + DATA.length + ' rows.';
+    if (colsSel.value === rowsSel.value && colsSel.value !== 'none') colsSel.value = 'none';
+  }
+  ffSel.addEventListener('input', () => { fillFilterValues(); draw(); });
+  [rowsSel, colsSel, fvSel, $('#pvVal'), $('#pvAgg'), $('#pvPct')].forEach(el => el.addEventListener('input', draw));
+  $('#pvPct').addEventListener('change', draw);
+  document.querySelectorAll('#pvQ button').forEach(b => b.addEventListener('click', () => {
+    const [r, c, v, a] = b.dataset.q.split('|');
+    rowsSel.value = r; colsSel.value = c; $('#pvVal').value = v; $('#pvAgg').value = a; $('#pvPct').checked = false;
+    ffSel.value = 'none'; fillFilterValues(); draw();
+  }));
+  /* raw data table */
+  let raw = '<table class="t"><tr>' + F.map(f => '<th' + (f === 'Units' || f === 'Sales' ? ' class="num"' : '') + '>' + f + '</th>').join('') + '</tr>';
+  DATA.forEach(d => raw += '<tr>' + F.map(f => '<td' + (f === 'Units' || f === 'Sales' ? ' class="num"' : '') + '>' + (f === 'Sales' ? '$' + d[f] : d[f]) + '</td>').join('') + '</tr>');
+  $('#pvRaw').innerHTML = raw + '</table>';
+  fillFilterValues(); draw();
+})();
+</script>
+</body>
+</html>

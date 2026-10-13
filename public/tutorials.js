@@ -1051,5 +1051,13 @@ window.TUTORIALS = [
     category: "Programming",
     tags: ["sql", "learn sql", "database", "select", "where", "group by", "join", "queries", "mysql", "postgresql", "sqlite", "data analysis"],
     minutes: 20
+  },
+  {
+    slug: "excel-pivot-tables",
+    title: "Pivot Tables in Excel and Google Sheets",
+    summary: "Summarize big lists in clicks: rows, columns, values, sum, count, filter, refresh.",
+    category: "Programming",
+    tags: ["pivot table", "excel", "google sheets", "pivottable", "spreadsheet", "summarize data", "sum", "count", "average", "data analysis", "refresh pivot table"],
+    minutes: 15
   }
 ];
