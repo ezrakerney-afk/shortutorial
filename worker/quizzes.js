@@ -2985,5 +2985,49 @@ export default {
         o: ["Make up an answer", "Ignore the question", "Say you don't know, and promise to find out and follow up", "End the talk immediately"], a: 2,
         e: "It's OK not to know. Follow up later, and actually do it." }
     ]
+  },
+
+  "how-the-immune-system-works": {
+    title: "How the Immune System Works",
+    pass: 4,
+    questions: [
+      { q: "What is the main difference between innate and adaptive immunity?",
+        o: ["Innate only works in children", "Innate is fast and general; adaptive targets one specific germ and remembers it", "Adaptive is the skin and mucus", "They are two names for the same thing"], a: 1,
+        e: "Innate immunity reacts to anything foreign right away. Adaptive immunity builds a specific response and keeps memory cells." },
+      { q: "Which cells release antibodies into the blood?",
+        o: ["Neutrophils", "Natural killer cells", "Red blood cells", "Plasma cells (activated B cells)"], a: 3,
+        e: "Activated B cells become plasma cells, which pour out antibodies against one antigen." },
+      { q: "Why can fever help you fight an infection?",
+        o: ["Most germs that infect people grow best around normal body temperature", "It kills all viruses instantly", "It makes antibiotics work on viruses", "It stops white blood cells from moving"], a: 0,
+        e: "MedlinePlus explains most bacteria and viruses grow best around 98.6°F, so a higher temperature works against them." },
+      { q: "Why does a second infection with the same germ usually go faster and milder?",
+        o: ["The germ gets weaker each time", "Fever is higher the second time", "Memory B and T cells recognize it right away", "Antibiotics stay in your body"], a: 2,
+        e: "Memory cells left from the first infection (or a vaccine) start the fast secondary response." },
+      { q: "How does a vaccine protect you?",
+        o: ["It is an antibiotic that kills germs", "It shows your immune system an antigen so it builds memory without you getting the disease", "It works instantly after the shot", "It only works on bacteria"], a: 1,
+        e: "Vaccines imitate an infection to train your defenses. The CDC notes immunity can take weeks to build." }
+    ]
+  },
+
+  "periodic-table-basics": {
+    title: "Periodic Table Basics",
+    pass: 4,
+    questions: [
+      { q: "What decides which element an atom is?",
+        o: ["The number of neutrons", "The number of electrons", "The number of protons", "Its atomic mass"], a: 2,
+        e: "The atomic number, the number of protons, alone decides the element. 6 protons is always carbon." },
+      { q: "An atom has 17 protons, 18 neutrons and 18 electrons. What is its mass number and charge?",
+        o: ["35 and −1", "35 and +1", "18 and 0", "53 and −1"], a: 0,
+        e: "Mass number = 17 + 18 = 35. Charge = 17 − 18 = −1, a chloride ion." },
+      { q: "Why is the atomic mass on the table usually a decimal?",
+        o: ["Electrons add a fraction", "It's an average of the element's natural isotopes", "It's rounded wrong on purpose", "Neutrons weigh half a unit"], a: 1,
+        e: "Atomic mass is a weighted average of all natural isotopes, like carbon-12 and carbon-13." },
+      { q: "What do elements in the same group (column) have in common?",
+        o: ["The same number of neutrons", "The same atomic mass", "The same number of electron shells", "The same number of valence electrons, so they behave alike"], a: 3,
+        e: "Groups share valence electrons. Rows (periods) share the number of shells." },
+      { q: "How many valence electrons does chlorine (group 17) have, and what ion does it usually form?",
+        o: ["1, Cl⁺", "7, Cl⁻", "8, no ion", "17, Cl¹⁷⁻"], a: 1,
+        e: "Groups 13–18: subtract 10, so 7. Chlorine gains one electron to fill its shell and becomes Cl⁻." }
+    ]
   }
 };

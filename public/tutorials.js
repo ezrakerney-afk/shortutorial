@@ -1083,5 +1083,21 @@ window.TUTORIALS = [
     category: "Life skills",
     tags: ["public speaking", "presentation", "speech", "stage fright", "fear of public speaking", "talk outline", "words per minute", "body language", "slides", "Q&A", "toast", "how to give a speech"],
     minutes: 15
+  },
+  {
+    slug: "how-the-immune-system-works",
+    title: "How the Immune System Works",
+    summary: "White blood cells, antibodies, fever, memory cells and how vaccines train your body.",
+    category: "Science",
+    tags: ["immune system", "immunity", "white blood cells", "antibodies", "t cells", "b cells", "vaccines", "fever", "inflammation", "memory cells", "biology", "germs"],
+    minutes: 12
+  },
+  {
+    slug: "periodic-table-basics",
+    title: "Periodic Table Basics",
+    summary: "Atoms, protons and electrons, groups and periods, and valence electrons.",
+    category: "Science",
+    tags: ["periodic table", "chemistry", "atoms", "elements", "protons", "neutrons", "electrons", "atomic number", "isotopes", "ions", "valence electrons", "metals"],
+    minutes: 12
   }
 ];

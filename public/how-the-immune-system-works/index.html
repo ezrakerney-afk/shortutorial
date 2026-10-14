@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How the Immune System Works · Shortutorial</title>
+<meta name="description" content="How your body fights germs: barriers, innate and adaptive immunity, white blood cells, antibodies, fever and inflammation, memory cells, and how vaccines train your immune system. With an infection timeline simulator.">
+<link rel="canonical" href="https://shortutorial.com/how-the-immune-system-works/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How the Immune System Works · Shortutorial">
+<meta property="og:description" content="How your body fights germs: barriers, innate and adaptive immunity, white blood cells, antibodies, fever and inflammation, memory cells, and how vaccines train your immune system. With an infection timeline simulator.">
+<meta property="og:url" content="https://shortutorial.com/how-the-immune-system-works/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+.links small{color:var(--muted);font-size:.9rem;line-height:1.4}
+/* infection timeline */
+.tl-chart{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px}
+.tl-chart svg{width:100%;height:auto;display:block}
+.tl-legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.tl-legend i{display:inline-block;width:14px;height:3px;border-radius:2px;vertical-align:middle;margin-right:5px}
+.tl-day{font-family:var(--display);font-weight:700;font-size:1.25rem}
+.tl-cells{display:flex;flex-wrap:wrap;gap:6px}
+.tl-cells span{font-family:var(--mono);font-size:.78rem;padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:600}
+.tl-feel{font-family:var(--mono);font-size:.82rem;color:var(--muted)}
+.tl-feel b{color:var(--ink)}
+.tl-nav{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.tl-nav input[type=range]{flex:1 1 160px;min-width:0}
+/* match the cell */
+.mc-job{font-family:var(--display);font-weight:600;font-size:1.1rem;line-height:1.4;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.mc-opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px}
+.mc-opts button{font:inherit;font-family:var(--mono);font-size:.85rem;padding:10px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;text-align:left}
+.mc-opts button:hover{border-color:var(--accent)}
+.mc-opts button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.mc-opts button.right{border-color:var(--good);background:color-mix(in srgb,var(--good) 14%,var(--surface))}
+.mc-opts button.wrong{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 12%,var(--surface))}
+.mc-opts button:disabled{cursor:default}
+.mc-score{font-family:var(--mono);font-size:.8rem;color:var(--muted)}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"How the Immune System Works","item":"https://shortutorial.com/how-the-immune-system-works/"}]},{"@type":"Article","@id":"https://shortutorial.com/how-the-immune-system-works/#article","headline":"How the Immune System Works","description":"How your body fights germs: barriers, innate and adaptive immunity, white blood cells, antibodies, fever and inflammation, memory cells, and how vaccines train your immune system. With an infection timeline simulator.","url":"https://shortutorial.com/how-the-immune-system-works/","mainEntityOfPage":"https://shortutorial.com/how-the-immune-system-works/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Science","keywords":"immune system, immunity, white blood cells, antibodies, t cells, b cells, vaccines, fever, inflammation, memory cells, biology, germs","timeRequired":"PT12M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I bring down a fever with medicine?","acceptedAnswer":{"@type":"Answer","text":"A fever itself is part of the fight, so a mild one doesn't always need treatment. Fever reducers can make you more comfortable. Follow the label, never give aspirin to children or teens, and call a doctor using the temperature guidelines in lesson 3."}},{"@type":"Question","name":"What's the difference between innate and adaptive immunity?","acceptedAnswer":{"@type":"Answer","text":"Innate immunity is the fast, general defense you're born with. Adaptive immunity is slower the first time, targets one specific germ with B cells, T cells and antibodies, and remembers it."}},{"@type":"Question","name":"How long do memory cells last?","acceptedAnswer":{"@type":"Answer","text":"It depends on the germ and the vaccine. Some memory lasts for life, like after measles. Other protection fades, which is why some vaccines need boosters."}},{"@type":"Question","name":"Why do I feel sick after a vaccine if it has no live germ?","acceptedAnswer":{"@type":"Answer","text":"A sore arm, tiredness or a mild fever is your immune system responding to the antigen. It's not the disease. These effects usually pass within a day or two."}},{"@type":"Question","name":"Can you “boost” your immune system?","acceptedAnswer":{"@type":"Answer","text":"No pill or food supercharges it. What helps is staying up to date on vaccines, sleeping well, eating a balanced diet, being active, not smoking, and washing your hands."}},{"@type":"Question","name":"What are swollen glands?","acceptedAnswer":{"@type":"Answer","text":"They're lymph nodes, where immune cells gather and get activated. They swell when they're busy fighting a nearby infection and usually shrink back once it clears."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="how-the-immune-system-works">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=science">Science</a> / Immune system</div>
+    <span class="eyebrow">Science · Biology</span>
+    <h1>How the Immune System Works</h1>
+    <p class="lede">Every day your body fights off germs you never notice. Learn who does the fighting, why you get a fever, how your body remembers a germ for years, and how vaccines teach it all ahead of time. Then step through an infection day by day.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~12 min read</span><span class="badge">6 lessons</span><span class="badge">Infection simulator + cell game</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#im1">1 · Layers</a><a href="#im2">2 · First responders</a><a href="#im3">3 · Fever & swelling</a><a href="#im4">4 · Antibodies & T cells</a><a href="#im5">5 · Memory</a><a href="#im6">6 · Vaccines</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="im1">
+    <div class="lesson-head"><span class="step">01</span><h2>Three layers of defense</h2></div>
+    <p>Your immune system is not one organ. It's a team of barriers, cells and proteins spread all over your body, in your blood, skin, gut, bone marrow, lymph nodes, spleen and thymus. Its job is to tell <b>“self”</b> (your own cells) from <b>“not self”</b> (germs, toxins, a splinter) and get rid of what doesn't belong.</p>
+    <p>It works in layers, like a castle with a wall, guards at the gate, and a special forces unit.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Layer</th><th>What it is</th><th>Speed</th></tr>
+      <tr><td><b>1. Barriers</b></td><td>Skin, mucus, tears, stomach acid, coughing and sneezing</td><td>Always on</td></tr>
+      <tr><td><b>2. Innate immunity</b></td><td>White blood cells and proteins that attack anything foreign, the same way every time</td><td>Minutes to hours</td></tr>
+      <tr><td><b>3. Adaptive immunity</b></td><td>B cells and T cells that target one <i>specific</i> germ, and remember it</td><td>Days the first time, faster after that</td></tr>
+    </table></div>
+    <p>A few words you'll see a lot:</p>
+    <ul class="points">
+      <li><b>Pathogen:</b> a germ that can make you sick, like a virus, bacterium, fungus or parasite.</li>
+      <li><b>Antigen:</b> a marker the immune system can recognize, usually a protein on the surface of a germ. Think of it as the germ's “name tag.”</li>
+      <li><b>White blood cells</b> (leukocytes): the immune system's cells. They're made in your bone marrow and travel in your blood and lymph.</li>
+    </ul>
+    <p class="callout"><span><b>Innate vs adaptive in one line.</b> You're born with innate immunity, and it reacts to anything suspicious. Adaptive immunity is learned. It builds a custom response to each new germ and keeps a memory of it.</span></p>
+  </section>
+
+  <section class="lesson" id="im2">
+    <div class="lesson-head"><span class="step">02</span><h2>The first responders</h2></div>
+    <p>When a germ gets past your skin, through a cut or the lining of your nose, innate immune cells arrive within minutes to hours. They don't need to have seen this germ before.</p>
+    <div class="grid2">
+      <div><span class="tagline">Eaters</span><h3>Neutrophils</h3><p>The most common white blood cell. They rush in first and swallow bacteria. Pus is largely dead neutrophils and debris.</p></div>
+      <div><span class="tagline">Eaters + alarm</span><h3>Macrophages</h3><p>“Big eaters” that live in your tissues. They engulf germs and dead cells and send out chemical signals that call for help.</p></div>
+      <div><span class="tagline">Messengers</span><h3>Dendritic cells</h3><p>They grab pieces of a germ and carry them to the nearest lymph node, where they show them to B and T cells. This is the bridge to adaptive immunity.</p></div>
+      <div><span class="tagline">Assassins</span><h3>Natural killer cells</h3><p>They spot your own cells that are infected by a virus or turning cancerous, and kill them before the problem spreads.</p></div>
+    </div>
+    <p>Cells that eat germs are called <b>phagocytes</b> (“eating cells”). Helping them is a set of blood proteins called <b>complement</b>, which coat germs so they're easier to eat and can punch holes in some bacteria.</p>
+    <p class="callout"><span><b>Why swollen glands?</b> Lymph nodes are the meeting points where immune cells trade information. When they're busy fighting an infection nearby, they fill with cells and swell. That's why your neck glands get tender with a sore throat.</span></p>
+  </section>
+
+  <section class="lesson" id="im3">
+    <div class="lesson-head"><span class="step">03</span><h2>Inflammation and fever</h2></div>
+    <p>Feeling sick is often your immune system working. Two of the biggest signs are inflammation and fever.</p>
+    <h3>Inflammation: the redness and swelling</h3>
+    <p>When tissue is hurt or infected, damaged cells release chemicals such as <b>histamine</b>. Nearby blood vessels widen and leak fluid. That brings more blood and immune cells to the spot, and walls off the problem. You notice the classic signs:</p>
+    <ul class="points">
+      <li><b>Redness</b> and <b>heat</b> from extra blood flow</li>
+      <li><b>Swelling</b> from leaked fluid</li>
+      <li><b>Pain</b> from pressure and chemical signals, which tells you to protect the area</li>
+    </ul>
+    <h3>Fever: turning up the heat</h3>
+    <p>Immune cells release signaling chemicals that tell your brain to raise your body's set point. You feel chills and shiver while your body warms up. MedlinePlus calls fever “an important part of the body's defense against infection,” because most germs that infect people grow best around normal body temperature, 98.6°F (37°C).</p>
+    <div class="example"><div class="ex-h">What counts as a fever in a child (MedlinePlus)</div><ol><li>100.4°F (38°C) or higher, taken in the bottom (rectal)</li><li>99.5°F (37.5°C) or higher, taken in the mouth</li><li>99°F (37.2°C) or higher, taken under the arm</li></ol></div>
+    <p class="callout warn"><span><b>When to call a doctor right away</b> (from MedlinePlus): a baby 3 months or younger with a rectal temperature of 100.4°F (38°C) or higher; a baby 3 to 12 months with a fever of 102.2°F (39°C) or higher; a child 2 or younger with a fever lasting more than 24 to 48 hours; an adult with a fever of 105°F (40.6°C) or higher (unless it comes down with treatment and you're comfortable), one that stays at or above 103°F (39.4°C), or one lasting more than 48 to 72 hours. Get emergency care for a fever with a stiff neck, confusion, trouble breathing or a seizure.</span></p>
+  </section>
+
+  <section class="lesson" id="im4">
+    <div class="lesson-head"><span class="step">04</span><h2>The specialists: B cells, antibodies and T cells</h2></div>
+    <p>Adaptive immunity uses two kinds of white blood cells called <b>lymphocytes</b>: B cells and T cells. Your body makes millions of different ones, and each recognizes just <i>one</i> antigen shape. When a dendritic cell shows up in a lymph node carrying a germ's antigen, the few B and T cells that match it get switched on and start copying themselves by the thousands.</p>
+    <div class="grid2">
+      <div><span class="tagline">Coordinators</span><h3>Helper T cells</h3><p>The “generals.” They recognize the antigen and release signals that activate B cells and killer T cells. HIV damages these cells, which is why it weakens the whole immune system.</p></div>
+      <div><span class="tagline">Cell killers</span><h3>Killer T cells</h3><p>Also called cytotoxic T cells. They find your own cells that a virus has taken over and destroy them, stopping the virus from making more copies.</p></div>
+      <div><span class="tagline">Antibody makers</span><h3>B cells and plasma cells</h3><p>Activated B cells turn into plasma cells, tiny factories that pour out <b>antibodies</b> into your blood.</p></div>
+      <div><span class="tagline">Tags and blockers</span><h3>Antibodies</h3><p>Y-shaped proteins that lock onto one antigen. They block germs from entering cells, clump them together, and flag them for phagocytes to eat.</p></div>
+    </div>
+    <p class="callout"><span><b>Lock and key.</b> An antibody fits its antigen like a key in a lock. Antibodies against measles do nothing against the flu. That's why the adaptive system is called <i>specific</i>, and why it takes several days to find and grow the right cells the first time.</span></p>
+
+    <div class="try" id="mc"><span class="try-h">Try it · match the cell to its job</span>
+      <p class="mc-score" id="mcScore" aria-live="polite">Round 1 of 8 · Score 0</p>
+      <div class="mc-job" id="mcJob"></div>
+      <div class="mc-opts" id="mcOpts" role="group" aria-label="Pick a cell"></div>
+      <p class="work" id="mcMsg" aria-live="polite"></p>
+      <div class="row"><button class="btn" type="button" id="mcNext" disabled>Next job</button><button class="btn ghost" type="button" id="mcRestart">Restart</button></div>
+    </div>
+  </section>
+
+  <section class="lesson" id="im5">
+    <div class="lesson-head"><span class="step">05</span><h2>Memory: why you rarely catch some things twice</h2></div>
+    <p>After an infection is beaten, most of the extra B and T cells die off. But some stay behind as <b>memory cells</b>. They can live for years, sometimes for life, and they recognize the germ the moment it shows up again.</p>
+    <div class="grid2">
+      <div><span class="tagline">First time</span><h3>Primary response</h3><p>Slow. It takes days to find and grow the right cells, so the germ has time to multiply and you usually feel sick.</p></div>
+      <div><span class="tagline">Next time</span><h3>Secondary response</h3><p>Fast and strong. Memory cells jump into action and antibody levels climb higher and quicker. Often the germ is gone before you feel anything.</p></div>
+    </div>
+    <p>So why can you catch a cold or the flu again and again? Because there are many different cold viruses, and flu viruses keep changing their antigens a little each year. Your memory cells are watching for the old “name tag,” and the new version looks different enough to slip by. That's why the flu vaccine is updated every year.</p>
+
+    <div class="try" id="tl"><span class="try-h">Try it · infection timeline simulator</span>
+      <div class="chipset" id="tlMode" aria-label="Scenario"><button type="button" data-m="first" aria-pressed="true">First time meeting this germ</button><button type="button" data-m="immune" aria-pressed="false">Already immune (vaccinated or had it)</button></div>
+      <div class="tl-chart">
+        <svg id="tlSvg" viewBox="0 0 320 170" role="img" aria-label="Chart of germ level and antibody level over 14 days"></svg>
+        <div class="tl-legend"><span><i style="background:var(--bad)"></i>Germs</span><span><i style="background:var(--accent)"></i>Antibodies</span><span><i style="background:var(--amber)"></i>About where you feel sick</span></div>
+      </div>
+      <div class="tl-nav"><button class="btn ghost" type="button" id="tlPrev" aria-label="Previous day">◀ Day</button><input type="range" id="tlDay" min="0" max="14" step="1" value="0" aria-label="Day of infection"><button class="btn" type="button" id="tlNext" aria-label="Next day">Day ▶</button></div>
+      <div class="tl-day" id="tlTitle" aria-live="polite"></div>
+      <p id="tlText"></p>
+      <div class="tl-cells" id="tlCells" aria-label="Who is working now"></div>
+      <p class="tl-feel" id="tlFeel"></p>
+      <p class="work">A simplified picture for learning, not real patient data. Real timing depends on the germ and the person.</p>
+    </div>
+  </section>
+
+  <section class="lesson" id="im6">
+    <div class="lesson-head"><span class="step">06</span><h2>How vaccines train your immune system</h2></div>
+    <p>A vaccine is a practice run. It shows your immune system an <b>antigen</b> from a germ, without making you sick with the disease. Your B and T cells respond, and you end up with memory cells. If you meet the real germ later, you get the fast secondary response from lesson 5 instead of the slow first one.</p>
+    <p>The CDC explains it this way: vaccines imitate an infection to engage the body's natural defenses. Protection takes time. Immunity can take <b>weeks</b> to build after a shot, so you can still get sick in that window.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Vaccine type</th><th>What it uses</th><th>Examples</th></tr>
+      <tr><td>Live-attenuated</td><td>A weakened form of the germ</td><td>MMR, chickenpox, rotavirus</td></tr>
+      <tr><td>Inactivated</td><td>A killed version of the germ</td><td>Polio shot, hepatitis A, rabies</td></tr>
+      <tr><td>Subunit, recombinant, conjugate</td><td>Just a piece, like a protein or sugar from its surface</td><td>Hepatitis B, HPV, shingles, whooping cough</td></tr>
+      <tr><td>Toxoid</td><td>An inactivated toxin the germ makes</td><td>Tetanus, diphtheria</td></tr>
+      <tr><td>mRNA</td><td>Instructions that let your cells make one harmless germ protein for a short time</td><td>COVID-19</td></tr>
+      <tr><td>Viral vector</td><td>A harmless, modified virus that delivers the instructions</td><td>Ebola</td></tr>
+    </table></div>
+    <ul class="points">
+      <li><b>Why boosters?</b> Some vaccines need several doses to build strong, lasting memory. HHS notes that inactivated vaccines often need booster doses over time, while live vaccines can give long-lasting protection after one or two doses.</li>
+      <li><b>Sore arm or mild fever after a shot?</b> That's usually your innate immune system reacting, the same inflammation from lesson 3. It typically passes in a day or two.</li>
+      <li><b>Community protection.</b> When most people are immune, a germ has trouble spreading, which helps protect babies too young for some vaccines and people whose immune systems are weak.</li>
+    </ul>
+    <h3>When the system misfires</h3>
+    <ul class="points">
+      <li><b>Allergies:</b> the immune system overreacts to something harmless, like pollen or peanuts.</li>
+      <li><b>Autoimmune diseases:</b> it mistakes your own tissue for “not self,” as in type 1 diabetes or rheumatoid arthritis.</li>
+      <li><b>Immunodeficiency:</b> part of the system is missing or weakened, from birth or from things like HIV, chemotherapy or some medicines.</li>
+    </ul>
+    <p class="callout"><span><b>Antibiotics vs viruses.</b> Antibiotics kill bacteria. They do nothing against viruses like colds and flu. For viral infections, your immune system does the work (sometimes with antiviral medicine).</span></p>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Should I bring down a fever with medicine?</summary><div class="a"><p>A fever itself is part of the fight, so a mild one doesn't always need treatment. Fever reducers can make you more comfortable. Follow the label, never give aspirin to children or teens, and call a doctor using the temperature guidelines in lesson 3.</p></div></details>
+      <details><summary>What's the difference between innate and adaptive immunity?</summary><div class="a"><p>Innate immunity is the fast, general defense you're born with. Adaptive immunity is slower the first time, targets one specific germ with B cells, T cells and antibodies, and remembers it.</p></div></details>
+      <details><summary>How long do memory cells last?</summary><div class="a"><p>It depends on the germ and the vaccine. Some memory lasts for life, like after measles. Other protection fades, which is why some vaccines need boosters.</p></div></details>
+      <details><summary>Why do I feel sick after a vaccine if it has no live germ?</summary><div class="a"><p>A sore arm, tiredness or a mild fever is your immune system responding to the antigen. It's not the disease. These effects usually pass within a day or two.</p></div></details>
+      <details><summary>Can you “boost” your immune system?</summary><div class="a"><p>No pill or food supercharges it. What helps is staying up to date on vaccines, sleeping well, eating a balanced diet, being active, not smoking, and washing your hands.</p></div></details>
+      <details><summary>What are swollen glands?</summary><div class="a"><p>They're lymph nodes, where immune cells gather and get activated. They swell when they're busy fighting a nearby infection and usually shrink back once it clears.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://www.cdc.gov/vaccines/basics/explaining-how-vaccines-work.html" target="_blank" rel="noopener"><span class="src">CDC</span><b>Explaining how vaccines work</b></a>
+      <a href="https://www.hhs.gov/immunization/basics/types/index.html" target="_blank" rel="noopener"><span class="src">U.S. HHS</span><b>Vaccine types</b></a>
+      <a href="https://www.niaid.nih.gov/research/immune-system-overview" target="_blank" rel="noopener"><span class="src">NIH · NIAID</span><b>Overview of the immune system</b></a>
+      <a href="https://medlineplus.gov/ency/article/000821.htm" target="_blank" rel="noopener"><span class="src">MedlinePlus (NIH)</span><b>Immune response</b></a>
+      <a href="https://medlineplus.gov/ency/article/003090.htm" target="_blank" rel="noopener"><span class="src">MedlinePlus (NIH)</span><b>Fever: when to call a provider</b></a>
+      <a href="https://www.ncbi.nlm.nih.gov/books/NBK279364/" target="_blank" rel="noopener"><span class="src">InformedHealth.org (NIH NCBI)</span><b>How does the immune system work?</b></a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">GO</span>Keep learning elsewhere</h2>
+    <div class="links">
+      <a href="https://www.khanacademy.org/science/biology/human-biology/immunology" target="_blank" rel="noopener"><span class="src">Khan Academy · free</span><b>Immunology unit</b><small>Videos and practice on B cells, T cells and antibodies, in more detail.</small></a>
+      <a href="https://www.youtube.com/watch?v=GIJK3dwCWCw" target="_blank" rel="noopener"><span class="src">Crash Course · YouTube</span><b>Immune System, Part 1</b><small>A fast, fun 10-minute video, the first of a three-part series.</small></a>
+      <a href="https://medlineplus.gov/immunesystemanddisorders.html" target="_blank" rel="noopener"><span class="src">MedlinePlus · free</span><b>Immune system and disorders</b><small>Trusted NIH health pages on allergies, autoimmune disease and more.</small></a>
+      <a href="https://www.ncbi.nlm.nih.gov/books/NBK279364/" target="_blank" rel="noopener"><span class="src">InformedHealth.org · free</span><b>The immune system, in plain language</b><small>Short, readable articles from a public health institute.</small></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>For learning only, not medical advice. Ask a doctor or pharmacist about your own health and vaccines.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script src="../comments.js"></script>
+<script>
+(function(){
+  /* ---------- Match the cell ---------- */
+  const CELLS = ['Neutrophil','Macrophage','Dendritic cell','Natural killer cell','Helper T cell','Killer T cell','Plasma cell','Memory cell'];
+  const JOBS = [
+    ['Neutrophil', 'I\'m the most common white blood cell. I rush to an infection first and swallow bacteria. Lots of us dead together make pus.'],
+    ['Macrophage', 'I live in your tissues, eat germs and dead cells, and send out chemical alarms that call for backup.'],
+    ['Dendritic cell', 'I grab pieces of a germ and carry them to a lymph node to show B and T cells what to look for.'],
+    ['Natural killer cell', 'I\'m part of innate immunity. I spot your own cells infected by a virus or turning cancerous and kill them.'],
+    ['Helper T cell', 'I\'m the coordinator. I recognize an antigen and release signals that switch on B cells and killer T cells.'],
+    ['Killer T cell', 'I\'m adaptive and specific. I destroy your body\'s cells that one particular virus has taken over.'],
+    ['Plasma cell', 'I used to be a B cell. Now I\'m a factory pumping out thousands of antibodies against one antigen.'],
+    ['Memory cell', 'I stay behind after the infection is gone, sometimes for decades, ready to react fast if the same germ returns.']
+  ];
+  let order = [], round = 0, score = 0;
+  const opts = $('#mcOpts'), next = $('#mcNext');
+  function shuffle(a){ a = a.slice(); for (let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+  function showRound(){
+    const [ans, job] = order[round];
+    $('#mcScore').textContent = `Round ${round + 1} of ${order.length} · Score ${score}`;
+    $('#mcJob').textContent = '“' + job + '”';
+    $('#mcMsg').textContent = 'Who am I?';
+    $('#mcMsg').className = 'work';
+    opts.innerHTML = '';
+    shuffle(CELLS).forEach(c => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.textContent = c;
+      b.addEventListener('click', () => pick(b, c, ans));
+      opts.appendChild(b);
+    });
+    next.disabled = true;
+    next.textContent = round === order.length - 1 ? 'See score' : 'Next job';
+  }
+  function pick(btn, c, ans){
+    opts.querySelectorAll('button').forEach(b => { b.disabled = true; if (b.textContent === ans) b.classList.add('right'); });
+    if (c === ans){ score++; $('#mcMsg').textContent = 'Right! ' + ans + '.'; $('#mcMsg').className = 'work ok'; }
+    else { btn.classList.add('wrong'); $('#mcMsg').textContent = 'Not quite. That was the ' + ans.toLowerCase() + '.'; $('#mcMsg').className = 'work no'; }
+    $('#mcScore').textContent = `Round ${round + 1} of ${order.length} · Score ${score}`;
+    next.disabled = false; next.focus();
+  }
+  next.addEventListener('click', () => {
+    round++;
+    if (round >= order.length){
+      $('#mcJob').textContent = `You matched ${score} of ${order.length} cells.`;
+      $('#mcMsg').textContent = score === order.length ? 'Perfect. You know your immune team.' : 'Review lessons 2 and 4, then try again.';
+      $('#mcMsg').className = 'work';
+      opts.innerHTML = ''; next.disabled = true; return;
+    }
+    showRound();
+  });
+  function restart(){ order = shuffle(JOBS); round = 0; score = 0; showRound(); }
+  $('#mcRestart').addEventListener('click', restart);
+  restart();
+
+  /* ---------- Infection timeline ---------- */
+  const D = {
+    first: {
+      germ: [5,15,35,60,80,92,90,75,52,30,15,7,3,1,0],
+      ab:   [0,0,0,0,2,6,15,30,50,70,85,92,95,96,96],
+      steps: [
+        [0,0,'Germs get in','A virus gets past your barriers, maybe through the lining of your nose. Skin, mucus and coughing stop most germs, but a few make it inside and start copying themselves.',['Barriers','Macrophages'],'You feel fine. You have no idea yet.'],
+        [1,1,'The alarm goes off','Macrophages and neutrophils attack and release chemical alarms. Blood vessels widen and leak, causing inflammation. Dendritic cells grab pieces of the germ and head to the nearest lymph node.',['Macrophages','Neutrophils','Dendritic cells'],'Maybe a scratchy throat or a runny nose.'],
+        [2,3,'Germs are winning (for now)','The germs multiply faster than the innate team can clear them. Signals from immune cells tell your brain to raise your temperature. Natural killer cells destroy infected cells.',['Neutrophils','Macrophages','Natural killer cells'],'Fever, chills, aches, tired. Your lymph nodes may swell.'],
+        [4,6,'Finding the right specialists','In the lymph nodes, helper T cells and B cells that match this germ\'s antigen are switched on and start copying themselves by the thousands. This takes days the first time.',['Helper T cells','B cells','Killer T cells'],'Usually the worst days.'],
+        [7,9,'The counterattack','Plasma cells flood your blood with antibodies that block and tag the germ. Killer T cells wipe out infected cells. Germ levels fall fast.',['Plasma cells','Antibodies','Killer T cells'],'Turning the corner. The fever breaks.'],
+        [10,14,'Cleanup and memory','The germ is gone. Most of the extra immune cells die off, but memory B and T cells stay behind, sometimes for years, ready for next time.',['Memory B cells','Memory T cells','Macrophages'],'Recovered, maybe still a little tired.']
+      ]
+    },
+    immune: {
+      germ: [5,12,16,12,5,2,0,0,0,0,0,0,0,0,0],
+      ab:   [20,22,35,60,85,95,97,97,96,96,95,95,94,94,94],
+      steps: [
+        [0,0,'Germs get in','The same germ gets past your barriers. But this time some antibodies from your vaccine or past infection are already in your blood, waiting.',['Barriers','Antibodies','Macrophages'],'You feel fine.'],
+        [1,1,'Recognized right away','Innate cells respond as usual, and memory B and T cells recognize the antigen almost immediately. No long search for the right cells is needed.',['Memory B cells','Memory T cells','Neutrophils'],'Fine, or a slight sniffle.'],
+        [2,3,'Fast, strong response','Memory cells multiply fast. Plasma cells pump out large amounts of antibodies, quicker and higher than the first time. The germ never gets a chance to build up.',['Plasma cells','Antibodies','Killer T cells'],'Usually no symptoms, or a mild, short illness.'],
+        [4,6,'Germ cleared','The germ is gone days earlier than in a first infection, often before it ever reached the level that makes you feel sick.',['Antibodies','Macrophages'],'Fine.'],
+        [7,14,'Memory gets even stronger','Meeting the germ again gives your memory cells a boost, a bit like a booster dose.',['Memory B cells','Memory T cells'],'Fine. You may never know you were exposed.']
+      ]
+    }
+  };
+  let mode = 'first';
+  const day = $('#tlDay'), svg = $('#tlSvg');
+  const X0 = 26, X1 = 312, Y0 = 140, Y1 = 10;
+  const px = d => X0 + (X1 - X0) * d / 14, py = v => Y0 - (Y0 - Y1) * v / 100;
+  const path = arr => arr.map((v, i) => (i ? 'L' : 'M') + px(i).toFixed(1) + ' ' + py(v).toFixed(1)).join(' ');
+  function draw(d){
+    const m = D[mode];
+    let ticks = '';
+    for (let i = 0; i <= 14; i += 2) ticks += `<text x="${px(i)}" y="158" text-anchor="middle" style="fill:var(--muted);font:10px var(--mono)">${i}</text>`;
+    svg.innerHTML =
+      `<line x1="${X0}" y1="${Y0}" x2="${X1}" y2="${Y0}" style="stroke:var(--line)"/>` +
+      `<line x1="${X0}" y1="${Y1}" x2="${X0}" y2="${Y0}" style="stroke:var(--line)"/>` +
+      `<line x1="${X0}" y1="${py(50)}" x2="${X1}" y2="${py(50)}" style="stroke:var(--amber);stroke-dasharray:4 4"/>` +
+      ticks + `<text x="${X1}" y="168" text-anchor="end" style="fill:var(--muted);font:10px var(--mono)">day</text>` +
+      `<text x="4" y="${Y1 + 4}" style="fill:var(--muted);font:10px var(--mono)">hi</text><text x="4" y="${Y0}" style="fill:var(--muted);font:10px var(--mono)">0</text>` +
+      `<path d="${path(m.germ)}" style="fill:none;stroke:var(--bad);stroke-width:2.5;stroke-linejoin:round"/>` +
+      `<path d="${path(m.ab)}" style="fill:none;stroke:var(--accent);stroke-width:2.5;stroke-linejoin:round"/>` +
+      `<line x1="${px(d)}" y1="${Y1}" x2="${px(d)}" y2="${Y0}" style="stroke:var(--ink);stroke-width:1.5;opacity:.6"/>` +
+      `<circle cx="${px(d)}" cy="${py(m.germ[d])}" r="4" style="fill:var(--bad)"/>` +
+      `<circle cx="${px(d)}" cy="${py(m.ab[d])}" r="4" style="fill:var(--accent)"/>`;
+  }
+  function render(){
+    const d = +day.value, m = D[mode];
+    const s = m.steps.find(x => d >= x[0] && d <= x[1]);
+    $('#tlTitle').textContent = 'Day ' + d + ': ' + s[2];
+    $('#tlText').textContent = s[3];
+    $('#tlCells').innerHTML = s[4].map(c => `<span>${c}</span>`).join('');
+    $('#tlFeel').innerHTML = '<b>How you feel:</b> ' + s[5];
+    $('#tlPrev').disabled = d === 0; $('#tlNext').disabled = d === 14;
+    draw(d);
+  }
+  $('#tlPrev').addEventListener('click', () => { day.value = Math.max(0, +day.value - 1); render(); });
+  $('#tlNext').addEventListener('click', () => { day.value = Math.min(14, +day.value + 1); render(); });
+  day.addEventListener('input', render);
+  document.querySelectorAll('#tlMode button').forEach(b => b.addEventListener('click', () => {
+    mode = b.dataset.m;
+    document.querySelectorAll('#tlMode button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    render();
+  }));
+  render();
+})();
+</script>
+</body>
+</html>

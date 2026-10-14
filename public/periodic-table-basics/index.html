@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Periodic Table Basics · Shortutorial</title>
+<meta name="description" content="Learn how to read the periodic table: atoms, protons, neutrons and electrons, atomic number and mass, isotopes and ions, groups and periods, metals vs nonmetals, and valence electrons. Build atoms with an interactive atom builder.">
+<link rel="canonical" href="https://shortutorial.com/periodic-table-basics/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Periodic Table Basics · Shortutorial">
+<meta property="og:description" content="Learn how to read the periodic table: atoms, protons, neutrons and electrons, atomic number and mass, isotopes and ions, groups and periods, metals vs nonmetals, and valence electrons. Build atoms with an interactive atom builder.">
+<meta property="og:url" content="https://shortutorial.com/periodic-table-basics/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+.links small{color:var(--muted);font-size:.9rem;line-height:1.4}
+/* element square */
+.sq{display:inline-grid;grid-template-rows:auto auto auto auto;justify-items:center;gap:2px;min-width:130px;padding:12px 16px;border:2px solid var(--ink);border-radius:10px;background:var(--surface);font-family:var(--mono)}
+.sq .z{justify-self:start;font-size:.9rem;font-weight:600}
+.sq .sym{font-family:var(--display);font-size:2.6rem;font-weight:700;line-height:1}
+.sq .nm{font-size:.82rem}
+.sq .ms{font-size:.82rem;color:var(--muted)}
+.sq-wrap{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.sq-key{display:flex;flex-direction:column;gap:6px;font-size:.95rem;min-width:0;flex:1 1 200px}
+/* atom builder */
+.ab-ctrls{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.ab-c{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.ab-c small{font-family:var(--mono);font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.ab-c .pm{display:flex;align-items:center;gap:8px;justify-content:space-between}
+.ab-c .pm b{font-family:var(--display);font-size:1.5rem;min-width:2ch;text-align:center;font-variant-numeric:tabular-nums}
+.ab-c .pm button{font:inherit;font-family:var(--mono);font-weight:600;font-size:1.1rem;width:40px;height:40px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.ab-c .pm button:hover{border-color:var(--accent)}
+.ab-c .pm button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.ab-c .pm button:disabled{opacity:.4;cursor:default}
+.ab-out{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.ab-out svg{width:200px;max-width:100%;height:auto;flex:none}
+.ab-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;flex:1 1 180px;min-width:0}
+.ab-facts div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 10px;min-width:0}
+.ab-facts small{display:block;font-family:var(--mono);font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.ab-facts b{font-family:var(--display);font-size:1.05rem;color:var(--accent);overflow-wrap:anywhere}
+/* mini table */
+.pt{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:4px}
+.pt .gh{font-family:var(--mono);font-size:.62rem;color:var(--muted);text-align:center}
+.pt button{font:inherit;font-family:var(--mono);aspect-ratio:1/1;min-width:0;padding:2px;border-radius:7px;border:1.5px solid transparent;cursor:pointer;color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.05}
+.pt button span{font-size:.58rem;opacity:.75}
+.pt button b{font-family:var(--display);font-size:1rem}
+.pt button[aria-pressed=true]{border-color:var(--ink);box-shadow:0 0 0 2px var(--accent)}
+.pt button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.pt .gap{grid-column:span 6;font-family:var(--mono);font-size:.62rem;color:var(--muted);display:flex;align-items:center;justify-content:center;text-align:center;border:1px dashed var(--line);border-radius:7px;padding:2px}
+.k-alk{background:color-mix(in srgb,#e8590c 26%,var(--surface))}
+.k-ae{background:color-mix(in srgb,#f59f00 26%,var(--surface))}
+.k-met{background:color-mix(in srgb,#868e96 26%,var(--surface))}
+.k-mtd{background:color-mix(in srgb,#2b8a3e 24%,var(--surface))}
+.k-non{background:color-mix(in srgb,#1c7ed6 24%,var(--surface))}
+.k-hal{background:color-mix(in srgb,#ae3ec9 24%,var(--surface))}
+.k-nob{background:color-mix(in srgb,#0ca678 24%,var(--surface))}
+.pt-key{display:flex;flex-wrap:wrap;gap:6px;font-family:var(--mono);font-size:.7rem}
+.pt-key span{padding:2px 8px;border-radius:99px;color:var(--ink)}
+.pt-card{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.pt-card .sq{min-width:110px}
+.pt-card ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:4px;flex:1 1 180px;min-width:0;font-size:.95rem}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"Periodic Table Basics","item":"https://shortutorial.com/periodic-table-basics/"}]},{"@type":"Article","@id":"https://shortutorial.com/periodic-table-basics/#article","headline":"Periodic Table Basics","description":"Learn how to read the periodic table: atoms, protons, neutrons and electrons, atomic number and mass, isotopes and ions, groups and periods, metals vs nonmetals, and valence electrons. Build atoms with an interactive atom builder.","url":"https://shortutorial.com/periodic-table-basics/","mainEntityOfPage":"https://shortutorial.com/periodic-table-basics/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Science","keywords":"periodic table, chemistry, atoms, elements, protons, neutrons, electrons, atomic number, isotopes, ions, valence electrons, metals","timeRequired":"PT12M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many elements are there?","acceptedAnswer":{"@type":"Answer","text":"118 are known and named. The newest, up to oganesson (element 118), were made in labs and last only fractions of a second."}},{"@type":"Question","name":"What's the difference between atomic number and mass number?","acceptedAnswer":{"@type":"Answer","text":"Atomic number is the number of protons and tells you the element. Mass number is protons plus neutrons for one specific atom. The decimal atomic mass on the table is an average over all natural isotopes."}},{"@type":"Question","name":"Why is hydrogen in group 1 if it isn't a metal?","acceptedAnswer":{"@type":"Answer","text":"It has 1 valence electron like the alkali metals, so it's placed above them. But it's a gas and behaves like a nonmetal under normal conditions."}},{"@type":"Question","name":"Can an atom change into a different element?","acceptedAnswer":{"@type":"Answer","text":"Only if its number of protons changes, which takes a nuclear reaction such as radioactive decay. Chemical reactions only move electrons around, so the elements stay the same."}},{"@type":"Question","name":"Why don't noble gases react?","acceptedAnswer":{"@type":"Answer","text":"Their outer shell is already full, so they have no need to gain, lose or share electrons. A few heavy ones can be forced to react in a lab."}},{"@type":"Question","name":"What are the rows at the bottom of the table?","acceptedAnswer":{"@type":"Answer","text":"The lanthanides and actinides. They belong in periods 6 and 7 but are shown separately so the table isn't too wide."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="periodic-table-basics">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=science">Science</a> / Periodic table</div>
+    <span class="eyebrow">Science · Chemistry</span>
+    <h1>Periodic Table Basics</h1>
+    <p class="lede">Everything around you is built from about a hundred kinds of atoms. Learn what's inside an atom, how to read every square on the periodic table, and why its rows and columns predict how elements behave. Then build your own atoms.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~12 min read</span><span class="badge">6 lessons</span><span class="badge">Atom builder + mini table</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#pt1">1 · Atoms</a><a href="#pt2">2 · Number & mass</a><a href="#pt3">3 · Read a square</a><a href="#pt4">4 · Groups & periods</a><a href="#pt5">5 · Metals & nonmetals</a><a href="#pt6">6 · Valence electrons</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="pt1">
+    <div class="lesson-head"><span class="step">01</span><h2>Atoms and the three particles</h2></div>
+    <p>An <b>element</b> is a pure substance made of only one kind of atom: hydrogen, carbon, gold. There are <b>118</b> known elements, and the periodic table lists them all. Everything else (water, salt, you) is elements joined together.</p>
+    <p>An <b>atom</b> is the smallest piece of an element that's still that element. It has a tiny, heavy center called the <b>nucleus</b>, surrounded by a cloud of electrons.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Particle</th><th>Charge</th><th>Mass</th><th>Where</th></tr>
+      <tr><td><b>Proton</b></td><td>+1</td><td>about 1 u</td><td>Nucleus</td></tr>
+      <tr><td><b>Neutron</b></td><td>0</td><td>about 1 u</td><td>Nucleus</td></tr>
+      <tr><td><b>Electron</b></td><td>−1</td><td>about 1/1800 u (tiny)</td><td>Around the nucleus</td></tr>
+    </table></div>
+    <p>The “u” is the <b>atomic mass unit</b>, roughly the mass of one proton. Because electrons are so light, nearly all of an atom's mass is in its nucleus, even though the nucleus is a tiny fraction of the atom's size.</p>
+    <p class="callout"><span><b>How small?</b> If an atom were the size of a football stadium, the nucleus would be about the size of a pea on the 50-yard line. The rest is mostly empty space where the electrons move.</span></p>
+  </section>
+
+  <section class="lesson" id="pt2">
+    <div class="lesson-head"><span class="step">02</span><h2>Atomic number, mass number, isotopes and ions</h2></div>
+    <p>Three simple rules tell you almost everything about an atom:</p>
+    <div class="formula">Atomic number = <span class="v">protons</span><small>This alone decides which element it is. 6 protons is always carbon.</small></div>
+    <div class="formula">Mass number = <span class="v">protons + neutrons</span><small>Electrons are too light to count.</small></div>
+    <div class="formula">Charge = <span class="v">protons − electrons</span><small>Equal numbers means neutral (charge 0).</small></div>
+    <ul class="points">
+      <li><b>Isotopes</b> are atoms of the same element with different numbers of neutrons. Carbon-12 has 6 neutrons, carbon-14 has 8. Same element, different mass. Some isotopes, like carbon-14, are radioactive.</li>
+      <li><b>Ions</b> are atoms that gained or lost electrons. Lose electrons and you get a positive ion (Na⁺). Gain electrons and you get a negative ion (Cl⁻). Changing electrons never changes the element.</li>
+    </ul>
+    <div class="example"><div class="ex-h">Example · an atom with 17 protons, 18 neutrons and 18 electrons</div><ol><li>17 protons → atomic number 17 → chlorine</li><li>Mass number = 17 + 18 = 35 → chlorine-35</li><li>Charge = 17 − 18 = −1</li><li class="ans">A chloride ion, Cl⁻, the “chloride” in sodium chloride (table salt)</li></ol></div>
+
+    <div class="try" id="ab"><span class="try-h">Try it · atom builder</span>
+      <div class="ab-ctrls">
+        <div class="ab-c"><small>Protons (+)</small><div class="pm"><button type="button" data-k="p" data-d="-1" aria-label="Remove a proton">−</button><b id="abP">6</b><button type="button" data-k="p" data-d="1" aria-label="Add a proton">+</button></div></div>
+        <div class="ab-c"><small>Neutrons (0)</small><div class="pm"><button type="button" data-k="n" data-d="-1" aria-label="Remove a neutron">−</button><b id="abN">6</b><button type="button" data-k="n" data-d="1" aria-label="Add a neutron">+</button></div></div>
+        <div class="ab-c"><small>Electrons (−)</small><div class="pm"><button type="button" data-k="e" data-d="-1" aria-label="Remove an electron">−</button><b id="abE">6</b><button type="button" data-k="e" data-d="1" aria-label="Add an electron">+</button></div></div>
+      </div>
+      <div class="chipset" id="abPre" aria-label="Try these"><button type="button" data-v="1,0,1" aria-pressed="false">Hydrogen</button><button type="button" data-v="2,2,2" aria-pressed="false">Helium-4</button><button type="button" data-v="6,8,6" aria-pressed="false">Carbon-14</button><button type="button" data-v="11,12,10" aria-pressed="false">Na⁺ ion</button><button type="button" data-v="8,8,10" aria-pressed="false">O²⁻ ion</button><button type="button" data-v="19,21,19" aria-pressed="false">Potassium-40</button></div>
+      <div class="ab-out">
+        <svg id="abSvg" viewBox="0 0 200 200" role="img" aria-label="Diagram of the atom with electron shells"></svg>
+        <div class="ab-facts" aria-live="polite">
+          <div><small>Element</small><b id="abEl">Carbon (C)</b></div>
+          <div><small>Atomic number</small><b id="abZ">6</b></div>
+          <div><small>Mass number</small><b id="abA">12</b></div>
+          <div><small>Charge</small><b id="abQ">0</b></div>
+          <div><small>Shells</small><b id="abSh">2, 4</b></div>
+          <div><small>Stable?</small><b id="abSt">Yes</b></div>
+        </div>
+      </div>
+      <p class="out" id="abSay"></p>
+      <p class="work" id="abWork"></p>
+    </div>
+  </section>
+
+  <section class="lesson" id="pt3">
+    <div class="lesson-head"><span class="step">03</span><h2>How to read a periodic table square</h2></div>
+    <p>Every element gets one box. Layouts vary a little between tables, but almost all show the same four things.</p>
+    <div class="sq-wrap">
+      <div class="sq" aria-label="Carbon square: atomic number 6, symbol C, name carbon, atomic mass 12.011"><span class="z">6</span><span class="sym">C</span><span class="nm">Carbon</span><span class="ms">12.011</span></div>
+      <div class="sq-key">
+        <div><b>6</b> · <b>Atomic number</b>, the number of protons. The table is in order of this number.</div>
+        <div><b>C</b> · <b>Symbol</b>, one or two letters. Only the first is a capital.</div>
+        <div><b>Carbon</b> · <b>Name</b></div>
+        <div><b>12.011</b> · <b>Atomic mass</b> (atomic weight), in u.</div>
+      </div>
+    </div>
+    <p>Why is the atomic mass a decimal, when protons and neutrons come in whole numbers? Because it's an <b>average</b> of all the element's natural isotopes, weighted by how common each is. Natural carbon is mostly carbon-12 with a little carbon-13, so the average is just over 12. To estimate an atom's neutrons, round the atomic mass and subtract the atomic number: 12 − 6 = 6.</p>
+    <p class="callout"><span><b>Odd symbols?</b> Some come from Latin names. Na is sodium (<i>natrium</i>), K is potassium (<i>kalium</i>), Fe is iron (<i>ferrum</i>), Au is gold (<i>aurum</i>).</span></p>
+
+    <div class="try" id="pt"><span class="try-h">Try it · explore the first 20 elements</span>
+      <div class="pt" id="ptGrid" role="group" aria-label="First 20 elements"></div>
+      <div class="pt-key"><span class="k-alk">Alkali metal</span><span class="k-ae">Alkaline earth metal</span><span class="k-met">Other metal</span><span class="k-mtd">Metalloid</span><span class="k-non">Nonmetal</span><span class="k-hal">Halogen</span><span class="k-nob">Noble gas</span></div>
+      <div class="pt-card" id="ptCard" aria-live="polite"></div>
+      <div class="row"><button class="btn" type="button" id="ptBuild">Build this atom</button></div>
+    </div>
+  </section>
+
+  <section class="lesson" id="pt4">
+    <div class="lesson-head"><span class="step">04</span><h2>Groups and periods</h2></div>
+    <p>The table's shape isn't random. It's arranged so elements with similar behavior line up.</p>
+    <div class="grid2">
+      <div><span class="tagline">Columns</span><h3>Groups (1 to 18)</h3><p>Elements in the same column have the same number of outer electrons, so they act alike. Sodium and potassium both react violently with water.</p></div>
+      <div><span class="tagline">Rows</span><h3>Periods (1 to 7)</h3><p>The row number tells you how many electron shells the atom has. Each new row starts a new shell.</p></div>
+    </div>
+    <div class="tw"><table class="t">
+      <tr><th>Group</th><th>Family</th><th>Known for</th></tr>
+      <tr><td>1</td><td>Alkali metals (Li, Na, K…)</td><td>Soft, very reactive metals. Hydrogen sits here too but is a nonmetal.</td></tr>
+      <tr><td>2</td><td>Alkaline earth metals (Be, Mg, Ca…)</td><td>Reactive, but less than group 1. Calcium is in your bones.</td></tr>
+      <tr><td>3–12</td><td>Transition metals (Fe, Cu, Au…)</td><td>Classic metals: strong, shiny, good conductors.</td></tr>
+      <tr><td>17</td><td>Halogens (F, Cl, Br, I)</td><td>Very reactive nonmetals that form salts with metals.</td></tr>
+      <tr><td>18</td><td>Noble gases (He, Ne, Ar…)</td><td>Barely react at all. Neon signs, helium balloons.</td></tr>
+    </table></div>
+    <p>The two rows floating below the table, the <b>lanthanides</b> and <b>actinides</b>, actually belong in periods 6 and 7. They're pulled out so the table fits on a page.</p>
+    <p class="callout"><span><b>A bit of history.</b> Russian chemist Dmitri Mendeleev published his periodic table in 1869. He left gaps for elements nobody had found yet and predicted their properties. When gallium and germanium were discovered, they fit his predictions.</span></p>
+  </section>
+
+  <section class="lesson" id="pt5">
+    <div class="lesson-head"><span class="step">05</span><h2>Metals, nonmetals and metalloids</h2></div>
+    <p>A zigzag “staircase” line runs down the right side of the table, starting near boron. It splits the elements into three big types.</p>
+    <div class="tw"><table class="t">
+      <tr><th></th><th>Metals</th><th>Nonmetals</th><th>Metalloids</th></tr>
+      <tr><td><b>Where</b></td><td>Left of the staircase (most elements)</td><td>Upper right, plus hydrogen</td><td>Along the staircase</td></tr>
+      <tr><td><b>Look</b></td><td>Shiny</td><td>Dull, often gases</td><td>A mix</td></tr>
+      <tr><td><b>Electricity</b></td><td>Conduct well</td><td>Poor conductors</td><td>Semiconductors</td></tr>
+      <tr><td><b>Bend?</b></td><td>Bend and stretch</td><td>Brittle if solid</td><td>Brittle</td></tr>
+      <tr><td><b>Electrons</b></td><td>Tend to lose them (+ ions)</td><td>Tend to gain them (− ions)</td><td>In between</td></tr>
+      <tr><td><b>Examples</b></td><td>Iron, copper, aluminum</td><td>Oxygen, carbon, sulfur</td><td>Silicon, boron</td></tr>
+    </table></div>
+    <p>About three quarters of all elements are metals. Silicon, a metalloid, is the semiconductor at the heart of computer chips. At room temperature, most elements are solids; mercury and bromine are the only liquids, and 11 are gases.</p>
+    <p class="callout warn"><span><b>Don't try this at home.</b> Pure sodium and potassium catch fire or explode in water, and chlorine and fluorine gases are poisonous. Leave the demos to videos and trained teachers.</span></p>
+  </section>
+
+  <section class="lesson" id="pt6">
+    <div class="lesson-head"><span class="step">06</span><h2>Electron shells and valence electrons</h2></div>
+    <p>Electrons fill <b>shells</b> (energy levels) around the nucleus, inner shells first. For the first 20 elements a simple rule works: the first shell holds 2, the second holds 8, and the third holds 8 before the fourth shell starts.</p>
+    <div class="example"><div class="ex-h">Example · shells for the first 20</div><ol><li>Oxygen (8 electrons): 2, 6</li><li>Sodium (11): 2, 8, 1</li><li>Chlorine (17): 2, 8, 7</li><li class="ans">Calcium (20): 2, 8, 8, 2</li></ol></div>
+    <p>The electrons in the outer shell are the <b>valence electrons</b>. They're the ones that do the chemistry: bonding, reacting, forming ions. For groups 1–2 and 13–18, there's a shortcut:</p>
+    <ul class="points">
+      <li>Group 1 → 1 valence electron, group 2 → 2</li>
+      <li>Groups 13 to 18 → subtract 10: group 13 has 3, group 17 has 7, group 18 has 8 (helium is the exception with 2)</li>
+    </ul>
+    <p>Atoms are most stable with a <b>full outer shell</b>, usually 8 electrons (the <b>octet rule</b>). Noble gases already have one, which is why they barely react. Everyone else gains, loses or shares electrons to get there.</p>
+    <div class="example"><div class="ex-h">Example · why sodium and chlorine make salt</div><ol><li>Sodium (2, 8, 1) has 1 extra electron. Losing it leaves a full shell → Na⁺</li><li>Chlorine (2, 8, 7) is 1 short. Gaining one fills its shell → Cl⁻</li><li>Opposite charges attract</li><li class="ans">Na⁺ + Cl⁻ = NaCl, table salt</li></ol></div>
+    <p class="callout"><span><b>Spot the pattern.</b> Metals on the left have few valence electrons and give them away, forming positive ions. Nonmetals on the right are close to full and take electrons, forming negative ions. Nonmetals bonding with each other share electrons instead, like the two hydrogens and one oxygen in water.</span></p>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>How many elements are there?</summary><div class="a"><p>118 are known and named. The newest, up to oganesson (element 118), were made in labs and last only fractions of a second.</p></div></details>
+      <details><summary>What's the difference between atomic number and mass number?</summary><div class="a"><p>Atomic number is the number of protons and tells you the element. Mass number is protons plus neutrons for one specific atom. The decimal atomic mass on the table is an average over all natural isotopes.</p></div></details>
+      <details><summary>Why is hydrogen in group 1 if it isn't a metal?</summary><div class="a"><p>It has 1 valence electron like the alkali metals, so it's placed above them. But it's a gas and behaves like a nonmetal under normal conditions.</p></div></details>
+      <details><summary>Can an atom change into a different element?</summary><div class="a"><p>Only if its number of protons changes, which takes a nuclear reaction such as radioactive decay. Chemical reactions only move electrons around, so the elements stay the same.</p></div></details>
+      <details><summary>Why don't noble gases react?</summary><div class="a"><p>Their outer shell is already full, so they have no need to gain, lose or share electrons. A few heavy ones can be forced to react in a lab.</p></div></details>
+      <details><summary>What are the rows at the bottom of the table?</summary><div class="a"><p>The lanthanides and actinides. They belong in periods 6 and 7 but are shown separately so the table isn't too wide.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://iupac.org/what-we-do/periodic-table-of-elements/" target="_blank" rel="noopener"><span class="src">IUPAC</span><b>Periodic Table of Elements (official)</b></a>
+      <a href="https://periodic.lanl.gov/index.shtml" target="_blank" rel="noopener"><span class="src">Los Alamos National Laboratory</span><b>Periodic Table of Elements</b></a>
+      <a href="https://periodic-table.rsc.org/" target="_blank" rel="noopener"><span class="src">Royal Society of Chemistry</span><b>Interactive periodic table</b></a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">GO</span>Keep learning elsewhere</h2>
+    <div class="links">
+      <a href="https://phet.colorado.edu/en/simulations/build-an-atom" target="_blank" rel="noopener"><span class="src">PhET (Univ. of Colorado) · free</span><b>Build an Atom simulation</b><small>A polished atom builder with games, from a university science project.</small></a>
+      <a href="https://www.khanacademy.org/science/chemistry" target="_blank" rel="noopener"><span class="src">Khan Academy · free</span><b>Chemistry course</b><small>Videos and practice on atoms, the table, electron configuration and bonding.</small></a>
+      <a href="https://www.youtube.com/watch?v=0RRVV4Diomg" target="_blank" rel="noopener"><span class="src">Crash Course · YouTube</span><b>The Periodic Table</b><small>A quick, lively video on how Mendeleev's table came to be.</small></a>
+      <a href="https://periodic-table.rsc.org/" target="_blank" rel="noopener"><span class="src">Royal Society of Chemistry · free</span><b>Explore every element</b><small>Facts, uses, history and trends for all 118 elements.</small></a>
+      <a href="https://periodic.lanl.gov/index.shtml" target="_blank" rel="noopener"><span class="src">Los Alamos National Lab · free</span><b>Element pages for students</b><small>Short, reliable write-ups on each element's history and uses.</small></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>Atomic masses are IUPAC standard values, rounded. The shell rule here is simplified for the first 20 elements.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script src="../comments.js"></script>
+<script>
+(function(){
+  // [symbol, name, atomic mass, group, period, kind, common neutrons, stable neutron counts, common ion]
+  const EL = [null,
+    ['H','Hydrogen','1.008',1,1,'non',0,[0,1],'H⁺'],
+    ['He','Helium','4.0026',18,1,'nob',2,[1,2],''],
+    ['Li','Lithium','6.94',1,2,'alk',4,[3,4],'Li⁺'],
+    ['Be','Beryllium','9.0122',2,2,'ae',5,[5],'Be²⁺'],
+    ['B','Boron','10.81',13,2,'mtd',6,[5,6],''],
+    ['C','Carbon','12.011',14,2,'non',6,[6,7],''],
+    ['N','Nitrogen','14.007',15,2,'non',7,[7,8],'N³⁻'],
+    ['O','Oxygen','15.999',16,2,'non',8,[8,9,10],'O²⁻'],
+    ['F','Fluorine','18.998',17,2,'hal',10,[10],'F⁻'],
+    ['Ne','Neon','20.180',18,2,'nob',10,[10,11,12],''],
+    ['Na','Sodium','22.990',1,3,'alk',12,[12],'Na⁺'],
+    ['Mg','Magnesium','24.305',2,3,'ae',12,[12,13,14],'Mg²⁺'],
+    ['Al','Aluminum','26.982',13,3,'met',14,[14],'Al³⁺'],
+    ['Si','Silicon','28.085',14,3,'mtd',14,[14,15,16],''],
+    ['P','Phosphorus','30.974',15,3,'non',16,[16],'P³⁻'],
+    ['S','Sulfur','32.06',16,3,'non',16,[16,17,18,20],'S²⁻'],
+    ['Cl','Chlorine','35.45',17,3,'hal',18,[18,20],'Cl⁻'],
+    ['Ar','Argon','39.95',18,3,'nob',22,[18,20,22],''],
+    ['K','Potassium','39.098',1,4,'alk',20,[20,22],'K⁺'],
+    ['Ca','Calcium','40.078',2,4,'ae',20,[20,22,23,24,26,28],'Ca²⁺']
+  ];
+  const KIND = {alk:'Alkali metal',ae:'Alkaline earth metal',met:'Other metal',mtd:'Metalloid',non:'Nonmetal',hal:'Halogen (nonmetal)',nob:'Noble gas (nonmetal)'};
+  const SUP = {0:'⁰',1:'¹',2:'²',3:'³',4:'⁴',5:'⁵',6:'⁶',7:'⁷',8:'⁸',9:'⁹'};
+  const sup = n => String(n).split('').map(c => SUP[c]).join('');
+  const chargeStr = q => q === 0 ? '0 (neutral)' : (q > 0 ? '+' + q : '−' + Math.abs(q));
+  const ionSup = q => q === 0 ? '' : (Math.abs(q) === 1 ? '' : sup(Math.abs(q))) + (q > 0 ? '⁺' : '⁻');
+  function shells(e){ const cap = [2,8,8,2,99], out = []; let left = e; for (const c of cap){ if (left <= 0) break; const k = Math.min(c, left); out.push(k); left -= k; } return out; }
+  const valence = g => g <= 2 ? g : g - 10;
+
+  /* ---------- Atom builder ---------- */
+  const LIM = {p:[0,20], n:[0,30], e:[0,20]};
+  const st = {p:6, n:6, e:6};
+  const svg = $('#abSvg');
+  function drawAtom(){
+    const sh = shells(st.e);
+    let g = '';
+    const R = [38, 58, 78, 94];
+    sh.forEach((cnt, i) => {
+      const r = R[i];
+      g += `<circle cx="100" cy="100" r="${r}" style="fill:none;stroke:var(--line);stroke-width:1.5"/>`;
+      for (let k = 0; k < cnt; k++){
+        const a = (k / cnt) * Math.PI * 2 - Math.PI / 2;
+        g += `<circle cx="${(100 + r * Math.cos(a)).toFixed(1)}" cy="${(100 + r * Math.sin(a)).toFixed(1)}" r="4.5" style="fill:var(--accent)"/>`;
+      }
+    });
+    // nucleus: pack protons and neutrons in a small cluster
+    // interleave for a mixed look
+    const mixed = []; let pi = 0, ni = 0;
+    while (pi < st.p || ni < st.n){ if (pi < st.p) { mixed.push('p'); pi++; } if (ni < st.n) { mixed.push('n'); ni++; } }
+    mixed.forEach((t, i) => {
+      const ang = i * 2.39996, rad = 3.6 * Math.sqrt(i);
+      g += `<circle cx="${(100 + rad * Math.cos(ang)).toFixed(1)}" cy="${(100 + rad * Math.sin(ang)).toFixed(1)}" r="4" style="fill:${t === 'p' ? 'var(--bad)' : 'var(--muted)'};stroke:var(--surface);stroke-width:.8"/>`;
+    });
+    if (!mixed.length) g += `<text x="100" y="104" text-anchor="middle" style="fill:var(--muted);font:11px var(--mono)">empty</text>`;
+    svg.innerHTML = g;
+  }
+  function renderAtom(){
+    $('#abP').textContent = st.p; $('#abN').textContent = st.n; $('#abE').textContent = st.e;
+    document.querySelectorAll('#ab .pm button').forEach(b => {
+      const k = b.dataset.k, d = +b.dataset.d;
+      b.disabled = d < 0 ? st[k] <= LIM[k][0] : st[k] >= LIM[k][1];
+    });
+    const A = st.p + st.n, q = st.p - st.e, sh = shells(st.e);
+    $('#abZ').textContent = st.p; $('#abA').textContent = A; $('#abQ').textContent = chargeStr(q);
+    $('#abSh').textContent = sh.length ? sh.join(', ') : 'none';
+    drawAtom();
+    if (st.p === 0){
+      $('#abEl').textContent = 'No element'; $('#abSt').textContent = '—';
+      $('#abSay').innerHTML = 'Add at least one <b>proton</b>. Protons decide which element it is.';
+      $('#abWork').textContent = 'With zero protons there is no nucleus to name.';
+      return;
+    }
+    const el = EL[st.p], stable = el[7].includes(st.n);
+    $('#abEl').textContent = el[1] + ' (' + el[0] + ')';
+    let stTxt = stable ? 'Yes' : 'No, radioactive';
+    if (st.p === 19 && st.n === 21) stTxt = 'Radioactive, very slowly';
+    $('#abSt').textContent = stTxt;
+    let kind = q === 0 ? 'neutral atom' : (q > 0 ? 'positive ion (lost ' + q + ' electron' + (q > 1 ? 's' : '') + ')' : 'negative ion (gained ' + (-q) + ' electron' + (q < -1 ? 's' : '') + ')');
+    $('#abSay').innerHTML = `<b>${el[1]}-${A}</b>${q ? ' as ' + el[0] + ionSup(q) : ''}, a ${kind}.`;
+    let w = `${st.p} protons → atomic number ${st.p} → ${el[1]}\nMass number = ${st.p} + ${st.n} = ${A}\nCharge = ${st.p} − ${st.e} = ${q > 0 ? '+' : ''}${q}`;
+    if (!stable){
+      const common = el[7];
+      w += `\nStable ${el[1].toLowerCase()} has ${common.length > 1 ? common.slice(0, -1).join(', ') + ' or ' + common[common.length - 1] : common[0]} neutrons.`;
+      if (st.p === 6 && st.n === 8) w += ' Carbon-14 is used to date old bones and wood.';
+      if (st.p === 19 && st.n === 21) w += ' Potassium-40 is a natural, very long-lived isotope, found in tiny amounts in bananas and your body.';
+    }
+    if (q !== 0){
+      w += el[8] ? `\nThe ion ${el[1].toLowerCase()} usually forms is ${el[8]}.` : `\n${el[1]} doesn't usually form ions.`;
+    }
+    if (Math.abs(q) > 3) w += '\nThat much charge is unusual. Real atoms rarely gain or lose more than 3 electrons.';
+    $('#abWork').textContent = w;
+  }
+  document.querySelectorAll('#ab .pm button').forEach(b => b.addEventListener('click', () => {
+    const k = b.dataset.k, d = +b.dataset.d;
+    st[k] = Math.min(LIM[k][1], Math.max(LIM[k][0], st[k] + d));
+    document.querySelectorAll('#abPre button').forEach(x => x.setAttribute('aria-pressed', 'false'));
+    renderAtom();
+  }));
+  function setAtom(p, n, e){ st.p = p; st.n = n; st.e = e; renderAtom(); }
+  document.querySelectorAll('#abPre button').forEach(b => b.addEventListener('click', () => {
+    const [p, n, e] = b.dataset.v.split(',').map(Number);
+    document.querySelectorAll('#abPre button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    setAtom(p, n, e);
+  }));
+  renderAtom();
+
+  /* ---------- Mini periodic table ---------- */
+  const COLS = [1,2,13,14,15,16,17,18];
+  const grid = $('#ptGrid');
+  let sel = 6, html = COLS.map(c => `<div class="gh">${c}</div>`).join('');
+  for (let per = 1; per <= 4; per++){
+    COLS.forEach((g, ci) => {
+      const z = EL.findIndex(e => e && e[3] === g && e[4] === per);
+      if (per === 1 && ci === 1){ html += `<div class="gap" style="grid-column:span 6">Groups 2–17 start in period 2</div>`; return; }
+      if (per === 1 && ci > 1 && ci < 7) return;
+      if (z > 0) html += `<button type="button" class="k-${EL[z][5]}" data-z="${z}" aria-pressed="false" aria-label="${EL[z][1]}, atomic number ${z}"><span>${z}</span><b>${EL[z][0]}</b></button>`;
+      else if (per === 4 && ci === 2) html += `<div class="gap">Transition metals (from Sc, 21) and beyond</div>`;
+    });
+  }
+  grid.innerHTML = html;
+  function showEl(z){
+    sel = z; const e = EL[z], sh = shells(z), v = valence(e[3]);
+    grid.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', +b.dataset.z === z));
+    $('#ptCard').innerHTML = `<div class="sq"><span class="z">${z}</span><span class="sym">${e[0]}</span><span class="nm">${e[1]}</span><span class="ms">${e[2]}</span></div>
+      <ul><li><b>Group ${e[3]}, period ${e[4]}</b></li><li>${KIND[e[5]]}</li><li>${z} protons, ${z} electrons; most common isotope has ${e[6]} neutrons (${e[1].toLowerCase()}-${z + e[6]})</li><li>Shells: ${sh.join(', ')}</li><li>Valence electrons: ${z === 2 ? '2 (full shell)' : v}</li><li>Usual ion: ${e[8] || 'rarely forms ions'}</li></ul>`;
+  }
+  grid.addEventListener('click', ev => { const b = ev.target.closest('button'); if (b) showEl(+b.dataset.z); });
+  $('#ptBuild').addEventListener('click', () => {
+    setAtom(sel, EL[sel][6], sel);
+    document.querySelectorAll('#abPre button').forEach(x => x.setAttribute('aria-pressed', 'false'));
+    $('#ab').scrollIntoView({behavior: 'smooth', block: 'start'});
+  });
+  showEl(6);
+})();
+</script>
+</body>
+</html>
