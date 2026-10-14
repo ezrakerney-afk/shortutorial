@@ -3029,5 +3029,49 @@ export default {
         o: ["1, Cl⁺", "7, Cl⁻", "8, no ion", "17, Cl¹⁷⁻"], a: 1,
         e: "Groups 13–18: subtract 10, so 7. Chlorine gains one electron to fill its shell and becomes Cl⁻." }
     ]
+  },
+
+  "guitar-chords-basics": {
+    title: "Guitar Chords for Beginners",
+    pass: 4,
+    questions: [
+      { q: "What are the notes of standard tuning, from the thick 6th string to the thin 1st string?",
+        o: ["E B G D A E", "E A D G B E", "A D G C E A", "E A D G C E"], a: 1,
+        e: "Standard tuning is E A D G B E, low to high: \"Eddie Ate Dynamite, Good Bye Eddie.\"" },
+      { q: "On a chord diagram, what does an X above a string mean?",
+        o: ["Play it open", "Press it with your index finger", "Don't play that string", "Play it twice"], a: 2,
+        e: "X means skip or mute that string. O means play it open." },
+      { q: "In chord diagrams, which finger is number 3?",
+        o: ["Index", "Middle", "Pinky", "Ring"], a: 3,
+        e: "1 is index, 2 middle, 3 ring, 4 pinky." },
+      { q: "Your chord buzzes. What usually fixes it?",
+        o: ["Press your finger just behind the fret, on its tip", "Squeeze the neck as hard as you can", "Press in the middle between two frets", "Flatten your fingers across the strings"], a: 0,
+        e: "Pressing just behind the fret with an arched fingertip needs less pressure and avoids buzzing and muting neighbors." },
+      { q: "When changing from Am to C, what stays in place?",
+        o: ["Nothing, every finger moves", "Fingers 1 and 2; only the ring finger moves", "Only the pinky", "The thumb on the low E string"], a: 1,
+        e: "Am (X02210) and C (X32010) share fingers 1 and 2. Only the ring finger moves from the G string to the A string." }
+    ]
+  },
+
+  "sign-language-basics": {
+    title: "American Sign Language (ASL) Basics",
+    pass: 4,
+    questions: [
+      { q: "Which statement about ASL is true?",
+        o: ["It's English spelled out on the hands", "It's the same sign language used worldwide", "It's a complete language with its own grammar", "It was invented by one teacher in 1817"], a: 2,
+        e: "ASL is a complete, natural language with grammar different from English. Other countries have their own sign languages." },
+      { q: "What does capital-D \"Deaf\" usually refer to?",
+        o: ["People who share ASL and Deaf culture", "Anyone over 65 with hearing loss", "People who use hearing aids", "A medical diagnosis of total hearing loss"], a: 0,
+        e: "Lowercase deaf describes not hearing; capital-D Deaf refers to a community that shares a language and culture." },
+      { q: "How should you hold your hand while fingerspelling a word?",
+        o: ["Push it forward on every letter", "Bounce it once per letter", "Switch hands halfway through", "Keep it in one spot near your shoulder and let letters flow"], a: 3,
+        e: "Use your dominant hand near your shoulder, keep it steady, and flow smoothly from letter to letter." },
+      { q: "How is the ASL number 3 made?",
+        o: ["Index, middle and ring fingers up", "Thumb, index and middle fingers up", "Thumb touches the ring finger", "Three fingers folded over the thumb"], a: 1,
+        e: "ASL 3 uses the thumb, index and middle fingers. Index, middle and ring up is W (and 6)." },
+      { q: "You're talking with a Deaf person through an interpreter. What's polite?",
+        o: ["Look at the interpreter and say \"Ask him...\"", "Speak louder and exaggerate your lips", "Look at the Deaf person and talk to them directly", "Wait until the interpreter leaves"], a: 2,
+        e: "Talk to the Deaf person, not the interpreter, and keep eye contact with them." }
+    ]
   }
 };

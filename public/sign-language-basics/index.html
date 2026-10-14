@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>American Sign Language (ASL) Basics · Shortutorial</title>
+<meta name="description" content="Start learning American Sign Language: what ASL is and why it's its own language, Deaf culture, fingerspelling the alphabet, numbers 1 to 10, everyday signs and etiquette. Practice with a fingerspelling trainer.">
+<link rel="canonical" href="https://shortutorial.com/sign-language-basics/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="American Sign Language (ASL) Basics · Shortutorial">
+<meta property="og:description" content="Start learning American Sign Language: what ASL is and why it's its own language, Deaf culture, fingerspelling the alphabet, numbers 1 to 10, everyday signs and etiquette. Practice with a fingerspelling trainer.">
+<meta property="og:url" content="https://shortutorial.com/sign-language-basics/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+.links small{font-size:.88rem;color:var(--muted);line-height:1.4}
+/* fingerspelling trainer */
+.fs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(42px,1fr));gap:6px}
+.fs-grid button{all:unset;cursor:pointer;text-align:center;padding:8px 0;border-radius:9px;border:1.5px solid var(--line);background:var(--surface);font-family:var(--display);font-weight:700;font-size:1.05rem}
+.fs-grid button:focus-visible,.fs-opts button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.fs-grid button[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.fs-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+.fs-big{font-family:var(--display);font-weight:700;font-size:3.2rem;line-height:1;color:var(--accent)}
+.fs-desc{font-size:1.02rem}
+.fingers{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px}
+.fingers div{border:1px solid var(--line);border-radius:8px;padding:6px 2px;text-align:center;background:var(--bg);min-width:0}
+.fingers small{display:block;font-family:var(--mono);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.fingers b{font-family:var(--mono);font-size:.72rem;font-weight:600;display:block;overflow-wrap:anywhere}
+.fingers .up b{color:var(--accent)}
+.fs-opts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.fs-opts button{all:unset;cursor:pointer;text-align:center;padding:12px 0;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);font-family:var(--display);font-weight:700;font-size:1.3rem}
+.fs-opts button.right{background:var(--good-bg);border-color:var(--good);color:var(--good)}
+.fs-opts button.wrong{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+.fs-word{display:flex;flex-wrap:wrap;gap:4px;font-family:var(--mono);font-size:1.15rem}
+.fs-word span{padding:2px 7px;border-radius:6px;border:1px solid var(--line)}
+.fs-word span.now{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.fs-word span.done{color:var(--muted)}
+.signs{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.signs div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.signs b{font-family:var(--display);font-size:1.02rem;letter-spacing:.03em}
+.signs p{font-size:.94rem;color:var(--muted)}
+.hide{display:none!important}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"American Sign Language (ASL) Basics","item":"https://shortutorial.com/sign-language-basics/"}]},{"@type":"Article","@id":"https://shortutorial.com/sign-language-basics/#article","headline":"American Sign Language (ASL) Basics","description":"Start learning American Sign Language: what ASL is and why it's its own language, Deaf culture, fingerspelling the alphabet, numbers 1 to 10, everyday signs and etiquette. Practice with a fingerspelling trainer.","url":"https://shortutorial.com/sign-language-basics/","mainEntityOfPage":"https://shortutorial.com/sign-language-basics/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Life skills","keywords":"sign language, ASL, american sign language, learn ASL, fingerspelling, ASL alphabet, sign language alphabet, deaf culture, ASL numbers, hello in sign language, thank you in sign language, deaf etiquette","timeRequired":"PT15M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is ASL hard to learn?","acceptedAnswer":{"@type":"Answer","text":"Like any language, it takes time. Fingerspelling and basic vocabulary come quickly. Grammar, facial expressions and reading other people's signing take regular practice, ideally with Deaf signers."}},{"@type":"Question","name":"Should I learn ASL or \"baby sign\"?","acceptedAnswer":{"@type":"Answer","text":"\"Baby sign\" programs borrow a few ASL signs. If you want to talk with Deaf people, learn ASL itself. Many parents use real ASL signs with babies too."}},{"@type":"Question","name":"Which hand should I use?","acceptedAnswer":{"@type":"Answer","text":"Your dominant hand does most of the work and all the fingerspelling. Left-handed signers simply mirror everything. Just stay consistent and don't switch hands mid-conversation."}},{"@type":"Question","name":"Why can't I read other people's fingerspelling?","acceptedAnswer":{"@type":"Answer","text":"Everyone finds receptive fingerspelling harder at first. Fluent signers spell quickly and read word shapes, not letters. Watch fingerspelling videos often, and look for the first letter, the last letter, and the length."}},{"@type":"Question","name":"Is ASL used outside the US?","acceptedAnswer":{"@type":"Answer","text":"ASL is used in the United States and much of Canada, and has influenced sign languages in other countries. Most countries have their own sign language, so ASL won't automatically work everywhere."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="sign-language-basics">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=language">Life skills</a> / Sign language basics</div>
+    <span class="eyebrow">Life skills · Languages</span>
+    <h1>American Sign Language (ASL) Basics</h1>
+    <p class="lede">ASL is a full language with its own grammar, history and culture. Start with the respectful basics: what ASL is, how to fingerspell the alphabet, count to ten, sign a few everyday words, and talk with Deaf people politely. Then drill your fingerspelling with the trainer.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~15 min read</span><span class="badge">5 lessons</span><span class="badge">Fingerspelling trainer</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#s1">1 · What ASL is</a><a href="#s2">2 · Fingerspelling</a><a href="#s3">3 · Numbers</a><a href="#s4">4 · Everyday signs</a><a href="#s5">5 · Etiquette</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="s1">
+    <div class="lesson-head"><span class="step">01</span><h2>What ASL is (and isn't)</h2></div>
+    <p><b>American Sign Language</b> is a complete, natural language used by Deaf communities in the United States and much of Canada. According to the National Institutes of Health (NIDCD), it has the same linguistic properties as spoken languages. It has its own rules for pronunciation, word formation and word order, and its grammar is different from English.</p>
+    <ul class="points">
+      <li><b>It's not English on the hands.</b> ASL has its own sentence structure. "Signing English word for word" is a different thing.</li>
+      <li><b>It's not universal.</b> Different countries have different sign languages. British Sign Language (BSL) is very different from ASL, and even uses a two-handed alphabet.</li>
+      <li><b>Your face is part of the grammar.</b> Facial expressions and body movement carry meaning. For example, for a yes/no question, signers raise their eyebrows, widen their eyes and lean forward slightly.</li>
+      <li><b>It has history.</b> No one person invented ASL. It grew more than 200 years ago from local sign languages in America mixing with French Sign Language. Today they are separate languages.</li>
+      <li><b>It has accents.</b> Like any language, ASL has regional variations, slang, and signs that differ by age and community.</li>
+    </ul>
+    <h3>Deaf culture: "Deaf" versus "deaf"</h3>
+    <p>The National Association of the Deaf (NAD) explains that lowercase <b>deaf</b> describes the audiological condition of not hearing, while capital-D <b>Deaf</b> refers to a group of people who share a language (ASL) and a culture. Many Deaf people see themselves as a cultural and language community, not as people with something missing.</p>
+    <p class="callout"><span><b>A note on learning from a page.</b> Signs move, and movement, location and facial expression all matter. Use this page for the basics and a vocabulary of handshapes, then watch the signs in motion on the video sites linked at the bottom. Best of all, learn from Deaf teachers.</span></p>
+  </section>
+
+  <section class="lesson" id="s2">
+    <div class="lesson-head"><span class="step">02</span><h2>Fingerspell the alphabet</h2></div>
+    <p><b>Fingerspelling</b> uses one handshape per letter to spell out English words. It's mostly used for names of people and places, brand names, and words that don't have a common sign. It's a small part of ASL, but it's the best place to start because you'll use it to introduce yourself.</p>
+    <h3>How to fingerspell well</h3>
+    <ol class="steps">
+      <li><b>Use your dominant hand</b>, held up near your shoulder, palm generally facing the person you're talking to.</li>
+      <li><b>Keep your hand in one place.</b> Don't bounce or push it forward on every letter. Let the letters flow smoothly from one to the next.</li>
+      <li><b>For double letters</b> (like the two Ls in "Bell"), make a small slide to the side or a slight bounce, instead of making the letter twice from scratch.</li>
+      <li><b>Steady rhythm beats speed.</b> Even, clear letters are easier to read than fast, jerky ones.</li>
+      <li><b>Read whole words, not single letters.</b> Fluent signers read the overall shape and movement of a word, the way you read printed words without spelling them out.</li>
+    </ol>
+    <p>The trainer below describes every handshape in words. Each letter's card says what each finger does. "Folded" means bent down into the palm, and "touches thumb" means its tip meets the thumb tip.</p>
+    <div class="try" id="fs"><span class="try-h">Try it · fingerspelling trainer</span>
+      <div class="chipset" id="fsMode" aria-label="Trainer mode">
+        <button type="button" data-m="learn" aria-pressed="true">Learn the letters</button>
+        <button type="button" data-m="quiz" aria-pressed="false">Quiz me</button>
+        <button type="button" data-m="spell" aria-pressed="false">Spell words</button>
+      </div>
+
+      <div id="fsLearn">
+        <div class="fs-grid" id="fsGrid" aria-label="Letters and numbers"></div>
+        <div class="fs-card" style="margin-top:12px" aria-live="polite">
+          <div class="fs-big" id="fsL">A</div>
+          <p class="fs-desc" id="fsD"></p>
+          <div class="fingers" id="fsF"></div>
+          <p class="work" id="fsT"></p>
+        </div>
+      </div>
+
+      <div id="fsQuiz" class="hide">
+        <div class="chipset" id="fsSet" aria-label="What to practice">
+          <button type="button" data-s="letters" aria-pressed="true">Letters</button>
+          <button type="button" data-s="numbers" aria-pressed="false">Numbers</button>
+          <button type="button" data-s="both" aria-pressed="false">Both</button>
+        </div>
+        <div class="fs-card" style="margin-top:12px">
+          <p class="fs-desc" id="fqD"></p>
+          <div class="fingers" id="fqF"></div>
+        </div>
+        <div class="fs-opts" id="fqOpts" style="margin-top:12px"></div>
+        <p class="out" aria-live="polite"><span id="fqMsg">Which handshape is this?</span></p>
+        <div class="row"><span class="work" id="fqScore">Score 0 / 0 · streak 0</span><button class="btn ghost" type="button" id="fqNext">Next</button></div>
+      </div>
+
+      <div id="fsSpell" class="hide">
+        <div class="row">
+          <label>Word to spell<input type="text" id="fwIn" value="HELLO" maxlength="16" autocomplete="off" spellcheck="false"></label>
+          <button class="btn ghost" type="button" id="fwRand">Random word</button>
+        </div>
+        <label>Speed: <span id="fwSpLbl">1 letter per second</span><input type="range" id="fwSp" min="0.5" max="3" step="0.5" value="1"></label>
+        <div class="fs-word" id="fwWord" aria-hidden="true"></div>
+        <div class="fs-card" aria-live="polite">
+          <div class="fs-big" id="fwL">·</div>
+          <p class="fs-desc" id="fwD">Press Start and fingerspell along with the prompts. Keep your hand in one spot.</p>
+        </div>
+        <div class="row"><button class="btn" type="button" id="fwGo">Start</button><button class="btn ghost" type="button" id="fwStep">Next letter</button></div>
+      </div>
+    </div>
+    <p class="callout"><span><b>Easy to mix up:</b> A, S, T, M, N and E are all closed-fist letters. Look at the thumb: beside the fist (A), across the front (S), poking between the first two fingers (T), under three fingers (M) or two (N), or tucked under bent fingertips (E).</span></p>
+  </section>
+
+  <section class="lesson" id="s3">
+    <div class="lesson-head"><span class="step">03</span><h2>Count from 1 to 10</h2></div>
+    <p>ASL numbers are one-handed. Notice that 3 uses the <b>thumb</b>, index and middle fingers. It is not the "W" handshape. Numbers 6 to 9 are made by touching the thumb to one fingertip, while the other fingers stay up.</p>
+    <div class="tw"><table class="t">
+      <tr><th>#</th><th>Handshape</th></tr>
+      <tr><td>1</td><td>Index finger up</td></tr>
+      <tr><td>2</td><td>Index and middle fingers up and apart</td></tr>
+      <tr><td>3</td><td>Thumb, index and middle fingers up</td></tr>
+      <tr><td>4</td><td>Four fingers up and apart, thumb tucked into the palm</td></tr>
+      <tr><td>5</td><td>All five fingers spread</td></tr>
+      <tr><td>6</td><td>Thumb touches the <b>pinky</b> tip, other three fingers up</td></tr>
+      <tr><td>7</td><td>Thumb touches the <b>ring finger</b> tip</td></tr>
+      <tr><td>8</td><td>Thumb touches the <b>middle finger</b> tip</td></tr>
+      <tr><td>9</td><td>Thumb touches the <b>index</b> tip (looks like the letter F)</td></tr>
+      <tr><td>10</td><td>Thumbs-up from a fist (the A handshape), with a small twist or shake</td></tr>
+    </table></div>
+    <p class="callout"><span><b>Which way does the palm face?</b> ASL University (Lifeprint) notes that when counting 1 to 5 on their own, native Deaf signers typically face the palm toward themselves. For a series of digits, like a phone number, and for multi-digit numbers, the palm faces out.</span></p>
+    <p>All the numbers are in the trainer too. Choose <b>Numbers</b> in "Quiz me" to practice.</p>
+  </section>
+
+  <section class="lesson" id="s4">
+    <div class="lesson-head"><span class="step">04</span><h2>A few everyday signs</h2></div>
+    <p>These signs are among the first that classes teach. In ASL writing, signs are often written in CAPITAL letters as a "gloss." The descriptions below are for a right-handed signer. Watch each one on a video dictionary before using it, because movement is hard to capture in words.</p>
+    <div class="signs">
+      <div><b>HELLO</b><p>Flat hand, fingers together, starts at the side of your forehead and moves out and away, like a small salute.</p></div>
+      <div><b>THANK YOU</b><p>Flat hand, fingertips near your chin or lips, moves forward and slightly down toward the person.</p></div>
+      <div><b>PLEASE</b><p>Flat hand on your chest, palm in, moves in a circle.</p></div>
+      <div><b>SORRY</b><p>A closed fist (A or S handshape) circles on your chest.</p></div>
+      <div><b>YES</b><p>A fist (S handshape) bobs up and down from the wrist, like a nodding head.</p></div>
+      <div><b>NO</b><p>Index and middle fingers close down onto the thumb, like a mouth snapping shut.</p></div>
+      <div><b>NAME</b><p>Both hands in the H shape. The fingers of your dominant hand tap twice across the fingers of the other.</p></div>
+      <div><b>HELP</b><p>A thumbs-up fist rests on your other flat palm, and both hands lift up together.</p></div>
+      <div><b>MORE</b><p>Both hands in a flattened O shape (fingertips touching thumb). Tap the fingertips of both hands together.</p></div>
+      <div><b>I LOVE YOU</b><p>One hand: thumb, index and pinky up, middle and ring fingers down. It combines I, L and Y.</p></div>
+    </div>
+    <div class="example"><div class="ex-h">Example · introducing yourself</div><ol><li>Sign HELLO.</li><li>Sign MY NAME (flat hand on your chest for MY, then NAME).</li><li>Fingerspell your name, smoothly, with your hand in one spot.</li><li class="ans">Ask the other person for theirs with a questioning face: YOUR NAME WHAT? with eyebrows down.</li></ol></div>
+    <p class="callout"><span><b>Name signs</b> are special signs for people's names. They're given to you by members of the Deaf community, so don't make one up for yourself. Until then, fingerspell your name.</span></p>
+  </section>
+
+  <section class="lesson" id="s5">
+    <div class="lesson-head"><span class="step">05</span><h2>Etiquette with Deaf people</h2></div>
+    <ul class="points">
+      <li><b>Getting attention:</b> wave your hand in their line of sight, gently tap a shoulder or arm, or flick the lights in a room. Don't grab or startle someone from behind.</li>
+      <li><b>Keep eye contact.</b> Looking away while someone signs is like walking out mid-sentence. Watch the face, not just the hands.</li>
+      <li><b>Talk to the person, not the interpreter.</b> Say "How are you?", not "Ask her how she is." Look at the Deaf person while you talk.</li>
+      <li><b>Don't walk between two signers</b> if you can avoid it. If you must, go through quickly without stopping, and there's no need for a long apology.</li>
+      <li><b>Don't over-exaggerate your mouth</b> or shout. Speak naturally if they lip-read, face them, and keep your mouth uncovered. Not all Deaf people lip-read, and lip-reading only catches part of what's said.</li>
+      <li><b>Writing is fine.</b> A notepad or a phone's notes app is a perfectly good way to communicate. Use whatever works.</li>
+      <li><b>Use the words people prefer.</b> Many in the community prefer "Deaf" or "hard of hearing" to "hearing impaired." Never use "deaf and dumb" or "deaf-mute."</li>
+      <li><b>Try your signs.</b> Most Deaf people appreciate a hearing person who is genuinely learning. If you don't understand, it's fine to ask them to repeat or to sign more slowly.</li>
+    </ul>
+    <p class="callout warn"><span><b>Some knowledge isn't fluency.</b> For medical, legal, school or work situations, the Americans with Disabilities Act requires many businesses, hospitals and government services to provide effective communication, which often means a qualified interpreter. Don't offer to interpret just because you've learned the basics.</span></p>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Is ASL hard to learn?</summary><div class="a"><p>Like any language, it takes time. Fingerspelling and basic vocabulary come quickly. Grammar, facial expressions and reading other people's signing take regular practice, ideally with Deaf signers.</p></div></details>
+      <details><summary>Should I learn ASL or "baby sign"?</summary><div class="a"><p>"Baby sign" programs borrow a few ASL signs. If you want to talk with Deaf people, learn ASL itself. Many parents use real ASL signs with babies too.</p></div></details>
+      <details><summary>Which hand should I use?</summary><div class="a"><p>Your dominant hand does most of the work and all the fingerspelling. Left-handed signers simply mirror everything. Just stay consistent and don't switch hands mid-conversation.</p></div></details>
+      <details><summary>Why can't I read other people's fingerspelling?</summary><div class="a"><p>Everyone finds receptive fingerspelling harder at first. Fluent signers spell quickly and read word shapes, not letters. Watch fingerspelling videos often, and look for the first letter, the last letter, and the length.</p></div></details>
+      <details><summary>Is ASL used outside the US?</summary><div class="a"><p>ASL is used in the United States and much of Canada, and has influenced sign languages in other countries. Most countries have their own sign language, so ASL won't automatically work everywhere.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://www.nidcd.nih.gov/health/american-sign-language" target="_blank" rel="noopener"><span class="src">NIH · NIDCD</span><b>American Sign Language</b></a>
+      <a href="https://www.nad.org/resources/american-sign-language/community-and-culture-frequently-asked-questions/" target="_blank" rel="noopener"><span class="src">National Association of the Deaf</span><b>Community and culture FAQ</b></a>
+      <a href="https://www.lifeprint.com/asl101/fingerspelling/abc.htm" target="_blank" rel="noopener"><span class="src">ASL University (Lifeprint)</span><b>The ASL manual alphabet</b></a>
+      <a href="https://www.lifeprint.com/asl101/pages-signs/n/numbers1-10.htm" target="_blank" rel="noopener"><span class="src">ASL University (Lifeprint)</span><b>Numbers 1 to 10 and palm orientation</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="elsewhere">
+    <h2 class="sec"><span class="n">GO DEEPER</span>Keep learning elsewhere</h2>
+    <div class="links">
+      <a href="https://www.lifeprint.com/asl101/lessons/lesson01.htm" target="_blank" rel="noopener"><span class="src">ASL University · free</span><b>Lifeprint ASL lessons</b><small>Dr. Bill Vicars' free course, starting with Lesson 1, with videos of every sign.</small></a>
+      <a href="https://www.lifeprint.com/asl101/fingerspelling/abc.htm" target="_blank" rel="noopener"><span class="src">ASL University · free</span><b>Fingerspelling alphabet</b><small>See each handshape in the manual alphabet, plus fingerspelling practice.</small></a>
+      <a href="https://clerccenter.gallaudet.edu/national-resources/learning" target="_blank" rel="noopener"><span class="src">Gallaudet University Clerc Center · free</span><b>Learning ASL: books, media and classes</b><small>Gallaudet's guide to classes, apps, video lessons and dictionaries.</small></a>
+      <a href="https://www.handspeak.com/" target="_blank" rel="noopener"><span class="src">Handspeak · free with ads, optional paid</span><b>ASL dictionary and Deaf culture</b><small>Look up a sign and watch it in motion, plus fingerspelling practice.</small></a>
+      <a href="https://www.nad.org/resources/american-sign-language/community-and-culture-frequently-asked-questions/" target="_blank" rel="noopener"><span class="src">NAD · free</span><b>Community and culture FAQ</b><small>Straight from the National Association of the Deaf: terms, culture and common myths.</small></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>Written descriptions can't show movement. Check signs on a video dictionary, and learn from Deaf teachers when you can.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script src="../comments.js"></script>
+<script>
+(function(){
+  /* finger states: [thumb, index, middle, ring, pinky] */
+  const U = 'up', F = 'folded', B = 'bent', T = 'touches thumb', A = 'across', S = 'side', H = 'hooked';
+  const H_ = {
+    A:{d:'Make a fist. Thumb rests straight up against the side of your index finger. Palm faces out.', f:['beside fist',F,F,F,F], t:'Different from S: in A the thumb is at the side, not across the front.'},
+    B:{d:'Four fingers straight up and together. Thumb bent across the palm.', f:[A,U,U,U,U], t:'Keep the fingers touching each other, not spread (spread is 4).'},
+    C:{d:'Curve all your fingers and thumb into the shape of a C, as if holding a can. Palm faces sideways.', f:['curved','curved','curved','curved','curved'], t:'Viewers should see a C, so turn your hand so the opening faces sideways.'},
+    D:{d:'Index finger points straight up. Middle, ring and pinky curve down to touch the thumb tip, making a circle.', f:[T,U,T,T,T], t:'The circle plus the straight index looks like a lowercase d.'},
+    E:{d:'Bend all four fingertips down toward the palm. Tuck the thumb across under them.', f:['tucked under',B,B,B,B], t:'Fingertips rest on or just above the thumb. No gaps between the fingers.'},
+    F:{d:'Touch the index tip to the thumb tip to make a circle. Middle, ring and pinky stay up and spread.', f:[T,T,U,U,U], t:'Looks like an "OK" sign. Also the handshape of the number 9.'},
+    G:{d:'Index finger and thumb point sideways, parallel to each other, as if showing a small size. Other fingers folded.', f:[S,S,F,F,F], t:'Hand is turned so the index points to the side, not up.'},
+    H:{d:'Index and middle fingers together, pointing sideways. Thumb holds down the ring and pinky.', f:[A,S,S,F,F], t:'Like U turned sideways.'},
+    I:{d:'Pinky straight up. Other fingers in a fist, thumb across them.', f:[A,F,F,F,F], t:'Only the pinky is up. Add movement for J.'},
+    J:{d:'Start with I. Draw a J in the air with your pinky: move down and hook toward you by twisting your wrist.', f:[A,F,F,F,'up, draws J'], t:'One of two moving letters (with Z).'},
+    K:{d:'Index and middle fingers up in a V. Thumb tip touches the middle finger between them.', f:['between',U,U,F,F], t:'The thumb points up between the two fingers, unlike V.'},
+    L:{d:'Thumb and index finger make an L. Other fingers folded.', f:[S,U,F,F,F], t:'Palm faces out, so viewers see the L.'},
+    M:{d:'Fold your index, middle and ring fingers down over your thumb. The thumb pokes out between the ring and pinky.', f:['under 3',F,F,F,F], t:'Three fingers over the thumb: M has three downstrokes.'},
+    N:{d:'Fold your index and middle fingers down over your thumb. The thumb pokes out between the middle and ring fingers.', f:['under 2',F,F,F,F], t:'Two fingers over the thumb: N has two downstrokes.'},
+    O:{d:'Curve all fingers so their tips touch the thumb tip, making an O shape.', f:[T,T,T,T,T], t:'Rounder than a flattened O. Viewers should see the hole.'},
+    P:{d:'Make a K, then bend your wrist so the middle finger points down.', f:['between','forward','down',F,F], t:'P is a K pointed down.'},
+    Q:{d:'Make a G, then bend your wrist so the index finger and thumb point down.', f:['down','down',F,F,F], t:'Q is a G pointed down.'},
+    R:{d:'Cross your middle finger over your index finger, both pointing up. Other fingers folded.', f:[A,'crossed','crossed',F,F], t:'Like crossing your fingers for luck.'},
+    S:{d:'Make a fist with the thumb wrapped across the front of your fingers.', f:['across front',F,F,F,F], t:'Different from A: in S the thumb crosses in front.'},
+    T:{d:'Make a fist with the thumb tucked up between your index and middle fingers, the index folded over it.', f:['between 1 and 2',F,F,F,F], t:'Only the index covers the thumb (fewer fingers than N or M).'},
+    U:{d:'Index and middle fingers straight up and together. Thumb holds the other fingers down.', f:[A,U,U,F,F], t:'Fingers touch. Spread them and it becomes V.'},
+    V:{d:'Index and middle fingers up and spread apart, like a peace sign.', f:[A,U,U,F,F], t:'Also the number 2.'},
+    W:{d:'Index, middle and ring fingers up and spread. Thumb holds the pinky down.', f:['on pinky',U,U,U,F], t:'Same handshape as the number 6. Different from 3, which uses the thumb instead of the ring finger.'},
+    X:{d:'Index finger bent into a hook. Other fingers folded, thumb across them.', f:[A,H,F,F,F], t:'Like a crooked finger beckoning.'},
+    Y:{d:'Thumb and pinky stretched out. Other fingers folded.', f:['out',F,F,F,U], t:'The "hang loose" shape.'},
+    Z:{d:'Index finger up, the rest folded. Draw a Z in the air.', f:[A,'draws Z',F,F,F], t:'Draw it so viewers see a Z (forward for them).'},
+    1:{d:'Index finger up. Other fingers folded, thumb across them.', f:[A,U,F,F,F], t:'Palm toward you when counting on its own.'},
+    2:{d:'Index and middle fingers up and apart.', f:[A,U,U,F,F], t:'Same shape as V.'},
+    3:{d:'Thumb, index and middle fingers up.', f:[U,U,U,F,F], t:'Uses the thumb. Not the W shape.'},
+    4:{d:'Four fingers up and apart. Thumb tucked into the palm.', f:['tucked',U,U,U,U], t:'Like B, but with the fingers spread.'},
+    5:{d:'All five fingers spread wide.', f:[U,U,U,U,U], t:'An open, relaxed hand.'},
+    6:{d:'Thumb touches the pinky tip. Index, middle and ring fingers up.', f:['to pinky',U,U,U,T], t:'Looks like W. Context tells them apart.'},
+    7:{d:'Thumb touches the ring finger tip. Index, middle and pinky up.', f:['to ring',U,U,T,U], t:'Count down the fingers: 6 pinky, 7 ring, 8 middle, 9 index.'},
+    8:{d:'Thumb touches the middle finger tip. Index, ring and pinky up.', f:['to middle',U,T,U,U], t:'The middle finger is the one that drops.'},
+    9:{d:'Thumb touches the index tip. Middle, ring and pinky up.', f:['to index',T,U,U,U], t:'Same handshape as the letter F.'},
+    10:{d:'Thumbs-up from a fist (the A handshape), with a small twist or shake.', f:['up, shakes',F,F,F,F], t:'The only number here with movement.'}
+  };
+  const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''), NUMS = ['1','2','3','4','5','6','7','8','9','10'];
+  const FNAMES = ['Thumb','Index','Middle','Ring','Pinky'];
+  const fingersHTML = f => f.map((s, i) => `<div class="${s === U ? 'up' : ''}"><small>${FNAMES[i]}</small><b>${s}</b></div>`).join('');
+  const label = k => /\d/.test(k) ? 'Number ' + k : 'Letter ' + k;
+
+  /* modes */
+  const panes = {learn:$('#fsLearn'), quiz:$('#fsQuiz'), spell:$('#fsSpell')};
+  $('#fsMode').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    $('#fsMode').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    Object.keys(panes).forEach(k => panes[k].classList.toggle('hide', k !== b.dataset.m));
+    if (b.dataset.m !== 'spell') stopSpell();
+    if (b.dataset.m === 'quiz' && !qCur) newQ();
+  });
+
+  /* learn */
+  $('#fsGrid').innerHTML = LETTERS.concat(NUMS).map(k => `<button type="button" data-k="${k}" aria-pressed="${k === 'A'}" aria-label="${label(k)}">${k}</button>`).join('');
+  function show(k){
+    const h = H_[k];
+    $('#fsL').textContent = k; $('#fsD').textContent = h.d; $('#fsF').innerHTML = fingersHTML(h.f); $('#fsT').textContent = 'Tip: ' + h.t;
+    $('#fsGrid').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x.dataset.k === k));
+  }
+  $('#fsGrid').addEventListener('click', e => { const b = e.target.closest('button'); if (b) show(b.dataset.k); });
+  show('A');
+
+  /* quiz */
+  let set = 'letters', qCur = null, qDone = false, right = 0, total = 0, streak = 0, lastK = null;
+  // groups of look-alikes make better wrong answers
+  const SIM = [['A','S','T','M','N','E','10'],['B','4','5'],['U','V','H','R','K','2'],['D','1','Z','X'],['F','9','O'],['G','Q','L','H'],['K','P','V'],['W','3','6','7','8'],['I','J','Y']];
+  const pool = () => set === 'letters' ? LETTERS : set === 'numbers' ? NUMS : LETTERS.concat(NUMS);
+  const shuffle = a => { for (let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+  function newQ(){
+    const p = pool(); let k;
+    do { k = p[Math.floor(Math.random() * p.length)]; } while (k === lastK && p.length > 1);
+    lastK = k; qCur = k; qDone = false;
+    const sim = shuffle(SIM.filter(g => g.includes(k)).flat().filter(x => x !== k && p.includes(x)));
+    const TW = {V:'2','2':'V',F:'9','9':'F',W:'6','6':'W'}, ok = x => x !== TW[k];
+    const opts = [k]; sim.forEach(x => { if (opts.length < 4 && !opts.includes(x) && ok(x)) opts.push(x); });
+    shuffle(p.slice()).forEach(x => { if (opts.length < 4 && !opts.includes(x) && ok(x)) opts.push(x); });
+    shuffle(opts);
+    $('#fqD').textContent = H_[k].d; $('#fqF').innerHTML = fingersHTML(H_[k].f);
+    $('#fqOpts').innerHTML = opts.map(x => `<button type="button" data-k="${x}">${x}</button>`).join('');
+    $('#fqMsg').textContent = 'Make the handshape yourself, then pick the ' + (set === 'numbers' ? 'number' : set === 'letters' ? 'letter' : 'letter or number') + '.';
+  }
+  $('#fqOpts').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b || qDone) return;
+    qDone = true; total++;
+    const ok = b.dataset.k === qCur;
+    if (ok){ right++; streak++; } else streak = 0;
+    $('#fqOpts').querySelectorAll('button').forEach(x => { if (x.dataset.k === qCur) x.classList.add('right'); else if (x === b) x.classList.add('wrong'); });
+    $('#fqMsg').innerHTML = ok ? `<b class="ok">Yes, that's ${qCur}.</b> ${H_[qCur].t}` : `<b class="no">Not quite. It's ${qCur}.</b> ${H_[qCur].t}`;
+    $('#fqScore').textContent = `Score ${right} / ${total} · streak ${streak}`;
+    $('#fqNext').focus();
+  });
+  $('#fqNext').addEventListener('click', newQ);
+  $('#fsSet').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    set = b.dataset.s;
+    $('#fsSet').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    newQ();
+  });
+
+  /* spell words */
+  const WORDS = ['HELLO','NAME','DEAF','ASL','FRIEND','COFFEE','PIZZA','BOOK','JAZZ','HAPPY','SCHOOL','MOM','DAD','TEXAS','OHIO','APPLE','WATER','QUIZ','EMMA','NOAH','LIAM','OLIVIA','SOPHIA','JAMES','MAYA'];
+  let word = [], wi = -1, wT = null;
+  function setWord(w){
+    word = (w || '').toUpperCase().replace(/[^A-Z]/g, '').split('');
+    wi = -1; renderWord();
+    $('#fwL').textContent = '·';
+    $('#fwD').textContent = word.length ? 'Press Start and fingerspell along. Keep your hand in one spot.' : 'Type a word using the letters A to Z.';
+  }
+  function renderWord(){
+    $('#fwWord').innerHTML = word.map((c, i) => `<span class="${i === wi ? 'now' : i < wi ? 'done' : ''}">${c}</span>`).join('');
+  }
+  function stepLetter(){
+    if (!word.length) return false;
+    wi++;
+    if (wi >= word.length){
+      stopSpell(); wi = word.length; renderWord();
+      $('#fwL').textContent = '✓'; $('#fwD').textContent = 'Done! Spell it again a little smoother, or try another word. Watch for double letters: slide or bounce slightly.';
+      return false;
+    }
+    const c = word[wi], dbl = wi > 0 && word[wi - 1] === c;
+    $('#fwL').textContent = c;
+    $('#fwD').textContent = (dbl ? 'Double letter: small slide or bounce. ' : '') + H_[c].d;
+    renderWord(); return true;
+  }
+  function stopSpell(){ clearInterval(wT); wT = null; $('#fwGo').textContent = 'Start'; }
+  $('#fwGo').addEventListener('click', () => {
+    if (wT){ stopSpell(); return; }
+    if (!word.length) return;
+    if (wi >= word.length - 1) { wi = -1; }
+    const ms = 1000 / parseFloat($('#fwSp').value);
+    $('#fwGo').textContent = 'Pause';
+    if (stepLetter()) wT = setInterval(() => { if (!stepLetter()) stopSpell(); }, ms);
+  });
+  $('#fwStep').addEventListener('click', () => { stopSpell(); if (wi >= word.length) wi = -1; stepLetter(); });
+  $('#fwIn').addEventListener('input', () => { stopSpell(); setWord($('#fwIn').value); });
+  $('#fwRand').addEventListener('click', () => { stopSpell(); let w; do { w = WORDS[Math.floor(Math.random() * WORDS.length)]; } while (w === $('#fwIn').value && WORDS.length > 1); $('#fwIn').value = w; setWord(w); });
+  $('#fwSp').addEventListener('input', () => {
+    const v = parseFloat($('#fwSp').value);
+    $('#fwSpLbl').textContent = v + (v === 1 ? ' letter' : ' letters') + ' per second';
+    if (wT){ stopSpell(); $('#fwGo').click(); }
+  });
+  setWord('HELLO');
+})();
+</script>
+</body>
+</html>

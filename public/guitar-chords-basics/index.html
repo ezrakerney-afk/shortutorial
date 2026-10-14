@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guitar Chords for Beginners · Shortutorial</title>
+<meta name="description" content="Start playing guitar: the parts of the guitar, standard tuning (EADGBE), how to read chord diagrams, your first six chords (Em, Am, C, G, D, E), strumming patterns and smooth chord changes. Hear every chord on the page.">
+<link rel="canonical" href="https://shortutorial.com/guitar-chords-basics/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Guitar Chords for Beginners · Shortutorial">
+<meta property="og:description" content="Start playing guitar: the parts of the guitar, standard tuning (EADGBE), how to read chord diagrams, your first six chords (Em, Am, C, G, D, E), strumming patterns and smooth chord changes. Hear every chord on the page.">
+<meta property="og:url" content="https://shortutorial.com/guitar-chords-basics/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+.links small{font-size:.88rem;color:var(--muted);line-height:1.4}
+/* guitar widgets */
+.cd-wrap{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}
+.cd-wrap svg{width:200px;max-width:100%;flex:none}
+.cd-info{flex:1 1 160px;min-width:0;display:flex;flex-direction:column;gap:8px}
+.cd-info h3{font-size:1.4rem}
+.cd-info .work{white-space:pre-line}
+svg .str{stroke:var(--muted)} svg .fr{stroke:var(--line)} svg .nut{stroke:var(--ink)}
+svg .dot{fill:var(--accent)} svg .dtx{fill:var(--accent-ink);font-family:var(--mono);font-size:13px;font-weight:600}
+svg .mk{fill:var(--muted);font-family:var(--mono);font-size:13px} svg .sn{fill:var(--muted);font-family:var(--mono);font-size:11px}
+svg .hit{fill:var(--amber);opacity:0;transition:opacity .25s}
+svg .hit.on{opacity:.35}
+.strbtns{display:flex;flex-wrap:wrap;gap:6px}
+.strbtns button{all:unset;cursor:pointer;font-family:var(--mono);font-size:.8rem;padding:5px 9px;border-radius:8px;border:1.5px solid var(--line);background:var(--surface);min-width:34px;text-align:center}
+.strbtns button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.strbtns button:disabled{opacity:.4;cursor:default}
+.beats{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:4px}
+.beats div{display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 0;border-radius:8px;border:1px solid var(--line);background:var(--surface);font-family:var(--mono)}
+.beats b{font-size:1.1rem;color:var(--accent)}
+.beats small{font-size:.7rem;color:var(--muted)}
+.beats div.now{background:var(--accent);border-color:var(--accent)}
+.beats div.now b,.beats div.now small{color:var(--accent-ink)}
+.omc{display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.omc .clock{font-family:var(--mono);font-size:2.4rem;font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+.omc .count{font-family:var(--display);font-size:1.15rem;font-weight:600}
+.omc .count b{color:var(--accent);font-size:1.6rem}
+.omc .bar{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.omc .bar i{display:block;height:100%;width:0;background:var(--accent)}
+.tune{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+.tune button{all:unset;cursor:pointer;text-align:center;padding:10px 0;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);font-family:var(--display);font-weight:700;font-size:1.1rem}
+.tune button small{display:block;font-family:var(--mono);font-weight:400;font-size:.66rem;color:var(--muted)}
+.tune button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tune button.on,.strbtns button.on{border-color:var(--accent);background:var(--accent-soft)}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"Guitar Chords for Beginners","item":"https://shortutorial.com/guitar-chords-basics/"}]},{"@type":"Article","@id":"https://shortutorial.com/guitar-chords-basics/#article","headline":"Guitar Chords for Beginners","description":"Start playing guitar: the parts of the guitar, standard tuning (EADGBE), how to read chord diagrams, your first six chords (Em, Am, C, G, D, E), strumming patterns and smooth chord changes. Hear every chord on the page.","url":"https://shortutorial.com/guitar-chords-basics/","mainEntityOfPage":"https://shortutorial.com/guitar-chords-basics/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Life skills","keywords":"guitar, learn guitar, guitar chords, beginner guitar, chord diagram, tune guitar, EADGBE, strumming pattern, chord changes, acoustic guitar, music","timeRequired":"PT15M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I start on acoustic or electric?","acceptedAnswer":{"@type":"Answer","text":"Either works. Electric guitars usually have lighter strings and a thinner neck, so chords are easier to press. Acoustic guitars need nothing else to play. Nylon-string classical guitars are the gentlest on fingertips but have wide necks. Pick the one that makes you want to play."}},{"@type":"Question","name":"Why does my chord buzz?","acceptedAnswer":{"@type":"Answer","text":"Usually a finger is too far from the fret, not pressing on its tip, or touching a neighboring string. Pick each string one at a time to find the culprit, then move that finger closer to the fret and arch it more. If open strings buzz with no fingers down, the guitar may need a setup at a music store."}},{"@type":"Question","name":"How often should I tune?","acceptedAnswer":{"@type":"Answer","text":"Every time you pick up the guitar. Temperature, humidity and new strings all make the pitch drift. It takes under a minute with a tuner."}},{"@type":"Question","name":"Do I need to read music?","acceptedAnswer":{"@type":"Answer","text":"No. Most guitar songs are shared as chord charts (chord names above the lyrics) or tab, which shows strings and fret numbers. Chord diagrams are all you need for this page."}},{"@type":"Question","name":"The sounds on this page don't play.","acceptedAnswer":{"@type":"Answer","text":"Browsers only allow sound after you tap or click the page. Tap a button once, turn your volume up, and on iPhone make sure the ring/silent switch isn't on silent."}},{"@type":"Question","name":"How long until I can play a song?","acceptedAnswer":{"@type":"Answer","text":"With short daily practice, many beginners can strum a simple three- or four-chord song within a few weeks. Smooth, quick changes take longer, which is exactly what one-minute changes are for."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="guitar-chords-basics">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=music">Life skills</a> / Guitar chords</div>
+    <span class="eyebrow">Life skills · Music</span>
+    <h1>Guitar Chords for Beginners</h1>
+    <p class="lede">Pick up a guitar and play real songs. Learn the parts of the guitar, tune it, read chord diagrams, play six chords that cover thousands of songs, strum in time and switch chords without stopping. Every chord and rhythm plays right on this page.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~15 min read</span><span class="badge">6 lessons</span><span class="badge">Playable chord viewer</span><span class="badge">Strum + change trainers</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#g1">1 · The guitar</a><a href="#g2">2 · Tuning</a><a href="#g3">3 · Chord diagrams</a><a href="#g4">4 · First chords</a><a href="#g5">5 · Strumming</a><a href="#g6">6 · Changing chords</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="g1">
+    <div class="lesson-head"><span class="step">01</span><h2>Know your guitar and how to hold it</h2></div>
+    <p>Acoustic and electric guitars have the same layout, and every chord on this page works on both. Here are the parts you'll hear about:</p>
+    <ul class="points">
+      <li><b>Headstock and tuning pegs:</b> at the top. Turning a peg tightens or loosens a string, which raises or lowers its pitch.</li>
+      <li><b>Nut:</b> the small grooved strip where the headstock meets the neck. Strings ring from here when you play them "open" (no fingers).</li>
+      <li><b>Neck and fretboard:</b> the long part you press the strings against.</li>
+      <li><b>Frets:</b> the thin metal bars across the fretboard. "Fret 1" is the space between the nut and the first bar, "fret 2" is the next space, and so on. Each fret raises the note by one half step.</li>
+      <li><b>Body, sound hole and bridge:</b> the big part you strum over. The bridge anchors the strings at the bottom. Electrics have pickups instead of a sound hole.</li>
+    </ul>
+    <h3>The six strings have numbers</h3>
+    <p>Strings are numbered from the <b>thinnest (1)</b> to the <b>thickest (6)</b>. That surprises people, because when you hold the guitar the thick 6th string is on top, nearest your face. "Low" and "high" mean pitch, not position: the thick string is the low one.</p>
+    <h3>Holding it</h3>
+    <ol class="steps">
+      <li><b>Sit up straight</b> with the guitar's waist on your right leg (if you're right-handed). The neck points left, angled slightly up.</li>
+      <li><b>Fretting hand</b> (left): thumb on the back of the neck, roughly behind your middle finger. Keep your palm off the neck so your fingers can arch.</li>
+      <li><b>Strumming hand</b> (right): rest your forearm on the top edge of the body, so your hand hangs over the sound hole.</li>
+      <li><b>Use a pick</b> if you like: hold it between the side of your index finger and the pad of your thumb, with just the tip showing. A thin or medium pick is easiest for strumming.</li>
+    </ol>
+    <p class="callout"><span><b>Left-handed?</b> Most lefties play a left-handed guitar, which is a mirror image. Everything here still applies, just flip left and right. Some left-handed players learn on a regular guitar and do fine, so try both if you can.</span></p>
+  </section>
+
+  <section class="lesson" id="g2">
+    <div class="lesson-head"><span class="step">02</span><h2>Tune to EADGBE</h2></div>
+    <p>Standard tuning, from the thick 6th string to the thin 1st string, is <b>E A D G B E</b>. A popular memory trick: <b>E</b>ddie <b>A</b>te <b>D</b>ynamite, <b>G</b>ood <b>B</b>ye <b>E</b>ddie. The two E strings are two octaves apart.</p>
+    <div class="tw"><table class="t">
+      <tr><th>String</th><th>Note</th><th>Thickness</th></tr>
+      <tr><td>6</td><td>E (low E)</td><td>Thickest, top when holding</td></tr>
+      <tr><td>5</td><td>A</td><td></td></tr>
+      <tr><td>4</td><td>D</td><td></td></tr>
+      <tr><td>3</td><td>G</td><td></td></tr>
+      <tr><td>2</td><td>B</td><td></td></tr>
+      <tr><td>1</td><td>E (high E)</td><td>Thinnest, bottom when holding</td></tr>
+    </table></div>
+    <h3>The easy way: use a tuner</h3>
+    <p>A clip-on tuner, a free tuner app, or an online tuner that listens through your microphone will show the note you're playing. Pluck one string, turn its peg slowly, and stop when the tuner shows the right letter with the needle centered. If the needle is left (flat), tighten. If it's right (sharp), loosen a little, then come back up to the note. Tuning <i>up</i> to a note helps it stay in tune.</p>
+    <div class="try" id="tn"><span class="try-h">Try it · reference notes</span>
+      <p>Tap a string to hear its correct pitch, then match your guitar to it. Tap the same button again to stop.</p>
+      <div class="tune" id="tnBtns"></div>
+      <p class="work" id="tnMsg" aria-live="polite">No sound? Turn your volume up. On iPhone, check the silent switch.</p>
+    </div>
+    <h3>The 5th-fret method (no tuner)</h3>
+    <p>If only one string is right, you can tune the rest to it. Starting from a correct low E: press the 6th string at the <b>5th fret</b>. That note is A, so tune the open 5th string to match it. Repeat up the neck: 5th string, 5th fret matches the open 4th string, and 4th string, 5th fret matches the open 3rd. <b>One exception:</b> on the 3rd (G) string, use the <b>4th fret</b> to tune the open B string. Then go back to the 5th fret on the B string to tune the high E.</p>
+    <p class="callout warn"><span><b>Go slowly near the top.</b> Turn pegs a little at a time and pluck as you turn. Cranking a string far past its note is the usual way strings snap. If you're unsure which way to turn, loosen first, then bring it up.</span></p>
+  </section>
+
+  <section class="lesson" id="g3">
+    <div class="lesson-head"><span class="step">03</span><h2>Read a chord diagram</h2></div>
+    <p>A chord diagram is a picture of the fretboard as if the guitar were standing up facing you. Once you can read one, you can learn any chord from a songbook or website.</p>
+    <ul class="points">
+      <li><b>Vertical lines are strings.</b> The thick low E (6) is on the <b>left</b>, high E (1) on the right.</li>
+      <li><b>Horizontal lines are frets.</b> The thick line at the top is the nut. If a chord starts higher up the neck, you'll see a number like "5fr" beside it instead.</li>
+      <li><b>Dots</b> show where to press. The number in or under a dot tells you which finger: <b>1 index, 2 middle, 3 ring, 4 pinky</b>. The thumb is "T".</li>
+      <li><b>O</b> above a string means play it open. <b>X</b> means don't play that string (skip it or mute it).</li>
+    </ul>
+    <div class="try" id="cv"><span class="try-h">Try it · chord viewer</span>
+      <div class="chipset" id="cvChips" aria-label="Chord"></div>
+      <div class="cd-wrap">
+        <svg id="cvSvg" viewBox="0 0 200 266" role="img" aria-labelledby="cvTitle"><title id="cvTitle">Chord diagram</title></svg>
+        <div class="cd-info">
+          <h3 id="cvName">E minor</h3>
+          <div class="row"><button class="btn" type="button" id="cvStrum">▶ Strum it</button><button class="btn ghost" type="button" id="cvSlow">Pick each string</button></div>
+          <div><small class="work">Play one string:</small><div class="strbtns" id="cvStr"></div></div>
+          <p class="work" id="cvWork"></p>
+        </div>
+      </div>
+    </div>
+    <div class="example"><div class="ex-h">Example · reading the D chord</div><ol><li>X X O above strings 6, 5, 4: skip the two thick strings, play the 4th string open.</li><li>Finger 1 on the 3rd string, 2nd fret.</li><li>Finger 3 on the 2nd string, 3rd fret. Finger 2 on the 1st string, 2nd fret.</li><li class="ans">Strum only the four thin strings: a D major chord.</li></ol></div>
+  </section>
+
+  <section class="lesson" id="g4">
+    <div class="lesson-head"><span class="step">04</span><h2>Your first six chords</h2></div>
+    <p>These six open chords use the open strings to ring out, which makes them the easiest starting point. With them you can play a huge number of pop, folk, rock and country songs. Learn them roughly in this order. Each one is in the chord viewer above.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Chord</th><th>Strings 6→1</th><th>Fingers</th><th>Strum</th></tr>
+      <tr><td><b>Em</b></td><td>0 2 2 0 0 0</td><td>2 on A string, 3 on D string (both fret 2)</td><td>All 6</td></tr>
+      <tr><td><b>E</b></td><td>0 2 2 1 0 0</td><td>Like Em, plus 1 on G string, fret 1</td><td>All 6</td></tr>
+      <tr><td><b>Am</b></td><td>X 0 2 2 1 0</td><td>The E shape moved over one string</td><td>Top 5</td></tr>
+      <tr><td><b>D</b></td><td>X X 0 2 3 2</td><td>1 on G2, 3 on B3, 2 on high E2</td><td>Top 4</td></tr>
+      <tr><td><b>C</b></td><td>X 3 2 0 1 0</td><td>3 on A3, 2 on D2, 1 on B1</td><td>Top 5</td></tr>
+      <tr><td><b>G</b></td><td>3 2 0 0 0 3</td><td>2 on low E3, 1 on A2, 3 on high E3</td><td>All 6</td></tr>
+    </table></div>
+    <p>In the "Strings" column, numbers are frets, 0 is open and X is not played. "Top 5" means start from the 5th string and strum down.</p>
+    <h3>Make every note ring</h3>
+    <ol class="steps">
+      <li><b>Use your fingertips</b>, coming down on the string from above, with your knuckles arched. Flat fingers touch the strings next to them and mute them.</li>
+      <li><b>Press just behind the fret</b> (on the side nearer the body), not in the middle of the space. You'll need much less pressure.</li>
+      <li><b>Check each string.</b> Hold the chord and pick the strings one at a time, thick to thin. If one buzzes or thuds, adjust the finger near it. The "Pick each string" button above shows what it should sound like.</li>
+      <li><b>Relax.</b> Squeezing harder rarely fixes a buzz. Moving closer to the fret usually does.</li>
+    </ol>
+    <p class="callout"><span><b>Sore fingertips are normal</b> for the first couple of weeks while calluses form. Practice in short sessions (10 to 15 minutes, a few times a day) instead of one long one. If you feel sharp pain or pain in your wrist, stop and rest, and check that your thumb isn't clamping the neck.</span></p>
+    <p class="callout"><span><b>Other G shapes.</b> You'll also see G played as 3 2 0 0 3 3, with the ring finger on the B string, 3rd fret, and the pinky on the high E. Both are correct. Use the one that's easier to reach for now.</span></p>
+  </section>
+
+  <section class="lesson" id="g5">
+    <div class="lesson-head"><span class="step">05</span><h2>Strum in time</h2></div>
+    <p>Strumming is a steady pendulum. Your hand moves <b>down on the beats</b> (1, 2, 3, 4) and <b>up on the "ands"</b> in between, all the time, whether or not you hit the strings. Different patterns just choose which of those movements actually touch the strings. That's how you keep in time.</p>
+    <ul class="points">
+      <li><b>Down strums (D)</b> start from the lowest string the chord uses and brush toward the floor.</li>
+      <li><b>Up strums (U)</b> are lighter and usually catch just the top three or four thin strings.</li>
+      <li>Strum from the <b>wrist</b>, loosely, like shaking water off your hand. Hold the pick lightly enough that it can flex.</li>
+    </ul>
+    <div class="tw"><table class="t">
+      <tr><th>Pattern</th><th>Count it</th><th>Use it for</th></tr>
+      <tr><td>Quarter notes</td><td>D · D · D · D</td><td>Your first songs, learning changes</td></tr>
+      <tr><td>Eighth notes</td><td>D U D U D U D U</td><td>Building a steady up-down motion</td></tr>
+      <tr><td>"Old faithful"</td><td>D · D U · U D U</td><td>Countless pop, folk and rock songs</td></tr>
+      <tr><td>Waltz (3/4)</td><td>D · D U D U</td><td>Songs in three, like waltzes</td></tr>
+    </table></div>
+    <div class="try" id="sp"><span class="try-h">Try it · strum pattern player</span>
+      <div class="row">
+        <label>Pattern<select id="spPat">
+          <option value="q">Quarter notes</option>
+          <option value="e">Eighth notes</option>
+          <option value="o" selected>"Old faithful"</option>
+          <option value="w">Waltz (3/4)</option>
+        </select></label>
+        <label>Chord<select id="spChord"></select></label>
+        <label>Speed (BPM)<input type="number" id="spBpm" value="70" min="40" max="160" step="5" inputmode="numeric"></label>
+      </div>
+      <div class="beats" id="spBeats" aria-hidden="true"></div>
+      <div class="row"><button class="btn" type="button" id="spPlay">▶ Play</button><label style="flex-direction:row;align-items:center;gap:6px"><input type="checkbox" id="spClick" checked> Metronome click</label></div>
+      <p class="work" id="spMsg" aria-live="polite">Watch the boxes: move your hand down on every number and up on every "&amp;". Only touch the strings where you see D or U.</p>
+    </div>
+    <p class="callout"><span><b>Start slow.</b> 60 to 70 BPM is plenty at first. Being steady at a slow tempo beats being fast and uneven, and speed comes on its own.</span></p>
+  </section>
+
+  <section class="lesson" id="g6">
+    <div class="lesson-head"><span class="step">06</span><h2>Change chords without stopping</h2></div>
+    <p>Changing chords smoothly is the skill that turns "I know some chords" into "I can play songs." These tricks help:</p>
+    <ul class="points">
+      <li><b>Move all fingers together</b>, as one shape, instead of placing them one at a time. Practice lifting the shape just off the strings and landing it.</li>
+      <li><b>Look for anchor fingers</b> that don't move. Am to C keeps fingers 1 and 2 exactly where they are. Only the ring finger moves, from the G string to the A string.</li>
+      <li><b>Look for shared shapes.</b> Em to E just adds finger 1. E to Am keeps the same shape and moves it over one string.</li>
+      <li><b>Look ahead.</b> Start moving on the last beat (or last "and") of the old chord. It's fine if the last strum before a change catches open strings. Most players do this, and it keeps the rhythm going.</li>
+      <li><b>Keep strumming.</b> Your strumming hand should never wait for your fretting hand. A late chord sounds better than a stopped rhythm.</li>
+    </ul>
+    <h3>One-minute changes</h3>
+    <p>A well-known practice drill, popularized by guitar teacher Justin Sandercoe: pick two chords and switch back and forth for <b>one minute</b>, counting each clean change. Don't strum; just form the chord properly each time. Write down your score and try to beat it tomorrow. A few minutes a day of this improves changes faster than almost anything else.</p>
+    <div class="try" id="mc"><span class="try-h">Try it · one-minute changes</span>
+      <div class="row">
+        <label>From<select id="mcA"></select></label>
+        <label>To<select id="mcB"></select></label>
+      </div>
+      <div class="omc">
+        <div class="clock" id="mcClock" role="timer" aria-live="off">1:00</div>
+        <div class="bar"><i id="mcBar"></i></div>
+        <div class="count" aria-live="polite">Changes: <b id="mcCount">0</b> <span class="work" id="mcBest"></span></div>
+        <div class="row"><button class="btn" type="button" id="mcStart">Start</button><button class="btn ghost" type="button" id="mcTap" disabled>+1 change</button><button class="btn ghost" type="button" id="mcReset">Reset</button></div>
+        <p class="work" id="mcMsg" aria-live="assertive">Press Start, then tap "+1 change" (or press the space bar) each time you land a clean chord.</p>
+      </div>
+    </div>
+    <div class="example"><div class="ex-h">Example · your first song progression</div><ol><li>Strum G, C, D, G with four down strums each (the quarter-note pattern).</li><li>Then try Em, C, G, D, a progression used in countless songs.</li><li>When that feels steady, switch to the "old faithful" pattern.</li><li class="ans">You're playing the backbone of real songs.</li></ol></div>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Should I start on acoustic or electric?</summary><div class="a"><p>Either works. Electric guitars usually have lighter strings and a thinner neck, so chords are easier to press. Acoustic guitars need nothing else to play. Nylon-string classical guitars are the gentlest on fingertips but have wide necks. Pick the one that makes you want to play.</p></div></details>
+      <details><summary>Why does my chord buzz?</summary><div class="a"><p>Usually a finger is too far from the fret, not pressing on its tip, or touching a neighboring string. Pick each string one at a time to find the culprit, then move that finger closer to the fret and arch it more. If open strings buzz with no fingers down, the guitar may need a setup at a music store.</p></div></details>
+      <details><summary>How often should I tune?</summary><div class="a"><p>Every time you pick up the guitar. Temperature, humidity and new strings all make the pitch drift. It takes under a minute with a tuner.</p></div></details>
+      <details><summary>Do I need to read music?</summary><div class="a"><p>No. Most guitar songs are shared as chord charts (chord names above the lyrics) or tab, which shows strings and fret numbers. Chord diagrams are all you need for this page.</p></div></details>
+      <details><summary>The sounds on this page don't play.</summary><div class="a"><p>Browsers only allow sound after you tap or click the page. Tap a button once, turn your volume up, and on iPhone make sure the ring/silent switch isn't on silent.</p></div></details>
+      <details><summary>How long until I can play a song?</summary><div class="a"><p>With short daily practice, many beginners can strum a simple three- or four-chord song within a few weeks. Smooth, quick changes take longer, which is exactly what one-minute changes are for.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://www.fender.com/articles/chords/how-to-read-a-chord-chart" target="_blank" rel="noopener"><span class="src">Fender</span><b>How to read a chord chart</b></a>
+      <a href="https://www.justinguitar.com/categories/beginner-guitar-lessons-grade-1" target="_blank" rel="noopener"><span class="src">JustinGuitar</span><b>Beginner guitar course (chords, changes, strumming)</b></a>
+      <a href="https://www.fender.com/online-guitar-tuner" target="_blank" rel="noopener"><span class="src">Fender</span><b>Online guitar tuner (standard tuning)</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="elsewhere">
+    <h2 class="sec"><span class="n">GO DEEPER</span>Keep learning elsewhere</h2>
+    <div class="links">
+      <a href="https://www.justinguitar.com/categories/beginner-guitar-lessons-grade-1" target="_blank" rel="noopener"><span class="src">JustinGuitar · free</span><b>Beginner Guitar Course</b><small>A complete, structured free course from your first chord to your first songs.</small></a>
+      <a href="https://www.youtube.com/@JustinGuitar" target="_blank" rel="noopener"><span class="src">YouTube · free</span><b>JustinGuitar channel</b><small>The same teacher's video lessons, song tutorials and technique tips.</small></a>
+      <a href="https://www.youtube.com/@MartyMusic" target="_blank" rel="noopener"><span class="src">YouTube · free</span><b>Marty Music</b><small>Marty Schwartz's friendly song lessons, great once you know a few chords.</small></a>
+      <a href="https://www.fender.com/online-guitar-tuner" target="_blank" rel="noopener"><span class="src">Fender · free</span><b>Online guitar tuner</b><small>Tune by microphone or by ear, right in your browser.</small></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>Sounds on this page are synthesized in your browser. They're close to a real guitar, but use a tuner for exact tuning.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script src="../comments.js"></script>
+<script>
+(function(){
+  /* ---------- sound: Karplus-Strong plucked string ---------- */
+  const OPEN = [40,45,50,55,59,64]; // MIDI notes of open strings, low E to high E
+  const NAMES = ['C','C♯','D','E♭','E','F','F♯','G','A♭','A','B♭','B'];
+  let ctx = null, master = null; const cache = {};
+  function ac(){
+    if (!ctx){
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return null;
+      ctx = new AC(); master = ctx.createGain(); master.gain.value = 0.6; master.connect(ctx.destination);
+    }
+    if (ctx.state === 'suspended') ctx.resume();
+    return ctx;
+  }
+  const hz = m => 440 * Math.pow(2, (m - 69) / 12);
+  function buf(m){
+    if (cache[m]) return cache[m];
+    const sr = ctx.sampleRate, len = Math.floor(sr * 2.6), N = Math.max(2, Math.round(sr / hz(m)));
+    const b = ctx.createBuffer(1, len, sr), d = b.getChannelData(0);
+    for (let i = 0; i < N; i++) d[i] = Math.random() * 2 - 1;
+    const damp = m < 50 ? 0.996 : 0.994;
+    for (let i = N; i < len; i++) d[i] = damp * 0.5 * (d[i - N] + d[i - N + 1]);
+    // soften the attack slightly
+    for (let i = 0; i < 200 && i < len; i++) d[i] *= i / 200;
+    return (cache[m] = b);
+  }
+  function pluck(m, when, vol){
+    const c = ac(); if (!c) return null;
+    const s = c.createBufferSource(), g = c.createGain();
+    s.buffer = buf(m); g.gain.value = vol == null ? 0.5 : vol;
+    s.connect(g); g.connect(master); s.start(when || c.currentTime);
+    return {s, g};
+  }
+  function click(when, accent){
+    const c = ac(); if (!c) return;
+    const o = c.createOscillator(), g = c.createGain();
+    o.frequency.value = accent ? 1500 : 1000;
+    g.gain.setValueAtTime(0.25, when); g.gain.exponentialRampToValueAtTime(0.001, when + 0.05);
+    o.connect(g); g.connect(master); o.start(when); o.stop(when + 0.06);
+  }
+  const noteName = m => NAMES[m % 12];
+
+  /* ---------- chords: frets per string (6 to 1), -1 = not played; fingers ---------- */
+  const CH = {
+    Em:{n:'E minor', f:[0,2,2,0,0,0], g:[0,2,3,0,0,0], tip:'The easiest chord. Two fingers, all six strings.'},
+    E: {n:'E major', f:[0,2,2,1,0,0], g:[0,2,3,1,0,0], tip:'Em plus your index finger on the G string, 1st fret.'},
+    Am:{n:'A minor', f:[-1,0,2,2,1,0], g:[0,0,2,3,1,0], tip:'Same shape as E, moved over one string. Skip the low E.'},
+    D: {n:'D major', f:[-1,-1,0,2,3,2], g:[0,0,0,1,3,2], tip:'A small triangle shape. Strum only the four thin strings.'},
+    C: {n:'C major', f:[-1,3,2,0,1,0], g:[0,3,2,0,1,0], tip:'A diagonal staircase. Keep finger 2 arched so the open G rings.'},
+    G: {n:'G major', f:[3,2,0,0,0,3], g:[2,1,0,0,0,3], tip:'A big stretch. Reach finger 2 to the low E and 3 to the high E.'}
+  };
+  const ORDER = ['Em','E','Am','D','C','G'];
+  const STR = ['E','A','D','G','B','e'];
+  const notesOf = k => CH[k].f.map((f, i) => f < 0 ? null : OPEN[i] + f);
+  function strum(k, when, dir, vol){
+    const c = ac(); if (!c) return;
+    const t = when || c.currentTime, ns = notesOf(k).map((m, i) => ({m, i})).filter(x => x.m != null);
+    let list = dir === 'up' ? ns.slice(-4).reverse() : ns;
+    list.forEach((x, j) => { pluck(x.m, t + j * (dir === 'up' ? 0.012 : 0.018), (vol || 0.4) * (dir === 'up' ? 0.7 : 1)); flash(x.i, t + j * 0.018); });
+  }
+
+  /* ---------- chord viewer ---------- */
+  const svg = $('#cvSvg'); let cur = 'Em';
+  const SX = i => 38 + i * 25, FY = j => 50 + j * 38;
+  function flash(i, t){
+    if (!svg) return;
+    const delay = ctx ? Math.max(0, (t - ctx.currentTime) * 1000) : 0;
+    setTimeout(() => { const h = svg.querySelector('.hit[data-s="' + i + '"]'); if (h){ h.classList.add('on'); setTimeout(() => h.classList.remove('on'), 300); } }, delay);
+  }
+  function draw(k){
+    const c = CH[k]; let s = '<title id="cvTitle">' + c.n + ' chord diagram</title>';
+    for (let i = 0; i < 6; i++) s += `<rect class="hit" data-s="${i}" x="${SX(i)-9}" y="${FY(0)}" width="18" height="${38*5}" rx="6"/>`;
+    for (let j = 1; j <= 5; j++) s += `<line class="fr" x1="${SX(0)}" x2="${SX(5)}" y1="${FY(j)}" y2="${FY(j)}" stroke-width="2"/>`;
+    s += `<line class="nut" x1="${SX(0)-1}" x2="${SX(5)+1}" y1="${FY(0)}" y2="${FY(0)}" stroke-width="6"/>`;
+    for (let i = 0; i < 6; i++){
+      s += `<line class="str" x1="${SX(i)}" x2="${SX(i)}" y1="${FY(0)}" y2="${FY(5)}" stroke-width="${2.6 - i*0.32}"/>`;
+      const f = c.f[i];
+      if (f < 0) s += `<text class="mk" x="${SX(i)}" y="38" text-anchor="middle">X</text>`;
+      else if (f === 0) s += `<text class="mk" x="${SX(i)}" y="38" text-anchor="middle">O</text>`;
+      else s += `<circle class="dot" cx="${SX(i)}" cy="${FY(f) - 19}" r="10"/><text class="dtx" x="${SX(i)}" y="${FY(f) - 14.5}" text-anchor="middle">${c.g[i]}</text>`;
+      s += `<text class="sn" x="${SX(i)}" y="${FY(5) + 18}" text-anchor="middle">${STR[i]}</text>`;
+    }
+    for (let j = 1; j <= 5; j++) s += `<text class="sn" x="16" y="${FY(j) - 15}" text-anchor="middle">${j}</text>`;
+    svg.innerHTML = s;
+    $('#cvName').textContent = c.n + ' (' + k + ')';
+    const ns = notesOf(k);
+    $('#cvStr').innerHTML = ns.map((m, i) => `<button type="button" data-i="${i}" ${m == null ? 'disabled aria-label="String ' + (6-i) + ' not played"' : 'aria-label="String ' + (6-i) + ', ' + noteName(m) + '"'}>${m == null ? '×' : noteName(m)}</button>`).join('');
+    const fing = c.f.map((f, i) => f > 0 ? `finger ${c.g[i]} on string ${6-i} (${STR[i]}), fret ${f}` : null).filter(Boolean);
+    const pl = c.f.filter(f => f >= 0).length;
+    $('#cvWork').textContent = c.tip + '\nShape (strings 6→1): ' + c.f.map(f => f < 0 ? 'X' : f).join(' ') + '\n' + fing.join('; ') + '.\nStrum ' + (pl === 6 ? 'all six strings.' : 'the top ' + pl + ' strings.') + '\nNotes: ' + [...new Set(ns.filter(m => m != null).map(noteName))].join(', ');
+  }
+  $('#cvChips').innerHTML = ORDER.map(k => `<button type="button" data-k="${k}" aria-pressed="${k === cur}">${k}</button>`).join('');
+  $('#cvChips').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    cur = b.dataset.k;
+    $('#cvChips').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    draw(cur); strum(cur);
+  });
+  $('#cvStrum').addEventListener('click', () => strum(cur));
+  $('#cvSlow').addEventListener('click', () => {
+    const c = ac(); if (!c) return;
+    notesOf(cur).forEach((m, i) => { if (m != null){ const t = c.currentTime + i * 0.45; pluck(m, t, 0.5); flash(i, t); } });
+  });
+  $('#cvStr').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b || b.disabled) return;
+    const i = +b.dataset.i, m = notesOf(cur)[i]; if (m == null) return;
+    pluck(m, null, 0.55); flash(i, ctx ? ctx.currentTime : 0);
+  });
+  draw(cur);
+
+  /* ---------- reference notes ---------- */
+  let tnTimer = null, tnOn = -1;
+  $('#tnBtns').innerHTML = OPEN.map((m, i) => `<button type="button" data-i="${i}" aria-pressed="false">${i === 5 ? 'e' : STR[i]}<small>string ${6 - i}</small></button>`).join('');
+  function tnStop(){ clearInterval(tnTimer); tnTimer = null; tnOn = -1; $('#tnBtns').querySelectorAll('button').forEach(b => { b.classList.remove('on'); b.setAttribute('aria-pressed', 'false'); }); }
+  $('#tnBtns').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    const i = +b.dataset.i;
+    if (tnOn === i){ tnStop(); $('#tnMsg').textContent = 'Stopped.'; return; }
+    tnStop(); tnOn = i; b.classList.add('on'); b.setAttribute('aria-pressed', 'true');
+    const play = () => pluck(OPEN[i], null, 0.6);
+    play(); tnTimer = setInterval(play, 2200);
+    $('#tnMsg').textContent = `String ${6 - i}: ${noteName(OPEN[i])} (${hz(OPEN[i]).toFixed(2)} Hz). Repeats every 2 seconds. Tap again to stop.`;
+  });
+
+  /* ---------- strum pattern player ---------- */
+  const PATS = {
+    q:{n:8, s:['D','','D','','D','','D','']},
+    e:{n:8, s:['D','U','D','U','D','U','D','U']},
+    o:{n:8, s:['D','','D','U','','U','D','U']},
+    w:{n:6, s:['D','','D','U','D','U']}
+  };
+  $('#spChord').innerHTML = ORDER.map(k => `<option value="${k}"${k === 'G' ? ' selected' : ''}>${k}</option>`).join('');
+  function beatsHTML(){
+    const p = PATS[$('#spPat').value];
+    $('#spBeats').style.gridTemplateColumns = `repeat(${p.n},minmax(0,1fr))`;
+    $('#spBeats').innerHTML = p.s.map((x, i) => `<div><b>${x || '·'}</b><small>${i % 2 ? '&' : i / 2 + 1}</small></div>`).join('');
+  }
+  let spOn = false, spNext = 0, spIdx = 0, spT = null;
+  function sched(){
+    const c = ctx, p = PATS[$('#spPat').value];
+    let bpm = Math.min(160, Math.max(40, +$('#spBpm').value || 70));
+    const step = 60 / bpm / 2;
+    while (spNext < c.currentTime + 0.15){
+      const i = spIdx % p.n, x = p.s[i];
+      if ($('#spClick').checked && i % 2 === 0) click(spNext, i === 0);
+      if (x) strum($('#spChord').value, spNext, x === 'U' ? 'up' : 'down', 0.35);
+      const at = spNext, idx = i;
+      setTimeout(() => { if (!spOn) return; $('#spBeats').querySelectorAll('div').forEach((d, k) => d.classList.toggle('now', k === idx)); }, Math.max(0, (at - c.currentTime) * 1000));
+      spNext += step; spIdx++;
+    }
+  }
+  function spStop(){ spOn = false; clearInterval(spT); $('#spPlay').textContent = '▶ Play'; $('#spBeats').querySelectorAll('div').forEach(d => d.classList.remove('now')); }
+  $('#spPlay').addEventListener('click', () => {
+    if (spOn){ spStop(); return; }
+    const c = ac(); if (!c) { $('#spMsg').textContent = 'Your browser does not support Web Audio.'; return; }
+    spOn = true; spIdx = 0; spNext = c.currentTime + 0.1; $('#spPlay').textContent = '■ Stop';
+    sched(); spT = setInterval(sched, 40);
+  });
+  $('#spPat').addEventListener('change', () => { spIdx = 0; beatsHTML(); });
+  beatsHTML();
+
+  /* ---------- one-minute changes ---------- */
+  const opts = ORDER.map(k => `<option value="${k}">${k}</option>`).join('');
+  $('#mcA').innerHTML = opts; $('#mcB').innerHTML = opts;
+  $('#mcA').value = 'Am'; $('#mcB').value = 'C';
+  const key = () => 'omc-' + $('#mcA').value + '-' + $('#mcB').value;
+  function best(){ try { return +(localStorage.getItem(key()) || 0); } catch(e){ return 0; } }
+  function showBest(){ const b = best(); $('#mcBest').textContent = b ? '· best for ' + $('#mcA').value + '↔' + $('#mcB').value + ': ' + b : ''; }
+  let mcOn = false, mcEnd = 0, mcCount = 0, mcT = null;
+  const mmss = s => Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0');
+  function mcReset(){
+    mcOn = false; clearInterval(mcT); mcCount = 0;
+    $('#mcCount').textContent = '0'; $('#mcClock').textContent = '1:00'; $('#mcBar').style.width = '0';
+    $('#mcStart').textContent = 'Start'; $('#mcTap').disabled = true; $('#mcStart').disabled = false; showBest();
+  }
+  function mcTick(){
+    const left = Math.max(0, (mcEnd - Date.now()) / 1000);
+    $('#mcClock').textContent = mmss(Math.ceil(left));
+    $('#mcBar').style.width = (100 * (1 - left / 60)) + '%';
+    if (left <= 0){
+      mcOn = false; clearInterval(mcT); $('#mcTap').disabled = true; $('#mcStart').disabled = false; $('#mcStart').textContent = 'Go again';
+      const c = ac(); if (c){ [0, .3, .6].forEach(t => click(c.currentTime + t, true)); }
+      const prev = best();
+      let msg = `Time! ${mcCount} changes between ${$('#mcA').value} and ${$('#mcB').value}.`;
+      if (mcCount > prev){ try { localStorage.setItem(key(), String(mcCount)); } catch(e){} msg += prev ? ' New personal best!' : ' That\'s your first score. Try to beat it tomorrow.'; }
+      else msg += ` Your best is ${prev}.`;
+      if (mcCount >= 30) msg += ' Over 30 is a solid change. Try a new pair, or add a strum.';
+      $('#mcMsg').textContent = msg; showBest();
+    }
+  }
+  $('#mcStart').addEventListener('click', () => {
+    if ($('#mcA').value === $('#mcB').value){ $('#mcMsg').textContent = 'Pick two different chords.'; return; }
+    mcReset(); mcOn = true; mcEnd = Date.now() + 60000;
+    $('#mcStart').disabled = true; $('#mcTap').disabled = false; $('#mcTap').focus();
+    $('#mcMsg').textContent = `Go! Switch ${$('#mcA').value} ↔ ${$('#mcB').value}. Tap after each clean chord.`;
+    mcT = setInterval(mcTick, 200);
+  });
+  $('#mcTap').addEventListener('click', () => { if (!mcOn) return; mcCount++; $('#mcCount').textContent = mcCount; });
+  document.addEventListener('keydown', e => {
+    if (!mcOn || e.code !== 'Space' || document.activeElement === $('#mcTap')) return;
+    const t = e.target; if (t && /INPUT|SELECT|TEXTAREA|BUTTON/.test(t.tagName)) return;
+    e.preventDefault(); mcCount++; $('#mcCount').textContent = mcCount;
+  });
+  $('#mcReset').addEventListener('click', () => { mcReset(); $('#mcMsg').textContent = 'Press Start, then tap "+1 change" (or press the space bar) each time you land a clean chord.'; });
+  $('#mcA').addEventListener('change', showBest); $('#mcB').addEventListener('change', showBest);
+  showBest();
+})();
+</script>
+</body>
+</html>

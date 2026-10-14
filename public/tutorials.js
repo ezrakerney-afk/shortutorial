@@ -1099,5 +1099,21 @@ window.TUTORIALS = [
     category: "Science",
     tags: ["periodic table", "chemistry", "atoms", "elements", "protons", "neutrons", "electrons", "atomic number", "isotopes", "ions", "valence electrons", "metals"],
     minutes: 12
+  },
+  {
+    slug: "guitar-chords-basics",
+    title: "Guitar Chords for Beginners",
+    summary: "Tune, read chord diagrams, play Em, Am, C, G, D and E, strum and change chords.",
+    category: "Life skills",
+    tags: ["guitar", "learn guitar", "guitar chords", "beginner guitar", "chord diagram", "tune guitar", "EADGBE", "strumming pattern", "chord changes", "acoustic guitar", "music"],
+    minutes: 15
+  },
+  {
+    slug: "sign-language-basics",
+    title: "American Sign Language (ASL) Basics",
+    summary: "What ASL is, Deaf culture, fingerspelling, numbers 1 to 10, everyday signs and etiquette.",
+    category: "Life skills",
+    tags: ["sign language", "ASL", "american sign language", "learn ASL", "fingerspelling", "ASL alphabet", "sign language alphabet", "deaf culture", "ASL numbers", "hello in sign language", "thank you in sign language", "deaf etiquette"],
+    minutes: 15
   }
 ];
