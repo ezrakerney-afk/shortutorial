@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How Electricity Works: Voltage, Current and Ohm's Law · Shortutorial</title>
+<meta name="description" content="Understand electricity from the ground up: charge, current, voltage and resistance, Ohm's law, series and parallel circuits, AC vs DC, watts, and how to stay safe. Build circuits in the interactive playground.">
+<link rel="canonical" href="https://shortutorial.com/how-electricity-works/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="How Electricity Works: Voltage, Current and Ohm's Law · Shortutorial">
+<meta property="og:description" content="Understand electricity from the ground up: charge, current, voltage and resistance, Ohm's law, series and parallel circuits, AC vs DC, watts, and how to stay safe. Build circuits in the interactive playground.">
+<meta property="og:url" content="https://shortutorial.com/how-electricity-works/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+.links small{font-size:.9rem;color:var(--muted);line-height:1.4}
+/* unit cards */
+.units{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.units div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-width:0;display:flex;flex-direction:column;gap:4px}
+.units small{font-family:var(--mono);font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.units b{font-family:var(--display);font-size:1.15rem;color:var(--accent)}
+.units span{font-size:.92rem;color:var(--muted)}
+/* Ohm solver */
+.ohm-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media (max-width:420px){.ohm-grid{grid-template-columns:1fr}}
+.ohm-grid label{min-width:0}
+.try .ohm-grid input{width:100%;box-sizing:border-box}
+.try .ohm-grid input.calc{border-color:var(--accent);background:var(--accent-soft)}
+/* circuit playground */
+.cp-svg{width:100%;max-width:440px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.cp-svg .wire{fill:none;stroke:var(--ink);stroke-width:3;stroke-linecap:round}
+.cp-svg .flow{fill:none;stroke:var(--accent);stroke-width:3;stroke-dasharray:4 14;stroke-linecap:round;animation:flow 1s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-18}}
+@media (prefers-reduced-motion:reduce){.cp-svg .flow{animation:none}}
+.cp-svg text{font-family:var(--mono);font-size:11px;fill:var(--muted)}
+.cp-svg .lbl{fill:var(--ink);font-weight:600}
+.cp-svg .bat{fill:var(--surface);stroke:var(--ink);stroke-width:2}
+.cp-svg .bulb{stroke:var(--ink);stroke-width:2}
+.cp-rs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media (max-width:420px){.cp-rs{grid-template-columns:1fr}}
+.cp-rs label{min-width:0}
+.try .cp-rs input{width:100%;box-sizing:border-box}
+.cp-rs label[hidden]{display:none}
+.cp-out{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media (max-width:420px){.cp-out{grid-template-columns:1fr 1fr}}
+.cp-out div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
+.cp-out small{display:block;font-family:var(--mono);font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.cp-out b{font-family:var(--display);font-size:1.15rem;color:var(--accent);font-variant-numeric:tabular-nums}
+.vrow{display:flex;flex-direction:column;gap:4px;font-family:var(--mono);font-size:.8rem;color:var(--muted)}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"How Electricity Works","item":"https://shortutorial.com/how-electricity-works/"}]},{"@type":"Article","@id":"https://shortutorial.com/how-electricity-works/#article","headline":"How Electricity Works","description":"Understand electricity from the ground up: charge, current, voltage and resistance, Ohm's law, series and parallel circuits, AC vs DC, watts, and how to stay safe. Build circuits in the interactive playground.","url":"https://shortutorial.com/how-electricity-works/","mainEntityOfPage":"https://shortutorial.com/how-electricity-works/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Science","keywords":"electricity, voltage, current, resistance, ohms law, series circuit, parallel circuit, ac vs dc, watts, amps, circuits, electrical safety","timeRequired":"PT15M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is it the volts or the amps that kill?","acceptedAnswer":{"@type":"Answer","text":"The current (amps) through your body does the damage, but you need enough voltage to push that current through your skin. That's why a 12 V car battery is safe to touch with dry hands but 120 V from an outlet can kill. Static shocks can be thousands of volts but carry so little charge for so short a time that they're harmless."}},{"@type":"Question","name":"Why does a bird on a power line not get shocked?","acceptedAnswer":{"@type":"Answer","text":"Both of its feet are on the same wire, at the same voltage. With no voltage difference across its body, almost no current flows through it. If it touched a second wire or a grounded pole at the same time, current would flow."}},{"@type":"Question","name":"What does a circuit breaker actually do?","acceptedAnswer":{"@type":"Answer","text":"It's an automatic switch that opens when the current gets higher than the wires are rated for, usually 15 or 20 amps for household circuits. That stops the wires from overheating and starting a fire. It is not fast or sensitive enough to protect a person from shock. A GFCI does that."}},{"@type":"Question","name":"Do electrons travel from the power plant to my house?","acceptedAnswer":{"@type":"Answer","text":"No. With AC, electrons mostly jiggle back and forth in place. What travels is energy, carried by the electric and magnetic fields along the wires at close to the speed of light."}},{"@type":"Question","name":"What is a short circuit?","acceptedAnswer":{"@type":"Answer","text":"A path with almost no resistance, for example when two bare wires touch. By Ohm's law, very low resistance means a huge current, which can melt wires and start fires within seconds. Breakers and fuses are there to cut it off."}},{"@type":"Question","name":"What's the difference between watts and watt-hours?","acceptedAnswer":{"@type":"Answer","text":"Watts measure how fast energy is used right now. Watt-hours (or kilowatt-hours) measure how much energy was used over time. A 10 W LED on for 100 hours uses 1,000 Wh, or 1 kWh."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="how-electricity-works">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=science">Science</a> / How electricity works</div>
+    <span class="eyebrow">Science · Physics</span>
+    <h1>How Electricity Works</h1>
+    <p class="lede">What is actually moving in a wire? Why does a bulb get dimmer when you add another one in a row, but not when you add one side by side? Learn the four ideas behind every circuit, then build your own in the playground.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~15 min read</span><span class="badge">6 lessons</span><span class="badge">Circuit playground + Ohm's law solver</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#e1">1 · Charge & current</a><a href="#e2">2 · Voltage & resistance</a><a href="#e3">3 · Ohm's law</a><a href="#e4">4 · Series & parallel</a><a href="#e5">5 · AC vs DC</a><a href="#e6">6 · Power & safety</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="e1">
+    <div class="lesson-head"><span class="step">01</span><h2>Charge and current</h2></div>
+    <p>Everything is made of atoms, and atoms contain tiny particles with <b>electric charge</b>. Protons in the center are <b>positive</b>. Electrons around the outside are <b>negative</b>. Opposite charges attract and like charges repel. That push and pull is the force behind all electricity.</p>
+    <p>In metals like copper, some electrons are only loosely held, so they can drift from atom to atom. That's why metals are <b>conductors</b>. Rubber, plastic, glass and dry wood hold their electrons tightly, so they're <b>insulators</b>. A power cord is both: copper inside to carry the current, plastic outside to keep it away from you.</p>
+    <p><b>Current</b> is charge flowing past a point. It's measured in <b>amperes (amps, A)</b>. One amp means one <b>coulomb</b> of charge passes each second, and a coulomb is about 6.24 billion billion electrons.</p>
+    <div class="formula">current = charge ÷ time<small>1 amp = 1 coulomb per second</small></div>
+    <p class="callout"><span><b>Electrons are slow, the signal is fast.</b> Each electron in a wire only drifts along at a fraction of a millimeter per second. The light comes on instantly because the wire is already full of electrons: push on one end and they all start moving at once, like marbles in a full tube.</span></p>
+    <p class="callout"><span><b>Which way does current flow?</b> Long before electrons were discovered, scientists picked "positive to negative" as the direction of current. Electrons actually move the other way. Circuit diagrams still use the old "conventional current" direction, and the math works the same either way.</span></p>
+    <p>For current to flow there has to be a <b>closed loop</b>, a circuit, from one side of the source back to the other. A switch simply opens a gap in the loop. Open the gap and the flow stops everywhere in that loop.</p>
+  </section>
+
+  <section class="lesson" id="e2">
+    <div class="lesson-head"><span class="step">02</span><h2>Voltage and resistance</h2></div>
+    <p>The classic way to picture a circuit is water in pipes. It isn't perfect, but it gets the main ideas right:</p>
+    <div class="units">
+      <div><small>Voltage · V</small><b>Pressure</b><span>The push that drives charge around the loop. Measured in volts.</span></div>
+      <div><small>Current · I</small><b>Flow rate</b><span>How much charge moves per second. Measured in amps.</span></div>
+      <div><small>Resistance · R</small><b>Narrow pipe</b><span>How hard it is for charge to get through. Measured in ohms (Ω).</span></div>
+    </div>
+    <p><b>Voltage</b> is the difference in electrical "pressure" between two points. A battery uses a chemical reaction to keep one terminal at a higher voltage than the other. A AA battery gives 1.5 V, a car battery about 12 V, and US wall outlets about 120 V. Voltage is always measured <i>between</i> two points, which is why a bird can sit on a single power line safely: both feet are at the same voltage, so almost no current flows through it.</p>
+    <p><b>Resistance</b> is how much a material fights the flow. Every part of a circuit has some. It goes up when a wire is:</p>
+    <ul class="points">
+      <li><b>Thinner</b>, like a narrow pipe. That's why big appliances use thick cords.</li>
+      <li><b>Longer</b>, because charge has farther to squeeze through.</li>
+      <li><b>Hotter</b>, for most metals.</li>
+      <li><b>Made of a poorer conductor</b>. Copper and silver are excellent. The tungsten in an old-style bulb is much worse, which is the point: resistance turns electrical energy into heat and light.</li>
+    </ul>
+    <p class="callout"><span><b>Resistance isn't bad.</b> A toaster, a space heater and an incandescent bulb all work <i>because</i> of resistance. The trick is to put it where you want heat, and keep it low in the wires.</span></p>
+  </section>
+
+  <section class="lesson" id="e3">
+    <div class="lesson-head"><span class="step">03</span><h2>Ohm's law</h2></div>
+    <p>In 1827 Georg Ohm showed that voltage, current and resistance are linked by one simple rule. More push means more flow. More resistance means less flow.</p>
+    <div class="formula"><span class="v">V</span> = <span class="v">I</span> × <span class="v">R</span><small>volts = amps × ohms · so I = V ÷ R and R = V ÷ I</small></div>
+    <p>Know any two and you can find the third. A handy trick: cover the one you want in the triangle V over I × R. Cover I and you see V over R.</p>
+    <div class="example"><div class="ex-h">Example · a flashlight bulb</div><ol><li>A 3 V battery pack lights a bulb with 6 Ω of resistance.</li><li>I = V ÷ R = 3 ÷ 6</li><li class="ans">0.5 amps flows through the bulb</li></ol></div>
+    <div class="example"><div class="ex-h">Example · what's the resistance?</div><ol><li>A 120 V toaster draws 7.5 A.</li><li>R = V ÷ I = 120 ÷ 7.5</li><li class="ans">The heating element is 16 Ω (while it's hot)</li></ol></div>
+
+    <div class="try" id="ohm"><span class="try-h">Try it · Ohm's law solver</span>
+      <p class="work">Type any two values. The third fills itself in. Clear a box to solve for that one instead.</p>
+      <div class="ohm-grid">
+        <label>Voltage V (volts)<input type="number" id="oV" value="9" min="0" step="any" inputmode="decimal"></label>
+        <label>Current I (amps)<input type="number" id="oI" min="0" step="any" inputmode="decimal" placeholder="?"></label>
+        <label>Resistance R (ohms)<input type="number" id="oR" value="18" min="0" step="any" inputmode="decimal"></label>
+      </div>
+      <div class="out" id="oOut" aria-live="polite"></div>
+      <div class="work" id="oWork"></div>
+    </div>
+    <p class="callout"><span><b>Real bulbs bend the rule a little.</b> Ohm's law is exact for an ideal resistor. A bulb filament's resistance rises a lot as it heats up, so a cold bulb draws a big burst of current for a split second when switched on. The playground below treats each bulb as a fixed resistor to keep things clear.</span></p>
+  </section>
+
+  <section class="lesson" id="e4">
+    <div class="lesson-head"><span class="step">04</span><h2>Series and parallel circuits</h2></div>
+    <div class="grid2">
+      <div><span class="tagline">Series</span><h3>One path, in a row</h3>
+        <p>Everything is on a single loop. The <b>same current</b> flows through each part, and the battery's voltage is <b>shared</b> between them. Resistances add up: <b>R = R₁ + R₂ + R₃</b>. Add a bulb and they all get dimmer. Break one and everything goes out.</p></div>
+      <div><span class="tagline">Parallel</span><h3>Side-by-side branches</h3>
+        <p>Each part gets its own path. Every branch gets the <b>full voltage</b>, and the currents <b>add up</b> at the battery. Total resistance drops: <b>1/R = 1/R₁ + 1/R₂ + 1/R₃</b>. Add a bulb and the others stay just as bright. Break one and the rest keep working.</p></div>
+    </div>
+    <p>Your home is wired in <b>parallel</b>. That's why every outlet gives the same 120 V, and turning off the lamp doesn't turn off the fridge. It also means each thing you plug in adds more current to the circuit. Plug in too much and the total current trips the breaker.</p>
+    <p>Old-style holiday light strings were wired in <b>series</b>, which is why one dead bulb could black out the whole string. Batteries in a flashlight are also in series: two 1.5 V cells in a row give 3 V.</p>
+
+    <div class="try" id="cp"><span class="try-h">Try it · circuit playground</span>
+      <p class="work">Pick series or parallel, choose how many bulbs, and change the battery and each bulb's resistance. Brightness follows the power each bulb uses. Watch the current dots speed up as more current flows.</p>
+      <div class="chipset" id="cpMode" aria-label="Circuit type"><button type="button" data-m="series" aria-pressed="true">Series</button><button type="button" data-m="parallel" aria-pressed="false">Parallel</button></div>
+      <div class="chipset" id="cpN" aria-label="Number of bulbs"><button type="button" data-n="1" aria-pressed="false">1 bulb</button><button type="button" data-n="2" aria-pressed="true">2 bulbs</button><button type="button" data-n="3" aria-pressed="false">3 bulbs</button></div>
+      <div class="vrow"><span>Battery: <b id="cpVOut">9</b> V</span><input type="range" id="cpV" min="1.5" max="24" step="0.5" value="9" aria-label="Battery voltage in volts"></div>
+      <div class="cp-rs">
+        <label>Bulb 1 (Ω)<input type="number" id="cpR1" value="10" min="1" max="1000" step="1" inputmode="decimal"></label>
+        <label>Bulb 2 (Ω)<input type="number" id="cpR2" value="10" min="1" max="1000" step="1" inputmode="decimal"></label>
+        <label>Bulb 3 (Ω)<input type="number" id="cpR3" value="10" min="1" max="1000" step="1" inputmode="decimal"></label>
+      </div>
+      <svg class="cp-svg" id="cpSvg" viewBox="0 0 320 190" role="img" aria-label="Circuit diagram"></svg>
+      <div class="cp-out" aria-live="polite">
+        <div><small>Total resistance</small><b id="cpRt">–</b></div>
+        <div><small>Battery current</small><b id="cpIt">–</b></div>
+        <div><small>Total power</small><b id="cpPt">–</b></div>
+      </div>
+      <div class="tw"><table class="t" id="cpTable"></table></div>
+      <div class="work" id="cpWork"></div>
+    </div>
+    <div class="example"><div class="ex-h">Try these in the playground</div><div class="ex-b">
+      <p>1. Two 10 Ω bulbs on 9 V. Switch from series to parallel. Each bulb's power goes from about 2 W to about 8 W, four times brighter.</p>
+      <p>2. In series, make bulb 1 = 30 Ω and bulb 2 = 10 Ω. The bigger resistor gets more of the voltage and glows brighter.</p>
+      <p>3. Now switch to parallel. The 10 Ω bulb is brighter, because it lets more current through at the same voltage.</p>
+    </div></div>
+  </section>
+
+  <section class="lesson" id="e5">
+    <div class="lesson-head"><span class="step">05</span><h2>AC vs DC</h2></div>
+    <div class="grid2">
+      <div><span class="tagline">DC · direct current</span><h3>Flows one way</h3>
+        <p>The voltage stays steady and current flows in one direction. Batteries, solar panels and USB chargers give DC. Phones, laptops and LED circuits run on it.</p></div>
+      <div><span class="tagline">AC · alternating current</span><h3>Back and forth</h3>
+        <p>The voltage swings positive and negative, so the current reverses direction over and over. In the US it does this 60 times a second (60 Hz). This is what comes out of your wall outlets.</p></div>
+    </div>
+    <p>Why use AC for the grid? Because <b>transformers</b> can easily raise or lower AC voltage. Power plants step it up to very high voltages for long-distance lines, which lets the same power travel with much less current. Less current means less energy wasted as heat in the wires. Transformers near your home step it back down. This advantage is why Westinghouse and Tesla's AC system won out over Edison's DC in the 1890s.</p>
+    <p>Most of your electronics actually need DC, so their chargers and power supplies convert AC to DC. That's what the "brick" on a laptop cord does.</p>
+    <p class="callout"><span><b>120 V is an average.</b> AC voltage is quoted as an effective (RMS) value that delivers the same heating as that much DC. The actual peaks of US household power reach about 170 V. US homes also get 240 V for big loads like dryers, ovens and many water heaters.</span></p>
+  </section>
+
+  <section class="lesson" id="e6">
+    <div class="lesson-head"><span class="step">06</span><h2>Power and safety</h2></div>
+    <p><b>Power</b> is how fast electrical energy is used, measured in <b>watts (W)</b>. It's voltage times current:</p>
+    <div class="formula"><span class="v">P</span> = <span class="v">V</span> × <span class="v">I</span><small>watts = volts × amps · also P = I² × R and P = V² ÷ R</small></div>
+    <div class="example"><div class="ex-h">Example · a space heater</div><ol><li>A heater draws 12.5 A from a 120 V outlet.</li><li>P = 120 × 12.5</li><li class="ans">1,500 watts, one of the biggest loads you can put on a normal outlet</li></ol></div>
+    <p>Your power company bills you for energy, which is power × time, in <b>kilowatt-hours (kWh)</b>. A 1,500 W heater running for 2 hours uses 3 kWh. To see what that costs and which appliances are the biggest users, read <a href="../watts-and-energy-bills/">Watts, kWh and your electricity bill</a>.</p>
+    <p>P = I² × R explains why the grid uses high voltage, and why loose or undersized wires get hot: double the current through the same resistance and you get <b>four times</b> the heat.</p>
+
+    <h3>How electricity hurts people</h3>
+    <p>It's <b>current through your body</b> that does the damage, and it takes surprisingly little. Your skin's resistance drops a lot when it's wet, so the same voltage pushes much more current through you. OSHA gives these rough effects for 1 second of current from hand to foot:</p>
+    <div class="tw"><table class="t">
+      <tr><th class="num">Current</th><th>Effect</th></tr>
+      <tr><td class="num">1 mA</td><td>Faint tingle</td></tr>
+      <tr><td class="num">5 mA</td><td>Slight shock. Most people can still let go.</td></tr>
+      <tr><td class="num">6–30 mA</td><td>Painful shock, loss of muscle control. You may not be able to let go.</td></tr>
+      <tr><td class="num">50–150 mA</td><td>Extreme pain, breathing stops, severe muscle contractions. Death is possible.</td></tr>
+      <tr><td class="num">1,000–4,300 mA</td><td>The heart's pumping stops. Death is likely.</td></tr>
+    </table></div>
+    <p>A standard household breaker is 15 or 20 <b>amps</b>, that is 15,000 to 20,000 mA. OSHA notes that fuses and breakers protect wires and equipment from overheating, <b>not people</b>. That's the job of a <b>GFCI</b> (ground-fault circuit interrupter), the outlet with Test and Reset buttons. It shuts off power when it detects as little as about 5 mA leaking somewhere it shouldn't, in as little as 1/40 of a second.</p>
+    <ul class="points">
+      <li>Keep electrical devices away from water, and never touch them with wet hands.</li>
+      <li>Use GFCI outlets in bathrooms, kitchens, garages, basements and outdoors. Press Test and Reset once a month.</li>
+      <li>Don't overload outlets or daisy-chain power strips. Warm plugs, flickering lights or a burning smell mean trouble.</li>
+      <li>Replace cords that are frayed, cracked or pinched. Never run cords under rugs.</li>
+      <li>Turn off the breaker before any electrical repair, and confirm it's off with a voltage tester.</li>
+      <li>Stay at least 10 feet from overhead power lines, and assume any downed line is live. Call 911 and the utility.</li>
+    </ul>
+    <p class="callout warn"><span><b>If someone is being shocked, don't touch them.</b> Shut off the power at the breaker or unplug the device first. If you can't, call 911 and wait. Once the power is off, call 911 and start CPR if they aren't breathing normally. See <a href="../first-aid-basics/">First aid basics</a>.</span></p>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Is it the volts or the amps that kill?</summary><div class="a"><p>The current (amps) through your body does the damage, but you need enough voltage to push that current through your skin. That's why a 12 V car battery is safe to touch with dry hands but 120 V from an outlet can kill. Static shocks can be thousands of volts but carry so little charge for so short a time that they're harmless.</p></div></details>
+      <details><summary>Why does a bird on a power line not get shocked?</summary><div class="a"><p>Both of its feet are on the same wire, at the same voltage. With no voltage difference across its body, almost no current flows through it. If it touched a second wire or a grounded pole at the same time, current would flow.</p></div></details>
+      <details><summary>What does a circuit breaker actually do?</summary><div class="a"><p>It's an automatic switch that opens when the current gets higher than the wires are rated for, usually 15 or 20 amps for household circuits. That stops the wires from overheating and starting a fire. It is not fast or sensitive enough to protect a person from shock. A GFCI does that.</p></div></details>
+      <details><summary>Do electrons travel from the power plant to my house?</summary><div class="a"><p>No. With AC, electrons mostly jiggle back and forth in place. What travels is energy, carried by the electric and magnetic fields along the wires at close to the speed of light.</p></div></details>
+      <details><summary>What is a short circuit?</summary><div class="a"><p>A path with almost no resistance, for example when two bare wires touch. By Ohm's law, very low resistance means a huge current, which can melt wires and start fires within seconds. Breakers and fuses are there to cut it off.</p></div></details>
+      <details><summary>What's the difference between watts and watt-hours?</summary><div class="a"><p>Watts measure how fast energy is used right now. Watt-hours (or kilowatt-hours) measure how much energy was used over time. A 10 W LED on for 100 hours uses 1,000 Wh, or 1 kWh.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://obis.osha.gov/Publications/3075.html" target="_blank" rel="noopener"><span class="src">OSHA</span><b>Controlling Electrical Hazards (effects of current, GFCIs)</b></a>
+      <a href="https://www.osha.gov/electrical" target="_blank" rel="noopener"><span class="src">OSHA</span><b>Electrical safety overview</b></a>
+      <a href="https://www.esfi.org/" target="_blank" rel="noopener"><span class="src">Electrical Safety Foundation International</span><b>Home electrical safety</b></a>
+      <a href="https://www.allaboutcircuits.com/textbook/direct-current/" target="_blank" rel="noopener"><span class="src">All About Circuits</span><b>Lessons in Electric Circuits: DC</b></a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">GO</span>Keep learning elsewhere</h2>
+    <div class="links">
+      <a href="https://phet.colorado.edu/en/simulations/circuit-construction-kit-dc" target="_blank" rel="noopener"><span class="src">PhET, University of Colorado · free</span><b>Circuit Construction Kit: DC</b><small>Drag wires, bulbs, batteries and meters into any circuit you like.</small></a>
+      <a href="https://www.khanacademy.org/science/physics/circuits-topic" target="_blank" rel="noopener"><span class="src">Khan Academy · free</span><b>Circuits</b><small>Videos and practice on Ohm's law, resistors and power.</small></a>
+      <a href="https://www.allaboutcircuits.com/textbook/direct-current/" target="_blank" rel="noopener"><span class="src">All About Circuits · free</span><b>Lessons in Electric Circuits</b><small>A full free textbook, from basic concepts to real electronics.</small></a>
+      <a href="https://ocw.mit.edu/courses/8-02-physics-ii-electricity-and-magnetism-spring-2019/" target="_blank" rel="noopener"><span class="src">MIT OpenCourseWare · free</span><b>Physics II: Electricity and Magnetism</b><small>The real university course, if you want the math behind it all.</small></a>
+      <a href="https://www.esfi.org/" target="_blank" rel="noopener"><span class="src">ESFI · free</span><b>Electrical Safety Foundation</b><small>Checklists and tips for keeping your home and family safe.</small></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>The playground uses ideal parts. Leave real household wiring to a licensed electrician.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script src="../comments.js"></script>
+<script>
+(function(){
+  /* number formatting with units: 0.0123 A -> 12.3 mA */
+  function unit(x, u){
+    if (!isFinite(x)) return '–';
+    const a = Math.abs(x);
+    if (a !== 0 && a < 1) return fmt(x * 1000, a < 0.01 ? 2 : 1) + ' m' + u;
+    if (a >= 1000) return fmt(x / 1000, 2) + ' k' + u;
+    return fmt(x, a < 10 ? 2 : 1) + ' ' + u;
+  }
+
+  /* ---------- Ohm's law solver ---------- */
+  const box = {V: $('#oV'), I: $('#oI'), R: $('#oR')};
+  let solved = 'I', order = ['V', 'R'];   // order = boxes the user typed in, oldest first
+  function num(k){ const s = box[k].value.trim(), v = parseFloat(s); return s === '' || !isFinite(v) ? null : v; }
+  function solve(){
+    Object.values(box).forEach(e => e.classList.remove('calc'));
+    const vals = {V: num('V'), I: num('I'), R: num('R')};
+    const others = ['V','I','R'].filter(k => k !== solved);
+    if (others.some(k => vals[k] === null)){ $('#oOut').textContent = 'Enter any two values.'; $('#oWork').textContent = ''; return; }
+    let {V, I, R} = vals, out, work, res;
+    if (solved === 'I'){ res = R === 0 ? Infinity : V / R; I = res; out = `Current I = <b>${unit(res,'A')}</b>`; work = `I = V ÷ R = ${fmt(V,3)} ÷ ${fmt(R,3)} = ${fmt(res,4)} A`; }
+    else if (solved === 'R'){ res = I === 0 ? Infinity : V / I; R = res; out = `Resistance R = <b>${unit(res,'Ω')}</b>`; work = `R = V ÷ I = ${fmt(V,3)} ÷ ${fmt(I,4)} = ${fmt(res,3)} Ω`; }
+    else { res = I * R; V = res; out = `Voltage V = <b>${unit(res,'V')}</b>`; work = `V = I × R = ${fmt(I,4)} × ${fmt(R,3)} = ${fmt(res,3)} V`; }
+    if (isFinite(res)){ box[solved].value = +res.toPrecision(4); box[solved].classList.add('calc'); work += `\nPower P = V × I = ${unit(V * I,'W')}`; }
+    else { box[solved].value = ''; out = 'Can\'t divide by zero. Zero resistance would mean unlimited current: a short circuit.'; work = ''; }
+    $('#oOut').innerHTML = out; $('#oWork').textContent = work;
+  }
+  Object.keys(box).forEach(k => box[k].addEventListener('input', () => {
+    if (box[k].value.trim() === ''){ solved = k; order = order.filter(x => x !== k); }
+    else {
+      order = order.filter(x => x !== k); order.push(k);
+      if (solved === k){ solved = ['V','I','R'].find(x => x !== k && !order.includes(x)) || order[0]; order = order.filter(x => x !== solved); }
+    }
+    solve();
+  }));
+  solve();
+
+  /* ---------- Circuit playground ---------- */
+  let mode = 'series', n = 2;
+  const NS = 'http://www.w3.org/2000/svg';
+  function chips(id, attr, set){
+    document.querySelectorAll(id + ' button').forEach(b => b.addEventListener('click', () => {
+      document.querySelectorAll(id + ' button').forEach(x => x.setAttribute('aria-pressed', x === b));
+      set(b.dataset[attr]); draw();
+    }));
+  }
+  chips('#cpMode', 'm', v => mode = v);
+  chips('#cpN', 'n', v => n = +v);
+  function glow(p){
+    // 0.01 W barely visible ... 10 W full brightness (log scale)
+    const b = Math.max(0, Math.min(1, Math.log10(Math.max(p, 1e-6) / 0.01) / 3));
+    return b;
+  }
+  function speed(i){ return Math.max(0.25, Math.min(6, 0.6 / Math.max(i, 1e-4))) + 's'; }
+  function el(tag, attrs, parent){ const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent.appendChild(e); return e; }
+  function txt(x, y, s, cls, parent){ const t = el('text', {x, y, 'text-anchor':'middle'}, parent); if (cls) t.setAttribute('class', cls); t.textContent = s; return t; }
+  function bulb(svg, x, y, b, label, sub){
+    if (b > 0.02) el('circle', {cx:x, cy:y, r:16 + 14*b, fill:'#ffc83d', opacity:(0.35*b).toFixed(3)}, svg);
+    const c = el('circle', {cx:x, cy:y, r:14, class:'bulb'}, svg);
+    c.style.fill = b > 0.02 ? `rgba(255,200,61,${(0.25 + 0.75*b).toFixed(3)})` : 'var(--surface)';
+    el('path', {d:`M${x-6} ${y+4} l3 -8 l3 8 l3 -8 l3 8`, fill:'none', style:'stroke:var(--ink)', 'stroke-width':1.5}, svg);
+    txt(x, y + 30, label, 'lbl', svg);
+    txt(x, y + 43, sub, '', svg);
+  }
+  function draw(){
+    const V = parseFloat($('#cpV').value);
+    $('#cpVOut').textContent = fmt(V, 1);
+    const ins = [$('#cpR1'), $('#cpR2'), $('#cpR3')];
+    ins.forEach((inp, k) => inp.closest('label').hidden = k >= n);
+    const R = ins.slice(0, n).map(inp => { const r = parseFloat(inp.value); return isFinite(r) && r > 0 ? Math.min(r, 100000) : NaN; });
+    const svg = $('#cpSvg'); svg.innerHTML = '';
+    if (R.some(isNaN)){ $('#cpWork').textContent = 'Each bulb needs a resistance above 0 Ω.'; ['#cpRt','#cpIt','#cpPt'].forEach(s => $(s).textContent = '–'); $('#cpTable').innerHTML = ''; return; }
+    let Rt, It, rows;
+    if (mode === 'series'){
+      Rt = R.reduce((a, b) => a + b, 0); It = V / Rt;
+      rows = R.map(r => ({r, v: It * r, i: It, p: It * It * r}));
+    } else {
+      Rt = 1 / R.reduce((a, b) => a + 1 / b, 0);
+      rows = R.map(r => ({r, v: V, i: V / r, p: V * V / r}));
+      It = rows.reduce((a, x) => a + x.i, 0);
+    }
+    const Pt = V * It;
+    $('#cpRt').textContent = unit(Rt, 'Ω'); $('#cpIt').textContent = unit(It, 'A'); $('#cpPt').textContent = unit(Pt, 'W');
+
+    // diagram
+    const L = 46, Rx = 296, T = 34, B = 134;
+    const xs = rows.map((_, k) => Math.round(L + 40 + (Rx - L - 60) * (n === 1 ? 0.5 : k / (n - 1))));
+    // battery
+    el('path', {d:`M${L} ${T} L${L} 66 M${L} 104 L${L} ${B}`, class:'wire'}, svg);
+    el('rect', {x:L-18, y:66, width:36, height:38, rx:5, class:'bat'}, svg);
+    el('path', {d:`M${L-10} 78 h20 M${L-5} 86 h10 M${L-10} 94 h20`, style:'stroke:var(--ink)', 'stroke-width':2}, svg);
+    txt(L, 61, '+', 'lbl', svg); txt(L, B + 22, fmt(V,1) + ' V', 'lbl', svg);
+    if (mode === 'series'){
+      const yb = T;
+      el('path', {d:`M${L} ${T} H${Rx} V${B} H${L}`, class:'wire'}, svg);
+      el('path', {d:`M${L} ${T} H${Rx} V${B} H${L}`, class:'flow', style:'animation-duration:' + speed(It)}, svg);
+      rows.forEach((x, k) => bulb(svg, xs[k], yb, glow(x.p), 'B' + (k+1) + ' ' + fmt(x.r, 0) + 'Ω', unit(x.p, 'W')));
+      txt((L + Rx) / 2 + 20, B + 22, 'one loop · same current everywhere', '', svg);
+    } else {
+      const ym = (T + B) / 2 + 4;
+      el('path', {d:`M${L} ${T} H${xs[n-1]} M${L} ${B} H${xs[n-1]}`, class:'wire'}, svg);
+      el('path', {d:`M${L} ${T} H${xs[n-1]}`, class:'flow', style:'animation-duration:' + speed(It)}, svg);
+      el('path', {d:`M${xs[n-1]} ${B} H${L}`, class:'flow', style:'animation-duration:' + speed(It)}, svg);
+      rows.forEach((x, k) => {
+        el('path', {d:`M${xs[k]} ${T} V${B}`, class:'wire'}, svg);
+        el('path', {d:`M${xs[k]} ${T} V${B}`, class:'flow', style:'animation-duration:' + speed(x.i)}, svg);
+      });
+      rows.forEach((x, k) => bulb(svg, xs[k], ym - 12, glow(x.p), 'B' + (k+1) + ' ' + fmt(x.r, 0) + 'Ω', unit(x.p, 'W')));
+      txt((L + Rx) / 2 + 20, B + 22, 'branches · same voltage on each', '', svg);
+    }
+    svg.setAttribute('aria-label', `${mode} circuit, ${n} bulb${n > 1 ? 's' : ''} on a ${fmt(V,1)} volt battery, total current ${unit(It,'A')}`);
+
+    // table
+    $('#cpTable').innerHTML = '<tr><th>Bulb</th><th class="num">R</th><th class="num">Voltage</th><th class="num">Current</th><th class="num">Power</th></tr>' +
+      rows.map((x, k) => `<tr><td>B${k+1}</td><td class="num">${unit(x.r,'Ω')}</td><td class="num">${unit(x.v,'V')}</td><td class="num">${unit(x.i,'A')}</td><td class="num">${unit(x.p,'W')}</td></tr>`).join('');
+
+    // explanation
+    let w;
+    if (mode === 'series'){
+      w = `R total = ${R.map(r => fmt(r,1)).join(' + ')} = ${fmt(Rt,2)} Ω\nI = V ÷ R = ${fmt(V,1)} ÷ ${fmt(Rt,2)} = ${unit(It,'A')} through every bulb`;
+      if (n > 1) w += `\nVoltages add back up: ${rows.map(x => fmt(x.v,2)).join(' + ')} = ${fmt(V,1)} V`;
+    } else {
+      w = `Each bulb gets the full ${fmt(V,1)} V.\nCurrents: ${rows.map(x => unit(x.i,'A')).join(' + ')} = ${unit(It,'A')} from the battery`;
+      if (n > 1) w += `\nR total = ${unit(Rt,'Ω')}, less than the smallest bulb`;
+    }
+    if (Pt > 50) w += `\nThat's a lot of power for a small battery circuit. Real batteries couldn't supply it for long.`;
+    $('#cpWork').textContent = w;
+  }
+  live($('#cp'), draw);
+})();
+</script>
+</body>
+</html>

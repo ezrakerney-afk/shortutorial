@@ -1131,5 +1131,21 @@ window.TUTORIALS = [
     category: "Life skills",
     tags: ["knife skills", "how to hold a knife", "claw grip", "pinch grip", "dice an onion", "julienne", "chiffonade", "brunoise", "mince garlic", "sharpen knife", "honing steel", "cutting board safety"],
     minutes: 15
+  },
+  {
+    slug: "first-aid-basics",
+    title: "First Aid Basics",
+    summary: "Hands-only CPR, choking, severe bleeding, burns and the recovery position.",
+    category: "Life skills",
+    tags: ["first aid", "cpr", "hands-only cpr", "choking", "heimlich", "bleeding", "tourniquet", "burns", "recovery position", "aed", "emergency", "911"],
+    minutes: 15
+  },
+  {
+    slug: "how-electricity-works",
+    title: "How Electricity Works",
+    summary: "Voltage, current, resistance, Ohm's law, series vs parallel, AC/DC and safety.",
+    category: "Science",
+    tags: ["electricity", "voltage", "current", "resistance", "ohms law", "series circuit", "parallel circuit", "ac vs dc", "watts", "amps", "circuits", "electrical safety"],
+    minutes: 15
   }
 ];

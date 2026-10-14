@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>First Aid Basics: CPR, Choking, Bleeding and Burns · Shortutorial</title>
+<meta name="description" content="Learn the first aid every adult should know: check the scene, call 911, hands-only CPR at 100 to 120 pushes a minute, adult choking, severe bleeding, burns and the recovery position. Includes a CPR rhythm trainer and an emergency walkthrough.">
+<link rel="canonical" href="https://shortutorial.com/first-aid-basics/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="First Aid Basics: CPR, Choking, Bleeding and Burns · Shortutorial">
+<meta property="og:description" content="Learn the first aid every adult should know: check the scene, call 911, hands-only CPR at 100 to 120 pushes a minute, adult choking, severe bleeding, burns and the recovery position. Includes a CPR rhythm trainer and an emergency walkthrough.">
+<meta property="og:url" content="https://shortutorial.com/first-aid-basics/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+.links small{font-size:.9rem;color:var(--muted);line-height:1.4}
+/* emergency walkthrough */
+.wk-q{font-family:var(--display);font-weight:700;font-size:1.15rem;line-height:1.4}
+.wk-body{display:flex;flex-direction:column;gap:8px}
+.wk-body ol{margin:0;padding-left:1.25em;display:flex;flex-direction:column;gap:6px}
+.wk-opts{display:flex;flex-wrap:wrap;gap:8px}
+.wk-opts .btn{flex:1 1 140px}
+.wk-trail{font-family:var(--mono);font-size:.72rem;color:var(--muted);line-height:1.5}
+.wk-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:12px}
+.wk-card.urgent{border-left:4px solid var(--bad)}
+/* CPR trainer */
+.cpr-pad{all:unset;box-sizing:border-box;cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:manipulation;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:100%;min-height:150px;border-radius:14px;background:var(--surface);border:2px solid var(--line);text-align:center;font-family:var(--display);font-weight:700;font-size:1.2rem;transition:transform .06s,border-color .15s}
+.cpr-pad small{font-family:var(--mono);font-weight:400;font-size:.74rem;color:var(--muted)}
+.cpr-pad:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.cpr-pad.hit{transform:scale(.97);border-color:var(--accent)}
+.cpr-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:420px){.cpr-stats{grid-template-columns:1fr 1fr}}
+.cpr-stats div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
+.cpr-stats small{display:block;font-family:var(--mono);font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.cpr-stats b{font-family:var(--display);font-size:1.3rem;font-variant-numeric:tabular-nums}
+.gauge{position:relative;height:16px;border-radius:99px;background:var(--line);overflow:hidden}
+.gauge .zone{position:absolute;top:0;bottom:0;left:40%;width:20%;background:var(--good);opacity:.45}
+.gauge .needle{position:absolute;top:-2px;bottom:-2px;width:4px;margin-left:-2px;left:0;background:var(--ink);border-radius:2px;transition:left .15s}
+.gauge-l{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.68rem;color:var(--muted)}
+.cpr-fb{font-family:var(--display);font-weight:600;font-size:1.05rem;min-height:1.5em}
+.cpr-fb.ok{color:var(--good)} .cpr-fb.no{color:var(--bad)}
+.beat{width:14px;height:14px;border-radius:50%;background:var(--line);flex:none;transition:background .05s}
+.beat.on{background:var(--accent)}
+.mrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.mrow label{flex:1 1 160px}
+.disc{border:1px solid var(--line);border-left:4px solid var(--bad);background:var(--surface);border-radius:12px;padding:14px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:6px}
+.disc b{font-family:var(--display)}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"First Aid Basics","item":"https://shortutorial.com/first-aid-basics/"}]},{"@type":"Article","@id":"https://shortutorial.com/first-aid-basics/#article","headline":"First Aid Basics","description":"Learn the first aid every adult should know: check the scene, call 911, hands-only CPR at 100 to 120 pushes a minute, adult choking, severe bleeding, burns and the recovery position. Includes a CPR rhythm trainer and an emergency walkthrough.","url":"https://shortutorial.com/first-aid-basics/","mainEntityOfPage":"https://shortutorial.com/first-aid-basics/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Life skills","keywords":"first aid, cpr, hands-only cpr, choking, heimlich, bleeding, tourniquet, burns, recovery position, aed, emergency, 911","timeRequired":"PT15M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I get sued for helping?","acceptedAnswer":{"@type":"Answer","text":"Every US state has a Good Samaritan law that protects people who give reasonable emergency help in good faith, without expecting payment. The details vary by state, but the protection is strong. Doing nothing is the bigger risk to the person."}},{"@type":"Question","name":"Do I have to give mouth-to-mouth?","acceptedAnswer":{"@type":"Answer","text":"Not for an adult or teen who suddenly collapses. Hands-only CPR (compressions only) works well for them. Rescue breaths matter more for children, babies, drowning and overdose. A class teaches you how, and a CPR face shield makes it easier."}},{"@type":"Question","name":"What if I do CPR on someone whose heart is still beating?","acceptedAnswer":{"@type":"Answer","text":"If they are unresponsive and not breathing normally, start CPR. The risk of harm from CPR to someone who didn't need it is small. The risk of waiting when they did need it is death."}},{"@type":"Question","name":"How hard is 2 inches?","acceptedAnswer":{"@type":"Answer","text":"Much harder than most people think. You'll need to lock your arms and use your upper body weight. Most people push too shallow and too slow at first. Practicing on a manikin with feedback in a class fixes that quickly."}},{"@type":"Question","name":"Can I use an AED without training?","acceptedAnswer":{"@type":"Answer","text":"Yes. AEDs are made for the public. Turn it on and it talks you through every step. It checks the heart rhythm and only allows a shock if one is needed."}},{"@type":"Question","name":"How long does a certification last?","acceptedAnswer":{"@type":"Answer","text":"Red Cross and AHA CPR and first aid certifications usually last 2 years. Skills fade faster than that, so refreshing with an app or video in between helps."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="first-aid-basics">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=skills">Life skills</a> / First aid basics</div>
+    <span class="eyebrow">Skills · Safety</span>
+    <h1>First Aid Basics</h1>
+    <p class="lede">The handful of skills that matter most in the first few minutes of an emergency: check the scene, call 911, push hard and fast for CPR, clear a choking airway, stop serious bleeding, cool a burn, and keep an unconscious person breathing.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~15 min read</span><span class="badge">6 lessons</span><span class="badge">CPR rhythm trainer + emergency walkthrough</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#f1">1 · Check & call</a><a href="#f2">2 · Hands-only CPR</a><a href="#f3">3 · Choking</a><a href="#f4">4 · Bleeding</a><a href="#f5">5 · Burns</a><a href="#f6">6 · Recovery position</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+    <div class="disc"><b>This page is not a substitute for a real class.</b><span>It follows current American Red Cross and American Heart Association guidance, but reading is not practice. A 2 to 3 hour hands-on class lets you push on a manikin, use a training AED and get feedback. <a href="https://www.redcross.org/take-a-class" target="_blank" rel="noopener">Find a Red Cross class</a> or <a href="https://atlas.heart.org/" target="_blank" rel="noopener">find an AHA class</a> near you. In a real emergency, <b>call 911</b> and follow the dispatcher's instructions.</span></div>
+  </header>
+
+  <section class="lesson" id="f1">
+    <div class="lesson-head"><span class="step">01</span><h2>Check the scene, then call 911</h2></div>
+    <p>The Red Cross teaches every emergency in the same order: <b>Check, Call, Care.</b> It keeps you safe and gets help moving before you do anything else.</p>
+    <ol class="steps">
+      <li><b>Check the scene.</b> Before you rush in, look for traffic, fire, smoke, downed power lines, deep water, an angry dog or anything else that could hurt you. If it isn't safe, stay back and call 911. You can't help anyone if you become a second patient.</li>
+      <li><b>Check the person.</b> Ask "Are you OK?" If they can answer, ask permission to help. If they don't respond, tap their shoulder and shout. Then look at their chest for <b>normal breathing</b> for no more than 10 seconds. Occasional gasps are <b>not</b> normal breathing.</li>
+      <li><b>Call 911.</b> If someone else is there, point at them and say "<b>You, call 911 and get an AED.</b>" A specific person acts faster than a crowd. If you're alone, call on speaker so your hands are free.</li>
+      <li><b>Care.</b> Give the care you're trained for until help arrives. The dispatcher will coach you step by step, so stay on the line.</li>
+    </ol>
+    <p>Call 911 for anyone who is unresponsive, not breathing normally, has chest pain, trouble breathing, severe bleeding, a serious burn, a seizure, signs of stroke, or a possible head, neck or back injury. When in doubt, call. Dispatchers would much rather send help that turns out not to be needed.</p>
+    <p class="callout"><span><b>Use gloves if you have them.</b> Protect yourself from blood and body fluids with disposable gloves, and wash your hands afterward. If someone is bleeding to death and you have no gloves, the Red Cross says to start care anyway.</span></p>
+
+    <div class="try" id="wk"><span class="try-h">Try it · what would you do?</span>
+      <p class="work">Walk through a real emergency one decision at a time. Each answer shows the next step from this lesson.</p>
+      <div class="wk-trail" id="wkTrail" aria-live="polite"></div>
+      <div class="wk-card" id="wkCard" aria-live="polite"></div>
+      <div class="row"><button class="btn ghost" type="button" id="wkBack">Back</button><button class="btn ghost" type="button" id="wkReset">Start over</button></div>
+    </div>
+  </section>
+
+  <section class="lesson" id="f2">
+    <div class="lesson-head"><span class="step">02</span><h2>Hands-only CPR</h2></div>
+    <p>When an adult or teen suddenly collapses and isn't breathing normally, their heart has most likely stopped (cardiac arrest). Without blood flow the brain starts dying within minutes. CPR pushes blood around by hand until an AED or paramedics arrive. The American Heart Association's Hands-Only CPR has just two steps: <b>call 911, then push hard and fast in the center of the chest.</b></p>
+    <ol class="steps">
+      <li><b>Call 911</b> and send someone for an AED (the defibrillator in a wall box at many stores, gyms, schools and airports).</li>
+      <li><b>Position.</b> Put the person on their back, ideally on a firm, flat surface. Kneel beside their chest.</li>
+      <li><b>Hands.</b> Put the heel of one hand on the <b>center of the chest</b>, on the lower half of the breastbone. Put your other hand on top and lock your fingers. Shoulders straight over your hands, arms straight.</li>
+      <li><b>Push hard.</b> Press straight down <b>at least 2 inches (5 cm), but not more than 2.4 inches (6 cm)</b> for an adult. That's harder than most people expect. Use your body weight, not your arms.</li>
+      <li><b>Push fast.</b> Aim for <b>100 to 120 compressions a minute</b>, about two a second. The beat of "Stayin' Alive" is close to that.</li>
+      <li><b>Let the chest come all the way back up</b> after each push. Don't lean on it between compressions.</li>
+      <li><b>Don't stop.</b> Keep pauses under 10 seconds. If someone else can help, switch every 2 minutes, because compressions get weaker as you tire.</li>
+      <li><b>Use the AED</b> as soon as it arrives. Turn it on and follow its voice prompts. You don't need training: it tells you where the pads go and only shocks if it's needed. Make sure no one touches the person during a shock.</li>
+    </ol>
+    <p>Keep going until the person shows an obvious sign of life (like breathing normally), an AED is ready to analyze, someone trained takes over, paramedics take over, you're too exhausted to continue, or the scene becomes unsafe.</p>
+    <p class="callout"><span><b>Don't be afraid of hurting them.</b> Ribs sometimes crack during good CPR. That heals. A person in cardiac arrest who gets no CPR will die. Good Samaritan laws in every state protect people who help in good faith.</span></p>
+    <p class="callout warn"><span><b>Children, infants and drowning victims need breaths too.</b> Hands-only CPR is for adults and teens who suddenly collapse. For babies, children, drowning, drug overdose or anyone who collapsed from a breathing problem, full CPR with rescue breaths is best. If you aren't trained in it, still call 911 and push. The dispatcher will guide you. A class teaches the rest.</span></p>
+
+    <div class="try" id="cpr"><span class="try-h">Try it · CPR rhythm trainer</span>
+      <p class="work">Tap the pad (or press Space or Enter with it focused) like you're doing compressions. Turn on the beat to hear what 100 to 120 a minute feels like, then turn it off and see if you can hold the rhythm on your own.</p>
+      <div class="mrow">
+        <button class="btn" type="button" id="cprBeatBtn" aria-pressed="false">Start beat</button>
+        <span class="beat" id="cprDot" aria-hidden="true"></span>
+        <label>Beat speed: <span id="cprBpmOut">110</span> per minute<input type="range" id="cprBpm" min="100" max="120" step="1" value="110"></label>
+      </div>
+      <button class="cpr-pad" type="button" id="cprPad" aria-describedby="cprFb">PUSH<small>tap here, or Space / Enter</small></button>
+      <div class="gauge" aria-hidden="true"><span class="zone"></span><span class="needle" id="cprNeedle"></span></div>
+      <div class="gauge-l" aria-hidden="true"><span>60</span><span>100</span><span>120</span><span>160 / min</span></div>
+      <div class="cpr-fb" id="cprFb" aria-live="polite">Start tapping to see your rate.</div>
+      <div class="cpr-stats">
+        <div><small>Your rate</small><b id="cprRate">–</b></div>
+        <div><small>Pushes</small><b id="cprCount">0</b></div>
+        <div><small>In the zone</small><b id="cprZone">–</b></div>
+      </div>
+      <div class="row"><button class="btn ghost" type="button" id="cprReset">Reset</button></div>
+      <p class="work">Practice tip: in real CPR every one of these pushes goes 2 inches deep. A class manikin with a feedback light is the only way to learn how hard that is.</p>
+    </div>
+  </section>
+
+  <section class="lesson" id="f3">
+    <div class="lesson-head"><span class="step">03</span><h2>Choking (adult)</h2></div>
+    <p><b>If they can cough forcefully or talk, let them cough.</b> Coughing is the best way to clear the airway. Stay with them and be ready to act if it changes.</p>
+    <p>Act right away if you see signs of a blocked airway: a weak cough or no cough, high-pitched noises or no breathing sounds, they can't speak, their skin turns pale or bluish, they look panicked, or they clutch their throat (the universal choking sign). Ask "<b>Are you choking?</b>" If they nod, tell them you're going to help and have someone call 911.</p>
+    <div class="grid2">
+      <div><span class="tagline">Step 1</span><h3>5 back blows</h3>
+        <p>Stand beside and slightly behind them. Put one arm across their chest and lean them forward so their upper body is close to parallel with the ground. Hit firmly between the shoulder blades with the heel of your hand, 5 separate blows.</p></div>
+      <div><span class="tagline">Step 2</span><h3>5 abdominal thrusts</h3>
+        <p>Stand behind them with one foot between their feet. Find the belly button with two fingers. Make a fist with the other hand and put the thumb side just above your fingers. Grab the fist with your other hand and pull sharply <b>in and up</b>, 5 separate thrusts.</p></div>
+    </div>
+    <ol class="steps">
+      <li><b>Repeat</b> 5 back blows and 5 abdominal thrusts until the object comes out, they can cough forcefully, speak or breathe, or they become unresponsive.</li>
+      <li><b>If they become unresponsive,</b> carefully lower them to the floor, make sure 911 has been called, and start CPR with compressions. Before any breath, look in the mouth. Only remove an object you can actually see. Never do a blind finger sweep.</li>
+      <li><b>Get checked afterward.</b> Abdominal thrusts can cause internal injury, so anyone who needed them should see a doctor.</li>
+    </ol>
+    <p class="callout"><span><b>Pregnant, or too large to wrap your arms around?</b> Give chest thrusts instead of abdominal thrusts. For someone in a wheelchair, kneel behind the chair and give abdominal thrusts, or chest thrusts if that's hard.</span></p>
+    <p class="callout warn"><span><b>New in the 2025 guidelines.</b> The American Heart Association now also recommends back blows for choking adults, alternating with abdominal thrusts, matching what the Red Cross teaches. If you learned "abdominal thrusts only" years ago, this is the updated method. Babies under 1 need a different technique (back blows and chest thrusts, never abdominal thrusts), which a class will show you.</span></p>
+  </section>
+
+  <section class="lesson" id="f4">
+    <div class="lesson-head"><span class="step">04</span><h2>Severe bleeding</h2></div>
+    <p>A person can bleed to death in minutes, often before an ambulance arrives. That's why stopping it is your job. The Red Cross says bleeding is life-threatening if blood is <b>flowing continuously or spurting</b>, if there's a large amount (about half a soda can for an adult, less for a child), or if the person shows signs of shock (pale, cold, clammy skin, confusion, fast breathing).</p>
+    <ol class="steps">
+      <li><b>Call 911</b> (or have someone call) and grab a first aid kit. Put on gloves if you have them.</li>
+      <li><b>Find the source.</b> Open or cut away clothing to see exactly where the blood is coming from.</li>
+      <li><b>Press hard.</b> Cover the wound with a dressing (gauze, a clean cloth, a T-shirt) and push <b>firmly and steadily, directly on the wound</b> with both hands. Lean your body weight into it.</li>
+      <li><b>Don't let up.</b> Keep pressing until the bleeding stops, a tourniquet is on, someone takes over, or help arrives. Don't lift the pad to check.</li>
+      <li><b>If blood soaks through,</b> put another pad on top. Don't remove the first one.</li>
+      <li><b>If it stops,</b> wrap a bandage firmly over the dressing and keep watching. If it starts again, take off the bandage and go back to direct pressure.</li>
+    </ol>
+    <h3>Tourniquets (arm or leg)</h3>
+    <p>For life-threatening bleeding from an arm or leg that pressure isn't stopping, a tourniquet saves lives. Use a commercial one (like those in Stop the Bleed kits) if you can.</p>
+    <ul class="points">
+      <li>Place it <b>2 to 3 inches above the wound</b>, between the wound and the heart. Never on a joint or right on the wound.</li>
+      <li>Tighten until the <b>bleeding stops</b>. Warn the person it will hurt a lot. That's normal.</li>
+      <li>Lock it so it can't loosen. If bleeding continues, add a second tourniquet above the first.</li>
+      <li><b>Never loosen or remove it.</b> Only medical professionals should take it off.</li>
+    </ul>
+    <p class="callout warn"><span><b>Something stuck in the wound?</b> Don't pull it out. It may be plugging the bleeding. Pad dressings around it to hold it still, press around it (not on it), and get medical help.</span></p>
+  </section>
+
+  <section class="lesson" id="f5">
+    <div class="lesson-head"><span class="step">05</span><h2>Burns</h2></div>
+    <p>First, stop the burning: get the person away from the heat source. Then cool the skin, because a burn keeps damaging tissue for a while after the heat is gone.</p>
+    <ol class="steps">
+      <li><b>Cool it under clean, cool running water for 5 to 20 minutes.</b> Lukewarm is fine if that's all you have. With no running water, use a cool, wet compress.</li>
+      <li><b>Remove rings, watches and tight clothing</b> near the burn before it swells, unless they're stuck to the skin.</li>
+      <li><b>Cover it loosely</b> with a clean, dry, non-stick dressing or plastic wrap. No adhesive bandages on the burn itself.</li>
+      <li><b>Don't break blisters.</b> They protect the skin underneath.</li>
+    </ol>
+    <div class="tw"><table class="t">
+      <tr><th>Don't</th><th>Why</th></tr>
+      <tr><td>Ice or ice water</td><td>Can damage the skin even more.</td></tr>
+      <tr><td>Butter, oil, mayo, petroleum jelly</td><td>Greasy stuff traps heat and makes the burn worse.</td></tr>
+      <tr><td>Cleaning a severe burn</td><td>Leave that to medical staff.</td></tr>
+    </table></div>
+    <h3>Call 911 for burns that</h3>
+    <ul class="points">
+      <li>Go deep (through skin to fat, muscle or bone) or cover a large area.</li>
+      <li>Are on the face, mouth, nose, hands, feet, joints or groin, or go all the way around a limb, the chest or neck.</li>
+      <li>Are electrical, chemical, from an explosion or radiation.</li>
+      <li>Happen to a young child, an older adult, or someone with other injuries or medical conditions.</li>
+    </ul>
+    <p>The Red Cross also says any burn larger than the person's palm, any blistering burn, and any burn on a child should be seen by a doctor or the emergency room.</p>
+    <p class="callout warn"><span><b>Chemical and electrical burns:</b> for electrical burns, make sure the power is <b>off</b> before you touch the person, and be ready to do CPR, since electricity can stop the heart. Brush off dry chemicals, then flush. Cool chemical and electrical burns for <b>at least 15 minutes</b>. Small electrical burns can hide serious damage inside, so they always need a doctor.</span></p>
+  </section>
+
+  <section class="lesson" id="f6">
+    <div class="lesson-head"><span class="step">06</span><h2>The recovery position</h2></div>
+    <p>If someone is <b>unresponsive but breathing normally</b>, they can choke on vomit, blood or their own tongue while lying on their back. Rolling them onto their side lets fluids drain out of the mouth and keeps the airway open.</p>
+    <ol class="steps">
+      <li>Kneel beside them. Make sure 911 has been called.</li>
+      <li>Stretch the arm nearest you up above their head.</li>
+      <li>Bring their far arm across their chest and hold the back of that hand against their near cheek.</li>
+      <li>Bend their far knee up, with the foot flat on the ground.</li>
+      <li>Holding the shoulder and hip (or knee), roll them toward you onto their side. Their head rests on the stretched-out arm.</li>
+      <li>Keep the top knee bent so they don't roll forward. Tilt the head slightly so the mouth points down and fluid can drain. The Red Cross suggests the left side when you can.</li>
+    </ol>
+    <p><b>Keep watching.</b> Check their breathing and responsiveness until help arrives, and keep them warm (or cool) with a blanket or by removing a layer. <b>If they stop breathing normally, roll them onto their back and start CPR.</b></p>
+    <p class="callout warn"><span><b>Possible head, neck or back injury?</b> (A fall, car crash, diving.) Leave them in the position you found them unless you must move them to keep them safe, to do CPR, or to control bleeding, or because fluid is blocking their airway.</span></p>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Can I get sued for helping?</summary><div class="a"><p>Every US state has a Good Samaritan law that protects people who give reasonable emergency help in good faith, without expecting payment. The details vary by state, but the protection is strong. Doing nothing is the bigger risk to the person.</p></div></details>
+      <details><summary>Do I have to give mouth-to-mouth?</summary><div class="a"><p>Not for an adult or teen who suddenly collapses. Hands-only CPR (compressions only) works well for them. Rescue breaths matter more for children, babies, drowning and overdose. A class teaches you how, and a CPR face shield makes it easier.</p></div></details>
+      <details><summary>What if I do CPR on someone whose heart is still beating?</summary><div class="a"><p>If they are unresponsive and not breathing normally, start CPR. The risk of harm from CPR to someone who didn't need it is small. The risk of waiting when they did need it is death.</p></div></details>
+      <details><summary>How hard is 2 inches?</summary><div class="a"><p>Much harder than most people think. You'll need to lock your arms and use your upper body weight. Most people push too shallow and too slow at first. Practicing on a manikin with feedback in a class fixes that quickly.</p></div></details>
+      <details><summary>Can I use an AED without training?</summary><div class="a"><p>Yes. AEDs are made for the public. Turn it on and it talks you through every step. It checks the heart rhythm and only allows a shock if one is needed.</p></div></details>
+      <details><summary>How long does a certification last?</summary><div class="a"><p>Red Cross and AHA CPR and first aid certifications usually last 2 years. Skills fade faster than that, so refreshing with an app or video in between helps.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://cpr.heart.org/en/cpr-courses-and-kits/hands-only-cpr" target="_blank" rel="noopener"><span class="src">American Heart Association</span><b>Hands-Only CPR</b></a>
+      <a href="https://www.redcross.org/take-a-class/resources/learn-first-aid/adult-cardiac-arrest" target="_blank" rel="noopener"><span class="src">American Red Cross</span><b>Cardiac arrest (adult)</b></a>
+      <a href="https://www.redcross.org/take-a-class/resources/learn-first-aid/adult-child-choking" target="_blank" rel="noopener"><span class="src">American Red Cross</span><b>Choking (adult and child)</b></a>
+      <a href="https://www.redcross.org/take-a-class/resources/learn-first-aid/bleeding-life-threatening-external" target="_blank" rel="noopener"><span class="src">American Red Cross</span><b>Life-threatening external bleeding</b></a>
+      <a href="https://www.redcross.org/take-a-class/resources/articles/how-to-apply-a-tourniquet" target="_blank" rel="noopener"><span class="src">American Red Cross</span><b>How to apply a tourniquet</b></a>
+      <a href="https://www.redcross.org/take-a-class/resources/learn-first-aid/burns" target="_blank" rel="noopener"><span class="src">American Red Cross</span><b>Burns</b></a>
+      <a href="https://www.redcross.org/take-a-class/resources/learn-first-aid/unresponsive-and-breathing-person" target="_blank" rel="noopener"><span class="src">American Red Cross</span><b>Unresponsive and breathing person</b></a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">GO</span>Keep learning elsewhere</h2>
+    <div class="links">
+      <a href="https://www.redcross.org/take-a-class" target="_blank" rel="noopener"><span class="src">American Red Cross · paid</span><b>Find a CPR, AED and First Aid class</b><small>Search in-person and blended classes near you and get certified.</small></a>
+      <a href="https://atlas.heart.org/" target="_blank" rel="noopener"><span class="src">American Heart Association · paid</span><b>Find an AHA course</b><small>The AHA's class finder for Heartsaver CPR, AED and first aid.</small></a>
+      <a href="https://www.stopthebleed.org/" target="_blank" rel="noopener"><span class="src">American College of Surgeons</span><b>Stop the Bleed</b><small>Bleeding control training: pressure, wound packing and tourniquets.</small></a>
+      <a href="https://www.redcross.org/get-help/how-to-prepare-for-emergencies/mobile-apps.html" target="_blank" rel="noopener"><span class="src">American Red Cross · free</span><b>Red Cross First Aid app</b><small>Step-by-step instructions for common emergencies on your phone.</small></a>
+      <a href="https://www.redcross.org/take-a-class/resources/learn-first-aid" target="_blank" rel="noopener"><span class="src">American Red Cross · free</span><b>Learn First Aid library</b><small>Short guides for dozens of situations, from seizures to heat stroke.</small></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>General education only, not medical advice. In an emergency call 911, and take a hands-on class to get certified.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script src="../comments.js"></script>
+<script>
+(function(){
+  /* ---------- Emergency walkthrough ---------- */
+  const N = {
+    start: {q:'You see someone collapse in a parking lot. What do you do first?', o:[['Check the scene for danger','scene'],['Run straight to them','rush']]},
+    rush: {urgent:true, t:'Stop for a second.', b:'<p>Look first: cars, fire, power lines, water. If you get hurt, now there are two patients and no helper. It only takes a few seconds.</p>', o:[['OK, check the scene','scene']]},
+    scene: {q:'Is the scene safe for you to go in?', o:[['Yes, it\'s safe','tap'],['No, there\'s danger','unsafe']]},
+    unsafe: {urgent:true, t:'Stay back and call 911.', b:'<ol><li>Call 911 from a safe spot and describe the danger (traffic, fire, wires, water).</li><li>Warn others to stay away.</li><li>Only go in if the danger is removed, for example the power is shut off or traffic is stopped.</li></ol>', o:[['The danger is gone now','tap']]},
+    tap: {q:'Tap their shoulder and shout "Are you OK?" Do they respond?', o:[['No response','breath'],['Yes, they respond','resp']]},
+    breath: {q:'Shout for help. Look at the chest for up to 10 seconds. Are they breathing normally?', o:[['No, or only gasping','cpr'],['Yes, breathing normally','recov']]},
+    cpr: {urgent:true, t:'Start hands-only CPR now.', b:'<ol><li>Point at someone: "You, call 911 and get an AED." Alone? Call 911 on speaker.</li><li>Heel of your hand on the center of the chest, other hand on top.</li><li>Push at least 2 inches deep, 100 to 120 times a minute. Let the chest come back up.</li><li>Don\'t stop until an AED is ready, someone takes over, paramedics arrive, or they start breathing normally.</li><li>When the AED arrives, turn it on and follow its voice.</li></ol><p><a href="#f2">Lesson 2: Hands-only CPR</a></p>', o:[]},
+    recov: {t:'Put them in the recovery position.', b:'<ol><li>Call 911.</li><li>Roll them onto their side so fluids can drain, unless you suspect a head, neck or back injury.</li><li>Keep checking their breathing. If it stops or turns to gasping, roll them onto their back and start CPR.</li></ol><p><a href="#f6">Lesson 6: The recovery position</a></p>', o:[]},
+    resp: {q:'Ask if you can help, and ask what happened. What\'s the main problem?', o:[['Can\'t talk, cough or breathe','choke'],['Bleeding a lot','bleed'],['Burned','burn'],['Something else','other']]},
+    choke: {urgent:true, t:'They\'re choking. Act now.', b:'<ol><li>Ask "Are you choking?" Have someone call 911.</li><li>Give 5 firm back blows between the shoulder blades.</li><li>Give 5 abdominal thrusts (in and up, just above the belly button).</li><li>Keep alternating until it comes out or they become unresponsive. Then lower them to the floor and start CPR.</li></ol><p>If they can still cough hard or talk, let them keep coughing and stay close.</p><p><a href="#f3">Lesson 3: Choking</a></p>', o:[]},
+    bleed: {q:'Is the blood spurting or flowing steadily, or is there a lot of it?', o:[['Yes, it\'s serious','bleedbad'],['No, it\'s a small cut','bleedsmall']]},
+    bleedbad: {urgent:true, t:'Life-threatening bleeding.', b:'<ol><li>Call 911. Gloves on if you have them.</li><li>Press a dressing or cloth hard, directly on the wound, with both hands. Don\'t let up.</li><li>Soaks through? Add more on top, don\'t remove the first.</li><li>Arm or leg and pressure isn\'t working? Tourniquet 2 to 3 inches above the wound, tight until the bleeding stops. Never loosen it.</li></ol><p><a href="#f4">Lesson 4: Severe bleeding</a></p>', o:[]},
+    bleedsmall: {t:'Minor bleeding.', b:'<ol><li>Press with a clean cloth or gauze until it stops.</li><li>Rinse with clean water and cover with a bandage.</li><li>See a doctor if it won\'t stop, is deep or gaping, or was caused by an animal bite or something dirty.</li></ol>', o:[]},
+    burn: {q:'Is the burn large, deep, on the face, hands, feet, joints or groin, or electrical or chemical?', o:[['Yes','burnbad'],['No, small and shallow','burnsmall']]},
+    burnbad: {urgent:true, t:'Serious burn. Call 911.', b:'<ol><li>Electrical? Make sure the power is off before touching them, and be ready for CPR.</li><li>Cool with clean, cool running water (at least 15 minutes for chemical or electrical burns).</li><li>Remove rings and tight clothing nearby unless stuck.</li><li>No ice, butter or creams. Cover loosely with a clean, dry dressing.</li></ol><p><a href="#f5">Lesson 5: Burns</a></p>', o:[]},
+    burnsmall: {t:'Minor burn.', b:'<ol><li>Cool under cool running water for 5 to 20 minutes.</li><li>Remove rings or tight items nearby.</li><li>Cover loosely with a clean non-stick dressing. Don\'t pop blisters.</li><li>See a doctor if it blisters, is bigger than their palm, or it\'s on a child.</li></ol>', o:[]},
+    other: {t:'When in doubt, call 911.', b:'<p>Chest pain, trouble breathing, a seizure, signs of stroke (face drooping, arm weakness, slurred speech), confusion, or a possible head, neck or back injury all need 911. Stay with them, keep them comfortable, and let the dispatcher guide you.</p>', o:[]}
+  };
+  const L = {scene:'Check scene', rush:'Rushed in', unsafe:'Unsafe', tap:'Tap & shout', breath:'No response', cpr:'Not breathing', recov:'Breathing', resp:'Responds', choke:'Choking', bleed:'Bleeding', bleedbad:'Serious', bleedsmall:'Minor', burn:'Burn', burnbad:'Serious', burnsmall:'Minor', other:'Other'};
+  let path = ['start'];
+  function esc(s){ return s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+  function render(focus){
+    const k = path[path.length-1], n = N[k], card = $('#wkCard');
+    card.className = 'wk-card' + (n.urgent ? ' urgent' : '');
+    let h = n.q ? `<div class="wk-q">${esc(n.q)}</div>` : `<div class="wk-q">${esc(n.t)}</div><div class="wk-body">${n.b}</div>`;
+    if (n.o.length) h += '<div class="wk-opts">' + n.o.map(o => `<button class="btn${n.q ? '' : ' ghost'}" type="button" data-go="${o[1]}">${esc(o[0])}</button>`).join('') + '</div>';
+    card.innerHTML = h;
+    $('#wkTrail').textContent = path.length > 1 ? 'Path: ' + path.slice(1).map(p => L[p]).join(' → ') : '';
+    $('#wkBack').disabled = path.length < 2;
+    card.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => { path.push(b.dataset.go); render(true); }));
+    if (focus){ const f = card.querySelector('button, a'); if (f) f.focus({preventScroll:true}); }
+  }
+  $('#wkBack').addEventListener('click', () => { if (path.length > 1){ path.pop(); render(true); } });
+  $('#wkReset').addEventListener('click', () => { path = ['start']; render(true); });
+  render(false);
+
+  /* ---------- CPR rhythm trainer ---------- */
+  const pad = $('#cprPad'), fb = $('#cprFb');
+  let taps = [], count = 0, inZone = 0, rated = 0, ctx = null, beatTimer = null, idleTimer = null;
+  const MIN = 60, MAX = 160;
+  function audio(){
+    if (!ctx){ try { ctx = new (window.AudioContext || window.webkitAudioContext)(); } catch(e){ ctx = null; } }
+    if (ctx && ctx.state === 'suspended') ctx.resume();
+    return ctx;
+  }
+  function click(hi){
+    const a = audio(); if (!a) return;
+    const o = a.createOscillator(), g = a.createGain(), t = a.currentTime;
+    o.frequency.value = hi ? 1200 : 900; o.connect(g); g.connect(a.destination);
+    g.gain.setValueAtTime(.25, t); g.gain.exponentialRampToValueAtTime(.001, t + .06);
+    o.start(t); o.stop(t + .07);
+  }
+  function flash(){ const d = $('#cprDot'); d.classList.add('on'); setTimeout(() => d.classList.remove('on'), 90); }
+  function startBeat(){
+    stopBeat();
+    const bpm = +$('#cprBpm').value;
+    audio();
+    beatTimer = setInterval(() => { click(true); flash(); }, 60000 / bpm);
+    $('#cprBeatBtn').textContent = 'Stop beat'; $('#cprBeatBtn').setAttribute('aria-pressed', 'true');
+  }
+  function stopBeat(){
+    clearInterval(beatTimer); beatTimer = null;
+    $('#cprBeatBtn').textContent = 'Start beat'; $('#cprBeatBtn').setAttribute('aria-pressed', 'false');
+  }
+  $('#cprBeatBtn').addEventListener('click', () => beatTimer ? stopBeat() : startBeat());
+  $('#cprBpm').addEventListener('input', () => { $('#cprBpmOut').textContent = $('#cprBpm').value; if (beatTimer) startBeat(); });
+
+  function hit(){
+    const now = performance.now();
+    if (taps.length && now - taps[taps.length-1] > 2000) taps = [];
+    taps.push(now); if (taps.length > 7) taps.shift();
+    count++; $('#cprCount').textContent = count;
+    if (!beatTimer) click(false);
+    pad.classList.add('hit'); setTimeout(() => pad.classList.remove('hit'), 80);
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(() => { fb.className = 'cpr-fb no'; fb.textContent = 'You stopped! In real CPR, keep pauses under 10 seconds.'; taps = []; }, 2000);
+    if (taps.length < 3){ fb.className = 'cpr-fb'; fb.textContent = 'Keep going…'; return; }
+    const span = taps[taps.length-1] - taps[0];
+    const rate = Math.round(60000 * (taps.length - 1) / span);
+    rated++;
+    const good = rate >= 100 && rate <= 120;
+    if (good) inZone++;
+    $('#cprRate').textContent = rate;
+    $('#cprZone').textContent = Math.round(100 * inZone / rated) + '%';
+    const pct = Math.max(0, Math.min(1, (rate - MIN) / (MAX - MIN)));
+    $('#cprNeedle').style.left = (pct * 100) + '%';
+    if (good){ fb.className = 'cpr-fb ok'; fb.textContent = rate + ' per minute. Perfect, hold that rhythm.'; }
+    else if (rate < 100){ fb.className = 'cpr-fb no'; fb.textContent = rate + ' per minute. Too slow, push faster.'; }
+    else { fb.className = 'cpr-fb no'; fb.textContent = rate + ' per minute. Too fast, slow down a little so the chest can come back up.'; }
+  }
+  pad.addEventListener('pointerdown', e => { if (e.button === 0 || e.pointerType !== 'mouse') { e.preventDefault(); hit(); } });
+  pad.addEventListener('keydown', e => {
+    if (e.key === ' ' || e.key === 'Enter'){ e.preventDefault(); if (!e.repeat) hit(); }
+  });
+  pad.addEventListener('click', e => e.preventDefault());
+  $('#cprReset').addEventListener('click', () => {
+    taps = []; count = 0; inZone = 0; rated = 0; clearTimeout(idleTimer);
+    $('#cprCount').textContent = '0'; $('#cprRate').textContent = '–'; $('#cprZone').textContent = '–';
+    $('#cprNeedle').style.left = '0%'; fb.className = 'cpr-fb'; fb.textContent = 'Start tapping to see your rate.';
+  });
+})();
+</script>
+</body>
+</html>

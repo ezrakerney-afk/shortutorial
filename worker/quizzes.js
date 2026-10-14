@@ -3117,5 +3117,49 @@ export default {
         o: ["Catch it by the handle", "Block it with your foot", "Step back and let it fall", "Grab it with a towel"], a: 2,
         e: "OSHA's rule: let a falling knife fall. Never try to catch it." }
     ]
+  },
+
+  "first-aid-basics": {
+    title: "First Aid Basics",
+    pass: 4,
+    questions: [
+      { q: "How fast and how deep should you push during hands-only CPR on an adult?",
+        o: ["60 to 80 a minute, about 1 inch deep", "100 to 120 a minute, at least 2 inches but not more than 2.4 inches", "150 a minute, as deep as you can", "80 to 100 a minute, about 3 inches deep"], a: 1,
+        e: "Current AHA guidance: 100 to 120 compressions a minute, at least 2 inches (5 cm) but no more than 2.4 inches (6 cm) deep, letting the chest fully recoil." },
+      { q: "An adult is clutching their throat and can't speak or cough. What do current guidelines say to do?",
+        o: ["Give them water to drink", "Do a finger sweep of their mouth", "Alternate 5 back blows and 5 abdominal thrusts", "Wait for them to pass out, then start CPR"], a: 2,
+        e: "The Red Cross and the 2025 AHA guidelines call for 5 firm back blows, then 5 abdominal thrusts, repeated until the object comes out or the person becomes unresponsive." },
+      { q: "Blood is spurting from a deep cut on someone's leg. Blood soaks through the first pad. What should you do?",
+        o: ["Put another pad on top and keep pressing hard", "Remove the soaked pad to look at the wound", "Ease off the pressure so blood can clot", "Rinse it under running water first"], a: 0,
+        e: "Keep firm, direct pressure. Add another pad on top without removing the first. If pressure isn't enough on a limb, use a tourniquet 2 to 3 inches above the wound." },
+      { q: "What is the right first step for a burn from a hot pan?",
+        o: ["Put ice on it", "Spread butter on it", "Pop any blisters", "Cool it under cool running water for 5 to 20 minutes"], a: 3,
+        e: "The Red Cross says to cool burns under clean, cool running water for 5 to 20 minutes. Ice can damage skin, and greasy things like butter trap heat." },
+      { q: "When should you put someone in the recovery position?",
+        o: ["When they are unresponsive and not breathing", "When they are unresponsive but breathing normally, with no suspected spinal injury", "When they are awake and choking", "Whenever they have a bleeding wound"], a: 1,
+        e: "The recovery position keeps the airway open for an unresponsive person who is breathing normally. If they aren't breathing normally, start CPR instead. With a possible neck or back injury, don't move them unless you must." }
+    ]
+  },
+
+  "how-electricity-works": {
+    title: "How Electricity Works",
+    pass: 4,
+    questions: [
+      { q: "A 12 V battery is connected to a 4 Ω resistor. How much current flows?",
+        o: ["48 amps", "0.33 amps", "3 amps", "16 amps"], a: 2,
+        e: "Ohm's law: I = V ÷ R = 12 ÷ 4 = 3 amps." },
+      { q: "You add a second identical bulb in series with the first. What happens?",
+        o: ["Both bulbs get dimmer, because total resistance goes up and current goes down", "Both stay just as bright", "The first bulb gets brighter", "Nothing lights up"], a: 0,
+        e: "In series, resistances add. The same battery pushes less current through the loop, and each bulb gets only part of the voltage, so both are dimmer." },
+      { q: "Why can you turn off a lamp at home without turning off the fridge?",
+        o: ["Homes use DC power", "Each appliance has its own battery", "The fridge has a higher voltage", "Home outlets are wired in parallel, so each device has its own path"], a: 3,
+        e: "Household circuits are wired in parallel. Every outlet gets the full 120 V, and opening one branch doesn't break the others." },
+      { q: "Why does the power grid use alternating current (AC)?",
+        o: ["AC can't shock people", "Transformers can easily step AC voltage up for long lines and back down for homes", "Batteries produce AC", "AC flows faster than DC"], a: 1,
+        e: "Transformers work with AC. High voltage lets the same power travel with less current, so less energy is lost as heat in the wires." },
+      { q: "What protects a person from a deadly shock at an outlet near a sink?",
+        o: ["The 15 or 20 amp circuit breaker", "A thicker power cord", "A GFCI, which cuts power when about 5 mA leaks to ground", "Using a higher-wattage appliance"], a: 2,
+        e: "OSHA notes breakers and fuses protect wires and equipment, not people. A GFCI shuts off power fast when as little as about 5 mA leaks somewhere it shouldn't." }
+    ]
   }
 };

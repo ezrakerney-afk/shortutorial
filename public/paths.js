@@ -10,7 +10,7 @@ window.PATHS = [
     units: [["Everyday money", ["budget-50-30-20", "compound-interest"]], ["Borrowing and credit", ["credit-scores", "how-loans-work"]], ["Growing your money", ["investing-basics", "tax-brackets-explained", "retirement-accounts", "negotiate-salary"]]] },
   { id: "code", title: "Learn to code", icon: "💻",
     blurb: "From how computers count to building and publishing your own site.",
-    units: [["How computers work", ["binary-numbers", "how-the-internet-works"]], ["Build web pages", ["html-basics", "make-a-website", "javascript-basics"]], ["Real programming", ["python-first-steps", "git-basics", "sql-basics"]]] },
+    units: [["How computers work", ["binary-numbers", "how-the-internet-works"]], ["Build web pages", ["html-basics", "css-basics", "make-a-website", "javascript-basics"]], ["Real programming", ["python-first-steps", "git-basics", "sql-basics"]]] },
   { id: "ai", title: "AI essentials", icon: "🤖",
     blurb: "Understand AI chatbots, use them well and judge what they tell you.",
     units: [["Understand AI", ["how-ai-works", "ai-prompting-basics"]], ["Think clearly", ["critical-thinking", "read-charts-and-graphs", "logic-and-sets"]]] },
@@ -26,9 +26,12 @@ window.PATHS = [
   { id: "mind", title: "Big ideas", icon: "🧠",
     blurb: "Philosophy, clear thinking and how society works.",
     units: [["Think", ["critical-thinking", "philosophy-basics", "stoicism-basics"]], ["Society", ["how-the-economy-works", "us-government-basics"]]] },
+  { id: "science", title: "Science basics", icon: "🔬",
+    blurb: "How forces, electricity, atoms, your body and the night sky work.",
+    units: [["Physics", ["newtons-laws", "how-electricity-works"]], ["Chemistry and biology", ["periodic-table-basics", "how-the-immune-system-works"]], ["Space", ["night-sky-astronomy"]]] },
   { id: "creative", title: "Creative skills", icon: "🎨",
     blurb: "Draw, take better photos, edit video and make music.",
-    units: [["Start creating", ["drawing-basics", "photography-basics"]], ["Music", ["play-piano-basics", "read-sheet-music"]], ["Make videos", ["video-editing-basics"]]] }
+    units: [["Start creating", ["drawing-basics", "photography-basics"]], ["Music", ["play-piano-basics", "read-sheet-music", "guitar-chords-basics"]], ["Make videos", ["video-editing-basics"]]] }
 ];
 
 (function(){
