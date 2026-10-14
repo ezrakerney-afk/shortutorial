@@ -3073,5 +3073,49 @@ export default {
         o: ["Look at the interpreter and say \"Ask him...\"", "Speak louder and exaggerate your lips", "Look at the Deaf person and talk to them directly", "Wait until the interpreter leaves"], a: 2,
         e: "Talk to the Deaf person, not the interpreter, and keep eye contact with them." }
     ]
+  },
+
+  "css-basics": {
+    title: "CSS Basics: Style Your First Web Page",
+    pass: 4,
+    questions: [
+      { q: "In the rule h1 { color: navy; }, what is \"color\"?",
+        o: ["The selector", "The property", "The value", "The declaration block"], a: 1,
+        e: "h1 is the selector, color is the property, and navy is its value." },
+      { q: "Which selector picks every element with class=\"tip\"?",
+        o: ["#tip", "tip", ".tip", "*tip"], a: 2,
+        e: "Class selectors start with a dot. A # is for IDs." },
+      { q: "With the default box-sizing (content-box), how wide is a box with width: 200px, padding: 20px and a 2px border?",
+        o: ["200px", "222px", "240px", "244px"], a: 3,
+        e: "Padding and border are added on top: 200 + 20 × 2 + 2 × 2 = 244px. border-box would keep it at 200px." },
+      { q: "You set display: flex on a parent. Which property spreads the children along the row?",
+        o: ["justify-content", "align-items", "flex-wrap", "box-sizing"], a: 0,
+        e: "justify-content works along the main axis (the row). align-items works across it." },
+      { q: "What does @media (min-width: 700px) { ... } mean?",
+        o: ["Apply these rules only on screens 700px or narrower", "Apply these rules only on screens 700px or wider", "Make the page at least 700px wide", "Apply these rules only when printing"], a: 1,
+        e: "min-width means this wide or wider. That's the mobile-first approach: phone styles first, wider layouts added in min-width queries." }
+    ]
+  },
+
+  "knife-skills": {
+    title: "Knife Skills for Beginners",
+    pass: 4,
+    questions: [
+      { q: "What does the claw grip protect?",
+        o: ["The knife's edge", "The fingertips of the hand holding the food", "The cutting board", "Your wrist on the knife hand"], a: 1,
+        e: "Curling the fingertips under keeps them out of the blade's path while the knuckles guide the knife." },
+      { q: "What size is a medium dice?",
+        o: ["⅛ inch cubes", "¼ inch cubes", "½ inch cubes", "¾ inch cubes"], a: 2,
+        e: "Small dice is ¼ in, medium is ½ in, large is ¾ in. Brunoise is ⅛ in." },
+      { q: "When dicing an onion, why do you leave the root end on?",
+        o: ["It holds the layers together while you cut", "It has the most flavor", "It keeps the onion from making you cry", "It's too hard to cut"], a: 0,
+        e: "The root keeps the layers attached, so your cuts stop just short of it and the onion doesn't fall apart." },
+      { q: "What does a honing rod (steel) do?",
+        o: ["Grinds away metal to make a brand-new edge", "Straightens an edge that has bent out of line", "Cleans bacteria off the blade", "Makes a serrated edge"], a: 1,
+        e: "Honing pushes the edge back into line and removes little or no metal. Sharpening grinds a new edge." },
+      { q: "A knife slips off the counter. What should you do?",
+        o: ["Catch it by the handle", "Block it with your foot", "Step back and let it fall", "Grab it with a towel"], a: 2,
+        e: "OSHA's rule: let a falling knife fall. Never try to catch it." }
+    ]
   }
 };

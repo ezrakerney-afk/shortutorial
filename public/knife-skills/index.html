@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Knife Skills for Beginners · Shortutorial</title>
+<meta name="description" content="Learn basic knife skills: choose a chef's knife, use the pinch and claw grips, cut slices, dice, mince, julienne and chiffonade at the right sizes, dice an onion, hone vs sharpen, and stay safe. With a true-size cut chart and a which-cut trainer.">
+<link rel="canonical" href="https://shortutorial.com/knife-skills/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="Knife Skills for Beginners · Shortutorial">
+<meta property="og:description" content="Learn basic knife skills: choose a chef's knife, use the pinch and claw grips, cut slices, dice, mince, julienne and chiffonade at the right sizes, dice an onion, hone vs sharpen, and stay safe. With a true-size cut chart and a which-cut trainer.">
+<meta property="og:url" content="https://shortutorial.com/knife-skills/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+.links small{font-size:.88rem;color:var(--muted);line-height:1.4}
+/* cut chart + trainer */
+.try select{width:auto;max-width:100%}
+.ks-board{overflow-x:auto;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px}
+.ks-board svg{max-width:none !important;display:block}
+.ks-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.ks-info div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
+.ks-info small{display:block;font-family:var(--mono);font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.ks-info b{font-family:var(--display);font-size:1.05rem;color:var(--accent)}
+.ks-opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+.ks-opts button{font:inherit;font-family:var(--display);font-weight:600;padding:10px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;text-align:left}
+.ks-opts button:hover{border-color:var(--accent)}
+.ks-opts button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.ks-opts button.right{border-color:var(--good);background:var(--good-bg);color:var(--good)}
+.ks-opts button.wrong{border-color:var(--bad);background:var(--bad-bg);color:var(--bad)}
+.ks-cal{display:flex;flex-wrap:wrap;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.ks-cal svg{flex:none}
+.ks-cal label{flex:1 1 160px}
+.ks-check{display:flex;flex-direction:column;gap:8px}
+.ks-check label{display:flex;gap:10px;align-items:flex-start;font-family:var(--body);font-size:1rem;color:var(--ink);padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);cursor:pointer}
+.ks-check input{margin-top:5px;accent-color:var(--accent);width:18px;height:18px;flex:none}
+#ks [hidden]{display:none!important}
+.ks-check label:has(input:checked){border-color:var(--good);background:var(--good-bg)}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"Knife Skills for Beginners","item":"https://shortutorial.com/knife-skills/"}]},{"@type":"Article","@id":"https://shortutorial.com/knife-skills/#article","headline":"Knife Skills for Beginners","description":"Learn basic knife skills: choose a chef's knife, use the pinch and claw grips, cut slices, dice, mince, julienne and chiffonade at the right sizes, dice an onion, hone vs sharpen, and stay safe. With a true-size cut chart and a which-cut trainer.","url":"https://shortutorial.com/knife-skills/","mainEntityOfPage":"https://shortutorial.com/knife-skills/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Life skills","keywords":"knife skills, how to hold a knife, claw grip, pinch grip, dice an onion, julienne, chiffonade, brunoise, mince garlic, sharpen knife, honing steel, cutting board safety","timeRequired":"PT15M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Make it true size: calibrate with a quarter","acceptedAnswer":{"@type":"Answer","text":"Hold a U.S. quarter against the screen and slide until the circle matches it."}},{"@type":"Question","name":"What size chef's knife should a beginner get?","acceptedAnswer":{"@type":"Answer","text":"An 8-inch chef's knife is the most common choice. It's long enough for a melon and small enough to control. If your hands are small or your kitchen is tight, a 6-inch is fine. Hold one before you buy if you can: it should feel balanced and comfortable."}},{"@type":"Question","name":"Wood or plastic cutting board?","acceptedAnswer":{"@type":"Answer","text":"Both are fine and both are kind to your knife. Plastic can go in the dishwasher. Whatever you choose, keep raw meat on its own board and replace boards that get deep grooves."}},{"@type":"Question","name":"How often should I sharpen my knife?","acceptedAnswer":{"@type":"Answer","text":"Hone often, every use or every few uses. Sharpen when honing stops helping, which for most home cooks is a few times a year. If the paper test snags after honing, it's time."}},{"@type":"Question","name":"Does a honing steel sharpen a knife?","acceptedAnswer":{"@type":"Answer","text":"Not really. It straightens a bent edge so it cuts like it's sharp again. Once the edge is worn down, only sharpening (removing metal) brings it back."}},{"@type":"Question","name":"Can knives go in the dishwasher?","acceptedAnswer":{"@type":"Answer","text":"It's best not to. The heat, detergent and banging around dull the edge and can damage handles. Wash by hand and dry right away."}},{"@type":"Question","name":"How do I get faster?","acceptedAnswer":{"@type":"Answer","text":"Go slowly and evenly first. Speed comes from practice with good technique, not from rushing. Dicing an onion a few times a week will make a big difference within a month."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="knife-skills">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=skills">Life skills</a> / Knife skills</div>
+    <span class="eyebrow">Skills · Cooking basics</span>
+    <h1>Knife Skills for Beginners</h1>
+    <p class="lede">Cut faster, more evenly, and with all ten fingers intact. Learn how to hold a chef's knife, the classic cuts and their sizes, how to dice an onion, and how to keep your knife sharp. Then test your eye with the true-size cut trainer.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~15 min read</span><span class="badge">6 lessons</span><span class="badge">True-size cut chart + trainer</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#k1">1 · The knife</a><a href="#k2">2 · Grips</a><a href="#k3">3 · Cuts & sizes</a><a href="#k4">4 · Onion</a><a href="#k5">5 · Hone & sharpen</a><a href="#k6">6 · Safety</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <section class="lesson" id="k1">
+    <div class="lesson-head"><span class="step">01</span><h2>Choose your knife</h2></div>
+    <p>You don't need a big block of knives. Almost everything in a home kitchen can be done with three:</p>
+    <div class="tw"><table class="t">
+      <tr><th>Knife</th><th>Typical size</th><th>Use it for</th></tr>
+      <tr><td><b>Chef's knife</b></td><td>8 inches</td><td>Nearly everything: chopping, slicing, dicing, mincing. If you buy one good knife, buy this.</td></tr>
+      <tr><td><b>Paring knife</b></td><td>3 to 4 inches</td><td>Small in-hand jobs: peeling, hulling strawberries, trimming.</td></tr>
+      <tr><td><b>Serrated (bread) knife</b></td><td>8 to 10 inches</td><td>Crusty bread, tomatoes, anything with a tough skin and soft inside.</td></tr>
+    </table></div>
+    <h3>Parts of a chef's knife</h3>
+    <figure>
+      <svg viewBox="0 0 440 120" role="img" aria-label="A chef's knife labeled with tip, edge, spine, heel, bolster and handle">
+        <path d="M150 40 L410 46 Q425 50 400 66 Q330 92 150 92 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+        <rect x="132" y="38" width="18" height="56" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
+        <rect x="20" y="48" width="112" height="38" rx="14" fill="none" stroke="currentColor" stroke-width="2"/>
+        <g font-family="JetBrains Mono, monospace" font-size="11" fill="currentColor">
+          <text x="398" y="30">tip</text><line x1="408" y1="34" x2="412" y2="48" stroke="currentColor"/>
+          <text x="270" y="114">edge</text><line x1="283" y1="104" x2="283" y2="88" stroke="currentColor"/>
+          <text x="260" y="28">spine</text><line x1="275" y1="32" x2="275" y2="43" stroke="currentColor"/>
+          <text x="152" y="114">heel</text><line x1="160" y1="104" x2="156" y2="92" stroke="currentColor"/>
+          <text x="112" y="24">bolster</text><line x1="140" y1="28" x2="141" y2="38" stroke="currentColor"/>
+          <text x="52" y="110">handle</text>
+        </g>
+      </svg>
+      <figcaption>The heel is the back of the edge, for heavy cuts. The tip is for fine work.</figcaption>
+    </figure>
+    <p class="callout"><span><b>A sharp knife is a safer knife.</b> A dull blade needs more force and is more likely to slip off food and into your hand. Lesson 5 shows how to keep it sharp.</span></p>
+  </section>
+
+  <section class="lesson" id="k2">
+    <div class="lesson-head"><span class="step">02</span><h2>Hold it right: pinch grip and claw grip</h2></div>
+    <p>Your two hands have different jobs. The <b>knife hand</b> controls the blade. The <b>guiding hand</b> holds the food and protects itself.</p>
+    <div class="grid2">
+      <div><span class="tagline">Knife hand</span><h3>The pinch grip</h3>
+        <p>Pinch the blade itself, just in front of the handle, between your thumb and the side of your bent index finger. Wrap your other three fingers around the handle. It feels odd at first, but it gives far more control than holding only the handle with a finger on the spine.</p></div>
+      <div><span class="tagline">Guiding hand</span><h3>The claw grip</h3>
+        <p>Curl your fingertips under, like a cat's paw, and tuck your thumb behind them. Rest the flat side of the blade against your knuckles. The knuckles guide the knife and the fingertips stay out of its path. Walk the claw back as you cut.</p></div>
+    </div>
+    <h3>Set up before you cut</h3>
+    <ol class="steps">
+      <li><b>Steady the board.</b> Put a damp paper towel or thin towel under it so it can't slide.</li>
+      <li><b>Make a flat side.</b> Round foods roll. Cut a thin slice off one side of an onion, potato or carrot and set it on that flat side.</li>
+      <li><b>Stand square</b> to the counter with the board at about hip height, and give yourself room.</li>
+    </ol>
+    <h3>Two basic motions</h3>
+    <ul class="points">
+      <li><b>Rocking cut:</b> keep the tip on the board and rock the heel up and down while moving through the food. Best for mincing herbs and garlic.</li>
+      <li><b>Push cut (forward slice):</b> move the blade forward and down through the food in one smooth stroke, then lift. Best for slicing and dicing vegetables. Let the sharp edge do the work; don't chop straight down hard.</li>
+    </ul>
+    <p class="callout warn"><span><b>Never flatten your guiding hand on top of the food with fingers out,</b> and never cut toward your body or toward a hand holding the food.</span></p>
+  </section>
+
+  <section class="lesson" id="k3">
+    <div class="lesson-head"><span class="step">03</span><h2>The basic cuts and their sizes</h2></div>
+    <p>Recipes use these words to tell you how big to cut. <b>Even pieces cook evenly</b>, which is the real point. Sizes are the standard culinary-school dimensions.</p>
+    <div class="tw"><table class="t">
+      <tr><th>Cut</th><th>Size</th><th>Shape</th></tr>
+      <tr><td><b>Large dice</b></td><td>¾ × ¾ × ¾ in</td><td>Cubes, for stews and roasting</td></tr>
+      <tr><td><b>Medium dice</b></td><td>½ × ½ × ½ in</td><td>Cubes, for soups and sautés</td></tr>
+      <tr><td><b>Small dice</b></td><td>¼ × ¼ × ¼ in</td><td>Cubes, for salsas and sauces</td></tr>
+      <tr><td><b>Brunoise</b></td><td>⅛ × ⅛ × ⅛ in</td><td>Tiny cubes, cut from julienne</td></tr>
+      <tr><td><b>Batonnet</b></td><td>¼ × ¼ × 2 in</td><td>Sticks, like thin fries</td></tr>
+      <tr><td><b>Julienne</b></td><td>⅛ × ⅛ × 2 in</td><td>Matchsticks (fine julienne is 1/16 in)</td></tr>
+      <tr><td><b>Paysanne</b></td><td>½ × ½ × ⅛ in</td><td>Thin flat squares</td></tr>
+      <tr><td><b>Mince</b></td><td>No set size, very fine</td><td>Irregular bits, for garlic, shallots, herbs</td></tr>
+      <tr><td><b>Chiffonade</b></td><td>Thin ribbons</td><td>For basil, mint, leafy greens</td></tr>
+    </table></div>
+    <h3>How to make them</h3>
+    <ol class="steps">
+      <li><b>Slice:</b> square off the food, then cut even slices (planks) the thickness you want for the final cut.</li>
+      <li><b>Sticks:</b> stack a few planks and cut them lengthwise into sticks of the same thickness. That's batonnet (¼ in) or julienne (⅛ in).</li>
+      <li><b>Dice:</b> line up the sticks and cut across them at the same spacing. Batonnet becomes small dice; julienne becomes brunoise.</li>
+      <li><b>Mince:</b> chop roughly, then lay your guiding hand flat on the spine of the knife (fingers up and away from the edge) and rock the blade back and forth over the pile, scraping it back together now and then.</li>
+      <li><b>Chiffonade:</b> stack the leaves, roll them up tightly like a cigar, and slice across the roll thinly. Fluff into ribbons.</li>
+    </ol>
+    <p class="callout"><span><b>Scrape with the spine, not the edge.</b> Flip the knife over to push food across the board. Scraping with the edge dulls it fast.</span></p>
+
+    <div class="try" id="ks"><span class="try-h">Try it · true-size cut chart and trainer</span>
+      <div class="chipset" id="ksMode" role="group" aria-label="Mode"><button type="button" data-m="chart" aria-pressed="true">Cut chart</button><button type="button" data-m="quiz" aria-pressed="false">Which cut is this?</button></div>
+      <details id="ksCalBox"><summary class="work" style="cursor:pointer">Make it true size: calibrate with a quarter</summary>
+        <div class="ks-cal">
+          <svg id="ksCoin" width="92" height="92" aria-hidden="true"></svg>
+          <label>Hold a U.S. quarter against the screen and slide until the circle matches it.<input type="range" id="ksPpi" min="60" max="260" value="96" aria-label="Screen scale, pixels per inch"></label>
+        </div>
+      </details>
+      <div class="row" id="ksPick"><label>Cut<select id="ksCut"></select></label></div>
+      <div class="ks-board"><svg id="ksSvg" role="img" aria-label="Drawing of the cut at true size"></svg></div>
+      <div class="ks-info" id="ksInfo" aria-live="polite">
+        <div><small>Size</small><b id="ksSize"></b></div>
+        <div><small>Good for</small><b id="ksUse"></b></div>
+      </div>
+      <div id="ksQuiz" hidden>
+        <div class="out" id="ksQ">Which cut is this?</div>
+        <div class="ks-opts" id="ksOpts"></div>
+        <div class="work" id="ksFb" aria-live="polite"></div>
+        <div class="row"><button class="btn" type="button" id="ksNext">Next one</button><span class="work" id="ksScore">Score: 0 / 0</span></div>
+      </div>
+      <p class="work">Top-down view on a cutting board. The ruler marks ¼ inch. Calibrate once and every piece is drawn at its real size.</p>
+    </div>
+  </section>
+
+  <section class="lesson" id="k4">
+    <div class="lesson-head"><span class="step">04</span><h2>How to dice an onion</h2></div>
+    <p>The onion is the best practice food there is. The trick is to leave the <b>root end</b> on: it holds all the layers together while you cut.</p>
+    <ol class="steps">
+      <li><b>Trim the top.</b> Cut off the stem (pointy) end. Leave the hairy root end alone, just shave off the whiskers.</li>
+      <li><b>Halve through the root.</b> Stand the onion on its flat top and cut straight down through the root, making two halves.</li>
+      <li><b>Peel.</b> Pull off the papery skin and the first tough layer if it's dry.</li>
+      <li><b>Cut toward the root, not through it.</b> Lay a half flat side down, root away from you. Make vertical cuts from near the root to the front, spaced the width you want (¼ in for small dice). Stop about ¼ inch before the root so the slices stay attached.</li>
+      <li><b>Optional horizontal cuts.</b> For a finer dice, hold the top flat with your palm and make one or two cuts parallel to the board, again stopping short of the root.</li>
+      <li><b>Cut across.</b> Turn to the claw grip and slice across the onion at the same spacing. Diced pieces fall away. Stop when you reach the root and set it aside for stock or the compost.</li>
+    </ol>
+    <div class="example"><div class="ex-h">Example · medium dice for soup</div><ol><li>Space the vertical cuts about ½ inch apart</li><li>One horizontal cut through the middle of a medium onion</li><li>Cross cuts ½ inch apart</li><li class="ans">About 1 cup of even ½-inch pieces from a medium onion</li></ol></div>
+    <p class="callout"><span><b>Fewer tears:</b> a sharp knife crushes fewer cells, so it releases less of the irritating gas. Chilling the onion for a while before cutting helps some people too.</span></p>
+  </section>
+
+  <section class="lesson" id="k5">
+    <div class="lesson-head"><span class="step">05</span><h2>Honing vs sharpening</h2></div>
+    <p>They sound the same but do different jobs.</p>
+    <div class="grid2">
+      <div><span class="tagline">Honing</span><h3>Straightens the edge</h3>
+        <p>A thin edge bends out of line with use. A <b>honing rod</b> (often called a "steel") pushes it back into line. It removes little or no metal. Do it often, every use or every few uses.</p></div>
+      <div><span class="tagline">Sharpening</span><h3>Grinds a new edge</h3>
+        <p>A <b>whetstone</b>, an electric or pull-through sharpener, or a professional service grinds away metal to form a fresh edge. Do it when honing no longer brings the knife back, often a few times a year for a home cook.</p></div>
+    </div>
+    <h3>How to hone safely</h3>
+    <ol class="steps">
+      <li>Stand the rod straight up with its tip on a folded towel on the counter. Hold the handle firmly.</li>
+      <li>Put the heel of the knife against the top of the rod at a small angle, roughly matching the edge (many Western knives are about 15 to 20 degrees per side; check your maker's advice).</li>
+      <li>Draw the knife down and toward you so the whole edge, heel to tip, sweeps along the rod, ending with the tip near the bottom. Keep the edge pointing down at the towel, away from your body.</li>
+      <li>Switch to the other side of the rod. Do about 5 to 10 light strokes per side, alternating. Light pressure is enough.</li>
+    </ol>
+    <h3>Is it sharp? Quick tests</h3>
+    <ul class="points">
+      <li><b>Paper test:</b> hold a sheet of printer paper by one corner and slice down through it. A sharp knife glides; a dull one snags or tears.</li>
+      <li><b>Tomato test:</b> a sharp knife cuts into a tomato skin with almost no pressure.</li>
+    </ul>
+    <h3>Make the edge last</h3>
+    <ul class="points">
+      <li><b>Hand wash and dry right away.</b> Dishwashers knock knives around and dull them.</li>
+      <li><b>Cut on wood or plastic.</b> Glass, stone, marble and ceramic plates wreck an edge.</li>
+      <li><b>Store it covered:</b> a knife block, magnetic strip, or blade guard. Not loose in a drawer.</li>
+    </ul>
+  </section>
+
+  <section class="lesson" id="k6">
+    <div class="lesson-head"><span class="step">06</span><h2>Knife and cutting board safety</h2></div>
+    <p>These rules come from OSHA's restaurant safety guide for young workers, and they apply just as much at home.</p>
+    <div class="try" id="sc"><span class="try-h">Try it · safety checklist</span>
+      <p class="work">Tick each habit you already do. Aim for all of them.</p>
+      <div class="ks-check" id="scList">
+        <label><input type="checkbox"> Keep fingers and thumbs out of the cutting line, and cut away from your body.</label>
+        <label><input type="checkbox"> If a knife falls, step back and let it fall. Never try to catch it.</label>
+        <label><input type="checkbox"> Carry a knife with the tip pointed down and the edge angled away from you.</label>
+        <label><input type="checkbox"> Pass a knife by setting it down on a clean surface for the other person to pick up.</label>
+        <label><input type="checkbox"> Never leave a knife in a sink of soapy water where nobody can see it. Wash it right away.</label>
+        <label><input type="checkbox"> Keep knives away from the edge of the counter.</label>
+        <label><input type="checkbox"> If someone talks to you or you get distracted, stop and set the knife down.</label>
+        <label><input type="checkbox"> Use the right knife for the job. Never use a knife as a can opener or screwdriver.</label>
+      </div>
+      <div class="out" id="scOut" aria-live="polite"></div>
+    </div>
+    <h3>Cutting board food safety</h3>
+    <p>The Academy of Nutrition and Dietetics' home food safety advice:</p>
+    <ul class="points">
+      <li><b>Use two boards:</b> one only for raw meat, poultry and seafood, and one for ready-to-eat foods like bread and vegetables. Different colors make it easy.</li>
+      <li><b>Wash after every use</b> in hot, soapy water, rinse, and air dry or pat dry with clean paper towels. Plastic, glass and solid acrylic boards can go in the dishwasher.</li>
+      <li><b>Sanitize after raw meat:</b> mix a fresh solution of <b>1 tablespoon of unscented liquid chlorine bleach per gallon of water</b>, flood the board, let it stand several minutes, then rinse and dry.</li>
+      <li><b>Replace worn boards</b> with deep grooves, cracks or heavy knife scars. Bacteria hide in the grooves where washing can't reach.</li>
+    </ul>
+    <p class="callout warn"><span><b>If you cut yourself:</b> press on it with a clean cloth or bandage and keep it raised. Minor cuts usually stop bleeding on their own. Get medical care if it's deep or gaping, won't stop bleeding with pressure, or later looks infected (spreading redness, more pain, warmth, swelling or drainage). Mayo Clinic notes you may need a tetanus shot if the wound is deep or dirty and it's been more than five years since your last one.</span></p>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>What size chef's knife should a beginner get?</summary><div class="a"><p>An 8-inch chef's knife is the most common choice. It's long enough for a melon and small enough to control. If your hands are small or your kitchen is tight, a 6-inch is fine. Hold one before you buy if you can: it should feel balanced and comfortable.</p></div></details>
+      <details><summary>Wood or plastic cutting board?</summary><div class="a"><p>Both are fine and both are kind to your knife. Plastic can go in the dishwasher. Whatever you choose, keep raw meat on its own board and replace boards that get deep grooves.</p></div></details>
+      <details><summary>How often should I sharpen my knife?</summary><div class="a"><p>Hone often, every use or every few uses. Sharpen when honing stops helping, which for most home cooks is a few times a year. If the paper test snags after honing, it's time.</p></div></details>
+      <details><summary>Does a honing steel sharpen a knife?</summary><div class="a"><p>Not really. It straightens a bent edge so it cuts like it's sharp again. Once the edge is worn down, only sharpening (removing metal) brings it back.</p></div></details>
+      <details><summary>Can knives go in the dishwasher?</summary><div class="a"><p>It's best not to. The heat, detergent and banging around dull the edge and can damage handles. Wash by hand and dry right away.</p></div></details>
+      <details><summary>How do I get faster?</summary><div class="a"><p>Go slowly and evenly first. Speed comes from practice with good technique, not from rushing. Dicing an onion a few times a week will make a big difference within a month.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://www.osha.gov/etools/young-workers-restaurant-safety/food-prep" target="_blank" rel="noopener"><span class="src">OSHA</span><b>Young Worker Safety in Restaurants: food prep and knives</b></a>
+      <a href="https://www.eatright.org/homefoodsafety/four-steps/separate/cutting-board-safety" target="_blank" rel="noopener"><span class="src">Academy of Nutrition and Dietetics</span><b>Cutting board safety</b></a>
+      <a href="https://rouxbe.com/tips-techniques/495-types-of-knife-cuts" target="_blank" rel="noopener"><span class="src">Rouxbe Culinary School</span><b>Types of knife cuts (dimensions)</b></a>
+      <a href="https://www.skillsusa.org/wp-content/uploads/2024/02/2024-Knife-Cut-Chart.pdf" target="_blank" rel="noopener"><span class="src">SkillsUSA (PDF)</span><b>Knife cut chart</b></a>
+      <a href="https://www.mayoclinic.org/first-aid/first-aid-cuts/basics/art-20056711" target="_blank" rel="noopener"><span class="src">Mayo Clinic</span><b>Cuts and scrapes: first aid</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="elsewhere">
+    <h2 class="sec"><span class="n">LINKS</span>Keep learning elsewhere</h2>
+    <div class="links">
+      <a href="https://rouxbe.com/tips-techniques/495-types-of-knife-cuts" target="_blank" rel="noopener"><span class="src">Rouxbe · free article</span><b>Types of knife cuts</b><small>A culinary school's guide to every classic cut, with photos.</small></a>
+      <a href="https://rouxbe.com/tips-techniques/161-what-is-julienne" target="_blank" rel="noopener"><span class="src">Rouxbe · free article</span><b>What is julienne?</b><small>A closer look at the matchstick cut and how to square off vegetables.</small></a>
+      <a href="https://www.onceuponachef.com/how-to/how-to-dice-an-onion.html" target="_blank" rel="noopener"><span class="src">Once Upon a Chef · free</span><b>How to dice an onion</b><small>Step-by-step photos of the onion method from lesson 4.</small></a>
+      <a href="https://www.skillsusa.org/wp-content/uploads/2024/02/2024-Knife-Cut-Chart.pdf" target="_blank" rel="noopener"><span class="src">SkillsUSA · free PDF</span><b>Knife cut chart</b><small>A printable chart of competition-standard cuts to stick on your fridge.</small></a>
+      <a href="https://www.osha.gov/etools/young-workers-restaurant-safety/food-prep" target="_blank" rel="noopener"><span class="src">OSHA · free</span><b>Restaurant food prep safety</b><small>The full list of knife and kitchen safety practices professionals follow.</small></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>Go slowly while you learn. Speed comes with practice, and no recipe is worth a trip to urgent care.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script src="../comments.js"></script>
+<script>
+/* True-size cut chart and "which cut is this?" trainer */
+(function(){
+  const NS = 'http://www.w3.org/2000/svg';
+  const CUTS = {
+    large:   {n:'Large dice', size:'¾ × ¾ × ¾ in', use:'Stews, roasting', kind:'cube', a:0.75, col:'#e8a64a'},
+    medium:  {n:'Medium dice', size:'½ × ½ × ½ in', use:'Soups, sautés', kind:'cube', a:0.5, col:'#e8a64a'},
+    small:   {n:'Small dice', size:'¼ × ¼ × ¼ in', use:'Salsa, sauces', kind:'cube', a:0.25, col:'#e8873a'},
+    brunoise:{n:'Brunoise', size:'⅛ × ⅛ × ⅛ in', use:'Garnish, fine sauces', kind:'cube', a:0.125, col:'#e8873a'},
+    batonnet:{n:'Batonnet', size:'¼ × ¼ × 2 in', use:'Crudités, sticks for dicing', kind:'stick', a:0.25, len:2, col:'#e8873a'},
+    julienne:{n:'Julienne', size:'⅛ × ⅛ × 2 in', use:'Slaws, stir-fries', kind:'stick', a:0.125, len:2, col:'#e8873a'},
+    paysanne:{n:'Paysanne', size:'½ × ½ × ⅛ in', use:'Soups, quick cooking', kind:'flat', a:0.5, col:'#7fb069'},
+    mince:   {n:'Mince', size:'Very fine, no set size', use:'Garlic, shallots, herbs', kind:'mince', a:0.05, col:'#f1e7c6'},
+    chiff:   {n:'Chiffonade', size:'Thin ribbons', use:'Basil, mint, greens', kind:'ribbon', a:0.06, col:'#3f8f3a'}
+  };
+  const KEYS = Object.keys(CUTS);
+  let ppi = 96, mode = 'chart', cur = 'medium', seed = 1, qSeed = 1, answered = false, right = 0, tries = 0;
+  try { const v = +localStorage.getItem('ks-ppi'); if (v >= 60 && v <= 260) ppi = v; } catch(e){}
+  $('#ksPpi').value = ppi;
+  const sel = $('#ksCut');
+  sel.innerHTML = KEYS.map(k => `<option value="${k}">${CUTS[k].n}</option>`).join('');
+  sel.value = cur;
+  function rnd(){ seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+  function el(tag, attrs, parent){ const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+  function shade(hex, f){ const n = parseInt(hex.slice(1), 16); const c = [n >> 16, (n >> 8) & 255, n & 255].map(v => Math.round(v * f)); return 'rgb(' + c.join(',') + ')'; }
+  function coin(){
+    const s = $('#ksCoin'); s.innerHTML = '';
+    const d = 0.955 * ppi; // U.S. quarter diameter is 0.955 in
+    s.setAttribute('width', Math.ceil(d + 4)); s.setAttribute('height', Math.ceil(d + 4));
+    el('circle', {cx: d/2 + 2, cy: d/2 + 2, r: d/2, fill: '#c9ccd1', stroke: '#6b7076', 'stroke-width': 2}, s);
+  }
+  function draw(key){
+    const c = CUTS[key], svg = $('#ksSvg');
+    svg.innerHTML = '';
+    const avail = Math.max(200, $('#ks .ks-board').clientWidth - 22);
+    // board width in inches: as wide as fits, up to 3.5 in, rounded to 1/4 in
+    const wIn = Math.max(1.25, Math.min(3.5, Math.floor(avail / ppi * 4) / 4));
+    const hIn = c.kind === 'stick' ? 2.6 : 1.6;
+    const W = wIn * ppi, H = hIn * ppi, R = 26;
+    svg.setAttribute('width', W); svg.setAttribute('height', H + R);
+    svg.setAttribute('viewBox', `0 0 ${W} ${H + R}`);
+    el('rect', {x:0, y:0, width:W, height:H, rx:6, fill:'#d8b88c'}, svg);
+    const cp = el('clipPath', {id:'ksClip'}, el('defs', {}, svg)); el('rect', {x:0, y:0, width:W, height:H, rx:6}, cp);
+    const g = el('g', {'clip-path':'url(#ksClip)'}, svg);
+    for (let i = 0; i < 6; i++) el('line', {x1:0, x2:W, y1:H * (i + .5) / 6 + (rnd() - .5) * 6, y2:H * (i + .5) / 6 + (rnd() - .5) * 6, stroke:'#c9a575', 'stroke-width':1}, g);
+    const p = v => v * ppi;
+    if (c.kind === 'cube' || c.kind === 'flat'){
+      const a = p(c.a), gap = Math.max(4, a * 0.45), side = c.kind === 'flat' ? Math.max(2, p(0.125) * 0.6) : Math.max(1.5, a * 0.18);
+      for (let y = gap; y + a + side <= H - 2; y += a + gap){
+        for (let x = gap; x + a + side <= W - 2; x += a + gap){
+          const jx = (rnd() - .5) * gap * .5, jy = (rnd() - .5) * gap * .5;
+          const X = x + jx, Y = y + jy;
+          el('polygon', {points:`${X+a},${Y} ${X+a+side},${Y+side} ${X+a+side},${Y+a+side} ${X+side},${Y+a+side} ${X},${Y+a}`, fill:shade(c.col, .72)}, g);
+          el('rect', {x:X, y:Y, width:a, height:a, fill:c.col, stroke:shade(c.col, .6), 'stroke-width':.6}, g);
+        }
+      }
+    } else if (c.kind === 'stick'){
+      const a = p(c.a), L = p(c.len), gap = Math.max(5, a * 0.9);
+      let x = gap, row = 0;
+      while (x + a + 2 <= W - 2){
+        const Y = p(0.2) + (rnd() - .5) * p(0.25) + row;
+        el('rect', {x:x + 1.5, y:Y + 1.5, width:a, height:L, fill:shade(c.col, .72)}, g);
+        el('rect', {x:x, y:Y, width:a, height:L, fill:c.col, stroke:shade(c.col, .6), 'stroke-width':.6}, g);
+        x += a + gap;
+      }
+    } else if (c.kind === 'mince'){
+      const n = Math.round(wIn * 140);
+      const cx = W / 2, cy = H / 2;
+      for (let i = 0; i < n; i++){
+        const ang = rnd() * Math.PI * 2, rr = Math.sqrt(rnd()) * Math.min(W, H) * .42;
+        const X = cx + Math.cos(ang) * rr * (W / Math.min(W, H)) * .8, Y = cy + Math.sin(ang) * rr;
+        const s = p(0.03 + rnd() * 0.04), pts = [];
+        for (let k = 0; k < 5; k++){ const t = k / 5 * Math.PI * 2 + rnd(); pts.push((X + Math.cos(t) * s).toFixed(1) + ',' + (Y + Math.sin(t) * s).toFixed(1)); }
+        el('polygon', {points:pts.join(' '), fill:c.col, stroke:'#b9a777', 'stroke-width':.5}, g);
+      }
+    } else {
+      const n = Math.round(wIn * 7);
+      for (let i = 0; i < n; i++){
+        const x0 = rnd() * W * .8 + W * .05, y0 = rnd() * H * .7 + H * .1, len = p(0.8 + rnd() * 1.2);
+        const ang = rnd() * Math.PI, dx = Math.cos(ang) * len, dy = Math.sin(ang) * len * .5;
+        const bend = (rnd() - .5) * p(0.5);
+        el('path', {d:`M${x0},${y0} q${dx/2 + bend},${dy/2 - bend} ${dx},${dy}`, fill:'none', stroke:c.col, 'stroke-width':Math.max(1.2, p(0.06)), 'stroke-linecap':'round'}, g);
+      }
+    }
+    // ruler: 1/4-inch ticks
+    el('rect', {x:0, y:H + 4, width:W, height:R - 4, fill:'#f4efe2', stroke:'#8a7a5a', 'stroke-width':.8}, svg);
+    for (let q = 0; q <= wIn * 4 + .01; q++){
+      const x = Math.min(W - .5, Math.max(.5, q * ppi / 4)), big = q % 4 === 0, mid = q % 2 === 0;
+      el('line', {x1:x, x2:x, y1:H + 4, y2:H + 4 + (big ? 14 : mid ? 9 : 5), stroke:'#3b3426', 'stroke-width':big ? 1.4 : 1}, svg);
+      if (big && q > 0 && x < W - 6){ const t = el('text', {x:x - 3, y:H + R - 1, 'font-size':9, 'font-family':'JetBrains Mono, monospace', fill:'#3b3426', 'text-anchor':'end'}, svg); t.textContent = (q / 4) + '"'; }
+    }
+    svg.setAttribute('aria-label', mode === 'quiz' ? 'Mystery cut drawn at true size' : c.n + ' drawn at true size, ' + c.size);
+  }
+  function showInfo(key){
+    $('#ksSize').textContent = CUTS[key].size;
+    $('#ksUse').textContent = CUTS[key].use;
+  }
+  function chart(){ cur = sel.value; seed = 7; draw(cur); showInfo(cur); }
+  function newQ(){
+    answered = false;
+    let k; do { k = KEYS[Math.floor(Math.random() * KEYS.length)]; } while (k === cur && KEYS.length > 1);
+    cur = k; qSeed = seed = 1 + Math.floor(Math.random() * 99999);
+    draw(cur);
+    const others = KEYS.filter(x => x !== cur).sort(() => Math.random() - .5).slice(0, 3);
+    const opts = others.concat(cur).sort(() => Math.random() - .5);
+    $('#ksOpts').innerHTML = opts.map(o => `<button type="button" data-k="${o}">${CUTS[o].n}</button>`).join('');
+    $('#ksFb').textContent = 'Use the ruler. Dice sizes are easy to mix up.';
+  }
+  $('#ksOpts').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b || answered) return;
+    answered = true; tries++;
+    const ok = b.dataset.k === cur; if (ok) right++;
+    [...$('#ksOpts').children].forEach(x => { if (x.dataset.k === cur) x.classList.add('right'); else if (x === b) x.classList.add('wrong'); });
+    $('#ksFb').textContent = (ok ? 'Yes! ' : 'Not quite. ') + `That's ${CUTS[cur].n.toLowerCase()}: ${CUTS[cur].size}. Good for ${CUTS[cur].use.toLowerCase()}.`;
+    $('#ksScore').textContent = `Score: ${right} / ${tries}`;
+    $('#ksNext').focus();
+  });
+  $('#ksNext').addEventListener('click', newQ);
+  document.querySelectorAll('#ksMode button').forEach(b => b.addEventListener('click', () => {
+    mode = b.dataset.m;
+    document.querySelectorAll('#ksMode button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    $('#ksQuiz').hidden = mode !== 'quiz';
+    $('#ksPick').hidden = mode === 'quiz';
+    $('#ksInfo').hidden = mode === 'quiz';
+    if (mode === 'quiz') newQ(); else { sel.value = KEYS.includes(sel.value) ? sel.value : 'medium'; chart(); }
+  }));
+  sel.addEventListener('change', chart);
+  $('#ksPpi').addEventListener('input', () => {
+    ppi = +$('#ksPpi').value; coin();
+    try { localStorage.setItem('ks-ppi', ppi); } catch(e){}
+    if (mode === 'quiz'){ seed = qSeed; draw(cur); } else chart();
+  });
+  let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { if (mode === 'quiz'){ seed = qSeed; draw(cur); } else chart(); }, 150); });
+  coin(); chart();
+})();
+
+/* Safety checklist */
+(function(){
+  const boxes = [...document.querySelectorAll('#scList input')];
+  function upd(){
+    const n = boxes.filter(b => b.checked).length;
+    $('#scOut').innerHTML = n === boxes.length ? '<b>All 8 habits.</b> You cut like a pro.' : `<b>${n} of ${boxes.length}</b> habits. ${boxes.length - n} to go.`;
+  }
+  boxes.forEach(b => b.addEventListener('change', upd)); upd();
+})();
+</script>
+</body>
+</html>

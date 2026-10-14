@@ -1115,5 +1115,21 @@ window.TUTORIALS = [
     category: "Life skills",
     tags: ["sign language", "ASL", "american sign language", "learn ASL", "fingerspelling", "ASL alphabet", "sign language alphabet", "deaf culture", "ASL numbers", "hello in sign language", "thank you in sign language", "deaf etiquette"],
     minutes: 15
+  },
+  {
+    slug: "css-basics",
+    title: "CSS Basics: Style Your First Web Page",
+    summary: "Selectors, colors, the box model, flexbox and media queries, with a live playground",
+    category: "Programming",
+    tags: ["css", "learn css", "style a website", "selectors", "box model", "flexbox", "media queries", "responsive design", "web design", "coding for beginners", "html and css"],
+    minutes: 15
+  },
+  {
+    slug: "knife-skills",
+    title: "Knife Skills for Beginners",
+    summary: "Pinch and claw grips, classic cuts and sizes, onions, honing and knife safety",
+    category: "Life skills",
+    tags: ["knife skills", "how to hold a knife", "claw grip", "pinch grip", "dice an onion", "julienne", "chiffonade", "brunoise", "mince garlic", "sharpen knife", "honing steel", "cutting board safety"],
+    minutes: 15
   }
 ];

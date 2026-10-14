@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0SDHK44TS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C0SDHK44TS');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSS Basics: Style Your First Web Page · Shortutorial</title>
+<meta name="description" content="Learn CSS from scratch: rules and selectors, colors and units, the box model, flexbox and responsive design with media queries. Practice in a live CSS playground with challenges that check your work.">
+<link rel="canonical" href="https://shortutorial.com/css-basics/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shortutorial">
+<meta property="og:title" content="CSS Basics: Style Your First Web Page · Shortutorial">
+<meta property="og:description" content="Learn CSS from scratch: rules and selectors, colors and units, the box model, flexbox and responsive design with media queries. Practice in a live CSS playground with challenges that check your work.">
+<meta property="og:url" content="https://shortutorial.com/css-basics/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../lesson.css">
+<style>
+.faq{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--display);font-weight:600;font-size:1.02rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .a{padding:0 18px 16px;font-size:.98rem;display:flex;flex-direction:column;gap:8px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.links a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.links .src{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.links .src::after{content:"↗";color:var(--accent)}
+.links b{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.35}
+.links small{font-size:.88rem;color:var(--muted);line-height:1.4}
+/* playground */
+.pg-task{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:.98rem}
+.pg-task b{font-family:var(--display)}
+.pg-html{font-family:var(--mono);font-size:.74rem;color:var(--muted);white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:8px 10px;margin:0;max-height:120px;overflow:auto}
+.try textarea.pg-css{font-family:var(--mono);font-size:.88rem;line-height:1.5;min-height:170px;width:100%;padding:10px;border-radius:9px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);resize:vertical;tab-size:2;outline:none}
+.try textarea.pg-css:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.pg-frame{overflow-x:auto;border-radius:9px}
+.pg-frame iframe{display:block;width:100%;height:230px;border:1.5px solid var(--line);border-radius:9px;background:#fff}
+.pg-status{font-family:var(--display);font-weight:600;padding:10px 12px;border-radius:9px;background:var(--surface);border:1px solid var(--line)}
+.pg-status.ok{color:var(--good);background:var(--good-bg);border-color:transparent}
+.pg-cap{font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+#pg [hidden]{display:none!important}
+.chipset button.won::after{content:" ✓";color:inherit}
+/* box model visualizer */
+.bm-stage{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px;overflow:hidden}
+.bm-m{background:color-mix(in srgb,var(--amber) 22%,var(--surface));display:inline-block;max-width:100%}
+.bm-b{background:var(--muted)}
+.bm-p{background:color-mix(in srgb,var(--good) 28%,var(--surface))}
+.bm-c{background:color-mix(in srgb,var(--c-computer) 30%,var(--surface));color:var(--ink);font-family:var(--mono);font-size:.72rem;display:flex;align-items:center;justify-content:center;overflow:hidden;white-space:nowrap}
+.bm-legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-family:var(--mono);font-size:.76rem;color:var(--muted)}
+.bm-legend i{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:-1px;margin-right:5px}
+.bm-sliders{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+</style>
+<!-- ld --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shortutorial.com/"},{"@type":"ListItem","position":2,"name":"CSS Basics: Style Your First Web Page","item":"https://shortutorial.com/css-basics/"}]},{"@type":"Article","@id":"https://shortutorial.com/css-basics/#article","headline":"CSS Basics: Style Your First Web Page","description":"Learn CSS from scratch: rules and selectors, colors and units, the box model, flexbox and responsive design with media queries. Practice in a live CSS playground with challenges that check your work.","url":"https://shortutorial.com/css-basics/","mainEntityOfPage":"https://shortutorial.com/css-basics/","image":"https://shortutorial.com/icon-512.png","inLanguage":"en-US","isAccessibleForFree":true,"articleSection":"Programming","keywords":"css, learn css, style a website, selectors, box model, flexbox, media queries, responsive design, web design, coding for beginners, html and css","timeRequired":"PT15M","author":{"@id":"https://shortutorial.com/#org"},"publisher":{"@id":"https://shortutorial.com/#org"}},{"@type":"Organization","@id":"https://shortutorial.com/#org","name":"Shortutorial","url":"https://shortutorial.com/","logo":"https://shortutorial.com/icon-512.png"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is CSS a programming language?","acceptedAnswer":{"@type":"Answer","text":"Not in the usual sense. CSS describes how things look rather than giving step-by-step instructions, so it's called a style sheet language. You still need to learn it to build websites, and it pairs with HTML (structure) and JavaScript (behavior)."}},{"@type":"Question","name":"Why isn't my CSS working?","acceptedAnswer":{"@type":"Answer","text":"Check, in order: a typo in the selector or property, a missing semicolon or curly brace, a missing unit ( 10 instead of 10px ), the stylesheet link path, and whether a more specific rule is overriding yours. Right-click the element, choose Inspect, and the Styles panel shows which rules apply and which are crossed out."}},{"@type":"Question","name":"Should I use flexbox or grid?","acceptedAnswer":{"@type":"Answer","text":"Flexbox is great for one direction at a time: a row of buttons, a nav bar, centering. CSS Grid is built for two-dimensional layouts with rows and columns, like a photo gallery or a full page layout. Many sites use both. Learn flexbox first."}},{"@type":"Question","name":"What's the difference between margin and padding?","acceptedAnswer":{"@type":"Answer","text":"Padding is inside the border and takes the element's background color. Margin is outside the border, always transparent, and pushes neighbors away."}},{"@type":"Question","name":"Do I need a framework like Tailwind or Bootstrap?","acceptedAnswer":{"@type":"Answer","text":"No. Frameworks are built on plain CSS, and they're much easier to use once you understand selectors, the box model and flexbox. Start with plain CSS."}},{"@type":"Question","name":"px, rem or em for font sizes?","acceptedAnswer":{"@type":"Answer","text":"rem is the usual choice. It scales with the reader's browser text-size setting, which helps people who need bigger text. Use px for things like border widths."}}]}]}</script><!-- /ld -->
+</head>
+<body data-slug="css-basics">
+<div class="progress" id="progress"></div>
+
+<header class="sitebar">
+  <div class="sitebar-in">
+    <a class="brand" href="../"><span class="brand-mark">S/</span><span>Short<b>utorial</b></span></a>
+    <div class="bar-actions"><a class="btn ghost small" href="../">All tutorials</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="intro">
+    <div class="crumbs"><a href="../">Home</a> / <a href="../?q=programming">Programming</a> / CSS basics</div>
+    <span class="eyebrow">Programming · Web</span>
+    <h1>CSS Basics: Style Your First Web Page</h1>
+    <p class="lede">HTML says what things are. CSS says how they look. In six short lessons you'll learn rules, selectors, colors, the box model, flexbox and responsive design, and practice each one in a live playground that checks your work.</p>
+    <div class="badges"><span class="badge level">Beginner</span><span class="badge">~15 min read</span><span class="badge">6 lessons</span><span class="badge">Live CSS playground</span><span class="badge">Box model visualizer</span></div>
+    <nav class="toc" aria-label="Lessons"><a href="#c1">1 · What CSS is</a><a href="#c2">2 · Selectors</a><a href="#c3">3 · Colors & units</a><a href="#c4">4 · Box model</a><a href="#c5">5 · Flexbox</a><a href="#c6">6 · Responsive</a><a href="#play">Playground</a><a href="#faq">FAQ</a><a href="#cert">Quiz</a></nav>
+  </header>
+
+  <p class="callout"><span><b>New to HTML?</b> CSS styles HTML, so it helps to know a few tags first. <a href="../html-basics/">HTML in 10 Minutes</a> covers everything you need.</span></p>
+
+  <section class="lesson" id="c1">
+    <div class="lesson-head"><span class="step">01</span><h2>What CSS is, and what a rule looks like</h2></div>
+    <p><b>CSS</b> stands for Cascading Style Sheets. It's a list of <b>rules</b>. Each rule picks some elements on the page and sets how they look: colors, sizes, spacing, layout.</p>
+    <div class="code"><pre><code><span class="k">h1</span> {
+  <span class="k">color</span>: <span class="s">navy</span>;
+  <span class="k">font-size</span>: <span class="s">32px</span>;
+}</code></pre></div>
+    <ul class="points">
+      <li><b>Selector</b> (<code>h1</code>): which elements the rule applies to.</li>
+      <li><b>Declaration block</b> (the curly braces): the settings.</li>
+      <li><b>Property</b> (<code>color</code>) and <b>value</b> (<code>navy</code>), joined by a colon and ended with a semicolon.</li>
+    </ul>
+    <h3>Three ways to add CSS to a page</h3>
+    <div class="code"><pre><code><span class="c">&lt;!-- 1. A separate file (best for real sites) --&gt;</span>
+<span class="k">&lt;link</span> rel=<span class="s">"stylesheet"</span> href=<span class="s">"style.css"</span><span class="k">&gt;</span>
+
+<span class="c">&lt;!-- 2. A &lt;style&gt; block in the &lt;head&gt; --&gt;</span>
+<span class="k">&lt;style&gt;</span> p { color: gray; } <span class="k">&lt;/style&gt;</span>
+
+<span class="c">&lt;!-- 3. Inline, on one element (use sparingly) --&gt;</span>
+<span class="k">&lt;p</span> style=<span class="s">"color: red"</span><span class="k">&gt;</span>Warning!<span class="k">&lt;/p&gt;</span></code></pre></div>
+    <p>A separate file is best because every page on your site can share it. Change one line and the whole site updates.</p>
+    <h3>The "cascading" part</h3>
+    <p>When two rules set the same property on the same element, the browser has to pick one. In short:</p>
+    <ol class="steps">
+      <li>The <b>more specific</b> selector wins (an ID beats a class, a class beats a tag name).</li>
+      <li>If they're equally specific, the rule that comes <b>later</b> wins.</li>
+      <li>Some properties, like <code>color</code> and <code>font-family</code>, are <b>inherited</b>: set them on <code>body</code> and every element inside gets them too.</li>
+    </ol>
+    <p class="callout"><span><b>Comments.</b> Write notes to yourself between <code>/*</code> and <code>*/</code>. The browser ignores them.</span></p>
+  </section>
+
+  <section class="lesson" id="c2">
+    <div class="lesson-head"><span class="step">02</span><h2>Selectors: picking what to style</h2></div>
+    <p>Selectors are how you point at things. These cover almost everything a beginner needs:</p>
+    <div class="tw"><table class="t">
+      <tr><th>Selector</th><th>Picks</th><th>Example</th></tr>
+      <tr><td><code>p</code></td><td>Every element of that type</td><td>All paragraphs</td></tr>
+      <tr><td><code>.tip</code></td><td>Elements with <code>class="tip"</code></td><td>Any tagged element, reusable</td></tr>
+      <tr><td><code>#logo</code></td><td>The one element with <code>id="logo"</code></td><td>IDs must be unique on a page</td></tr>
+      <tr><td><code>nav a</code></td><td>Links anywhere inside a <code>nav</code></td><td>Descendant (space)</td></tr>
+      <tr><td><code>h1, h2</code></td><td>Both headings</td><td>Group with a comma</td></tr>
+      <tr><td><code>a:hover</code></td><td>A link while the mouse is over it</td><td>Pseudo-class</td></tr>
+      <tr><td><code>li:first-child</code></td><td>The first item in each list</td><td>Pseudo-class</td></tr>
+    </table></div>
+    <div class="example"><div class="ex-h">Example · classes do most of the work</div><div class="ex-b">
+      <div class="code"><pre><code><span class="c">/* HTML: &lt;p class="tip"&gt;Save often.&lt;/p&gt; */</span>
+<span class="k">.tip</span> {
+  <span class="k">background</span>: <span class="s">lightyellow</span>;
+  <span class="k">border-left</span>: <span class="s">4px solid orange</span>;
+}</code></pre></div>
+      <p>An element can have several classes, separated by spaces: <code>class="tip big"</code>. Both rules apply.</p>
+    </div></div>
+    <p class="callout"><span><b>Prefer classes over IDs for styling.</b> IDs are so specific that they're hard to override later. Save them for links like <code>#section-2</code> and for JavaScript.</span></p>
+  </section>
+
+  <section class="lesson" id="c3">
+    <div class="lesson-head"><span class="step">03</span><h2>Colors and units</h2></div>
+    <h3>Four ways to write a color</h3>
+    <div class="tw"><table class="t">
+      <tr><th>Format</th><th>Example</th><th>Notes</th></tr>
+      <tr><td>Name</td><td><code>tomato</code></td><td>About 140 named colors. Easy to read.</td></tr>
+      <tr><td>Hex</td><td><code>#ff6347</code></td><td>Red, green, blue as 00 to ff. The most common format.</td></tr>
+      <tr><td>RGB</td><td><code>rgb(255 99 71)</code></td><td>Same channels as 0 to 255. Add <code>/ 50%</code> for see-through.</td></tr>
+      <tr><td>HSL</td><td><code>hsl(9 100% 64%)</code></td><td>Hue (0 to 360 on the color wheel), saturation, lightness. Easy to tweak by hand.</td></tr>
+    </table></div>
+    <p>Use <code>color</code> for text and <code>background-color</code> (or just <code>background</code>) for the fill behind it. Make sure there's strong contrast between the two so everyone can read it.</p>
+    <h3>Units: how big is big?</h3>
+    <div class="tw"><table class="t">
+      <tr><th>Unit</th><th>Means</th><th>Good for</th></tr>
+      <tr><td><code>px</code></td><td>CSS pixels, a fixed size</td><td>Borders, small details</td></tr>
+      <tr><td><code>rem</code></td><td>Times the root font size (16px by default)</td><td>Font sizes and spacing. Respects the reader's text-size setting.</td></tr>
+      <tr><td><code>em</code></td><td>Times this element's font size</td><td>Padding that grows with the text</td></tr>
+      <tr><td><code>%</code></td><td>Percent of the parent</td><td>Widths</td></tr>
+      <tr><td><code>vw</code> / <code>vh</code></td><td>1% of the window width / height</td><td>Full-screen sections</td></tr>
+    </table></div>
+    <div class="example"><div class="ex-h">Example · rem math</div><ol><li>The browser's default root font size is 16px.</li><li><code>font-size: 1.5rem</code> → 1.5 × 16</li><li class="ans">24px, and it grows if the reader sets bigger text</li></ol></div>
+    <p class="callout"><span><b>A value of zero needs no unit.</b> <code>margin: 0</code> is fine. Any other number needs one: <code>margin: 10</code> is ignored.</span></p>
+  </section>
+
+  <section class="lesson" id="c4">
+    <div class="lesson-head"><span class="step">04</span><h2>The box model</h2></div>
+    <p>Every element is a rectangle made of four layers, from the inside out:</p>
+    <ol class="steps">
+      <li><b>Content</b>: the text or image. Its size is set by <code>width</code> and <code>height</code>.</li>
+      <li><b>Padding</b>: space inside the border. It shows the element's background color.</li>
+      <li><b>Border</b>: a line around the padding, like <code>border: 2px solid black</code>.</li>
+      <li><b>Margin</b>: space outside the border that pushes other elements away. Always transparent.</li>
+    </ol>
+    <p>Shorthand lets you set all four sides at once, going clockwise from the top: <code>padding: 10px 20px 10px 20px</code> is top, right, bottom, left. Two values mean top-and-bottom, then left-and-right: <code>padding: 10px 20px</code>.</p>
+    <h3>The surprise: width doesn't include padding</h3>
+    <p>By default (<code>box-sizing: content-box</code>), <code>width</code> sets only the content. Padding and border get added on top, so a <code>width: 200px</code> box with 20px padding and a 2px border is really <b>244px</b> wide. Most developers switch to <code>border-box</code>, where <code>width</code> includes padding and border:</p>
+    <div class="code"><pre><code><span class="k">*</span>, <span class="k">*::before</span>, <span class="k">*::after</span> {
+  <span class="k">box-sizing</span>: <span class="s">border-box</span>;
+}</code></pre></div>
+    <div class="try" id="bm"><span class="try-h">Try it · box model visualizer</span>
+      <div class="bm-sliders">
+        <label>width: <span id="bmWv">160</span>px<input type="range" id="bmW" min="60" max="240" value="160"></label>
+        <label>padding: <span id="bmPv">20</span>px<input type="range" id="bmP" min="0" max="40" value="20"></label>
+        <label>border: <span id="bmBv">4</span>px<input type="range" id="bmB" min="0" max="16" value="4"></label>
+        <label>margin: <span id="bmMv">16</span>px<input type="range" id="bmMg" min="0" max="40" value="16"></label>
+      </div>
+      <div class="chipset" id="bmSz" aria-label="box-sizing"><button type="button" data-v="content-box" aria-pressed="true">content-box (default)</button><button type="button" data-v="border-box" aria-pressed="false">border-box</button></div>
+      <div class="bm-stage" aria-hidden="true"><div class="bm-m" id="bmMbox"><div class="bm-b" id="bmBbox"><div class="bm-p" id="bmPbox"><div class="bm-c" id="bmCbox">content</div></div></div></div></div>
+      <div class="bm-legend"><span><i style="background:color-mix(in srgb,var(--amber) 22%,var(--surface))"></i>margin</span><span><i style="background:var(--muted)"></i>border</span><span><i style="background:color-mix(in srgb,var(--good) 28%,var(--surface))"></i>padding</span><span><i style="background:color-mix(in srgb,var(--c-computer) 30%,var(--surface))"></i>content</span><span id="bmScale"></span></div>
+      <div class="out" id="bmOut" aria-live="polite"></div>
+      <div class="work" id="bmWork"></div>
+    </div>
+    <p class="callout"><span><b>See it in your own browser.</b> Right-click any element on any website and choose <b>Inspect</b>. The developer tools show its box model with the exact padding, border and margin.</span></p>
+  </section>
+
+  <section class="lesson" id="c5">
+    <div class="lesson-head"><span class="step">05</span><h2>Flexbox: lining things up</h2></div>
+    <p>Normally, block elements like <code>div</code> and <code>p</code> stack top to bottom. Put <code>display: flex</code> on a <b>parent</b>, and its direct children (the <b>flex items</b>) line up in a row instead.</p>
+    <div class="code"><pre><code><span class="k">.toolbar</span> {
+  <span class="k">display</span>: <span class="s">flex</span>;
+  <span class="k">justify-content</span>: <span class="s">space-between</span>; <span class="c">/* along the row */</span>
+  <span class="k">align-items</span>: <span class="s">center</span>;          <span class="c">/* across the row */</span>
+  <span class="k">gap</span>: <span class="s">12px</span>;                     <span class="c">/* space between items */</span>
+}</code></pre></div>
+    <div class="tw"><table class="t">
+      <tr><th>Property (on the parent)</th><th>Common values</th></tr>
+      <tr><td><code>flex-direction</code></td><td><code>row</code> (default), <code>column</code></td></tr>
+      <tr><td><code>justify-content</code><br>main axis</td><td><code>flex-start</code>, <code>center</code>, <code>flex-end</code>, <code>space-between</code>, <code>space-around</code></td></tr>
+      <tr><td><code>align-items</code><br>cross axis</td><td><code>stretch</code> (default), <code>center</code>, <code>flex-start</code>, <code>flex-end</code></td></tr>
+      <tr><td><code>flex-wrap</code></td><td><code>nowrap</code> (default), <code>wrap</code> to let items flow onto new lines</td></tr>
+      <tr><td><code>gap</code></td><td>Space between items, like <code>12px</code> or <code>1rem</code></td></tr>
+    </table></div>
+    <p>On a child, <code>flex: 1</code> means "take a share of the leftover space." Give every item <code>flex: 1</code> and they split the row evenly.</p>
+    <p class="callout"><span><b>The two axes.</b> <code>justify-content</code> works along the direction items flow. <code>align-items</code> works across it. Switch to <code>flex-direction: column</code> and they swap: justify becomes vertical, align becomes horizontal.</span></p>
+    <div class="example"><div class="ex-h">Example · center anything</div><div class="ex-b">
+      <div class="code"><pre><code><span class="k">.stage</span> {
+  <span class="k">display</span>: <span class="s">flex</span>;
+  <span class="k">justify-content</span>: <span class="s">center</span>;
+  <span class="k">align-items</span>: <span class="s">center</span>;
+  <span class="k">min-height</span>: <span class="s">200px</span>;
+}</code></pre></div>
+      <p>The classic "center a box both ways" problem, solved in three lines. You'll do it yourself in the playground.</p>
+    </div></div>
+  </section>
+
+  <section class="lesson" id="c6">
+    <div class="lesson-head"><span class="step">06</span><h2>Responsive design with media queries</h2></div>
+    <p>Lots of people will read your page on a phone, so it needs to work on narrow screens too. Two pieces make that happen.</p>
+    <h3>1. The viewport tag</h3>
+    <p>Put this in every page's <code>&lt;head&gt;</code>. Without it, phones pretend to be a wide desktop screen and shrink your page to fit.</p>
+    <div class="code"><pre><code><span class="k">&lt;meta</span> name=<span class="s">"viewport"</span> content=<span class="s">"width=device-width, initial-scale=1"</span><span class="k">&gt;</span></code></pre></div>
+    <h3>2. Media queries</h3>
+    <p>A <b>media query</b> wraps rules that apply only when a condition is true, usually the screen width.</p>
+    <div class="code"><pre><code><span class="c">/* Phones first: cards stack in a column */</span>
+<span class="k">.cards</span> { <span class="k">display</span>: <span class="s">flex</span>; <span class="k">flex-direction</span>: <span class="s">column</span>; <span class="k">gap</span>: <span class="s">12px</span>; }
+
+<span class="c">/* 700px and wider: side by side */</span>
+<span class="k">@media</span> (<span class="k">min-width</span>: <span class="s">700px</span>) {
+  <span class="k">.cards</span> { <span class="k">flex-direction</span>: <span class="s">row</span>; }
+}</code></pre></div>
+    <ul class="points">
+      <li><b><code>min-width</code></b> means "this wide or wider." Writing phone styles first and adding <code>min-width</code> queries is called <b>mobile-first</b>.</li>
+      <li><b><code>max-width</code></b> means "this wide or narrower." Handy for fixing one thing on small screens.</li>
+      <li>Pick breakpoints where <b>your</b> layout starts to look cramped, not for specific phone models.</li>
+    </ul>
+    <h3>Habits that make most pages responsive for free</h3>
+    <ul class="points">
+      <li><code>img { max-width: 100%; height: auto; }</code> so images never overflow.</li>
+      <li>Use <code>max-width</code> instead of a fixed <code>width</code> on containers.</li>
+      <li>Let flex rows wrap with <code>flex-wrap: wrap</code>.</li>
+      <li>Use <code>rem</code> for text so it respects the reader's settings.</li>
+    </ul>
+    <p class="callout"><span><b>Test it.</b> In Chrome, Edge or Firefox, open developer tools and click the phone/tablet icon (device toolbar or responsive design mode) to preview any width.</span></p>
+  </section>
+
+  <section class="lesson" id="play">
+    <div class="lesson-head"><span class="step">GO</span><h2>Practice in the CSS playground</h2></div>
+    <p>Pick a challenge. The HTML is fixed; write CSS in the box and the preview updates as you type. When your CSS does the job, you'll see a green check. Stuck? Press <b>Show answer</b>.</p>
+    <div class="try" id="pg"><span class="try-h">Try it · live CSS playground</span>
+      <div class="chipset" id="pgList" role="group" aria-label="Challenges"></div>
+      <div class="pg-task" id="pgTask"></div>
+      <details><summary class="pg-cap" style="cursor:pointer">Show the HTML for this challenge</summary><pre class="pg-html" id="pgHtml"></pre></details>
+      <label for="pgCss">Your CSS</label>
+      <textarea class="pg-css" id="pgCss" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="pgTask"></textarea>
+      <div class="row"><button class="btn ghost" type="button" id="pgReset">Reset</button><button class="btn ghost" type="button" id="pgAns">Show answer</button>
+        <span class="chipset" id="pgSize" role="group" aria-label="Preview width"><button type="button" data-w="" aria-pressed="true">Fit</button><button type="button" data-w="340" aria-pressed="false">Phone 340px</button><button type="button" data-w="760" aria-pressed="false">Desktop 760px</button></span></div>
+      <div class="pg-cap">Preview</div>
+      <div class="pg-frame"><iframe id="pgView" sandbox="allow-same-origin" title="Preview of your CSS"></iframe></div>
+      <div class="pg-status" id="pgStatus" aria-live="polite"></div>
+      <div class="pg-cap" id="pgScore"></div>
+    </div>
+    <p class="callout"><span><b>Tip:</b> press <kbd>Tab</kbd> in the CSS box to indent. Press <kbd>Esc</kbd> first if you want <kbd>Tab</kbd> to move to the next button instead.</span></p>
+  </section>
+
+  <section class="block" id="faq">
+    <h2 class="sec"><span class="n">FAQ</span>Common questions</h2>
+    <div class="faq">
+      <details><summary>Is CSS a programming language?</summary><div class="a"><p>Not in the usual sense. CSS describes how things look rather than giving step-by-step instructions, so it's called a style sheet language. You still need to learn it to build websites, and it pairs with HTML (structure) and JavaScript (behavior).</p></div></details>
+      <details><summary>Why isn't my CSS working?</summary><div class="a"><p>Check, in order: a typo in the selector or property, a missing semicolon or curly brace, a missing unit (<code>10</code> instead of <code>10px</code>), the stylesheet link path, and whether a more specific rule is overriding yours. Right-click the element, choose Inspect, and the Styles panel shows which rules apply and which are crossed out.</p></div></details>
+      <details><summary>Should I use flexbox or grid?</summary><div class="a"><p>Flexbox is great for one direction at a time: a row of buttons, a nav bar, centering. CSS Grid is built for two-dimensional layouts with rows and columns, like a photo gallery or a full page layout. Many sites use both. Learn flexbox first.</p></div></details>
+      <details><summary>What's the difference between margin and padding?</summary><div class="a"><p>Padding is inside the border and takes the element's background color. Margin is outside the border, always transparent, and pushes neighbors away.</p></div></details>
+      <details><summary>Do I need a framework like Tailwind or Bootstrap?</summary><div class="a"><p>No. Frameworks are built on plain CSS, and they're much easier to use once you understand selectors, the box model and flexbox. Start with plain CSS.</p></div></details>
+      <details><summary>px, rem or em for font sizes?</summary><div class="a"><p><code>rem</code> is the usual choice. It scales with the reader's browser text-size setting, which helps people who need bigger text. Use <code>px</code> for things like border widths.</p></div></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">MORE</span>Sources</h2>
+    <div class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics" target="_blank" rel="noopener"><span class="src">MDN Web Docs</span><b>CSS styling basics</b></a>
+      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model" target="_blank" rel="noopener"><span class="src">MDN Web Docs</span><b>The box model</b></a>
+      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Flexbox" target="_blank" rel="noopener"><span class="src">MDN Web Docs</span><b>Flexbox</b></a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries" target="_blank" rel="noopener"><span class="src">MDN Web Docs</span><b>Using media queries</b></a>
+    </div>
+  </section>
+
+  <section class="block" id="elsewhere">
+    <h2 class="sec"><span class="n">LINKS</span>Keep learning elsewhere</h2>
+    <div class="links">
+      <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics" target="_blank" rel="noopener"><span class="src">MDN · free</span><b>MDN Learn: CSS styling basics</b><small>The full beginner course from the people who document the web, with exercises.</small></a>
+      <a href="https://web.dev/learn/css" target="_blank" rel="noopener"><span class="src">web.dev (Google) · free</span><b>Learn CSS</b><small>A deeper course covering the cascade, specificity, grid, and more.</small></a>
+      <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener"><span class="src">CSS-Tricks · free</span><b>A Complete Guide to CSS Flexbox</b><small>The famous illustrated cheat sheet for every flexbox property.</small></a>
+      <a href="https://flexboxfroggy.com/" target="_blank" rel="noopener"><span class="src">Codepip · free</span><b>Flexbox Froggy</b><small>A game where you write flexbox to move frogs onto lily pads.</small></a>
+    </div>
+  </section>
+
+  <section class="block" id="cert"></section>
+
+  <section class="block">
+    <h2 class="sec"><span class="n">NEXT</span>Keep learning</h2>
+    <div class="related" id="related"></div>
+  </section>
+
+  <aside class="next">
+    <div><h3>Want to learn something else?</h3><p>Browse every tutorial or jump into a random one.</p></div>
+    <div class="actions"><a class="btn" href="../">All tutorials</a><button class="btn ghost" id="randomBtn">Random</button></div>
+  </aside>
+</main>
+
+<footer class="sitefoot">
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>The playground runs only in your browser. Nothing you type is sent anywhere.</span></div>
+</footer>
+
+<script src="../tutorials.js"></script>
+<script src="../paths.js"></script>
+<script src="../auth.js"></script>
+<script src="../lesson.js"></script>
+<script src="../quiz.js"></script>
+<script src="../rating.js"></script>
+<script src="../comments.js"></script>
+<script>
+/* Box model visualizer */
+(function(){
+  const W = $('#bmW'), P = $('#bmP'), B = $('#bmB'), M = $('#bmMg');
+  let sizing = 'content-box';
+  function draw(){
+    const w = +W.value, p = +P.value, b = +B.value, m = +M.value;
+    $('#bmWv').textContent = w; $('#bmPv').textContent = p; $('#bmBv').textContent = b; $('#bmMv').textContent = m;
+    const content = sizing === 'content-box' ? w : Math.max(0, w - 2*p - 2*b);
+    const boxW = content + 2*p + 2*b, total = boxW + 2*m, ch = 50;
+    const avail = Math.max(120, $('#bm .bm-stage').clientWidth - 22);
+    const s = Math.min(1, avail / total);
+    const px = v => (v * s) + 'px';
+    $('#bmMbox').style.padding = px(m);
+    $('#bmBbox').style.padding = px(b);
+    $('#bmPbox').style.padding = px(p);
+    const c = $('#bmCbox'); c.style.width = px(content); c.style.height = px(ch);
+    c.textContent = content >= 50 ? content + '×' + ch : '';
+    $('#bmScale').textContent = s < 1 ? '(drawn at ' + Math.round(s*100) + '% to fit)' : '';
+    $('#bmOut').innerHTML = `Visible box: <b>${boxW}px</b> wide · space taken with margins: <b>${total}px</b>`;
+    let work = sizing === 'content-box'
+      ? `content-box: width sets the content only\n${w} + ${p}×2 padding + ${b}×2 border = ${boxW}px visible`
+      : `border-box: width includes padding and border\ncontent shrinks to ${w} − ${p}×2 − ${b}×2 = ${content}px` + (w - 2*p - 2*b < 0 ? ' (can\'t go below 0)' : '');
+    work += `\n+ ${m}×2 margin = ${total}px of room on the page`;
+    work += `\n\n.box {\n  box-sizing: ${sizing};\n  width: ${w}px;\n  padding: ${p}px;\n  border: ${b}px solid;\n  margin: ${m}px;\n}`;
+    $('#bmWork').textContent = work;
+  }
+  document.querySelectorAll('#bmSz button').forEach(btn => btn.addEventListener('click', () => {
+    sizing = btn.dataset.v;
+    document.querySelectorAll('#bmSz button').forEach(x => x.setAttribute('aria-pressed', x === btn));
+    draw();
+  }));
+  live($('#bm'), draw);
+  addEventListener('resize', draw);
+})();
+
+/* CSS playground with self-checking challenges */
+(function(){
+  const BASE = 'body{font:16px/1.5 system-ui,sans-serif;margin:14px;color:#1d2421;background:#fff}';
+  const near = (a, b) => Math.abs(a - b) < 2;
+  const C = [
+    {n:'1 · Colors', task:'Make the <b>heading</b> text <code>tomato</code> and the <b>paragraph</b> text <code>gray</code>.',
+     html:'<h1>Hello, CSS</h1>\n<p>I am a paragraph.</p>',
+     css:'h1 {\n  color: black;\n}\n',
+     ans:'h1 {\n  color: tomato;\n}\n\np {\n  color: gray;\n}\n',
+     check:(q, cs) => {
+       const h = cs(q('h1')).color === 'rgb(255, 99, 71)', p = cs(q('p')).color === 'rgb(128, 128, 128)';
+       return h && p ? '' : !h ? 'The heading isn\'t tomato yet. Use the selector h1 and color: tomato;' : 'Now add a rule for p with color: gray;';
+     }},
+    {n:'2 · Classes', task:'Give <b>only</b> the paragraph with <code>class="tip"</code> a background of <code>#fff3b0</code>. The other paragraphs should stay plain.',
+     html:'<p>Write your code.</p>\n<p class="tip">Tip: save your file often!</p>\n<p>Open it in a browser.</p>',
+     css:'/* A class selector starts with a dot */\n',
+     ans:'.tip {\n  background: #fff3b0;\n}\n',
+     check:(q, cs, d) => {
+       const tip = cs(q('.tip')).backgroundColor === 'rgb(255, 243, 176)';
+       const others = [...d.querySelectorAll('p:not(.tip)')].every(e => cs(e).backgroundColor === 'rgba(0, 0, 0, 0)');
+       return !tip ? 'The .tip paragraph doesn\'t have the #fff3b0 background yet.' : !others ? 'Close! But other paragraphs got the background too. Target only .tip' : '';
+     }},
+    {n:'3 · Units', task:'Set the heading to <code>2rem</code> and the paragraph to <code>1.25rem</code>. (The root font size here is 16px.)',
+     html:'<h1>Size matters</h1>\n<p>rem is relative to the root font size.</p>',
+     css:'h1 {\n  font-size: 40px;\n}\n',
+     ans:'h1 {\n  font-size: 2rem;\n}\n\np {\n  font-size: 1.25rem;\n}\n',
+     check:(q, cs) => {
+       const h = parseFloat(cs(q('h1')).fontSize), p = parseFloat(cs(q('p')).fontSize);
+       return !near(h, 32) ? `The heading is ${Math.round(h)}px. 2rem = 2 × 16 = 32px.` : !near(p, 20) ? `The paragraph is ${Math.round(p)}px. 1.25rem = 20px.` : '';
+     }},
+    {n:'4 · Box model', task:'Give <code>.card</code> <b>20px</b> of padding, a <b>3px solid</b> border, and a <b>24px</b> margin.',
+     html:'<div class="card">\n  <h2>A card</h2>\n  <p>Cards need breathing room.</p>\n</div>',
+     css:'.card {\n  background: #e0f0ec;\n}\n',
+     ans:'.card {\n  background: #e0f0ec;\n  padding: 20px;\n  border: 3px solid #0f7a6c;\n  margin: 24px;\n}\n',
+     check:(q, cs) => {
+       const s = cs(q('.card'));
+       const pad = ['Top','Right','Bottom','Left'].every(k => s['padding' + k] === '20px');
+       const bor = ['Top','Right','Bottom','Left'].every(k => s['border' + k + 'Width'] === '3px' && s['border' + k + 'Style'] === 'solid');
+       const mar = ['Top','Right','Bottom','Left'].every(k => s['margin' + k] === '24px');
+       return !pad ? 'Padding should be 20px on all four sides.' : !bor ? 'The border should be 3px and solid on all sides, e.g. border: 3px solid teal;' : !mar ? 'Margin should be 24px on all sides.' : '';
+     }},
+    {n:'5 · Flex row', task:'Make <code>.row</code> a flex container so the three items sit in one row, with <code>space-between</code> pushing them to the edges.',
+     html:'<div class="row">\n  <div class="item">A</div>\n  <div class="item">B</div>\n  <div class="item">C</div>\n</div>',
+     css:'.item {\n  background: #0f7a6c;\n  color: white;\n  padding: 12px 18px;\n  border-radius: 8px;\n}\n\n.row {\n  \n}\n',
+     ans:'.item {\n  background: #0f7a6c;\n  color: white;\n  padding: 12px 18px;\n  border-radius: 8px;\n}\n\n.row {\n  display: flex;\n  justify-content: space-between;\n}\n',
+     check:(q, cs, d) => {
+       const r = q('.row'), it = [...d.querySelectorAll('.item')].map(e => e.getBoundingClientRect()), rr = r.getBoundingClientRect();
+       const oneRow = it.every(b => near(b.top, it[0].top));
+       const edges = near(it[0].left, rr.left) && near(it[2].right, rr.right);
+       return !oneRow ? 'The items are still stacked. Add display: flex; to .row' : !edges ? 'They\'re in a row. Now spread them out with justify-content: space-between;' : '';
+     }},
+    {n:'6 · Center it', task:'Center the <code>.box</code> both horizontally and vertically inside <code>.stage</code>.',
+     html:'<div class="stage">\n  <div class="box">Center me</div>\n</div>',
+     css:'.stage {\n  height: 170px;\n  background: #f3f5f2;\n  border: 2px dashed #0f7a6c;\n}\n\n.box {\n  background: #b86e00;\n  color: white;\n  padding: 10px 16px;\n}\n',
+     ans:'.stage {\n  height: 170px;\n  background: #f3f5f2;\n  border: 2px dashed #0f7a6c;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.box {\n  background: #b86e00;\n  color: white;\n  padding: 10px 16px;\n}\n',
+     check:(q) => {
+       const s = q('.stage').getBoundingClientRect(), b = q('.box').getBoundingClientRect();
+       if (b.width > s.width - 20) return 'The box stretches all the way across. Flexbox on .stage will shrink it to fit its text.';
+       const h = near(b.left + b.width/2, s.left + s.width/2), v = near(b.top + b.height/2, s.top + s.height/2);
+       return !h && !v ? 'Make .stage a flex container, then center on both axes.' : !h ? 'Vertically centered! Now center horizontally (justify-content).' : !v ? 'Horizontally centered! Now center vertically (align-items).' : '';
+     }},
+    {n:'7 · Responsive', task:'The cards sit in a row. Add a <b>media query</b> so that at <code>max-width: 500px</code> or less, <code>.cards</code> switches to <code>flex-direction: column</code>. Then try the Phone and Desktop preview buttons.',
+     html:'<div class="cards">\n  <div class="card">One</div>\n  <div class="card">Two</div>\n  <div class="card">Three</div>\n</div>',
+     css:'.cards {\n  display: flex;\n  gap: 10px;\n}\n\n.card {\n  flex: 1;\n  background: #e0f0ec;\n  border: 2px solid #0f7a6c;\n  padding: 24px 10px;\n  text-align: center;\n}\n\n/* Your media query here */\n',
+     ans:'.cards {\n  display: flex;\n  gap: 10px;\n}\n\n.card {\n  flex: 1;\n  background: #e0f0ec;\n  border: 2px solid #0f7a6c;\n  padding: 24px 10px;\n  text-align: center;\n}\n\n@media (max-width: 500px) {\n  .cards {\n    flex-direction: column;\n  }\n}\n',
+     check:(q, cs, d) => {
+       const sh = d.getElementById('u'); let rules = [];
+       try { rules = [...sh.sheet.cssRules]; } catch(e){}
+       const mq = rules.filter(r => r.media && /max-width\s*:\s*500px/.test(r.media.mediaText));
+       if (!mq.length) return 'Add @media (max-width: 500px) { ... } around a rule.';
+       const ok = mq.some(m => [...m.cssRules].some(r => r.selectorText && r.selectorText.indexOf('.cards') > -1 && r.style.flexDirection === 'column'));
+       return ok ? '' : 'Inside the media query, give .cards flex-direction: column;';
+     }},
+    {n:'Free play', task:'No rules here. Style this little page however you like and watch it change.',
+     html:'<header class="top"><h1>My Page</h1><nav><a href="#">Home</a> <a href="#">About</a> <a href="#">Contact</a></nav></header>\n<main>\n  <h2>Welcome</h2>\n  <p class="tip">Try changing colors, padding, and fonts.</p>\n  <p>CSS is all about rules: a selector, then properties and values.</p>\n  <button>A button</button>\n</main>',
+     css:'.top {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  flex-wrap: wrap;\n  background: #14201c;\n  color: white;\n  padding: 8px 16px;\n  border-radius: 10px;\n}\n\n.top a {\n  color: #4cc3ad;\n  margin-left: 12px;\n}\n\nbutton {\n  background: tomato;\n  color: white;\n  border: 0;\n  padding: 10px 18px;\n  border-radius: 999px;\n}\n',
+     ans:null, check:null}
+  ];
+  const won = new Set();
+  let cur = 0, timer = null;
+  const ta = $('#pgCss'), f = $('#pgView'), list = $('#pgList');
+  const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  list.innerHTML = C.map((c, i) => `<button type="button" data-i="${i}" aria-pressed="${i === 0}">${c.n}</button>`).join('');
+  function render(){
+    const css = ta.value.replace(/<\/style/gi, '<\\/style');
+    f.srcdoc = '<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>' + BASE + '</style><style id="u">' + css + '</style></head><body>' + C[cur].html + '</body></html>';
+  }
+  function check(){
+    const c = C[cur], st = $('#pgStatus');
+    if (!c.check){ st.className = 'pg-status'; st.textContent = 'Free play: there is no wrong answer.'; return; }
+    let msg;
+    try {
+      const d = f.contentDocument, w = f.contentWindow;
+      msg = c.check(s => d.querySelector(s), el => w.getComputedStyle(el), d);
+    } catch(e){ msg = 'Keep going: the preview couldn\'t be checked yet.'; }
+    if (msg === ''){
+      st.className = 'pg-status ok'; st.textContent = '✓ Nailed it! Pick the next challenge.';
+      won.add(cur); list.children[cur].classList.add('won');
+    } else { st.className = 'pg-status'; st.textContent = msg; }
+    const total = C.filter(x => x.check).length;
+    $('#pgScore').textContent = `Challenges done: ${won.size} of ${total}`;
+  }
+  f.addEventListener('load', check);
+  function load(i, keep){
+    cur = i;
+    [...list.children].forEach((b, k) => b.setAttribute('aria-pressed', k === i));
+    $('#pgTask').innerHTML = C[i].task;
+    $('#pgHtml').innerHTML = esc(C[i].html);
+    if (!keep) ta.value = C[i].css;
+    $('#pgAns').hidden = !C[i].ans;
+    render();
+  }
+  list.addEventListener('click', e => { const b = e.target.closest('button'); if (b) load(+b.dataset.i); });
+  ta.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(render, 250); });
+  let tabTrap = true;
+  ta.addEventListener('keydown', e => {
+    if (e.key === 'Escape'){ tabTrap = false; return; }
+    if (e.key === 'Tab' && tabTrap && !e.shiftKey){
+      e.preventDefault();
+      const s = ta.selectionStart, en = ta.selectionEnd;
+      ta.value = ta.value.slice(0, s) + '  ' + ta.value.slice(en);
+      ta.selectionStart = ta.selectionEnd = s + 2;
+      clearTimeout(timer); timer = setTimeout(render, 250);
+    }
+  });
+  ta.addEventListener('focus', () => { tabTrap = true; });
+  $('#pgReset').addEventListener('click', () => load(cur));
+  $('#pgAns').addEventListener('click', () => { if (C[cur].ans){ ta.value = C[cur].ans; render(); } });
+  document.querySelectorAll('#pgSize button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('#pgSize button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    f.style.width = b.dataset.w ? b.dataset.w + 'px' : '';
+    f.style.maxWidth = b.dataset.w === '340' ? '100%' : 'none';
+    if (!b.dataset.w) f.style.maxWidth = '';
+    setTimeout(check, 60);
+  }));
+  load(0);
+})();
+</script>
+</body>
+</html>
