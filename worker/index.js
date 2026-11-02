@@ -1,7 +1,7 @@
-// Shortutorial API: accounts, certification quizzes and the world leaderboard.
+// Shortutorial API: accounts, ratings, read counts, comments and smart search.
 // Everything not under /api/ is served from the static files in /public.
-import QUIZZES from "./quizzes.js";
 import CATALOG from "./catalog.js";
+const SLUGS = new Set(CATALOG.map(c => c.slug));   // every published tutorial
 
 const COOKIE = "st_sess";
 const SESSION_DAYS = 30;
@@ -36,7 +36,6 @@ async function route(request, env, url) {
   if (path === "/api/signup" && method === "POST") return signup(request, env);
   if (path === "/api/login" && method === "POST") return login(request, env);
   if (path === "/api/logout" && method === "POST") return logout(request, env);
-  if (path === "/api/leaderboard" && method === "GET") return leaderboard(request, env);
 
   if (path === "/api/search" && method === "GET") return smartSearch(request, env, url);
   if (path === "/api/ratings" && method === "GET") return allRatings(env);
@@ -51,10 +50,6 @@ async function route(request, env, url) {
   if (cm && method === "POST") return addComment(request, env, cm[1]);
   const cd = path.match(/^\/api\/comments\/([a-z0-9-]+)\/delete$/);
   if (cd && method === "POST") return deleteComment(request, env, cd[1]);
-
-  const m = path.match(/^\/api\/quiz\/([a-z0-9-]+)$/);
-  if (m && method === "GET") return getQuiz(m[1]);
-  if (m && method === "POST") return gradeQuiz(request, env, m[1]);
 
   return json({ error: "Not found." }, 404);
 }
@@ -84,7 +79,7 @@ async function signup(request, env) {
     env.DB.prepare("INSERT INTO signups (ip_hash, ts) VALUES (?, ?)").bind(ipKey, now()),
     env.DB.prepare("DELETE FROM signups WHERE ts < ?").bind(now() - 86400)
   ]);
-  return startSession(env, res.meta.last_row_id, { username, points: 0, certs: [] }, 201);
+  return startSession(env, res.meta.last_row_id, { username }, 201);
 }
 
 async function login(request, env) {
@@ -139,43 +134,7 @@ async function currentUser(request, env) {
 }
 
 async function profile(env, id, username) {
-  const { results } = await env.DB.prepare("SELECT slug FROM certs WHERE user_id = ? ORDER BY earned_at").bind(id).all();
-  return { username, points: results.length, certs: results.map(r => r.slug) };
-}
-
-/* ---------------- quizzes ---------------- */
-
-function getQuiz(slug) {
-  const quiz = QUIZZES[slug];
-  if (!quiz) return json({ error: "No quiz for this tutorial yet." }, 404);
-  return json({
-    slug, title: quiz.title, pass: quiz.pass, total: quiz.questions.length,
-    questions: quiz.questions.map(({ q, o }) => ({ q, o }))   // answers stay on the server
-  }, 200, { "Cache-Control": "public, max-age=300" });
-}
-
-async function gradeQuiz(request, env, slug) {
-  const quiz = QUIZZES[slug];
-  if (!quiz) return json({ error: "No quiz for this tutorial yet." }, 404);
-  const { answers } = await body(request);
-  if (!Array.isArray(answers) || answers.length !== quiz.questions.length || !answers.every(Number.isInteger))
-    return json({ error: "Answer every question first." }, 400);
-
-  const results = quiz.questions.map((qq, i) => ({ correct: answers[i] === qq.a, answer: qq.a, e: qq.e }));
-  const score = results.filter(r => r.correct).length;
-  const passed = score >= quiz.pass;
-
-  const user = await currentUser(request, env);
-  let awarded = false, already = false, points = null;
-  if (user && passed) {
-    const res = await env.DB.prepare("INSERT OR IGNORE INTO certs (user_id, slug, score, earned_at) VALUES (?, ?, ?, ?)")
-      .bind(user.id, slug, score, now()).run();
-    awarded = res.meta.changes > 0;
-    already = !awarded;
-  }
-  if (user) points = (await profile(env, user.id, user.username)).points;
-
-  return json({ score, total: quiz.questions.length, pass: quiz.pass, passed, results, loggedIn: !!user, awarded, already, points });
+  return { username };
 }
 
 /* ---------------- ratings ---------------- */
@@ -212,7 +171,7 @@ async function allRatings(env) {
    The page reports a read once someone has spent real time on it (see rating.js).
    Each device or account counts once per tutorial per day; bots and floods are ignored. */
 async function countRead(request, env, slug) {
-  if (!QUIZZES[slug]) return json({ error: "Unknown tutorial." }, 404);
+  if (!SLUGS.has(slug)) return json({ error: "Unknown tutorial." }, 404);
   const ua = request.headers.get("User-Agent") || "";
   if (!ua || /bot|crawl|spider|slurp|headless|preview|fetch|python|curl|wget/i.test(ua)) return json({ counted: false });
   const { voter } = await body(request);
@@ -234,14 +193,14 @@ async function countRead(request, env, slug) {
 }
 
 async function getRating(request, env, url, slug) {
-  if (!QUIZZES[slug]) return json({ error: "Unknown tutorial." }, 404);
+  if (!SLUGS.has(slug)) return json({ error: "Unknown tutorial." }, 404);
   const key = await voterKey(request, env, url.searchParams.get("v"));
   const mine = key ? await env.DB.prepare("SELECT stars FROM ratings WHERE slug = ? AND voter = ?").bind(slug, key).first() : null;
   return json({ ...(await summary(env, slug)), mine: mine ? mine.stars : null });
 }
 
 async function rate(request, env, slug) {
-  if (!QUIZZES[slug]) return json({ error: "Unknown tutorial." }, 404);
+  if (!SLUGS.has(slug)) return json({ error: "Unknown tutorial." }, 404);
   const { stars, voter } = await body(request);
   if (!Number.isInteger(stars) || stars < 1 || stars > 5) return json({ error: "Pick 1 to 5 stars." }, 400);
   const key = await voterKey(request, env, voter);
@@ -277,7 +236,7 @@ async function commentsTable(env) {
 }
 
 async function listComments(request, env, slug) {
-  if (!QUIZZES[slug]) return json({ error: "Unknown tutorial." }, 404);
+  if (!SLUGS.has(slug)) return json({ error: "Unknown tutorial." }, 404);
   await commentsTable(env);
   const user = await currentUser(request, env);
   const { results } = await env.DB.prepare(
@@ -287,7 +246,7 @@ async function listComments(request, env, slug) {
 }
 
 async function addComment(request, env, slug) {
-  if (!QUIZZES[slug]) return json({ error: "Unknown tutorial." }, 404);
+  if (!SLUGS.has(slug)) return json({ error: "Unknown tutorial." }, 404);
   const user = await currentUser(request, env);
   if (!user) return json({ error: "Log in to comment." }, 401);
   let { text } = await body(request);
@@ -316,25 +275,6 @@ async function deleteComment(request, env, slug) {
   const res = await env.DB.prepare("DELETE FROM comments WHERE id = ? AND slug = ? AND user_id = ?").bind(id, slug, user.id).run();
   if (!res.meta.changes) return json({ error: "You can only delete your own comments." }, 403);
   return json({ ok: true });
-}
-
-/* ---------------- leaderboard ---------------- */
-
-async function leaderboard(request, env) {
-  // Most points first; ties go to whoever reached that score first.
-  const ranked = `SELECT u.id, u.username, COUNT(c.slug) AS points,
-      ROW_NUMBER() OVER (ORDER BY COUNT(c.slug) DESC, MAX(c.earned_at) ASC) AS rank
-    FROM users u JOIN certs c ON c.user_id = u.id GROUP BY u.id`;
-  const { results } = await env.DB.prepare(`SELECT username, points, rank FROM (${ranked}) ORDER BY rank LIMIT 100`).all();
-  const players = (await env.DB.prepare("SELECT COUNT(DISTINCT user_id) n FROM certs").first()).n;
-
-  const user = await currentUser(request, env);
-  let mine = null;
-  if (user) {
-    const row = await env.DB.prepare(`SELECT points, rank FROM (${ranked}) WHERE id = ?`).bind(user.id).first();
-    mine = { username: user.username, points: row ? row.points : 0, rank: row ? row.rank : null };
-  }
-  return json({ top: results, players, me: mine }, 200, { "Cache-Control": "no-store" });
 }
 
 /* ---------------- helpers ---------------- */

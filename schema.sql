@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS sessions (
   expires_at  INTEGER NOT NULL
 );
 
--- One row per tutorial a user has passed = one certification point.
+-- Quiz passes from the old certification feature (removed Nov 2026). Kept, no longer read or written.
 CREATE TABLE IF NOT EXISTS certs (
   user_id     INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   slug        TEXT NOT NULL,
