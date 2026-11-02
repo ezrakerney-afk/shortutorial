@@ -1,8 +1,8 @@
-/* 5-star ratings: summary under the title, and a "Rate this tutorial" box before the quiz. */
+/* 5-star ratings: summary under the title, and a "Rate this tutorial" box at the end of the tutorial. */
 (function(){
   const slug = document.body.dataset.slug;
   if (!slug) return;
-  const cert = document.getElementById('cert');
+  const cert = document.getElementById('tutorial-end');
   const badges = document.querySelector('header.intro .badges, header .facts');
   let state = { avg: null, count: 0, mine: null };
 

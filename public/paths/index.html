@@ -13,12 +13,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Learning Paths · Shortutorial</title>
-<meta name="description" content="Learning paths on Shortutorial: short tutorials in order, from money basics and coding to home repair, with progress tracking and free certifications.">
+<meta name="description" content="Learning paths on Shortutorial: short tutorials in order, from money basics and coding to home repair, with progress tracking.">
 <link rel="canonical" href="https://shortutorial.com/paths/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Shortutorial">
 <meta property="og:title" content="Learning Paths · Shortutorial">
-<meta property="og:description" content="Learning paths on Shortutorial: short tutorials in order, from money basics and coding to home repair, with progress tracking and free certifications.">
+<meta property="og:description" content="Learning paths on Shortutorial: short tutorials in order, from money basics and coding to home repair, with progress tracking.">
 <meta property="og:url" content="https://shortutorial.com/paths/">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -58,7 +58,6 @@
 .node:hover .dot{transform:translateY(-2px)}
 .node:active .dot{transform:translateY(4px);box-shadow:0 2px 0 color-mix(in srgb,var(--line) 70%,#000 30%)}
 .node.seen .dot{background:var(--uc);color:var(--on-uc);box-shadow:0 6px 0 color-mix(in srgb,var(--uc) 70%,#000 30%)}
-.node.cert .dot{background:var(--amber);color:var(--on-uc);box-shadow:0 6px 0 color-mix(in srgb,var(--amber) 70%,#000 30%)}
 .node.now .dot{background:var(--uc);color:var(--on-uc);box-shadow:0 6px 0 color-mix(in srgb,var(--uc) 70%,#000 30%),0 0 0 8px color-mix(in srgb,var(--uc) 25%,transparent)}
 .node .lbl{text-align:center;font-family:var(--display);font-weight:600;font-size:.92rem;line-height:1.25}
 .node .mins{display:block;font-family:var(--mono);font-weight:400;font-size:.72rem;color:var(--muted);margin-top:2px}
@@ -103,11 +102,11 @@
     <p>Pick a path and work down it. Lessons are grouped into units that start easy and build up, so each one prepares you for the next.</p>
   </header>
   <div id="path"></div>
-  <div class="legend" id="legend"><span><i style="background:var(--line)"></i>Not started</span><span><i style="background:var(--accent)"></i>Opened</span><span><i style="background:var(--amber)"></i>Quiz passed (logged in)</span></div>
+  <div class="legend" id="legend"><span><i style="background:var(--line)"></i>Not started</span><span><i style="background:var(--accent)"></i>Opened</span></div>
 </main>
 
 <footer class="sitefoot">
-  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/leaderboard/">Leaderboard</a><a href="/privacy/">Privacy</a></nav></span><span>Progress is saved on this device. Pass a quiz while logged in to earn certification points.</span></div>
+  <div class="sitefoot-in"><span class="foot-brand"><span>© <span id="yr"></span> Shortutorial</span><nav class="foot-nav" aria-label="Footer"><a href="/">All tutorials</a><a href="/paths/">Learning paths</a><a href="/privacy/">Privacy</a></nav></span><span>Progress is saved on this device.</span></div>
 </footer>
 
 <script src="../tutorials.js"></script>
@@ -121,10 +120,9 @@ const UNIT_COLORS = ['var(--c-math)', 'var(--c-computer)', 'var(--c-phone)', 'va
 const LEVELS = ['Beginner', 'Intermediate', 'Advanced', 'Expert'];
 const WAVE = [0, 46, 70, 46, 0, -46, -70, -46];
 const PATHS = window.PATHS || [];
-let certs = new Set();
 const fromHash = () => { const h = location.hash.slice(1); return PATHS.some(p => p.id === h) ? h : null; };
 let cur = fromHash();
-const isDone = (s, seen) => seen.has(s) || certs.has(s);
+const isDone = (s, seen) => seen.has(s);
 
 function draw(){
   const seen = window.pathVisited();
@@ -148,9 +146,9 @@ function draw(){
     const ud = u.steps.filter(s => isDone(s, seen)).length;
     const nodes = u.steps.map(s => {
       const t = byS[s], x = WAVE[k++ % WAVE.length];
-      const cls = certs.has(s) ? 'cert' : seen.has(s) ? 'seen' : s === next ? 'now' : '';
-      const mark = certs.has(s) ? '★' : seen.has(s) ? '✓' : k;
-      return `<a class="node ${cls}" href="../${s}/" style="--x:${x}px" aria-label="${esc(t.title)}${cls === 'cert' ? ', quiz passed' : cls === 'seen' ? ', opened' : ''}">
+      const cls = seen.has(s) ? 'seen' : s === next ? 'now' : '';
+      const mark = seen.has(s) ? '✓' : k;
+      return `<a class="node ${cls}" href="../${s}/" style="--x:${x}px" aria-label="${esc(t.title)}${cls === 'seen' ? ', opened' : ''}">
         ${s === next ? `<span class="bubble">${done ? 'Continue' : 'Start'}</span>` : ''}
         <span class="dot" aria-hidden="true">${mark}</span>
         <span class="lbl">${esc(t.title)}<span class="mins">~${t.minutes || 10} min</span></span></a>`;
@@ -171,7 +169,6 @@ function draw(){
 }
 addEventListener('hashchange', () => { cur = fromHash(); draw(); scrollTo(0, 0); });
 draw();
-fetch('/api/me', {credentials: 'same-origin'}).then(r => r.ok ? r.json() : null).then(m => { if (m && m.certs){ certs = new Set(m.certs); draw(); } }).catch(() => {});
 document.getElementById('yr').textContent = new Date().getFullYear();
 </script>
 </body>

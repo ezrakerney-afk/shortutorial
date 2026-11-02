@@ -98,50 +98,7 @@ dialog.auth::backdrop{background:rgba(10,16,14,.55);backdrop-filter:blur(3px)}
 .auth .err{min-height:1.2em;color:var(--bad);font-size:.92rem}
 .auth .btn{justify-content:center}
 .auth .fine{font-size:.85rem;color:var(--muted)}
-.me-stats{display:flex;align-items:baseline;gap:10px}
-.me-stats .big{font-family:var(--display);font-size:2.6rem;font-weight:700;line-height:1;color:var(--accent)}
-.me-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;max-height:200px;overflow:auto}
-.me-list li{font-size:.95rem;display:flex;gap:8px}
-.me-list li::before{content:"✓";color:var(--good);font-family:var(--mono);font-weight:600}
 .row{display:flex;gap:10px;flex-wrap:wrap}
-
-/* ---------- Certification quiz ---------- */
-.cq{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:18px;position:relative;overflow:hidden}
-.cq.intro{background:linear-gradient(135deg,var(--accent-soft),var(--surface) 70%)}
-.cq-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.cq h2{font-size:1.5rem;letter-spacing:-.01em}
-.cq .medal{width:54px;height:54px;flex:none;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:var(--accent-ink);font-size:1.5rem;box-shadow:0 0 0 6px var(--accent-soft)}
-.cq .lead{display:flex;gap:16px;align-items:center}
-.cq .sub{color:var(--muted);font-size:1rem}
-.cq .done-badge{font-family:var(--mono);font-size:.75rem;font-weight:600;color:var(--good);background:var(--good-bg);border-radius:999px;padding:4px 10px}
-.cq .dots{display:flex;gap:6px}
-.cq .dot{width:10px;height:10px;border-radius:50%;background:var(--line)}
-.cq .dot.done{background:var(--accent)} .cq .dot.now{background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
-.cq .dot.ok{background:var(--good)} .cq .dot.no{background:var(--bad)}
-.cq .qnum{font-family:var(--mono);font-size:.8rem;color:var(--muted)}
-.cq .qprompt{font-family:var(--display);font-size:1.25rem;font-weight:600;line-height:1.3}
-.cq .opts{display:flex;flex-direction:column;gap:10px}
-.cq .opt{all:unset;box-sizing:border-box;display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;font-family:var(--body);font-size:1rem;line-height:1.45;color:var(--ink);background:var(--bg);transition:border-color .15s,background .15s}
-.cq .opt:hover{border-color:var(--accent)}
-.cq .opt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.cq .opt.sel{border-color:var(--accent);background:var(--accent-soft)}
-.cq .key{font-family:var(--mono);font-size:.8rem;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:0 6px;flex:none;margin-top:2px}
-.cq .foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.cq .hint{font-family:var(--mono);font-size:.8rem;color:var(--muted)}
-.cq .score{font-family:var(--display);font-size:3.2rem;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
-.cq .score small{font-size:.45em;color:var(--muted)}
-.cq .verdict{display:flex;gap:14px;align-items:center;padding:14px 16px;border-radius:12px}
-.cq .verdict.ok{background:var(--good-bg)} .cq .verdict.no{background:var(--bad-bg)}
-.cq .verdict b{font-family:var(--display);font-size:1.08rem}
-.cq .review{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
-.cq .review li{display:flex;gap:10px;font-size:.96rem}
-.cq .review .m{font-family:var(--mono);font-weight:600;flex:none}
-.cq .review .m.ok{color:var(--good)} .cq .review .m.no{color:var(--bad)}
-.cq .review .why{display:block;color:var(--muted);font-size:.92rem;margin-top:2px}
-.cq .err{color:var(--bad)}
-.cq-confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden}
-.cq-confetti i{position:absolute;top:-10px;width:8px;height:12px;border-radius:2px;animation:fall 1.6s ease-in forwards}
-@keyframes fall{to{transform:translateY(420px) rotate(540deg);opacity:0}}
 
 /* ---------- Star ratings ---------- */
 .rating-sum{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.8rem;color:var(--muted);text-decoration:none;width:fit-content}

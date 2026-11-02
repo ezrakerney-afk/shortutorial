@@ -1,7 +1,7 @@
 /* Comments under every tutorial. Anyone can read them; posting needs an account, so each comment shows its username. */
 (function(){
   const slug = document.body.dataset.slug;
-  const cert = document.getElementById('cert');
+  const cert = document.getElementById('tutorial-end');
   if (!slug || !cert) return;
   const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const MAX = 1000;

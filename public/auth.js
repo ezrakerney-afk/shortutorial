@@ -17,15 +17,14 @@
 
   /* ----- site bar ----- */
   const bar = document.querySelector('.bar-actions');
-  const trophy = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>';
   if (bar){
     bar.querySelectorAll('.btn').forEach(a => a.classList.add('hide-sm'));
-    bar.insertAdjacentHTML('afterbegin', `<a class="iconbtn" href="/leaderboard/" title="World leaderboard" aria-label="World leaderboard">${trophy}</a><button class="acct" id="acctBtn">Log in</button>`);
+    bar.insertAdjacentHTML('afterbegin', `<button class="acct" id="acctBtn">Log in</button>`);
     document.getElementById('acctBtn').addEventListener('click', () => ST.user ? openAccount() : ST.openAuth());
   }
   function paint(){
     const b = document.getElementById('acctBtn'); if (!b) return;
-    b.innerHTML = ST.user ? `<span class="pts">★ ${ST.user.points}</span><span class="nm">${esc(ST.user.username)}</span>` : 'Log in';
+    b.innerHTML = ST.user ? `<span class="nm">${esc(ST.user.username)}</span>` : 'Log in';
     b.title = ST.user ? 'Your account' : 'Log in or create an account';
   }
 
@@ -50,13 +49,13 @@
         <button role="tab" data-m="signup" aria-selected="${mode==='signup'}">Create account</button>
       </div>
       <form novalidate>
-        <label>Username ${mode==='signup' ? '<span class="hint">3–20 letters, numbers or _ · shown on the leaderboard</span>' : ''}
+        <label>Username ${mode==='signup' ? '<span class="hint">3–20 letters, numbers or _ · shown on your comments</span>' : ''}
           <input name="username" autocomplete="username" maxlength="20" required></label>
         <label>Password ${mode==='signup' ? '<span class="hint">at least 8 characters</span>' : ''}
           <input name="password" type="password" autocomplete="${mode==='login' ? 'current-password' : 'new-password'}" required></label>
         <div class="err" role="alert"></div>
         <button class="btn" type="submit">${mode==='login' ? 'Log in' : 'Create account'}</button>
-        <p class="fine">${mode==='login' ? 'Earn a certification point for every tutorial quiz you pass.' : 'Your username appears on the public world leaderboard. Don’t use your real name or reuse a password from another site.'}</p>
+        <p class="fine">${mode==='login' ? 'Log in to comment on tutorials.' : 'Your username appears on comments you post. Don’t use your real name or reuse a password from another site.'}</p>
       </form>`);
     dlg.querySelectorAll('[data-m]').forEach(t => t.addEventListener('click', () => ST.openAuth(afterLogin, t.dataset.m)));
     const f = dlg.querySelector('form'), err = dlg.querySelector('.err'), btn = f.querySelector('.btn');
@@ -73,13 +72,9 @@
   };
 
   function openAccount(){
-    const titles = Object.fromEntries((window.TUTORIALS || []).map(t => [t.slug, t.title]));
-    const u = ST.user;
-    shell(esc(u.username), `
-      <div class="me-stats"><span class="big">${u.points}</span><span>certification point${u.points === 1 ? '' : 's'}</span></div>
-      ${u.certs.length ? `<ul class="me-list">${u.certs.map(s => `<li><a href="/${esc(s)}/">${esc(titles[s] || s)}</a></li>`).join('')}</ul>`
-        : '<p class="fine">Pass the quiz at the end of any tutorial to earn your first point.</p>'}
-      <div class="row"><a class="btn" href="/leaderboard/">See the leaderboard</a><button class="btn ghost" id="logoutBtn">Log out</button></div>`);
+    shell(esc(ST.user.username), `
+      <p class="fine">You're logged in. You can comment on any tutorial.</p>
+      <div class="row"><button class="btn ghost" id="logoutBtn">Log out</button></div>`);
     dlg.querySelector('#logoutBtn').addEventListener('click', async () => {
       try { await api('logout', {}); } catch(e){}
       set(null); dlg.close();
